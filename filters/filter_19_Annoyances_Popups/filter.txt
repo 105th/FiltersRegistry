@@ -87,8 +87,6 @@
 !   SECTION: Anti-adblock - Yandex direct
 !   NOTE: Yandex
 !
-! Yandex Games
-[$path=/games]yandex.ru#%#//scriptlet('json-prune', 'rtb rtbAuctionInfo')
 ! main page
 yandex.*##._size_big > div.card-wrapersome
 ! turbopages
@@ -104,12 +102,16 @@ afisha.yandex.ru##div[style="width:100%;height:240px;display:block"]
 ! Yandex Games
 yandex.ru##div[class*="-R-A-"]
 yandex.ru##.stack > div[class^="sticky-"]
+! Yandex.Images
+yandex.*#?#div[role="list"] div[class*="-Incut"]:has(div[id^="viewer_rim_direct"])
+!#if (!ext_ublock)
+! Yandex Games
+[$path=/games]yandex.ru#%#//scriptlet('json-prune', 'rtb rtbAuctionInfo')
 ! Yandex.Weather
 [$path=/pogoda]yandex.*##div[class*="Advert_fullScreenContainer__"]
 [$path=/weather]yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 [$path=/pogoda]yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 [$path=/pogoda]yandex.*#%#//scriptlet('prevent-eval-if', 'Id":"R-I')
-!#if (!ext_ublock)
 ! Yandex.Video, Dzen
 dzen.ru,yandex.*#%#//scriptlet("abort-on-property-write", "Object.prototype.adSystem")
 ! Yandex.TV
@@ -122,11 +124,10 @@ zen.yandex.*##.article-sticky-target > div.article__content.article__content_lim
 zen.yandex.ru,zen.yandex.by,zen.yandex.com,zen.yandex.com.tr,zen.yandex.fr,zen.yandex.kz,zen.yandex.md#%#//scriptlet("abort-on-property-read", "Object.prototype.adv")
 ! docviewer
 docviewer.yandex.*#%#//scriptlet("abort-on-property-read", "Object.prototype.YaAdtuneFeedbackType")
+! Yandex.Images
+[$path=/images/]yandex.*##div[data-state*="/image/new/serp/page/commercial/incut"]
 !#endif
 !
-! Yandex.Images
-yandex.*#?#div[role="list"] div[class*="-Incut"]:has(div[id^="viewer_rim_direct"])
-[$path=/images/]yandex.*##div[data-state*="/image/new/serp/page/commercial/incut"]
 ! TODO: remove the hint below after this task is solved
 ! https://github.com/uBlockOrigin/uBlock-issues/issues/2465
 !+ NOT_PLATFORM(ext_ublock)
@@ -666,6 +667,7 @@ usatoday.com#@#.ad-slot
 ! SECTION: Anti-adblock - Regular rules
 ! Do not forget about '!#safari_cb_affinity' section for exclusions
 !
+casper.tw##.container > div.row > div.rounded-top + div.d-lg-block
 boylove.cc##.blocked_hint_msg_pc
 videoaktiv.de###_su1
 videoaktiv.de###sp-rect
@@ -10029,7 +10031,7 @@ bosnainfo.ba##.notificationBell
 moroccoworldnews.com###notifVisible
 ||geo.tv/assets/front/js/push_notification.js
 ||megaknihy.cz/modules/*/pushNotifications.js
-halktv.com.tr###BildirtModal
+yenicaggazetesi.com.tr,halktv.com.tr###BildirtModal
 /push/js/rmf-push.js$domain=rmfmaxx.pl|rmf.fm
 mediotiempo.com,milenio.com###pushNotification-disclaimer
 calciomercato.com###notification-message-team
