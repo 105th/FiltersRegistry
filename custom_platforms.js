@@ -370,7 +370,7 @@ module.exports = {
                 "\\$urlblock",
                 ",urlblock",
                 "\\$content",
-                ",content",
+                ",content(,|$)",
                 "$webrtc",
                 "#\\$#@media "
             ],
