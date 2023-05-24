@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2023-05-22 08:07:22 CEST
+! Last modified: 2023-05-24 07:56:46 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -65,6 +65,7 @@ allabolag.se##.strossle-widget:upward(div[style^="min-height"])
 allas.se,baaam.se,elle.se,femina.se,frida.se,hant.se,mabra.com,motherhood.se,residencemagazine.se,svenskdam.se#%#//scriptlet('ubo-aeld.js', 'blur', 'i.focusPlayerElement')
 allas.se,baaam.se,elle.se,femina.se,frida.se,hant.se,mabra.com,motherhood.se,residencemagazine.se,svenskdam.se#%#//scriptlet('ubo-aeld.js', 'scroll', 't.view.updateBounds')
 allas.se,baaam.se,elle.se,femina.se,frida.se,hant.se,mabra.com,motherhood.se,residencemagazine.se,svenskdam.se##[data-type="Sponsored"]:upward(a)
+allas.se,baaam.se,elle.se,femina.se,frida.se,hant.se,mabra.com,motherhood.se,residencemagazine.se,svenskdam.se#$?#a.js_commercial-text--link-text:upward(.jwplayer_video-videoArea) { remove: true; }
 allas.se,baaam.se,elle.se,femina.se,frida.se,hant.se,mabra.com,motherhood.se,residencemagazine.se,svenskdam.se##p:has-text(ANNONS:)
 allehanda.se,arbetarbladet.se,atl.nu,avestatidning.com,bandypuls.se,bblat.se,borlangetidning.se,dalademokraten.se,di.se,dn.se,expressen.se,fagersta-posten.se,falkopingstidning.se,falukuriren.se,gd.se,hd.se,ht.se,jnytt.se,jp.se,kryddburken.se,landlantbruk.se,ljusdalsposten.se,ljusnan.se,lt.se,ltz.se,moratidning.se,na.se,norrteljetidning.se,nyaludvikatidning.se,nynashamnsposten.se,op.se,salaallehanda.com,skaraborgslanstidning.se,skd.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,soderhamnskuriren.se,sodran.se,st.nu,sydsvenskan.se,tidningenangermanland.se,tidningenharjedalen.se,tranastidning.se,vastgotabladet.se,vetlandaposten.se,vlt.se,vn.se#$#body.didomi-popup-open { overflow:unset!important }
 alltforforaldrar.se##.unslider-wrap.unslider-carousel>li:has(.preamble-category:has-text(/^annons/i))
@@ -331,11 +332,11 @@ ljudochbild.se##a[href*="/advertorial"]:upward(div[class^="col-md"][style*="bord
 loppi.se##a[href="https://loppi.se/promotion"]:upward(.page__section)
 lundgiants.se##strong:has-text(Detta är en annons):upward(.inner)
 lwcdn.com#%#//scriptlet('ubo-aeld.js', '/^(?:adBlocker|contextmenu)$/')
-macken.xyz##.et_pb_text_inner:has-text(/annons/i):upward(.et_pb_section)
-macken.xyz##a[target="_blank"]:not([href^="https://www.macken.xyz"]):upward(.et_pb_section)
+macken.xyz##a[target="_blank"]:not([href^="/"]):not([href*="/macken.xyz"]):upward(.et_pb_slider)
 maklarvarlden.se##.sponsored-inlist:upward(article)
 maklarvarlden.se##.td-post-category:has-text(/spons/i):upward(2)
 maklarvarlden.se##.td-pulldown-size:has-text(/spons/i):upward(3)
+maltermagasin.se##.widget_media_image:has-text(/annons/i)
 matochpyssel.nu#$#.loading { opacity:1!important }
 matspar.se#%#//scriptlet('ubo-json-prune.js', 'payload.ads campaigns.*')
 matspar.se#$#.overflow-hidden { overflow-y: initial !important; }
@@ -561,7 +562,7 @@ branschkoll.se,datormagazin.se,kimura.se,polistidningen.se,rocknytt.net,samnytt.
 /tapatalkdetect$~third-party,script
 /themes/*/js/smoothscroll
 /themes/Jaz/inc/js/*nicescroll
-affarsstaden.se,boktugg.se,kurera.se,lundagard.se,macken.xyz,morotsliv.com,nyfiknainvesterare.se#%#//scriptlet('ubo-aeld.js', 'wheel')
+affarsstaden.se,boktugg.se,kurera.se,lundagard.se,morotsliv.com,nyfiknainvesterare.se#%#//scriptlet('ubo-aeld.js', 'wheel')
 home2tiny.se#%#//scriptlet('ubo-aeld.js', '/mousewheel|DOMMouseScroll/', 'smoothScrollEvent')
 !#endif
 ! --- End browser/extension specific filters
@@ -1076,7 +1077,6 @@ home2tiny.se#%#//scriptlet('ubo-aeld.js', '/mousewheel|DOMMouseScroll/', 'smooth
 /bundles/ga-$script,domain=expressen.se
 /bundles/parsely$domain=expressen.se
 /bunsen/events$domain=yelp.se
-/buttonizer$domain=macken.xyz
 /casino_utan_licens$image
 /cc.silktide.com/cookieconsent$script
 /cdigo-audit.js
@@ -1258,7 +1258,7 @@ home2tiny.se#%#//scriptlet('ubo-aeld.js', '/mousewheel|DOMMouseScroll/', 'smooth
 /noview.$script,domain=gofm.se|trafik24.se|trafikdirekt.se|trafikradion.se
 /nyhetsspalt_banner_js
 /omniture/s_code.js
-/OneSignalSDK.js$domain=1x2.se|arvikamagasinet.se|battrestadsdel.se|beernews.se|cannabis.se|dackavisen.se|dalarnasaffarer.se|driva-eget.se|entreprenadaktuellt.se|ettgottskratt.se|finanstid.se|fokus.se|fotbollskane.se|fotbollsthlm.se|humorbibeln.se|idg.se|ja.se|maskinbladet.se|newsner.com|rabattsok.se|samnytt.se|skogsaktuellt.se|sportbibeln.se|ungdomsfotboll.se
+/OneSignalSDK.js$domain=1x2.se|arvikamagasinet.se|battrestadsdel.se|beernews.se|cannabis.se|dackavisen.se|dalarnasaffarer.se|driva-eget.se|entreprenadaktuellt.se|ettgottskratt.se|finanstid.se|fokus.se|fotbollskane.se|fotbollsthlm.se|humorbibeln.se|idg.se|ja.se|macken.xyz|maskinbladet.se|newsner.com|rabattsok.se|samnytt.se|skogsaktuellt.se|sportbibeln.se|ungdomsfotboll.se
 /OneSignalSDKWorker$script
 /packs/consent$domain=hemnet.se
 /pagead$domain=horoskoptid.se|vilaser.se
@@ -1296,7 +1296,7 @@ home2tiny.se#%#//scriptlet('ubo-aeld.js', '/mousewheel|DOMMouseScroll/', 'smooth
 /plugins/cc-cookie-consent/*$script
 /plugins/chimpy/*
 /plugins/christmas-panda
-/plugins/complianz-gdpr$domain=arjeplognytt.se|iconmagazine.se|macken.xyz|signprint.se|vilaser.se
+/plugins/complianz-gdpr$domain=arjeplognytt.se|iconmagazine.se|signprint.se|vilaser.se
 /plugins/consent-magic-pro$script,domain=bluum.se|gobokhandeln.se|namnmarkning.se
 /plugins/content-hub-wp-plugin/assets/js/hub-time-spent
 /plugins/convertplug
@@ -1891,7 +1891,7 @@ expressen.se##.campaign
 expressen.se##.html-widget > div[style^="text-align: center; font-size: 10px;"]
 expressen.se##.teaser > a[href*="/kampanj."], .teaser > a[href*="/brandstudio"], .teaser > a[href*="/brand-studio"], figure[data-article-data*="/sponsrat"], figure[data-article-data*="/annons"], figure[data-article-data*="/brand-studio"], .teaser--native, .native-article
 expressen.se##a[href*="/spel.exp"], a[href*="/lanapengar.exp"], a[href*="/rabattkoder.exp"], a[href*="/annons"], .match-betting, .discount-ad, .b-ad__caption, .pressrelease-teaser, .widget-ad-marker, .widget-ad-marker + a, .promotion-banner, .widget--collaboration, .rotator--external, a[data-click-track*="prisjakt"], .linked-image-widget a[href*="/kampanj/"], .linked-image-widget a[href*="www.cmore.se"], .linked-image-widget a[href*="lifestyle.expressen.se"], #premiumAdWrapper, .tapet-popup-overlay, .outsider-ads
-extrakt.se,kalmar.nu###cmplz-cookiebanner-container
+extrakt.se,kalmar.nu,macken.xyz###cmplz-cookiebanner-container
 familjeliv.se##a[href*="/kampanj/"], .flm-kampanj
 familjesidan.se##.cookies-wrapper
 fannystaaf.se,nouw.com###ConsentBanner
@@ -2080,13 +2080,15 @@ ljudochbild.se##.adremark, .coofad, .popup-overlay, .hidead, .phoneads, .priceco
 ljungbysporten.se##section.widget_media_image, a[target="_blank"]:not([href*="ljungbysporten.se"])
 lokalguiden.se##.applicant-match-container, .banner-item, .banner-container
 lokalnytt.se##.panoramaImageBox
-lokalsport.nu##.art-sidebar1, .art-sidebar2
+lokalsport.nu##.art-sidebar1, .art-sidebar2, header a[target="_blank"]:not([href*="lokalsport.nu"])
 loppi.se##.entry__teaser--promotion, .wpcnt, .sunt-widget, .lifeofsvea-widget
 lovelylife.se##.elementor-image a[href]:not([href*="lovelylife.se"]) img
 lundagard.se###bdCheckAlso.bdCheckAlsoShow, .topBanner, #sidebar .widget_media_image
 lundgiants.se##.cookieAlert
 lysekilsposten.se###archiveAdContainer
+macken.xyz##a[target="_blank"]:not([href^="/"]):not([href*="/macken.xyz"])
 magasinetparagraf.se###large_banner
+magasink.se##[data-magasintrackbid]
 maipenrai.se##.cWidgetContainer > ul > li:first-child, div[style*="border: 1px solid"] a[target="_blank"]
 maklarvarlden.se##.hustle-popup
 malaroarnasnyheter.se##.header-ainfo.float-right
@@ -2990,6 +2992,7 @@ zeromagazine.nu##div[id^="ads"]
 ||telemetry.bambuser.io^
 ||tibaco.net/scripts/tws.js
 ||top100ruokablogit.com^$third-party
+||topblogarea.se/tracker
 ||topplista24.com/tracker
 ||toppmarkensverige.com^
 ||tourn.co^$third-party
