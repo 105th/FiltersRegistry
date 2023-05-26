@@ -2,7 +2,7 @@
 ! Title: PersianBlocker
 ! Description: سرانجام، یک لیست بهینه و گسترده برای مسدودسازی تبلیغ ها و ردیاب ها در سایت های پارسی زبان!
 ! Expires: 4 days
-! Last modified: 1402-02-21
+! Last modified: 1402-03-05
 ! Homepage: https://github.com/MasterKia/PersianBlocker
 ! License: AGPLv3 (https://github.com/MasterKia/PersianBlocker/blob/main/LICENSE)
 ! مشکل/پیشنهاد: https://github.com/MasterKia/PersianBlocker/issues
@@ -134,6 +134,7 @@ blogsazan.com##.main_content[style="border-radius:10px;"] > div[style="padding: 
 ||congoro.com^$all
 ||congoro.ir^$all
 ! >> D <<
+||daneshin.ir^$all
 ||24d.ir^$all
 ||l.24d.ir^$all
 ||davedbux.ir^$all
@@ -2279,16 +2280,12 @@ telewebion.com##.rmp-ad-container
 ! TODO: Remove arbitrary IP limitaion
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-1145684991
 ! https://github.com/MasterKia/PersianBlocker/commit/95d658b142fc88014fad465373e07ceeb75f2fc6#commitcomment-78854099
-^utm_source=takhfifan^$document,removeparam=/^utm_/
-^utm_source=takhfifan^$document,removeparam=tatoken
-@@||takhfifan.com/static/matomo.js
-||takhfifan.com/matomo.js^
-||takhfifan.com/mtc.js^
+^utm_source=takhfifan^$document,removeparam=/^utm_|tatoken/
 ! takhfifan.com##+js(nostif, redirect_url)
-! takhfifan.com##+js(rc, filter, , complete)
-takhfifan.com#%#//scriptlet('ubo-ra.js', 'disabled', '', 'stay')
-takhfifan.com##.mask
-takhfifan.com#$#.filter { filter:none !important }
+takhfifan.com#%#//scriptlet('ubo-set.js', '_paq', '[]')
+takhfifan.com#%#//scriptlet('ubo-set.js', '_paq.push', 'noopFunc')
+||takhfifan.com/static/matomo.js^$script,~third-party
+takhfifan.com##div.mask
 tourismonline.co##.stream-item-mag.mag-box
 tourismonline.co##.stream-item-above-post.stream-item
 tourismonline.co##.ads-title
