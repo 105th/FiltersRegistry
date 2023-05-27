@@ -17123,6 +17123,7 @@ dehn.de#@#.cookie-layer
 !
 ! Yandex.Pogoda
 [$path=/pogoda]yandex.*#%#//scriptlet('prevent-eval-if', 'Id":"R-I')
+[$path=/pogoda]yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 !
 ! Yandex.Video
 [$path=/video]yandex.*#%#//scriptlet('json-prune', 'seatbid')
@@ -25905,7 +25906,7 @@ ya.ru##.dist-stripe
 yandex.*##.DistrSmartbanner
 yandex.*##.serp-header__nav > span.distr-nav
 yandex.*##.main__distr-popup
-yandex.*#?#body > div[class] > div[id][class]:has(> div[class] > div[class] > div[class] > div:contains(Сделать поиск Яндекса основным))
+yandex.*#?#div[class*=" "] > div[id][class]:has(> div[class*=" "] > div[class] > div[class] > div:contains(Сделать поиск Яндекса основным))
 !
 ! Yandex.Images
 yandex.*###distr-pcode-container
@@ -25914,9 +25915,7 @@ yandex.*###distr-pcode-container
 market.yandex.*##div[data-zone-name="BannerPopup"]
 !
 ! Yandex.Realty
-realty.ya.ru#$?#.Portal div.Modal:has(> div.Modal__table div[class^="PodborModal__"]) { display: none !important; }
-realty.ya.ru#$?#.Portal div.Modal:has(> div.Modal__table div[class^="HousearchPromoModal__"]) { display: none !important; }
-realty.ya.ru#$#body { overflow: auto !important; }
+realty.ya.ru#%#//scriptlet('set-cookie-reload', 'housearch_popup_shown', 'yes')
 !
 ! auto.ru
 auto.ru#?#body > div:has(> div.Modal > div.Modal__container > div[class*="AdminsMarketingPopup__wrapper"])
@@ -35640,6 +35639,8 @@ market.yandex.*##div[data-apiary-widget-name="@marketfront/DistributionLoader"]
 ! Yandex.Realty
 realty.ya.*##aside > div.AddOfferAppPromo
 realty.ya.*##.SmartBanner
+realty.ya.ru##div[class^="SmartBanner__"]
+realty.ya.ru#%#//scriptlet('set-cookie', 'splash_banner_closed', '1')
 !
 ! auto.ru
 auto.ru##div[class^="AppInstallRoundedBanner"]
