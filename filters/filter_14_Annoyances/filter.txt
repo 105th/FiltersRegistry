@@ -2255,6 +2255,7 @@ freundin.de,utopia.de,mein-schoener-garten.de,eveningnews24.co.uk,rollingstone.d
 !
 ! NOTE: Regular rules
 !
+artnet.com##.cookies-banner
 elny.cz##div[class*="bs-dialog"]
 sungrowpower.com##.cokies
 ofdb.de#$?#body > div.modal_wrap:has(> div#clubhinweis) { display: none !important; }
@@ -17130,9 +17131,9 @@ dehn.de#@#.cookie-layer
 [$path=/images]yandex.*#%#//scriptlet('json-prune', 'seatbid rtb')
 !
 ! Yandex.Pogoda
-[$path=/pogoda]yandex.*#%#//scriptlet('prevent-eval-if', 'Id":"R-I')
-[$path=/pogoda]yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
-[$path=/pogoda]yandex.ru#%#//scriptlet('json-prune', 'rtb')
+[$path=/\/(?:weather\/|pogoda\/|hava\/)/]yandex.*#%#//scriptlet('prevent-eval-if', 'Id":"R-I')
+[$path=/\/(?:weather\/|pogoda\/|hava\/)/]yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
+[$path=/\/(?:weather\/|pogoda\/|hava\/)/]yandex.*#%#//scriptlet('json-prune', 'rtb')
 !
 ! Yandex.Video
 [$path=/video]yandex.*#%#//scriptlet('json-prune', 'seatbid')
@@ -17471,7 +17472,7 @@ gamerevolution.com,onmsft.com#%#//scriptlet("prevent-addEventListener", "DOMCont
 ! #%#//scriptlet("abort-current-inline-script", "document.createElement", "googletag")
 mangasee123.com#%#//scriptlet("abort-current-inline-script", "document.createElement", "googletag")
 ! #%#//scriptlet("set-constant", "admiral", "noopFunc")
-clarionledger.com,phillyburbs.com,usatoday.com,wrestlinginc.com,videogamer.com,motorbiscuit.com,grandprix247.com,familyminded.com,xcalibrscans.com,cbsnews.com,finviz.com,ign.com,workandmoney.com,today.com,rottentomatoes.com,walterfootball.com,dotesports.com,boredpanda.com,cleveland.com#%#//scriptlet("set-constant", "admiral", "noopFunc")
+tennessean.com,clarionledger.com,phillyburbs.com,usatoday.com,wrestlinginc.com,videogamer.com,motorbiscuit.com,grandprix247.com,familyminded.com,xcalibrscans.com,cbsnews.com,finviz.com,ign.com,workandmoney.com,today.com,rottentomatoes.com,walterfootball.com,dotesports.com,boredpanda.com,cleveland.com#%#//scriptlet("set-constant", "admiral", "noopFunc")
 ! cannot be closed
 ! #%#//scriptlet("abort-current-inline-script", "document.createElement", "admiral")
 sporcle.com,fresnobee.com,fajnegotowanie.pl,esportstales.com,tiger-algebra.com,blackenterprise.com,crooksandliars.com,cmacapps.com,cwtv.com,feral-heart.com,gamerevolution.com,gktoday.in,informazionefiscale.it,inquirer.net,interestingengineering.com,legacy.com,leitesculinaria.com,nofilmschool.com,obsev.com,pleated-jeans.com,post-gazette.com,practicalclinicalskills.com,ranker.com,sanfoundry.com,simpleflying.com,thegatewaypundit.com,timelessleaf.com,viraliq.com,winhelponline.com#%#//scriptlet("abort-current-inline-script", "document.createElement", "admiral")
@@ -17516,6 +17517,8 @@ reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.Sid
 !
 ! Add same rules to the Admiral section of Tracking Protection filter
 !
+||tidymitten.com^$third-party
+||groovyornament.com^$third-party
 ||crowdedmass.com^$third-party
 ||balloonbelieve.com^$third-party
 ||longingtrees.com^$third-party
@@ -27783,6 +27786,15 @@ jiji.com,edp24.co.uk,technologyreview.com,inews.co.uk,nordbayern.de,thelocal.ch,
 !
 ! SECTION: Subscriptions - Regular rules
 !
+evilmartians.com##form[class^="SubscribeForm-"]
+artnet.com##.theme-newsletter-signup
+artnet.com#$##newsletterModal { display: none !important; }
+artnet.com#$#.modal-backdrop { display: none !important; }
+artnet.com#$#body { overflow: auto !important; }
+spy.com##div[class^="newsletter"]
+artnews.com##div[class^="newsletter-with-get-"]
+artnews.com##.lrv-a-wrapper div.lrv-u-margin-l-auto
+artnews.com##.header-sticky div.a-hidden\@desktop-max
 moneycontrol.com##.newsletter_widget
 wwd.com##.a-homepage-top-stories__newsletter
 wwd.com##.get-app-and-subscribe
@@ -44433,6 +44445,8 @@ imslp.org#%#AG_onLoad(function(){var b=document.getElementById("sm_dl_wait");if(
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152046
 ||dailymotion.com/embed/video/$removeparam=autoplay
+!+ PLATFORM(ios, ext_safari)
+dailymotion.com,t24.com.tr#%#//scriptlet('set-constant', 'Object.prototype.autoplay', '0')
 ! Disable autoplay
 ||get.x-link.pl/*,embed.html$replace=/video:"(autoplay|scroll_pause)"\,/video:""\,/
 ||static.doviz.com/js/common.*.js$replace=/autoPlay:true/autoPlay:false/,domain=doviz.com
