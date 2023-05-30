@@ -12567,7 +12567,7 @@ protothema.gr#%#//scriptlet('trusted-click-element', '.qc-cmp2-summary-buttons >
 europafm.com#%#//scriptlet('trusted-click-element', 'sibbo-cmp-layout #rejectAllMain')
 steuerbot.com#%#//scriptlet('trusted-set-local-storage-item', 'cookies', '{"essential":true,"performance":false,"marketing":false}')
 rktbns.de#%#//scriptlet('prevent-setTimeout', 'arcticmodal')
-rnd.de#%#AG_onLoad(function(){var a=new MutationObserver(function(){var b=document.querySelector('button[title="Akzeptieren und weiter"]');b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)});
+cmp-sp.rnd.de#%#AG_onLoad(function(){if(window.location.href.includes("consentUUID")){var g=new MutationObserver(function(){var b=document.querySelector('button[aria-label*="und weiter"]');b&&b.click();});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});
 ekiwi-blog.de#%#//scriptlet('abort-on-property-write', 'webpackChunkrealCookieBanner_')
 cookist.it#%#//scriptlet('trusted-click-element', '.gdpr-btm > button + button > span.gdpr-btn-lbl')
 omroepzeeland.nl,rijnmond.nl,rtvoost.nl,rtvutrecht.nl,rtvdrenthe.nl,omropfryslan.nl#%#//scriptlet('trusted-set-cookie', 'consent-cookie-toggles', '[{"type":"social","value":3},{"type":"remaining","value":2}]')
@@ -17145,6 +17145,9 @@ dehn.de#@#.cookie-layer
 ! Yandex.Images
 [$path=/images]yandex.*#%#//scriptlet('json-prune', 'seatbid rtb')
 !
+! Yandex.Music
+music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
+!
 ! Yandex.Pogoda
 [$path=/\/(?:weather\/|pogoda\/|hava\/)/]yandex.*#%#//scriptlet('prevent-eval-if', 'Id":"R-I')
 [$path=/\/(?:weather\/|pogoda\/|hava\/)/]yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
@@ -20355,6 +20358,7 @@ sanalkurs.net###toast-container > .toast-error[aria-live="assertive"]
 /cmp/cmp.*.js
 /cmp/cmp.js
 !
+||player.gliacloud.com^$third-party
 ||getresponse.com^$third-party
 ||fastemu.co^$third-party
 ||7pisem.com^$third-party
@@ -27800,6 +27804,7 @@ jiji.com,edp24.co.uk,technologyreview.com,inews.co.uk,nordbayern.de,thelocal.ch,
 !
 ! SECTION: Subscriptions - Regular rules
 !
+bluestoneperennials.com##body > div > div.needsclick
 diamondlobby.com##.form-embed
 outofbit.it##.boxzilla-bottom-right-container
 newslab.ru##.digest-subscription
@@ -33343,6 +33348,7 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 ! notifications - part of the functionality
 ! discord.com##div[class^="container"] > nav[class^="wrapper"] + div[class^="base"] > div[class^="notice-"]
 !
+fengche530.com##.sort[style^="background-color:"]
 flex.orange.pl###flex-app-floating-download-bar
 izi.ua#?#div.ek-body__section > div.ek-box:has(> div[class*="TestAppMain__root"])
 freeonlinegames.com###cwarn-box
@@ -35946,6 +35952,9 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~xltrax.ee,~hitta.se,~mail.ru,~v7player.wostreaming.net,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
+wear.jp##.relative.empty\:hidden > div.border-b-gray-300.bg-gray-50
+wear.jp##.mx-\[16px\].mt-\[17px\] > button[class="relative block w-full overflow-hidden rounded-lg"]
+yahoo.com###login-banner
 odatv4.com##.parenttopcontainer > div[style^="height:50px;"]
 rakuten-sec.co.jp#$##smartbanner { display: none !important; }
 rakuten-sec.co.jp#$##sbnr { margin-top: 0 !important; }
@@ -39304,6 +39313,10 @@ ya.ru##.search3__inner > div.link-bro
 !
 ! Yandex.Pogoda
 yandex.*##.meteum-promo
+!
+! Yandex.Music
+music.yandex.*#$#html > body.no-scroll { overflow: auto !important; }
+music.yandex.*#$#.pay-promo-popup { display: none !important; }
 !
 ! Yandex.Market
 [$path=/^\/$|\/\?/]market.yandex.*##div[data-zone-data*="bannerUrl"]:not([data-zone-name="deals-banner"])
