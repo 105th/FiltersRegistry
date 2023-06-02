@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2023-06-01 06:54:59 CEST
+! Last modified: 2023-06-02 07:13:31 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -410,8 +410,8 @@ pricerunner.se##span:has-text(/^sponsrad$/i):upward([data-cy="deal-carousel"])
 privataaffarer.se##.teaser-label:has-text(/^annons/i):upward(.data-grid-teaser)
 pussad.se#$#html.g1-popup-visible { overflow: initial !important; }
 radio.se###RAD_D_station_top, #RAD_D_home_top, #RAD_D_home_inhouse, #RAD_D_search_top:upward(3)
+radio.se#$#div[data-testid="regionscloud-container"] a, div[data-testid="taglist-container"] a { background-attachment: none !important; background-image: none !important; background-color: rgb(2, 114, 140) !important; }
 realtid.se##.meta--add:upward(.link)
-reco.se#$#html.js.js--page-hide body { visibility:visible!important }
 resume.se##aside > div:has(a[href="/affarer/alska-arbetsgivarlivet/"])
 sakochliv.se#%#//scriptlet('ubo-acs.js', 'checkCampaignCookie')
 samnytt.se#$#body { overflow:unset!important }
@@ -745,6 +745,7 @@ home2tiny.se#%#//scriptlet('ubo-aeld.js', '/mousewheel|DOMMouseScroll/', 'smooth
 ##article.annons
 ##article.article-list-item--sponsored-post
 ##article.article-sponsored
+##article.category-promotion
 ##article.category-reklam
 ##article.category-samarbete
 ##article.category-samarbete-sponsrat
@@ -1473,7 +1474,6 @@ home2tiny.se#%#//scriptlet('ubo-aeld.js', '/mousewheel|DOMMouseScroll/', 'smooth
 /rantekartan$subdocument,domain=expressen.se
 /recommendations$xmlhttprequest,domain=expressen.se
 /renderBanner.do?zoneId=
-/res_ads$domain=res.se
 /resource.ifragasatt.se/sd-ads
 /retargeting-pixels
 /revive/revivejs.php$script
@@ -1551,6 +1551,7 @@ home2tiny.se#%#//scriptlet('ubo-aeld.js', '/mousewheel|DOMMouseScroll/', 'smooth
 /TopBanner$subdocument,domain=hitta.se
 /toppbanner_snippet_js
 /torgen/banner.stat
+/trace$xmlhttprequest,domain=radio.se
 /trace/*/view$xmlhttprequest,domain=netflixguiden.se
 /trackers/SessionCam-tag
 /tracking/cts.js
@@ -1692,7 +1693,7 @@ aikfotboll.se,tidningen.djurskyddet.se,vaken.se##.banners
 aip.nu##[class*="feed-ad"]
 akaskidor.se,hemtrevligt.se,husohem.se,mestmotor.se,praktisktbatagande.se,sportfack.se,svenskgolf.se,tidningenhalsa.se,utemagasinet.se,vagabond.se##.partnerCard, .partnerContent, .entry-content figure.wp-block-image, .category-partner, .ams-playad-injected
 akaviaaspekt.se##.article-list-item--native, a.article-topic__list-item[href^="/annons"]
-akaviaaspekt.se,lakartidningen.se,modette.se,nyheter24.se,tidningenkulturen.se##.advertisement
+akaviaaspekt.se,lakartidningen.se,modette.se,nyheter24.se,res.se,tidningenkulturen.se##.advertisement
 aktiespararna.se##.analysguiden-promote-articles
 aktiespararna.se,alekuriren.se,civilekonomen.se,tidningen.se##.native
 aktivtraning.se,digitalfotoforalla.se,iform.se,pctidningen.se,popularhistoria.se##.scroll-message, .gallery-banner, .horseshoe, [data-ad-type]
@@ -2188,6 +2189,7 @@ ravarumarknaden.se###header > div > div.last, #block-4, #mvp-leader-wrap
 realm667.com#@##redim-cookiehint
 realtid.se##.realtid-add, .infinite-scroll.native-wrapper
 rejsa.nu###adsblock, #adsblockfoot, .fpright, div[onclick*="window.open"]
+res.se##.res-display
 reseguiden.se##.adsbox-wrapper, .banner-xxl_panorama-container, .banner-top-container
 restaurangvarlden.se##.banner-col, .alt-banner-col
 ridsport.se##.svrf__sticky-ad, .svrf-block__banner, .sv-cookie-consent-banner, .sp-banner-block, .sp-double-ad-block, .sp-head-sponsor-container, .sp-regular-sponsor-container
@@ -2488,7 +2490,7 @@ zeromagazine.nu##div[id^="ads"]
 ||conviva.com^$third-party
 ||cookie-disclaimer.onewp.net^$third-party
 ||cookie-script.com^$third-party
-||cookiebot.com^$domain=accentmagasin.se|allsvenskan.se|alltomarbetsmiljo.se|bax-shop.se|byggfaktadocu.se|chalmers.se|circlek.se|elinstallatoren.se|energi.se|enirobuddy.se|ff.se|findroommate.se|fokus.se|framtid.se|husdjur.se|kingsizemag.se|kreditrapporten.se|kurera.se|mitti.se|modernpsykologi.se|ng.se|polistidningen.se|resfeber.se|sakochliv.se|sis.se|smartsenior.se|spraktidningen.se|superettan.se|sverigesnatur.org|swedroid.se|tco.se|totallyorebro.se|totallystockholm.se|trafiken.nu|upplysning.se|vaningen.se|varden.se|vasterastidning.se|vastsverige.com|wesafe.se
+||cookiebot.com^$domain=accentmagasin.se|allsvenskan.se|alltomarbetsmiljo.se|bax-shop.se|byggfaktadocu.se|chalmers.se|circlek.se|elinstallatoren.se|energi.se|enirobuddy.se|ff.se|findroommate.se|fokus.se|framtid.se|husdjur.se|kingsizemag.se|kreditrapporten.se|kurera.se|mitti.se|modernpsykologi.se|ng.se|polistidningen.se|qx.se|resfeber.se|sakochliv.se|sis.se|smartsenior.se|spraktidningen.se|superettan.se|sverigesnatur.org|swedroid.se|tco.se|totallyorebro.se|totallystockholm.se|trafiken.nu|upplysning.se|vaningen.se|varden.se|vasterastidning.se|vastsverige.com|wesafe.se
 ||cookieconsent.popupsmart.com^$third-party
 ||cookiehub.net^$domain=da.se
 ||cookieinformation.com^$domain=folkofolk.se|minbostad.se|viivilla.se
@@ -2894,6 +2896,7 @@ zeromagazine.nu##div[id^="ads"]
 ||rekai.se^$third-party,domain=folkpool.se
 ||rektek.se/widget/extraexposurejobs$third-party
 ||res.cloudinary.com/internetmedicin/image/*/friends/
+||res.se/js/ad.js
 ||researchonline.se^$third-party
 ||reseguiden.se^$third-party
 ||reseguiden.se^*/google-tag
