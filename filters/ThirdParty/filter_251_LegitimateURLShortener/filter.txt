@@ -1,6 +1,6 @@
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 2June2023v1
+! OriginalVersion: 2June2023v5
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1191,7 +1191,7 @@ $removeparam=mod,domain=barrons.com|dowjones.com|fnlondon.com|mansionglobal.com|
 ! (Exceptions: mail.qq.com, high.fi, phpBB forums, flipkart.com various other sites)
 $removeparam=sid,domain=anrdoezrs.net|dpbolvw.net|gopjn.com|jdoqocy.com|kqzyfj.com|pepperjamnetwork.com|tkqlhce.com|gamereactor.*
 ! No particular example (Zoom can't be added; see https://github.com/DandelionSprout/adfilt/issues/665)
-$removeparam=from,domain=apkpure.com|bandcamp.com|browserling.com|luisaviaroma.com|sogou.com|store.hbr.org|onlinepngtools.com
+$removeparam=from,document,domain=apkpure.com|bandcamp.com|browserling.com|luisaviaroma.com|sogou.com|store.hbr.org|onlinepngtools.com|indiatimes.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559915 and https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559864 (eBay can't be added; see https://github.com/DandelionSprout/adfilt/pull/514)
 $removeparam=keyword,domain=bindright.com|lendgo.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1707764
@@ -3303,6 +3303,12 @@ $document,removeparam=wp_source,domain=ac24.cz|ambcrypto.com|glispa.com|whitepag
 ||as.com^$removeparam=ssm,document
 ! https://www.thisismoney.co.uk/money/mortgageshome/article-12148391/Mortgage-approvals-house-purchases-fall-April.html?molReferrerUrl=https%3A%2F%2Fwww.dailymail.co.uk%2Fmoney%2Findex.html
 ||thisismoney.co.uk^$removeparam=molReferrerUrl
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6070507
+||smh.com.au^$removeparam=btis,document
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6070402
+||businessinsider.com^$document,removeparam=inline-endstory-related-recommendations
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6066391
+||manchestereveningnews.co.uk^$removeparam=kop,document
 !#if !env_mobile
 ! ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ———
 ! https://sproutsluckycorner.files.wordpress.com/2019/12/ring-fit-adventure-smoothies-1.png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
