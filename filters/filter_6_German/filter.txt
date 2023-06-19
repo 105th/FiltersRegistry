@@ -2495,6 +2495,8 @@ amateurbusters.com#?#.sb_area > .sb_area_headline:contains(Urlaub)
 ! VAST video ads - e. g. https://github.com/AdguardTeam/AdguardFilters/issues/135687
 stern.de,desired.de,pcgames.de,t-online.de,vox.de,spieletipps.de,wetter.de,golem.de,autobild.de,buffed.de,gamesaktuell.de,kino.de,pcgameshardware.de,videogameszone.de,familie.de,tvnow.de,welt.de#%#//scriptlet('prevent-xhr', '.damoh.')
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/154072
+prosieben.de#%#//scriptlet('set-constant', 'Object.prototype.checkAdProxyAvailability', 'noopFunc')
 ! 20min.ch - fixes video player
 20min.ch#%#(()=>{window.TATM=window.TATM||{},TATM.init=()=>{},TATM.initAdUnits=()=>{},TATM.pageReady=()=>{},TATM.getVast=function(n){return new Promise((n=>{n()}))},TATM.push=function(n){if("function"==typeof n)try{n()}catch(n){console.debug(n)}};})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148783
@@ -2961,6 +2963,8 @@ winfuture.de,netzwelt.de,quoka.de,farmeramania.de,bravofly.de,computerbild.de,di
 ! ##.billboard
 formel1.de,krautundrueben.de,motorsport-total.com,traktorpool.de,fnweb.de,laborjournal.de,tarnkappe.info,deraktionaer.tv,food-tiger.de,morgenweb.de##.billboard
 !
+||atv.somquery.sqrt-*.de/v4/ad-wrapper/
+prosieben.de##div[data-oasis-id="midroll-marker"]
 allgaeuer-zeitung.de###dm_conative_container_artikel
 ga-online.de##.adw
 nordsee-zeitung.de##div[class*="-bannerMitte"]
@@ -6062,6 +6066,8 @@ tagesspiegel.de###urban-teaser1
 ! Good: ||example.org/video-links$replace=/vast":/vast_":/
 ! Bad:  ||example.org/video-links (should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/154072
+||oasis-player-prod.p7s1.io/web/*/monetization/monetization.js$replace=/enableAdProxy:!!./enableAdProxy:!1/
 ! t-online.de ad video
 ||hgc-cf-cache-1.svonm.com/www.t-online.de/config.json$replace=/"enabled":[\s\S]*true\,/"enabled": false\,/i
 ! https://github.com/AdguardTeam/CoreLibs/issues/1671
