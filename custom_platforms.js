@@ -51,7 +51,6 @@ module.exports = {
             "adguard_app_android": true
         }
     },
-
     "IOS": {
         "platform": "ios",
         "path": "ios",
@@ -82,7 +81,13 @@ module.exports = {
                 ",empty",
                 "\\$webrtc",
                 "\\$csp",
-                "\\$network"
+                "\\$network",
+                "\\$domain=\/",
+                ",domain=\/",
+                "\\$hls=",
+                ",hls=",
+                "\\$jsonprune=",
+                ",jsonprune="
             ],
             "replacements": null,
             "ignoreRuleHints": false
@@ -92,7 +97,6 @@ module.exports = {
             "adguard_app_ios": true
         }
     },
-
     "EXTENSION_CHROMIUM": {
         "platform": "ext_chromium",
         "path": "extension/chromium",
@@ -106,7 +110,11 @@ module.exports = {
                 "\\$protobuf",
                 "important,protobuf",
                 "\\$extension",
-                ",extension"
+                ",extension",
+                "\\$hls=",
+                ",hls=",
+                "\\$jsonprune=",
+                ",jsonprune="
             ],
             "replacements": null,
             "ignoreRuleHints": false
@@ -129,7 +137,11 @@ module.exports = {
                 ",extension",
                 "^((?!#%#).)*\\$\\$|\\$\\@\\$",
                 "\\$(.*,)?replace=",
-                "important,replace="
+                "important,replace=",
+                "\\$hls=",
+                ",hls=",
+                "\\$jsonprune=",
+                ",jsonprune="
             ],
             "replacements": null,
             "ignoreRuleHints": false
@@ -144,6 +156,8 @@ module.exports = {
         "path": "extension/safari",
         "configuration": {
             "removeRulePatterns": [
+                "\\$extension",
+                ",extension",
                 "\\$removeparam",
                 ",removeparam",
                 "\\$removeheader",
@@ -157,19 +171,23 @@ module.exports = {
                 ",cookie",
                 "important,replace=",
                 "\\$(.*,)?app",
-                "\\$network",
                 "\\$protobuf",
                 "important,protobuf",
-                "\\$csp",
-                "\\$extension",
-                ",extension",
                 "\\$redirect=",
                 ",redirect=",
                 "\\$redirect-rule=",
                 ",redirect-rule=",
                 "\\$empty",
                 ",empty",
-                "\\$webrtc"
+                "\\$webrtc",
+                "\\$csp",
+                "\\$network",
+                "\\$domain=\/",
+                ",domain=\/",
+                "\\$hls=",
+                ",hls=",
+                "\\$jsonprune=",
+                ",jsonprune="
             ],
             "replacements": null,
             "ignoreRuleHints": false
@@ -200,7 +218,11 @@ module.exports = {
                 ",redirect-rule=",
                 "\\$empty=",
                 ",empty=",
-                "#%#//scriptlet"
+                "#%#//scriptlet",
+                "\\$hls=",
+                ",hls=",
+                "\\$jsonprune=",
+                ",jsonprune="
             ],
             "replacements": null,
             "ignoreRuleHints": false
@@ -223,7 +245,11 @@ module.exports = {
                 "\\$protobuf",
                 "important,protobuf",
                 "\\$extension",
-                ",extension"
+                ",extension",
+                "\\$hls=",
+                ",hls=",
+                "\\$jsonprune=",
+                ",jsonprune="
             ],
             "replacements": null,
             "ignoreRuleHints": false
@@ -233,7 +259,6 @@ module.exports = {
             "adguard_ext_opera": true
         }
     },
-
     "EXTENSION_ANDROID_CONTENT_BLOCKER": {
         "platform": "ext_android_cb",
         "path": "extension/android-content-blocker",
@@ -284,7 +309,13 @@ module.exports = {
                 "\\$redirect=",
                 ",redirect=",
                 "\\$redirect-rule=",
-                ",redirect-rule="
+                ",redirect-rule=",
+                "\\$domain=\/",
+                ",domain=\/",
+                "\\$hls=",
+                ",hls=",
+                "\\$jsonprune=",
+                ",jsonprune="
             ],
             "ignoreRuleHints": false
         },
@@ -293,7 +324,6 @@ module.exports = {
             "adguard_ext_android_cb": true
         }
     },
-
     "EXTENSION_UBLOCK": {
         "platform": "ext_ublock",
         "path": "extension/ublock",
@@ -320,7 +350,11 @@ module.exports = {
                 "\\$content",
                 ",content(,|$)",
                 "$webrtc",
-                "#\\$#@media "
+                "#\\$#@media ",
+                "\\$hls=",
+                ",hls=",
+                "\\$jsonprune=",
+                ",jsonprune="
             ],
             "ignoreRuleHints": false,
             "adbHeader": "![Adblock Plus 2.0]"
