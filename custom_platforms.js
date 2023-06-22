@@ -1,5 +1,10 @@
-// Changes in the platforms configuration:
-//
+/**
+ * @file Overwrite default FilterCompiler's platforms configuration.
+ * @see {@link https://github.com/AdguardTeam/FiltersCompiler/blob/master/platforms.json}
+ *
+ * IMPORTANT: During making any changes in this file,
+ * the default configuration should also be updated through PR on BitBucket.
+ */
 
 module.exports = {
     "WINDOWS": {
