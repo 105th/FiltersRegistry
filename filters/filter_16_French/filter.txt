@@ -134,6 +134,9 @@ capital.fr#@#.plainAd
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/154441
+!+ PLATFORM(ext_ff, ios, ext_android_cb, ext_safari)
+@@||youwatch-serie.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154371
 xn--mto-bmab.fr#@#.topbanneradvertise
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153795
@@ -863,7 +866,7 @@ dl-protect.net,annuaire-telechargement.tel#%#//scriptlet('abort-on-stack-trace',
 japscan.me#%#//scriptlet("abort-current-inline-script", "JSON.parse", "document.createElement('script')")
 japscan.me#%#//scriptlet("abort-current-inline-script", "document.createElement", "document.documentElement).appendChild")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/119411
-geo.fr,voici.fr,programme-tv.net,gala.fr,capital.fr#%#AG_onLoad(function(){if(window.pmsCoreAds&&Array.isArray(pmsCoreAds)){window.pmsCoreAds=new Proxy(pmsCoreAds,{set:(a,b,c,d)=>{if("function"==typeof c)try{let a=!1;const b=b=>{var c=document.querySelector(".ads-core-video");c&&a?clearInterval(d):(b(),a=!0)},d=setInterval(b,1e3,c)}catch(a){}return Reflect.set(a,b,c,d)}})}});
+femmeactuelle.fr,geo.fr,voici.fr,programme-tv.net,gala.fr,capital.fr#%#AG_onLoad(function(){if(window.pmsCoreAds&&Array.isArray(pmsCoreAds)){window.pmsCoreAds=new Proxy(pmsCoreAds,{set:(a,b,c,d)=>{if("function"==typeof c)try{let a=!1;const b=b=>{var c=document.querySelector(".ads-core-video");c&&a?clearInterval(d):(b(),a=!0)},d=setInterval(b,1e3,c)}catch(a){}return Reflect.set(a,b,c,d)}})}});
 ! allocine.fr - fixing delay in the video player
 allocine.fr#%#//scriptlet("set-constant", "AC.config.ads", "emptyObj")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118970
@@ -1031,6 +1034,9 @@ voirseries.io$$script[src="KGZ1bmN0aW9uKCQsZG9jdW1lbnQp"]
 /^(?!.*(bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|polyfill.io|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yandex.|yastatic.net|ytimg.com|zencdn.net|player|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com)).*$/$third-party,script,_____,domain=scan-fr.cc
 !
 !
+youwatch-serie.com##.buttonO
+youwatch-serie.com##.buttonrm
+youwatch-serie.com##body > #card
 empire-streaming.*##.hide-ads
 empire-streaming.*###donation
 cosmopolitan.fr##.Gallery-top-external
@@ -1702,14 +1708,17 @@ whatpub.com#@##pub-footer
 $script,third-party,domain=supervideo.tv,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135430
 femmeactuelle.fr#@#[data-ads-core]
+@@||tra.scds.pmdstatic.net/advertising-core/*/core-ads.js$domain=femmeactuelle.fr
+||c.amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=femmeactuelle.fr
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=geo.dailymotion.com
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=geo.dailymotion.com
+@@||c.amazon-adsystem.com/aax2/apstag.js$domain=femmeactuelle.fr
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=femmeactuelle.fr
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=femmeactuelle.fr
-@@||tra.scds.pmdstatic.net/advertising-core/*/core-ads.js$domain=femmeactuelle.fr
 @@||securepubads.g.doubleclick.net/gampad/ads?pvsid=$domain=femmeactuelle.fr
-||c.amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=femmeactuelle.fr
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||c.amazon-adsystem.com/aax2/apstag.js$domain=femmeactuelle.fr
+@@||securepubads.g.doubleclick.net/pagead/managed/js/gpt/*/pubads_impl.js$domain=femmeactuelle.fr
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134589
 ||toutvendre.fr/js/application.$badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134403
