@@ -14135,6 +14135,10 @@ adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/154859
+@@||app.usercentrics.eu^$domain=aldi.pl
+@@||api.usercentrics.eu^$domain=aldi.pl
+@@||aggregator.service.usercentrics.eu/aggregate/$domain=aldi.pl
 ! nordbayern.de - videos not showing
 @@||d.delivery.consentmanager.net/delivery/cmp.php$domain=nordbayern.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154820
@@ -28292,6 +28296,7 @@ jiji.com,edp24.co.uk,technologyreview.com,inews.co.uk,nordbayern.de,thelocal.ch,
 !
 ! SECTION: Subscriptions - Regular rules
 !
+aldi.pl##.mod-newsletter-popup
 forbes.ru#?#div[class] > div[class*=" "]:has(> a[href="https://t.me/forbesrussia"])
 fajn-brigady.cz#%#//scriptlet('set-cookie-reload', 'new_overlay_uchazeci_open', '1')
 wealth.com.tw##a[href="https://bit.ly/3IUoJkV"]
@@ -40087,6 +40092,9 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 ! END: Yandex
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/154685
+! Frequently changed domain, but it looks like the tld is ".monster" and the path is always "/(movies|shows)/play/"
+[$path=/\\/(movies|shows)\\/play\\/\\d+-/]monster#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "GetCookie('prem_promo_closed')")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154598
 115.com##.feature-float
 115.com##.sharing-banner
