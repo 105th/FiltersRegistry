@@ -469,7 +469,7 @@ linkedin.com#$?#html { overflow: auto !important; }
 linkedin.com#$?#body { overflow: auto !important; }
 !#if ext_ublock
 ! Title: 💊 Dandelion Sprout's Anti-Malware List
-! OriginalVersion: 02July2023v1
+! OriginalVersion: 03July2023v1
 ! Expires: 2 days
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks heavily abused top-level domains (and even search engine results for them), blocks domains used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
@@ -1518,6 +1518,8 @@ zombooru.com##a[href="http://www.hard55.com"]
 !#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154701
 ! Slack comments
+! https://github.com/AdguardTeam/AdguardFilters/issues/155298
+/&[a-z]{1,2}=[a-zA-Z0-9]{0,}%[a-zA-Z0-9%]{1000,}$/$document
 ! ——— Standard malware that I stumbled upon on my own ———
 ! http://www.toorgle.net/results.php?q=fetishkitsch&security=666
 ##a[href*=".downloadprovider.me/"]
@@ -19956,7 +19958,7 @@ fileinfo.com#?#.top:has(a[href*="/windows_file_viewer"])
 ##div.browserwarning
 !#endif
 ! Title: 🚪 Browse websites without logging in
-! OriginalVersion: 25March2023v1
+! OriginalVersion: 03July2023v1
 ! Expires: 3 days
 ! Description: Are you tired of being nagged on by websites, that say "Log in to read more"? With this list, you'll be much less nagged on from now own.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -20188,7 +20190,8 @@ zeit.de#$?##paywall { top: 250px !important }
 sciencedirect.com##.usabilla__overlay
 ! Pinterest (with mobile useragent) 🔨
 pinterest.*##div[style*="height: 100%; touch-action: none"]
-pinterest.*##div[role=button] + div[style*="touch-action: none"]
+! (https://github.com/DandelionSprout/adfilt/issues/885)
+!!!pinterest.*##div[role=button] + div[style*="touch-action: none"]
 ! Pinterest (🔨?)
 ! pinterest.*##header[data-test-id=unauthHeader] ~ div[data-test-id=fullPageSignupModal] # Temporarily turned off in expectance of AdGuard inclusion.
 pinterest.*##div[data-test-id=pin-closeup-image] > div[role=button] > div:not([class]) ~ div
