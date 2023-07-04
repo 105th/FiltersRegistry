@@ -9,7 +9,7 @@
 !  لیستی برای برگرداندن آزادی کاربران، چون هر کاربر این آزادی را دارد که چه چیزی وارد مرورگرش می‌شود و چه چیزی وارد نمی‌شود
 !-------------------------v Experimental Generic Filters v-----------------------!
 ! rouydad24.ir
-/files/fa/adv^$image,~third-party,domain=ir|asriran.com|parsine.com
+/files/fa/adv^$image,~third-party,domain=ir|asriran.com|parsine.com|ana.press|niniban.com
 ! meliyat.ir, aftabnews.ir, eghtesadgardan.ir, entekhab.ir, nabzefanavari.ir, boursenews.ir, snn.ir,
 !! basirat.ir, khootoot.ir, didarnews.ir, 598.ir
 /files/adv^$image,~third-party,domain=ir|asrkhabar.com|bultannews.com|yektapress.com|roozno.com|fararu.com|iraneconomist.com|khordad.news
@@ -133,6 +133,7 @@ blogsazan.com##.main_content[style="border-radius:10px;"] > div[style="padding: 
 ||congoro.com^$all
 ||congoro.ir^$all
 ! >> D <<
+||daartads.com^$all
 ||daneshin.ir^$all
 ||24d.ir^$all
 ||l.24d.ir^$all
@@ -397,6 +398,8 @@ anaj.ir,salamatnews.com#%#//scriptlet('ubo-set.js', 'document.referrer', 'undefi
 !-------------------------^ Non-Persian Ads/Trackers/Annoyances Filters used in Persian websites ^-----------------------!
 !-------------------------v Site-Specific Filters v-----------------------!
 ! >> A <<
+! https://github.com/MasterKia/PersianBlocker/issues/183
+ana.press##div.back_links
 !#if !env_mobile
 ac.ir#%#//scriptlet('ubo-set.js', 'chromeOS', 'true')
 !#endif
@@ -1656,12 +1659,14 @@ namayesh.com###promotion
 nab-music.com#%#//scriptlet('ubo-aopr.js', 'vc_url')
 ! https://github.com/MasterKia/PersianBlocker/issues/72
 ! https://github.com/MasterKia/PersianBlocker/pull/81
-niniban.com##[href*="l.24d.ir"]
-niniban.com##.fixed_box_adv
-niniban.com##.box:has(a[href*="/ads/redirect"])
-niniban.com##.padding_news_right_adv, .padd-news-advertise
+||niniban.com/files/fa/adv^$image,~third-party
+||niniban.com/DaartAds.min$script,stylesheet,~third-party
+niniban.com##div.all_adv_mrg
+niniban.com##div.padding_news_right_adv
+niniban.com##div.box:has(img[alt="icon_ads"])
+niniban.com##div.fixed_box_adv
 !#if !env_mobile
-niniban.com#$?#.col-xs-36.col-md-24:not(:has(.gutter_xs)) { width: 83% !important; }
+niniban.com#$?#div.col-xs-36.col-md-24:not(:has(.gutter_xs)) { width: 83% !important; }
 !#endif
 !#if env_mobile
 niniban.com##.instant_news_2
