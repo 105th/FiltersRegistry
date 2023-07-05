@@ -1,6 +1,6 @@
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
-! OriginalVersion: 02July2023v1-Compilation
+! OriginalVersion: 05July2023v1-Compilation
 ! Expires: 2 days
 ! Description: This list is made in the style of Fanboy's and AdGuard's annoyances lists, to show that I can make a just as good such annoyances list as them. It combines many of my proudest and most frequently maintained international lists, as a proof-of-concept and as a curated list for simplicity's sake.
 ! What this broad compilation blocks in AdGuard and uBO (from top to bottom): Mobile app download banners, highly untrustworthy TLDs (and their Google results), domains that major tech groups lost the ownership of, PC "optimiser" sponsorships, malicious or tracker-inserting adblockers, auto-generated Android root "guides" that will brick your phone, "Share page" buttons, "Download [browser/Acrobat]" buttons, unnecessary login prompts, blurring of article previews, fake notification counters, empty padding (esp. on macOS), gradients when moving your mouse on video embeds, extra dumb comment sections, prayer time clocks on newssites, webstore "coupon" aggregator listings that are not coupons, large subscription promo banners, general annoyances on Dailymotion/Twitter/Wikia, falling snow on pages, URL parameters believed to be unnecessary or trackers, custom embedded cursors, softens and modernises Japanese fonts on Windows, spacewasting pagelist entries, the "Anonymous animal" bubbles on Google Docs, external IMDB rating embeds, opt-out autoplay on video sites
@@ -20520,7 +20520,7 @@ twe.no#$#div[style*=overlayFadeTo] { --overlayFadeTo: none !important }
 ! Prime Video
 ! And just about any other streaming or rental service out there in the world as well, especially USA- or nation-specific ones.
 ! Title: 💐 Anti-'Awful comments' list
-! OriginalVersion: 05July2023v2-Beta
+! OriginalVersion: 05July2023v3-Beta
 ! Expires: 7 days
 ! Description: This is a somewhat alternate approach to the usual anti-comment-section lists, as this list only removes those comment sections that are filled with exceptionally bad comments.
 ! Note: Out of sheer massive spite against how some newssites deliberately run userpolls on the most contentious articles and only those articles, this list also targets such userpolls now.
@@ -20571,7 +20571,7 @@ klix.ba##.komentariCont
 ###hot-network-questions
 pastebin.com###content_right
 ! ——— Anti-'Aggressive, disheartening, and spoilery comments' ———
-||disqus.com^$domain=kimcartoon.*
+!!!||disqus.com^$domain=kimcartoon.* (On hold until I get a better grasp of how the episode-specific comment sections work like)
 kimcartoon.*#?#.title-list:has-text(/^Comments$/i)
 kimcartoon.*#?#.title-list:has-text(/^Comments$/i) ~ div
 ! Title: 🎬 Stop Autoplay On Video Sites
@@ -20993,7 +20993,49 @@ dailymotion.com##div[class^=AdDiscovery]
 dailymotion.com##div[class*=_adCell_]
 ! Removes the "Browse more videos" feed below the video player"
 dailymotion.com#?#div[class^=DiscoveryQueueDisplay__sectionContainer_]:has-text(Browse more )
-!!! !#include TwitterPureReadingExperience.txt
+! Title: 🐥 Twitter: Pure Reading Experience
+! OriginalVersion: 05July2023v1
+! Expires: 5 days
+! Description: Twitter is a place full of distractions, strange things, and people you'd want to stay 200km away from at all times. If you wish to focus strictly on the 2% of Twitter that is actually any good nowadays, here's a list for you.
+! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
+! Removes the "Related users" sections
+twitter.com##.RelatedUsers
+twitter.com##.WhoToFollow
+twitter.com##div[data-testid=sidebarColumn] > div > div > div > div > div > div > div:nth-of-type(3)
+! Removes the Trending list
+twitter.com##div[data-testid=sidebarColumn] section > div[aria-label]
+||twitter.com/i/trends?
+twitter.com##.trends-inner
+twitter.com##.r-1u4rsef.r-9cbz99
+! Removes the "You might like" section
+twitter.com##div[data-testid=sidebarColumn] div[style="margin-top: 0px;"] + div:last-of-type aside
+twitter.com#?#div[data-testid=sidebarColumn] div[style="margin-top: 0px;"] + div:last-of-type > div > div > div > div:has(> aside[role])
+! Removes "Who to follow" box headers and footers from user timelines
+!!!twitter.com#?#div[data-testid=primaryColumn] div:has(> div > div > h2[role=heading] > div[dir=auto] > span)
+!!!twitter.com#?#div:has(> div > a[href^="/i/connect_people"])
+! https://github.com/DandelionSprout/adfilt/issues/122
+!!!twitter.com#?#nav[aria-label][role=navigation] + div > section > div[aria-label^=Timeline] > div[style] > div[style]:has([data-testid$=-follow])
+! Removes the topics-group carousel in user timelines
+!!!twitter.com##section[aria-labelledby=accessible-list-1]
+!#if false
+! Removes login nags
+twitter.com#?##layers > div[class*=" "]:first-of-type:has(a[href="/i/flow/signup"])
+!#endif
+!#if !adguard
+! https://mobile.twitter.com/nasuno_Posi
+twitter.com##div[data-testid=sidebarColumn] section[aria-label][role=region]
+!#endif
+! Removes the cookie sticky on bottom
+!!!twitter.com###layers > div > div:nth-of-type(2):last-of-type
+! Notification overlay prompt
+! https://github.com/easylist/easylist/issues/14305
+twitter.com#?#div[role=dialog]:has(path[d^="M19.993 9.042C19.48 "])
+! Attempts to remove "Discover more" tweets
+twitter.com#?#html:has(link[href*="/status/"]) div[data-testid=cellInnerDiv]:has(h2[role=heading] + div)
+twitter.com#?#html:has(link[href*="/status/"]) div[data-testid=cellInnerDiv]:has(h2[role=heading] + div) ~ div
+! "Readers added context they thought people might want to know"
+! https://github.com/DandelionSprout/adfilt/issues/873
+twitter.com##div[data-testid=birdwatch-pivot]
 ! Title: 🎓 Wikia: Pure Browsing Experience
 ! OriginalVersion: 28February2023v1-Beta
 ! Expires: 5 days
