@@ -446,9 +446,12 @@ pobre.wtf#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=pobre.wtf
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139850
-suaurl.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
+suaurl.com#%#//scriptlet('prevent-fetch', '/pagead2\.googlesyndication\.com|optad360\.io')
+||get.optad360.io^$xmlhttprequest,redirect=nooptext,domain=suaurl.com
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+@@||get.optad360.io^$xmlhttprequest,domain=suaurl.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=suaurl.com
+!#endif
 suaurl.com#%#//scriptlet('prevent-setTimeout', 'Por favor, desative')
 suaurl.com#%#//scriptlet('prevent-setInterval', '/adblock|Por favor, desative|adsbygoogle\.js/')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138774
@@ -2090,6 +2093,8 @@ seriesgato.com#?#.TPlayerNv > li.Button:has(> span:contains(Publicidad))
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/uBlockOrigin/uAssets/issues/18828#issuecomment-1639561464
+suaurl.com#%#//scriptlet("prevent-window-open")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156217
 megafire.net#%#//scriptlet('set-constant', 'contadorClics', '1')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/155430
@@ -2730,6 +2735,8 @@ tvhistoria.com.br,tribunapr.uol.com.br,diariodonordeste.verdesmares.com.br,sbt.c
 ! ##.banner
 manhwas.net,rpp.pe,ambito.com,economipedia.com,informador.mx,elinformador.com.co,cronista.com,rionegro.com.ar,diariodecuyo.com.ar,voydeviaje.com.ar,guarda14.com,viapais.com.ar,agazeta.com.br,eleconomista.com.mx,metropolitanafm.com.br,tycsports.com,elespectador.com,bnews.com.br,migalhas.com.br,losandes.com.ar,lavoz.com.ar,mundo.sputniknews.com,omelete.com.br,lapoliticaonline.*,mundotecnologias.com,valenciaplaza.com,veneapp.com,dalealbo.cl,globo.com,defesanet.com.br,mibrujula.com,lyon.kim,26noticias.com.ar,auniao.com,clickpb.com.br,emagister.com,lanacion.com.ar,parana-online.com.br,r7.com,toxico-pc.com,uol.com.br##.banner
 !
+suaurl.com##.mt-2.mb-5.text-center
+suaurl.com##.mt-5.text-center
 teleculinaria.pt##.up_comments
 teleculinaria.pt##.teleculinaria_meio_conteudo_receitas
 teleculinaria.pt##.akcelo-wrapper
