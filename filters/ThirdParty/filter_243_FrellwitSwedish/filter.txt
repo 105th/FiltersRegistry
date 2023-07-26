@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2023-07-24 07:31:17 CEST
+! Last modified: 2023-07-26 07:01:47 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -30,6 +30,7 @@ accentmagasin.se#%#//scriptlet('ubo-nostif.js', 'n.modal')
 affarsstaden.se#%#//scriptlet('ubo-acs.js', 'jQuery', 'adblockdetect')
 affarsvarlden.se##.article-tag-header:has-text(/Annons/i):upward(article)
 aftonbladet.se###main > div > div > div:has(h2:has-text(/^annons/i))
+aftonbladet.se#$#.sp-message-open body { overflow:initial!important; position:unset!important; }
 [$path=/^/$/]aftonbladet.se##p:has-text(Artikeln innehåller annonslänkar):upward(a)
 aftonbladet.se##[data-ad-subtype]:upward(1):matches-css(min-height:/[0-9]+/)
 aftonbladet.se##a:has-text(Kommersiell text, innehåller annonslänkar)
@@ -528,7 +529,6 @@ vovve.net##span:has-text(/^i samarbete med/i):upward(2)
 welma.se##.label--black:has-text(/sponsrat/i):upward(article)
 worldinproperty.se#$#body.newsletter-modal-open { overflow:unset!important; }
 www.aftonbladet.se#%#//scriptlet('ubo-nostif.js', 'TAKEOVER')
-www.aftonbladet.se#$#.sp-message-open { overflow:initial!important; position:unset!important; }
 www.expressen.se#%#//scriptlet('ubo-acs.js', 'Bau', 'preloadAds')
 www.expressen.se#%#//scriptlet('ubo-set.js', 'detect', 'noopFunc')
 youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
@@ -1488,7 +1488,6 @@ home2tiny.se#%#//scriptlet('ubo-aeld.js', '/mousewheel|DOMMouseScroll/', 'smooth
 /prod/adform
 /profile$ping,domain=feber.se|fotbollskanalen.se|hamnen.se|handbollskanalen.se|hockeynews.se|koket.se|marcusoscarsson.se|nordichardware.se|surfa.se|tasteline.com|teknikveckan.se|tjock.se|tv4.se|veckorevyn.com
 /publicPartners$domain=familjehemmet.se|familjehemsbanken.se
-/pulse$script,domain=tv.nu
 /pulsetracking$script
 /pum/*$domain=finanstid.se|flm.nu
 /QA.js$domain=qruiser.com
@@ -1711,6 +1710,7 @@ aapl.se,hrnytt.se,inblick.se,inredningsarkitektur.se,ljuskultur.se##.cookies
 adecco.se,apotekhjartat.se,ica.se,tele2.se###onetrust-consent-sdk
 affarsvarlden.se##.cookies-wrap, .Modal, .article-list-item--native, .advert-notice-box, .native-popup, .takeover-wrap
 aftonbladet.se###megaAd-placeholder, #superright-side, a[href^="/brandstudio"], a[href*="/casinoguide"], [id^="adPlacement"], a[href^="https://kampanj.aftonbladet"], a[href*="/rabattkod"][data-test-tag="internal-link"], a[href^="/sportbladet/speltips/"], a[href*="aftonbladet.se/kampanj/"]
+aftonbladet.se##div[id^="sp_message_container"]
 aftonbladet.se,autonytt.se,ekonominyheter.se,hockeybladet.nu,lesscarbs.se,matinspo.se,undervarttak.se##a[href*="/track.adtraction."]
 aftonbladet.se,cfanytt.se,foretagsbladet.se,gestrikemagasinet.se,halsasverige.se,hembostad.nu,langd.se,lasarnas.se,nojesmagasinet.nu,pressbladet.se,skolvarlden.se,sportidrott.se,stoppapressarna.se,svenskpress.se##.advert
 aftonbladet.se,skonhetsredaktorerna.se##.ab_responsive_ads
