@@ -12,7 +12,7 @@ const formatDate = (date) => {
     const minutes = String(date.getMinutes()).padStart(2, '0');
     const seconds = String(date.getSeconds()).padStart(2, '0');
 
-    return dd + '-' + mm + '-' + yyyy + '_' + hours + '-' + minutes + '-' + seconds;
+    return `${dd}-${mm}-${yyyy}_${hours}-${minutes}-${seconds}`;
 }
 
 module.exports = { formatDate };
