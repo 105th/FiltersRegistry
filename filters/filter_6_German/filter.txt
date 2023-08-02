@@ -1461,7 +1461,8 @@ gannikus.com#@#.an-advert-banner
 @@||media.oadts.com/www/delivery/afv.php$domain=serienjunkies.de
 @@||media.oadts.com/www/delivery/video.php$domain=serienjunkies.de
 ! https://forum.adguard.com/index.php?threads/tvnow-de-not-working-with-english-filterlist-anti-adblock.27564/
-||api.tvnow.de/*/advertisements^$redirect=nooptext,important
+! reenable and change to plus.rtl.de in case of adblock -- 02.08.2023
+! ||api.tvnow.de/*/advertisements^$redirect=nooptext,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7576
 @@||bravofly.de^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7581
@@ -1691,9 +1692,8 @@ gamestar.de#%#window.blockAdBlock = function() {};
 ! http://forum.adguard.com/showthread.php?8908
 @@||cdn.videoplaza.tv/contrib/de-ipd/svm/homadConfigVideoplaza-vox.json$domain=vox.de
 @@||cdn.videoplaza.tv/contrib/de-ipd/svm/homadConfigVideoplaza-nowtv.json
-@@||cdn.static-fra.de/*/adcontrol.min.js$domain=rtl.de|tvnow.de
+@@||cdn.static-fra.de/*/adcontrol.min.js$domain=rtl.de
 @@||cdn.videoplaza.tv/contrib/de-ipd/svm/homadConfigVideoplaza-rtl.json
-@@||tvnow.de^$generichide
 @@||rtl.de^$generichide
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1441#event-534317584
 @@||smartadserver.com/diff/*/divscripte/$domain=onmeda.de
@@ -2540,7 +2540,7 @@ amateurbusters.com#?#.sb_area > .sb_area_headline:contains(Urlaub)
 !
 ! VAST video ads - e. g. https://github.com/AdguardTeam/AdguardFilters/issues/135687
 !+ NOT_PLATFORM(ios, ext_android_cb)
-stern.de,desired.de,pcgames.de,t-online.de,vox.de,spieletipps.de,wetter.de,golem.de,autobild.de,buffed.de,gamesaktuell.de,kino.de,pcgameshardware.de,videogameszone.de,familie.de,tvnow.de,welt.de#%#//scriptlet('prevent-xhr', '.damoh.')
+stern.de,desired.de,pcgames.de,t-online.de,vox.de,spieletipps.de,wetter.de,golem.de,autobild.de,buffed.de,gamesaktuell.de,kino.de,pcgameshardware.de,videogameszone.de,familie.de,plus.rtl.de,welt.de#%#//scriptlet('prevent-xhr', '.damoh.')
 !
 ! infranken.de - removing amazon link, so the incredients are visible in a recipe
 infranken.de#%#//scriptlet('remove-attr', 'href', 'a[rel*="sponsored"]')
@@ -2664,7 +2664,7 @@ krone.at#%#//scriptlet("set-constant", "googletag.impl.pubads.callbackProxy1", "
 ! https://github.com/AdguardTeam/AdguardFilters/issues/94953
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66639
 !+ NOT_PLATFORM(ios, ext_android_cb)
-tvnow.de#%#//scriptlet("set-constant", "cbcAdvertisingAdapter.smartClientCoreFacade.config.adReinsertion.homad.enabled", "false")
+plus.rtl.de#%#//scriptlet("set-constant", "cbcAdvertisingAdapter.smartClientCoreFacade.config.adReinsertion.homad.enabled", "false")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8761
 esslinger-zeitung.de#%#AG_onLoad(function() { document.getElementsByClassName("nfy-mediagal-slider-ad")[0].parentNode.parentNode.remove(); });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79647
@@ -4361,7 +4361,6 @@ volksfreund.de##aside[data-portal-id="taboola-below-article-thumbnails"]
 mobiflip.de##.fff100-short
 inside-digital.de###parallax
 inside-digital.de###td-outer-wrap > #bigsize
-||damoh.curloc.com^$domain=tvnow.de
 ||pmdipads-a.akamaihd.net/*/watchbox/$media,redirect=noopmp4-1s
 karlsruhe-insider.de##.td-adspot-title + a[target="_blank"]
 karlsruhe-insider.de##.td-post-content > div[style="width: 728px; height: 90px; margin: 20px auto 20px auto; display:table"]:not([class]):not([id])
@@ -5607,7 +5606,6 @@ gutefrage.net###async_promo_sidebar
 chefkoch.de###banner-hpa-mr
 spielen.de###bannerarea
 thinkpad-forum.de###breadcrumb + center
-tvnow.de###breakad
 amazon.de###browse_feature_div
 simfans.de###c1040 + .csc-default
 simfans.de###c4032 + .csc-default
@@ -6198,8 +6196,6 @@ svonm.com/www.watchbox.de/config.json$replace=/"enabled": true\,/"enabled": fals
 svonm.com/www.watchbox.de/config.json$replace=/"enabled": true\,/"enabled": false\,/i,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/9237
 ||watchbox.de/homad*.json$replace=/"enabled": true\,/"enabled": false\,/i,important
-! https://github.com/AdguardTeam/AdguardFilters/issues/7551
-||cdn.static-fra.de/now/vp/homadConfigVideoplaza-tvnow.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=tvnow.de,important
 ! https://forum.adguard.com/index.php?threads/resolved-chip-de-chrome-extension.23472/
 ||filestorage.chip.de/videoplayer//config/homadConfig.json$replace=/"enabled": true\,/"enabled": false\,/i,important
 ! comedycentral.tv
@@ -6280,12 +6276,9 @@ svonm.com/www.watchbox.de/config.json$replace=/"enabled": true\,/"enabled": fals
 ! chip.de
 ||s3.amazonaws.com/homad-global-configs.schneevonmorgen.com/global_config.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=chip.de
 ||s3.amazonaws.com/homad-global-configs.schneevonmorgen.com/global_config.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=chip.de,important
-! tvnow.de
-||damoh.tvnow.de^$replace=/(<VAST[\s\S]*?>)[\s\S]*?(<Ad id=[\s\S]*?>)[\s\S]*<\/VAST>/\$1\$2<\/Ad><\/VAST>/,important
-||homad-global-configs.schneevonmorgen.com.s3.amazonaws.com/global_config.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=tvnow.de
-||homad-global-configs.schneevonmorgen.com.s3.amazonaws.com/global_config.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=tvnow.de,important
-||svonm.com/www.tvnow.de/config.json$replace=/\"enabled\": true/"enabled": false/,domain=tvnow.de
-||svonm.com/www.tvnow.de/config.json$replace=/\"enabled\": true/"enabled": false/,domain=tvnow.de,important
+! plus.rtl.de
+||rtlplus-homad-client-config-prod.s3.eu-central-1.amazonaws.com/homadClientConfig-plusrtlde.json$replace=/\"enabled\": true/"enabled": false/,domain=plus.rtl.de
+||rtlplus-homad-client-config-prod.s3.eu-central-1.amazonaws.com/homadClientConfig-plusrtlde.json$replace=/\"enabled\": true/"enabled": false/,domain=plus.rtl.de,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3012
 ! !+ PLATFORM(windows, mac, android)
 ! ||damoh.welt.de^$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
@@ -11041,6 +11034,7 @@ ddl-warez.cc,ostfussball.com##a[href*="/out/"]
 bild.de##a[href*="/partner/"]
 tarnkappe.info##a[href*="/prf.hn/click/"]
 emtb-news.de,ladies.de,mtb-news.de##a[href*="/redirect/"]
+chip.de##a[href*="://schneesommer.de/"]
 tarnkappe.info##a[href*="?sca_ref="]
 chip.de##a[href*="https://x.chip.de/intern/dl/?"] > img[src*="https://im.chip.de/ii/"]
 finanzen.net##a[href="#p500Werbehinweis"]
@@ -11711,6 +11705,7 @@ zeit.de#?#.zett-teaser-trio:-abp-has(.zett-teaser-trio__kicker--ad-anzeige)
 zentrum-der-gesundheit.de#?#span:-abp-contains(/ANZ|EIGE/) + button
 zentrum-der-gesundheit.de#?#span:-abp-contains(/ANZ|EIGE/) + div
 zwischengas.com#?#.row.mt-0.mb-3.d-print-none:-abp-has(.fa-ad)
+@@||a.bf-ad.net/adengine/chip/adengine.js$xmlhttprequest,domain=chip.de
 @@||ableitungsrechner.net^$generichide
 @@||acdn.adnxs.com/ast/ast.js$script,domain=finanzen.ch
 @@||adform.net/adfserve/?bn=$script,domain=rewe.de
