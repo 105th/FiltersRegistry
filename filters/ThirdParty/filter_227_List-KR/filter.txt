@@ -1,7 +1,7 @@
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2023.0816.4
+! OriginalVersion: 2023.0817.1
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -490,6 +490,8 @@ funbe261.com,funbe262.com,funbe263.com,funbe264.com,funbe265.com,funbe266.com,fu
 /data/banner.json?
 /ad-manager.min.js
 !
+||hash.kr/images/main/*_banner
+||wiki.hash.kr/images/thumb/e/ef/
 ||ruliweb.com/banneriframe
 ||forwarder.kr/data/file/banner/
 /^https?:\/\/5l\.co\.kr\/img\/[0-9A-z]+_[0-9]+X[0-9]+\./$domain=5l.co.kr
@@ -1390,6 +1392,7 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 !
+hash.kr##table[border="0"] > tbody > tr > td:not(td > div:not(div.noresize) + b > a:not([target="_blank"]))
 mlbpark.donga.com##.left_cont > div[style^="width:"]
 esports.op.gg##div[class^="lg:bg-darkpurple-800"]
 ruliweb.com##.adrr
@@ -1927,8 +1930,8 @@ cmobile.g-enews.com,m.g-enews.com##.mwrap > div[style]:not([class])
 cmobile.g-enews.com,asiatime.co.kr,m.g-enews.com##div[class*="AD"]
 hyundaenews.com##a[href^="/ad_link.php?"]
 quasarplay.com##[class^="img_wrapper"]
-wiki.hash.kr##div[class^="bann_"]
-wiki.hash.kr##div[class^="bnn_"]
+hash.kr##div[class^="bann_"]
+hash.kr##div[class^="bnn_"]
 all-mice.co.kr###main_visual
 g-enews.com,cgv.co.kr##div[class$="ad"][style]
 cgv.co.kr##div[id$="_PlaceHolderContent_divMovieSelection_wrap"][class]
@@ -2922,6 +2925,9 @@ blacktoon246.com,blacktoon247.com,blacktoon248.com,blacktoon249.com,blacktoon250
 ! PopMagic
 watchfreejavonline.co#%#//scriptlet('abort-current-inline-script', 'popMagic.init')
 !
+!#if (adguard_app_ios || adguard_ext_safari)
+m.humoruniv.com#%#//scriptlet('abort-on-stack-trace', '$.prototype.html', 'ch')
+!#endif
 mlbpark.donga.com#%#//scriptlet('set-attr', '#cmtFormTable textarea', 'cols', '50')
 sbs.co.kr#%#//scriptlet('set-constant', 'SbsHtml5PlayerContainer.prototype.renderAdSequence', 'noopFunc')
 search.shopping.naver.com#%#//scriptlet('json-prune', 'data.BrandAd')
