@@ -1,7 +1,7 @@
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2023.0825.0
+! OriginalVersion: 2023.0828.3
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -1197,6 +1197,8 @@ funbe276.com,funbe277.com,funbe278.com,funbe279.com,funbe280.com,funbe281.com,fu
 !
 ! DOMAIN-REFRESHER: START
 !
+/^https:\/\/tv[0-9]+\.avsee\.[a-z]+\/imgs\//$domain=avsee.*
+||tvhot.cc/b/
 /^https:\/\/sonagitv\.[a-z]+\/images\/banner\/(?!webtoon_)/$domain=sonagitv.*
 ||i.imgur.com^$domain=sonagitv.*
 ||i.ibb.co^$domain=19size.me
@@ -2092,7 +2094,7 @@ happymoney.co.kr###content  > .mainBanner
 cultureland.co.kr##.slider > div[id$="_popup"]
 cultureland.co.kr##.main-evn > .main-visual
 tcafe2a.com##.side-event-img
-m.inven.co.kr,nownews.seoul.co.kr,ksg.co.kr,paxnet.co.kr,chosun.com##div[class$="Ad"]
+goodgag.net,m.inven.co.kr,nownews.seoul.co.kr,ksg.co.kr,paxnet.co.kr,chosun.com##div[class$="Ad"]
 game.dcinside.com,gall.dcinside.com##.con_banner
 tvchak.com###advertiseInPlayer
 cafe.naver.com###plugFloatingBannerDiv
@@ -2811,6 +2813,7 @@ berryjam.co.kr#?#table[width="1200"]:has(> tbody > tr > td > div[class*="slider-
 !
 ! DOMAIN-REFRESHER: START
 !
+avsee.*#?#.widget-side-box > .main-box:has(img[src^="/imgs/"])
 viewtorrent13.com,viewtorrent14.com,viewtorrent15.com,viewtorrent16.com,viewtorrent17.com,viewtorrent18.com,viewtorrent19.com,viewtorrent20.com,viewtorrent21.com,viewtorrent22.com,viewtorrent23.com,viewtorrent24.com,viewtorrent25.com#?#article[itemprop="articleBody"] > div[class]:has(div[role="alert"])
 zzapflix.tv#?#.widget-side .widget-title:has(+ div a[href^="/bbs/link.php?bo_table="][target="_blank"])
 booktoki303.com,booktoki304.com,booktoki305.com,booktoki306.com,booktoki307.com,booktoki308.com,booktoki309.com,booktoki310.com,booktoki311.com,booktoki312.com,booktoki313.com,booktoki314.com,booktoki315.com,booktoki316.com,booktoki317.com,booktoki318.com#?#ul[class] > li:has(> a[href*="tokkiweb.com"])
@@ -3059,6 +3062,13 @@ spotvnow.co.kr#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com/pag
 @@||mtag.mman.kr/get_ad.mezzo/$xmlhttprequest,domain=maxmovie.com
 @@||advimg.ad-mapps.com/sdk/M_PLUS/Image/$domain=maxmovie.com
 !#endif
+! aagag.com
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android)
+!#endif
+!#if (adguard_app_ios || adguard_ext_android_cb)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=aagag.com,xmlhttprequest
+!#endif
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=googlesyndication-adsbygoogle,domain=aagag.com
 !
 !#if (adguard_app_android)
 sellas.ink,1412.rest#$#[class^="document_"].xe_content { display: block !important; height: 100% !important; }
@@ -3076,10 +3086,6 @@ sellas.ink,1412.rest#%#//scriptlet('set-constant', 'adError', 'noopFunc')
 @@||static.dable.io/dist/plugin.min.js$domain=3dpchip.com
 !#endif
 3dpchip.com#%#//scriptlet('abort-on-property-write', 'HTMLAnchorElement.prototype.onclick')
-!#if (adguard_app_ios || adguard_ext_android_cb)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=aagag.com,xmlhttprequest
-!#endif
-||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=googlesyndication-adsbygoogle,domain=aagag.com
 sysnet.pe.kr#%#//scriptlet('prevent-setTimeout', 'banner_book')
 !#safari_cb_affinity(privacy)
 @@||new-in.pmirnc.com/public/fingerprint2.js$script
