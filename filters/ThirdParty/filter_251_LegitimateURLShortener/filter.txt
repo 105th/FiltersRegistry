@@ -1,6 +1,6 @@
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 25August2023v1
+! OriginalVersion: 29August2023v2
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1611,7 +1611,7 @@ $removeparam=/^web_id\d+/,domain=tiktok.com
 ||tiktok.com^$removeparam=embed_source
 !!! ———Spotify———
 ! https://open.spotify.com/playlist/37i9dQZF1DWXRvPx3nttRN?si=asdf1234567890
-$removeparam=si,domain=open.spotify.com|zappos.com
+$removeparam=si,document,domain=open.spotify.com|soundcloud.com|youtube.com|youtu.be|zappos.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1740689
 ||open.spotify.com^$removeparam=/advertising_partner_name=/i
 ||open.spotify.com^$removeparam=%243p
@@ -2543,7 +2543,8 @@ $removeparam=eml,domain=endesa.com|scholastic.com
 ! https://www.entradas.com/campaign/regala-entradas?affiliate=AD7&referer_info=CN-TGP-EDIT-ES_24982&uid=a9fa960288498dd5b189230435422eeb&cHash=c2a9920cad0995b06e8c9504b2bd8e0e
 ||entradas.com^$removeparam=referer_info
 ! https://www.bodykind.com/product/4113-a-vogel-tormentil-complex-50ml.aspx?referer=paidonresults&porc=tcilEtxEdidBqupqwrBudkHsGgmyqdj
-$removeparam=referer,domain=bodykind.com
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6854367
+$removeparam=referer,domain=bodykind.com|clink2.com|dlink2.com
 ! https://www.officemonster.co.uk/laptop-monitor-risers/fellowes-hana-monitor-support-230v-usb-eu-uk-metal-base-black-8060501--6?fo_c=3748&fo_k=c3102c618ef75aa5e461355397178cad&fo_s=awin
 ||officemonster.co.uk^$removeparam=/^fo_/
 ! https://www.viglink.com/?vgref=352353
@@ -2677,8 +2678,6 @@ $removeparam=psrc,domain=savagex.com
 ||banggood.com^$removeparam=custlinkid
 ! https://www.newark.com/raspberry-pi/rpi4-modbp-4gb/raspberry-pi-4-model-b-4gb/dp/02AH3164?COM=ref_hackster
 ||newark.com^$removeparam=COM
-! https://github.com/ClearURLs/Addon/issues/161
-||soundcloud.com^$removeparam=si
 ! https://gitlab.com/anti-tracking/ClearURLs/rules/-/issues/192
 ||market.yandex.ru^$removeparam=cpc
 ! http://pixel.everesttech.net/1325/cq?ev_sid=3&ev_ln%E2%80%8B=bankrate+com&ev_crx=277142460%E2%80%8B08&ev_mt=p&ev_n=g&ev_ltx=&ev_pl=&ev_pos=1t1&ev_dvc=c&ev_dvm=&url=http://www.example.com
@@ -3417,6 +3416,8 @@ $document,removeparam=user_email_address
 $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6809985
 ||demo.thisischip.com^$document,removeparam=o
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6854367
+$removeparam=dyn,domain=clink2.com|dlink2.com,document
 !#if !env_mobile
 ! ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ———
 ! https://sproutsluckycorner.files.wordpress.com/2019/12/ring-fit-adventure-smoothies-1.png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
