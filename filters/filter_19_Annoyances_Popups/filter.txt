@@ -90,6 +90,12 @@
 ! Yandex.Images
 [$path=/images]ya.ru,yandex.*#%#//scriptlet('json-prune', 'seatbid rtb direct')
 [$path=/images]ya.ru,yandex.*##.Root > div.MastHead
+!#if (adguard_ext_safari || adguard_app_ios)
+! In all results
+[$path=/images]ya.ru,yandex.*#$?#.RelatedImages [style="max-width: 100%; max-height: 250px;"] { remove: true; }
+! When open a specific image
+[$path=/images]ya.ru,yandex.*#$?#.ImagesViewer-SidebarAdv [style^="max-width: 100%; max-height:"] { remove: true; }
+!#endif
 !
 ! Yandex.Music
 music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
@@ -11561,7 +11567,7 @@ wallhere.com##.hub-newsletter
 plannedparenthood.org##div[data-module-name="Sign Up for Email Alerts"]
 j-town.net###magazine_induction
 respeecher.com##.subscribe-and-social-follow
-ellegirl.jp,womenshealthmag.com##.regist-mail-wrap
+esquire.com,ellegirl.jp,womenshealthmag.com##.regist-mail-wrap
 hodinkee.jp##div[data-react-class="HomepageNewsletterModule"]
 globe.asahi.com##.module-article-mailmag
 gadgets360.com##.subscribe + div[class$="_flx"]
