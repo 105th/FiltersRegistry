@@ -1,7 +1,7 @@
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2023.0914.12
+! OriginalVersion: 2023.0915.3
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -494,8 +494,11 @@ funbe276.com,funbe277.com,funbe278.com,funbe279.com,funbe280.com,funbe281.com,fu
 /data/banner.json?
 /ad-manager.min.js
 !
-||slrclub.com/bbs/*.php*naver_ads
-/^https:\/\/www\.slrclub\.com\/js\/bbs_view[a-z]+\.js/$domain=slrclub.com
+||hojunara.com/_files/admin/$image
+||atlantachosun.com/files/ads/
+||atlantachosun.com/files/media/
+||slrclub.com/bbs/*.php*bbsresponse
+/^https:\/\/www\.slrclub\.com\/js\/bbs_view\.js\?ver=[0-9]{12}$/$domain=slrclub.com
 ||likeonepiece77.com/wp-content/plugins/bloom/js/custom.js
 ||pigpeople.net/data/banner/
 ||etfcheck.co.kr/assets/img/banner/
@@ -1394,6 +1397,10 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 !
+m.fmkorea.com##.rd_ft > div[style^="margin:"][style*="max-width:"]
+hojunara.com##div[style^="margin-top:"].survey
+hojunara.com##div[class^="ad"] ~ .ranking
+fmkorea.com##div[class$="top_hotdeal"]
 hotword.site##.at-container .at-col div[style^="height:"]:not([class])
 hotword.site##div[class^="col-md-"] div:is([style^="width:"], [style^="min-width:"])
 m.slrclub.com##.comment_inbox ul > li[style^="padding:"]
@@ -1808,7 +1815,7 @@ plankim.com###primary-content > .magic-item-w
 poketory.com##article > .inner ~ b
 aladin.co.kr###welcome_center > div:not([class]):not([style]):not([id])
 aladin.co.kr###welcome_Right > .evntall
-digitalchosun.dizzo.com##div[class*="banner"]
+hojunara.com,digitalchosun.dizzo.com##div[class*="banner"]
 joseilbo.com##div[class*="_bn_"]
 m.nownews.seoul.co.kr###Article > div[style]:not([class])
 kyobobook.co.kr##div[class^="search_banner_"]
@@ -2490,6 +2497,10 @@ auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 !#endif
 !#endif
 !#if (adguard && !adguard_ext_android_cb)
+atlantachosun.com#$#article > div[class^="sc-"] > aside[class*=" "] { display: none !important; }
+atlantachosun.com#$#article > div[class^="sc-"] { grid-template-columns: none !important; }
+atlantachosun.com#$##popup-root { display: none !important; }
+atlantachosun.com#$#body[style] { overflow: auto !important; }
 issueclick.kr#$#html[style] { overflow: auto !important; }
 curiosityblog.co.kr,issueclick.kr#$#.hideBtn { display: none !important; }
 curiosityblog.co.kr,issueclick.kr#$#.bodyHide { height: auto !important; }
@@ -2689,6 +2700,7 @@ tgd.kr#$##article-info > h2 { overflow: visible !important; }
 2cpu.co.kr#$#header .row[style] { margin-bottom: 35px !important; }
 sign.dcinside.com#$#.login_inputbox { width: 100% !important; }
 !#endif
+atlantachosun.com#?#figure[id^="image-"]:has(> img[src^="/files/media/"])
 ygosu.com#?#table.bd_list tr:has(a[href^="/board/ad/"])
 m.ppomppu.co.kr#?#.ct > .bbs > #bbs_inform li:has(span ~ a[onclick^="informAdClick"])
 kyobobook.co.kr#?#div[id^="bodyDialog"]:not([style*="top: "]).open:has(img[src*="kyobobook.co.kr/newimages/adcenter"])
@@ -2936,6 +2948,7 @@ shopping.interpark.com#%#//scriptlet('set-constant', '$is.powerLink.loadPowerLin
 !#if (adguard_app_ios || adguard_ext_safari)
 m.humoruniv.com#%#//scriptlet('abort-on-stack-trace', '$.prototype.html', 'ch')
 !#endif
+slrclub.com#%#//scriptlet('abort-on-stack-trace', 'Element.prototype.appendChild', 'NAVER_ADPOST_V2')
 moneytoring.co.kr,postincome.co.kr,itinformation.kr,digitstar77.com#%#//scriptlet('prevent-setTimeout', 'piBlock')
 mlbpark.donga.com#%#//scriptlet('set-attr', '#cmtFormTable textarea', 'cols', '50')
 sbs.co.kr#%#//scriptlet('set-constant', 'SbsHtml5PlayerContainer.prototype.renderAdSequence', 'noopFunc')
