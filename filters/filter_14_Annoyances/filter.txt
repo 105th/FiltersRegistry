@@ -2301,6 +2301,9 @@ consent.yorkshirepost.co.uk,stuttgarter-nachrichten.de,consent.formula1.com,sp-s
 !
 ! NOTE: Regular rules
 !
+dailymotion.com#%#//scriptlet('trusted-click-element', '.consent_screen-accept')
+moneycontrol.com#$#.cookie-concern-wrapper { display: none !important; }
+moneycontrol.com#$#body { overflow: auto !important; }
 secrid.com#%#//scriptlet('set-cookie', 'cookies', 'true')
 vente-unique.*,kauf-unique.at###vu_consent
 garten-bienen.at###privacyCtrl
@@ -13216,7 +13219,6 @@ fusionbrain.ai#%#//scriptlet('set-local-storage-item', 'fb-cookies-accept', '1')
 movistar.es#%#//scriptlet('trusted-click-element', 'button[aria-label="Configurar/rechazar cookies"]')
 realsimple.com,eatingwell.com,motor1.com,larousse.fr,giantbomb.com,mtvuutiset.fi,tvnturbo.pl,elle.com,a1.ro,authentication.nutmeg.com#%#//scriptlet('trusted-click-element', '#onetrust-accept-btn-handler')
 turk.net#%#document.cookie = "cookie-consent=dismissed; path=/";
-geo.dailymotion.com#%#AG_onLoad(function(){const b=["beyazperde.com","ozap.com"].some(a=>document.referrer.includes(a));if(window.self!==window.top&&b){var c=new MutationObserver(function(){var a=document.querySelector("button.consent_screen-accept");a&&(c.disconnect(),a.click())});c.observe(document,{childList:!0,subtree:!0}),setTimeout(function(){c.disconnect()},1E4)}});
 cdn.privacy-mgmt.com#%#AG_onLoad(function(){if(window.self!==window.top&&document.referrer.startsWith("https://www.guitarworld.com/")){var a=new MutationObserver(function(){var b=document.querySelector('button[aria-label="AGREE"]');b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});
 dieharke.de#%#AG_onLoad(function(){if(window.location.href.includes("consentUUID")){var g=new MutationObserver(function(){var b=document.querySelector('button[aria-label="Alle akzeptieren"]');b&&b.click();});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});
 jow.fr#%#document.cookie = "jow_cookie_consent=all; path=/";
@@ -14637,6 +14639,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/162099
+moneycontrol.com#@#.cookie-concern-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162049
 @@||app.usercentrics.eu^$domain=rsi.ch
 @@||api.usercentrics.eu^$domain=rsi.ch
@@ -21557,6 +21561,7 @@ sanalkurs.net###toast-container > .toast-error[aria-live="assertive"]
 !
 ! SECTION: Popups - Regular rules
 !
+blog.csdn.net##.write-guide-buttom-box
 financer.com#%#//scriptlet('prevent-addEventListener', 'load', 'openExitPopup')
 builtin.com##.brand-boost-banner
 ||js-cdn.onstove.com/libs/platform-popup/latest/popup.js
@@ -29314,6 +29319,8 @@ jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.d
 !
 ! SECTION: Subscriptions - Regular rules
 !
+aframe.oscars.org#%#//scriptlet('set-cookie', 'AframeNewsletter', 'true')
+greensboro.com###pu-email-form-breaking-email-article
 zendesk.*#%#//scriptlet('set-cookie', 'exitModal', 'true')
 upworthy.com#$#div[id^="spopup-newsletter"] { display: none !important; }
 upworthy.com#$#body[style] { overflow: auto !important; }
@@ -47363,10 +47370,8 @@ imslp.org#%#AG_onLoad(function(){var b=document.getElementById("sm_dl_wait");if(
 ||filepress.fun/static/js/main.*.js$replace=/e\.duration/1/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153170
 ||knowbaike.com/jzfz.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/152046
-||dailymotion.com/embed/video/$removeparam=autoplay
-dailymotion.com,t24.com.tr#%#//scriptlet('set-constant', 'Object.prototype.autoplay', '0')
 ! Disable autoplay
+t24.com.tr#%#//scriptlet('set-constant', 'Object.prototype.autoplay', '0')
 ||get.x-link.pl/*,embed.html$replace=/video:"(autoplay|scroll_pause)"\,/video:""\,/
 ||static.doviz.com/js/common.*.js$replace=/autoPlay:true/autoPlay:false/,domain=doviz.com
 ||focus.de$replace=/autoPlay:[\s\S]*\,autoStickiness/autoPlay:false\,autoStickiness/,important,~script,~stylesheet,~xmlhttprequest
