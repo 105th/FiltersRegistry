@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2023-09-26 06:30:50 CEST
+! Last modified: 2023-09-26 15:05:05 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -527,6 +527,7 @@ trendenser.se##a[href*="/category/reklam"], a[href*="/category/annons"]:upward(.
 trendenser.se##strong:has-text(/reklam/i):upward(.post_feed_post)
 tripadvisor.se##div:has-text(Sponsrat av):upward(div[data-curated-shelf-id])
 tv.nu###tv-schedule section:has-text(ANNONS)
+tv4play.se#%#//scriptlet('ubo-no-fetch-if.js', '/cloudfront.net\/creatives/')
 tv4play.se#$#.avod-web-player-pause { background-color:transparent!important; }
 tv4play.se##button:has-text(Besök annonsör)
 underbaraclaras.se##.jet-listing-dynamic-field__content:has-text(/annonssamarbete|reklamsamarbete/i):upward(.jet-listing-grid__item)
@@ -560,6 +561,7 @@ youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
 ||best-prizes-now.*^$all
 ||biowebb-data.*.amazonaws$important,third-party
 ||cision.com^$badfilter
+||dbf0a92kfjvxs.cloudfront.net/creatives/assets$media,redirect=noopmp4-1s,domain=tv4play.se
 ||embed.viaplay.com/*autoplay=true$subdocument,removeparam=autoplay
 ||google-analytics.com^$important,domain=aftonbladet.se|tradera.com|xxl.se
 ||googletagmanager.com^$important,domain=tradera.com|xxl.se
@@ -575,7 +577,7 @@ youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
 ||peertube.se^$subdocument,redirect=click2load.html,domain=nordiskradio.se
 ||player.vimeo.com^$subdocument,redirect=click2load.html,domain=breakit.se
 ||s.arclk.net/tr?$all
-||se-tv4.videoplaza.tv/proxy/distributor$removeparam=s,xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
+||se-tv4.videoplaza.tv/proxy/distributor$removeparam=s,xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se
 ||widget.playoncenter.com/newplayer/js/pb_$redirect=noopjs,script
 ||youbora.com^*/sp.min.js$important,domain=aftonbladet.se|godare.se|livsstil.se|svd.se
 ||youplay.se/*.js*ap=true$removeparam=/^ap/,script
@@ -649,8 +651,8 @@ home2tiny.se#%#//scriptlet('ubo-aeld.js', '/mousewheel|DOMMouseScroll/', 'smooth
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###CookieNotice
 ###cookieNotice
+###CookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -2630,7 +2632,7 @@ zeromagazine.nu##div[id^="ads"]
 ||dayviews.com/cdn/img/*casino
 ||dayviews.com/p/tourn/
 ||dayviews.com^$third-party,domain=filmtipset.se|hamsterpaj.net
-||dbf0a92kfjvxs.cloudfront.net/creatives/assets$image,domain=tv4play.se
+||dbf0a92kfjvxs.cloudfront.net/creatives/assets$image
 ||deals.innocode.no^$third-party
 ||delivery.youplay.se/api/player_metrics?
 ||delivery.youplay.se/report?$image
