@@ -801,15 +801,17 @@ digiro.ir##.main-term-3705
 !#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42827
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131661
-||dlfox.com/wp-admin/admin-ajax.php?action=adwised
-.gif^$image,domain=dlfox.com
-dlfox.com##a[href*="gameriver.ir"]
-dlfox.com##a[href*="dlfox.com/adspage"] > img
-dlfox.com##.WK_ads
-dlfox.com##.shbanner_cover:upward(div[class^="col"])
-dlfox.com##.home_mid_ads
-dlfox.com##.ADS_wrapper
-dlfox.com##.blog_list
+! https://github.com/AdguardTeam/AdguardFilters/issues/159968
+||dlfox.com/wp-admin/admin-ajax.php?action=adwised_$xmlhttprequest,~third-party
+.gif^$image,third-party,domain=dlfox.com
+dlfox.com##header.recent_news_wrapper > ul.news_text > li:has-text(تبلیغ :)
+dlfox.com##a:has(> img.ads_pic)
+dlfox.com##a:has(> img.shbanner)
+dlfox.com##div.shbanner_cover
+dlfox.com##div.ADS_wrapper
+dlfox.com##a[href="https://farsisaz.com/"][target="_blank"][rel="noopener"]
+dlfox.com##div.widget_content:has(> ul.blog_list)
+dlfox.com#$?#form#captch_form > input[name="_wp_http_referer"] { remove: true; }
 ||tadv.didestan.net
 ||didestan.com/*/script/vast
 ||didestan.com/stats
@@ -1127,7 +1129,6 @@ farsroid.com##.cas-pubg.cas
 farsroid.com##.ads-dashed-banner
 farsroid.com#@#.place-ads
 ||analysis.faradars.org
-||faradars.org^$removeparam=/^utm_/
 ! https://github.com/MasterKia/PersianBlocker/pull/39
 ||media.farsnews.ir/Uploaded/Files/Documents/*.gif
 ||farsnews.ir/api/recordnewstextvisit?id=
@@ -2145,35 +2146,35 @@ softgozar.com##.DTOPBan
 ! soft98.ir: Addressed in uBlock Origin Quick-Fixes list
 instagram.com#%#//scriptlet('ubo-window-close-if.js', '/[Ss][Mm][Oo][Ss][Tt][Aa][Ff][Aa][Mm][Oo][Oo][Ss][Aa][Vv][Ii]/')
 !#if adguard
-*$script,domain=linkdoni.soft98.ir
-soft98.ir,~forum.soft98.ir#%#//scriptlet('ubo-aeld.js', 'mousedown')
+soft98.ir,~forum.soft98.ir#%#//scriptlet('ubo-aeld.js', 'click', '[native code]')
+||img.soft98.ir^$image,~third-party,redirect-rule=1x1-transparent.gif
+@@||soft98.ir^$generichide
 soft98.ir,~forum.soft98.ir#%#//scriptlet('ubo-window-close-if.js', '/link-')
+linkdoni.soft98.ir#$?#html { remove: true; }
+!#if cap_html_filtering
+!#endif
 sysban.ir#%#//scriptlet('ubo-window-close-if.js', '/telephone-service')
 smostafa.ir#%#//scriptlet('ubo-window-close-if.js', '/^/')
-^utm_source=soft98^$document,popup,domain=asiatech.ir|iranicard.ir|ok-ex.io|limoo.host
-.ir^$popup,domain=soft98.ir|~forum.soft98.ir,third-party
-||iranicard.ir^$document,popup,domain=soft98.ir
-||iranicard.ir^$removeparam=/utm_source|utm_campaign|utm_content/
-||asiatech.ir^$document,popup,domain=soft98.ir
-||asiatech.ir^$removeparam=/utm_source|utm_campaign|utm_content/
-||hostdl.com^$document,popup,domain=soft98.ir
+coffeete.ir#%#//scriptlet('ubo-window-close-if.js', '/soft98')
+||cdn.hostdl.com/goto/soft98^$document,csp=script-src
 ||cdn.hostdl.com^$removeheader=location
-||limoo.host^$document,popup,domain=soft98.ir
-||limoo.host^$removeparam=/utm_source|utm_campaign|utm_content|utm_term|wr/
-||smostafa.ir^$document,popup,domain=soft98.ir
-||sysban.ir^$document,popup,domain=soft98.ir
-||iranicard.ir/خرید-اکانت-اسپاتیفای-spotify-2/?utm_medium=banner^$csp=script-src
-||asiatech.ir/tabestan1401/?utm_medium=referral^$csp=script-src
-||limoo.host/?utm_medium=sidebar2-banner^$csp=script-src
-[$path=/utm_medium=banner/]iranicard.ir#$?#html { remove: true; }
-[$path=/utm_medium=referral/]asiatech.ir#$?#html { remove: true; }
-[$path=/utm_medium=sidebar2-banner/]limoo.host#$?#html { remove: true; }
-linkdoni.soft98.ir#$?#html { remove: true; }
-!#if (adguard_ext_firefox || adguard_app_windows || adguard_app_mac || adguard_app_android)
+[$path=soft98]cdn.hostdl.com#$?#html { remove: true; }
+||iranicard.ir^$document,removeparam=utm_source
+||iranicard.ir^$document,removeparam=utm_campaign
+||iranicard.ir/payments/shopping/amazon/?utm_medium=Banner^$document,csp=script-src
+[$path=/utm_medium=Banner/i]iranicard.ir#$?#html { remove: true; }
+||faradars.org^$document,removeparam=utm_source
+||faradars.org^$document,removeparam=utm_campaign
+||faradars.org/explore?orderby=views&*&utm_medium=banner-kaprila^$document,csp=script-src
+[$path=/utm_medium=banner-kaprila/i]faradars.org#$?#html { remove: true; }
+||cxchief.com^$document,removeparam=utm_source
+||cxchief.com^$document,removeparam=utm_campaign
+||cxchief.com^$document,removeparam=utm_content
+||cxchief.com/fa/?utm_medium=adv^$document,csp=script-src
+[$path=/utm_medium=adv/i]cxchief.com#$?#html { remove: true; }
+||smostafa.ir/?utm_source=footer^$document,csp=script-src
+[$path=/utm_source=footer/i]smostafa.ir#$?#html { remove: true; }
 !#endif
-@@||soft98.ir^$generichide
-!#endif
-! TOOD: Keep an eye on it
 subf2m.ir##a[class^="text-ads-"]
 subf2m.ir##div.backoritybase
 subf2m.ir##p:has(> a[href^="https://shirazsocial.com"])
