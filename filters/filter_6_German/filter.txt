@@ -1781,6 +1781,8 @@ teleboy.ch#@#.adWrapper
 ! Good: example.org#?#main > div.row:has(> div.ad)
 ! Bad: example.org##main > div.ad (should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/61907
+chip.de#?#.wrapper-safe section .ButtonAuswahl + div:not([class], [id]) > div[class] > a[href*="https://www.chip.de/downloads/"]:has(> div[id]:contains(/^Anzeige$/))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162543
 businessinsider.de#?#.sponsored:has(> .teaser-post__inner > .teaser-post__header .list-labels__item > .post-term-label:contains(Anzeige))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161920
@@ -2662,7 +2664,7 @@ firmenwissen.de#%#//scriptlet('remove-class', 'async-hide', 'html')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/70579
 dslr-forum.de#%#AG_onLoad(function(){var a=document.querySelector('.page > div[style^="padding:"][align="left"] > div[align="center"]:last-child');a&&a.firstChild&&(a=a.firstChild,3===a.nodeType&&a.textContent.match("Werbung.")&&15>a.length&&a.remove())});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61907
-chip.de#%#//scriptlet("set-constant", "DSstaticCid", "")
+chip.de#%#//scriptlet('set-constant', 'installerConfig.cid', '')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/64063
 fitforfun.de#%#//scriptlet("json-prune", "enabled", "testhide")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58463
@@ -3003,6 +3005,7 @@ lkz.de##.nfy-row-ad
 ||obi.de/wrapper-sw.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61907
 ||chip.de/*.php*&$~third-party,script
+chip.de##.js_download_button > a[href^="https://x.chip.de/intern/dl/?url="][href*="&pageLayout=withinstaller|"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44069
 !+ PLATFORM(ext_edge, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
 gifhorner-rundschau.de##.ad--marker-inner
