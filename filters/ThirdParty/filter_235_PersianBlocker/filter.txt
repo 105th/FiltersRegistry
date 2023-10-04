@@ -9,7 +9,7 @@
 !  لیستی برای برگرداندن آزادی کاربران، چون هر کاربر این آزادی را دارد که چه چیزی وارد مرورگرش می‌شود و چه چیزی وارد نمی‌شود
 !-------------------------v Experimental Generic Filters v-----------------------!
 ! Popup: needpop (vc_url)
-artmusics.top,musicpars3.ir,musicguitars.ir,subf2m.ir,zeemusic.ir,najiremix.ir,musichi.ir#%#//scriptlet('ubo-nowoif.js')
+artmusics.top,musicpars3.ir,musicguitars.ir,subf2m.ir,zeemusic.ir,najiremix.ir,musichi.ir,likeemusic.ir#%#//scriptlet('ubo-nowoif.js')
 ! rouydad24.ir, ibena.ir, tejaratemrouz.ir, irdc.ir
 /files/fa/adv^$image,~third-party,domain=ir|asriran.com|parsine.com|ana.press|niniban.com|vananews.com|barghnews.com
 ! meliyat.ir, aftabnews.ir, eghtesadgardan.ir, entekhab.ir, nabzefanavari.ir, boursenews.ir, snn.ir,
@@ -921,10 +921,10 @@ doostihaa.com##.ads_txtcv
 doostihaa.com##aside.lefts_sides:nth-of-type(6)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42827
 ! https://github.com/MasterKia/PersianBlocker/issues/100
-||downloadha.com/wp-content/plugins/top-10/includes/js/top-10-tracker.min.js^
-downloadha.com##.ads
-downloadha.com##.popup-ads
-downloadha.com###ADbox-2
+||downloadha.com/pic/top-posts-ads.png^$image,xmlhttprequest
+||downloadha.com/pic/*.gif^$image,~third-party
+downloadha.com##div.popup-ads
+downloadha.com##div.ads
 ||download.ir/api/geoip$xmlhttprequest,~third-party
 download.ir##.top-full-ads
 download.ir##.parsi-ads:upward(.widget)
@@ -1795,8 +1795,10 @@ payamekhabar.ir##.weblink
 payamekhabar.ir#$#section.main_c { width: 76% !important; }
 !#endif
 ! https://github.com/MasterKia/PersianBlocker/issues/156
-!#if !cap_html_filtering
-public-psychology.ir#%#//scriptlet('ubo-acis.js', 'document.oncontextmenu', '', '/^data:/')
+!#if cap_html_filtering
+public-psychology.ir$$script[tag-content="document.oncontextmenu ="][max-length="262144"]
+!#else
+public-psychology.ir#%#//scriptlet('ubo-rmnt.js', 'script', 'document.oncontextmenu =')
 !#endif
 public-psychology.ir#$#body { -webkit-touch-callout: default !important; -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important; }
 phonroid.ir##.dlbtnhidden
@@ -1992,6 +1994,17 @@ rastannews.ir##.all_ads
 ||rajanews.com/sites/default/files/superadmin/*.gif
 rajanews.com###block-block-22.ads
 ! >> S <<
+! https://github.com/MasterKia/PersianBlocker/issues/203
+sabtta.com##a[href="https://sahamir-ac.com/"]
+sabtta.com##a[href="https://veriacco.com/"]
+sabtta.com##a[href="https://academy-eris.com/"]
+sabtta.com##a[href="https://sarafer.com/"]
+! https://github.com/MasterKia/PersianBlocker/issues/202
+shahanmusic.ir#%#//scriptlet('ubo-aopr.js', 'show_wpcp_message')
+shahanmusic.ir#%#//scriptlet('ubo-set-attr.js', 'img[data-src]', 'src', '[data-src]')
+shahanmusic.ir#$#img[data-src] { opacity: 1 !important; }
+shahanmusic.ir#$#body { -webkit-touch-callout: default !important; -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important; }
+! TODO: Fix dark mode
 s-moshaver.com#%#//scriptlet('ubo-aeld.js', 'contextmenu')
 s-moshaver.com#%#//scriptlet('ubo-set.js', 'disableSelection', 'noopFunc')
 skyroom.online#%#//scriptlet('ubo-json-prune.js', 'result.adsText result.adsLink')
