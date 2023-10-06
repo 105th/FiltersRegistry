@@ -5,8 +5,8 @@
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego działania wymagana jest lista lub rozszerzenie I don't care about cookies!
 ! Expires: 2 days
-! Last modified: Tue, 03 Oct 2023, 17:30 UTC+02:00
-! OriginalVersion: 2023.10.3.0
+! Last modified: Thu, 05 Oct 2023, 23:05 UTC+02:00
+! OriginalVersion: 2023.10.5.0
 ! Najnowsza wersja zawsze na: https://github.com/FiltersHeroes/PolishAnnoyanceFilters
 ! Zgłoszenia:
 !   Formularz (nie wymaga rejestracji) => https://polishannoyancefilters.netlify.app/issues
@@ -15,7 +15,7 @@
 ! Homepage: https://polishannoyancefilters.netlify.app
 ! Creator: blocker999
 ! Maintainer: Filters Heroes
-! Aktualizacja: wto, 03 paź 2023, 17:30 UTC+02:00
+! Aktualizacja: czw, 05 paź 2023, 23:05 UTC+02:00
 !
 !
 ! Newslettery (nie popupy)
@@ -3154,7 +3154,8 @@ pl##body:not(.x13popup-open) #x13popup-cover
 /snr-sw.js$script,domain=mediaexpert.pl|pl.kruk.eu
 /sw-push.js$script,domain=m.zapytaj.onet.pl|medonet.pl
 /sw-rmf-push.js$script,domain=rmf.fm|rmf24.pl|rmfclassic.pl|rmfmaxxx.pl|rmfon.pl
-/sw.js$domain=adaware.com|kinoseans.pl|mojwzrok.pl|openload.co|optes.pl|podaj.to|taniesoczewki.pl|youtube.com|zippyshare.com
+/sw.js$domain=adaware.com|kinoseans.pl|mojwzrok.pl|openload.co|optes.pl|podaj.to|taniesoczewki.pl
+@@/sw.js$domain=youtube.com
 ||cdn.*.com/push_app.js$script,domain=2conv.com|flv2mp3.by|flvto.biz
 ||cdn.foxpush.net/sdk/foxpush_SDK_min.js$domain=media4web.pl
 ||cdn.qgraph.io/v3/r/qgraph.v2.js$domain=domodi.pl|homebook.pl
@@ -11105,8 +11106,7 @@ wtk.pl#@#.privacy-container:not(body):not(html):not(.content-container)
 !
 !
 ! Dołączenie listy uzupełniającej do uBlocka Origin i AdGuarda, by użytkownicy nie musieli jej subskrybować
-!#if !adguard_ext_android_cb
-!#if !adguard_app_ios
+!#if (!adguard_ext_android_cb && !adguard_app_ios)
 ! Codename: Annoyance - Supplement
 ! Codename: Newsletters - Supplement
 !dlahandlu.pl,rynekaptek.pl,rynekseniora.pl,rynekzdrowia.pl,sadyogrody.pl##.social.tabs:has( > div.navi > a.active:first-child:watch-attr(class)) > .panes
@@ -11819,6 +11819,7 @@ polishannoyancefilters.netlify.app,polishannoyancefilters.netlify.com#%#//script
 !
 !
 ! Codename: Web Push - Supplement
+@@/sw.js$important,domain=youtube.com
 ||pushpushgo.com/js/*.js$important,redirect=noopjs,script,domain=centrumriviera.pl
 adaware.com,androidlista.pl,anime-odcinki.pl,brain-start.tech,chillizet.pl,comment-reparer.com,domodi.pl,epoznan.pl,flvto.biz,grupamagnum.eu,howtodo.rocks,inea.pl,inkbook.pl,izigsm.pl,joom.com,kupbilecik.pl,m.leroymerlin.pl,mediaexpert.pl,medyczny.store,new.reddit.com,nokia.com,radiozet.pl,rego-bis.pl,tygodnik-rolniczy.pl,unisono.eu,wish.com,wolnislowianie.pl,wtk.pl,~www.radiozet.pl,www.reddit.com,yoursclothing.pl#%#//scriptlet('ubo-set.js', 'Notification.requestPermission', 'falseFunc')
 dorzeczy.pl#%#//scriptlet('ubo-aeld.js', 'install', 'function')
@@ -13159,6 +13160,5 @@ zlubaczowa.pl#$?#html[style*="overflow"][style*="important"] { overflow: visible
 ztm.poznan.pl$$#PopUP
 !#endif
 !@ <<<<<<<< https://raw.githubusercontent.com/PolishRoboDogHouse/polish-ads-filter/RTM/cookies_filters/cookies_uB_AG.txt
-!#endif
 !#endif
 
