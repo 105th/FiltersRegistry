@@ -1,9 +1,9 @@
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
-! OriginalVersion: 06October2023v1-Compilation
+! OriginalVersion: 06October2023v2-Compilation
 ! Expires: 2 days
 ! Description: This list is made in the style of Fanboy's and AdGuard's annoyances lists, to show that I can make a just as good such annoyances list as them. It combines many of my proudest and most frequently maintained international lists, as a proof-of-concept and as a curated list for simplicity's sake.
-! What this broad compilation blocks in AdGuard and uBO (from top to bottom): Mobile app download banners, highly untrustworthy TLDs (and their Google results), domains that major tech groups lost the ownership of, PC "optimiser" sponsorships, malicious or tracker-inserting adblockers, auto-generated Android root "guides" that will brick your phone, "Share page" buttons, "Download [browser/Acrobat]" buttons, unnecessary login prompts, blurring of article previews, fake notification counters, empty padding (esp. on macOS), gradients when moving your mouse on video embeds, extra dumb comment sections, prayer time clocks on newssites, webstore "coupon" aggregator listings that are not coupons, large subscription promo banners, general annoyances on Dailymotion/Twitter/Wikia, falling snow on pages, URL parameters believed to be unnecessary or trackers, custom embedded cursors, softens and modernises Japanese fonts on Windows, spacewasting pagelist entries, the "Anonymous animal" bubbles on Google Docs, external IMDB rating embeds, opt-out autoplay on video sites
+! What this broad compilation blocks in AdGuard and uBO (from top to bottom): Mobile app download banners, highly untrustworthy TLDs (and their Google results), domains that major tech groups lost the ownership of, PC "optimiser" sponsorships, malicious or tracker-inserting adblockers, auto-generated Android root "guides" that will brick your phone, "Share page" buttons, "Download [browser/Acrobat]" buttons, unnecessary login prompts, blurring of article previews, fake notification counters, empty padding (esp. on macOS), gradients when moving your mouse on video embeds, extra dumb comment sections, prayer time clocks on newssites, webstore "coupon" aggregator listings that are not coupons, large subscription promo banners, general annoyances on Dailymotion/Wikia, falling snow on pages, URL parameters believed to be unnecessary or trackers, custom embedded cursors, softens and modernises Japanese fonts on Windows, spacewasting pagelist entries, the "Anonymous animal" bubbles on Google Docs, external IMDB rating embeds, opt-out autoplay on video sites
 ! What this broad compilation does not block: Newsletters, cookie banners, social media links to company pages
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
 ! OriginalVersion: 06October2023v1
@@ -174,6 +174,9 @@
 ###installAndroidApp
 ###smartbnr
 ##.smartbnr
+##.smart-banner__wrapper
+##.menu-bar-pitch_open-in-app
+##.FloatingOIA-container
 ~macgamestore.com##.get-the-app:not(html, body)
 180.no##.ad-fallback
 9gag.com##.badge-sticky-button
@@ -376,7 +379,6 @@ tripadvisor.*#?#.ppr_priv_mobile_full_page_interstitial
 trondelagkraft.no#?#.article__ingress > p:has-text(Med appen vår )
 trondelagkraft.no#?#.editorButton.button__action:has-text(Last ned vår fordelsapp)
 tumblr.com##.mobile-banner-inner
-twitter.com##.toast.client_prompt
 ultimate-guitar.com##.ug-floated-splash.js-splash-container
 userstyles.org##.android_button_banner
 userstyles.org##.overlay_background
@@ -430,8 +432,6 @@ zona.mobi###zona-android
 ||unleashedprepaids.com/mobiquo/smartbanner/
 ||vizefinalsorupaylasimi.com/uploads/googleplay.jpg^
 ||weather.gc.ca/banner/images/App_*.gif$image
-! (https://github.com/AdguardTeam/AdguardFilters/issues/116903)
-!!!twitter.com###layers > div:nth-of-type(2):last-of-type
 ! Pinterest
 ##div[data-test-id$=InterstitialUpsell]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/105227
@@ -453,8 +453,6 @@ no#$#html.smartbanner-show[data-paywall] { margin-top: 0 !important }
 ! Below are entries that I borrowed from "I Don't Want Your App", which is maintained by https://github.com/lassekongo83 at https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/i-dont-want-your-app.txt, and which is licenced as GPLv3
 ! Generic
 ##a[href*=".app.link/"]
-##.smart-banner-download__wrapper.smart-banner__wrapper
-imgur.com##.FloatingOIA-container
 imgur.com##.AppBanner-text
 imgur.com##.PopOverBannerSmall
 imgur.com##.PopOverBannerFull
@@ -463,12 +461,10 @@ soundcloud.com##.footer__appButtonContainer
 soundcloud.com##.upsellBanner__app
 accuweather.com###app-store-links
 .SmartMessage.$script,domain=weather.com
-mobile.twitter.com#%#//scriptlet('ubo-aeld.js', 'scroll', '(e)')
 quora.com#$?#html { overflow: auto !important; user-select: text !important; }
 quora.com#$?#body { overflow: auto !important; user-select: text !important; }
 quora.com#$?#.PageWrapper { filter: none !important; }
 quora.com##.modal_bg
-yelp.*##.menu-bar-pitch_open-in-app
 linkedin.com#$?#html { overflow: auto !important; }
 linkedin.com#$?#body { overflow: auto !important; }
 !#if ext_ublock
@@ -25799,7 +25795,7 @@ www.microsoft.com##a[data-pfns][href*=pac-men]
 ! Placeholder line for alternate list versions
 !#endif
 ! Title: 🐐 Dandelion Sprout's Lightweight Anti-'Social share' List
-! OriginalVersion: 12September2023v1-Alpha
+! OriginalVersion: 06October2023v1-Alpha
 ! Expires: 3 days
 ! Description: This list aims to achieve pretty broad (if not overly broad) coverage of social sharing buttons, with perhaps 1/50th~1/100th as many entries as what the biggest anti-'social button' lists out there have.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -26218,37 +26214,37 @@ condoblues.com###milotree_box_wrap
 ~tumblr.com##a[href*="tumblr.com/share?"]
 ~tumblr.com##a[href*="tumblr.com/widgets/share/"]
 ~tumblr.com##a[title="Share on Tumblr" i]
-~twitter.com###share-twitter
-~twitter.com###share-twitter-bottom
-~twitter.com##.btn-twitter:not(html, body)
-~twitter.com##.button__twitter:not(html, body)
-~twitter.com##.icon--twitter:not(html, body)
-~twitter.com##.js-share-twitter:not(html, body)
-~twitter.com##.share-twitter:not(html, body)
-~twitter.com##.share-twttr:not(html, body)
-~twitter.com##.twit_share_button:not(html, body)
-~twitter.com##.twitter-share:not(html, body)
-~twitter.com##.twitter[href*="/share?"]:not(html, body)
-~twitter.com##.twitter_share:not(html, body)
-~twitter.com##a[class$=share-twitter]
-~twitter.com##a[class=twitter i][title=Tweet]
-~twitter.com##a[class^=pagetools][class*=icon--twitter]
-~twitter.com##a[data-js=twitter-share]
-~twitter.com##a[data-sharer=twitter]
-~twitter.com##a[href*="twitter.com/home?source="]
-~twitter.com##a[href*="twitter.com/home?status="]
-~twitter.com##a[href*="twitter.com/intent/tweet?"]
-~twitter.com##a[href*="twitter.com/share?text="]
-~twitter.com##a[href*="twitter.com/share?url="]
-~twitter.com##a[href^="t.me/share/url"]
-~twitter.com##a[onclick*="twitter.com/share?"]
-~twitter.com##a[title="Share on Twitter" i]
-~twitter.com##a[title="Tweet this post"]
-~twitter.com##button[data-href*="twitter.com/share?text="]
-~twitter.com##div[class=twitterShare i]
-~twitter.com##div[class^=twittshare]
-~twitter.com##div[pw\:twitter-via]
-~twitter.com##li[data-share=twitter]
+###share-twitter
+###share-twitter-bottom
+##.btn-twitter:not(html, body)
+##.button__twitter:not(html, body)
+##.icon--twitter:not(html, body)
+##.js-share-twitter:not(html, body)
+##.share-twitter:not(html, body)
+##.share-twttr:not(html, body)
+##.twit_share_button:not(html, body)
+##.twitter-share:not(html, body)
+##.twitter[href*="/share?"]:not(html, body)
+##.twitter_share:not(html, body)
+##a[class$=share-twitter]
+##a[class=twitter i][title=Tweet]
+##a[class^=pagetools][class*=icon--twitter]
+##a[data-js=twitter-share]
+##a[data-sharer=twitter]
+##a[href*="twitter.com/home?source="]
+##a[href*="twitter.com/home?status="]
+##a[href*="twitter.com/intent/tweet?"]
+##a[href*="twitter.com/share?text="]
+##a[href*="twitter.com/share?url="]
+##a[href^="t.me/share/url"]
+##a[onclick*="twitter.com/share?"]
+##a[title="Share on Twitter" i]
+##a[title="Tweet this post"]
+##button[data-href*="twitter.com/share?text="]
+##div[class=twitterShare i]
+##div[class^=twittshare]
+##div[pw\:twitter-via]
+##li[data-share=twitter]
 ~viber.com##a[href^="viber://forward?text"]
 ~vk.com##.share-vk:not(html, body)
 ~vk.com##a[href*="/vk.com/share.php"]
@@ -26392,12 +26388,12 @@ fileinfo.com#?#.top:has(a[href*="/windows_file_viewer"])
 ##div.browserwarning
 !#endif
 ! Title: 🚪 Browse websites without logging in
-! OriginalVersion: 08August2023v1
+! OriginalVersion: 06October2023v1
 ! Expires: 3 days
 ! Description: Are you tired of being nagged on by websites, that say "Log in to read more"? With this list, you'll be much less nagged on from now own.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
 ! This is an extension file, not an independent list.
-! Extension file's version: 31August2023v1-Extension
+! Extension file's version: 06October2023v1-Extension
 ! Experts Exchange 📛📠
 experts-exchange.com#$#.accepted.answer { display: block !important }
 experts-exchange.com##.solutionIntertitialWrapper.body
@@ -26463,25 +26459,7 @@ aminoapps.com##.height-toggle
 chronicle.com##.bcpNotificationBar
 chronicle.com#$#html { overflow: auto !important; height: 100% !important }
 chronicle.com#$#.Page-body { overflow: auto !important; height: 100% !important }
-! Twitter
-!! Re-enables scrolling after closing the "Log in to view more" prompt on users' timelines
-twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion#$#html { overflow: unset !important }
-!#if !env_mobile
-!! Removes an uncloseable prompt overlay
-!! Moved to here from the main file due to https://github.com/DandelionSprout/adfilt/issues/557
-!! Can't be used on physical phones due to https://github.com/AdguardTeam/AdguardFilters/issues/116903
-!! ":has(svg)" is needed to avoid problems with unfollowment prompts; see https://github.com/AdguardTeam/AdguardFilters/issues/124949
-!!!twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion#?#div[class^=css-] > div[tabindex="0"] + div[role=group]:-abp-has(> div[data-testid])
-!!!twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion#?#div[class^=css-] > div[tabindex="0"] + div[role=group]:has(> div[data-testid]):has(div[role=button][style^="background-color: rgb(15, 20, 25)"]):has(svg)
-!!!twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion#?#div[class^=css-] > div[tabindex="0"] + div[role=group]:has(> div[data-testid]):has(div[role=button]:first-of-type + div[role=button]:last-of-type):has(svg)
-!#endif
-! Syncing with AdGuard Popups Filter
-!!!twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion#?##layers > div[class] > div[class] > div[class] > div[class]:has(> div[class] > div[class] > div[class] > div[class] > div[class] > div[class] > a[href="/login"])
-! https://github.com/DandelionSprout/adfilt/issues/788
-twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##div[data-testid=BottomBar] > div > div:empty
-twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion##div[data-testid=BottomBar] > div > div > div:not([class*=" "])
-twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion#$?##layers > div:has([data-testid=BottomBar] a[href*="/login"]) { max-width: 300px !important }
-twitter.com,twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion#$#div[data-testid=BottomBar] > div > div:last-of-type { width: unset !important }
+! Twitter support was removed in early October 2023, due to its owner becoming a white supremacist and a Tucker Carlson terrorism collaborator; see https://new.reddit.com/r/insanepeoplefacebook/comments/170jdls/it_is_to_early_in_the_morning_for_this/
 ! Facebook
 !! Reduces the background opacity of the login overlay
 www.facebook.com,www.beta.facebook.com,b-www.facebook.com,secure.facebook.com,pixel.facebook.com,error.facebook.com#$#div[class^=__fb-][class*="-mode "] > div[class*=" "]:first-of-type:nth-last-of-type(2) > div[class]:only-of-type { min-height: 0 !important; height: 0 !important }
@@ -26638,24 +26616,7 @@ pinterest.*##div[data-test-id=pin-closeup-image] > div[role=button] > div:not([c
 ||pinterest.*mt=signup$removeparam=d
 ||pinterest.*mt=signup$removeparam=mt
 ! Twitter
-!! Removes a "See What's Happening" prompt at the bottom of some tweet chains
-twitter.com,x.com#?#div[data-testid=primaryColumn] div:has(> div > div > a[href="/login"])
-!! Removes a login prompt when visiting "/intent/follow"-type links in mobile environments
-! https://twitter.com/intent/follow?screen_name=mesitsu (13/04/2020)
-mobile.twitter.com,mobile.twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion#?#a[href="/i/flow/signup"][dir=auto][role=link][data-focusable=true]:upward(7)
-!#if env_mobile
-twitter.com,x.com#?#a[href="/i/flow/signup"][dir=auto][role=link][data-focusable=true]:upward(7)
-!#endif
-!#if false
-! Removes the bottom login sticky banner about logging in, in the April 2020-ish redesign 🔨
-twitter.com,x.com#?##layers > div[class*=" "]:first-of-type:has(a[href="/i/flow/signup"])
-! https://twitter.com/hideo_kojima_en/status/319595772981166080
-twitter.com,x.com###layers > div[class] > div[class] > div[class] > div[class]:has(> div[class] > div[class] > div[class] > div[class] > div[class] > a[href="/login"])
-!#endif
-!#if !env_mobile
-! Fullpage uncloseable overlay on some pages
-twitter.com,x.com#?#div[role=group]:has(div[data-testid*=apple_sign_in]:only-of-type)
-!#endif
+! Twitter support was removed in early October 2023, due to its owner becoming a white supremacist and a Tucker Carlson terrorism collaborator; see https://new.reddit.com/r/insanepeoplefacebook/comments/170jdls/it_is_to_early_in_the_morning_for_this/
 ! The New Republic 📠🔨
 ! https://github.com/easylist/easylist/issues/5331#issuecomment-627813147
 ||validate.onecount.net/onecount/api/public^
@@ -26786,19 +26747,6 @@ cdn.membershipworks.com*
 facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##._5hn6
 !! Attempts to remove the "Not logged in" dialog window that shows up further down on the timelinw
 facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.generic_dialog_modal.pop_dialog
-! Twitter
-! Removes the "Aren't you on Twitter??" prompt in the upper right of user timelines
-! https://twitter.com/nasuno_Posi
-twitter.com,x.com##.js-signup-call-out
-! Twitter Mobile
-!! Aims to remove the login overlay prompt when browsing down an account's timeline
-mobile.twitter.com##.rn-13w96dm
-mobile.twitter.com##.rn-1kihuf0.rn-1awozwy
-!#if !adguard
-! https://mobile.twitter.com/nasuno_Posi
-!! Removes the "Are you new on Twitter?" banner in the upper right of user timelines (Screen area has to be ≥~1400px wide)
-mobile.twitter.com##div[data-testid=sidebarColumn] section[aria-label][role=region]
-!#endif
 ! Pinterest ↪️📛🌇 (Fixed in "uBlock Filters - Annoyances", except for the Redirector portion of it)
 ! For very important notes about Pinterest, see https://github.com/DandelionSprout/adfilt/issues/26.
 !! Removes the login prompt when browsing down on a page
@@ -28220,7 +28168,7 @@ watchseries.*##.imdb
 !#if !env_safari
 !#if !adguard_app_ios
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 06October2023v3
+! OriginalVersion: 06October2023v4
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -31687,6 +31635,8 @@ $document,removeparam=method,domain=peacocktv.com
 ||bet.com^$removeparam=xrs
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-7211861
 $document,removeparam=share_id,domain=reddit.com
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-7213022
+||xvideos.$document,removeparam=sxcaf
 !#if !env_mobile
 ! ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ———
 ! https://sproutsluckycorner.files.wordpress.com/2019/12/ring-fit-adventure-smoothies-1.png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
