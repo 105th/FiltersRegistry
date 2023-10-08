@@ -2,7 +2,7 @@
 ! Title: Adblock List for Finland
 ! Description: Finnish adblock list
 ! Expires: 4 days
-! Last modified: Fri, 06 Oct 2023 13:55:23 +0000
+! Last modified: Sun, 08 Oct 2023 11:30:40 +0000
 ! Homepage: https://github.com/finnish-easylist-addition/finnish-easylist-addition
 ! License: https://unlicense.org/
 ! Raportoi mainoksenestoon liittyvistä ongelmista tai estämättömistä mainoksista täällä / Please report adblocking related issues or unblocked ads at:
@@ -78,9 +78,14 @@ happypancake.fi#%#//scriptlet('ubo-aopr.js', 'Object.prototype.adUnits')
 s-kaupat.fi#%#//scriptlet('ubo-json-prune.js', 'props.pageProps.contentfulState.frontPage.sections.[].fields.hasCitrusAdSlot props.pageProps.contentfulState.frontPage.sections.[].fields.isCitrusAdGrid')
 ! -----SCRIPTS END-----
 ! Test / quick fix
-@@||fi-mtv3.videoplaza.tv/proxy/distributor$domain=mtv.fi
+@@||fi-mtv3.videoplaza.tv/proxy/distributor$domain=mtv.fi|mtvuutiset.fi
 &browser=MozillaFirefox$xmlhttprequest,removeparam=browser,domain=mtv.fi
+||cloudfront.net/creatives/assets/$image,domain=mtv.fi|mtvuutiset.fi
+||cloudfront.net/creatives/assets/*.mp4$media,redirect=noopmp3-0.1s,domain=mtv.fi
 mtv.fi#%#//scriptlet('ubo-xml-prune.js', 'MediaFile', '', 'fi-mtv3.videoplaza.tv/proxy/distributor')
+mtv.fi##.avod-web-player-pause
+mtv.fi##.visit-advertiser-link
+mtv.fi#$?#.avod-web-player-csai { remove: true; }
 ! to fix an issue https://github.com/finnish-easylist-addition/finnish-easylist-addition/issues/306
 ! https://github.com/easylist/easylist/pull/8317
 pelaaja.fi#%#//scriptlet('ubo-aopr.js', 'ga')
@@ -1471,10 +1476,6 @@ arvopaperi.fi,kauppalehti.fi,mediuutiset.fi,mikrobitti.fi,talouselama.fi,tekniik
 ||dwk14raokkwxv.cloudfront.net/sanomafi/media/*.mp4
 ||freewheel-jitt.sanoma.fi^$media
 ||nelonenmedia-pmd-ads-*.nm-stream.nelonenmedia.fi^$media
-! Prevent clicking video ads on MTV Oy
-mtvuutiset.fi,mtv.fi,suomiareena.fi,msn.com##.mtv-player-ad-container
-||cloudfront.net/creatives/assets/$image,domain=mtvuutiset.fi
-@@||fi-mtv3.videoplaza.tv/proxy/pulse-sdk-html5/*/latest.min.js
 ! Adblock check
 murha.info#@#.adsbygoogle
 murha.info#@#.adsbox
