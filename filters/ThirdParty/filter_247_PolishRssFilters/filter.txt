@@ -4,8 +4,8 @@
 ! Codename: PASS
 ! Description: Filtry blokujące i ukrywające elementy RSS oraz resztki po ukrytych newsletterach złączonych z elementami społecznościowymi na polskojęzycznych stronach.
 ! Używanie listy „Polski Antyirytujący Dodatek Specjalny" jest jednoznaczne ze świadomością, co do jej zawartości (co blokuje itp.) a twórcy nie ponoszą odpowiedzialności za niewiedzę użytkownika.
-! Last modified: Sun, 01 Oct 2023, 00:55 UTC+02:00
-! OriginalVersion: 2023.10.0
+! Last modified: Sun, 08 Oct 2023, 00:55 UTC+02:00
+! OriginalVersion: 2023.10.1
 ! Expires: 7 days
 ! Support:
 !   Github => https://github.com/FiltersHeroes/PolishAntiAnnoyingSpecialSupplement/issues
@@ -634,8 +634,7 @@ pl##li > a > .icon-rss
 !
 !
 ! Dodatkowe reguły dla uBO & AG
-!#if !adguard_ext_android_cb
-!#if !adguard_app_ios
+!#if (!adguard_ext_android_cb && !adguard_app_ios)
 !rootblog.pl##.entry-content:remove-text-node(Chcesz być na bieżąco?)
 30minut.pl#$#.gora_ikony { background: #00adef !important; padding: 0 0 3px 0 }
 30minut.pl#$#.gora_ikony_rss { visibility: hidden !important }
@@ -656,5 +655,4 @@ wsqn.pl#$#.extralight-border { border: none !important }
 www.lenovo.com#$#.footerForumsIcon:lang(pl) > a::before { color: white !important; content: "Z"; font-size: 18pt; font-weight: 700; position: relative; top: -3px; left: 10px }
 www.lenovo.com#$#.footerForumsIcon:lang(pl):hover { background: #e1140a !important }
 www.lenovo.com#$#.footerForumsIcon:lang(pl) { background: #7f7f7f !important }
-!#endif
 !#endif
