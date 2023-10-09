@@ -6,7 +6,7 @@
 ! What this broad compilation blocks in AdGuard and uBO (from top to bottom): Mobile app download banners, highly untrustworthy TLDs (and their Google results), domains that major tech groups lost the ownership of, PC "optimiser" sponsorships, malicious or tracker-inserting adblockers, auto-generated Android root "guides" that will brick your phone, "Share page" buttons, "Download [browser/Acrobat]" buttons, unnecessary login prompts, blurring of article previews, fake notification counters, empty padding (esp. on macOS), gradients when moving your mouse on video embeds, extra dumb comment sections, prayer time clocks on newssites, webstore "coupon" aggregator listings that are not coupons, large subscription promo banners, general annoyances on Dailymotion/Wikia, falling snow on pages, URL parameters believed to be unnecessary or trackers, custom embedded cursors, softens and modernises Japanese fonts on Windows, spacewasting pagelist entries, the "Anonymous animal" bubbles on Google Docs, external IMDB rating embeds, opt-out autoplay on video sites
 ! What this broad compilation does not block: Newsletters, cookie banners, social media links to company pages
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
-! OriginalVersion: 06October2023v1
+! OriginalVersion: 09October2023v1
 ! Title: 📱 Staying On The Phone Browser
 ! Expires: 10 days
 ! Description: Created as a proof of concept, and for the benefit of people who really like their phone's web browsers and who are less keen on using various apps.
@@ -409,6 +409,7 @@ zaycev.fm##.soft-promo
 zedge.net##.column.grid_12.leader
 zedge.net##.column.trailer.leader
 zona.mobi###zona-android
+reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##span.hidden[class$="m:block"]
 /jquery.smartbanner/*
 .smartbanner.js
 /js/smartbanner.
@@ -27935,14 +27936,15 @@ nettavisen.no###topover
 !!! !#include Android%20Scum%20Class%20%E2%80%94%20Fake%20notification%20counters.txt
 !+ NOT_OPTIMIZED
 ! Title: 🕳 Empty Padding Remover
-! OriginalVersion: 08October2023v1-Alpha
+! OriginalVersion: 08October2023v2-Alpha
 ! Expires: 4 days
 ! Description: Are you tired of having to scroll so much on websites, or you want to keep your eyes on more text and content at once? If so, this list will help you a little extra bit with that.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
 ! ——— Generic ———
 ##.skille:not(html, body)
 ! change.org, indiegogo.com, thejc.com, icelandreview.com, bir.no, medier24.no, knr.gl, nutiminn.is
-*##p:has-text(/^\xA0$/):not(:has-text(/\S/)):not(:has(img))
+! (https://github.com/DandelionSprout/adfilt/issues/923)
+*~barter.vg##p:has-text(/^\xA0$/):not(:has-text(/\S/)):not(:has(img))
 ! https://zh.cn.nikkei.com/politicsaeconomy/stockforex/39110-2020-01-21-09-55-57.html
 ! (Exception: https://www.pixiv.net/bookmark.php)
 *##p:has-text(/^\xA0\xA0$/):not(:has-text(/\S/)):not(:has(span))
@@ -27955,7 +27957,6 @@ nettavisen.no###topover
 ! (Exception: https://github.com/AdguardTeam/AdguardFilters/issues/119108)
 ##p:empty:not([class])
 !#if !env_chromium
-! (https://github.com/DandelionSprout/adfilt/issues/923)
 !#endif
 ! lyricsmania.com,songtextemania.com
 ##.spacer-20:not(html, body)
@@ -28176,7 +28177,7 @@ watchseries.*##.imdb
 !#if !env_safari
 !#if !adguard_app_ios
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 08October2023v2
+! OriginalVersion: 08October2023v3
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -29366,7 +29367,6 @@ $removeparam=bsw_custom_parameter
 $removeparam=partnerUserId
 $removeparam=taboola_hm
 $removeparam=anx_uId
-$removeparam=nocache
 $removeparam=d_uuid
 $removeparam=_utma
 $removeparam=_utmz
@@ -29419,7 +29419,6 @@ $removeparam=pn_id
 $removeparam=svisitor
 $removeparam=vgd_rakh
 $removeparam=adsafe_url
-$removeparam=cache_buster
 $removeparam=pmuservalue
 $removeparam=mt_uuid
 $removeparam=sifi_uid
@@ -29528,8 +29527,6 @@ $removeparam=__hs
 $removeparam=ntv_fpc
 $removeparam=ex-src
 $removeparam=e_criteoId
-$removeparam=desturl
-$removeparam=cachebuster
 $removeparam=adtech_uid
 $removeparam=adroll_insertion_id
 $removeparam=__cq_uuid
