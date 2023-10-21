@@ -1,6 +1,6 @@
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 21October2023v1
+! OriginalVersion: 21October2023v3
 ! Expires: 1 day
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -2947,7 +2947,8 @@ $removeparam=session_id,domain=reddit.app.link
 $removeparam=loid,domain=reddit.app.link
 $removeparam=loid_created,domain=reddit.app.link
 $removeparam=reddaid,domain=reddit.app.link
-$document,removeparam=feature,domain=reddit.app.link|youtube.com|youtu.be
+! can't remove from YouTube: https://github.com/DandelionSprout/adfilt/issues/931
+$document,removeparam=feature,domain=reddit.app.link
 $removeparam=keyword,domain=reddit.app.link
 $removeparam=mweb_subreddit_ids,domain=reddit.app.link
 $removeparam=mweb_loid,domain=reddit.app.link
@@ -3611,6 +3612,15 @@ $removeparam=csrc,domain=mcafee.com|vitacost.com
 $removeparam=csrcl2
 ||mcafee.com^$removeparam=cctype
 ||mcafee.com^$removeparam=ccstype
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-7346325
+$document,removeparam=intc,domain=citi.com
+$document,removeparam=src,domain=citi.com
+$document,removeparam=selectedCCIndex,domain=citi.com
+$document,removeparam=aoOfferParams,domain=citi.com
+! $removeparam=BT_TX,domain=citi.com
+$removeparam=ProspectID,domain=citi.com
+$removeparam=Promo_ID,domain=citi.com
+$removeparam=BT_VanityDomain,domain=citi.com
 !#if !env_mobile
 ! ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ———
 ! https://sproutsluckycorner.files.wordpress.com/2019/12/ring-fit-adventure-smoothies-1.png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
