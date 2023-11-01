@@ -1,8 +1,8 @@
 !
 ! Title: NoAds X Files
-! OriginalVersion: 202310190302
+! OriginalVersion: 202311010206
 ! X Files migliora la tua navigazione quotidiana!
-! Last modified: 19-10-2023
+! Last modified: 01-11-2023
 ! Expires: 15 days
 ! Homepage: https://xfiles.noads.it
 ! Blog: https://go.gioxx.org/noads
@@ -1905,6 +1905,7 @@ ilrestodelcarlino.it##IMG[src*="securepubads"]
 ilsecoloxix.it##.artbanner
 ilsecoloxix.it##.googleAdSense
 ilsitodellozoo.105.net/728x90
+ilsoftware.it##.pubtech-adv-incontent
 ilsoftware.it##.w_banner
 ilsoftware.it##[id^="ADleaderboard"]
 ilsoftware.it##[id^="google_ads_iframe"]
@@ -1916,10 +1917,12 @@ ilsoftware.it###topHalfBanner
 ilsoftware.it###topLeaderBoard
 ilsoftware.it##A[href="/hijackthis.asp"]
 ilsoftware.it##DIV[class="gsc-adBlock"]
+ilsole24ore.com##.abox--fluid.abox
 ilsole24ore.com##.abox--grow.abox.sticky-parent
 ilsole24ore.com##.abox.abox--fullwidth.d-lg-block
 ilsole24ore.com##.abox.d-lg-block.no-border.shrinkable
 ilsole24ore.com##.ad.group.top-banner
+ilsole24ore.com##.backdrop-animated.modal-backdrop
 ilsole24ore.com##.banner-ad
 ilsole24ore.com##.footer
 ilsole24ore.com##.item.advertising.render33d
@@ -4147,8 +4150,6 @@ ziddu.com/banners
 zippyshare.com##DIV[class="center_reklamy"]
 zoezozo.it/banner_casino/
 zoomtv.me##DIV[id="memberad"]
-zpag.es##.top_bar.top_bar_ad
-! [NoAds X Files - Elementi bloccati]/blocking
 ://adv.$domain=~sky.it|~la7.it|~la7.tv|~tre.it|~tzetze.it
 ://oas.*@$domain=~youreporter.it
 *ad*.nuffnang.com.ph/*.php
@@ -4711,7 +4712,18 @@ youtube.com##ytd-rich-item-renderer.style-scope.ytd-rich-grid-row:has(ytd-displa
 *$script,~third-party,domain=~kat.at|~kat.ec|~kat.eu|~kat.mn|~kat.rip|~kat.tv|~kickass.codes|~kickass.website|kat.*|katbay.*|kickass.*|kickasshydra.*|kickasskat.*|kickass2.*|kickasstorrents.*|kat2.*|kattracker.*|thekat.*|thekickass.*|kickassz.*|kickasstorrents2.*|topkickass.*|kickassgo.*|kkickass.*|kkat.*|kickasst.*|kick4ss.*|kickassbay.*|torrentkat.*|kickassuk.*|torrentskickass.*|kickasspk.*|kickasstrusty.*|katkickass.*|kickassindia.*|kickass-usa.*|kickassaustralia.*|kickassdb.*|kathydra.*|kickassminds.*|katkickass.*|kickassunlocked.*|kickassmovies.*|kickassfull.*|bigkickass.*|kickasstracker.*|katfreak.*
 ||glimtors.net^
 ||s99i.org^
-youtube.com##.opened
+! L'intero blocco eredita le regole dalla discussione GitHub Anti-Ad YouTube: https://github.com/uBlockOrigin/uAssets/issues/19976
+! (origine: https://twitter.com/endermanch/status/1713129854818742684 / https://files.enderman.ch/scripts/yt-antiadblocker.html)
+! https://old.reddit.com/r/uBlockOrigin/comments/16lmeri/youtube_antiadblock_and_ads_september_18_2023/k1uf2s1/ - 045d2209
+!#if env_firefox
+!#else
+!#endif
+! https://www.reddit.com/r/uBlockOrigin/comments/16lmeri/youtube_antiadblock_and_ads_september_18_2023/k1wl8df/
+!#if !cap_html_filtering
+!#if env_firefox
+!#endif
+!#endif
+! https://github.com/uBlockOrigin/uAssets/issues/19976#issuecomment-1778718540
 ##.as-oil-content-overlay
 ##.cookie-banner
 ##.cookie-notice-container
@@ -4773,13 +4785,13 @@ upstory.it###CybotCookiebotDialogBodyUnderlay
 w3schools.com##.snigel-cmp-framework
 xda-developers.com###uniccmp
 ! [NoAds X Files - Filtri per blocco Paywall (sperimentale)]
-! OriginalVersion: 3.3.7.7
+! OriginalVersion: 3.3.9.1
 ! General
 ||axate.io$script,third-party
 ||loader-cdn.azureedge.net^$third-party
 ||blueconic.net^$third-party
 ||cdn.cxense.com^$script,third-party
-@@cdn.cxense.com^$script,domain=bizjournals.com
+@@cdn.cxense.com^$script,domain=bizjournals.com|journaldemontreal.com|journaldequebec.com
 ||ensighten.com/*/Bootstrap.js$script,third-party
 ||evolok.net^$third-party
 ||paywall.fewcents.co/static/js/paywall.js
@@ -4811,9 +4823,11 @@ xda-developers.com###uniccmp
 ||abqjournal.com/*/abq-pw-manager.js$script,~third-party
 ||abril.com.br/*/*-*-*-*$csp=script-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 ||ajc.com/prod/ajc/loader.min.js$script,~third-party
-.com/prod/ajc/loader.min.js$script,domain=dayton.com|daytondailynews.com|journal-news.com|springfieldnewssun.com
+! Cox First Media
+||wgchrrammzv.com/prod/ajc/loader.min.js$script,domain=dayton.com|daytondailynews.com|journal-news.com|springfieldnewssun.com
 alternatives-economiques.fr###temp-paywall
 ||americanaffairsjournal.org/wp-content/mu-plugins/app/src/paywall/paywall.js$script,~third-party
+apollo-magazine.com,spectator.co.uk###subscribe-ribbon
 ||artnet.com/paywall-ajax.php$xmlhttprequest,~third-party
 ||auto-motor-und-sport.de/thenewsbar/static/pw.js$script,~third-party
 ||automobilwoche.de/sites/camw/files/js/js_wB7*.js$script,~third-party
@@ -4948,7 +4962,6 @@ amp.scmp.com##div[id^="default-meter-page-views"]
 ||seattletimes.com/wp-content/*/st-advertising-bundle.js$script,~third-party
 ||seattletimes.com/wp-content/*/st-user-messaging-main-bundle.js$script,~third-party
 sofrep.com##div.non-paywall,div#paywall_wrap
-spectator.co.uk###subscribe-ribbon
 spglobal.com##.article__overlay
 staradvertiser.com##div#hsa-paywall-overlay
 startribune.com##div.modal-backdrop
@@ -5018,6 +5031,8 @@ profi.de,wochenblatt.com##div.m-paywall__textFadeOut,div[id^="paymentprocess-"]
 topagrar.at,topagrar.com##div.paywall-package
 ! Madavor Media sites
 ! Madsack sites
+! Maine Trust for Local News
+||loader.masthead.me^$script,domain=centralmaine.com|pressherald.com|sunjournal.com
 ! Mediahuis Ireland
 ||cdn.flip-pay.com/clients/*/flip-pay.js$script,domain=belfasttelegraph.co.uk|independent.ie
 ! Mediahuis Noord

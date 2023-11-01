@@ -82,6 +82,14 @@ youtube.com##+js(set-constant, ytInitialPlayerResponse.adPlacements, undefined)
 youtube.com##+js(set, ytInitialPlayerResponse.adPlacements, undefined)
 ! Rule "*$script,1p,domain=~kat.at|~kat.ec|~kat.eu|~kat.mn|~kat.rip|~kat.tv|~kickass.codes|~kickass.website|kat.*|katbay.*|kickass.*|kickasshydra.*|kickasskat.*|kickass2.*|kickasstorrents.*|kat2.*|kattracker.*|thekat.*|thekickass.*|kickassz.*|kickasstorrents2.*|topkickass.*|kickassgo.*|kkickass.*|kkat.*|kickasst.*|kick4ss.*|kickassbay.*|torrentkat.*|kickassuk.*|torrentskickass.*|kickasspk.*|kickasstrusty.*|katkickass.*|kickassindia.*|kickass-usa.*|kickassaustralia.*|kickassdb.*|kathydra.*|kickassminds.*|katkickass.*|kickassunlocked.*|kickassmovies.*|kickassfull.*|bigkickass.*|kickasstracker.*|katfreak.*" converted to: "*$script,~third-party,domain=~kat.at|~kat.ec|~kat.eu|~kat.mn|~kat.rip|~kat.tv|~kickass.codes|~kickass.website|kat.*|katbay.*|kickass.*|kickasshydra.*|kickasskat.*|kickass2.*|kickasstorrents.*|kat2.*|kattracker.*|thekat.*|thekickass.*|kickassz.*|kickasstorrents2.*|topkickass.*|kickassgo.*|kkickass.*|kkat.*|kickasst.*|kick4ss.*|kickassbay.*|torrentkat.*|kickassuk.*|torrentskickass.*|kickasspk.*|kickasstrusty.*|katkickass.*|kickassindia.*|kickass-usa.*|kickassaustralia.*|kickassdb.*|kathydra.*|kickassminds.*|katkickass.*|kickassunlocked.*|kickassmovies.*|kickassfull.*|bigkickass.*|kickasstracker.*|katfreak.*"
 *$script,1p,domain=~kat.at|~kat.ec|~kat.eu|~kat.mn|~kat.rip|~kat.tv|~kickass.codes|~kickass.website|kat.*|katbay.*|kickass.*|kickasshydra.*|kickasskat.*|kickass2.*|kickasstorrents.*|kat2.*|kattracker.*|thekat.*|thekickass.*|kickassz.*|kickasstorrents2.*|topkickass.*|kickassgo.*|kkickass.*|kkat.*|kickasst.*|kick4ss.*|kickassbay.*|torrentkat.*|kickassuk.*|torrentskickass.*|kickasspk.*|kickasstrusty.*|katkickass.*|kickassindia.*|kickass-usa.*|kickassaustralia.*|kickassdb.*|kathydra.*|kickassminds.*|katkickass.*|kickassunlocked.*|kickassmovies.*|kickassfull.*|bigkickass.*|kickasstracker.*|katfreak.*
+! Rule "www.youtube.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots, , /^(?=.*\.js)(?!.*j\.s[ \S]+polymer).*/)" converted to: "www.youtube.com#%#//scriptlet('ubo-json-prune.js', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/^(?=.*\.js)(?!.*j\.s[ \S]+polymer).*/')"
+www.youtube.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots, , /^(?=.*\.js)(?!.*j\.s[ \S]+polymer).*/)
+! Rule "www.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.ab_det_gen_re, false)" converted to: "www.youtube.com#%#//scriptlet('ubo-set.js', 'yt.config_.EXPERIMENT_FLAGS.ab_det_gen_re', 'false')"
+www.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.ab_det_gen_re, false)
+! Rule "m.youtube.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important)" converted to: "m.youtube.com#%#//scriptlet('ubo-json-prune.js', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important')"
+m.youtube.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important)
+! Rule "youtube.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots legacyImportant)" converted to: "youtube.com#%#//scriptlet('ubo-json-prune.js', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots legacyImportant')"
+youtube.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots legacyImportant)
 ! Rule "gadget.pico.tools##+js(json-prune, locked)" converted to: "gadget.pico.tools#%#//scriptlet('ubo-json-prune.js', 'locked')"
 gadget.pico.tools##+js(json-prune, locked)
 ! Rule "||abril.com.br/*/*-*-*-*$inline-script" converted to: "||abril.com.br/*/*-*-*-*$csp=script-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:"
@@ -92,6 +100,8 @@ adweek.com##+js(cookie-remover, blaize_session)
 alternatives-economiques.fr##+js(ra, style, div[data-ae-poool], stay)
 ! Rule "ambito.com##+js(cookie-remover, TDNotesRead)" converted to: "ambito.com#%#//scriptlet('ubo-cookie-remover.js', 'TDNotesRead')"
 ambito.com##+js(cookie-remover, TDNotesRead)
+! Rule "apollo-magazine.com##+js(cookie-remover, blaize_session)" converted to: "apollo-magazine.com#%#//scriptlet('ubo-cookie-remover.js', 'blaize_session')"
+apollo-magazine.com##+js(cookie-remover, blaize_session)
 ! Rule "arkansasonline.com##+js(cookie-remover, blaize_session)" converted to: "arkansasonline.com#%#//scriptlet('ubo-cookie-remover.js', 'blaize_session')"
 arkansasonline.com##+js(cookie-remover, blaize_session)
 ! Rule "artforum.com##+js(cookie-remover, /^/)" converted to: "artforum.com#%#//scriptlet('ubo-cookie-remover.js', '/^/')"
@@ -184,6 +194,10 @@ inkl.com##+js(ra, class, div.paywall)
 interestingengineering.com##+js(ra, class, div[class*="Product_makeBlur__"])
 ! Rule "japantimes.co.jp##+js(cookie-remover, /xbc/)" converted to: "japantimes.co.jp#%#//scriptlet('ubo-cookie-remover.js', '/xbc/')"
 japantimes.co.jp##+js(cookie-remover, /xbc/)
+! Rule "journaldemontreal.com##+js(rc, composer-content, div.article-main-txt.composer-content)" converted to: "journaldemontreal.com#%#//scriptlet('ubo-rc.js', 'composer-content', 'div.article-main-txt.composer-content')"
+journaldemontreal.com##+js(rc, composer-content, div.article-main-txt.composer-content)
+! Rule "journaldequebec.com##+js(rc, composer-content, div.article-main-txt.composer-content)" converted to: "journaldequebec.com#%#//scriptlet('ubo-rc.js', 'composer-content', 'div.article-main-txt.composer-content')"
+journaldequebec.com##+js(rc, composer-content, div.article-main-txt.composer-content)
 ! Rule "journaldunet.com##+js(ra, style, .entry_reg_wall)" converted to: "journaldunet.com#%#//scriptlet('ubo-ra.js', 'style', '.entry_reg_wall')"
 journaldunet.com##+js(ra, style, .entry_reg_wall)
 ! Rule "krautreporter.de##+js(rc, blurred, .blurred)" converted to: "krautreporter.de#%#//scriptlet('ubo-rc.js', 'blurred', '.blurred')"
@@ -276,8 +290,6 @@ sofrep.com##+js(cookie-remover, sofrep_news_ids)
 sofrep.com##+js(ra, class, div.paywall)
 ! Rule "sofrep.com##+js(rc, fader, div.fader)" converted to: "sofrep.com#%#//scriptlet('ubo-rc.js', 'fader', 'div.fader')"
 sofrep.com##+js(rc, fader, div.fader)
-! Rule "spectator.co.uk##+js(cookie-remover, blaize_session)" converted to: "spectator.co.uk#%#//scriptlet('ubo-cookie-remover.js', 'blaize_session')"
-spectator.co.uk##+js(cookie-remover, blaize_session)
 ! Rule "spglobal.com##+js(ra, class, html, stay)" converted to: "spglobal.com#%#//scriptlet('ubo-ra.js', 'class', 'html', 'stay')"
 spglobal.com##+js(ra, class, html, stay)
 ! Rule "staradvertiser.com##+js(ra, style, div#hsa-paywall-content[style])" converted to: "staradvertiser.com#%#//scriptlet('ubo-ra.js', 'style', 'div#hsa-paywall-content[style]')"
@@ -592,6 +604,18 @@ youtube.com#%#//scriptlet('ubo-set-constant.js', 'playerResponse.adPlacements', 
 youtube.com#%#//scriptlet('ubo-set-constant.js', 'ytInitialPlayerResponse.adPlacements', 'undefined')
 ! youtube.com#%#//scriptlet('ubo-set.js', 'ytInitialPlayerResponse.adPlacements', 'undefined') is excluded by "#%#//scriptlet" in exclusions-low.txt
 youtube.com#%#//scriptlet('ubo-set.js', 'ytInitialPlayerResponse.adPlacements', 'undefined')
+! www.youtube.com#%#//scriptlet('ubo-json-prune.js', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/^(?=.*\.js)(?!.*j\.s[ \S]+polymer).*/') is excluded by "#%#//scriptlet" in exclusions-low.txt
+www.youtube.com#%#//scriptlet('ubo-json-prune.js', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/^(?=.*\.js)(?!.*j\.s[ \S]+polymer).*/')
+! www.youtube.com##+js(trusted-replace-fetch-response, /"adPlacements.*?\/(aclk\?sa=L&ai=C(?!3QQpfbUyZYWKL_)[-_0-9A-Za-z]+__________|get_midroll_info\S+&token=ALHj).*?"\}\}\}\]\,/, , url:player?key=) is excluded by "##+js" in exclusions-low.txt
+www.youtube.com##+js(trusted-replace-fetch-response, /"adPlacements.*?\/(aclk\?sa=L&ai=C(?!3QQpfbUyZYWKL_)[-_0-9A-Za-z]+__________|get_midroll_info\S+&token=ALHj).*?"\}\}\}\]\,/, , url:player?key=)
+! www.youtube.com##+js(trusted-replace-xhr-response, /\"adPlacements.*?\"\}\}\}\]\,/, , /player\?key=|watch\?v=|youtubei\/v1\/player/) is excluded by "##+js" in exclusions-low.txt
+www.youtube.com##+js(trusted-replace-xhr-response, /\"adPlacements.*?\"\}\}\}\]\,/, , /player\?key=|watch\?v=|youtubei\/v1\/player/)
+! www.youtube.com#%#//scriptlet('ubo-set.js', 'yt.config_.EXPERIMENT_FLAGS.ab_det_gen_re', 'false') is excluded by "#%#//scriptlet" in exclusions-low.txt
+www.youtube.com#%#//scriptlet('ubo-set.js', 'yt.config_.EXPERIMENT_FLAGS.ab_det_gen_re', 'false')
+! m.youtube.com#%#//scriptlet('ubo-json-prune.js', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important') is excluded by "#%#//scriptlet" in exclusions-low.txt
+m.youtube.com#%#//scriptlet('ubo-json-prune.js', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important')
+! youtube.com#%#//scriptlet('ubo-json-prune.js', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots legacyImportant') is excluded by "#%#//scriptlet" in exclusions-low.txt
+youtube.com#%#//scriptlet('ubo-json-prune.js', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots legacyImportant')
 ! gadget.pico.tools#%#//scriptlet('ubo-json-prune.js', 'locked') is excluded by "#%#//scriptlet" in exclusions-low.txt
 gadget.pico.tools#%#//scriptlet('ubo-json-prune.js', 'locked')
 ! adweek.com#%#//scriptlet('ubo-cookie-remover.js', 'blaize_session') is excluded by "#%#//scriptlet" in exclusions-low.txt
@@ -600,6 +624,8 @@ adweek.com#%#//scriptlet('ubo-cookie-remover.js', 'blaize_session')
 alternatives-economiques.fr#%#//scriptlet('ubo-ra.js', 'style', 'div[data-ae-poool]', 'stay')
 ! ambito.com#%#//scriptlet('ubo-cookie-remover.js', 'TDNotesRead') is excluded by "#%#//scriptlet" in exclusions-low.txt
 ambito.com#%#//scriptlet('ubo-cookie-remover.js', 'TDNotesRead')
+! apollo-magazine.com#%#//scriptlet('ubo-cookie-remover.js', 'blaize_session') is excluded by "#%#//scriptlet" in exclusions-low.txt
+apollo-magazine.com#%#//scriptlet('ubo-cookie-remover.js', 'blaize_session')
 ! arkansasonline.com#%#//scriptlet('ubo-cookie-remover.js', 'blaize_session') is excluded by "#%#//scriptlet" in exclusions-low.txt
 arkansasonline.com#%#//scriptlet('ubo-cookie-remover.js', 'blaize_session')
 ! artforum.com#%#//scriptlet('ubo-cookie-remover.js', '/^/') is excluded by "#%#//scriptlet" in exclusions-low.txt
@@ -690,6 +716,10 @@ inkl.com#%#//scriptlet('ubo-ra.js', 'class', 'div.paywall')
 interestingengineering.com#%#//scriptlet('ubo-ra.js', 'class', 'div[class*="Product_makeBlur__"]')
 ! japantimes.co.jp#%#//scriptlet('ubo-cookie-remover.js', '/xbc/') is excluded by "#%#//scriptlet" in exclusions-low.txt
 japantimes.co.jp#%#//scriptlet('ubo-cookie-remover.js', '/xbc/')
+! journaldemontreal.com#%#//scriptlet('ubo-rc.js', 'composer-content', 'div.article-main-txt.composer-content') is excluded by "#%#//scriptlet" in exclusions-low.txt
+journaldemontreal.com#%#//scriptlet('ubo-rc.js', 'composer-content', 'div.article-main-txt.composer-content')
+! journaldequebec.com#%#//scriptlet('ubo-rc.js', 'composer-content', 'div.article-main-txt.composer-content') is excluded by "#%#//scriptlet" in exclusions-low.txt
+journaldequebec.com#%#//scriptlet('ubo-rc.js', 'composer-content', 'div.article-main-txt.composer-content')
 ! journaldunet.com#%#//scriptlet('ubo-ra.js', 'style', '.entry_reg_wall') is excluded by "#%#//scriptlet" in exclusions-low.txt
 journaldunet.com#%#//scriptlet('ubo-ra.js', 'style', '.entry_reg_wall')
 ! krautreporter.de#%#//scriptlet('ubo-rc.js', 'blurred', '.blurred') is excluded by "#%#//scriptlet" in exclusions-low.txt
@@ -780,8 +810,6 @@ sofrep.com#%#//scriptlet('ubo-cookie-remover.js', 'sofrep_news_ids')
 sofrep.com#%#//scriptlet('ubo-ra.js', 'class', 'div.paywall')
 ! sofrep.com#%#//scriptlet('ubo-rc.js', 'fader', 'div.fader') is excluded by "#%#//scriptlet" in exclusions-low.txt
 sofrep.com#%#//scriptlet('ubo-rc.js', 'fader', 'div.fader')
-! spectator.co.uk#%#//scriptlet('ubo-cookie-remover.js', 'blaize_session') is excluded by "#%#//scriptlet" in exclusions-low.txt
-spectator.co.uk#%#//scriptlet('ubo-cookie-remover.js', 'blaize_session')
 ! spglobal.com#%#//scriptlet('ubo-ra.js', 'class', 'html', 'stay') is excluded by "#%#//scriptlet" in exclusions-low.txt
 spglobal.com#%#//scriptlet('ubo-ra.js', 'class', 'html', 'stay')
 ! staradvertiser.com#%#//scriptlet('ubo-ra.js', 'style', 'div#hsa-paywall-content[style]') is excluded by "#%#//scriptlet" in exclusions-low.txt
@@ -1050,7 +1078,59 @@ tasma.ru#%#//scriptlet('ubo-aopw.js', 'decodeURIComponent')
 tomadivx.tv#%#//scriptlet('ubo-aopr.js', 'WebAssembly')
 ! tubettajat.net#%#//scriptlet('ubo-aopr.js', 'miner') is excluded by "#%#//scriptlet" in exclusions-low.txt
 tubettajat.net#%#//scriptlet('ubo-aopr.js', 'miner')
+! Error: Invalid selector: '.top_bar.top_bar_ad! [NoAds X Files - Elementi bloccati]/blocking' -- Error: unable to select by '.top_bar.top_bar_ad! [NoAds X Files - Elementi bloccati]/blocking' — '.top_bar.top_bar_ad! [NoAds X Files - Elementi bloccati]/blocking' is not a valid selector in rule:
+zpag.es##.top_bar.top_bar_ad! [NoAds X Files - Elementi bloccati]/blocking
 Error: "$redirect modifier is invalid" in the rule: "||doubleclick.net/instream/ad_status.js$script,redirect-rule=doubleclick_instream_ad_status.js"
 ||doubleclick.net/instream/ad_status.js$script,redirect-rule=doubleclick_instream_ad_status.js
-! Error: Invalid selector: 'tp-yt-paper-dialog.ytd-popup-container.style-scope! [NoAds X Files - Filtri per blocco popup accettazione Cookie (sperimentale)]' -- Unbalanced attribute brackets in selector: 'tp-yt-paper-dialog.ytd-popup-container.style-scope! [NoAds X Files - Filtri per blocco popup accettazione Cookie (sperimentale)]' in rule:
-youtube.com##tp-yt-paper-dialog.ytd-popup-container.style-scope! [NoAds X Files - Filtri per blocco popup accettazione Cookie (sperimentale)]
+! Error: Invalid selector: '+js(trusted-replace-fetch-response, /(maxAgeSeconds.*?"loggedOut":[ft].*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)' -- '+js(trusted-replace-fetch-response, /(maxAgeSeconds.*?"loggedOut":[ft].*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)' is not a valid selector in rule:
+www.youtube.com#@#+js(trusted-replace-fetch-response, /(maxAgeSeconds.*?"loggedOut":[ft].*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /"adPlacements.*?\/(aclk\?sa=L&ai=C[-_0-9A-Za-z]+__________|get_midroll_info\S+&token=ALHj).*?"\}\}\}\]\,/, , url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /"adPlacements.*?\/(aclk\?sa=L&ai=C[-_0-9A-Za-z]+__________|get_midroll_info\S+&token=ALHj).*?"\}\}\}\]\,/, , url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /"adPlacements.*?\/(aclk\?sa=L&ai=C[-_0-9A-Za-z]+__________|get_midroll_info\S+&token=ALHj).*?"\}\}\}\]\,/, , url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /"adPlacements.*?\/(aclk\?sa=L&ai=C[-_0-9A-Za-z]+__________|get_midroll_info\S+&token=ALH).*?"\}\}\}\]\,/, , url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /"adPlacements.*?\/(aclk\?sa=L&ai=C[-_0-9A-Za-z]+__________|get_midroll_info\S+&token=ALH).*?"\}\}\}\]\,/, , url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /"adPlacements.*?\/(aclk\?sa=L&ai=C[-_0-9A-Za-z]+__________|get_midroll_info\S+&token=ALH).*?"\}\}\}\]\,/, , url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /(itag=.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /(itag=.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /(itag=.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /(itag=.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /(itag=.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /(itag=.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /(itag=.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /(itag=.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /(itag=.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)
+! Error: Invalid selector: '+js(trusted-replace-fetch-response, /("lastModified":"[^"]{3}.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)' -- '+js(trusted-replace-fetch-response, /("lastModified":"[^"]{3}.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)' is not a valid selector in rule:
+www.youtube.com#@#+js(trusted-replace-fetch-response, /("lastModified":"[^"]{3}.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)
+! Error: Invalid selector: '+js(trusted-replace-fetch-response, /("lastModified":"[^"]{3}.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)' -- '+js(trusted-replace-fetch-response, /("lastModified":"[^"]{3}.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)' is not a valid selector in rule:
+www.youtube.com#@#+js(trusted-replace-fetch-response, /("lastModified":"[^"]{3}.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)
+! Error: Invalid selector: '+js(trusted-replace-fetch-response, /("lastModified":"[^"]{3}.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)' -- '+js(trusted-replace-fetch-response, /("lastModified":"[^"]{3}.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)' is not a valid selector in rule:
+www.youtube.com#@#+js(trusted-replace-fetch-response, /("lastModified":"[^"]{3}.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /(source=.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /(source=.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /(source=.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /(source=.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /(source=.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /(source=.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /(source=.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /(source=.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /(source=.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)
+! Error: Invalid selector: '+js(trusted-replace-fetch-response, '/("mimeType":"[^"]{3,}".*?)"adSlots.*?\}\]\}\}\],/', $1, url:player?key=)' -- '+js(trusted-replace-fetch-response, '/("mimeType":"[^"]{3,}".*?)"adSlots.*?\}\]\}\}\],/', $1, url:player?key=)' is not a valid selector in rule:
+www.youtube.com#@#+js(trusted-replace-fetch-response, '/("mimeType":"[^"]{3,}".*?)"adSlots.*?\}\]\}\}\],/', $1, url:player?key=)
+! Error: Invalid selector: '+js(trusted-replace-fetch-response, '/("mimeType":"[^"]{3,}".*?)"adPlacements.*?"\}\}\}\],/', $1, url:player?key=)' -- '+js(trusted-replace-fetch-response, '/("mimeType":"[^"]{3,}".*?)"adPlacements.*?"\}\}\}\],/', $1, url:player?key=)' is not a valid selector in rule:
+www.youtube.com#@#+js(trusted-replace-fetch-response, '/("mimeType":"[^"]{3,}".*?)"adPlacements.*?"\}\}\}\],/', $1, url:player?key=)
+! Error: Invalid selector: '+js(trusted-replace-fetch-response, '/("mimeType":"[^"]{3,}".*?)"playerAds.*?\}\}\],/', $1, url:player?key=)' -- '+js(trusted-replace-fetch-response, '/("mimeType":"[^"]{3,}".*?)"playerAds.*?\}\}\],/', $1, url:player?key=)' is not a valid selector in rule:
+www.youtube.com#@#+js(trusted-replace-fetch-response, '/("mimeType":"[^"]{3,}".*?)"playerAds.*?\}\}\],/', $1, url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /(requiressl.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /(requiressl.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /(requiressl.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /(requiressl.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /(requiressl.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /(requiressl.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /(requiressl.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /(requiressl.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /(requiressl.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /"adSlots.*?SLOT_TYPE_PLAYER_BYTES.*?\}\]\}\}\]\,/, , url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /"adSlots.*?SLOT_TYPE_PLAYER_BYTES.*?\}\]\}\}\]\,/, , url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /"adSlots.*?SLOT_TYPE_PLAYER_BYTES.*?\}\]\}\}\]\,/, , url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /"adPlacements.*?AD_PLACEMENT_KIND_START.*?"\}\}\}\]\,/, , url:player?key=)'" in the rule: "www.youtube.com#@#+js(trusted-replace-fetch-response, /"adPlacements.*?AD_PLACEMENT_KIND_START.*?"\}\}\}\]\,/, , url:player?key=)"
+www.youtube.com#@#+js(trusted-replace-fetch-response, /"adPlacements.*?AD_PLACEMENT_KIND_START.*?"\}\}\}\]\,/, , url:player?key=)
+! Error: Invalid selector: '+js(trusted-replace-fetch-response, '/"playerAds.*?"enabledEngageTypes":"(\d{1,2},){5}\d".*?\}\}\],/', , url:player?key=)' -- '+js(trusted-replace-fetch-response, '/"playerAds.*?"enabledEngageTypes":"(\d{1,2},){5}\d".*?\}\}\],/', , url:player?key=)' is not a valid selector in rule:
+www.youtube.com#@#+js(trusted-replace-fetch-response, '/"playerAds.*?"enabledEngageTypes":"(\d{1,2},){5}\d".*?\}\}\],/', , url:player?key=)
+! Error: Invalid selector: '+js(trusted-replace-fetch-response, '/"playerAds.*?"enabledEngageTypes":"(\d{1,2},)+\d".*?\}\}\],/', , url:player?key=)' -- '+js(trusted-replace-fetch-response, '/"playerAds.*?"enabledEngageTypes":"(\d{1,2},)+\d".*?\}\}\],/', , url:player?key=)' is not a valid selector in rule:
+www.youtube.com#@#+js(trusted-replace-fetch-response, '/"playerAds.*?"enabledEngageTypes":"(\d{1,2},)+\d".*?\}\}\],/', , url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /(GFEEDBACK.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)'" in the rule: "youtube.com#@#+js(trusted-replace-fetch-response, /(GFEEDBACK.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)"
+youtube.com#@#+js(trusted-replace-fetch-response, /(GFEEDBACK.*?)"adSlots.*?\}\]\}\}\]\,/, $1, url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /(GFEEDBACK.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)'" in the rule: "youtube.com#@#+js(trusted-replace-fetch-response, /(GFEEDBACK.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)"
+youtube.com#@#+js(trusted-replace-fetch-response, /(GFEEDBACK.*?)"adPlacements.*?"\}\}\}\]\,/, $1, url:player?key=)
+Error: "Unknown pseudo-class ':player?key=)' in selector: '+js(trusted-replace-fetch-response, /(GFEEDBACK.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)'" in the rule: "youtube.com#@#+js(trusted-replace-fetch-response, /(GFEEDBACK.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)"
+youtube.com#@#+js(trusted-replace-fetch-response, /(GFEEDBACK.*?)"playerAds.*?\}\}\]\,/, $1, url:player?key=)
+Error: "Unknown modifier: badfilter! [NoAds X Files - Filtri per blocco popup accettazione Cookie (sperimentale)]" in the rule: "||googlevideo.com/videoplayback?*&ctier=L&$xmlhttprequest,domain=m.youtube.com|music.youtube.com|www.youtube.com,badfilter! [NoAds X Files - Filtri per blocco popup accettazione Cookie (sperimentale)]"
+||googlevideo.com/videoplayback?*&ctier=L&$xmlhttprequest,domain=m.youtube.com|music.youtube.com|www.youtube.com,badfilter! [NoAds X Files - Filtri per blocco popup accettazione Cookie (sperimentale)]
