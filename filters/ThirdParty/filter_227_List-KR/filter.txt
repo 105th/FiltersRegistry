@@ -1,7 +1,7 @@
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2023.1101.3
+! OriginalVersion: 2023.1102.1
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -232,6 +232,7 @@
 ||i.keezip.com^
 !
 ! DOMAIN-REFRESHER: END
+||authanalysis.com^$third-party
 ||adfork.co.kr^
 ||planmix.co.kr^$third-party
 ||ads-api.kidsnote.com^
@@ -364,6 +365,7 @@
 ||tenping.kr^$third-party
 ||infolinks.com^
 ||adcastmarket.com^
+##iframe[src*="//authanalysis.com/"]
 ##amp-embed
 ##iframe[src*="//ad.ad4989.co.kr/"]
 ##.ad_wrapper
@@ -506,8 +508,8 @@ funbe276.com,funbe277.com,funbe278.com,funbe279.com,funbe280.com,funbe281.com,fu
 /data/banner.json?
 /ad-manager.min.js
 !
+/^https:\/\/api-gw\.sports\.naver\.com\/cms\/contents\/adContents\/(?!GENERAL)/$domain=m.sports.naver.com
 ||wiizmkrstorage.blob.core.windows.net/wiadcontainer/
-||api-gw.sports.naver.com/cms/contents/adContents/
 ||go.bandisoft.com/coupang.bandizip|$document
 ||busan.com/nas/wcms/public/pc/images/new/bluebanner.png
 /^https?:\/\/www\.busan\.com\/nas\/wcms\/public\/pc\/images\/new\/[0-9]+[a-z]+([0-9]?|[a-z]+_[a-z]+_[a-z]+)\./$domain=busan.com
@@ -2558,6 +2560,10 @@ auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 !#endif
 !#if (adguard_ext_chromium || adguard_ext_edge || adguard_ext_firefox || adguard_ext_opera)
 ||shopsquare.naver.com^$badfilter
+!#endif
+!#if (adguard_app_ios || adguard_ext_safari)
+||api-gw.sports.naver.com/cms/contents/adContents/$domain=m.sports.naver.com
+@@||api-gw.sports.naver.com/cms/contents/adContents/GENERAL$domain=m.sports.naver.com
 !#endif
 !#if adguard_app_ios
 ||news.nate.com/Etc/AdView
