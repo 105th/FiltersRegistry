@@ -170,7 +170,14 @@ module.exports = {
                 "\\$protobuf",
                 "important,protobuf",
                 "\\$extension",
-                ",extension"
+                ",extension",
+                "\\$hls=",
+                ",hls=",
+                "\\$jsonprune=",
+                ",jsonprune=",
+                "\\$referrerpolicy",
+                ",referrerpolicy"
+
             ],
             "replacements": null,
             "ignoreRuleHints": false
