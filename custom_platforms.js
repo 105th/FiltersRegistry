@@ -76,8 +76,8 @@ module.exports = {
                 ",hls=",
                 "\\$jsonprune=",
                 ",jsonprune=",
-                "\\$referrerpolicy=",
-                ",referrerpolicy=",
+                "\\$referrerpolicy",
+                ",referrerpolicy",
                 "\\$content",
                 ",content"
             ],
