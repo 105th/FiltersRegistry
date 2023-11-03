@@ -473,7 +473,7 @@ linkedin.com#$?#html { overflow: auto !important; }
 linkedin.com#$?#body { overflow: auto !important; }
 !#if ext_ublock
 ! Title: 💊 Dandelion Sprout's Anti-Malware List
-! OriginalVersion: 23October2023v1
+! OriginalVersion: 03November2023v1
 ! Expires: 2 days
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks heavily abused top-level domains (and even search engine results for them), blocks domains used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
@@ -976,7 +976,8 @@ zombooru.com##a[href="http://www.hard55.com"]
 /\.(cloudfront\.net|xyz|pics)/[a-zA-Z0-9]{20,}/[a-zA-Z0-9]{25,}\+[a-zA-Z0-9+]{90,}$/$document,script,subdocument,image
 !#if !ext_ublock
 142.91.159.*$network
-172.255.6.*$network
+! https://github.com/DandelionSprout/adfilt/issues/942
+/^172\.255\.6\.([0-9]{1,2}|[12][0-689][0-9]|17[0-689])$/$network
 23.109.150.*$network
 23.109.248.*$network
 !#endif
@@ -1770,6 +1771,11 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ! Spam on W.I.T.C.H. and Winx text search results
 tumblr.com#?#div[tabindex][style]:has(a[href*="tinyurl."]:has-text(_1+8_))
 ! A scam SMS I got
+! Overly dedicated E-mail spammers
+||fed-packs.no^$all
+||har-freight.us^$all
+||wirexapp.africa.com^$all
+||tachyoniums.eu.com^$all
 ! ——— Horrendously bad copypasted Android rooting "guides" (often with fake titles) that bricked two of my phones ———
 ! Most of the guides haven't even accounted for how modern phones have replaced the recovery environment with an extra boot environment, leading to very critical Fastboot commands not working and/or bricking the phone.
 ||unofficialtwrp.com^$document
@@ -2355,7 +2361,7 @@ www.microsoft.com##a[data-pfns][href*=pac-men]
 !#endif
 !#if adguard
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 23October2023v1
+! OriginalVersion: 03November2023v1
 ! Expires: 2 days
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks heavily abused top-level domains (and even search engine results for them), blocks domains used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
@@ -3650,7 +3656,8 @@ zombooru.com##a[href="http://www.hard55.com"]
 ://adblock-pro-download.$all
 !#if !ext_ublock
 142.91.159.*$network
-172.255.6.*$network
+! https://github.com/DandelionSprout/adfilt/issues/942
+/^172\.255\.6\.([0-9]{1,2}|[12][0-689][0-9]|17[0-689])$/$network
 23.109.150.*$network
 23.109.248.*$network
 !#endif
@@ -25349,6 +25356,11 @@ tumblr.com#?#div[tabindex][style]:has(a[href*="tinyurl."]:has-text(_1+8_))
 ||your-ups-track.com^$all
 ||zoll-pakete-support.com^$all
 95.214.26.78$network
+! Overly dedicated E-mail spammers
+||fed-packs.no^$all
+||har-freight.us^$all
+||wirexapp.africa.com^$all
+||tachyoniums.eu.com^$all
 ! ——— Horrendously bad copypasted Android rooting "guides" (often with fake titles) that bricked two of my phones ———
 ! Most of the guides haven't even accounted for how modern phones have replaced the recovery environment with an extra boot environment, leading to very critical Fastboot commands not working and/or bricking the phone.
 ||unofficialtwrp.com^$document
@@ -28207,7 +28219,7 @@ watchseries.*##.imdb
 !#if !env_safari
 !#if !adguard_app_ios
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 02November2023v1
+! OriginalVersion: 03November2023v2
 ! Expires: 1 day
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -31889,6 +31901,8 @@ forbes.com#%#//scriptlet('ubo-set.js', 'trackingService.track', 'noopFunc')
 ! Newsletter unsubscribe buttons are the one place where you generally don't want error messages from false positive parameter removals
 !! http://crm-innhold.telenor.no/unsub/?cid=(...)&uid=(...)
 @@/unsub/?$removeparam
+!! Completely wild guess for https://github.com/AdguardTeam/AdguardFilters/issues/165257
+@@||email-link.$removeparam
 ! Fix driver download section
 @@||canon.*/supportproduct/gettabcontent$removeparam=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/89618
