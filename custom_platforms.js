@@ -386,8 +386,8 @@ module.exports = {
                 "#\\$#@media ",
                 "\\$hls=",
                 ",hls=",
-                "\\$referrerpolicy=",
-                ",referrerpolicy=",
+                "\\$referrerpolicy",
+                ",referrerpolicy",
                 "\\$jsonprune=",
                 ",jsonprune="
             ],
