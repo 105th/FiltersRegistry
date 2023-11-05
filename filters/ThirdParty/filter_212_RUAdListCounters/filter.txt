@@ -1,8 +1,8 @@
 !
-! Checksum: enb9NIDGWKNyiSeZEmNbQg
-! OriginalVersion: 202311051651
+! Checksum: zk826R8cGoto1P6mNFcJHg
+! OriginalVersion: 202311052051
 ! Title: RU AdList: Counters
-! Last modified: 05 Nov 2023 16:51 UTC
+! Last modified: 05 Nov 2023 20:51 UTC
 ! Expires: 1 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -1210,6 +1210,7 @@ tv.yandex.*##.recommended-ott
 ya.*,yandex.*##.RsyaOrganic
 ya.*,yandex.*#?#.serp-list > .serp-item:-abp-has(> .bno .serp-adv__counter)
 ya.*,yandex.*#?#.serp-list > .serp-item:-abp-has(> div > div > [data-event-required])
+ya.*,yandex.*#?#.serp-list > .serp-item:-abp-has(> div > div > [data-vnl*="advertiser"])
 yandex.*###bk-container
 yandex.*##.card-rtb-one-column-stub
 yandex.*##.dist-popup
@@ -1318,10 +1319,13 @@ yandex.*#?#.touch-feed > div > .feed-item[id^="zen-row-"]:-abp-has([class^="zen-
 ! редирект
 !
 ! Экспериментальные правила для маркеров
+$document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 $document,removeparam=fr,domain=r.mail.ru
 $document,removeparam=frm,domain=r.mail.ru
 $document,removeparam=hasnavig,domain=r.mail.ru
+$document,removeparam=nr,domain=ya.ru|yandex.*
 $document,removeparam=partner_user_id,domain=dzen.ru
+$document,removeparam=redirect_ts,domain=ya.ru|yandex.*
 $document,removeparam=rid,domain=dzen.ru
 $document,removeparam=sbmt,domain=r.mail.ru
 $document,removeparam=src,domain=r.mail.ru
@@ -1418,6 +1422,8 @@ $removeparam=yredirect
 $removeparam=ysclid
 .html?spm=$document,removeparam=spm,domain=aliexpress.*
 .ru/?spm=$document,removeparam=spm,domain=aliexpress.*
+/*=tabbar$document,removeparam=from,domain=ya.ru|yandex.*
+/*=tabbar$document,removeparam=source,domain=ya.ru|yandex.*
 /*from=$document,removeparam=from,domain=116.ru|14.ru|161.ru|164.ru|178.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|62.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|ircity.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|proizhevsk.ru|provoronezh.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru
 /?cr=$removeparam=cr,domain=mail.ru|sportmail.ru
 /?from=$removeparam=from,domain=mail.ru|sportmail.ru|vkplay.ru
@@ -1426,6 +1432,12 @@ $removeparam=ysclid
 /?from_block=$document,removeparam=from_block,domain=www.kinopoisk.ru
 /?gm&$document,removeparam=gm,domain=116.ru|14.ru|161.ru|164.ru|178.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|62.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|ircity.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|proizhevsk.ru|provoronezh.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru
 /?ref=tg$document,removeparam=ref
+/search/*$document,removeparam=msid,domain=ya.ru|yandex.*
+/search/*$document,removeparam=redircnt,domain=ya.ru|yandex.*
+/search/*$document,removeparam=search_domain,domain=ya.ru|yandex.*
+/search/*$document,removeparam=search_source,domain=ya.ru|yandex.*
+/search/*$document,removeparam=src,domain=ya.ru|yandex.*
+/search/*$document,removeparam=suggest_reqid,domain=ya.ru|yandex.*
 ?media&ila_camaign=$document,removeparam=media
 ?prov=ukrnet$removeparam=prov
 block_click=$removeparam=block_click,domain=rambler.ru
@@ -1459,10 +1471,6 @@ utm_$document,removeparam=ig_rid,domain=instagram.com
 ||www.google.*/search?$removeparam=uact
 ||www.google.*/search?$removeparam=ved
 ||www.google.*/search?client=$removeparam=client
-||yandex.*/search/$document,removeparam=msid,domain=yandex.*
-||yandex.*/search/$document,removeparam=search_source,domain=yandex.*
-||yandex.*/search/$document,removeparam=src,domain=yandex.*
-||yandex.*/search/$document,removeparam=suggest_reqid,domain=yandex.*
 ||ykt.ru^$document,removeparam=/news_interesting|news_plus|news_popular|news_recent|promo_inner/,domain=ykt.ru
 ||youtube.com/embed/$subdocument,removeparam=iv_load_policy
 ||youtube.com/embed/$subdocument,removeparam=rel
