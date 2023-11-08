@@ -473,7 +473,7 @@ linkedin.com#$?#html { overflow: auto !important; }
 linkedin.com#$?#body { overflow: auto !important; }
 !#if ext_ublock
 ! Title: 💊 Dandelion Sprout's Anti-Malware List
-! OriginalVersion: 04November2023v1
+! OriginalVersion: 08November2023v2
 ! Expires: 2 days
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks heavily abused top-level domains (and even search engine results for them), blocks domains used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
@@ -2359,12 +2359,19 @@ www.microsoft.com##a[data-pfns][href*=pac-men]
 |cisco.com|$dnstype=TXT
 |cloudflare.com|$dnstype=TXT
 |adobe.com|$dnstype=TXT
+|atlassian.com|$dnstype=TXT
+|apple.com|$dnstype=TXT
+|google.com|$dnstype=TXT
+!#endif
+!#if !ext_ublock
+! Very experimental entry; see https://github.com/DandelionSprout/adfilt/issues/950 and https://www.techspot.com/news/77949-ccleaner-could-install-avast-anti-virus-without-permission.html
+||avast.$app=CCleaner.exe|CCleaner64.exe|CCleanerCloudAgent.exe|ccsetup617.exe|ccsetup618.exe|ccsetup619.exe|ccsetup620.exe|ccsetup621.exe|ccsetup622.exe|ccsetup623.exe|ccsetup624.exe|ccsetup625.exe|ccsetup70.exe
 !#endif
 ! Placeholder line for alternate list versions
 !#endif
 !#if adguard
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 04November2023v1
+! OriginalVersion: 08November2023v2
 ! Expires: 2 days
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks heavily abused top-level domains (and even search engine results for them), blocks domains used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
@@ -25827,6 +25834,10 @@ www.microsoft.com##a[data-pfns][href*=pac-men]
 !#if !ext_ublock
 ! Brazilian mobsters trying to DDoS Cisco with TXT-type DNS requests
 !#endif
+!#if !ext_ublock
+! Very experimental entry; see https://github.com/DandelionSprout/adfilt/issues/950 and https://www.techspot.com/news/77949-ccleaner-could-install-avast-anti-virus-without-permission.html
+||avast.$app=CCleaner.exe|CCleaner64.exe|CCleanerCloudAgent.exe|ccsetup617.exe|ccsetup618.exe|ccsetup619.exe|ccsetup620.exe|ccsetup621.exe|ccsetup622.exe|ccsetup623.exe|ccsetup624.exe|ccsetup625.exe|ccsetup70.exe
+!#endif
 ! Placeholder line for alternate list versions
 !#endif
 ! Title: 🐐 Dandelion Sprout's Lightweight Anti-'Social share' List
@@ -27511,7 +27522,7 @@ fandom.com##section[class^=trfc]
 ! Anon notifications in the lower left asking people to sign up
 fandom.com##.notifications-placeholder:has(a[href$=":Signup" i])
 ! Title: 🚤 Anti-'Snow marketing' List
-! OriginalVersion: 27June2023v1-Beta
+! OriginalVersion: 08November2023v1-Beta
 ! Expires: 3 days
 ! Description: With Christmas being full of arcane, complicated, and very, _very_ rigid traditions in large parts of the world, the snow that is everywhere on many websites during that time isn't helping on confused peoples' mood either. Furthermore, such snow can sometimes increase CPU and battery use. So here's a list to remove the snow from those websites.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -27555,6 +27566,8 @@ spleis.no#%#//scriptlet('ubo-set.js', '__INITIAL_STATE__.features.should-show-sn
 ##.snowflakes:not(html, body)
 ! https://github.com/DandelionSprout/adfilt/issues/882 (27/06/2023)
 betso89.com###snow
+! https://eleanorgrootch.tumblr.com/post/733265142996992000/my-shop-has-reopened-once-again-ill-update-it (08/11/2023)
+||static.tumblr.com/*/f8.js^
 ! From «Frellwit's Swedish Filters»
 /snowfall.min.jquery.js
 /snowplow$script,domain=casamundo.se|hemnet.se
@@ -28234,7 +28247,7 @@ watchseries.*##.imdb
 !#if !env_safari
 !#if !adguard_app_ios
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 07November2023v1
+! OriginalVersion: 08November2023v1
 ! Expires: 1 day
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -30658,7 +30671,7 @@ $removeparam=did,domain=columbiasportswear.*|aws
 ||mediamarket.$removeparam=rbtc
 ||sitepoint.com^$removeparam=fromBlog
 ||msn.com^$removeparam=ignorejs
-||forbes.com^$removeparam=sh
+$document,removeparam=sh,domain=forbes.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=soc_src
 $removeparam=soc_trk
 ||euronews.com^$removeparam=_ope
@@ -31878,6 +31891,8 @@ $document,removeparam=wt_zmc
 *ref=exploit.media*$document,removeparam=/^ref=exploit.media$/
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-7469206
 $document,removeparam=bpli,domain=blogger.com
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-7508034
+$document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 !#if !env_mobile
 ! ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ———
 ! https://sproutsluckycorner.files.wordpress.com/2019/12/ring-fit-adventure-smoothies-1.png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
