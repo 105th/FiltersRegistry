@@ -471,6 +471,7 @@
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
+||ad.woman.mynavi.jp^
 ||shop.vapelog.jp^$third-party
 ||o-nad.com^
 ||s-ad.rmp.rakuten.co.jp^
@@ -1249,6 +1250,10 @@ avgle.com#%#//scriptlet('abort-current-inline-script', '__htapop')
 !-------CSS---------
 !-------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/165829
+soredoko.jp#$##srdk-index-native-pc { display: none !important; }
+soredoko.jp#$##srdk-index-native-pc ~ li.rank-7 { margin-left: 20px !important; }
+soredoko.jp#$##srdk-index-native-pc ~ li.rank-8 { margin-left: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164977
 allabout.co.jp#$#.aa_footer { padding-bottom: unset !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165195
@@ -1774,12 +1779,15 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 !
 !
+kanken.jitenon.jp##.adsmain
+kanken.jitenon.jp##p[class^="adsn"]
+mantan-web.jp##.article__inner > .ad_text + aside[style^="width:"]
 automesseweb.jp##.related-list > .sp-show
 uta-net.com#?#div[class^="col-"] > div#videoContent:has(> div#playerFrame > div#adContainer)
 dragoooon.com##.post-widgets-middle
-nikkei.com#?#.p-articleList > li.p-articleList_item:has(> div[id^="div-gpt-ad"])
+xtech.nikkei.com#?#.p-articleList > li.p-articleList_item:has(> div[id^="div-gpt-ad"])
+soredoko.jp#$?##srdk-in-article-related-pc { remove: true; }
 soredoko.jp#?#.hatena-module-html:has(> div.hatena-module-body > div.srdk-rectangle-ad)
-soredoko.jp###srdk-index-native-pc
 plus.news.gree.net##.sidebar_ad_pc
 chat-station.net##.center-ads
 chat-station.net#?#aside > div[id^="custom_html-"]:has(> .textwidget > div:is(.ads-flexbox, #preafBanner_wrapper, .ninja-recommend-block))
