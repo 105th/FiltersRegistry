@@ -1996,6 +1996,10 @@ peru21.pe#@#.adstop
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/166619
+vix.com#%#//scriptlet('trusted-replace-xhr-response', '/"(interstitials)":|"(breaks)":/', '"no_ads":', '/\.m3u8|\.mpd/')
+vix.com#%#//scriptlet('m3u-prune', 'type=ad', '.m3u8')
+vix.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[name()="AdaptationSet"][@contentType="video"]])', '', '.m3u8')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165935
 infohojeonline.blogspot.com#%#//scriptlet('adjust-setInterval', 'getid', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166224
@@ -2674,6 +2678,11 @@ http://adw.
 ! Good: ||example.org/video-links$replace=/vast":/vast_":/
 ! Bad:  ||example.org/video-links (should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/166619
+||dcs-vod.mp.lura.live/vod/*/*.m3u8$jsonprune=\$..[interstitials\, breaks],domain=vix.com
+||dcs-vod.mp.lura.live/vod/*/*.m3u8$hls=/type=ad/t,domain=vix.com
+||dcs-vod.mp.lura.live/vod/*/*.mpd$jsonprune=\$..[interstitials\, breaks],domain=vix.com
+||dcs-vod.mp.lura.live/vod/*/*.mpd$replace=/<Period.*?>[\s\S]{1\,500}<AdaptationSet.*? contentType="video".*?>[\s\S]{1\,3000}<\/AdaptationSet>[\s\S]*?<\/Period>//,domain=vix.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/91363
 ||dve-streams.akamaized.net/ondemand/hls/content/*.m3u8$replace=/#EXTINF:(\d|\d\.\d+)\,\nhttps:\/\/redirector\.googlevideo\.com\/videoplayback\?[\s\S]*?&source=dclk_video_ads&[\s\S]*?\n//,domain=app.prende.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59758
