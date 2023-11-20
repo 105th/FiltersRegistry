@@ -10,6 +10,7 @@ module.exports = {
     "WINDOWS": {
         "platform": "windows",
         "path": "windows",
+        "expires": "12 hours",
         "configuration": {
             "ignoreRuleHints": false,
             "replacements": null,
@@ -34,6 +35,7 @@ module.exports = {
     "MAC_V2": {
         "platform": "mac",
         "path": "mac_v2",
+        "expires": "12 hours",
         "configuration": {
             "ignoreRuleHints": false,
             "replacements": null,
