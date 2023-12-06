@@ -1,18 +1,27 @@
 {
   "name": "adguard-filters",
-  "version": "1.0.55",
+  "version": "1.1.0",
   "description": "AdGuard filters registry",
   "homepage": "https://adguard.com",
-  "main": "index.js",
+  "main": "scripts/build/build.js",
   "scripts": {
     "lint": "eslint . --cache --ext .js",
-    "locales:validate": "node validate-locales.js"
+    "build": "node scripts/build/build.js",
+    "postbuild": "node scripts/build/clean_filters.js",
+    "build:patches": "bash scripts/build/patches.sh",
+    "custom_platforms": "node scripts/build/custom_platforms.js",
+    "publish": "bash scripts/push_platforms.sh",
+    "validate": "yarn validate:platforms && validate:locales",
+    "validate:platforms": "node scripts/validation/validate-platforms.js",
+    "validate:locales": "node scripts/validation/validate-locales.js",
+    "compress": "bash scripts/compress.sh"
   },
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
-    "adguard-filters-compiler": "git+https://github.com/AdguardTeam/FiltersCompiler.git#v1.1.115"
+    "adguard-filters-compiler": "git+https://github.com/AdguardTeam/FiltersCompiler.git#v1.1.115",
+    "@adguard/diff-builder": "git+https://github.com/AdguardTeam/DiffBuilder.git#test-dist"
   },
   "devDependencies": {
     "eslint": "^8.54.0",

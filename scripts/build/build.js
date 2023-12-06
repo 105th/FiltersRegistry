@@ -36,7 +36,7 @@ const copyPlatformsPath = path.join(__dirname, '../../temp/platforms');
  */
 async function main() {
     // Make copy for future patches generation
-    await fs.promises.cp(platformsPath, copyPlatformsPath);
+    await fs.promises.cp(platformsPath, copyPlatformsPath, { recursive: true });
 
     await compiler.compile(
         filtersDir,

@@ -1,10 +1,15 @@
+#!/bin/bash
 set -x -e
 
 FOLDER_WITH_NEW_FILTERS="platforms"
-FOLDER_WITH_OLD_FILTERS="temp/plaftorms"
+FOLDER_WITH_OLD_FILTERS="temp/platforms"
+
+# Make diff-builder executable
+DIFF_BUILDER=node_modules/@adguard/diff-builder/dist/diff-builder
+chmod +x "$DIFF_BUILDER"
 
 # Iterate over all *.txt files in all 'filters/' folders inside $FOLDER_WITH_NEW_FILTERS
-all_filters=$(find platforms -type d -name filters -exec find {} -type f -name "*.txt" \;)
+all_filters=$(find $FOLDER_WITH_NEW_FILTERS -type d -name filters -exec find {} -type f -name "*.txt" \;)
 
 for new_filter in $all_filters; do
     # Check if file exists
@@ -20,9 +25,21 @@ for new_filter in $all_filters; do
 
         # Generate patches
         # TODO: 1 hour for our filters and 3 hour for external filters
-        npx diff-builder build --name $basename --resolution h --time 1 --verbose $old_filter $new_filter $path_to_patches
+        $DIFF_BUILDER build --name $basename --resolution h --time 1 --verbose $old_filter $new_filter $path_to_patches
+    fi
+done
+
+# Copy all old patches to new folder
+all_old_patches=$(find $FOLDER_WITH_OLD_FILTERS -type d -name patches -exec find {} -type f -name "*.patch" \;)
+
+for old_patch in $all_old_patches; do
+    # Check if file exists
+    if [ -e "$old_patch" ]; then
+        path_to_copy=$(echo "$old_patch" | sed 's/^[^/]*\///')
+
+        cp $old_patch $path_to_copy
     fi
 done
 
 # Clear temprorary copied platforms
-rm -r $FOLDER_WITH_OLD_FILTERS
+# rm -r $FOLDER_WITH_OLD_FILTERS
