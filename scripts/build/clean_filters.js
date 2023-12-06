@@ -74,12 +74,14 @@ const cleanFilters = async () => {
 
         // If the 'Diff-Path' line doesn't exist in the old filter, skip this filter.
         if (previousDiffPathLineIndex === -1) {
+            // eslint-disable-next-line no-console
             console.log(`${newFilter} skipped`);
             return;
         }
 
         // If the new filter already contains the previous 'Diff-Path' line, skip this filter.
         if (newFilterLines.includes(oldFilterLines[previousDiffPathLineIndex])) {
+            // eslint-disable-next-line no-console
             console.log(`${newFilter} skipped`);
             return;
         }
