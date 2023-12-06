@@ -42,4 +42,4 @@ for old_patch in $all_old_patches; do
 done
 
 # Clear temprorary copied platforms
-# rm -r $FOLDER_WITH_OLD_FILTERS
+rm -r $FOLDER_WITH_OLD_FILTERS
