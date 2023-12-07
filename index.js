@@ -1,23 +1,22 @@
-/* globals require, __dirname, process */
+const path = require('path');
+const compiler = require('adguard-filters-compiler');
+
+const customPlatformsConfig = require('./custom_platforms');
 const { formatDate } = require('./utils/strings');
 
 let whitelist = [];
 let blacklist = [];
 
-let args = process.argv.slice(2);
-args.forEach(function (val) {
+const args = process.argv.slice(2);
+args.forEach((val) => {
     if (val.startsWith('-i=')) {
-        whitelist = whitelist.concat(val.substr(3).split(',').map(x => Number.parseInt(x)));
+        whitelist = whitelist.concat(val.substr(3).split(',').map((x) => Number.parseInt(x, 10)));
     }
 
     if (val.startsWith('-s=')) {
-        blacklist = blacklist.concat(val.substr(3).split(',').map(x => Number.parseInt(x)));
+        blacklist = blacklist.concat(val.substr(3).split(',').map((x) => Number.parseInt(x, 10)));
     }
 });
-
-const fs = require('fs');
-const path = require('path');
-const compiler = require("adguard-filters-compiler");
 
 const filtersDir = path.join(__dirname, './filters');
 const logPath = path.join(__dirname, './log.txt');
@@ -28,7 +27,6 @@ if (whitelist.length > 0 || blacklist.length > 0) {
     reportPath = path.join(__dirname, `./report_${formatDate(new Date())}.txt`);
 }
 
-const customPlatformsConfig = require('./custom_platforms.js');
 const platformsPath = path.join(__dirname, './platforms');
 
 /**
@@ -42,7 +40,7 @@ async function main() {
         platformsPath,
         whitelist,
         blacklist,
-        customPlatformsConfig,
+        customPlatformsConfig
     );
 }
 

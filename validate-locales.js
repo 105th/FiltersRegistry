@@ -1,6 +1,5 @@
-/* globals require, __dirname */
 const path = require('path');
-const compiler = require("adguard-filters-compiler");
+const compiler = require('adguard-filters-compiler');
 
 const LOCALES_DIR_PATH = './locales';
 
