@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/21/21-472690-1.patch
-! Checksum: dYVlHlr74xIFvISauw6jvA
+! Diff-Path: ../patches/21/21-472765-1.patch
+! Checksum: Vj5IOS+VPLAk7WzEgIvPXQ
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.17.46
-! TimeUpdated: 2023-12-04T13:00:38+03:00
+! Version: 2.0.17.47
+! TimeUpdated: 2023-12-07T12:32:40+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -93,6 +93,11 @@ instagram.com##._aagw:empty
 !
 ! End: Instagram.com
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/167620
+tunnelbear.com##.view-content > div > .badge > a[href="https://www.tunnelbear.com/blog/lets-talk-about-racism/"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/167558
+fotomac.com.tr##.google-news-widget
+! https://github.com/AdguardTeam/AdguardFilters/issues/167641
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166745
 bilibili.com##.pop-live-small-mode
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166554
@@ -1828,8 +1833,6 @@ closermag.fr#$#body[style*="overflow: hidden;"] { overflow: visible!important; }
 closermag.fr#$#html[style^="overflow: hidden;"] { overflow: visible!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/27803
 animedia.tv##.right-sidebar > center > a[target="_blank"]
-! https://github.com/AdguardTeam/AdguardFilters/issues/27801
-yummyanime.club,yummyanime.com##a[target="_blank"] > img[style="width: 100%"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/27763
 mob-mobile.ru##a[href="#puzzle"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/27731
@@ -2941,6 +2944,9 @@ disk.yandex.ru#$#.InfoSpace__Footer > button.InfoSpace__Button { display: none !
 yandex.*##.meteum-promo
 !
 ! Yandex.Maps
+[$path=/maps]yandex.*##.business-card-view__main-wrapper div.card-offer-view
+[$path=/maps]yandex.*##.business-card-title-view__advert
+[$path=/maps]yandex.*##.business-card-title-view__actions .button._view_advertisement
 !
 ! Yandex.Music
 music.yandex.*#$#html > body.no-scroll { overflow: auto !important; }
@@ -2948,7 +2954,7 @@ music.yandex.*#$#.pay-promo-popup { display: none !important; }
 music.yandex.*##.fullscreen-popup.deco-pane-popup
 !
 ! Yandex.Market
-market.yandex.*##div[data-apiary-widget-id="/content/header/headerPromo"]
+market.yandex.*##div[data-apiary-widget-id*="/headerPromo"]
 market.yandex.*##div[data-apiary-widget-name="@marketfront/CreativeBanner"]
 [$path=/^\/$|\/\?/]market.yandex.*##div[data-zone-data*="bannerUrl"]:not([data-zone-name="deals-banner"])
 market.yandex.*##.mediaBanner
@@ -2981,6 +2987,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 ! END: Yandex
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/167675
 ! freundin.de - banner ad at top to buy their magazine for a reduced price
 freundin.de###abtestHeaderBannerCTA
 ! https://github.com/AdguardTeam/AdguardFilters/commit/b87b92051b9262e762ebba80b29b2b50a2949e03#commitcomment-133152994
@@ -4495,6 +4502,7 @@ theguardian.com##.contributions__adblock
 !
 ! SECTION: Self-promo - Regular rules
 !
+123pan.com##.login-vip-banner
 nifty.com##.newsList > li > a[href^="https://setsuzoku.nifty.com/"]
 askona.ee###catalog > div.main-catalog-box-full-width
 jin10.com##.top-poster
@@ -4624,6 +4632,9 @@ kcrw.com###cta-get-involved-large-cta
 allure.com##.journey-unit__container
 blog.csdn.net###asideWriteGuide
 world.taobao.com##div[data-spm="banner_above"]
+zdopravy.cz#$##eshopModal { display: none !important; }
+zdopravy.cz#$##eshopModal ~ .modal-backdrop { display: none !important; }
+zdopravy.cz#$#body.modal-open { overflow: auto !important; padding-right: 0 !important; }
 ||j-depo.com/news/tpl/images/bnner_kango_simple_300_250.jpg
 tech-camp.in##a[data-gtm-tcb^="TCB_CLICK_buntyubanner_"]
 tech-camp.in##a[data-gtm-tcb="TCB_CLICK_scrollbanner_default_exp_income"]
@@ -6652,6 +6663,7 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/167727
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167091
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166721
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166635
@@ -7079,6 +7091,7 @@ apkadmin.com#$##countdown { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/77713
 ! https://github.com/AdguardTeam/AdguardFilters/issues/77714
 !https://github.com/AdguardTeam/AdguardFilters/issues/77338
+! https://github.com/AdguardTeam/AdguardFilters/issues/77364
 ! https://github.com/AdguardTeam/AdguardFilters/issues/77475
 ! https://github.com/AdguardTeam/AdguardFilters/issues/77223
 ! https://github.com/AdguardTeam/AdguardFilters/issues/76724
@@ -7505,7 +7518,7 @@ iqihang.com#$#.homeIndex.padding[data-v-3f7c92dc] .header {top: 0 !important;}
 iqihang.com#$#.homeIndex.padding[data-v-3f7c92dc] { padding-bottom: 0 !important; margin-top: 0 !important; }
 offshoreleaks.icij.org#$#.disclaimer-card { position: static !important; }
 m.post.naver.com#$##cont { user-select: auto !important; }
-toptoon.com#$#html * { user-select: auto !important; -webkit-touch-callout: default !important; -webkit-user-select: auto !important; -moz-user-select: auto !important; -ms-user-select: auto !important; }
+tekniknot.com,toptoon.com#$#html * { user-select: auto !important; -webkit-touch-callout: default !important; -webkit-user-select: auto !important; -moz-user-select: auto !important; -ms-user-select: auto !important; }
 toptoon.com#$#.document_img { pointer-events: auto !important; }
 brunch.co.kr#$#.article_view_disable_selection { -webkit-touch-callout: default!important; -moz-user-select: auto!important; -webkit-user-select: auto!important; -ms-user-select: auto!important; -o-user-select: auto!important; user-select: auto!important; -khtml-user-select: auto!important; }
 britg.kr#$#.content { -webkit-touch-callout: default!important; -moz-user-select: auto!important; -webkit-user-select: auto!important; -ms-user-select: auto!important; -o-user-select: auto!important; user-select: auto!important; -khtml-user-select: auto!important; }
@@ -7552,9 +7565,9 @@ readwn.com#$#.chapter-content { -moz-user-select: text!important; -webkit-user-s
 tmofans.com#$#.element { -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
 siyasetcafe.com#$#body.body-prevent { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
 nhk.or.jp,jucagototranslations.fukou-da.net,quotev.com,nontongratis88.live,freecourser.com#$#body * { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
-habuteru.com,allaboutshaving.kr,pcprogramasymas.net,javsubtitle.co,panda-novel.com,legionscans.com,moviesrush.in,toonvideos.net.in#$#html { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
+filmzone.com,habuteru.com,allaboutshaving.kr,pcprogramasymas.net,javsubtitle.co,panda-novel.com,legionscans.com,moviesrush.in,toonvideos.net.in#$#html { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
 pap.pl,read.qidian.com,firmwarefile.com,denizlihaber.com,nubng.com,melodelaa.link,invado.pl,blisseyhusband.in,9docu.org,template.city,teepr.com,amigurumi.today,thememazing.com,chiaseapk.com#$#body { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
-javsubtitle.co,rawneix.in,mangacrab.com,metalnaveia66.com,bollywoodhindi.in,kdramasurdu.net,flinsetyadi.com,theturtleislandnews.com,audiotools.in,animeactua.com,audiobookcup.com,7misr4day.com,michaelemad.com,lazytranslations.com,samuraiscan.com,activationkeys.co,world4.eu,elektrikmen.com,wartaterkini.news,iptv4best.com,sysnettechsolutions.com,aihristdreamtranslations.com,audioreview.m1001.coreserver.jp#$#body.unselectable { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
+filmzone.com,javsubtitle.co,rawneix.in,mangacrab.com,metalnaveia66.com,bollywoodhindi.in,kdramasurdu.net,flinsetyadi.com,theturtleislandnews.com,audiotools.in,animeactua.com,audiobookcup.com,7misr4day.com,michaelemad.com,lazytranslations.com,samuraiscan.com,activationkeys.co,world4.eu,elektrikmen.com,wartaterkini.news,iptv4best.com,sysnettechsolutions.com,aihristdreamtranslations.com,audioreview.m1001.coreserver.jp#$#body.unselectable { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
 droidtk.com#$#body[data-protect="true"] { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
 firmwarefile.com,m.rtl.be,procrackerz.org,chapterupdates.com,babelnovel.com,katzen-fieber.de,xn--80aaxitdbjk.xn--p1ai,devicespecifications.com,apkinstaller.com,androidmtk.com,themeslide.com,openssource.biz,kinogo-online.online,kino-zal.net,lavka-invaitov.ru#$#body * { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
 !+ NOT_PLATFORM(windows, mac, android, ext_ff)
