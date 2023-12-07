@@ -19,8 +19,7 @@ async function squashAndPush() {
         'rev-parse',
         'HEAD',
     ]);
-    console.log(`Step 1: Checked out to commit ${squashedCommitHash}`);
-    console.log('typeof: ', typeof squashedCommitHash);
+    console.log(`Step 1: Checked out to commit ${squashedCommitHash.trim()}`);
 
     // Step 2: Create a new branch named 'squashed'
     await git.checkoutBranch('squashed', squashedCommitHash.trim());
@@ -43,8 +42,9 @@ async function squashAndPush() {
     console.log('Step 5: Added all changes to the index');
 
     // Step 6: Create a commit for squashed history
-    await git.commit(`squashed history from ${firstCommitHash} to ${squashedCommitHash}`);
-    console.log(`Step 6: Created commit for squashed history from ${firstCommitHash} to ${squashedCommitHash}`);
+    await git.commit(`squashed history from ${firstCommitHash.trim()} to ${squashedCommitHash.trim()}`);
+    // eslint-disable-next-line max-len
+    console.log(`Step 6: Created commit for squashed history from ${firstCommitHash.trim()} to ${squashedCommitHash.trim()}`);
 
     // Step 7: Cherry-pick the commits you want to store
     // Use the `log` method with a range specification to get the commit history
