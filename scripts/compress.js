@@ -11,9 +11,7 @@ const COMMITS_TO_KEEP = 100;
  * @returns {Promise<void>} - A promise that resolves when the process is complete.
  */
 async function squashAndPush() {
-    const git = simpleGit()
-        .addConfig('user.name', 'Dmitriy Seregin')
-        .addConfig('user.email', '105th@users.noreply.github.com');
+    const git = simpleGit();
 
     // Step 1: Checkout to the 10000th commit and save its hash
     await git.checkout(`HEAD~${COMMITS_TO_KEEP}`);
@@ -95,7 +93,10 @@ async function squashAndPush() {
     console.log('Step 9: Reset "master" to the new rebased "master"');
 
     // Step 10: Push with --force to overwrite the remote 'master' branch
-    await git.push(['--set-upstream', 'origin', '--force', 'master']);
+    await git
+        .addConfig('user.name', 'Dmitrii Seregin')
+        .addConfig('user.email', '105th@users.noreply.github.com')
+        .push(['--set-upstream', 'origin', '--force', 'master']);
     console.log('Step 10: Pushed with --force to overwrite the remote "master" branch');
 
     // Step 11: Clean space with aggressive garbage collection
