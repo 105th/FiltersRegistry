@@ -1,6 +1,6 @@
 const simpleGit = require('simple-git');
 
-const COMMITS_TO_KEEP = 38;
+const COMMITS_TO_KEEP = 39;
 
 /**
  * Git script to squash history and push changes.
@@ -49,7 +49,9 @@ async function squashAndPush() {
     // Step 7: Cherry-pick the commits you want to store
     // Use the `log` method with a range specification to get the commit history
     const historyToSave = await git.log({
-        from: `master~${COMMITS_TO_KEEP}`,
+        // When squashed, it didn't save changes made in squashedCommitHash,
+        // so we need to reapply them too.
+        from: `master~${COMMITS_TO_KEEP + 1}`,
         to: 'master',
     });
     const commits = historyToSave.all.reverse();
