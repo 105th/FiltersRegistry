@@ -1,6 +1,6 @@
 const simpleGit = require('simple-git');
 
-const COMMITS_TO_KEEP = 100;
+const COMMITS_TO_KEEP = 200;
 
 /**
  * Git script to squash history and push changes.
@@ -13,7 +13,7 @@ const COMMITS_TO_KEEP = 100;
 async function squashAndPush() {
     const git = simpleGit();
 
-    // Step 1: Checkout to the 10000th commit and save its hash
+    // Step 1: Checkout to the COMMITS_TO_KEEP'th commit and save its hash
     await git.checkout(`HEAD~${COMMITS_TO_KEEP}`);
     const squashedCommitHash = await git.raw([
         'rev-parse',
