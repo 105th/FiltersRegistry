@@ -1,0 +1,25 @@
+name: Compress repository
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup node@18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install dependencies
+        run: yarn install --network-concurrency 1
+
+      - name: Compress repository
+        run: |
+          git config --global user.name 'Dmitriy Seregin'
+          git config --global user.email '105th@users.noreply.github.com'
+          DEBUG=simple-git yarn compress

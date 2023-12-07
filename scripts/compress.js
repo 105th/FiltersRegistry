@@ -1,6 +1,6 @@
 const simpleGit = require('simple-git');
 
-const COMMITS_TO_KEEP = 40;
+const COMMITS_TO_KEEP = 100;
 
 /**
  * Git script to squash history and push changes.
@@ -56,20 +56,23 @@ async function squashAndPush() {
     });
     const commits = historyToSave.all.reverse();
     for (let i = 0; i < commits.length; i += 1) {
-        const { hash } = commits[i];
+        const { hash, date } = commits[i];
 
         try {
-            // Use git cherry-pick command for each commit to cherry-pick
+            // Use git cherry-pick command for each commit to cherry-pick.
+            // GIT_COMMITTER_DATE uses for save original commit date.
             // eslint-disable-next-line no-await-in-loop
-            await git.raw(['cherry-pick', hash]);
+            await git.raw([`GIT_COMMITTER_DATE=${date}`, 'cherry-pick', hash]);
             console.debug(`Step 7: Cherry-picked commit ${hash}`);
         } catch (e) {
             if (e.message.includes('is a merge but no -m option was given')) {
-                // Use git cherry-pick command for each commit to cherry-pick
+                // Use git cherry-pick command for each commit to cherry-pick.
+                // GIT_COMMITTER_DATE uses for save original commit date.
                 // eslint-disable-next-line no-await-in-loop
-                await git.raw(['cherry-pick', '-m 1', hash]);
+                await git.raw([`GIT_COMMITTER_DATE=${date}`, 'cherry-pick', '-m 1', hash]);
                 console.debug(`Step 7: Cherry-picked merge commit ${hash}`);
             } else {
+                // Re-throw error.
                 throw e;
             }
         }
