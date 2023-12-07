@@ -49,7 +49,7 @@ async function squashAndPush() {
     // // Step 7: Cherry-pick the commits you want to store
     // // Use the `log` method with a range specification to get the commit history
     // const historyToSave = await git.log({
-    //     from: `master~${COMMITS_TO_KEEP}`,
+    //     from: `master~${COMMITS_TO_KEEP - 1}`,
     //     to: 'master',
     // });
     // const commits = historyToSave.all.reverse();
