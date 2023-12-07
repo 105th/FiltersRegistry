@@ -20,6 +20,7 @@ async function squashAndPush() {
         'HEAD',
     ]);
     console.log(`Step 1: Checked out to commit ${squashedCommitHash}`);
+    console.log('typeof: ', typeof squashedCommitHash);
 
     // Step 2: Create a new branch named 'squashed'
     await git.checkoutBranch('squashed', squashedCommitHash);
