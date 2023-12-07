@@ -3,6 +3,64 @@ const simpleGit = require('simple-git');
 const COMMITS_TO_KEEP = 200;
 
 /**
+ * Cherry-pick a merge commit with the given hash.
+ *
+ * @async
+ * @param {simpleGit.SimpleGit} git - The simple-git instance.
+ * @param {string} hash - The hash of the merge commit to cherry-pick.
+ * @returns {Promise<void>} - A promise that resolves when cherry-picking is complete.
+ */
+async function cherryPickMergeCommit(git, hash) {
+    try {
+        // Use git cherry-pick command with -m 1 for merge commits.
+        await git.raw(['cherry-pick', '-m 1', hash]);
+        console.debug(`Cherry-picked merge commit ${hash}`);
+    } catch (e) {
+        if (e.message.includes('nothing to commit, working tree clean')
+            && e.message.includes('git commit --allow-empty')) {
+            await git.raw(['cherry-pick', '--skip']);
+            console.debug(`Skipped empty commit ${hash}`);
+        } else {
+            // Re-throw error.
+            throw e;
+        }
+    }
+}
+
+/**
+ * Cherry-pick a regular commit with original author and date.
+ *
+ * @async
+ * @param {simpleGit.SimpleGit} git - The simple-git instance.
+ * @param {string} hash - The hash of the commit to cherry-pick.
+ * @param {string} date - The original commit date.
+ * @param {string} authorName - The original author's name.
+ * @param {string} authorEmail - The original author's email.
+ * @returns {Promise<void>} - A promise that resolves when cherry-picking is complete.
+ */
+async function cherryPickCommit(git, hash, date, authorName, authorEmail) {
+    try {
+        // Save original author.
+        await git.addConfig('user.name', authorName);
+        await git.addConfig('user.email', authorEmail);
+
+        // Save original commit date.
+        git.env('GIT_COMMITTER_DATE', date);
+
+        // Use git cherry-pick command for each commit to cherry-pick.
+        await git.raw(['cherry-pick', hash]);
+        console.debug(`Cherry-picked commit ${hash}`);
+    } catch (e) {
+        if (e.message.includes('is a merge but no -m option was given')) {
+            await cherryPickMergeCommit(git, hash);
+        } else {
+            // Re-throw error.
+            throw e;
+        }
+    }
+}
+
+/**
  * Git script to squash history and push changes.
  *
  * @async
@@ -61,27 +119,8 @@ async function squashAndPush() {
             author_email: authorEmail,
         } = commits[i];
 
-        try {
-            // Save original author.
-            git.addConfig('user.name', authorName).addConfig('user.email', authorEmail);
-            // save original commit date.
-            git.env('GIT_COMMITTER_DATE', date);
-
-            // Use git cherry-pick command for each commit to cherry-pick.
-            // eslint-disable-next-line no-await-in-loop
-            await git.raw(['cherry-pick', hash]);
-            console.debug(`Step 7: Cherry-picked commit ${hash}`);
-        } catch (e) {
-            if (e.message.includes('is a merge but no -m option was given')) {
-                // Use git cherry-pick command for each commit to cherry-pick.
-                // eslint-disable-next-line no-await-in-loop
-                await git.raw(['cherry-pick', '-m 1', hash]);
-                console.debug(`Step 7: Cherry-picked merge commit ${hash}`);
-            } else {
-                // Re-throw error.
-                throw e;
-            }
-        }
+        // eslint-disable-next-line no-await-in-loop
+        await cherryPickCommit(git, hash, date, authorName, authorEmail);
     }
 
     // Step 8: Return to the 'master' branch
@@ -93,10 +132,9 @@ async function squashAndPush() {
     console.log('Step 9: Reset "master" to the new rebased "master"');
 
     // Step 10: Push with --force to overwrite the remote 'master' branch
-    await git
-        .addConfig('user.name', 'Dmitrii Seregin')
-        .addConfig('user.email', '105th@users.noreply.github.com')
-        .push(['--set-upstream', 'origin', '--force', 'master']);
+    await git.addConfig('user.name', 'Dmitrii Seregin');
+    await git.addConfig('user.email', '105th@users.noreply.github.com');
+    await git.push(['--set-upstream', 'origin', '--force', 'master']);
     console.log('Step 10: Pushed with --force to overwrite the remote "master" branch');
 
     // Step 11: Clean space with aggressive garbage collection
