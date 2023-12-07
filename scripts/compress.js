@@ -59,7 +59,7 @@ async function squashAndPush() {
         // Use git cherry-pick command for each commit to cherry-pick
         // eslint-disable-next-line no-await-in-loop
         await git.raw(['cherry-pick', hash]);
-        // console.debug(`Step 7: Cherry-picked commit ${hash}`);
+        console.debug(`Step 7: Cherry-picked commit ${hash}`);
     }
 
     // Step 8: Return to the 'master' branch
