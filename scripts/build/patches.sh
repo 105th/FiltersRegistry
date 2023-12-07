@@ -25,6 +25,8 @@ for new_filter in $all_filters; do
 
         # Generate patches
         # TODO: 1 hour for our filters and 3 hour for external filters
+        # TODO: For our filters set resolution to 'm', time to '60' to exclude
+        # double usage same timestamp for old and new patches.
         $DIFF_BUILDER build --name $basename --resolution h --time 1 --verbose $old_filter $new_filter $path_to_patches
     fi
 done
