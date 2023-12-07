@@ -23,7 +23,7 @@ async function squashAndPush() {
     console.log('typeof: ', typeof squashedCommitHash);
 
     // Step 2: Create a new branch named 'squashed'
-    await git.checkoutBranch('squashed', squashedCommitHash);
+    await git.checkoutBranch('squashed', squashedCommitHash.trim());
     console.log('Step 2: Created branch "squashed"');
 
     // Step 3: Get the hash of the very first commit
