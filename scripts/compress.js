@@ -1,6 +1,6 @@
 const simpleGit = require('simple-git');
 
-const COMMITS_TO_KEEP = 30;
+const COMMITS_TO_KEEP = 35;
 
 /**
  * Git script to squash history and push changes.
