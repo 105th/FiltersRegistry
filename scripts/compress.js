@@ -1,6 +1,6 @@
 const simpleGit = require('simple-git');
 
-const COMMITS_TO_KEEP = 39;
+const COMMITS_TO_KEEP = 40;
 
 /**
  * Git script to squash history and push changes.
@@ -84,7 +84,7 @@ async function squashAndPush() {
     console.log('Step 9: Reset "master" to the new rebased "master"');
 
     // Step 10: Push with --force to overwrite the remote 'master' branch
-    await git.push(['--force', 'master']);
+    await git.push(['--set-upstream', 'origin', '--force', 'master']);
     console.log('Step 10: Pushed with --force to overwrite the remote "master" branch');
 
     // Step 11: Clean space with aggressive garbage collection
