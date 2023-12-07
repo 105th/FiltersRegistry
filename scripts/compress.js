@@ -56,10 +56,21 @@ async function squashAndPush() {
     for (let i = 0; i < commits.length; i += 1) {
         const { hash } = commits[i];
 
-        // Use git cherry-pick command for each commit to cherry-pick
-        // eslint-disable-next-line no-await-in-loop
-        await git.raw(['cherry-pick', hash]);
-        console.debug(`Step 7: Cherry-picked commit ${hash}`);
+        try {
+            // Use git cherry-pick command for each commit to cherry-pick
+            // eslint-disable-next-line no-await-in-loop
+            await git.raw(['cherry-pick', hash]);
+            console.debug(`Step 7: Cherry-picked commit ${hash}`);
+        } catch (e) {
+            if (e.message.includes('is a merge but no -m option was given')) {
+                // Use git cherry-pick command for each commit to cherry-pick
+                // eslint-disable-next-line no-await-in-loop
+                await git.raw(['cherry-pick', '-m 1', hash]);
+                console.debug(`Step 7: Cherry-picked merge commit ${hash}`);
+            } else {
+                throw e;
+            }
+        }
     }
 
     // Step 8: Return to the 'master' branch
