@@ -46,48 +46,48 @@ async function squashAndPush() {
     // eslint-disable-next-line max-len
     console.log(`Step 6: Created commit for squashed history from ${firstCommitHash.trim()} to ${squashedCommitHash.trim()}`);
 
-    // Step 7: Cherry-pick the commits you want to store
-    // Use the `log` method with a range specification to get the commit history
-    const historyToSave = await git.log({
-        from: `master~${COMMITS_TO_KEEP}`,
-        to: 'master',
-    });
-    const commits = historyToSave.all.reverse();
-    for (let i = 0; i < commits.length; i += 1) {
-        const { hash } = commits[i];
+    // // Step 7: Cherry-pick the commits you want to store
+    // // Use the `log` method with a range specification to get the commit history
+    // const historyToSave = await git.log({
+    //     from: `master~${COMMITS_TO_KEEP}`,
+    //     to: 'master',
+    // });
+    // const commits = historyToSave.all.reverse();
+    // for (let i = 0; i < commits.length; i += 1) {
+    //     const { hash } = commits[i];
 
-        try {
-            // Use git cherry-pick command for each commit to cherry-pick
-            // eslint-disable-next-line no-await-in-loop
-            await git.raw(['cherry-pick', hash]);
-            console.debug(`Step 7: Cherry-picked commit ${hash}`);
-        } catch (e) {
-            if (e.message.includes('is a merge but no -m option was given')) {
-                // Use git cherry-pick command for each commit to cherry-pick
-                // eslint-disable-next-line no-await-in-loop
-                await git.raw(['cherry-pick', '-m 1', hash]);
-                console.debug(`Step 7: Cherry-picked merge commit ${hash}`);
-            } else {
-                throw e;
-            }
-        }
-    }
+    //     try {
+    //         // Use git cherry-pick command for each commit to cherry-pick
+    //         // eslint-disable-next-line no-await-in-loop
+    //         await git.raw(['cherry-pick', hash]);
+    //         console.debug(`Step 7: Cherry-picked commit ${hash}`);
+    //     } catch (e) {
+    //         if (e.message.includes('is a merge but no -m option was given')) {
+    //             // Use git cherry-pick command for each commit to cherry-pick
+    //             // eslint-disable-next-line no-await-in-loop
+    //             await git.raw(['cherry-pick', '-m 1', hash]);
+    //             console.debug(`Step 7: Cherry-picked merge commit ${hash}`);
+    //         } else {
+    //             throw e;
+    //         }
+    //     }
+    // }
 
-    // Step 8: Return to the 'master' branch
-    await git.checkout('master');
-    console.log('Step 8: Returned to the "master" branch');
+    // // Step 8: Return to the 'master' branch
+    // await git.checkout('master');
+    // console.log('Step 8: Returned to the "master" branch');
 
-    // Step 9: Reset 'master' to our new rebased 'master'
-    await git.reset(['--hard', 'squashed']);
-    console.log('Step 9: Reset "master" to the new rebased "master"');
+    // // Step 9: Reset 'master' to our new rebased 'master'
+    // await git.reset(['--hard', 'squashed']);
+    // console.log('Step 9: Reset "master" to the new rebased "master"');
 
-    // Step 10: Push with --force to overwrite the remote 'master' branch
-    await git.push(['--force', 'master']);
-    console.log('Step 10: Pushed with --force to overwrite the remote "master" branch');
+    // // Step 10: Push with --force to overwrite the remote 'master' branch
+    // await git.push(['--force', 'master']);
+    // console.log('Step 10: Pushed with --force to overwrite the remote "master" branch');
 
-    // Step 11: Clean space with aggressive garbage collection
-    await git.raw(['gc', '--aggressive']);
-    console.log('Step 11: Cleaned space with aggressive garbage collection');
+    // // Step 11: Clean space with aggressive garbage collection
+    // await git.raw(['gc', '--aggressive']);
+    // console.log('Step 11: Cleaned space with aggressive garbage collection');
 
     console.log('Git actions completed successfully.');
 }
