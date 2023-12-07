@@ -1,6 +1,6 @@
 const simpleGit = require('simple-git');
 
-const COMMITS_TO_KEEP = 200;
+const COMMITS_TO_KEEP = 10000;
 
 /**
  * Cherry-pick a merge commit with the given hash.
