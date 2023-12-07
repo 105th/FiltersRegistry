@@ -52,7 +52,7 @@ async function squashAndPush() {
         from: `master~${COMMITS_TO_KEEP}`,
         to: 'master',
     });
-    const commits = historyToSave.reverse().all;
+    const commits = historyToSave.all.reverse();
     for (let i = 0; i < commits.length; i += 1) {
         const { hash } = commits[i];
 
