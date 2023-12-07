@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/2_optimized/2_optimized-472767-1.patch
-! Checksum: jp4EBmyc+po6gjfBufT83Q
+! Diff-Path: ../patches/2_optimized/2_optimized-472769-1.patch
+! Checksum: jLcFJuv7L2J9P86OwCFnAQ
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.12.6
-! TimeUpdated: 2023-12-07T14:32:34+00:00
+! Version: 2.3.12.7
+! TimeUpdated: 2023-12-07T16:35:17+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -5241,7 +5241,6 @@ inbox.lv##div[class^="AdContainer-"]
 vipi.tv#%#//scriptlet("abort-on-property-read", "checkBlock")
 vipi.tv#%#//scriptlet("set-constant", "banUrl", "undefined")
 nra.lv##.bl-cont-ad
-failiem.lv#@#.show_ads
 salidzini.lv###AM_giga
 delfi.lv##div[data-ad-placement]
 delfi.lv#%#//scriptlet("set-constant", "Adform", "emptyObj")
@@ -5259,6 +5258,7 @@ lrt.lt##.banner-block
 skelbiu.lt#@#DIV.content
 ||p.jwpcdn.com/*/vast.js$domain=lnk.lt,important
 skelbiu.lt###top-item-zone
+delfi.lt##.C-banner
 delfi.lt##.nuxt-wrapper > [style*="width: 100%"]
 @@||s1.adform.net/banners/scripts/adx.js$domain=delfi.lt
 delfi.lt#%#//scriptlet('set-constant', '_dlf.adfree', '1')
@@ -9169,6 +9169,7 @@ _ad_content.
 /getStartPageAds
 !+ NOT_OPTIMIZED
 /getads?
+.com/afu.php?zoneid=$all
 ://creative.*/widgets/Spot/lib.js$third-party
 ://creative.*/widgets/v4/Universal?$subdocument,third-party
 /?oo=1&aab=1|$script,third-party
@@ -9348,7 +9349,7 @@ drikpanchang.com##.dpAdSection
 kiddyshort.com##div[style$="z-index:999999;"]
 techbriefly.com#?#aside[id^="ai_widget-"]:has(> div > script[src*="invoke.js"])
 timesofindia.com,indiatimes.com##div[data-articlebody] [data-card="readAlso"]
-timesofindia.com,indiatimes.com##div[class^="personaliseWidgetLoader"][data-subsection]
+timesofindia.com,indiatimes.com##div[class*="personaliseWidgetLoader"][data-subsection]
 timesofindia.com,indiatimes.com##div[data-articlebody] div.mgid_second_mrec_parent:has(> div[id^="v-timesofindia-indiatimes"])
 modthesims.info#?#.maincontentinner > div.postbit:has(div[id^="adslot-"])
 modthesims.info#?#.maincontentinner > div.postbit:has(div[id^="adslot-"]) + .postbitbelow
@@ -13498,9 +13499,7 @@ greenlemon.me#@#[id^="ads_"]
 greenlemon.me#@##ads_content
 /^https?:\/\/.*\.(jpg|png|php|html|svg|ico)/$popup,domain=speedvideo.net,badfilter
 profitlink.info#@#.banner-468x60
-qrz.com#@#.show_ads
 ||redirect-ads.com^$popup,badfilter
-1001fonts.com#@#.show_ads
 @@||shipstation.com^$generichide
 @@||titlestorage.xboxlive.com/json/*/data/Ads/$app=Solitaire.exe
 @@||i.cdn.turner.com/ads/adfuel/ais/tcm-ais.js$domain=tcm.com
@@ -14083,7 +14082,6 @@ klart.se#@#.advertisement
 realmadrid.ru#@#img[width="240"][height="400"]
 @@||usaa.com^$document
 @@||ad.nl/ad/
-file.fm,files.fm#@#.show_ads
 @@||vk.com/*.php?__query=$document
 @@||tickets.oebb.at^$generichide
 sxsw.com#@#.sponsors
@@ -15404,6 +15402,7 @@ cars.bg#$#body { background: #fafafa!important; }
 /css/adv.
 /cubead.
 /curveball/ads/*
+/custom_ads.js
 /customad.js
 /deliverad/fc.js
 /delivery.ads.
@@ -17546,7 +17545,6 @@ _800x80_
 ##.ad-disclaimer
 ##.ad-display
 ##.ad-displayed
-##.ad-div
 ##.ad-dt
 ##.ad-element
 ##.ad-entity-container
@@ -20166,7 +20164,6 @@ austurfrett.is,boards.4chan.org,boards.4channel.org#@#.middlead
 sankei.com#@#.module_ad
 seura.fi,www.msn.com#@#.nativead
 dogva.com#@#.node-ad
-youtube.com#@#.overlay-ads
 bloomberg.com#@#.page-ad
 rottentomatoes.com#@#.page_ad
 player.ex.co,theautopian.com#@#.pbs__player
@@ -20192,7 +20189,7 @@ k24tv.co.ke#@#.top-ad
 cp24.com#@#.topAd
 outinthepaddock.com.au#@#.topads
 codedevstuff.blogspot.com,hassiweb-programming.blogspot.com#@#.vertical-ads
-ads.google.com,youtube.com#@#.video-ads
+ads.google.com#@#.video-ads
 javynow.com#@#.videos-ad
 sacbee.com#@#.wps-player-wrap
 gumtree.com.au#@#[data-ad-name]
@@ -22125,6 +22122,7 @@ browsershots.org#@#.advert_area
 ||deltraff.com^
 ||demand.supply^$script
 ||demersefiques.com^
+||denarocepa.com^
 ||denbeigemark.com^
 ||dencejvlq.com^
 ||dendranthe4edm7um.com^
@@ -25927,6 +25925,7 @@ browsershots.org#@#.advert_area
 ||saulaupe.net^
 ||saumeechoa.com^
 ||savourethicalmercury.com^
+||sawalinitwits.com^
 ||sawfishdiapsid.com^
 ||saycasksabnegation.com^
 ||sb89347.com^
@@ -26156,6 +26155,7 @@ browsershots.org#@#.advert_area
 ||slideff.com^
 ||slightcareconditions.com^
 ||slimfiftywoo.com^
+||slinkyfoliot.com^
 ||sloppyegotistical.com^
 ||slpmcfdljsntwp.com^
 ||sltvhyjthx.com^
@@ -26313,6 +26313,7 @@ browsershots.org#@#.advert_area
 ||starszoom.re^
 ||startappexchange.com^
 ||starvardsee.xyz^
+||starvybryan.com^
 ||stat-rock.com^
 ||statesmanridiculousplatitude.com^
 ||statesmansubstance.com^
@@ -26450,6 +26451,7 @@ browsershots.org#@#.advert_area
 ||synsads.com^
 ||synthesissocietysplitting.com^
 ||syrsple2se8nyu09.com^
+||sysoutvariola.com^
 ||system-notify.app^
 ||systeme-business.online^
 ||systemhostess.com^
@@ -26768,6 +26770,8 @@ browsershots.org#@#.advert_area
 ||tubemov.com^
 ||tuckerheiau.com^
 ||tuesdayfetidlit.com^
+||tuglikevertigo.com^
+||tukeelsy.com^
 ||tukulordimera.com^
 ||tumblebit.org^
 ||tumbleobjectswedding.com^
@@ -26810,6 +26814,7 @@ browsershots.org#@#.advert_area
 ||typescoordinate.com^
 ||typiconrices.com^
 ||tyserving.com^
+||tzaristdiploma.com^
 ||tzegilo.com^
 ||tzugumojfm.com^
 ||tzvroyuhmkvlsa.com^
