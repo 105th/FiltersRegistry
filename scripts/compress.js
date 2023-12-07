@@ -11,7 +11,9 @@ const COMMITS_TO_KEEP = 100;
  * @returns {Promise<void>} - A promise that resolves when the process is complete.
  */
 async function squashAndPush() {
-    const git = simpleGit();
+    const git = simpleGit()
+        .addConfig('user.name', 'Dmitriy Seregin')
+        .addConfig('user.email', '105th@users.noreply.github.com');
 
     // Step 1: Checkout to the 10000th commit and save its hash
     await git.checkout(`HEAD~${COMMITS_TO_KEEP}`);
