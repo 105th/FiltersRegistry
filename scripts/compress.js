@@ -63,33 +63,21 @@ async function squashAndPush() {
             author_email: authorEmail,
         } = commits[i];
 
-        const gitCherryPick = [
-            '--author',
-            `${authorName} <${authorEmail}>`,
-            'cherry-pick',
-        ];
-
         try {
-            // GIT_COMMITTER_DATE uses for save original commit date.
+            // Save original author.
+            git.addConfig('user.name', authorName).addConfig('user.email', authorEmail);
+            // save original commit date.
             git.env('GIT_COMMITTER_DATE', date);
+
             // Use git cherry-pick command for each commit to cherry-pick.
             // eslint-disable-next-line no-await-in-loop
-            await git.raw([
-                ...gitCherryPick,
-                hash,
-            ]);
+            await git.raw(['cherry-pick', hash]);
             console.debug(`Step 7: Cherry-picked commit ${hash}`);
         } catch (e) {
             if (e.message.includes('is a merge but no -m option was given')) {
-                // GIT_COMMITTER_DATE uses for save original commit date.
-                git.env('GIT_COMMITTER_DATE', date);
                 // Use git cherry-pick command for each commit to cherry-pick.
                 // eslint-disable-next-line no-await-in-loop
-                await git.raw([
-                    ...gitCherryPick,
-                    '-m 1',
-                    hash,
-                ]);
+                await git.raw(['cherry-pick', '-m 1', hash]);
                 console.debug(`Step 7: Cherry-picked merge commit ${hash}`);
             } else {
                 // Re-throw error.
