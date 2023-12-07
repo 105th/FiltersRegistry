@@ -21,7 +21,7 @@ async function squashAndPush() {
     ]);
 
     // Step 2: Create a new branch named 'squashed'
-    await git.checkoutBranch('squashed');
+    await git.checkoutBranch('squashed', squashedCommitHash);
 
     // Step 3: Get hash of very first commit
     const firstCommitHash = await git.raw([
