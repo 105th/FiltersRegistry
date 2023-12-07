@@ -1,6 +1,6 @@
 const simpleGit = require('simple-git');
 
-const COMMITS_TO_KEEP = 35;
+const COMMITS_TO_KEEP = 36;
 
 /**
  * Git script to squash history and push changes.
@@ -34,7 +34,7 @@ async function squashAndPush() {
     console.log(`Step 3: Retrieved hash of the first commit: ${firstCommitHash.trim()}`);
 
     // Step 4: Drop all directories to the very first commit
-    await git.reset(firstCommitHash.trim());
+    await git.reset(['--mixed', firstCommitHash.trim()]);
     console.log('Step 4: Dropped all directories to the first commit');
 
     // Step 5: Add everything to the index
