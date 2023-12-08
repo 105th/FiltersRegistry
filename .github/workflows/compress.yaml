@@ -5,11 +5,15 @@ on:
 
 jobs:
   compress:
+    permissions:
+      contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.WORKFLOW_TOKEN }}
 
       - name: Setup node@18
         uses: actions/setup-node@v3
@@ -20,6 +24,7 @@ jobs:
         run: yarn install --network-concurrency 1
 
       - name: Compress repository
+        GITHUB_TOKEN: ${{ github.token }}
         run: |
           git config user.name 'Dmitriy Seregin'
           git config user.email '105th@users.noreply.github.com'

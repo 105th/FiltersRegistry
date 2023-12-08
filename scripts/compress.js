@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const simpleGit = require('simple-git');
 
-const COMMITS_TO_KEEP = 10000;
+const COMMITS_TO_KEEP = 9000;
 
 /**
  * Cherry-pick a merge commit with the given hash.
@@ -131,10 +131,6 @@ async function squashAndPush() {
         // FIXME: DEBUG MODE
         if (hash === 'ea957bb2df4a0fa500ea5d48285bb57b9613ecd0') {
             /* eslint-disable no-await-in-loop */
-            await git.raw(['checkout', 'master', '--', '.github/workflows']);
-            await git.add('.');
-            await git.commit('copy workflows from master');
-
             await git.addConfig('user.name', 'Dmitrii Seregin');
             await git.addConfig('user.email', '105th@users.noreply.github.com');
             await git.push(['--set-upstream', 'origin', '--force', 'squashed']);
