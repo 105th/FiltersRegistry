@@ -23,7 +23,7 @@ async function cherryPickMergeCommit(git, hash, i, mainline = 1) {
             && e.message.includes('git commit --allow-empty')) {
             await git.raw(['cherry-pick', '--skip']);
             console.debug(`Skipped empty commit ${hash}`);
-        } else if (e.message.includes('is a merge but no -m option was given')) {
+        } else if (e.message.includes('Merge conflict in')) {
             await cherryPickMergeCommit(git, hash, i, 2);
         } else {
             // Re-throw error.
