@@ -1,71 +1,7 @@
 /* eslint-disable no-console */
 const simpleGit = require('simple-git');
 
-const COMMITS_TO_KEEP = 9000;
-
-/**
- * Cherry-pick a merge commit with the given hash.
- *
- * @async
- * @param {simpleGit.SimpleGit} git - The simple-git instance.
- * @param {string} hash - The hash of the merge commit to cherry-pick.
- * @param {number} i - The index of the commit (for debugging/logging purposes).
- * @param {number} [mainline=1] - The mainline number for the cherry-pick (default is 1).
- * @returns {Promise<void>} - A promise that resolves when cherry-picking is complete.
- */
-async function cherryPickMergeCommit(git, hash, i, mainline = 1) {
-    try {
-        // Use git cherry-pick command with the specified mainline for merge commits.
-        await git.raw(['cherry-pick', `--mainline=${mainline}`, hash]);
-        console.debug(`Cherry-picked merge commit#${i} ${hash}`);
-    } catch (e) {
-        if (e.message.includes('nothing to commit, working tree clean')
-            && e.message.includes('git commit --allow-empty')) {
-            await git.raw(['cherry-pick', '--skip']);
-            console.debug(`Skipped empty commit ${hash}`);
-        } else if (e.message.includes('Merge conflict in')) {
-            await git.raw(['cherry-pick', '--abort']);
-            await cherryPickMergeCommit(git, hash, i, 2);
-        } else {
-            // Re-throw error.
-            throw e;
-        }
-    }
-}
-
-/**
- * Cherry-pick a regular commit with original author and date.
- *
- * @async
- * @param {simpleGit.SimpleGit} git - The simple-git instance.
- * @param {string} hash - The hash of the commit to cherry-pick.
- * @param {string} date - The original commit date.
- * @param {string} authorName - The original author's name.
- * @param {string} authorEmail - The original author's email.
- * @param {number} i - The index of the commit (for debugging/logging purposes).
- * @returns {Promise<void>} - A promise that resolves when cherry-picking is complete.
- */
-async function cherryPickCommit(git, hash, date, authorName, authorEmail, i) {
-    try {
-        // Save original author.
-        await git.addConfig('user.name', authorName);
-        await git.addConfig('user.email', authorEmail);
-
-        // Save original commit date.
-        git.env('GIT_COMMITTER_DATE', date);
-
-        // Use git cherry-pick command for each commit to cherry-pick.
-        await git.raw(['cherry-pick', hash]);
-        console.debug(`Cherry-picked commit#${i} ${hash}`);
-    } catch (e) {
-        if (e.message.includes('is a merge but no -m option was given')) {
-            await cherryPickMergeCommit(git, hash, i);
-        } else {
-            // Re-throw error.
-            throw e;
-        }
-    }
-}
+const COMMITS_TO_KEEP = 10000;
 
 /**
  * Git script to squash history and push changes.
@@ -116,6 +52,7 @@ async function squashAndPush() {
     const historyToSave = await git.log({
         from: `master~${COMMITS_TO_KEEP}`,
         to: 'master',
+        '--no-merges': true,
     });
     const commits = historyToSave.all.reverse();
     for (let i = 0; i < commits.length; i += 1) {
@@ -126,19 +63,18 @@ async function squashAndPush() {
             author_email: authorEmail,
         } = commits[i];
 
-        // eslint-disable-next-line no-await-in-loop
-        await cherryPickCommit(git, hash, date, authorName, authorEmail, i);
+        /* eslint-disable no-await-in-loop */
+        // Save original author.
+        await git.addConfig('user.name', authorName);
+        await git.addConfig('user.email', authorEmail);
 
-        // FIXME: DEBUG MODE
-        if (hash === 'ea957bb2df4a0fa500ea5d48285bb57b9613ecd0') {
-            /* eslint-disable no-await-in-loop */
-            await git.addConfig('user.name', 'Dmitrii Seregin');
-            await git.addConfig('user.email', '105th@users.noreply.github.com');
-            await git.push(['--set-upstream', 'origin', '--force', 'squashed']);
-            /* eslint-enable no-await-in-loop */
+        // Save original commit date.
+        git.env('GIT_COMMITTER_DATE', date);
 
-            return;
-        }
+        // Use git cherry-pick command for each commit to cherry-pick.
+        await git.raw(['cherry-pick', hash]);
+        console.debug(`Cherry-picked commit#${i} ${hash}`);
+        /* eslint-enable no-await-in-loop */
     }
 
     // Step 8: Return to the 'master' branch
