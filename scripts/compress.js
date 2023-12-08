@@ -127,6 +127,17 @@ async function squashAndPush() {
 
         // eslint-disable-next-line no-await-in-loop
         await cherryPickCommit(git, hash, date, authorName, authorEmail, i);
+
+        // FIXME: DEBUG MODE
+        if (hash === 'ea957bb2df4a0fa500ea5d48285bb57b9613ecd0') {
+            /* eslint-disable no-await-in-loop */
+            await git.addConfig('user.name', 'Dmitrii Seregin');
+            await git.addConfig('user.email', '105th@users.noreply.github.com');
+            await git.push(['--set-upstream', 'origin', '--force', 'squashed']);
+            /* eslint-enable no-await-in-loop */
+
+            return;
+        }
     }
 
     // Step 8: Return to the 'master' branch
