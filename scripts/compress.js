@@ -72,7 +72,7 @@ async function squashAndPush() {
         git.env('GIT_COMMITTER_DATE', date);
 
         // Use git cherry-pick command for each commit to cherry-pick.
-        await git.raw(['cherry-pick', hash]);
+        await git.raw(['cherry-pick', hash, '--strategy-option', 'theirs']);
         console.debug(`Cherry-picked commit#${i} ${hash}`);
         /* eslint-enable no-await-in-loop */
     }
