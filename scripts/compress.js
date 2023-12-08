@@ -16,7 +16,7 @@ const COMMITS_TO_KEEP = 10000;
 async function cherryPickMergeCommit(git, hash, i, mainline = 1) {
     try {
         // Use git cherry-pick command with the specified mainline for merge commits.
-        await git.raw(['cherry-pick', `--mainline ${mainline}`, hash]);
+        await git.raw(['cherry-pick', `--mainline=${mainline}`, hash]);
         console.debug(`Cherry-picked merge commit#${i} ${hash}`);
     } catch (e) {
         if (e.message.includes('nothing to commit, working tree clean')
