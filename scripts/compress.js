@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const simpleGit = require('simple-git');
 
 const COMMITS_TO_KEEP = 10000;
@@ -8,18 +9,22 @@ const COMMITS_TO_KEEP = 10000;
  * @async
  * @param {simpleGit.SimpleGit} git - The simple-git instance.
  * @param {string} hash - The hash of the merge commit to cherry-pick.
+ * @param {number} i - The index of the commit (for debugging/logging purposes).
+ * @param {number} [mainline=1] - The mainline number for the cherry-pick (default is 1).
  * @returns {Promise<void>} - A promise that resolves when cherry-picking is complete.
  */
-async function cherryPickMergeCommit(git, hash) {
+async function cherryPickMergeCommit(git, hash, i, mainline = 1) {
     try {
-        // Use git cherry-pick command with -m 1 for merge commits.
-        await git.raw(['cherry-pick', '-m 1', hash]);
-        console.debug(`Cherry-picked merge commit ${hash}`);
+        // Use git cherry-pick command with the specified mainline for merge commits.
+        await git.raw(['cherry-pick', `--mainline ${mainline}`, hash]);
+        console.debug(`Cherry-picked merge commit#${i} ${hash}`);
     } catch (e) {
         if (e.message.includes('nothing to commit, working tree clean')
             && e.message.includes('git commit --allow-empty')) {
             await git.raw(['cherry-pick', '--skip']);
             console.debug(`Skipped empty commit ${hash}`);
+        } else if (e.message.includes('is a merge but no -m option was given')) {
+            await cherryPickMergeCommit(git, hash, i, 2);
         } else {
             // Re-throw error.
             throw e;
@@ -36,9 +41,10 @@ async function cherryPickMergeCommit(git, hash) {
  * @param {string} date - The original commit date.
  * @param {string} authorName - The original author's name.
  * @param {string} authorEmail - The original author's email.
+ * @param {number} i - The index of the commit (for debugging/logging purposes).
  * @returns {Promise<void>} - A promise that resolves when cherry-picking is complete.
  */
-async function cherryPickCommit(git, hash, date, authorName, authorEmail) {
+async function cherryPickCommit(git, hash, date, authorName, authorEmail, i) {
     try {
         // Save original author.
         await git.addConfig('user.name', authorName);
@@ -49,10 +55,10 @@ async function cherryPickCommit(git, hash, date, authorName, authorEmail) {
 
         // Use git cherry-pick command for each commit to cherry-pick.
         await git.raw(['cherry-pick', hash]);
-        console.debug(`Cherry-picked commit ${hash}`);
+        console.debug(`Cherry-picked commit#${i} ${hash}`);
     } catch (e) {
         if (e.message.includes('is a merge but no -m option was given')) {
-            await cherryPickMergeCommit(git, hash);
+            await cherryPickMergeCommit(git, hash, i);
         } else {
             // Re-throw error.
             throw e;
@@ -120,7 +126,7 @@ async function squashAndPush() {
         } = commits[i];
 
         // eslint-disable-next-line no-await-in-loop
-        await cherryPickCommit(git, hash, date, authorName, authorEmail);
+        await cherryPickCommit(git, hash, date, authorName, authorEmail, i);
     }
 
     // Step 8: Return to the 'master' branch
