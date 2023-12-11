@@ -42,6 +42,14 @@ async function squashAndPush() {
     await git.add('.');
     console.log('Step 5: Added all changes to the index');
 
+    // Extract date from commit with squashed history
+    const { date: squashedCommitDate } = await git.log({
+        from: squashedCommitHash,
+        to: `${squashedCommitHash}~1`,
+    });
+    // Use this date to keep history linear for commit with squashed history
+    git.env('GIT_COMMITTER_DATE', squashedCommitDate);
+
     // Step 6: Create a commit for squashed history
     await git.commit(`squashed history from ${firstCommitHash.trim()} to ${squashedCommitHash.trim()}`);
     // eslint-disable-next-line max-len
