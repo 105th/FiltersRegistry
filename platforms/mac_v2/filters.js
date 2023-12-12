@@ -1607,8 +1607,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.13",
-			"timeUpdated": "2023-12-12T00:35:53+0300",
+			"version": "2.0.47.14",
+			"timeUpdated": "2023-12-12T15:34:45+0300",
 			"languages": [],
 			"tags": [
 				1,
@@ -1629,8 +1629,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.57",
-			"timeUpdated": "2023-12-12T00:35:56+0300",
+			"version": "2.0.48.58",
+			"timeUpdated": "2023-12-12T15:34:49+0300",
 			"languages": [
 				"tr"
 			],
@@ -1652,8 +1652,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/14.txt",
 			"trustLevel": "full",
-			"version": "2.1.80.55",
-			"timeUpdated": "2023-12-12T00:36:07+0300",
+			"version": "2.1.80.56",
+			"timeUpdated": "2023-12-12T15:35:04+0300",
 			"languages": [],
 			"tags": [
 				5,
@@ -1671,8 +1671,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/15.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.68",
-			"timeUpdated": "2023-12-12T00:36:08+0300",
+			"version": "2.0.58.69",
+			"timeUpdated": "2023-12-12T15:35:05+0300",
 			"languages": [],
 			"tags": [
 				45,
@@ -1729,8 +1729,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.7.47",
-			"timeUpdated": "2023-12-12T00:36:14+0300",
+			"version": "2.0.7.48",
+			"timeUpdated": "2023-12-12T15:35:12+0300",
 			"languages": [],
 			"tags": [
 				2
@@ -1747,8 +1747,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.28.87",
-			"timeUpdated": "2023-12-12T00:36:15+0300",
+			"version": "2.0.28.88",
+			"timeUpdated": "2023-12-12T15:35:14+0300",
 			"languages": [],
 			"tags": [
 				5,
@@ -1767,8 +1767,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.27.65",
-			"timeUpdated": "2023-12-12T00:36:17+0300",
+			"version": "2.0.27.66",
+			"timeUpdated": "2023-12-12T15:35:18+0300",
 			"languages": [],
 			"tags": [
 				5,
@@ -1787,8 +1787,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.86.79",
-			"timeUpdated": "2023-12-12T00:36:26+0300",
+			"version": "2.0.86.80",
+			"timeUpdated": "2023-12-12T15:35:30+0300",
 			"languages": [
 				"ru"
 			],
@@ -1810,8 +1810,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.11.14",
-			"timeUpdated": "2023-12-12T00:36:26+0300",
+			"version": "2.0.11.15",
+			"timeUpdated": "2023-12-12T15:35:32+0300",
 			"languages": [],
 			"tags": [
 				5,
@@ -1830,8 +1830,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.17.49",
-			"timeUpdated": "2023-12-12T00:36:27+0300",
+			"version": "2.0.17.50",
+			"timeUpdated": "2023-12-12T15:35:33+0300",
 			"languages": [],
 			"tags": [
 				5,
@@ -1850,8 +1850,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.4.71",
-			"timeUpdated": "2023-12-12T00:36:32+0300",
+			"version": "2.1.4.72",
+			"timeUpdated": "2023-12-12T15:35:39+0300",
 			"languages": [
 				"zh"
 			],
@@ -1873,8 +1873,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.6.70",
-			"timeUpdated": "2023-12-12T00:36:32+0300",
+			"version": "2.0.6.71",
+			"timeUpdated": "2023-12-12T15:35:40+0300",
 			"languages": [],
 			"tags": [
 				5,
@@ -1893,8 +1893,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/23.txt",
 			"trustLevel": "full",
-			"version": "2.0.3.41",
-			"timeUpdated": "2023-12-12T00:36:34+0300",
+			"version": "2.0.3.42",
+			"timeUpdated": "2023-12-12T15:35:44+0300",
 			"languages": [
 				"uk"
 			],
@@ -1916,8 +1916,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.12.8",
-			"timeUpdated": "2023-12-12T00:36:46+0300",
+			"version": "2.3.12.9",
+			"timeUpdated": "2023-12-12T15:36:01+0300",
 			"languages": [],
 			"tags": [
 				10,
@@ -1937,8 +1937,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.18",
-			"timeUpdated": "2023-12-12T00:36:54+0300",
+			"version": "2.0.64.19",
+			"timeUpdated": "2023-12-12T15:36:11+0300",
 			"languages": [],
 			"tags": [
 				2,
@@ -1956,8 +1956,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.0.94.60",
-			"timeUpdated": "2023-12-12T00:36:57+0300",
+			"version": "2.0.94.61",
+			"timeUpdated": "2023-12-12T15:36:16+0300",
 			"languages": [],
 			"tags": [
 				3,
@@ -2016,8 +2016,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.46.48",
-			"timeUpdated": "2023-12-12T00:37:13+0300",
+			"version": "2.0.46.49",
+			"timeUpdated": "2023-12-12T15:36:36+0300",
 			"languages": [
 				"ja"
 			],
@@ -2038,8 +2038,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/8.txt",
 			"trustLevel": "full",
-			"version": "2.0.6.28",
-			"timeUpdated": "2023-12-12T00:37:16+0300",
+			"version": "2.0.6.29",
+			"timeUpdated": "2023-12-12T15:36:40+0300",
 			"languages": [
 				"nl"
 			],
@@ -2062,8 +2062,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.22.41",
-			"timeUpdated": "2023-12-12T00:37:20+0300",
+			"version": "2.0.22.42",
+			"timeUpdated": "2023-12-12T15:36:45+0300",
 			"languages": [
 				"es",
 				"pt"

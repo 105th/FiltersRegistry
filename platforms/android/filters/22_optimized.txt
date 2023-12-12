@@ -1,9 +1,9 @@
 ! Diff-Path: ../patches/22_optimized/22_optimized-472872-1.patch
-! Checksum: xp8u8d4Oh3iSBuHxSPTFaw
+! Checksum: 9yZASNnR8nfAdsdM8BJVsQ
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.6.70
-! TimeUpdated: 2023-12-12T00:36:32+03:00
+! Version: 2.0.6.71
+! TimeUpdated: 2023-12-12T15:35:40+03:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -133,6 +133,7 @@ blog.livedoor.jp##.naka_rss
 blog.livedoor.jp##div[class^="footrss"]
 blog.livedoor.jp##div[class^="shitarss_"]
 blog.livedoor.jp##div[id^="shitarss_title_"]
+crx7601.com#?#.article-body-inner .twitter-tweet ~ b:has(+ .ninja-recommend-block)
 /wp-content/plugins/chaty/*$domain=canadaglobalinfo.com
 gameinn.jp##.wp-rss-template-container
 gameinn.jp#?#.article-under-box > p.sidetop_p:has(+ .wp-rss-template-container)
@@ -320,7 +321,6 @@ nadarenews.com##div[class$="uebar1"]
 nadarenews.com##div[class^="sitabar"]
 kagekidan.net,shurabanote.com#$##rsshead { display :none !important; }
 kagekidan.net,shurabanote.com#$#.left-container { margin-top: 0 !important; }
-eropasture.com##.widget-sidebar-scroll
 ||digital-thread.com/digital-thread-headline-pickups.html
 digital-thread.com##.top-contents-ad-base + div.top-contents-headline
 digital-thread.com#?#.article-body-inner > div[class^="article-news"]:has(> iframe[src^="http://digital-thread.com/digital-thread-headline-"])
@@ -439,7 +439,6 @@ nanj-world.blog.jp#?#body > #second-header:has(> #header_rss_c)
 densetsunokijo.net,kichimama.net,romeodensetsu.com,shuraba-dendo.com,sukashuraba.net,labradorsokuho.net###rss2
 gundam-futab.info##.rss_label
 sexytvcap.com,pokebrary.blog.jp,gundam-futab.info##.blogroll-channel
-||warotanikki.com/wp-content/headline.html
 warotanikki.com##.mainwidget
 warotanikki.com##div.img-grid
 nadarenews.com##div[class^="blogroll"]
@@ -468,6 +467,7 @@ stocktwits.com##div[class^="UserPage_primis"]
 /rss_$subdocument,domain=eegg.fun
 blog.fc2.com,blog.jp###blogroll
 tokimeki-s.com,rabitsokuhou.2chblog.jp###rss
+xn--gmq92kd2rm1kx34a.com###rssrole
 meshinews.blog.jp##div[class^="mainrss"]
 gsch.tfmwish.com##.rssti
 gsch.tfmwish.com##div[class^="blogroll-wrapper"]
@@ -477,7 +477,6 @@ gundamlog.com###top_rss
 mona-news.com##div[id^="rss_"]
 ||tsubamesoku.blog.jp/new.html
 ||tsubamesoku.blog.jp/yakutu.htm
-||tsubamesoku.blog.jp/yaku2.html
 tsubamesoku.blog.jp#?#article > h1.article-option-title:contains(/^おススメ記事$/)
 ||news.2chblog.jp/headline1.htm
 ||news.2chblog.jp/headline2.htm
@@ -542,7 +541,6 @@ world-fusigi.net##.top_rss_wrap
 moeclo.ldblog.jp##iframe
 moeclo.ldblog.jp##div[id^="RSS"]
 vtubernews.jp##.rss-sub
-kidanlog.com##.rss-flexbox
 kitimama-matome.net##.article-outer-2 > div.article-header
 kijosoku.com##.column-inner-2 > div[style^="border-style:dotted;border-color:#00BFFF;"]
 pokemon-matome.net#$##content11 { padding-top:0 !important; }
@@ -689,7 +687,6 @@ beasoku.com##.rss-block
 ||callkeeper.ru^$third-party
 ||cbot.ai^$third-party
 ||app.chatplus.jp^$third-party
-||apps.azhelp.ru^$third-party
 ||artibot.ai^$third-party
 ||avaamo.com^$third-party
 ||blinger.io^$third-party
@@ -727,7 +724,6 @@ beasoku.com##.rss-block
 ||whatya.solairo-api.com^$third-party
 ||whisbi.com^$third-party
 ||whitesaas.com^$third-party
-||widget-v*.tidiochat.com^$third-party
 ||widget.beesender.com^$third-party
 ||widget.contactleader.pl^$third-party
 ||widget.getgist.com^$third-party
@@ -790,7 +786,6 @@ vinmec.com##.global-thread-create-cta
 ||app.carnow.com/dealers/carnow_plugin.js$domain=hondacarsrockhill.com
 ||app.yellowmessenger.com/widget/main.js
 ||assets.kayako.com/messenger/
-||assets.livecall.io/accounts/*/widget.js
 ||assets.zendesk.com/embeddable_framework/main.js$domain=zarplata.ru
 ||autofaq.ai/widget/$third-party
 ||az601263.vo.msecnd.net/webview/*/embed.js
