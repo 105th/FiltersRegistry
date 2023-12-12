@@ -1,10 +1,10 @@
 ! Diff-Path: ../patches/13_optimized/13_optimized-472769-1.patch
 ![Adblock Plus 2.0]
-! Checksum: AhkZXk7esVCd4ygqxhO1JQ
+! Checksum: zvxG1staeYtrY2nRtDp7pg
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.48.56
-! TimeUpdated: 2023-12-07T16:34:49+00:00
+! Version: 2.0.48.57
+! TimeUpdated: 2023-12-12T00:35:56+03:00
 ! Expires: 4 days (update frequency)
 ||intermediaworks.com^$third-party
 ||rtb.pixad.com.tr^
@@ -516,9 +516,8 @@ oyungibi.com##+js(set-constant, jQuery.adblock, false)
 @@||osxinfo.net/js/*/lifelockad.js
 osxinfo.net##+js(abort-current-script, $, !document.getElementById(btoa)
 turkdenizcileri.com,bilgalem.blogspot.com##+js(set-constant, koddostu_com_adblock_yok, null)
-tekniknot.com##+js(abort-current-script, onload, adsbygoogle)
-tekniknot.com##+js(abort-on-property-write, window.onload)
-||tekniknot.com/you|
+tekniknot.com##+js(no-setTimeout-if, t.open(\'\x)
+/:\/\/tekniknot\.com\/\w+$/$xmlhttprequest,domain=tekniknot.com
 @@||veterinerhekimleri.com/wp-content/plugins/*/includes/adblock-detector/advertisement.js
 veterinerhekimleri.com##+js(set-constant, jQuery.adblock, false)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=oyunlarskor.com
@@ -822,6 +821,7 @@ supernaturalizle.com,sinemakolik.net,hdsinemax.com,diziyo.*,fullhdabifilm.com,be
 720pfilmizleme1.com,720pfilmizletir.com,1080pfilmizletir.com,720pfilmizlesene.com,filmmakinesi1.*,yabancidizitv.*,diziwatch.net,fullhd720pizle.live,filmizlemax.*,videoseyred.in,hdfilmcehennem.live,yerlifilmizletir.com##+js(addEventListener-defuser, click, checkTarget)
 dizivex.com,dizimini.com,yabancidiziizlesene.*,dizisup.*,roketdizi.co,1080hdfilmizle.com##+js(abort-on-property-read, initPop)
 shirl.club,altporno.xyz,ovpvideo.com##+js(abort-on-property-read, oV1)
+trtizle.com##+js(no-xhr-if, trt1/ad/)
 pllsfored.com##+js(set-constant, window.config.adv, {})
 cvdd.one##+js(set-constant, player.vroll, noopFunc)
 gofilmizle.com##+js(nano-setInterval-booster, sec--)

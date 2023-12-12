@@ -1,10 +1,10 @@
 ! Diff-Path: ../patches/17_optimized/17_optimized-472765-1.patch
 ![Adblock Plus 2.0]
-! Checksum: PckGbEJ/4jgjfosMs1T9zw
+! Checksum: bFqOasov5kWxL8MTaRHSkA
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.7.46
-! TimeUpdated: 2023-12-07T12:32:31+00:00
+! Version: 2.0.7.47
+! TimeUpdated: 2023-12-12T00:36:14+03:00
 ! Expires: 4 days (update frequency)
 $removeparam=mt_link_id
 $removeparam=iclid
@@ -183,6 +183,7 @@ $removeparam=fb_action_types
 $removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
+||smotreshka.tv^$removeparam=from
 ||announcements.bybit.com^$removeparam=pid
 ||announcements.bybit.com^$removeparam=sa_utm_ci
 ||announcements.bybit.com^$removeparam=sa_utm_channel
@@ -553,7 +554,6 @@ $removeparam=ici,domain=shein.co.uk|shein.com
 ||tiktok.com/@*/video/*$removeparam=is_from_webapp
 ||tiktok.com/@*/video/*$removeparam=sender_device
 ||tiktok.com$removeparam=enter_method
-||tiktok.com$removeparam=enter_from
 ||tiktok.com/search$removeparam=t
 ||tiktok.com/@*/video/*$removeparam=q
 ||ads.tiktok.com/*/signup$removeparam=_source_
@@ -1298,6 +1298,7 @@ $removeparam=dclid
 ||gamesplanet.com^$removeparam=ref
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
+@@||transfernow.net/*/*?utm_source=$removeparam=utm_source
 @@||cleviationly.com/adServe/aff?cmpid=*mydealz*&dlink=$removeparam=cmpid
 @@||pixel.adsafeprotected.com/services/pub?$xmlhttprequest,removeparam=slot,domain=reuters.com
 @@||pixel.adsafeprotected.com/services/pub?$xmlhttprequest,removeparam=anId,domain=reuters.com

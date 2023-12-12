@@ -1,9 +1,9 @@
 ! Diff-Path: ../patches/11/11-472765-1.patch
-! Checksum: yvv3GyLdY8G46/GLYBpm4A
+! Checksum: zSb1BFJwBkLaEk39RI11GA
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.47.12
-! TimeUpdated: 2023-12-07T12:32:13+00:00
+! Version: 2.0.47.13
+! TimeUpdated: 2023-12-12T00:35:53+03:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1843,6 +1843,8 @@ motherless.com$$script[tag-content="awentw.com"][min-length="2000"][max-length="
 @@||api.apptentive.com^$app=de.mcdonalds.mcdonaldsinfoapp
 @@||customer.iad-03.braze.com^$app=de.burgerking.kingfinder
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/167921
+@@||imasdk.googleapis.com^$app=com.foxnews.android
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162304
 @@||imasdk.googleapis.com^$app=de.dmhub.android.radiobrocken
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162044
@@ -2501,6 +2503,12 @@ gamesworld.de,fnn.jp##.Ad
 !
 ! SECTION: Regular rules
 !
+hdblog.it##.news-list-item-hot
+bulgarianmilitary.com#?#div[class]:has(> div[id] > amp-ad)
+bulgarianmilitary.com##.wp-block-embed
+house.goo.ne.jp##.cmnBunners
+373news.com###mns_content > .mns_bn
+elcorreogallego.es#$?#.advertisement { remove: true; }
 haberler.com###video_befor[style^="width:"]:empty
 pvpoke.com###nitro-header-mobile
 musicbusinessworldwide.com##.mb-advert__incontent
@@ -4823,7 +4831,7 @@ video.fc2.com##div[style^="height:30px;text-align:center;background-color:black;
 video.fc2.com##.list-spCont > li[style="line-height: 0; margin: 0; padding: 0; height: 110px;"]
 video.fc2.com###pr
 vip-front.video.g.fc2.com,video.fc2.com##.ad_area_top
-vip-front.video.g.fc2.com,m.huffingtonpost.jp,video.fc2.com,gotporn.com,m.haberturk.com##.advertisement
+elcorreogallego.es,vip-front.video.g.fc2.com,m.huffingtonpost.jp,video.fc2.com,gotporn.com,m.haberturk.com##.advertisement
 vippers.jp,burusoku-vip.com,negisoku.com###fluct_overlay
 lnews.jp##.bnr250
 ryutsuu.biz##.sp-new-post-advertisement
@@ -6934,6 +6942,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_mobile
 ||graph.facebook.com^$app=com.booking
 !
 ! Blocking Facebook mobile ads
+||graph.facebook.com^$app=com.movieshubinpire.android
 ||graph.facebook.com^$app=com.strict.mkenin.agf.cardgames2|com.Andrey.ElementsofNature|com.strict.mkenin.redball.spikeball2|com.strict.mkenin.spaceattack|com.strict.mkenin.spikeball|com.kaptan.blockpuzzlegame|com.strict.mkenin.angryfarm|com.strict.mkenin.redball.runnerball3|com.AlekseySudakov.LamberMilIdle|com.strict.mkenin.redball.runnerball|com.asmr.relaxing.anti.stress.games|com.GardenofDreams.SpeciesEvolution|com.strict.mkenin.redball.runnerball2
 ||graph.facebook.com^$app=com.indiez.amaze|com.indiez.monsters.puzzles|com.indiez.nonogram|com.indiez.pet.run|com.indiez.tile.connect|com.nostel.color.page|com.nostel.dot.line.puzzle|com.nostel.parking.car|com.nostel.pikachu|com.nostel.taxi.run
 ||graph.facebook.com^$app=com.merigotech.fillwords

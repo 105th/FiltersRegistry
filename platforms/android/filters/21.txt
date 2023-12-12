@@ -1,9 +1,9 @@
 ! Diff-Path: ../patches/21/21-472769-1.patch
-! Checksum: bYOuhqRf0Q20l16FCvF+wg
+! Checksum: dSrmVbbteGiRQP4D6yFknA
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.17.48
-! TimeUpdated: 2023-12-07T16:35:05+00:00
+! Version: 2.0.17.49
+! TimeUpdated: 2023-12-12T00:36:27+03:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -151,8 +151,8 @@ liga.net##.youtube-block
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165443
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165288
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164936
-$cookie=articlesRead,domain=xda-developers.com|androidpolice.com|movieweb.com|makeuseof.com
-makeuseof.com,movieweb.com,androidpolice.com,xda-developers.com#%#//scriptlet('remove-cookie', 'articlesRead')
+$cookie=articlesRead,domain=xda-developers.com|androidpolice.com|movieweb.com|makeuseof.com|screenrant.com
+screenrant.com,makeuseof.com,movieweb.com,androidpolice.com,xda-developers.com#%#//scriptlet('remove-cookie', 'articlesRead')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165217
 lachainemeteo.com##.videoContainer.videoFixed
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164818
@@ -274,7 +274,7 @@ igromania.ru##a[class^="KanobuSocialCommunities_twitter"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153021
 forbes.ua##.c-post-subscribe
 ! https://privatter.net/p/9889173
-twitter.com#?#section[aria-labelledby^="accessible-list"] div[style^="transform"]:has(div[data-testid="card.wrapper"] span[style]:contains(/^(asahsi\.com|bnc\.lt|fanlink\.to|gamerzz\.net|jp\.cookie-food\.com|keeping-healthy\.com|kinmirainews\.com|helpgive\.to|(n9oi1|mainichi|nhk|nikkei|sankei|sokuhou|tokyo-np|yomiuri|yytbe)\.app\.link|sancei\.com|sankeii\.com|sokuhou\.onelink\.me|tongari-tent\.blue)$/))
+twitter.com#?#section[aria-labelledby^="accessible-list"] div[style^="transform"]:has(div[data-testid="card.wrapper"] span[style]:contains(/^(asahsi\.com|bnc\.lt|eventlink\.to|fanlink\.to|gamerzz\.net|jp\.cookie-food\.com|keeping-healthy\.com|kinmirainews\.com|helpgive\.to|(n9oi1|mainichi|nhk|nikkei|sankei|sokuhou|tokyo-np|yomiuri|yytbe)\.app\.link|sancei\.com|sankeii\.com|sokuhou\.onelink\.me|tongari-tent\.blue)$/))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152867
 posta.com.tr##.content-box > a[href^="https://flipboard.com/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/151928
@@ -3240,6 +3240,7 @@ disk.yandex.ru#%#//scriptlet('remove-attr', 'href', '.InfoSpace[href^="https://3
 yandex.*##.meteum-promo
 !
 ! Yandex.Maps
+[$path=/maps]yandex.*##.card-special-offers-view
 [$path=/maps]yandex.*#?#.toponym-service-orgs > div[data-chunk="search-snippet"]:has(> a.search-lavka-view)
 [$path=/maps]yandex.*#?#.business-card-view__orgpage-actions div.carousel__item > div._type_action_button > a[role] > span:contains(Скачать приложение)
 [$path=/maps]yandex.*##.business-card-view__main-wrapper div.card-offer-view
@@ -5570,6 +5571,7 @@ elle.de##.ab-products-entityType_not_set
 ||mixhost.jp/vpn-column/wp-content/uploads/*/600x500
 deepfakeporn.net##.sponsor
 deepfakeporn.net##.notice
+gname.com##.swiper-container.min_banner
 gname.com##.footShow
 ||kinokordon.love/d.kinokordonchat.gif
 anny.gift##a.AspectRatioBox-Type-HeaderBanner
@@ -8958,10 +8960,10 @@ azaku-anime.com#%#AG_onLoad(function() { document.body.innerHTML = document.body
 ! chip.de#%#AG_onLoad(function() { document.body.innerHTML = document.body.innerHTML.replace(/data-autoplay="true"/g, 'data-autoplay="false"'); });
 cnet.com#%#if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('cnetSettings', '{"autoplayEnabled":"off"}'); }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12814
-dl.pcgamestorrents.org,bluemediafile.*,bluemediafiles.*#%#AG_onLoad(function(){if(-1!=window.location.href.indexOf("/url-generator.php?url=")){var a=new MutationObserver(function(){var b=document.querySelector('form[action="get-url.php"] > input#url[value] + input[id][type="image"][src]');b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});
-dl.pcgamestorrents.org,bluemediafile.*,bluemediafiles.*#%#(function(){var a="http"+(new URL(window.location.href)).searchParams.get("xurl");try{new URL(a);var b=!0}catch(c){b=!1}if(b)try{window.location=a}catch(c){}})();
-dl.pcgamestorrents.org,bluemediafile.*,bluemediafiles.*,get-url.com#%#//scriptlet("adjust-setInterval", "i--", "", "0.02")
-dl.pcgamestorrents.org,bluemediafile.*,bluemediafiles.*,get-url.com#%#//scriptlet('set-constant', 'Time_Start', '0')
+bluemediastorage.online,dl.pcgamestorrents.org,bluemediafile.*,bluemediafiles.*#%#//scriptlet('trusted-click-element', 'form[action="get-url.php"] > input#url[value] + input[id][type="image"][src]')
+bluemediastorage.online,dl.pcgamestorrents.org,bluemediafile.*,bluemediafiles.*#%#(function(){var a="http"+(new URL(window.location.href)).searchParams.get("xurl");try{new URL(a);var b=!0}catch(c){b=!1}if(b)try{window.location=a}catch(c){}})();
+bluemediastorage.online,dl.pcgamestorrents.org,bluemediafile.*,bluemediafiles.*,get-url.com#%#//scriptlet("adjust-setInterval", "i--", "", "0.02")
+bluemediastorage.online,dl.pcgamestorrents.org,bluemediafile.*,bluemediafiles.*,get-url.com#%#//scriptlet('set-constant', 'Time_Start', '0')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11164
 s24.themeslide.com#%#AG_onLoad(function() { setTimeout(function() { $('.downloadbtn').attr('disabled', false); $('#countdown').css('visibility', 'hidden'); }, 500); });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10857

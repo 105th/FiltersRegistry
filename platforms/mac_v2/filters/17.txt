@@ -1,9 +1,9 @@
 ! Diff-Path: ../patches/17/17-472765-1.patch
-! Checksum: ILO/JKUFIaRibCOMa688sQ
+! Checksum: iN4ZXRPIMc2rOHLzn+RK6A
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.7.46
-! TimeUpdated: 2023-12-07T12:32:31+00:00
+! Version: 2.0.7.47
+! TimeUpdated: 2023-12-12T00:36:14+03:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -296,6 +296,8 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/168286
+||smotreshka.tv^$removeparam=from
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-7715888
 ||announcements.bybit.com^$removeparam=pid
 ||announcements.bybit.com^$removeparam=sa_utm_ci
@@ -836,8 +838,8 @@ $removeparam=ici,domain=shein.co.uk|shein.com
 ||tiktok.com/@*/video/*$removeparam=sender_device
 ! Create effects link on main page and then clicking on a link
 ||tiktok.com$removeparam=enter_method
-! login button on effect page
-||tiktok.com$removeparam=enter_from
+! login button on effect page - breaks comments after logging in
+! ||tiktok.com$removeparam=enter_from
 ! searching a phrase and clicking on it
 ||tiktok.com/search$removeparam=t
 ||tiktok.com/@*/video/*$removeparam=q
@@ -1903,6 +1905,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/168271
+@@||transfernow.net/*/*?utm_source=$removeparam=utm_source
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166698
 @@||cleviationly.com/adServe/aff?cmpid=*mydealz*&dlink=$removeparam=cmpid
 ! https://github.com/uBlockOrigin/uAssets/issues/20708
