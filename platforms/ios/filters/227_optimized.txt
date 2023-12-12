@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/227_optimized/227_optimized-472871-1.patch
-! Checksum: GWvEtBUwrXv6W/6X5nmw6A
+! Diff-Path: ../patches/227_optimized/227_optimized-472885-4.patch
+! Checksum: ly4guTpmdy2IfH1VhtKmnw
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.16.82
-! TimeUpdated: 2023-12-12T00:35:24+03:00
+! Version: 2.0.16.83
+! TimeUpdated: 2023-12-12T13:05:34+00:00
 ! Expires: 4 days (update frequency)
 ||ads.motorgraph.com^
 ||arm.c.appier.net^
@@ -443,6 +443,9 @@
 ##ins.kakao_ad_area
 ##iframe[src*="//www.mediacategory.com/servlet/"]
 ##div[id^="targetpushAd_"]
+m.humoruniv.com##div[id$="_boom"][class*=" "]
+m.humoruniv.com##form[action^="boardexp/run.html"] ~ dd[class^="bt"]#d3
+m.humoruniv.com###knock ~ dd[class^="gbt"]#d3
 m.news.nate.com##.adtive
 m.ppomppu.co.kr##ul[class^="bbsList"] > div[style*="clear: both;"].sect0
 m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
@@ -2523,6 +2526,7 @@ x86.co.kr#@#.download_ad
 @@||ssl.pstatic.net/adimg*.search/adpost/js/ad.js$domain=naver.com
 @@/^https:\/\/www\.ehanex\.com\/images\/main\/[a-z]{2}_ad\.gif$/
 @@||t1.daumcdn.net/adfit/static/kp.js$domain=pindirectshop.com|dongbanmall.com
+@@||m.shop.interpark.com/_static/js/plugin/fastclick.min.js
 auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 @@||ssl.pstatic.net/adimg3.search/adpost/js/adpost_show_ads_v2.min.js$domain=danawa.com
 @@||ssl.pstatic.net/tveta/libs/glad/prod/gfp-core.js$script,domain=m.cafe.naver.com
@@ -2956,7 +2960,9 @@ watchfreejavonline.co#%#//scriptlet('abort-current-inline-script', 'popMagic.ini
 m.humoruniv.com#%#//scriptlet('abort-on-stack-trace', '$.prototype.html', 'ch')
 m.humoruniv.com#%#//scriptlet('set-constant', 'list_end_run', 'noopFunc')
 m.humoruniv.com#%#//scriptlet('abort-on-stack-trace', '$.prototype.html', '_boom')
-m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html', '/\/images\/[A-z0-9-_]+\.(jpg|gif)/')
+m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html', '/\/images\/[A-z0-9-_]+\.?(jpg|gif)/')
+m.shop.interpark.com#%#//scriptlet('set-constant', 'FastClick.attach', 'noopFunc')
+m.shop.interpark.com#%#//scriptlet('set-constant', 'FastClick', 'noopFunc')
 hub.zum.com#%#//scriptlet('set-constant', 'Math.uuid', '', '', 'asFunction')
 sbs.co.kr#%#//scriptlet('hide-in-shadow-dom', 'sbs-player-ad-wrapper', 'sbs-player[media]')
 youtu.co,dfast.kr#%#//scriptlet('prevent-addEventListener', 'hashchange', '#viewus-explore-more')

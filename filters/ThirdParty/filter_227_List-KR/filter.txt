@@ -1,7 +1,7 @@
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2023.1211.12
+! OriginalVersion: 2023.1212.1
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -453,6 +453,11 @@
 ##ins.kakao_ad_area
 ##iframe[src*="//www.mediacategory.com/servlet/"]
 ##div[id^="targetpushAd_"]
+!#if adguard_app_ios
+m.humoruniv.com##div[id$="_boom"][class*=" "]
+m.humoruniv.com##form[action^="boardexp/run.html"] ~ dd[class^="bt"]#d3
+m.humoruniv.com###knock ~ dd[class^="gbt"]#d3
+!#endif
 !#if adguard_app_ios
 m.news.nate.com##.adtive
 !#endif
@@ -2601,6 +2606,9 @@ x86.co.kr#@#.download_ad
 @@||ssl.pstatic.net/adimg*.search/adpost/js/ad.js$domain=naver.com
 @@/^https:\/\/www\.ehanex\.com\/images\/main\/[a-z]{2}_ad\.gif$/
 @@||t1.daumcdn.net/adfit/static/kp.js$domain=pindirectshop.com|dongbanmall.com
+!#if (adguard_app_ios)
+@@||m.shop.interpark.com/_static/js/plugin/fastclick.min.js
+!#endif
 !#if (adguard_ext_android_cb)
 quiz.avatye.com#@#ins.adsbygoogle
 !#endif
@@ -3093,8 +3101,10 @@ m.humoruniv.com#%#//scriptlet('abort-on-stack-trace', '$.prototype.html', 'ch')
 !#endif
 m.humoruniv.com#%#//scriptlet('set-constant', 'list_end_run', 'noopFunc')
 m.humoruniv.com#%#//scriptlet('abort-on-stack-trace', '$.prototype.html', '_boom')
-m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html', '/\/images\/[A-z0-9-_]+\.(jpg|gif)/')
+m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html', '/\/images\/[A-z0-9-_]+\.?(jpg|gif)/')
 !
+m.shop.interpark.com#%#//scriptlet('set-constant', 'FastClick.attach', 'noopFunc')
+m.shop.interpark.com#%#//scriptlet('set-constant', 'FastClick', 'noopFunc')
 hub.zum.com#%#//scriptlet('set-constant', 'Math.uuid', '', '', 'asFunction')
 sbs.co.kr#%#//scriptlet('hide-in-shadow-dom', 'sbs-player-ad-wrapper', 'sbs-player[media]')
 youtu.co,dfast.kr#%#//scriptlet('prevent-addEventListener', 'hashchange', '#viewus-explore-more')
@@ -3417,6 +3427,7 @@ te31.com#@#.textAd
 te31.com#@#.text_ad
 te31.com#@#.text_ads
 !
+@@||m.shop.interpark.com/_static/js/plugin/fastclick.min.js
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=sbs.co.kr
 @@||zuzunza.com^$generichide
 @@||zuzunza.com/theme/BS4-Basic/storage/image/logo-zlogo*#ad&adv_keywords=
