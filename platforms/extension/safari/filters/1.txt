@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/1/1-472885-4.patch
-! Checksum: H3ehelaoFfz016+RxYjNdw
+! Diff-Path: ../patches/1/1-m-28373374-60.patch
+! Checksum: bBXOFaYfFSHGK6jTA7fQrw
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.86.81
-! TimeUpdated: 2023-12-12T13:06:15+00:00
+! Version: 2.0.86.82
+! TimeUpdated: 2023-12-12T17:31:34+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6854,8 +6854,10 @@ dzen.ru##div[class^="dzen-desktop__teaser-"]
 dzen.ru##div[class*="__isNewGridFloors"] > article._full-height[aria-label] + article:not(article._full-height):not([aria-label])
 !
 ! Dzen News
+dzen.ru##.mg-advert > div[class*="loader"]
 dzen.ru#?#div[aria-label="Лента Дзена"] article.card-wrapper:has(div[class^="feed-single-desktop-floors-"])
 dzen.ru##.news-app__content div[class*="__column_myTarget mg-grid__item"] div[class*="__loader "]
+!
 [$path=/pogoda]dzen.ru##.adv_type_rtb
 !
 ! Ad in Dzen articles
@@ -7262,12 +7264,14 @@ ya.ru##.banner
 ! Yandex.Search
 ya.ru##.Skeleton_type_ad_search
 [$path=/search]ya.ru,yandex.*##.AdvMedia
-ya.ru,yandex.*##.content__right .serp-item > *
 ya.ru,yandex.*##li.mini-suggest__item > a[href^="http://yabs."][href*="/count/"]
 ya.ru,yandex.*##li.mini-suggest__item > a[href^="https://yabs."][href*="/count/"]
 ya.ru,yandex.*##li.mini-suggest__item > a[href^="http://yandex"][href*="/clck/"]
 yandex.*##body:not([data-bem*="pogoda"]) .mini-suggest__popup-content > li[data-type="nav"]
 [$path=/search]yandex.*#?#.serp-list > li.serp-item:has(> div[data-bem*="organic"] > div.organic__title-wrapper > a[href][data-event-required])
+! Breaks useful content
+! https://github.com/AdguardTeam/AdguardFilters/issues/168382
+! ya.ru,yandex.*##.content__right .serp-item > *
 !
 ! Yandex.Images
 [$path=/images/]ya.ru,yandex.*##.SimpleSkeleton[width="100%"]
