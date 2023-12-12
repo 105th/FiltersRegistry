@@ -2,7 +2,7 @@
 /* eslint-disable no-await-in-loop */
 const fs = require('fs');
 const path = require('path');
-const { buildDiff } = require('@adguard/diff-builder/diff-builder/cjs');
+const { DiffBuilder } = require('@adguard/diff-builder');
 
 const args = process.argv.slice(2); // Get command line arguments
 
@@ -89,7 +89,7 @@ const main = async () => {
         const patchesPath = path.join(parentDirOfNewFilters, 'patches', name);
 
         // Generate patches
-        return buildDiff({
+        return DiffBuilder.buildDiff({
             oldFilterPath,
             newFilterPath,
             patchesPath,
