@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/14/14-m-28374214-60.patch
-! Checksum: 5keNCc2VquOJWlfJFueJpQ
+! Diff-Path: ../patches/14/14-472904-4.patch
+! Checksum: DS2FjofVEbzU1+HI3b7a6g
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.80.66
-! TimeUpdated: 2023-12-13T07:31:40+00:00
+! Version: 2.1.80.67
+! TimeUpdated: 2023-12-13T08:06:33+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14785,6 +14785,10 @@ m.timesofindia.com,m-timesofindia-com.cdn.ampproject.org$$amp-consent
 !--- Replace rules---
 !
 ! SECTION: Cookies - Specific rules (replace)
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/168427
+! TODO: remove it when this issue - https://github.com/AdguardTeam/CoreLibs/issues/1834 is fixed
+||mall.sk/_nuxt/css/*.*.css$replace=/(\.legal-consent\{)/\$1display:none!important;/
 !
 ||std.wpcdn.pl/wpjslib*/*/wpjslib-sgap-chunk-notification.js$replace=/(\n|"use strict";)\((window\._|self\.webpackChunk)_proto_[\s\S]*?"AKCEPTUJ.[\s\S]*?I PRZECHODZ.[\s\S]*?DO SERWISU".*//
 ||vpolshchi.pl/$replace=/return .\.isVendorAllowed\(.\)&&.\.filter\(.=>.\.isPurposeAllowed\(.\)\)\.length===.\.length/return/,script
