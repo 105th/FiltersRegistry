@@ -1,10 +1,10 @@
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28374275-60.patch
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28374334-60.patch
 ![Adblock Plus 2.0]
-! Checksum: vwwnR82f5+FzHxRCZ/eA5A
+! Checksum: jin2eiwUr/APHtaFmbpyuA
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.12.21
-! TimeUpdated: 2023-12-13T08:32:49+00:00
+! Version: 2.3.12.22
+! TimeUpdated: 2023-12-13T09:32:04+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32573,6 +32573,8 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+news18.com#?#.article_main > div[class][style]:has(> div#taboola-below-article-thumbnails)
+gulte.com##a[href="https://www.rajakasukurthi.org/"][target="_blank"]
 ||ams.cdn.arkadiumhosted.com/advertisement/
 jagranjosh.com##.homeSlider
 jagranjosh.com##.Home_SectionIcon__La65G
@@ -50551,6 +50553,14 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/168418
+humix.com,mistergadget.tech#$#body .ez-video-wrap { display: block !important; }
+humix.com#@#.ez-video-wrap
+@@||humix.com/beardeddragon/iguana.js
+@@||humix.com/beardeddragon/wyvern.js
+@@||go.ezodn.com/beardeddragon/basilisk.js$domain=humix.com
+@@||videosvc.ezoic.com/play?videoID=$domain=humix.com
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=humix.com|mistergadget.tech
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167916
 maxstreams.site#@##ad_topslot
 ! satdl.com - required green button not visible
