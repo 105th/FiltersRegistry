@@ -1671,8 +1671,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/15.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.71",
-			"timeUpdated": "2023-12-13T00:15:54+0000",
+			"version": "2.0.58.72",
+			"timeUpdated": "2023-12-13T06:33:03+0000",
 			"languages": [],
 			"tags": [
 				45,
