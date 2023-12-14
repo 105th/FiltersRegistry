@@ -2,7 +2,13 @@
 /* eslint-disable no-await-in-loop */
 const fs = require('fs');
 const path = require('path');
-const { DiffBuilder } = require('@adguard/diff-builder');
+const { DiffBuilder, PATCH_EXTENSION } = require('@adguard/diff-builder');
+
+const {
+    FOLDER_WITH_NEW_FILTERS,
+    FOLDER_WITH_OLD_FILTERS,
+} = require('./constants');
+const { findFiles } = require('../utils/find_files');
 
 /**
  * Parse command-cli parameters -t|--time and -r|--resolution
@@ -21,36 +27,6 @@ args.forEach((val) => {
     }
 });
 
-const FOLDER_WITH_NEW_FILTERS = 'platforms';
-const FOLDER_WITH_OLD_FILTERS = 'temp/platforms';
-
-/**
- * Recursively finds files in a directory that match the provided filter.
- *
- * @param dir The directory to search in.
- * @param filter A filter function to determine if a file should be included.
- *
- * @returns An array of file paths that match the filter.
- */
-const findFiles = async (dir, filter) => {
-    const files = await fs.promises.readdir(dir);
-    const fileList = [];
-
-    for (let i = 0; i < files.length; i += 1) {
-        const file = files[i];
-        const filePath = path.join(dir, file);
-        const stat = await fs.promises.stat(filePath);
-
-        if (stat.isDirectory()) {
-            fileList.push(...await findFiles(filePath, filter));
-        } else if (filter(filePath)) {
-            fileList.push(filePath);
-        }
-    }
-
-    return fileList;
-};
-
 /**
  * Copies old patch files from one directory to another.
  *
@@ -60,7 +36,7 @@ const findFiles = async (dir, filter) => {
 const copyOldPatches = async (oldFilterDir, newFilterDir) => {
     const oldPatches = await findFiles(
         oldFilterDir,
-        (file) => file.endsWith('.patch')
+        (file) => file.endsWith(PATCH_EXTENSION)
     );
 
     for (let i = 0; i < oldPatches.length; i += 1) {
