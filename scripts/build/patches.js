@@ -4,15 +4,22 @@ const fs = require('fs');
 const path = require('path');
 const { DiffBuilder } = require('@adguard/diff-builder');
 
+/**
+ * Parse command-cli parameters -t|--time and -r|--resolution
+ */
+let time = 60;
+let resolution = 'm';
+
 const args = process.argv.slice(2); // Get command line arguments
+args.forEach((val) => {
+    if (val.startsWith('-t=') || val.startsWith('--time=')) {
+        time = Number.parseInt(val.slice(val.indexOf('=') + 1), 10);
+    }
 
-if (args.length < 2) {
-    console.error('Usage: node patches.js <time> <resolution> ');
-    process.exit(1);
-}
-
-const time = parseInt(args[0], 10);
-const resolution = args[1];
+    if (val.startsWith('-r=') || val.startsWith('--resolution=')) {
+        resolution = val.slice(val.indexOf('=') + 1);
+    }
+});
 
 const FOLDER_WITH_NEW_FILTERS = 'platforms';
 const FOLDER_WITH_OLD_FILTERS = 'temp/platforms';

@@ -5,16 +5,16 @@
   "homepage": "https://adguard.com",
   "main": "scripts/build/build.js",
   "scripts": {
+    "auto-build": "bash scripts/auto_build.sh",
     "lint": "eslint . --cache --ext .js",
     "build": "node scripts/build/build.js",
     "postbuild": "node scripts/build/clean_filters.js",
     "build:patches": "node scripts/build/patches.js",
-    "custom_platforms": "node scripts/build/custom_platforms.js",
-    "push": "bash scripts/update_platforms.sh",
     "validate": "yarn validate:platforms && yarn validate:locales",
     "validate:platforms": "node scripts/validation/validate_platforms.js",
     "validate:locales": "node scripts/validation/validate_locales.js",
-    "compress": "node scripts/compress.js"
+    "push": "bash scripts/repository/update.sh",
+    "compress": "node scripts/repository/compress.js"
   },
   "engines": {
     "node": ">=18"

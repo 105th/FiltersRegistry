@@ -1,6 +1,25 @@
 # AG Filters Registry
 
 This repository contains the known filters subscriptions available to AdGuard users. We re-host these filters on `filters.adtidy.org`. Also, these filters can be slightly modified in order to achieve better compatibility with AdGuard.
+
+1. [Introduction](#introduction)
+1. [What filters can be added to this repository](#what-filters-can-be-added-to-this-repository)
+1. [About filters](#about-filters)
+    1. [Metadata](#metadata)
+    1. [Tags](#tags)
+    1. [Groups](#groups)
+    1. [Optimization](#optimization)
+    1. [Compiler customization](#compiler-customization)
+    1. [Localization](#localization)
+    1. [Templates](#templates)
+1. [How to build filters and patches](#how-to-build-filters-and-patches)
+1. [Use cases](#use-cases)
+    1. [Build AdGuard filters](#build-adguard-filters-and-update-filters-and-patches-in-the-repository)
+    2. [Build all filters](#build-all-filters-and-update-filters-and-patches-in-the-repository)
+    3. [Work with locales](#work-with-locales)
+    4. [Repository compression](#repository-compression)
+
+
 ## What filters can be added to this repository
 
 We may add third-party filters to AdGuard Filters Registry. When making a decision about adding a third-party filter, we follow these rules:
@@ -22,7 +41,10 @@ We may add third-party filters to AdGuard Filters Registry. When making a decisi
 11. If the filter gets added, it receives a so-called [trustLevel](#trustLevel) (Low, High, Full), based on the number of problematic rules it contains and some other factors. Filters without "Full" trust level may have part of their rules disabled.
     * The trust level of a filter can be re-reviewed and raised if the author improves the filter over time.
 12. If there are two or more similar filters that satisfy all other criteria, they all may be added if they don't duplicate each other and don't conflict with each other. If there is a large amount of conflicting or duplicate rules, the filter with more matches on such rules gets the priority.
-## Filters metadata
+
+## About filters
+
+### Metadata
 
 - `template.txt`
 
@@ -125,93 +147,222 @@ Possible tags:
 
 `/groups/metadata.json` — filters groups metadata. Each filter should belong to one of the groups.
 
-## Filters optimization
+### Optimization
 
 For each filter, AdGuard compiles two versions: full and optimized. Optimized version is much more lightweight and does not contain rules which are not used at all or used rarely. Rules usage frequency comes from the collected [filter rules statistics](https://adguard.com/kb/general/ad-filtering/tracking-filter-statistics/) (thanks to the volunteers who enabled it in their AdGuard).
 
 * `script/optimization_config.json` - defines the target for the optimization process. AdGuard will try to compress the lists by removing the most rarely used rules until the compression goal (defined in percents) is met.
 
-## Filters compiler customization
+### Compiler customization
 
-`yarn custom_platforms` customizes the way filters are compiled for certain platforms. We should use it if we need to
+Script located in `scripts/build/custom_platforms.js` customizes the way filters are compiled for certain platforms. We should use it if we need to
 temporary change rules for a platform. In all other cases, we should prefer the default configuration.
 Below is a example of the configuration for the platform `AdGuard for Chrome` with comments:
 
 ```javascript
-    "EXTENSION_CHROMIUM": {
-        // Defines the platform for which the settings are specified.
-        "platform": "ext_chromium",
-        // Defines the path that can be used to access the settings or resources associated with this platform.
-        "path": "extension/chromium",
-        // Overrides the expires value set in the filter metadata (for this platform).
-        "expires": "12 hours",
-        "configuration": {
-            // Sets an array of regular expressions that will be used to remove certain rules.
-            "removeRulePatterns": [
-                "^((?!#%#).)*\\$\\$|\\$\\@\\$",
-                "\\$(.*,)?replace=",
-                "important,replace=",
-                "\\$(.*,)?app",
-                "\\$network",
-                "\\$protobuf",
-                "important,protobuf",
-                "\\$extension",
-                ",extension"
-            ],
-            // Sets an array of objects that will be used to replace certain values.
-            "replacements": [
-                {
-                    "from": ":has\\(",
-                    "to": ":-abp-has("
-                }
-            ],
-            // Specifies whether to ignore hints for rules. A value of "false" means that hints will not be ignored.
-            "ignoreRuleHints": false
-        },
-        "defines": {
-            "adguard": true,
-            "adguard_ext_chromium": true
-        }
+"EXTENSION_CHROMIUM": {
+    // Defines the platform for which the settings are specified.
+    "platform": "ext_chromium",
+    // Defines the path that can be used to access the settings or resources associated with this platform.
+    "path": "extension/chromium",
+    // Overrides the expires value set in the filter metadata (for this platform).
+    "expires": "12 hours",
+    "configuration": {
+        // Sets an array of regular expressions that will be used to remove certain rules.
+        "removeRulePatterns": [
+            "^((?!#%#).)*\\$\\$|\\$\\@\\$",
+            "\\$(.*,)?replace=",
+            "important,replace=",
+            "\\$(.*,)?app",
+            "\\$network",
+            "\\$protobuf",
+            "important,protobuf",
+            "\\$extension",
+            ",extension"
+        ],
+        // Sets an array of objects that will be used to replace certain values.
+        "replacements": [
+            {
+                "from": ":has\\(",
+                "to": ":-abp-has("
+            }
+        ],
+        // Specifies whether to ignore hints for rules. A value of "false" means that hints will not be ignored.
+        "ignoreRuleHints": false
     },
+    "defines": {
+        "adguard": true,
+        "adguard_ext_chromium": true
+    }
+},
 ```
 
-## Filters localization
+### Localization
 
 If you want to help with filters translations, you can join us on Crowdin: https://crowdin.com/project/adguard-applications/en#/miscellaneous/filters-registry
 
 Please learn more about translating our products: https://adguard.com/kb/miscellaneous/contribute/translate/program/
 
-## <a id="templates"></a> Filters templates
+### <a id="templates"></a> Templates
 `@include` directive allows to include the content of specified file into the filter.
 
 More information about the `@include` directive and its options can be found here: https://github.com/AdguardTeam/FiltersCompiler/#include-directive.
 
-## How to build
+Here is the improved version with corrected English:
 
-```
-yarn install
-```
+## How to Build Filters and Patches
 
-Build filters and patches:
-```
-yarn build && yarn build:patches
-```
+1. **Install Dependencies**
+    ```bash
+    yarn install
+    ```
 
-Build with white/black lists:
-```
-yarn build -i=1,2,3 -s=4,5,6 && yarn build:patches
-```
+1. **Build Filters and Patches**:
 
-Validate `filters.json` and `filters_i18n.json` for platforms:
-```
-yarn validate:platforms ./platforms
-```
+    To build all filters, run:
 
-> For AdGuard filters **all locales** are required, it means 100% translated.
+    ```bash
+    yarn build
+    ```
 
-Validate locales:
-```
-yarn validate:locales
-```
+    The `yarn build` command accepts two parameters:
+    - `-i`: Filters to build.
+    - `-s`: Filters to skip.
 
-> For third-party filters only `REQUIRED_LOCALES` should be 100% done.
+    For example, to build only AdGuard filters:
+
+    ```bash
+    yarn build -i=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,224
+    ```
+
+    It takes filter templates from the `/filters` path, loads their content, compiles filters based on the provided whitelist and blacklist, generates log and report files, and creates a copy of platform files for future patch generation in `temp/platforms` to compare old and new filters.
+
+    After every `yarn build`, yarn will execute the `postbuild` task, which checks all generated filters in the `platforms/` folder. If there are no changes in the filter except for deleting `Diff-Path` (because the compiler doesn't retrieve this tag from metadata and deletes it on every compile run), the script will undo these unnecessary changes.
+
+1. **Build Patches**
+
+    To build patches with different TTL (Time To Live), use the following commands:
+
+    - For a TTL of 10 hours:
+
+      ```bash
+      yarn build:patches --time=10 --resolution=h
+      ```
+
+    - For a TTL of 60 minutes:
+
+      ```bash
+      yarn build:patches --time=60 --resolution=m
+      ```
+
+    - For a TTL of 3000 seconds:
+
+      ```bash
+      yarn build:patches --time=3000 --resolution=s
+      ```
+
+    This script recursively finds new filter files in the `platforms/` folder, generates patches by comparing them with corresponding old filter files (from `temp/platforms`), and saves these patches in a designated directory. Additionally, it copies any existing old patches to the new filter directory and cleans up temporary files, facilitating the maintenance of filter updates.
+
+1. **Validate Platforms**
+
+    To validate `filters.json` and `filters_i18n.json` for platforms, use the following command:
+    ```bash
+    yarn validate:platforms ./platforms
+    ```
+
+1. **Validate Locales**
+
+    To validate locales, use the following command:
+    ```bash
+    yarn validate:locales
+    ```
+
+1. (Optional) **Combined Validation**
+
+    Steps 4 and 5 can be combined and run with a single command:
+
+    ```bash
+    yarn validate
+    ```
+
+## Use cases
+
+### Building AdGuard Filters and Updating Filters and Patches in the Repository
+
+1. **Install Dependencies**
+
+    ```bash
+    yarn install
+    ```
+
+1. **Run the Build Process**
+
+    ```bash
+    yarn auto-build --mode=ours
+    ```
+
+### Building All Filters and Updating Filters and Patches in the Repository
+
+1. **Install Dependencies**
+
+    ```bash
+    yarn install
+    ```
+
+1. **Run the Build Process**
+
+    ```bash
+    yarn auto-build --mode=all
+    ```
+
+### Working with Locales
+
+For information on working with locales, please refer to the [Translations README](./scripts/translations/README.md).
+
+
+### Repository compression
+
+#### About
+
+Once a year, we will compress the repository to reduce its size. We will delete all remote branches and overwrite the master branch with a squashed history. The compression script will retain the first N commits in their original order in the history. All other commits (except the first one) will be squashed into a single commit.
+
+#### How to
+1. **Squash all old commits**
+
+    ```bash
+    yarn install
+    yarn compress [commits_to_keep]
+    ```
+
+    It will retain the first [commits_to_keep] (default is 10,000, which is approximately one year of history) commits, starting from now, in their original order in the history. All other older commits (except the very first one) will be squashed into a single commit.
+
+1. **List all remote branches**:
+
+    ```bash
+    git ls-remote --heads origin
+    ```
+
+1. **Remove Remote Branches:** Remove remote branches that are no longer needed locally and push the removal to the remote repository:
+
+    ```bash
+    git push origin --delete branchName
+    ```
+
+    Replace `branchName`` with the name of the branch you want to delete.
+
+1. **Prune Remote Branches:** Use git remote prune origin to remove references to remote branches that have been deleted on the remote repository. This keeps your local repository in sync with the remote.
+
+    ```bash
+    git remote prune origin
+    ```
+
+1. **Clean the Reflog**: Over time, Git can accumulate references in the reflog that are no longer needed. You can clean the reflog using the following command:
+
+    ```bash
+    git reflog expire --expire=now --all
+    git gc --prune=now
+    ```
+
+    This will remove unnecessary entries from the reflog and perform garbage collection.
+
+    After this procedure git repository will reduce it's size.

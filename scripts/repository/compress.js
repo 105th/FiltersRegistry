@@ -1,7 +1,13 @@
 /* eslint-disable no-console */
 const simpleGit = require('simple-git');
 
-const COMMITS_TO_KEEP = 10000;
+let commitsToKeep = 10000;
+
+const firstArgument = process.argv[2];
+if (firstArgument) {
+    const number = Number.parseInt(firstArgument, 10);
+    commitsToKeep = number;
+}
 
 /**
  * Git script to squash history and push changes.
@@ -14,8 +20,8 @@ const COMMITS_TO_KEEP = 10000;
 async function squashAndPush() {
     const git = simpleGit();
 
-    // Step 1: Checkout to the COMMITS_TO_KEEP'th commit and save its hash
-    await git.checkout(`HEAD~${COMMITS_TO_KEEP}`);
+    // Step 1: Checkout to the commitsToKeep'th commit and save its hash
+    await git.checkout(`HEAD~${commitsToKeep}`);
     const squashedCommitHash = await git.raw([
         'rev-parse',
         'HEAD',
@@ -58,7 +64,7 @@ async function squashAndPush() {
     // Step 7: Cherry-pick the commits you want to store
     // Use the `log` method with a range specification to get the commit history
     const historyToSave = await git.log({
-        from: `master~${COMMITS_TO_KEEP}`,
+        from: `master~${commitsToKeep}`,
         to: 'master',
         '--no-merges': true,
     });
@@ -94,13 +100,13 @@ async function squashAndPush() {
     console.log('Step 9: Reset "master" to the new rebased "master"');
 
     // Step 10: Push with --force to overwrite the remote 'master' branch
-    await git.addConfig('user.name', 'Dmitrii Seregin');
-    await git.addConfig('user.email', '105th@users.noreply.github.com');
+    await git.addConfig('user.name', 'filters@adguard.com');
+    await git.addConfig('user.email', 'Filters Builder');
     await git.push(['--set-upstream', 'origin', '--force', 'master']);
     console.log('Step 10: Pushed with --force to overwrite the remote "master" branch');
 
     // Step 11: Clean space with aggressive garbage collection
-    await git.raw(['gc', '--aggressive']);
+    await git.raw(['gc', '--aggressive', '--prune=now']);
     console.log('Step 11: Cleaned space with aggressive garbage collection');
 
     console.log('Git actions completed successfully.');

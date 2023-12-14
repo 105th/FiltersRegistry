@@ -1,25 +1,61 @@
-## Filters localization
+# Localization of Filters
 
-`/locales` contains translations for filters, groups, and tags.
+The `/locales` directory contains translations for filters, groups, and tags.
 
-### Translations service integration
+## Requirements
 
-It's important to import strings from the service before exporting as some changes can be lost otherwise.
+   1. For third-party filters, only [`REQUIRED_LOCALES`](../validation/validate_locales.js) should be 100% complete.
 
-To import strings from the service, run the following in /translations scripts directory:
-```
-./download.sh
-```
-After updated translations are downloaded, validate them:
-```
-yarn locales:validate
-```
+   1. For AdGuard filters, **all locales** are required, meaning they must be 100% translated.
 
-> For third-party filters only `REQUIRED_LOCALES` should be 100% done.
+## Integration with Translation Service
 
-> For AdGuard filters **all locales** are required, it means 100% translated. Can be checked by `node validate.js`.
+It's essential to import strings from the service before exporting them, as some changes may be lost otherwise.
 
-To export strings to the service, run the following in /translations scripts directory:
-```
-./upload.sh
-```
+1. **Install Dependencies**
+
+   ```bash
+   yarn install
+   ```
+
+1. **Download the Latest Translations:**
+   To import strings from the service, navigate to the `/translations` scripts directory and run the following command:
+
+   ```bash
+   ./download.sh
+   ```
+
+1. **Validate Translations:**
+   After downloading updated translations, validate them using the following command:
+
+   ```bash
+   yarn validate:locales
+   ```
+
+   It will validate the existence and correctness of certain locale files in `locales/` folder.
+
+1. **Make Changes:**
+   Edit translation strings in the `/locales` folder as needed.
+
+1. **Validate Changes:**
+   After making changes, validate them again using the following command:
+
+   ```bash
+   yarn validate:locales
+   ```
+
+1. **Upload Strings:**
+   To export strings to the service, navigate to the `/translations` scripts directory and run the following command:
+
+   ```bash
+   ./upload.sh
+   ```
+
+1. (optional) **Validate builded platforms:**
+   After compiling filters into platforms, validate their locales by schema using the following command:
+
+   ```bash
+   yarn validate:platforms
+   ```
+
+   It will validate the JSON schema of filter rules for different platforms in a project.
