@@ -1,10 +1,10 @@
-! Diff-Path: ../patches/14/14-m-28376016-60.patch
+! Diff-Path: ../patches/14/14-m-28376075-60.patch
 ![Adblock Plus 2.0]
-! Checksum: IQFCGDEt+1I7XSN3QHbGUg
+! Checksum: dir25xyMG1bQvZhJYZRQSA
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.80.90
-! TimeUpdated: 2023-12-14T13:33:24+00:00
+! Version: 2.1.80.91
+! TimeUpdated: 2023-12-14T14:32:23+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13975,6 +13975,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/168075
+fix-price.com#@#.gdpr-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168507
 @@||cmp.pubtech.ai/*/pubtech-cmp-v2.js$script,domain=ilrestodelcarlino.it
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167366
@@ -30567,7 +30569,8 @@ runews24.ru##a.button_type_link[target="_blank"][href]
 decrypt.co#?#.post-content > div.text-left:has(> form > label[for="article-footer-email"])
 geo.fr##.pmcPushv
 territoris.cat##.widget-advise-bottom-wrapper
-clutchpoints.com#?##__next > div:not([class]) > div[class]:has(> div[class] > div[class] > div[class] > form#sib-form)
+clutchpoints.com#$?#body { overflow: auto !important; }
+clutchpoints.com#$?##__next > div:not([class]) > div[class]:has(> div[class] > div[class] > div[class] > form#sib-form) { display: none !important; }
 clutchpoints.com#?#aside > div:has(> div[class] > form#sib-form)
 clutchpoints.com#?#.article-body > div[class]:has(> div[class] > div[class] > form#sib-form)
 violity.com##.telegram_banner
@@ -35672,6 +35675,7 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161301
 temu.com#?#div[role="main"] div[style] > div[style]:has(> div[style] div[js-selector="mobile-download-ui"])
 !
+pokebattler.com#?#.container > div.row:has(> div > a[href^="https://apps.apple.com/app/apple-store/"])
 rabota.by##div[data-qa="app-smartbanner"]
 indiatoday.in##.downloadapp__section
 businesstoday.in##.ad_pg_btm
@@ -48207,6 +48211,8 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 ! NOTE: Blogroll specific rules
 !
+||rutube.ru/pangolin/api/web/yappy/$xmlhttprequest
+rutube.ru##section[aria-label="информационный баннер"]
 ||nullpoantenna.com^$domain=samuraisoccer.doorblog.jp
 hitoikigame.com#?#.p3_outline .plugin-freearea:has(td[style="display: none !important;"])
 crx7601.com#?#.article-body-inner .twitter-tweet ~ b:has(+ .ninja-recommend-block)
