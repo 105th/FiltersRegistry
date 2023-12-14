@@ -8,25 +8,50 @@
 const fs = require('fs');
 const path = require('path');
 
-const { findFiles } = require('../utils/find_files');
-const {
-    FOLDER_WITH_NEW_FILTERS,
-    FOLDER_WITH_OLD_FILTERS,
-} = require('./constants');
-
+const FOLDER_WITH_NEW_FILTERS = 'platforms';
+const FOLDER_WITH_OLD_FILTERS = 'temp/platforms';
 const DIFF_PATH_TAG_NAME = '! Diff-Path: ';
+
+/**
+ * Recursively finds all *.txt files in the specified directory and its subdirectories.
+ *
+ * @param {string} dir - The directory to search for *.txt files.
+ *
+ * @returns {string[]} - An array of file paths to *.txt files.
+ */
+const findFilters = (dir) => {
+    const filters = [];
+    const files = fs.readdirSync(dir);
+
+    for (let i = 0; i < files.length; i += 1) {
+        const file = files[i];
+
+        const filePath = path.join(dir, file);
+        const stat = fs.statSync(filePath);
+
+        if (stat.isDirectory()) {
+            filters.push(...findFilters(filePath));
+        } else if (file.endsWith('.txt') && path.dirname(filePath).includes('filters')) {
+            filters.push(filePath);
+        }
+    }
+
+    return filters;
+};
 
 /**
  * Cleans and restores filters by adding the last 'Diff-Path' value from the old filter.
  */
 const cleanFilters = async () => {
     // Recursively find all *.txt files in all 'filters/' folders inside FOLDER_WITH_NEW_FILTERS
-    const allFilters = await findFiles(
-        FOLDER_WITH_NEW_FILTERS,
-        (filePath) => filePath.endsWith('.txt') && filePath.includes('filters/')
-    );
+    const allFilters = findFilters(FOLDER_WITH_NEW_FILTERS);
 
     await Promise.allSettled(allFilters.map(async (newFilter) => {
+        // Check if the file exists
+        if (!fs.existsSync(newFilter)) {
+            return;
+        }
+
         const oldFilter = path.join(
             FOLDER_WITH_OLD_FILTERS,
             newFilter.replace(`${FOLDER_WITH_NEW_FILTERS}/`, '')
@@ -36,10 +61,12 @@ const cleanFilters = async () => {
         const oldFilterContent = await fs.promises.readFile(oldFilter, { encoding: 'utf-8' });
         const newFilterContent = await fs.promises.readFile(newFilter, { encoding: 'utf-8' });
 
+        // Determine the line ending character (CR+LF or LF) in the old filter
+        const endOfFile = /\r\n$/gm.test(oldFilterContent) ? '\r\n' : '\n';
+
         // Split the filter contents into arrays of lines
-        // It will save end of lines inside splitted strings.
-        const oldFilterLines = oldFilterContent.split(/(?<=\r?\n)/);
-        const newFilterLines = newFilterContent.split(/(?<=\r?\n)/);
+        const oldFilterLines = oldFilterContent.split(endOfFile);
+        const newFilterLines = newFilterContent.split(endOfFile);
 
         // Find the index of the 'Diff-Path' line in the old filter
         const previousDiffPathLineIndex = oldFilterLines
@@ -69,7 +96,7 @@ const cleanFilters = async () => {
         // Write the updated new filter content back to the file
         await fs.promises.writeFile(
             newFilter,
-            newFilterLines.join()
+            newFilterLines.join(endOfFile)
         );
     }));
 };
