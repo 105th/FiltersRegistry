@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x -e
+
 # AdGuard filters
 ADGUARD_FILTERS="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,224"
 
@@ -36,6 +38,7 @@ elif [[ "$MODE" == "ours" ]]; then
     yarn build --include=$ADGUARD_FILTERS
     # Time live of patches - '60 minutes'
     yarn build:patches --time=60 --resolution=m
+fi
 
 # Validate platforms and locales
 yarn validate
