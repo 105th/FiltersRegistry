@@ -1652,8 +1652,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/14_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.80.85",
-			"timeUpdated": "2023-12-14T08:06:19+0000",
+			"version": "2.1.80.86",
+			"timeUpdated": "2023-12-14T10:33:49+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -1767,8 +1767,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.27.81",
-			"timeUpdated": "2023-12-13T22:31:58+0000",
+			"version": "2.0.27.82",
+			"timeUpdated": "2023-12-14T10:33:57+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -1850,8 +1850,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.4.82",
-			"timeUpdated": "2023-12-14T07:31:46+0000",
+			"version": "2.1.4.83",
+			"timeUpdated": "2023-12-14T10:34:10+0000",
 			"languages": [
 				"zh"
 			],
@@ -1916,8 +1916,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.12.42",
-			"timeUpdated": "2023-12-14T09:32:15+0000",
+			"version": "2.3.12.43",
+			"timeUpdated": "2023-12-14T10:34:24+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -1956,8 +1956,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.94.68",
-			"timeUpdated": "2023-12-13T18:32:21+0000",
+			"version": "2.0.94.69",
+			"timeUpdated": "2023-12-14T10:34:31+0000",
 			"languages": [],
 			"tags": [
 				3,
@@ -2062,8 +2062,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/9_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.22.46",
-			"timeUpdated": "2023-12-13T17:32:33+0000",
+			"version": "2.0.22.47",
+			"timeUpdated": "2023-12-14T10:34:48+0000",
 			"languages": [
 				"es",
 				"pt"
