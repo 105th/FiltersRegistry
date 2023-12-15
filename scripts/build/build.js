@@ -4,6 +4,10 @@ const compiler = require('adguard-filters-compiler');
 
 const customPlatformsConfig = require('./custom_platforms');
 const { formatDate } = require('../utils/strings');
+const {
+    FOLDER_WITH_NEW_FILTERS,
+    FOLDER_WITH_OLD_FILTERS,
+} = require('./constants');
 
 /**
  * Parse command-cli parameters -i|--include and -s|--skip
@@ -35,8 +39,8 @@ args.forEach((val) => {
  */
 const filtersDir = path.join(__dirname, '../../filters');
 const logPath = path.join(__dirname, '../../log.txt');
-const platformsPath = path.join(__dirname, '../../platforms');
-const copyPlatformsPath = path.join(__dirname, '../../temp/platforms');
+const platformsPath = path.join(__dirname, '../..', FOLDER_WITH_NEW_FILTERS);
+const copyPlatformsPath = path.join(__dirname, '../..', FOLDER_WITH_OLD_FILTERS);
 
 let reportPath = path.join(__dirname, '../../report.txt');
 if (whitelist.length > 0 || blacklist.length > 0) {
@@ -48,6 +52,11 @@ if (whitelist.length > 0 || blacklist.length > 0) {
  * Compiler entry point.
  */
 const buildFilters = async () => {
+    // Clean temporary folder
+    if (fs.existsSync(copyPlatformsPath)) {
+        await fs.promises.rm(copyPlatformsPath, { recursive: true });
+    }
+
     // Make copy for future patches generation
     await fs.promises.cp(platformsPath, copyPlatformsPath, { recursive: true });
 
