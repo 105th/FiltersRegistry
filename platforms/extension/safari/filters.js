@@ -1910,8 +1910,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.94.76",
-			"timeUpdated": "2023-12-14T20:35:09+0000",
+			"version": "2.0.94.77",
+			"timeUpdated": "2023-12-15T08:35:22+0000",
 			"languages": [],
 			"tags": [
 				3,
