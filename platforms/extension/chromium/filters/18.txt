@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/18/18-m-28377405-60.patch
-! Checksum: JfANWkf9PKru10CAdi6qXw
+! Diff-Path: ../patches/18/18-m-28377517-60.patch
+! Checksum: c8qMTBC/8Er9TflZOJP4CA
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.29.24
-! TimeUpdated: 2023-12-15T12:42:14+00:00
+! Version: 2.0.29.25
+! TimeUpdated: 2023-12-15T14:34:57+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2321,6 +2321,8 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+juzaphoto.com#?#.s_main_div_flex > div.s_bluebox:contains(cookies)
+kijiji.ca##div[class^="cookieBannerContainer"]
 vvvvid.it#%#//scriptlet('set-cookie', 'vvvvid_cookies_accepted', '1')
 emlakjet.com#%#//scriptlet('set-cookie', 'CookiePolicy', '1')
 vivre.*#%#//scriptlet('trusted-set-cookie-reload', 'cookies_consent', '1,~5,~6')
@@ -14714,6 +14716,8 @@ techzine.nl#%#AG_onLoad(function() { if(window.location.href.indexOf("cookiewet"
 thenewdaily.com.au#%#document.cookie = "tnd_subscribe_shown=true";
 trouw.nl#%#AG_onLoad(function() { var check = document.getElementsByClassName('site-tr bg-blur has-shadow')[0]; if (check){document.cookie = "nl_cookiewall_version=1"; location.reload();}; });
 ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = document.getElementsByClassName('cookiewall')[0]; if (check){document.cookie = "acceptcookies=true"; location.reload();}; }, 300); });
+! TODO: remove when 'domain' parameter will be added https://github.com/AdguardTeam/Scriptlets/issues/389
+walmart.ca#%#document.cookie = "uxcon=enforce=false&p13n=false&ads=false&createdAt=1672531204&modifiedAt=1672531204; domain=.walmart.ca; path=/";
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156057
 ! TODO: remove when `trusted-click-element` will be available in all AdGuard release verions
 voorkeuren.tvgids.nl#%#setInterval(() => { Array.from(document.querySelectorAll('.v4vptQ ._-5rsyq .xEPIo4')).forEach((e) => { try { e.click() } catch {}}, 500)})

@@ -2321,6 +2321,8 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+juzaphoto.com#?#.s_main_div_flex > div.s_bluebox:contains(cookies)
+kijiji.ca##div[class^="cookieBannerContainer"]
 vvvvid.it#%#//scriptlet('set-cookie', 'vvvvid_cookies_accepted', '1')
 emlakjet.com#%#//scriptlet('set-cookie', 'CookiePolicy', '1')
 vivre.*#%#//scriptlet('trusted-set-cookie-reload', 'cookies_consent', '1,~5,~6')
@@ -14778,6 +14780,8 @@ techzine.nl#%#AG_onLoad(function() { if(window.location.href.indexOf("cookiewet"
 thenewdaily.com.au#%#document.cookie = "tnd_subscribe_shown=true";
 trouw.nl#%#AG_onLoad(function() { var check = document.getElementsByClassName('site-tr bg-blur has-shadow')[0]; if (check){document.cookie = "nl_cookiewall_version=1"; location.reload();}; });
 ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = document.getElementsByClassName('cookiewall')[0]; if (check){document.cookie = "acceptcookies=true"; location.reload();}; }, 300); });
+! TODO: remove when 'domain' parameter will be added https://github.com/AdguardTeam/Scriptlets/issues/389
+walmart.ca#%#document.cookie = "uxcon=enforce=false&p13n=false&ads=false&createdAt=1672531204&modifiedAt=1672531204; domain=.walmart.ca; path=/";
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156057
 !+ PLATFORM(android, ios)
 wetter.com#%#//scriptlet('trusted-click-element', 'div[class^="sc-"] > button.primary')
@@ -20223,6 +20227,7 @@ scitechdaily.com,thewindowsclub.com#@#.ad-space
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+juzaphoto.com#?#body > div[style^="max-width:"]:has(> div.s_bluebox > a[href="article.php?l=it&article=adblock"])
 rtl.hu##.adblock-confirm
 everyeye.it#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ||lightmaneye.github.io^$subdocument,domain=everyeye.it
@@ -21019,7 +21024,7 @@ old-games.ru,cenakrasna.info###adb
 olegon.ru#%#AG_onLoad(function() { window.deta = function() {}; });
 olkino.com##.alert-block
 omaweetraad.nl##.banner-block
-easy-learn-tech.info,one-click-tutorials.info,solvetube.site,getintopc.com#%#//scriptlet('set-constant', 'pqdxwidthqt', 'false')
+how-to-pc.info,easy-learn-tech.info,one-click-tutorials.info,solvetube.site,getintopc.com#%#//scriptlet('set-constant', 'pqdxwidthqt', 'false')
 onehack.us##center.abb_parent
 oneman.gr#%#//scriptlet("abort-current-inline-script", "atob", "-10000px")
 onlinehashcrack.com#%#//scriptlet("set-constant", "canRunAds", "true")
@@ -23084,6 +23089,7 @@ sanalkurs.net###toast-container > .toast-error[aria-live="assertive"]
 !
 ! SECTION: Popups - Regular rules
 !
+imyfone.com##.pop-up-box
 vivre.*#%#//scriptlet('set-cookie', 'notification-newsletter-closed', 'true')
 investsocial.com###pb-wrapper
 nichegamer.com#$?#.custom-html-widget > div[style^="position: fixed; bottom:"]:has(iframe[src^="https://www.youtube.com/embed/"]) { remove: true; }
@@ -37446,6 +37452,8 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161301
 temu.com#?#div[role="main"] div[style] > div[style]:has(> div[style] div[js-selector="mobile-download-ui"])
 !
+hh.ru##div[data-qa="app-smartbanner"]
+kijiji.ca##section[aria-labelledby="app-marketing-title"]
 pokebattler.com#?#div[style^="margin-left: 15px;"] > div.row:has(> div[class] > a[href^="https://apps.apple.com/app/"])
 rikunabi.com##.guiding-app-dl
 turkmenportal.com##.modal_download_app
@@ -45786,6 +45794,8 @@ theguardian.com##.contributions__adblock
 !
 ! SECTION: Self-promo - Regular rules
 !
+gab.com#?#main div[tabindex="-1"] + div:not([class]):has(> div[class^="_"] > div[class^="_"] > div[class^="_"] > a[target="_blank"][href="https://grow.gab.com"])
+gab.com#?#main div[tabindex="-1"] + div:not([class]):has(> div[class^="_"] > div[class^="_"] > a[href="/businesses"])
 nytimes.com##div[data-testid="onsite-messaging-unit-dock"]
 blog.skillfactory.ru###banner-course-id
 hexlet.io##.x-promo-bg-gradient
