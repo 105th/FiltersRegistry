@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/18_optimized/18_optimized-m-28377097-60.patch
-! Checksum: TZCwbPZyQW2LXIh9iEUlmQ
+! Diff-Path: ../patches/18_optimized/18_optimized-m-28377337-60.patch
+! Checksum: cvbMI0ArbS0azj9sVprf6g
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.29.21
-! TimeUpdated: 2023-12-15T07:34:18+00:00
+! Version: 2.0.29.22
+! TimeUpdated: 2023-12-15T11:34:34+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1189,6 +1189,8 @@ freundin.de,utopia.de,mein-schoener-garten.de,eveningnews24.co.uk,rollingstone.d
 ||cdn.privacy-mgmt.com^$important,domain=promipool.de|android-hilfe.de|wsj.com
 cmp.chip.de,cmpv2.pcworld.com,baseendpoint.brigitte.de,thepopverse.com,cmpv2.netdoktor.ch,cmp.videogameschronicle.com,cmp.svd.se,cmpsp.gamesindustry.biz,cmp.omni.se,lbc.co.uk,eurogamer.pl,cmpsp.computerhoy.com,cmp.dpgmedia.be,consent.yorkshirepost.co.uk,stuttgarter-nachrichten.de,consent.formula1.com,sp-spiegel-de.spiegel.de,sourcepoint.kotaku.com,sourcepoint.tvnow.de,privacy.menshealth.de,baseendpoint.urbia.de,cmp.utopia.de,baseendpoint.vip.de,cdn.privacy-mgmt.com,cmp-sp.lvz.de,cmp2.macwelt.de,cmp2.pcwelt.de,cmp.travelbook.de,cmp.petbook.de,consent.gamingbible.com#%#//scriptlet('trusted-click-element', 'button.sp_choice_type_11')
 cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-focusable-el)')
+sfgate.com#%#//scriptlet('trusted-set-cookie', '_consent_cookie', '{"services":[]}')
+ilrestodelcarlino.it#%#//scriptlet('trusted-click-element', '#pubtech-cmp #pt-close')
 comarch.pl#%#//scriptlet('trusted-click-element', '.consent-modal__general-btn > button:first-child')
 kufar.by#%#//scriptlet('trusted-set-cookie', 'kuf_agr', '{%22advertisements%22:false%2C%22statistic%22:false%2C%22mindbox%22:false}')
 ilrestodelcarlino.it,quotidiano.net#%#//scriptlet('trusted-click-element', '#pubtech-cmp #pt-close')
@@ -7409,7 +7411,6 @@ tradeciety.com#%#document.cookie = "wpca_cc=functional"; document.cookie = "wpca
 notice.sp-prod.net#%#AG_onLoad(function() {if(-1==document.cookie.indexOf("_sp_")) {var a=new MutationObserver(function() {var a=document.querySelector("button.message-component:last-child");a&&a.click()});a.observe(document,{childList:!0,subtree:!0});setTimeout(function() {a.disconnect()},3E4)}});
 cbslocal.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector("button#onetrust-accept-btn-handler"); if(el) el.click(); }, 3000); });
 consent.talpanetwork.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('.meer-button--primary > button.button--primary'); if(el) el.click(); }, 1500); });
-baudoo.de#%#document.cookie="no_thanks=true; path=/;";
 finn.no#%#//scriptlet('set-session-storage-item', 'gdpr-popup-displayed', 'true')
 bdcraft.net#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('input[id="bdc_gdpr_accept"]'); if(el) el.click(); }, 300); });
 nordcheckout.com,moovitapp.com#%#document.cookie = "cookieconsent_status=dismiss; path=/;";
@@ -7509,7 +7510,6 @@ tupperware.de#%#document.cookie = "cookiesAccepted=1";
 guce.oath.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('button[type="submit"][value="agree"].btn'); if(el) el.click(); }, 300); });
 guce.oath.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.getElementsByClassName("agree")[0]; if(el) el.click(); }, 300); });
 jetphotos.com#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("cookieConsent", "1") } } catch (ex) {} })();
-sfgate.com#%#document.cookie = '_consent_cookie={"services":[]}';
 openpli.org#%#document.cookie = "gdpr-accepted=Yes";
 cubbiescrib.com#%#AG_onLoad(function() { setTimeout(function() { if(document.getElementById("gdpr-consent-form-wrapper").isvisible = true) { document.cookie = "euConsent=true"; location.reload(); }; }, 1000); });
 myprivacy.medialaan.be#%#AG_onLoad(function() { setTimeout(function() { document.getElementsByClassName("form__button-group")[0].submit(); }, 300); });
@@ -8737,7 +8737,6 @@ mishcon.com#@#.cookie-banner:not(body):not(html)
 electrolux.ru#@#.CookieConsent
 commerce-connector.com#@#.cookie-notice:not(body):not(html)
 @@||sdk.privacy-center.org/*.js$domain=elmundo.es
-baudoo.de#@##cookieNotice
 news.at#@#.optanon-alert-box-wrapper
 xxlnutrition.com#@##privacy-consent
 electrolux.com.tr#@#.CookieConsent

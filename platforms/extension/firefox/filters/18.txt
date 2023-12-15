@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/18/18-m-28377097-60.patch
-! Checksum: r0GMUpP4iB/4wUGuAVmI3g
+! Diff-Path: ../patches/18/18-m-28377337-60.patch
+! Checksum: skqdkfO/Cpv8JS+MYopj1Q
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.29.21
-! TimeUpdated: 2023-12-15T07:34:18+00:00
+! Version: 2.0.29.22
+! TimeUpdated: 2023-12-15T11:34:34+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2321,6 +2321,8 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+sfgate.com#%#//scriptlet('trusted-set-cookie', '_consent_cookie', '{"services":[]}')
+ilrestodelcarlino.it#%#//scriptlet('trusted-click-element', '#pubtech-cmp #pt-close')
 comarch.pl#%#//scriptlet('trusted-click-element', '.consent-modal__general-btn > button:first-child')
 kufar.by#%#//scriptlet('trusted-set-cookie', 'kuf_agr', '{%22advertisements%22:false%2C%22statistic%22:false%2C%22mindbox%22:false}')
 ilrestodelcarlino.it,quotidiano.net#%#//scriptlet('trusted-click-element', '#pubtech-cmp #pt-close')
@@ -14561,7 +14563,6 @@ tradeciety.com#%#document.cookie = "wpca_cc=functional"; document.cookie = "wpca
 notice.sp-prod.net#%#AG_onLoad(function() {if(-1==document.cookie.indexOf("_sp_")) {var a=new MutationObserver(function() {var a=document.querySelector("button.message-component:last-child");a&&a.click()});a.observe(document,{childList:!0,subtree:!0});setTimeout(function() {a.disconnect()},3E4)}});
 cbslocal.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector("button#onetrust-accept-btn-handler"); if(el) el.click(); }, 3000); });
 consent.talpanetwork.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('.meer-button--primary > button.button--primary'); if(el) el.click(); }, 1500); });
-baudoo.de#%#document.cookie="no_thanks=true; path=/;";
 finn.no#%#//scriptlet('set-session-storage-item', 'gdpr-popup-displayed', 'true')
 bdcraft.net#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('input[id="bdc_gdpr_accept"]'); if(el) el.click(); }, 300); });
 nordcheckout.com,moovitapp.com#%#document.cookie = "cookieconsent_status=dismiss; path=/;";
@@ -14659,7 +14660,6 @@ tupperware.de#%#document.cookie = "cookiesAccepted=1";
 guce.oath.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('button[type="submit"][value="agree"].btn'); if(el) el.click(); }, 300); });
 guce.oath.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.getElementsByClassName("agree")[0]; if(el) el.click(); }, 300); });
 jetphotos.com#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("cookieConsent", "1") } } catch (ex) {} })();
-sfgate.com#%#document.cookie = '_consent_cookie={"services":[]}';
 openpli.org#%#document.cookie = "gdpr-accepted=Yes";
 cubbiescrib.com#%#AG_onLoad(function() { setTimeout(function() { if(document.getElementById("gdpr-consent-form-wrapper").isvisible = true) { document.cookie = "euConsent=true"; location.reload(); }; }, 1000); });
 myprivacy.medialaan.be#%#AG_onLoad(function() { setTimeout(function() { document.getElementsByClassName("form__button-group")[0].submit(); }, 300); });
@@ -17660,8 +17660,6 @@ gameswelt.de#@#.as-oil
 @@||nordcoast-coffee.de/js/cookieconsent.min.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51262
 @@||cdn.cookielaw.org^$domain=cbslocal.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/51100
-baudoo.de#@##cookieNotice
 ! https://github.com/AdguardTeam/AdguardFilters/issues/50996
 @@||cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js$domain=shmoop.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/50917
