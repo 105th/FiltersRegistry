@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/19_optimized/19_optimized-m-28377577-60.patch
-! Checksum: SZKx5njHFdT+sSatW9Eukw
+! Diff-Path: ../patches/19_optimized/19_optimized-m-28377697-60.patch
+! Checksum: uzVBP0Ehvg1qulzpNUCwGg
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation.
-! Version: 2.0.27.96
-! TimeUpdated: 2023-12-15T15:34:44+00:00
+! Version: 2.0.27.97
+! TimeUpdated: 2023-12-15T17:34:24+00:00
 ! Expires: 12 hours (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -69,6 +69,7 @@ dzen.ru#%#//scriptlet('abort-on-stack-trace', 'YA_SSP_ID', 'anonymous')
 dzen.ru#$?#body header#dzen-header ~ div[class*="__widgetContainer-"] div[style]:has(iframe[style="position: absolute; top: 0; left:0; width: 100%; height: 100%; border-width: 0;"]) { remove: true; }
 dzen.ru#$?#.feed__item > article._with_big_card_height._dzen-feed._carousel:contains(/[реклама]{7,10}/) { remove: true; }
 dzen.ru##div[class^="float-interview__float-"]
+mail.ru#%#//scriptlet('remove-node-text', 'script', 'check()&&xray.send("ad')
 mail.ru##div[slot="main-column"] > div.tgb-wrapper
 mail.ru#$?#div[slot="main-column"] > div.tgb-wrapper { remove: true; }
 [$path]mail.ru#%#//scriptlet('json-prune', '[].slot')

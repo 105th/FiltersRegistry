@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/14_optimized/14_optimized-472960-4.patch
-! Checksum: LIg/oZPOoX3gWtWo5ItNqg
+! Diff-Path: ../patches/14_optimized/14_optimized-m-28377697-60.patch
+! Checksum: 9JGBdZGhCvRVoEne0RGB2w
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.81.8
-! TimeUpdated: 2023-12-15T16:10:06+00:00
+! Version: 2.1.81.9
+! TimeUpdated: 2023-12-15T17:34:20+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -9169,6 +9169,7 @@ dzen.ru#%#//scriptlet('abort-on-stack-trace', 'YA_SSP_ID', 'anonymous')
 dzen.ru#$?#body header#dzen-header ~ div[class*="__widgetContainer-"] div[style]:has(iframe[style="position: absolute; top: 0; left:0; width: 100%; height: 100%; border-width: 0;"]) { remove: true; }
 dzen.ru#$?#.feed__item > article._with_big_card_height._dzen-feed._carousel:contains(/[реклама]{7,10}/) { remove: true; }
 dzen.ru##div[class^="float-interview__float-"]
+mail.ru#%#//scriptlet('remove-node-text', 'script', 'check()&&xray.send("ad')
 mail.ru##div[slot="main-column"] > div.tgb-wrapper
 mail.ru#$?#div[slot="main-column"] > div.tgb-wrapper { remove: true; }
 !+ NOT_PLATFORM(windows, mac, android)
