@@ -1,10 +1,10 @@
-! Diff-Path: ../patches/250_optimized/250_optimized-472940-4.patch
+! Diff-Path: ../patches/250_optimized/250_optimized-472948-4.patch
 ![Adblock Plus 2.0]
-! Checksum: u9zRq8+WLx1LJhH1jVIAmA
+! Checksum: gY8y2a3DTSHPi32aDlL8pw
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.12.61
-! TimeUpdated: 2023-12-14T20:07:53+00:00
+! Version: 2.0.12.62
+! TimeUpdated: 2023-12-15T04:08:12+00:00
 ! Expires: 4 days (update frequency)
 ###smart-banner
 ###smartbanner
@@ -54,6 +54,7 @@ roblox.com###app-bumper-main
 rt.com###offers
 skype.com###appBanner
 soundcloud.com##article.mobileApps
+sporx.com,superfb.com,webaslan.com##a[href$=".com/mobil/"]
 tokopedia.com##div[id*=header] div[class^=css-]> a[href="/mobile-apps/"]
 tokopedia.com#?#div[id*=header] i:has(+ a[href="/mobile-apps/"])
 video.az##.sidebar-right > .text-center > a[href*="/app"] > img
@@ -138,6 +139,8 @@ drivereasy.com#?#.pakb-content img[sizes^="(max-width: 79"]
 drivereasy.com#?#.pakb-content figcaption:has-text(for free if you like)
 drivereasy.com#?#.pakb-content p:has-text(click Update All)
 cfoc.org###top_custom_banner
+cfoc.org##.custom_banner_top_btn
+cfoc.org##tr:has([href="https://cfoc.org/go-to-spyhunter/"])
 cfoc.org##a[href="https://cfoc.org/spyhunter-download-and-install-instructions/"]:upward(2)
 cfoc.org##.su-button[href^="https://link.safecart.com/"]:upward(3)
 sensorstechforum.com##tr:has([href="https://sensorstechforum.com/spyhunter-download-and-install-instructions/"])
@@ -163,6 +166,7 @@ exefiles.com##.row:has(a[href*="/recommended/"])
 coolrom.com.au,coolrom.com##.download_link
 ||blogerjijer.pw^$document
 chrome.google.com#?#.webstore-test-wall-tile:has-text(Adblocker for )
+softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adskiper."]
 ||ubuntu.org^$document
 ||103.224.212.249^$document
 ||54.174.156.141^$document
@@ -799,7 +803,6 @@ deviantart.com#$?#div[style*="wixmp.com/"] { filter: none !important }
 deviantart.com##div[style^="width:"] > div:first-of-type + div:last-of-type:has(> a[href*="/join/?"])
 twitch.tv###twilight-sticky-footer-root
 pinterest.*##div[id$=unauth-container] div[data-test-id=pin-closeup-image] > div[style^="cursor: pointer;"]
-douyin.com##script[src*=websdk] + div:not([class], [id])
 amazon.*##.nav-flyout.nav-signin-tt
 trello.com##.mod-warning.header-banner
 sentrylogin.com/sentry/scripts/*
@@ -869,6 +872,7 @@ home.meishichina.com##.ft4
 jd.com##.jdm-tbar-tab-qrcode.jdm-toolbar-tab.J-trigger
 kyfw.12306.cn###ins_mask
 mi.com##div.section:nth-of-type(31)
+news.sina.com.cn##.clearfix.blk-wxfollow
 qunar.com##.wx_phone_icon.last
 smzdm.com##.footer-right
 tmall.com###mobile
@@ -994,6 +998,7 @@ daz3d.ru##+js(set-constant, snow, undefined)
 @@||dongtaiwang.com^
 @@||epochtimes.com^
 @@||minghui.org^
+@@||ntdtv.com.tw^
 @@||ntdtv.com^
 @@||secretchina.com^
 @@||shenyun.com^
@@ -1023,6 +1028,7 @@ daz3d.ru##+js(set-constant, snow, undefined)
 #@#html
 #@#body
 @@||network-auth.com^
+@@||lencr.org^
 @@||disneyplus.bn5x.net^$~third-party
 @@|https://raw.githubusercontent.com/DandelionSprout/adfilt/*
 @@||raw.githubusercontent.com/*/master/*$~third-party
@@ -1187,7 +1193,6 @@ $removeparam=AID,document,denyallow=firestore.googleapis.com,domain=~google.*|~d
 $removeparam=/^CJEVENT=/i,document
 $removeparam=refd
 $document,removeparam=/^hmb_/
-$removeparam=FMID
 $document,removeparam=LID
 $removeparam=_ga,domain=~login.aliexpress.*
 $removeparam=guccounter
@@ -1219,6 +1224,7 @@ $removeparam=xid,domain=fortune.com|tcgplayer.com
 $removeparam=email_work_card
 $removeparam=tracking_source
 $~image,removeparam=itok
+$removeparam=smtyp
 $removeparam=tpcc
 $removeparam=onetime_FromEmail
 $~xmlhttprequest,removeparam=mbid
@@ -1257,6 +1263,9 @@ $removeparam=sscid
 $removeparam=rmmds
 $removeparam=act_poa
 $removeparam=utmid
+$removeparam=pjxsource
+$removeparam=pjxaffiliate_id
+$removeparam=pjxclick_id
 $removeparam=msclkid
 $removeparam=litb_from
 $document,removeparam=/^adword_/,domain=~justdial.com
@@ -1306,6 +1315,7 @@ $removeparam=ASUBID
 $removeparam=ASID
 $removeparam=cm_sp
 $removeparam=cm_re
+$removeparam=mkref
 $removeparam=AFID,domain=~chggtrx.com|~state.gov
 $~stylesheet,~script,removeparam=campaignid
 $removeparam=loc,document,domain=bestbuy.*|shopping.google.com
@@ -1363,7 +1373,6 @@ $removeparam=o_sch
 $removeparam=o_xid
 $removeparam=wtExtndSource
 $removeparam=FpAffiliate
-$removeparam=FpSub
 $removeparam=rfsn
 $document,removeparam=trackid,domain=~nzpost.co.nz
 $removeparam=strackid
@@ -1534,7 +1543,6 @@ $removeparam=/^pid=.*_int$/
 $removeparam=deep_link_sub1
 $removeparam=sub_aff_id
 $removeparam=/^sub_id\d=/
-$removeparam=tg_ref
 $removeparam=dt_dapp
 $removeparam=dt_platform
 $removeparam=i_cid
@@ -1639,7 +1647,6 @@ $removeparam=nosto
 $removeparam=af_id
 $removeparam=trafficSource
 $removeparam=gps_adid
-$removeparam=ebisAdID
 $removeparam=app_clickref
 $removeparam=as_campaign
 $removeparam=as_camptype
@@ -1702,7 +1709,6 @@ $removeparam=ga_client_id
 $removeparam=s_id
 $removeparam=b_id
 $removeparam=kltstamp
-$removeparam=tpmn_buid
 $removeparam=adsafe_type
 $removeparam=CookieSyncId
 $removeparam=variationId
@@ -2586,6 +2592,7 @@ $removeparam=_1lr
 $removeparam=ymid
 ^z=*&var=$removeparam=var,document
 ||carsales.com.au^$removeparam=Cr,document
+$removeparam=/^ref=troyhunt\.com/
 ||homedepot.com^$removeparam=fromReminder
 $removeparam=embeds_referring_euri
 ||bugs.co.kr^$removeparam=wl_ref
@@ -2621,6 +2628,7 @@ $document,domain=bilibili.com|querie.me,removeparam=timestamp
 *ref=404media.co*$document,removeparam=/^ref=404media.co$/
 ||discordapp.$removeparam=ex
 ||discordapp.$removeparam=hm
+$document,removeparam=jp_cmp,domain=chase.com
 ||researchgate.net^$document,removeparam=_tp
 $document,removeparam=share_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||xvideos.$document,removeparam=sxcaf
@@ -2662,6 +2670,7 @@ $document,removeparam=af_reengagement_window
 ||instagram.com^$document,removeparam=short_redirect
 ||privatbank.ua^$removeparam=visit_id
 ||yandex.com/portal/set/any$removeparam=sk
+||cmp.inmobi.com/tcfv2/cmp2.js$removeparam=referer
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
