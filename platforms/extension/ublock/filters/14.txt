@@ -1,10 +1,10 @@
-! Diff-Path: ../patches/14/14-472956-4.patch
+! Diff-Path: ../patches/14/14-m-28377405-60.patch
 ![Adblock Plus 2.0]
-! Checksum: evNy7Kg0zhAXQJyYINBJfQ
+! Checksum: PvzZD5qVrpEr16n4tPMk4A
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.81.3
-! TimeUpdated: 2023-12-15T12:09:59+00:00
+! Version: 2.1.81.4
+! TimeUpdated: 2023-12-15T12:42:06+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2303,6 +2303,8 @@ freundin.de,utopia.de,mein-schoener-garten.de,eveningnews24.co.uk,rollingstone.d
 !
 ! NOTE: Regular rules
 !
+vvvvid.it##+js(set-cookie, vvvvid_cookies_accepted, 1)
+emlakjet.com##+js(set-cookie, CookiePolicy, 1)
 geekjob.ru###cookie-gdpr-bar
 tproger.ru##.tp-cookie-notify
 rabota.by##+js(set-cookie, cookie_policy_agreement, true)
@@ -10554,7 +10556,6 @@ bonus.is###nh-neth-gdpr-cookie-popup
 userbenchmark.com###notForm > div[id="notForm:userNot"] > .nb-parent
 calcsbox.com###noticeWindow
 flaticon.com,freepik.com###notification-cookie
-vivre.cz,vivre.gr,vivre.hr,vivre.hu,vivre.ro,vivre.si,vivrehome.pl,vivrehome.sk###notification__consent
 thejournal.ie###notify-container
 alfred.camera###noty_layout__bottomLeft
 azpc.info###ntf
@@ -21394,6 +21395,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+vivre.*##+js(set-cookie, notification-newsletter-closed, true)
 investsocial.com###pb-wrapper
 nichegamer.com#$?#.custom-html-widget > div[style^="position: fixed; bottom:"]:has(iframe[src^="https://www.youtube.com/embed/"]) { remove: true; }
 aeon.co##section[data-test="Cta-MainDonate-banner"]
@@ -26284,7 +26286,6 @@ lollty.pro,root-s.co.jp,hiro-clinic.or.jp,dmxq.fun,yanmaga.jp,delandis.co.kr,ant
 partnerkin.com##.twidget
 dasding.de###modal-whatsapp
 dasding.de###modal-whatsapp + .modal-backdrop
-vivre.eu##.js-modal-newsletter-1
 m.oe24.at##.mobileTeaserOe24Tv
 sportbuzzer.de###idleModalPane
 roadtovr.com##.mpp-container-position-bottom-right > .mpp-popup[data-form-type="user-subscription"]
@@ -26292,7 +26293,6 @@ zielonyogrodek.pl###newsletter-pp
 tageskarte.io#$#.modal-open { overflow:visible!important; }
 tageskarte.io#$#.modal-newsletter { display:none!important; }
 tageskarte.io#$#.modal-backdrop { display:none!important; }
-vivre.hr,vivre.ro##.js-popup-register:not(.is-visible)
 fox.com.tr##body.home #lightbox
 soo.cool###ideaPopupExitOffer
 soo.cool###PageOver[onclick="CloseDialog('ideaPopupExitOffer');"]
@@ -49726,6 +49726,10 @@ zebratechnologies.force.com##.zbrbot-container
 !
 !   SECTION: Uncategorized
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/168400
+||static.vkplay.live/js/$script,domain=shazoo.ru
+shazoo.ru##iframe[src^="https://vkplay.live/app/embed"]
+shazoo.ru##iframe[src^="https://vkplay.live/app/embed"] + p
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163923 - quiz widget
 ||quiz.rambler.ru^$domain=lenta.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163741
