@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/18/18-m-28377577-60.patch
-! Checksum: co50Uokv/7adSKgGhb4u+A
+! Diff-Path: ../patches/18/18-m-28377818-60.patch
+! Checksum: 7LKEBk1wYowdGQ6hy/b6DQ
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.29.26
-! TimeUpdated: 2023-12-15T15:34:43+00:00
+! Version: 2.0.29.27
+! TimeUpdated: 2023-12-15T19:34:42+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2332,7 +2332,7 @@ sfgate.com#%#//scriptlet('trusted-set-cookie', '_consent_cookie', '{"services":[
 ilrestodelcarlino.it#%#//scriptlet('trusted-click-element', '#pubtech-cmp #pt-close')
 comarch.pl#%#//scriptlet('trusted-click-element', '.consent-modal__general-btn > button:first-child')
 kufar.by#%#//scriptlet('trusted-set-cookie', 'kuf_agr', '{%22advertisements%22:false%2C%22statistic%22:false%2C%22mindbox%22:false}')
-ilrestodelcarlino.it,quotidiano.net#%#//scriptlet('trusted-click-element', '#pubtech-cmp #pt-close')
+ilrestodelcarlino.it,quotidiano.net,lanazione.it,ilgiorno.it,iltelegrafolivorno.it#%#//scriptlet('trusted-click-element', '#pubtech-cmp #pt-close')
 pcgames.de#%#//scriptlet('hide-in-shadow-dom', 'div[class*="src-components-basic-popup__overlay"]')
 geekjob.ru###cookie-gdpr-bar
 tproger.ru##.tp-cookie-notify
@@ -14818,7 +14818,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168075
 fix-price.com#@#.gdpr-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168507
-@@||cmp.pubtech.ai/*/pubtech-cmp-v2.js$script,domain=ilrestodelcarlino.it
+! quotidiano.net group - broken video
+@@||cmp.pubtech.ai/*/pubtech-cmp-v2.js$script,domain=ilrestodelcarlino.it|quotidiano.net|lanazione.it|ilgiorno.it|iltelegrafolivorno.it
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167366
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168446
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168133
@@ -14856,8 +14857,6 @@ cnn.com#@##onetrust-consent-sdk
 lewor24.pl#@##cookieModal
 ! https://github.com/uBlockOrigin/uAssets/issues/20966
 flip.bg#@#.cookie-modal
-! quotidiano.net - broken video
-@@||cmp.pubtech.ai/*/pubtech-cmp-v2.js$script,domain=quotidiano.net
 ! morgenpost.de - video broken
 @@||b.delivery.consentmanager.net/delivery/cmp.php$domain=morgenpost.de|wp.de
 @@||cdn.consentmanager.net/delivery/js/cmp*.min.js$domain=morgenpost.de

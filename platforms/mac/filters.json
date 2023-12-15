@@ -1113,8 +1113,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.47.32",
-			"timeUpdated": "2023-12-15T15:34:32+0000",
+			"version": "2.0.47.33",
+			"timeUpdated": "2023-12-15T19:34:22+0000",
 			"languages": []
 		},
 		{
@@ -1154,8 +1154,8 @@
 			"displayNumber": 1,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/14.txt",
-			"version": "2.1.81.10",
-			"timeUpdated": "2023-12-15T18:34:54+0000",
+			"version": "2.1.81.11",
+			"timeUpdated": "2023-12-15T19:34:34+0000",
 			"languages": []
 		},
 		{
@@ -1213,8 +1213,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.29.26",
-			"timeUpdated": "2023-12-15T15:34:43+0000",
+			"version": "2.0.29.27",
+			"timeUpdated": "2023-12-15T19:34:42+0000",
 			"languages": []
 		},
 		{
@@ -1226,8 +1226,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.27.98",
-			"timeUpdated": "2023-12-15T18:34:59+0000",
+			"version": "2.0.27.99",
+			"timeUpdated": "2023-12-15T19:34:43+0000",
 			"languages": []
 		},
 		{
@@ -1239,8 +1239,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.0.86.96",
-			"timeUpdated": "2023-12-15T15:34:48+0000",
+			"version": "2.0.86.97",
+			"timeUpdated": "2023-12-15T19:34:50+0000",
 			"languages": [
 				"ru"
 			]
@@ -1336,8 +1336,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.64.33",
-			"timeUpdated": "2023-12-15T15:35:05+0000",
+			"version": "2.0.64.34",
+			"timeUpdated": "2023-12-15T19:35:20+0000",
 			"languages": []
 		},
 		{
@@ -1349,8 +1349,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.0.94.78",
-			"timeUpdated": "2023-12-15T12:10:22+0000",
+			"version": "2.0.94.79",
+			"timeUpdated": "2023-12-15T19:35:24+0000",
 			"languages": []
 		},
 		{
