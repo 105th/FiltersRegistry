@@ -1787,8 +1787,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.86.98",
-			"timeUpdated": "2023-12-15T22:34:32+0000",
+			"version": "2.0.86.99",
+			"timeUpdated": "2023-12-16T00:49:19+0000",
 			"languages": [
 				"ru"
 			],
