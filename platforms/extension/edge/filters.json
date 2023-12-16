@@ -1850,8 +1850,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.4.99",
-			"timeUpdated": "2023-12-16T13:34:42+0000",
+			"version": "2.1.5.0",
+			"timeUpdated": "2023-12-16T14:34:35+0000",
 			"languages": [
 				"zh"
 			],
@@ -1916,8 +1916,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.12.71",
-			"timeUpdated": "2023-12-16T07:35:04+0000",
+			"version": "2.3.12.72",
+			"timeUpdated": "2023-12-16T14:34:45+0000",
 			"languages": [],
 			"tags": [
 				10,
