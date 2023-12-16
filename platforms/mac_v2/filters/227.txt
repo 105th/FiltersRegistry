@@ -1,14 +1,14 @@
-! Diff-Path: ../patches/227/227-472960-4.patch
-! Checksum: /9gcn8Bm/z8PVl+gg5aU3w
+! Diff-Path: ../patches/227/227-472972-4.patch
+! Checksum: pFpUV7ETFQbMwqTsFkGlZg
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.16.91
-! TimeUpdated: 2023-12-15T16:09:24+00:00
+! Version: 2.0.16.92
+! TimeUpdated: 2023-12-16T04:07:33+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2023.1215.6
+! OriginalVersion: 2023.1216.1
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -1465,8 +1465,6 @@ sports.donga.com##div[id*="_AD"]
 !
 etoland.co.kr###m_main_attendance_wrap ~ a[href^="../../plugin/mobile/board.php?bo_table=market_"]
 m.fmkorea.com##div[id^="fmad_"] + div[style^="height:"][class]
-m.fmkorea.com##body > header[class] ~ div[class] > div[style*=";margin:"] div[style^="height:"]
-m.fmkorea.com##body > header[class] ~ div[class][style^="height:"]
 etoland.co.kr##article[class^="etoad-"]
 biz.newdaily.co.kr##div[itemprop="articleBody"] > div[style^="margin:"].clearfix
 newdaily.co.kr##div[style*=";height:"][data-ad]
@@ -2965,6 +2963,7 @@ yagong64.com,yagong65.com,yagong66.com,yagong67.com,yagong68.com,yagong69.com,ya
 toonkor313.com,toonkor314.com,toonkor315.com,toonkor316.com,toonkor317.com,toonkor318.com,toonkor319.com,toonkor320.com,toonkor321.com,toonkor322.com,toonkor323.com,toonkor324.com#?#.navbar-nav > li[class]:has(> a[href$="/토토보증업체"][alt="토토보증업체"])
 !
 ! DOMAIN-REFRESHER: END
+m.fmkorea.com#$?#body div[class]:not([style]):matches-css(background: /fmad\/tpl\/images/) { remove: true; }
 m.mt.co.kr#$?#ul[class^="ad"] { remove: true; }
 news.daum.net#$?#.main-content > .content-article:not(:has(+ .content-aside > div[data-tiara-layer][class="box_side"])) { width: 100% !important; }
 coolenjoy.net#$?#.na-col > div[id^="carousel_"].carousel-fade .carousel-item:has(a[href]:not([href*="//coolenjoy.net/"])[target="_self"]) { remove: true; }
@@ -3058,7 +3057,7 @@ m.humoruniv.com#%#//scriptlet('set-constant', 'list_end_run', 'noopFunc')
 m.humoruniv.com#%#//scriptlet('abort-on-stack-trace', '$.prototype.html', '_boom')
 m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html', '/\/images\/[A-z0-9-_]+\.?(jpg|gif)/')
 !
-m.fmkorea.com#%#//scriptlet('prevent-setTimeout', '+ads[_')
+m.fmkorea.com#%#//scriptlet('json-prune', 'ads')
 m.shop.interpark.com#%#//scriptlet('set-constant', 'FastClick.attach', 'noopFunc')
 m.shop.interpark.com#%#//scriptlet('set-constant', 'FastClick', 'noopFunc')
 hub.zum.com#%#//scriptlet('set-constant', 'Math.uuid', '', '', 'asFunction')
