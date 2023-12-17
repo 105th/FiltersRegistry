@@ -1671,8 +1671,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/15.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.89",
-			"timeUpdated": "2023-12-17T12:09:30+0000",
+			"version": "2.0.58.90",
+			"timeUpdated": "2023-12-17T18:34:52+0000",
 			"languages": [],
 			"tags": [
 				45,
