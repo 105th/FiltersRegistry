@@ -1916,8 +1916,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.12.80",
-			"timeUpdated": "2023-12-17T08:08:39+0000",
+			"version": "2.3.12.81",
+			"timeUpdated": "2023-12-17T08:34:48+0000",
 			"languages": [],
 			"tags": [
 				10,
