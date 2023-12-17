@@ -1916,8 +1916,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.12.86",
-			"timeUpdated": "2023-12-17T15:34:43+0000",
+			"version": "2.3.12.87",
+			"timeUpdated": "2023-12-17T21:34:50+0000",
 			"languages": [],
 			"tags": [
 				10,
