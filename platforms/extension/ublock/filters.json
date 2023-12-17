@@ -2016,8 +2016,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.46.61",
-			"timeUpdated": "2023-12-17T12:10:12+0000",
+			"version": "2.0.46.62",
+			"timeUpdated": "2023-12-17T13:35:49+0000",
 			"languages": [
 				"ja"
 			],
