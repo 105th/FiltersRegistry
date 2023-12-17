@@ -1,6 +1,6 @@
-! Diff-Path: ../patches/250_optimized/250_optimized-472988-4.patch
+! Diff-Path: ../patches/250_optimized/250_optimized-472996-4.patch
 ![Adblock Plus 2.0]
-! Checksum: Q7azi+eGD8zdvZiyyx9Opg
+! Checksum: 9L6js93nUi/1YxL3RhU5mA
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.12.63
@@ -345,9 +345,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 |http://ww01.$document
 www.microsoft.com##.card[data-bi-cn*=" craft " i]
 www.microsoft.com##.card[data-bi-cn*="bus sim" i]
-www.microsoft.com##a[data-pfns][data-pfns^="1"][data-pfns*="games."]
 www.microsoft.com##a[data-pfns][data-pfns^="2"][data-pfns*="games."]
-www.microsoft.com##a[data-pfns][data-pfns^="5"][data-pfns*="game."]
 ||s.free.fr^$all
 ||212.27.60.108^$all
 ||oxtop.ru^
@@ -744,6 +742,7 @@ rapid-cloud.co##+js(abort-on-property-write, navigator.brave)
 gigabyte.com#?#div.target-container.desc:has-text(PDF files with Acrobat )
 /get_adobe_reader.$image
 @@||supermicro.com$elemhide,badfilter
+fileinfo.com##.fv
 experts-exchange.com#$#.accepted.answer { display: block !important }
 nijie.info#$#.ngtag.mozamoza { -webkit-filter: none !important }
 study.com#$##articleMain > div[class=hidden] { visibility: visible !important; display: block !important }
@@ -960,6 +959,7 @@ fandom.com##.unified-search__layout__right-rail
 ||vignette.wikia.nocookie.net/*/images/c/cd^$important
 ||wikia.nocookie.net/*/images/*/Wiki-background^$domain=fandom.com
 ||wikia.nocookie.net/*/images/*/Site-background-$domain=fandom.com
+||vignette.wikia.nocookie.net/*_BG.png/revision^$domain=wikia.org|fandom.com
 fandom.com#$?#:root { --theme-body-background-image: none !important }
 @@||wikia.nocookie.net^*/images/$image,badfilter
 fandom.com#$?#.page__right-rail:has(.sticky-modules-wrapper:last-of-type) { width: 210px !important }
@@ -994,6 +994,7 @@ alpresor.se##+js(abort-current-script, snowMax)
 daz3d.ru##+js(set-constant, snow, undefined)
 /jquery.snow.js
 /let-it-snow.
+/script/snow.js
 /snow-fall.js
 /snow-falling.js
 /snowfall-master.min.js
@@ -1135,7 +1136,6 @@ playpilot.com##.ratings
 www.google.*#?#.g:has-text(imdb.com › title) div[data-snf]:has(g-bubble)
 www.google.*#?#div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
 www.google.*#?#.g div[jscontroller]:has(a[href*=imdb]) div + div + div[class*=" "]:has(span[role=img])
-tv.nu#?#a[title] span:has(path[d^="M9.465 "])
 cinerama.uz##div[class^=MovieDescription_rating__]:nth-of-type(1)
 primewire.*##div:has(> span:has-text(IMDb))
 vumoo.to#?#div.col-lg-12:has-text(IMDb)
@@ -1201,6 +1201,7 @@ $removeparam=AID,document,denyallow=firestore.googleapis.com,domain=~google.*|~d
 $removeparam=/^CJEVENT=/i,document
 $removeparam=refd
 $document,removeparam=/^hmb_/
+$removeparam=FMID
 $document,removeparam=LID
 $removeparam=_ga,domain=~login.aliexpress.*
 $removeparam=guccounter
@@ -1237,7 +1238,6 @@ $removeparam=tpcc
 $removeparam=onetime_FromEmail
 $~xmlhttprequest,removeparam=mbid
 $removeparam=itid
-$removeparam=full_trSrc
 $document,removeparam=/^ICID=/i,domain=~api.mapbox.com|~microsoft.com
 $document,removeparam=/^utm-/
 $~subdocument,removeparam=aff,domain=~discoverbank.com|~discover.com
@@ -1269,7 +1269,6 @@ $removeparam=campaign_id,domain=~kochava.com|~unisportstore.*
 $removeparam=wmlspartner
 $removeparam=sscid
 $removeparam=rmmds
-$removeparam=act_poa
 $removeparam=utmid
 $removeparam=pjxsource
 $removeparam=pjxaffiliate_id
@@ -1376,6 +1375,7 @@ $removeparam=affiliate_id
 $removeparam=affiliate_location_id
 $removeparam=cjdata
 $removeparam=click_id,domain=~bookings.beatthatflight.*
+$removeparam=cm_soc
 $removeparam=o_lid
 $removeparam=o_sch
 $removeparam=o_xid
@@ -1383,7 +1383,6 @@ $removeparam=wtExtndSource
 $removeparam=FpAffiliate
 $removeparam=rfsn
 $document,removeparam=trackid,domain=~nzpost.co.nz
-$removeparam=strackid
 $removeparam=afsrc
 $removeparam=lctid
 $~ping,removeparam=lcid,domain=~rekono.si
@@ -1408,6 +1407,8 @@ $document,removeparam=/^source=pepperjam$/
 $document,removeparam=/^source=cj$/
 $removeparam=affil
 $removeparam=cjid
+$removeparam=irsharedid
+$removeparam=hvarAID
 $removeparam=sv_affiliate_id
 $removeparam=sv_campaign_id
 $document,removeparam=/^sv_tax/
@@ -1647,6 +1648,7 @@ $removeparam=/^amp;utm_/
 $removeparam=sap-outbound-id
 $removeparam=analyticsCorrelationId
 $removeparam=adobe_mc
+$removeparam=/^_sgm_/i
 $removeparam=omnisendContactID
 $removeparam=affiliate,domain=~justice.gov
 $removeparam=trco_id
@@ -1696,11 +1698,13 @@ $removeparam=google_gid
 $removeparam=cm_user_id
 $removeparam=ad-session-id
 $removeparam=ga_cid
+$removeparam=tw_document_href
 $removeparam=hubspotUtk
 $removeparam=messagesUtk
 $removeparam=advUuid
 $document,removeparam=traceId
 $removeparam=vgd_l1rakh
+$removeparam=p_user_id
 $removeparam=refDomain
 $removeparam=criteoId
 $removeparam=dspCookie
@@ -1717,6 +1721,7 @@ $removeparam=ga_client_id
 $removeparam=s_id
 $removeparam=b_id
 $removeparam=kltstamp
+$removeparam=tpmn_buid
 $removeparam=adsafe_type
 $removeparam=CookieSyncId
 $removeparam=variationId
@@ -2246,11 +2251,13 @@ $removeparam=adcampaigngroup
 ||dell.com^$removeparam=dgc
 ||dell.com^$removeparam=VEN1
 ||dell.com^$removeparam=gacd
+$removeparam=sourceID,domain=gamestop.com|verizon.com
 ||asahi.com^$removeparam=iref
 ||malwarebytes.com^$removeparam=guard
 ||malwarebytes.com^$removeparam=x-source
 ||malwarebytes.com^$removeparam=ADDITIONAL_x-source
 ||ozon.ru^$removeparam=advert
+$document,removeparam=sh,domain=forbes.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=soc_src
 $removeparam=soc_trk
 ||belk.com^$removeparam=start
@@ -2346,8 +2353,6 @@ $removeparam=/^m_/,domain=macys.com|macysinc.com
 $removeparam=CAGPSPN
 $removeparam=lid,domain=baidu.com|clickserve.dartsearch.net|flipkart.com
 ||unieuro.it^$removeparam=dedup
-||philips.$removeparam=linkname
-||philips.$removeparam=uuid
 ||apple.com^$removeparam=mttn3pid
 ||apple.com^$removeparam=mttnagencyid
 ||apple.com^$removeparam=mttncc
@@ -2394,7 +2399,6 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 $removeparam=correlation_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||pulseway.com^$removeparam=rfid
 ||dw.com^$removeparam=maca
-||reuters.com^$removeparam=edition-redirect
 ||fiverr.com^$removeparam=bta
 ||fiverr.com^$removeparam=afp
 ||fiverr.com^$removeparam=cxd_token
@@ -2618,7 +2622,6 @@ $removeparam=caniuse_source,document
 $removeparam=afSmartRedirect
 ||app.snyk.io^$removeparam=page,document
 ||wsj.com^$removeparam=st
-$removeparam=adt_ei
 $removeparam=rdt,document,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $document,removeparam=icmp,domain=fortnite.com|lego.com
 ||linkedin.com/feed/update$removeparam=origin
