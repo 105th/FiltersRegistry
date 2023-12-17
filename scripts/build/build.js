@@ -57,8 +57,15 @@ const buildFilters = async () => {
         await fs.promises.rm(copyPlatformsPath, { recursive: true });
     }
 
-    // Make copy for future patches generation
-    await fs.promises.cp(platformsPath, copyPlatformsPath, { recursive: true });
+    // Checks if this is the initial run of the compiler by verifying
+    // the existence of platform files.
+    let initialRun = false;
+    if (!fs.existsSync(platformsPath)) {
+        initialRun = true;
+    } else {
+        // Make copy for future patches generation
+        await fs.promises.cp(platformsPath, copyPlatformsPath, { recursive: true });
+    }
 
     await compiler.compile(
         filtersDir,
@@ -69,6 +76,13 @@ const buildFilters = async () => {
         blacklist,
         customPlatformsConfig
     );
+
+    // For the very first run, we should copy the built platforms into
+    // the temp folder to create the first empty patches for future versions
+    if (initialRun) {
+        // Make copy for future patches generation
+        await fs.promises.cp(platformsPath, copyPlatformsPath, { recursive: true });
+    }
 };
 
 buildFilters();

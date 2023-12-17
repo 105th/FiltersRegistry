@@ -12,7 +12,7 @@ const path = require('path');
  */
 const findFiles = async (dir, filter) => {
     const files = await fs.promises.readdir(dir);
-    const fileList = [];
+    let fileList = [];
 
     for (let i = 0; i < files.length; i += 1) {
         const file = files[i];
@@ -20,9 +20,11 @@ const findFiles = async (dir, filter) => {
         const stat = await fs.promises.stat(filePath);
 
         if (stat.isDirectory()) {
-            fileList.push(...await findFiles(filePath, filter));
+            const foundFiles = await findFiles(filePath, filter);
+            // Use concat but not push with spread to prevent stack overflow.
+            fileList = fileList.concat(foundFiles);
         } else if (filter(filePath)) {
-            fileList.push(filePath);
+            fileList = fileList.concat([filePath]);
         }
     }
 
