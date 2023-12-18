@@ -1,5 +1,5 @@
-! Diff-Path: ../patches/250_optimized/250_optimized-473008-4.patch
-! Checksum: qXiKoA9Loe/L0FdyOdsYoA
+! Diff-Path: ../patches/250_optimized/250_optimized-473020-4.patch
+! Checksum: TRFcB/fb3vygBMTt5bSfhg
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.12.64
@@ -141,7 +141,6 @@ sensorstechforum.com##center:has([href="https://www.enigmasoftware.com/spyhunter
 sensorstechforum.com##[href="https://sensorstechforum.com/spyhunter-download-and-install-instructions/"]
 sensorstechforum.com###win_top_new_hidden
 windowsreport.com##div[class^=restoro-download] + section
-windowsreport.com##div[class^=refmed]
 ||driver-soft.com^$document
 windll.com##.download-block
 windll.com##.dll > p
@@ -187,6 +186,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adskiper."]
 ||sparrowaboveaveragedefence.com^$all
 ||theirsneedful.com^$all
 ||trashdisguisedextension.com^$all
+/^(https?://)?(www\.)?cunt[a-z]{3,8}\.com(/|$)/$document,popup
 /^https://\d{1,2}\.[a-z0-9-]{1,}\.(club|me)(/|$)/$document
 ||whiteclick.biz^$all
 ||hooligapps.com^$all
@@ -235,7 +235,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adskiper."]
 ||beludicolor.com^$all
 ||doninjaskr.com^$all
 ||outoctillerytor.com^$all
-||directsearchonline.com^$document,popup
 !+ NOT_OPTIMIZED
 /^http://imgblaze.net/[a-z0-9]{6}$/$document,popup
 !+ NOT_OPTIMIZED
@@ -542,7 +541,6 @@ tumblr.com#?#div[data-id][tabindex="-1"]:has(a[href^="https://href.li/?https://b
 /ad_click/q?&url=$document
 ||cosercosplay.com^$all
 ||unofficialtwrp.com^$document
-||androidweblog.com^$document
 ||androidgreek.com^$document
 ||ytechb.com^$document
 ://ww4.$document,domain=~ww4.ikea.com
@@ -1081,7 +1079,6 @@ wikia.org,fandom.com###mixed-content-footer
 wikia.org,fandom.com#$?##wds-company-logo-fandom-white { pointer-events: none !important; cursor: default !important; }
 wikia.org,fandom.com#$?#.wds-global-footer__header { pointer-events: none !important; cursor: default !important }
 fandom.com##.unified-search__layout__right-rail
-||vignette.wikia.nocookie.net/*/images/0/0e^$important
 ||vignette.wikia.nocookie.net/*/images/c/cd^$important
 ||wikia.nocookie.net/*/images/*/Wiki-background^$domain=fandom.com
 ||wikia.nocookie.net/*/images/*/Site-background-$domain=fandom.com
@@ -1176,7 +1173,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 @@||cdn.statically.io/gl/*/master/$~third-party
 @@||easylist-downloads.adblockplus.org^
 @@||easylist.to/*.txt^
-@@||adblock.ee^
 @@||pgl.yoyo.org/adservers/serverlist.
 @@||someonewhocares.org/hosts/
 @@||ublockorigin.github.io^
@@ -1633,7 +1629,9 @@ $removeparam=tmad
 $removeparam=tmcampid
 $removeparam=tmplaceref
 $removeparam=tmclickref
+$removeparam=s_afcid
 $removeparam=n_cid
+$removeparam=szredirectid
 $removeparam=af_ad
 $removeparam=af_ad_id
 $removeparam=af_ad_type
@@ -1714,12 +1712,6 @@ $removeparam=pk_keyword
 $removeparam=ig_mid
 $removeparam=au_advert_id
 $removeparam=au_car_id
-$removeparam=ads_adid
-$removeparam=ads_cmpid
-$removeparam=ads_creative
-$removeparam=ads_matchtype
-$removeparam=ads_network
-$removeparam=ads_targetid
 $removeparam=elqTrack
 $removeparam=/^source=rss$/
 $removeparam=/^ref=rss$/
@@ -1742,7 +1734,6 @@ $removeparam=int_campaign
 $removeparam=sudaref
 $removeparam=pm_source
 $removeparam=pm_medium
-$removeparam=pm_campaign
 $removeparam=oref
 $removeparam=gaa_at
 $removeparam=gaa_n
@@ -1764,7 +1755,6 @@ $removeparam=nosto
 $removeparam=af_id
 $removeparam=trafficSource
 $removeparam=gps_adid
-$removeparam=app_clickref
 $removeparam=as_campaign
 $removeparam=as_camptype
 $removeparam=as_channel
@@ -1802,7 +1792,6 @@ $removeparam=partnerUserId
 $removeparam=taboola_hm
 $removeparam=ssp_user_id
 $removeparam=google_gid
-$removeparam=cm_user_id
 $removeparam=ad-session-id
 $removeparam=ga_cid
 $removeparam=tw_document_href
@@ -1990,11 +1979,7 @@ $removeparam=googleloc
 $removeparam=_sacat,domain=~ebay.*
 ||ebay.$removeparam=campid
 ||ebay.$removeparam=toolid
-$removeparam=crlp,domain=ebay.*
-$removeparam=MT_ID,domain=ebay.*
-$removeparam=geo_id,domain=ebay.*
 $removeparam=device,domain=ebay.*
-$removeparam=cmpgn,domain=ebay.*
 ||ebay.*/itm/$removeparam=LH_BIN
 ||ebay.$removeparam=mkpid
 ||ebay.$removeparam=emsid
@@ -2571,6 +2556,7 @@ $removeparam=refresh,domain=cnn.com|startribune.com
 ||emag.ro^$removeparam=scenario_ID
 $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=clickPR,domain=argos.co.uk
+||blog.getadblock.com^$removeparam=gi
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
 $removeparam=/^cid=DSS-Affiliate/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
@@ -2687,6 +2673,7 @@ $removeparam=mar,domain=nextdoor.com
 ||verizon.com^$removeparam=campaignSource
 ||youtube.com^$removeparam=source_ve_path
 ^ref=hackernoon.com^$removeparam=ref
+^ref=futurepedia^$removeparam=ref
 ||notion.so^$removeparam=gspk
 ||notion.so^$removeparam=gsxid
 ||notion.so^$removeparam=pscd
