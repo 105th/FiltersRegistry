@@ -1154,8 +1154,8 @@
 			"displayNumber": 1,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/14.txt",
-			"version": "2.1.81.25",
-			"timeUpdated": "2023-12-18T13:34:24+0000",
+			"version": "2.1.81.26",
+			"timeUpdated": "2023-12-18T14:35:09+0000",
 			"languages": []
 		},
 		{
@@ -1213,8 +1213,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.29.31",
-			"timeUpdated": "2023-12-18T13:34:30+0000",
+			"version": "2.0.29.32",
+			"timeUpdated": "2023-12-18T14:35:17+0000",
 			"languages": []
 		},
 		{
@@ -1267,8 +1267,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.17.76",
-			"timeUpdated": "2023-12-18T13:34:35+0000",
+			"version": "2.0.17.77",
+			"timeUpdated": "2023-12-18T14:35:25+0000",
 			"languages": []
 		},
 		{
@@ -1280,8 +1280,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.5.18",
-			"timeUpdated": "2023-12-18T13:34:39+0000",
+			"version": "2.1.5.19",
+			"timeUpdated": "2023-12-18T14:35:31+0000",
 			"languages": [
 				"zh"
 			]
@@ -1323,8 +1323,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.12.95",
-			"timeUpdated": "2023-12-18T13:34:49+0000",
+			"version": "2.3.12.96",
+			"timeUpdated": "2023-12-18T14:35:45+0000",
 			"languages": []
 		},
 		{
@@ -1336,8 +1336,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.64.38",
-			"timeUpdated": "2023-12-18T13:34:52+0000",
+			"version": "2.0.64.39",
+			"timeUpdated": "2023-12-18T14:35:50+0000",
 			"languages": []
 		},
 		{
@@ -1375,8 +1375,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.39.29",
-			"timeUpdated": "2023-12-17T00:27:31+0000",
+			"version": "2.0.39.30",
+			"timeUpdated": "2023-12-18T14:36:01+0000",
 			"languages": [
 				"de"
 			]
