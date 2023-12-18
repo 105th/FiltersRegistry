@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/14_optimized/14_optimized-m-28382019-60.patch
-! Checksum: JgAq5OLNf3Ed5ffUthnKPg
+! Diff-Path: ../patches/14_optimized/14_optimized-m-28382079-60.patch
+! Checksum: SL2A1OT9LKimttTMfg8K/w
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.81.30
-! TimeUpdated: 2023-12-18T17:34:36+00:00
+! Version: 2.1.81.31
+! TimeUpdated: 2023-12-18T18:35:31+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -144,7 +144,7 @@
 ##.butterBar--privacy
 ##.gdpr-container
 ###gdpr-cookie-notice
-~lightbend.com###optanon-popup-bg
+###optanon-popup-bg
 ###elGuestTerms
 ###ez-cookie-dialog-wrapper
 ##.fusion-privacy-bar
@@ -914,7 +914,7 @@
 ##.notice-cookie
 ##.notice_notice_cookies
 ##.notificationpopup
-~lightbend.com##.optanon-alert-box-wrapper
+##.optanon-alert-box-wrapper
 ##.overlay-cookie
 ##.p_cookie
 ##.panel-cookies
@@ -6693,7 +6693,7 @@ mentimeter.com#%#//scriptlet('set-cookie-reload', 'has_approved_cookie_policy', 
 zdnet.com#%#//scriptlet('trusted-set-cookie', 'OptanonConsent', 'groups=C0001%3A1%2CC0002%3A0%2CC0003%3A0%2CC0004%3A0%2CC0005%3A1')
 help.snapchat.com#%#//scriptlet('prevent-addEventListener', 'wheel', 'preventDefault()')
 sudameapteek.ee#%#//scriptlet('set-cookie', 'gdpr_cookie_token', '1')
-moin.de,futurezone.de,derwesten.de#%#//scriptlet('trusted-click-element', '.cmpboxbtnspan > a.cmpboxbtnyes')
+parkerlebnis.de,moin.de,futurezone.de,derwesten.de#%#//scriptlet('trusted-click-element', '.cmpboxbtnspan > a.cmpboxbtnyes')
 chrono24.*#%#//scriptlet('trusted-set-cookie', 'c24-consent', 'AAAAH0Eq')
 xvideos.com#%#//scriptlet('trusted-click-element', 'span#disclaimer-reject_cookies')
 crtm.es#%#//scriptlet('set-cookie', 'crtmcookiesCPersonalizacion', '1')
@@ -7611,10 +7611,7 @@ bdcraft.net#%#AG_onLoad(function() { setTimeout(function() { var el = document.q
 nordcheckout.com,moovitapp.com#%#document.cookie = "cookieconsent_status=dismiss; path=/;";
 tecchannel.de#%#//scriptlet("abort-on-property-read", "Object.prototype.waitForConsentData")
 nacongaming.com#%#//scriptlet("set-constant", "tarteaucitron.cookie", "undefined")
-medicalnewstoday.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('.window-wrapper button[class]'); if(el) el.click(); }, 1000); });
 winfuture.de#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("sdgClicked", "clicked: true") } } catch (ex) {} })();
-geero.de#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelectorAll(".f-checkbox__toggleSwitch"); if(el) { el.forEach(function(el) { el.click() }); document.getElementsByClassName("cookie__btn--secondary")[0].click() }; }, 2000); });
-lightbend.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('button.accept-cookies-button'); if(el) el.click(); }, 1000); });
 intersport.nl,intersport.hu,intersport.nl,intersport.es,intersport.at#%#//scriptlet("abort-on-property-read", "window.Urls.cookiePopup")
 itsnicethat.com#%#document.cookie = "cookie-preferences-advertising=no; path=/"; document.cookie = "cookie-preferences-analytics=no; path=/"; document.cookie = "cookie-preferences-marketing=no; path=/";
 shop.warsteiner.de#%#AG_onLoad(function() { setTimeout(function() {var cookieBlock = document.querySelector(".modal-body__content-block--cookie"); var ageBlock = document.querySelector(".modal-body__content-block--agegate"); if(cookieBlock) { Cookies.set('gdpr_preface','1',{ expires:Infinity } ); cookieBlock.setAttribute("style","display: none;"); ageBlock.setAttribute("style","display: list-item;");}} ,300)});
@@ -8258,6 +8255,7 @@ creditmutuel.fr#@##cookieModal
 multiplayer.it#@##iubenda-cs-banner
 jenprace.cz#@#.cookie-bar:not(body)
 @@||news.microsoft.com/wp-content/plugins/microsoft-oembeds/cookie-consent.js
+@@||consentmanager.net^$domain=parkerlebnis.de
 zoom.us#@##onetrust-consent-sdk
 actronics.no#@##cookie-modal
 actronics.no#@#.cookie_consent:not(body):not(html)
@@ -8957,8 +8955,6 @@ shopeva.com#@#.cookie-warning
 nuxeo.com#@#.cookie-banner:not(body):not(html)
 fotopuzzle.de#@#.cookie-policy:not(body):not(html)
 @@||cdn.cookielaw.org^$domain=gamespot.com
-mitsubishielectric.com#@#.cookie_policy
-intersport.dk#@#.cookiewall:not(body):not(html)
 @@||sdk.privacy-center.org/*/loader.js$domain=mundodeportivo.com
 mediamarkt.es#@#.m_cookie
 montiemare.de#@##cookieNotice
