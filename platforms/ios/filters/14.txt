@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/14/14-m-28381625-60.patch
-! Checksum: j6aFNyOJUCuyufssjXkMsQ
+! Diff-Path: ../patches/14/14-m-28381658-60.patch
+! Checksum: gwodjzSo0cWCpmbtZnlbEg
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.81.21
-! TimeUpdated: 2023-12-18T10:36:09+00:00
+! Version: 2.1.81.22
+! TimeUpdated: 2023-12-18T11:34:31+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -89,6 +89,7 @@
 !#######################################################
 ! SECTION: Cookies - General element hiding
 !
+###cookie-law-div
 ###rb-privacy
 ###acceptance_of_cookies
 ###oct-policy
@@ -6697,7 +6698,6 @@ winboard.org#$#html > body[data-template] { overflow: visible !important; }
 winboard.org#$#.p-pageWrapper { filter: none!important; }
 gesund.de##.privacy-settings
 loft.com.br#?##__next > div.MuiGrid-root:has( > div.MuiGrid-root > div.MuiGrid-root > p.MuiTypography-root > a[href="https://loft.vc/politica-de-privacidade"])
-slidesharedownloader.com,tempsmss.com,downloader.is,playlistcalculator.net,wire.com,qzlyrics.com,codespeedy.com###cookie-law-div
 iplogger.org###message
 myresume.ru##.rulesInfo
 galeriadaarquitetura.com.br###divPolitica
@@ -22732,6 +22732,7 @@ sanalkurs.net###toast-container > .toast-error[aria-live="assertive"]
 !
 ! SECTION: Popups - Regular rules
 !
+debounce.io##.salesnotice
 dzen.ru###recommend-tech-snackbar
 ask.clip-studio.com##.fixedBanner
 imyfone.com##.pop-up-box
@@ -43261,6 +43262,7 @@ yasir252.com#%#AG_onLoad(function(){setTimeout(function(){var a=document.querySe
 !
 !
 !
+sport5.by###news > div[style="margin-bottom: 50px; margin-top: -40px;"]
 istories.media##div[class^="SocialMediaBanner"]
 abc-mart.net###___ratingbadge_0
 store.epicgames.com#?#div[class^="css-"] > div[class^="css-"]:has(> div[class^="css-"] > h2 > span:contains(Follow Us))
@@ -49262,8 +49264,6 @@ elsfile.org#%#(function(){var c=window.setInterval;window.setInterval=function(f
 faucetcrypto.com,faucet.gold#%#(function(){var c=window.setInterval;window.setInterval=function(f,g){return g===1e3&&/removeAttr\('disabled'\)/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41751
 trucnet.net#%#AG_onLoad(function() { var el=document.querySelector('a[href].btn.redirect'); if(el) el.click(); });
-! https://github.com/AdguardTeam/AdguardFilters/issues/41708
-mtbcut.net#%#AG_onLoad(function() { var el = document.querySelector('a[href].wp-block-button__link'); if(window.location.href.indexOf("/?p=") != -1 && el) { el.click(); } });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41369
 mod-hola.blogspot.com,tech2ind.in,paoencurtador.blogspot.com,gyanitheme.com,yotrickslog.tech,meclipstudy.in,proappapk.com,buscador.buscalinks.xyz,recursosinformaticos.org,minecraftalpha.net,viralmods.net,m.appsmodz.com#%#AG_onLoad(function(){setTimeout(function(){if("undefined"!==typeof aesCrypto&&"function"===typeof aesCrypto.decrypt&&-1<window.location.href.indexOf("#?o="))try{window.location=aesCrypto.decrypt(window.location.href.split("#?o=")[1].replace(/^\s+/,"").replace(/\s+$/,""),"root".replace(/^\s+/,"").replace(/\s+$/,""))}catch(a){}},300)});
 link.baixedetudo.net.br#%#AG_onLoad(function(){setTimeout(function(){if("undefined"!==typeof aesCrypto&&"function"===typeof aesCrypto.decrypt&&-1<window.location.href.indexOf("html#?o="))try{window.location=aesCrypto.decrypt(window.location.href.split("html#?o=")[1].replace(/^\s+/,"").replace(/\s+$/,""),"root".replace(/^\s+/,"").replace(/\s+$/,""))}catch(a){}},300)});
@@ -49746,8 +49746,8 @@ kentdeha.com.tr#%#AG_onLoad(function() { document.ondragstart = document.onselec
 waktusehat.xyz,viralogic.xyz#%#//scriptlet("abort-on-property-read", "mousedwn")
 voxc.org,panditfiles.pro,animesrbija.com#%#AG_onLoad(function() { document.oncontextmenu = function() { return true; }; });
 papahd.live#%#AG_onLoad(function() { document.onkeydown = document.body.oncontextmenu = document.oncontextmenu = function() { return true; }; });
-ouo.io#%#AG_onLoad(function() { setTimeout(function() { var form = document.querySelector("#form-captcha > #captcha > button"); if(form) { form.click(); } ; }, 300); });
-ouo.io#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('#form-go > #btn-main'); if(el) { el.click(); } }, 300); });
+ouo.io#%#//scriptlet('trusted-click-element', '#form-captcha > #captcha > button', '', '300')
+ouo.io#%#//scriptlet('trusted-click-element', '#form-go > #btn-main', '', '300')
 chiaseapk.com#%#AG_onLoad(function() { document.oncontextmenu = document.onselectstart = function() { return true; }; });
 manytoon.com#%#AG_onLoad(function() { document.ondragstart = document.onselectstart = document.oncontextmenu = document.onmousedown = null; });
 portalwrc.pl#%#//scriptlet("abort-current-inline-script", "addEvent", "document.body.oncopy")
