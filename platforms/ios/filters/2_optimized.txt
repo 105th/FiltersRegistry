@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/2_optimized/2_optimized-m-28381359-60.patch
-! Checksum: nNzRz788lAr/8Z5roc3ePA
+! Diff-Path: ../patches/2_optimized/2_optimized-473024-4.patch
+! Checksum: whbRtigpO7EyXAS0AGOTUw
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.12.88
-! TimeUpdated: 2023-12-18T06:36:29+00:00
+! Version: 2.3.12.89
+! TimeUpdated: 2023-12-18T08:09:37+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1247,9 +1247,7 @@ live-streamfootball.*,superabbit77.*,rbtv77.*#%#//scriptlet('prevent-xhr', 'page
 live-streamfootball.*,superabbit77.*,rbtv77.*#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=rbtv77.*|live-streamfootball.*|superabbit77.*
-apkmoddone.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=apkmoddone.com
+apkmoddone.com###adBlock
 fusevideo.io#%#//scriptlet('prevent-xhr', '/prebid|ads\./')
 @@||fusevideo.io/ads.criteo.com.js
 @@||fusevideo.io/js/prebid-video.js
@@ -1547,8 +1545,8 @@ coinfola.com#%#//scriptlet('prevent-addEventListener', 'load', 'document.getElem
 techno360.in#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'adsbygoogle.js')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=techno360.in
+@@||a.magsrv.com/ad-provider.js$domain=reshare.pm
 reshare.pm#@#.showads
-reshare.pm#%#AG_onLoad((function(){const t=document.querySelector("script");t&&t.classList.add("atScript_0")}));
 filmy4wab.pro#%#//scriptlet('set-constant', 'isBrave', 'noopFunc')
 vicksburgnews.com#%#//scriptlet('prevent-fetch', 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -2831,10 +2829,9 @@ strtapeadblocker.art#@#.skyscraper.ad
 hotdebrid.com#%#//scriptlet('prevent-element-src-loading', 'script', 'ads.rubiconproject.com/ad/')
 !+ PLATFORM(ios, ext_android_cb)
 @@||ads.rubiconproject.com/ad/*.js$domain=hotdebrid.com
+work.ink#%#//scriptlet('prevent-fetch', 'cdn.adligature.com')
 @@||adligature.com^|$xmlhttprequest,domain=work.ink
-work.ink#%#//scriptlet('prevent-fetch', 'doubleverify.com')
-work.ink#@#.waldo-display-unit
-@@||work.ink^$generichide
+@@||cdn.adligature.com^$script,xmlhttprequest,domain=work.ink
 blog.textpage.xyz#%#//scriptlet('abort-on-property-read', 'eazy_ad_unblocker')
 blog.textpage.xyz#@#.adsBanner
 !+ PLATFORM(ios, ext_android_cb)
@@ -11807,6 +11804,10 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 ||olalivehdplay.ru/blast.js
 ||lovesomecommunity.com/blast.js
 ||b4ucast.com/blast.js
+dnoid.to##.banner_bottom
+dnoid.to##.main_content > center > a[target="_blank"] > img
+dnoid.to#?#.main_content > *:has(> b:contains(VPN))
+work.ink##.AdvallyTag
 filmibeat.com###aniviewWrapper
 123telugu.com##td[align="left"] > a[target="_blank"] > img
 phoneky.com##div[role="banner"]

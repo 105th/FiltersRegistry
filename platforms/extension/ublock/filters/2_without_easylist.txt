@@ -1,10 +1,10 @@
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28381359-60.patch
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-473024-4.patch
 ![Adblock Plus 2.0]
-! Checksum: qBLezZKc4OtRJbWxwUv5jg
+! Checksum: MQQsFKPY030M2TszvUY8eQ
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.12.88
-! TimeUpdated: 2023-12-18T06:36:29+00:00
+! Version: 2.3.12.89
+! TimeUpdated: 2023-12-18T08:09:37+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7170,6 +7170,7 @@ thestockmarketwatch.com##+js(noeval-if, adblock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164995
 live-streamfootball.*,superabbit77.*,rbtv77.*##+js(no-xhr-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164269
+apkmoddone.com###adBlock
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164844
 fusevideo.io##+js(no-xhr-if, /prebid|ads\./)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164737
@@ -7555,7 +7556,9 @@ newscon.org##.adblock-warning
 coinfola.com##+js(addEventListener-defuser, load, document.getElementById)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161786
 techno360.in##+js(abort-current-script, document.createElement, adsbygoogle.js)
+! https://github.com/AdguardTeam/AdguardFilters/issues/168744
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161760
+@@||a.magsrv.com/ad-provider.js$domain=reshare.pm
 reshare.pm#@#.showads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161715
 ||media.salemwebnetwork.com/adverts/advertisement.js$redirect=noop.js,domain=biblestudytools.com,important,script
@@ -9420,20 +9423,8 @@ spigotunlocked.org##+js(addEventListener-defuser, DOMContentLoaded, _0x)
 strtapeadblocker.art#@#.skyscraper.ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123610
 ! https://github.com/AdguardTeam/AdguardFilters/issues/151992
+work.ink##+js(no-fetch-if, cdn.adligature.com)
 @@||adligature.com^|$xmlhttprequest,domain=work.ink
-work.ink#$#.opera-container { visibility: collapse !important; }
-work.ink#$#img[alt="Buff Banner"] { visibility: collapse !important; }
-@@||widgets.outbrain.com/outbrain.js$domain=work.ink
-||widgets.outbrain.com/outbrain.js$script,redirect=noop.js,important,domain=work.ink
-! https://github.com/AdguardTeam/AdguardFilters/issues/133157
-! https://github.com/AdguardTeam/AdguardFilters/issues/135422
-work.ink##+js(no-fetch-if, doubleverify.com)
-work.ink#$#.adsbox { display: block !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/128775
-work.ink#@#.waldo-display-unit
-@@||cdn.thisiswaldo.com/static/js/11929.js$domain=work.ink
-||cdn.taboola.com/libtrc/workink/loader.js$script,redirect=noop.js,domain=work.ink,important
-@@||work.ink^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123122
 blog.textpage.xyz##+js(abort-on-property-read, eazy_ad_unblocker)
 blog.textpage.xyz#@#.adsBanner
@@ -32318,6 +32309,10 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+dnoid.to##.banner_bottom
+dnoid.to##.main_content > center > a[target="_blank"] > img
+dnoid.to#?#.main_content > *:has(> b:contains(VPN))
+work.ink##.AdvallyTag
 filmibeat.com###aniviewWrapper
 123telugu.com##td[align="left"] > a[target="_blank"] > img
 phoneky.com##div[role="banner"]
