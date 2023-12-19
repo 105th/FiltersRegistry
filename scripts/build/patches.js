@@ -63,7 +63,9 @@ const main = async () => {
         (file) => file.includes('filters/') && file.endsWith('.txt')
     );
 
-    const tasks = newFilterFiles.map((newFilterPath) => {
+    for (let i = 0; i < newFilterFiles.length; i += 1) {
+        const newFilterPath = newFilterFiles[i];
+
         const relativePath = path.relative(FOLDER_WITH_NEW_FILTERS, newFilterPath);
         const oldFilterPath = path.join(FOLDER_WITH_OLD_FILTERS, relativePath);
 
@@ -72,7 +74,7 @@ const main = async () => {
         const patchesPath = path.join(parentDirOfNewFilters, 'patches', name);
 
         // Generate patches
-        return DiffBuilder.buildDiff({
+        await DiffBuilder.buildDiff({
             oldFilterPath,
             newFilterPath,
             patchesPath,
@@ -81,9 +83,7 @@ const main = async () => {
             resolution,
             verbose: true,
         });
-    });
-
-    await Promise.allSettled(tasks);
+    }
 
     // Copy old patches
     await copyOldPatches(FOLDER_WITH_OLD_FILTERS, FOLDER_WITH_NEW_FILTERS);
