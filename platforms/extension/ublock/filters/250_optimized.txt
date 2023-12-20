@@ -1,6 +1,6 @@
-! Diff-Path: ../patches/250_optimized/250_optimized-473060-4.patch
+! Diff-Path: ../patches/250_optimized/250_optimized-473068-4.patch
 ![Adblock Plus 2.0]
-! Checksum: lUPKoSTaR2XHWM+ellCbug
+! Checksum: 4NdTHJGH/SudbNe2w9+OaA
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.12.66
@@ -663,7 +663,6 @@ www.microsoft.com##a[data-pfns][data-pfns^="2"][data-pfns*="games."]
 ~pinterest.*##button[data-href*="pinterest.com/pin/create/button/"]
 ~reddit.com,~reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##a[href*="reddit.com/r/"][href*="/submit?url="]
 ~reddit.com,~reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##a[href*="reddit.com/submit?"]
-~reddit.com,~reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##button[data-href*="reddit.com/submit?"]
 ~skype.com##a[href*="web.skype.com/share?url="]
 ~stumbleupon.com##a[href*="stumbleupon.com/badge?"]
 ~stumbleupon.com##a[href*="stumbleupon.com/submit?url="]
@@ -815,7 +814,9 @@ cdn.memberspace.com/*
 facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##._5hn6
 facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.generic_dialog_modal.pop_dialog
 pinterest.*##div[data-test-id=giftWrap]
+deezer.com###modal_login:upward(2)
 stackexchange.com,askubuntu.com,serverfault.com,superuser.com,mathoverflow.net,stackapps.com#?#.js-dismissable-hero:has-text(Sign up)
+theclever.com###overlay_search
 feedspot.com##.fixedBar
 dev.mysql.com##.login-callout
 investing.com###PromoteSignUpPopUp
@@ -968,7 +969,6 @@ fandom.com##.openweb-slot
 fandom.com##[data-testid=QuizBanner]
 fandom.com###quiz_module_desktop_link_styles
 fandom.com##section[class^=trfc]
-fandom.com##.notifications-placeholder:has(a[href$=":Signup" i])
 ##.SnowFlakesBg:not(html, body)
 spleis.no##+js(set-constant, __INITIAL_STATE__.features.should-show-snow, false)
 /particles.min.js^
@@ -1104,6 +1104,7 @@ autoplius.lt##+js(remove-attr, target, [target="_blank"], stay)
 ##.elementor-spacer:not(html, body)
 ~schengenvisainfo.com##.vc_empty_space:not(html, body)
 indiegogo.com#?#h3:has-text(/^\xA0$/):not(:has-text(/\S/))
+indiegogo.com#?#h2:has-text(/^\xA0$/):not(:has-text(/\S/))
 ice.no##.air-block
 transfermarkt.com##.clearer
 rule34.xxx###status-notices > br:empty
@@ -1329,7 +1330,6 @@ $removeparam=ncid
 $document,removeparam=/^ecid=/i,domain=~account.microsoft.com
 $removeparam=mkt_tok
 @@^mkt_unsubscribe=$removeparam=mkt_tok
-$removeparam=affname
 $removeparam=MID,domain=~media-cdn.costco.*|~community.arubanetworks.com
 $removeparam=eid,document,denyallow=embed.tapkal.fi|myanimelist.net,domain=~activationspot.com|~anidb.net|~howlongtobeat.com|~piwigo.org|~vmware.com|~eventbrite.*|~egift.blackhawknetwork.com|~redeem.giftcards.com|~scopus.com|~stockmann.com|~jugem.jp|~kake.fi|~calendar.google.*|~getqpay.com|~qpayhub.com
 $removeparam=in_source
@@ -1422,6 +1422,7 @@ $document,removeparam=/^affSource/i
 $document,removeparam=/^_s=afl_impact$/
 $document,removeparam=/^cid_/
 $removeparam=cjReq
+$removeparam=p_aid
 $removeparam=p_sid
 $removeparam=depth_1-utm_source
 $removeparam=cmp_id
@@ -1685,12 +1686,10 @@ $removeparam=hubspotUtk
 $removeparam=messagesUtk
 $removeparam=advUuid
 $document,removeparam=traceId
-$removeparam=vgd_l1rakh
 $removeparam=p_user_id
 $removeparam=refDomain
 $removeparam=criteoId
 $removeparam=dspCookie
-$removeparam=an_uid
 $removeparam=_rand
 $removeparam=dsp_uid
 $removeparam=cs_xi
@@ -1709,6 +1708,7 @@ $removeparam=CookieSyncId
 $removeparam=variationId
 $removeparam=_gfid
 $removeparam=mt_exid
+$removeparam=bs_uid
 $removeparam=_sid
 $removeparam=client-ts
 $removeparam=3rdpcid
@@ -2175,9 +2175,9 @@ $document,removeparam=channel,domain=1sol.io|amazon.*|bybit.com|coinpanel.com|do
 $removeparam=fr,domain=baidu.com|thegay.com|todayonline.com|hclips.com|search.yahoo.com
 $removeparam=promo,domain=thegay.com|hammacher.com|upornia.com|hclips.com
 $removeparam=sref,domain=bloomberg.com|go.skimresources.com|go.skimlinks.com|go.redirectingat.com
-$removeparam=argsite,domain=metaffiliation.com
 $removeparam=ctc,domain=avantlink.com
 $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybit.com|dobrytextil.cz|farfetch.com|fifa.com|glami.cz|hepsiburada.com|neeva.com|onelink.me|play.google.com|samsclub.com|shopee.*|th.bing.com|tiktok.com
+$removeparam=subid,domain=admitad.com|mintmobile.com|secretlab.*|webmasterplan.com
 $removeparam=tracking,domain=affiliatefuture.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|gtomega.*|malwarebytes.com|messenger.com
 $removeparam=u1,domain=linksynergy.com|shop-links.co
 $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi
@@ -2500,7 +2500,6 @@ $removeparam=sub,domain=allboner.com|twinkvideos.com
 ||tumblr.com^$removeparam=is_related_post
 ||xbox.com^$removeparam=rtc
 ||tokopedia.com^$removeparam=extParam
-||tokopedia.com^$removeparam=refined
 ||sony.$removeparam=cpint
 ||target.$removeparam=preselect
 $removeparam=ueid,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
@@ -2520,6 +2519,7 @@ $document,removeparam=l,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||bandcamp.com^$removeparam=search_match_part
 ||bandcamp.com^$removeparam=search_page_no
 ||bandcamp.com^$removeparam=search_rank
+||app.slack.com^$removeparam=entry_point
 ||nicovideo.jp/comic^$removeparam=track
 ||onenote.com^$removeparam=nf
 ||onenote.com^$removeparam=fromAR
@@ -2555,6 +2555,7 @@ $removeparam=mar,domain=nextdoor.com
 ||verizon.com^$removeparam=campaignGroup
 ||verizon.com^$removeparam=campaignName
 ||verizon.com^$removeparam=campaignSource
+||youtube.com^$removeparam=embeds_euri
 ||youtube.com^$removeparam=source_ve_path
 ^ref=hackernoon.com^$removeparam=ref
 ^ref=futurepedia^$removeparam=ref
@@ -2595,6 +2596,8 @@ $removeparam=embeds_referring_euri
 ||deepl.com^$document,removeparam=cta
 ||open.substack.com^$removeparam=r,document
 ||euromaidanpress.com^$removeparam=swcfpc,document
+||cnbc.com^$document,removeparam=__source
+||cnbc.com^$document,removeparam=par
 ||businessinsider.com^$document,removeparam=r
 ||businessinsider.com^$removeparam=op,document
 $removeparam=caniuse_source,document
@@ -2716,6 +2719,7 @@ tumblr.com#$#body { cursor: unset !important }
 .cur|$image,domain=~pixiv.net|~deviantart.com
 @@://maps.gstatic.com/*.cur|$image
 ourcodeworld.com##.mouse-cursor
+/wp-content/uploads/*/cursor.png|
 nerdelandslaget.no#$#html { cursor: auto !important }
 .ani|$domain=~pixiv.net|~deviantart.com
 !+ NOT_OPTIMIZED
