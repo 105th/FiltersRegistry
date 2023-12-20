@@ -1606,8 +1606,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/13_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.73",
-			"timeUpdated": "2023-12-20T06:34:29+0000",
+			"version": "2.0.48.74",
+			"timeUpdated": "2023-12-20T07:34:25+0000",
 			"languages": [
 				"tr"
 			],
@@ -1629,8 +1629,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/14_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.81.42",
-			"timeUpdated": "2023-12-19T19:34:34+0000",
+			"version": "2.1.81.43",
+			"timeUpdated": "2023-12-20T07:34:34+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -1721,8 +1721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.28.14",
-			"timeUpdated": "2023-12-19T18:34:30+0000",
+			"version": "2.0.28.15",
+			"timeUpdated": "2023-12-20T07:34:43+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -1804,8 +1804,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.5.31",
-			"timeUpdated": "2023-12-20T01:44:25+0000",
+			"version": "2.1.5.32",
+			"timeUpdated": "2023-12-20T07:34:58+0000",
 			"languages": [
 				"zh"
 			],
@@ -1891,8 +1891,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.41",
-			"timeUpdated": "2023-12-19T12:10:53+0000",
+			"version": "2.0.64.42",
+			"timeUpdated": "2023-12-20T07:35:18+0000",
 			"languages": [],
 			"tags": [
 				2,
@@ -1947,8 +1947,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/6_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.39.30",
-			"timeUpdated": "2023-12-18T14:36:01+0000",
+			"version": "2.0.39.31",
+			"timeUpdated": "2023-12-20T07:35:30+0000",
 			"languages": [
 				"de"
 			],
