@@ -1,9 +1,9 @@
-! Diff-Path: ../patches/18/18-m-28384601-60.patch
-! Checksum: GUyQNRr7ra4LMn91+6HxtQ
+! Checksum: cVZAtbM1GLJjKZkNImJGJw
+! Diff-Path: ../patches/18/18-473098-4.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.29.45
-! TimeUpdated: 2023-12-20T12:38:23+00:00
+! Version: 2.0.29.46
+! TimeUpdated: 2023-12-21T09:28:11+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -177,7 +177,7 @@
 ###termly-code-snippet-support
 ##.etiCookieBanner
 ###cmplz-cookiebanner-container
-###iubenda-cs-banner
+##body #iubenda-cs-banner
 ##.cookie-agreement-wrapper
 ###cookie_notification
 ##ark-cookiebar
@@ -1902,7 +1902,6 @@
 /cookie_notifier/*
 /cookie_policy.
 /cookie_policy_
-/cookie_solution/*
 /cookie_ws.
 /cookie_ws/*
 /cookieacceptance.
@@ -2028,7 +2027,6 @@
 /impresacookiepolicy/*
 /InfoCookies.
 /ipc_show_cookie_banner.js
-/iubenda_cs.
 /jbcookies.
 /jjp_eucookie_
 /jqueryCookieGuard.
@@ -2325,6 +2323,8 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+lowbeats.de#%#//scriptlet('trusted-set-cookie', 'borlabs-cookie', '%7B%22consents%22%3A%7B%22essential%22%3A%5B%22borlabs-cookie%22%2C%22vg-wort%22%5D%2C%22external-media%22%3A%5B%22bandcamp%22%2C%22googlemaps%22%2C%22soundcloud%22%2C%22twitter%22%2C%22vimeo%22%2C%22youtube%22%5D%2C%22marketing%22%3A%5B%22doubleclick%22%2C%22exactag%22%2C%22linksynergy%22%5D%7D%2C%22domainPath%22%3A%22www.lowbeats.de%2F%22%2C%22expires%22%3A%22Fri%2C%2020%20Dec%202024%2008%3A35%3A35%20GMT%22%2C%22uid%22%3A%22q5pzqef8-adxwh0ok-hqypxsnr-ks5c2xle%22%2C%22version%22%3A%224%22%7D')
+evernote.com#%#//scriptlet('set-local-storage-item', 'cookie-notice-dismissed', 'true')
 success.trendmicro.com##div[data-aura-class="cBSP_Forum_CookieNotifierCmp"]
 bw-bank.de#%#//scriptlet('trusted-click-element', 'a[title="Ablehnen"]', '', '50')
 account.jetbrains.com#%#//scriptlet('trusted-click-element', '.fixed > .container > a[data-method="POST"][data-url^="/profile/postponePrivacyPolicy?"]', '', '500')
@@ -14807,6 +14807,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/168924
+lowbeats.de#@##BorlabsCookieBox
+lowbeats.de#@#.cookie-box:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168824
 bw-bank.de#@#.if6_eprivacy
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168075
@@ -15054,7 +15057,6 @@ eatingwell.com#@##onetrust-consent-sdk
 apfelband.de#@##cookie-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160768
 3bmeteo.com#@##iubenda-cs-banner
-@@||3bmeteo.com/iubcmp/cookie_solution/iubenda_cs/*/core-it.js$domain=3bmeteo.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160663
 @@||cdn.privacy-mgmt.com^$domain=notice.sp-prod.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160786

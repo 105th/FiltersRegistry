@@ -38,6 +38,327 @@
 	],
 	"filters": [
 		{
+			"filterId": 1,
+			"name": "AdGuard Russian filter",
+			"description": "Filter that enables ad blocking on websites in Russian language.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
+			"version": "2.0.87.11",
+			"timeUpdated": "2023-12-20T13:34:30+0000",
+			"languages": [
+				"ru"
+			]
+		},
+		{
+			"filterId": 2,
+			"name": "AdGuard Base filter",
+			"description": "EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 1,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
+			"version": "2.3.13.28",
+			"timeUpdated": "2023-12-21T09:28:26+0000",
+			"languages": []
+		},
+		{
+			"filterId": 3,
+			"name": "AdGuard Tracking Protection filter",
+			"description": "The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 2,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
+			"version": "2.0.64.46",
+			"timeUpdated": "2023-12-21T09:28:29+0000",
+			"languages": []
+		},
+		{
+			"filterId": 4,
+			"name": "AdGuard Social Media filter",
+			"description": "Filter for social media widgets such as 'Like' and 'Share' buttons and more.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 3,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
+			"version": "2.0.94.88",
+			"timeUpdated": "2023-12-20T11:34:48+0000",
+			"languages": []
+		},
+		{
+			"filterId": 5,
+			"name": "AdGuard Experimental filter",
+			"description": "Filter designed to test certain hazardous filtering rules before they are added to the basic filters.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 4,
+			"groupId": 6,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/5.txt",
+			"version": "2.0.1.24",
+			"timeUpdated": "2023-10-25T15:31:55+0000",
+			"languages": []
+		},
+		{
+			"filterId": 6,
+			"name": "AdGuard German filter",
+			"description": "EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
+			"version": "2.0.39.32",
+			"timeUpdated": "2023-12-21T09:28:35+0000",
+			"languages": [
+				"de"
+			]
+		},
+		{
+			"filterId": 7,
+			"name": "AdGuard Japanese filter",
+			"description": "Filter that enables ad blocking on websites in Japanese language.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
+			"version": "2.0.46.69",
+			"timeUpdated": "2023-12-21T09:28:37+0000",
+			"languages": [
+				"ja"
+			]
+		},
+		{
+			"filterId": 8,
+			"name": "AdGuard Dutch filter",
+			"description": "EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/8.txt",
+			"version": "2.0.6.29",
+			"timeUpdated": "2023-12-12T12:36:40+0000",
+			"languages": [
+				"nl"
+			]
+		},
+		{
+			"filterId": 9,
+			"name": "AdGuard Spanish/Portuguese filter",
+			"description": "Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/9.txt",
+			"version": "2.0.22.52",
+			"timeUpdated": "2023-12-21T09:28:40+0000",
+			"languages": [
+				"es",
+				"pt"
+			]
+		},
+		{
+			"filterId": 10,
+			"name": "Filter unblocking search ads and self-promotion",
+			"description": "Filter that unblocks search ads in Google, DuckDuckGo, Bing, or Yahoo and self-promotion on websites.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 6,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/10.txt",
+			"version": "2.0.3.17",
+			"timeUpdated": "2023-11-22T11:30:20+0000",
+			"languages": []
+		},
+		{
+			"filterId": 11,
+			"name": "AdGuard Mobile Ads filter",
+			"description": "Filter for all known mobile ad networks. Useful for mobile devices.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 2,
+			"groupId": 1,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
+			"version": "2.0.47.42",
+			"timeUpdated": "2023-12-21T09:28:00+0000",
+			"languages": []
+		},
+		{
+			"filterId": 12,
+			"name": "(Obsolete) AdGuard Safari filter",
+			"description": "Special filter for Safari 9+ on iOS and Mac OS. We need a separate filter for Safari browser because it does not fully support our rules syntax. Already included in AdGuard Base filter.",
+			"homepage": "https://github.com/AdguardTeam/AdguardFilters/blob/master/SafariFilter/sections/README.md",
+			"expires": 345600,
+			"displayNumber": 2,
+			"groupId": 6,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/12.txt",
+			"version": "2.0.2.92",
+			"timeUpdated": "2022-09-15T15:30:24+0000",
+			"languages": []
+		},
+		{
+			"filterId": 13,
+			"name": "AdGuard Turkish filter",
+			"description": "Filter list that specifically removes ads on websites in Turkish language.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
+			"version": "2.0.48.79",
+			"timeUpdated": "2023-12-21T09:28:02+0000",
+			"languages": [
+				"tr"
+			]
+		},
+		{
+			"filterId": 14,
+			"name": "AdGuard Annoyances filter",
+			"description": "Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 4,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/14.txt",
+			"version": "2.1.81.50",
+			"timeUpdated": "2023-12-21T09:28:07+0000",
+			"languages": []
+		},
+		{
+			"filterId": 15,
+			"name": "AdGuard DNS filter",
+			"description": "Filter composed of several other filters (AdGuard Base filter, Social Media filter, Tracking Protection filter, Mobile Ads filter, EasyList and EasyPrivacy) and simplified specifically to be better compatible with DNS-level ad blocking.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 3,
+			"groupId": 6,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/15.txt",
+			"version": "2.0.59.2",
+			"timeUpdated": "2023-12-21T09:28:07+0000",
+			"languages": []
+		},
+		{
+			"filterId": 16,
+			"name": "AdGuard French filter",
+			"description": "Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/16.txt",
+			"version": "2.0.42.44",
+			"timeUpdated": "2023-12-15T22:34:27+0000",
+			"languages": [
+				"fr"
+			]
+		},
+		{
+			"filterId": 17,
+			"name": "AdGuard URL Tracking filter",
+			"description": "Filter that enhances privacy by removing tracking parameters from URLs.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 2,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/17.txt",
+			"platformsExcluded": [
+				"ios",
+				"ext_safari",
+				"ext_android_cb"
+			],
+			"version": "2.0.7.59",
+			"timeUpdated": "2023-12-21T09:28:10+0000",
+			"languages": []
+		},
+		{
+			"filterId": 18,
+			"name": "AdGuard Cookie Notices filter",
+			"description": "Blocks cookie notices on web pages.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 2,
+			"groupId": 4,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
+			"version": "2.0.29.46",
+			"timeUpdated": "2023-12-21T09:28:11+0000",
+			"languages": []
+		},
+		{
+			"filterId": 19,
+			"name": "AdGuard Popups filter",
+			"description": "Blocks all kinds of pop-ups that are not necessary for websites' operation.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 2,
+			"groupId": 4,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
+			"version": "2.0.28.18",
+			"timeUpdated": "2023-12-21T09:28:11+0000",
+			"languages": []
+		},
+		{
+			"filterId": 20,
+			"name": "AdGuard Mobile App Banners filter",
+			"description": "Blocks irritating banners that promote mobile apps of websites.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 2,
+			"groupId": 4,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
+			"version": "2.0.11.29",
+			"timeUpdated": "2023-12-21T09:28:16+0000",
+			"languages": []
+		},
+		{
+			"filterId": 21,
+			"name": "AdGuard Other Annoyances filter",
+			"description": "Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 2,
+			"groupId": 4,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
+			"version": "2.0.17.83",
+			"timeUpdated": "2023-12-21T09:28:16+0000",
+			"languages": []
+		},
+		{
+			"filterId": 22,
+			"name": "AdGuard Widgets filter",
+			"description": "Blocks annoying third-party widgets: online assistants, live support chats, etc.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 2,
+			"groupId": 4,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/22.txt",
+			"version": "2.0.6.85",
+			"timeUpdated": "2023-12-20T13:34:33+0000",
+			"languages": []
+		},
+		{
+			"filterId": 23,
+			"name": "AdGuard Ukrainian filter",
+			"description": "Filter that enables ad blocking on websites in Ukrainian language.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/23.txt",
+			"version": "2.0.3.47",
+			"timeUpdated": "2023-12-19T12:42:15+0000",
+			"languages": [
+				"uk"
+			]
+		},
+		{
 			"filterId": 101,
 			"name": "EasyList",
 			"description": "EasyList is the primary subscription that removes adverts from web pages in English. Already included in AdGuard Base filter.",
@@ -46,8 +367,8 @@
 			"displayNumber": 3,
 			"groupId": 1,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylist.txt",
-			"version": "2.1.17.18",
-			"timeUpdated": "2023-12-20T12:08:21+0000",
+			"version": "2.1.17.19",
+			"timeUpdated": "2023-12-21T09:27:06+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +408,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt",
-			"version": "2.1.32.38",
-			"timeUpdated": "2023-12-20T12:08:24+0000",
+			"version": "2.1.32.39",
+			"timeUpdated": "2023-12-21T09:27:09+0000",
 			"languages": []
 		},
 		{
@@ -116,8 +437,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistdutch.txt",
-			"version": "2.1.40.15",
-			"timeUpdated": "2023-12-20T12:08:24+0000",
+			"version": "2.1.40.16",
+			"timeUpdated": "2023-12-21T09:27:11+0000",
 			"languages": []
 		},
 		{
@@ -157,8 +478,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.40.17",
-			"timeUpdated": "2023-12-20T12:08:26+0000",
+			"version": "2.1.40.18",
+			"timeUpdated": "2023-12-21T09:27:14+0000",
 			"languages": [
 				"it"
 			]
@@ -202,8 +523,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.40.16",
-			"timeUpdated": "2023-12-20T12:08:26+0000",
+			"version": "2.1.40.17",
+			"timeUpdated": "2023-12-21T09:27:16+0000",
 			"languages": [
 				"ar"
 			]
@@ -217,8 +538,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/liste_fr.txt",
-			"version": "2.1.40.15",
-			"timeUpdated": "2023-12-20T12:08:27+0000",
+			"version": "2.1.40.16",
+			"timeUpdated": "2023-12-21T09:27:18+0000",
 			"languages": []
 		},
 		{
@@ -282,8 +603,8 @@
 			"displayNumber": 2,
 			"groupId": 2,
 			"subscriptionUrl": "https://easylist.to/easylist/easyprivacy.txt",
-			"version": "2.1.18.70",
-			"timeUpdated": "2023-12-20T12:08:29+0000",
+			"version": "2.1.18.71",
+			"timeUpdated": "2023-12-21T09:27:20+0000",
 			"languages": []
 		},
 		{
@@ -336,8 +657,8 @@
 			"displayNumber": 100,
 			"groupId": 4,
 			"subscriptionUrl": "https://secure.fanboy.co.nz/fanboy-annoyance_ubo.txt",
-			"version": "2.1.17.45",
-			"timeUpdated": "2023-12-20T12:08:36+0000",
+			"version": "2.1.17.46",
+			"timeUpdated": "2023-12-21T09:27:26+0000",
 			"languages": []
 		},
 		{
@@ -349,8 +670,8 @@
 			"displayNumber": 2,
 			"groupId": 3,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/fanboy-social.txt",
-			"version": "2.1.16.1",
-			"timeUpdated": "2023-12-20T12:08:36+0000",
+			"version": "2.1.16.2",
+			"timeUpdated": "2023-12-21T09:27:27+0000",
 			"languages": []
 		},
 		{
@@ -362,8 +683,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistportuguese.txt",
-			"version": "2.0.11.90",
-			"timeUpdated": "2023-12-20T12:08:36+0000",
+			"version": "2.0.11.91",
+			"timeUpdated": "2023-12-21T09:27:28+0000",
 			"languages": []
 		},
 		{
@@ -431,8 +752,8 @@
 			"displayNumber": 4,
 			"groupId": 2,
 			"subscriptionUrl": "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=adblockplus&mimetype=plaintext",
-			"version": "2.0.12.71",
-			"timeUpdated": "2023-12-20T12:08:40+0000",
+			"version": "2.0.12.72",
+			"timeUpdated": "2023-12-21T09:27:31+0000",
 			"languages": []
 		},
 		{
@@ -470,8 +791,8 @@
 			"displayNumber": 3,
 			"groupId": 4,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt",
-			"version": "2.1.40.16",
-			"timeUpdated": "2023-12-20T12:08:41+0000",
+			"version": "2.1.40.17",
+			"timeUpdated": "2023-12-21T09:27:32+0000",
 			"languages": []
 		},
 		{
@@ -483,8 +804,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
-			"version": "2.0.93.55",
-			"timeUpdated": "2023-12-20T00:20:19+0000",
+			"version": "2.0.93.56",
+			"timeUpdated": "2023-12-21T09:27:32+0000",
 			"languages": []
 		},
 		{
@@ -535,8 +856,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/cntblock.txt",
-			"version": "2.1.39.41",
-			"timeUpdated": "2023-12-20T12:08:42+0000",
+			"version": "2.1.39.42",
+			"timeUpdated": "2023-12-21T09:27:34+0000",
 			"languages": []
 		},
 		{
@@ -561,8 +882,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
-			"version": "2.0.25.39",
-			"timeUpdated": "2023-12-20T12:08:42+0000",
+			"version": "2.0.25.40",
+			"timeUpdated": "2023-12-21T09:27:34+0000",
 			"languages": [
 				"vi"
 			]
@@ -689,6 +1010,21 @@
 			"languages": []
 		},
 		{
+			"filterId": 224,
+			"name": "AdGuard Chinese filter",
+			"description": "EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.",
+			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
+			"expires": 345600,
+			"displayNumber": 1,
+			"groupId": 7,
+			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
+			"version": "2.1.5.38",
+			"timeUpdated": "2023-12-21T09:28:18+0000",
+			"languages": [
+				"zh"
+			]
+		},
+		{
 			"filterId": 225,
 			"name": "Fanboy's Anti-Facebook List",
 			"description": "Warning, it will break Facebook-based comments on some websites and may also break some Facebook apps or games.",
@@ -723,8 +1059,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/List-KR/List-KR/master/filter-AdGuard.txt",
-			"version": "2.0.16.95",
-			"timeUpdated": "2023-12-19T08:09:06+0000",
+			"version": "2.0.16.96",
+			"timeUpdated": "2023-12-21T09:27:40+0000",
 			"languages": [
 				"ko"
 			]
@@ -777,8 +1113,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistspanish.txt",
-			"version": "2.1.40.17",
-			"timeUpdated": "2023-12-20T12:08:51+0000",
+			"version": "2.1.40.18",
+			"timeUpdated": "2023-12-21T09:27:43+0000",
 			"languages": []
 		},
 		{
@@ -790,8 +1126,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/FiltersHeroes/KAD/master/KAD.txt",
-			"version": "2.0.50.25",
-			"timeUpdated": "2023-12-20T12:08:53+0000",
+			"version": "2.0.50.26",
+			"timeUpdated": "2023-12-21T09:27:45+0000",
 			"languages": []
 		},
 		{
@@ -861,8 +1197,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/PolishFiltersTeam/PolishAnnoyanceFilters/master/PPB.txt",
-			"version": "1.0.30.28",
-			"timeUpdated": "2023-12-20T00:20:36+0000",
+			"version": "1.0.30.29",
+			"timeUpdated": "2023-12-21T09:27:48+0000",
 			"languages": []
 		},
 		{
@@ -915,8 +1251,8 @@
 			"displayNumber": 100,
 			"groupId": 4,
 			"subscriptionUrl": "https://www.fanboy.co.nz/fanboy-cookiemonster.txt",
-			"version": "2.1.25.48",
-			"timeUpdated": "2023-12-20T12:08:59+0000",
+			"version": "2.1.25.49",
+			"timeUpdated": "2023-12-21T09:27:51+0000",
 			"languages": []
 		},
 		{
@@ -982,8 +1318,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistpolish.txt",
-			"version": "2.1.36.23",
-			"timeUpdated": "2023-12-20T12:09:00+0000",
+			"version": "2.1.36.24",
+			"timeUpdated": "2023-12-21T09:27:52+0000",
 			"languages": []
 		},
 		{
@@ -1008,8 +1344,8 @@
 			"displayNumber": 249,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt",
-			"version": "2.0.7.12",
-			"timeUpdated": "2023-12-16T20:07:58+0000",
+			"version": "2.0.7.13",
+			"timeUpdated": "2023-12-21T09:27:53+0000",
 			"languages": [
 				"no",
 				"da",
@@ -1026,8 +1362,8 @@
 			"displayNumber": 100,
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/AnnoyancesList",
-			"version": "2.0.12.66",
-			"timeUpdated": "2023-12-19T20:07:49+0000",
+			"version": "2.0.12.67",
+			"timeUpdated": "2023-12-21T09:27:57+0000",
 			"languages": []
 		},
 		{
@@ -1044,8 +1380,8 @@
 				"ext_safari",
 				"ext_android_cb"
 			],
-			"version": "2.0.7.9",
-			"timeUpdated": "2023-12-19T12:10:17+0000",
+			"version": "2.0.7.10",
+			"timeUpdated": "2023-12-21T09:27:57+0000",
 			"languages": []
 		},
 		{
@@ -1070,8 +1406,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.33.48",
-			"timeUpdated": "2023-12-20T12:09:06+0000",
+			"version": "2.0.33.49",
+			"timeUpdated": "2023-12-21T09:27:58+0000",
 			"languages": [
 				"hi"
 			]
@@ -1089,342 +1425,6 @@
 			"timeUpdated": "2023-10-26T21:01:59+0000",
 			"languages": [
 				"mk"
-			]
-		},
-		{
-			"filterId": 10,
-			"name": "Filter unblocking search ads and self-promotion",
-			"description": "Filter that unblocks search ads in Google, DuckDuckGo, Bing, or Yahoo and self-promotion on websites.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 6,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/10.txt",
-			"version": "2.0.3.17",
-			"timeUpdated": "2023-11-22T11:30:20+0000",
-			"languages": []
-		},
-		{
-			"filterId": 11,
-			"name": "AdGuard Mobile Ads filter",
-			"description": "Filter for all known mobile ad networks. Useful for mobile devices.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 2,
-			"groupId": 1,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.47.41",
-			"timeUpdated": "2023-12-20T06:34:28+0000",
-			"languages": []
-		},
-		{
-			"filterId": 12,
-			"name": "(Obsolete) AdGuard Safari filter",
-			"description": "Special filter for Safari 9+ on iOS and Mac OS. We need a separate filter for Safari browser because it does not fully support our rules syntax. Already included in AdGuard Base filter.",
-			"homepage": "https://github.com/AdguardTeam/AdguardFilters/blob/master/SafariFilter/sections/README.md",
-			"expires": 345600,
-			"displayNumber": 2,
-			"groupId": 6,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/12.txt",
-			"version": "2.0.2.92",
-			"timeUpdated": "2022-09-15T15:30:24+0000",
-			"languages": []
-		},
-		{
-			"filterId": 13,
-			"name": "AdGuard Turkish filter",
-			"description": "Filter list that specifically removes ads on websites in Turkish language.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.48.78",
-			"timeUpdated": "2023-12-20T13:34:17+0000",
-			"languages": [
-				"tr"
-			]
-		},
-		{
-			"filterId": 14,
-			"name": "AdGuard Annoyances filter",
-			"description": "Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/14.txt",
-			"version": "2.1.81.49",
-			"timeUpdated": "2023-12-20T13:34:23+0000",
-			"languages": []
-		},
-		{
-			"filterId": 15,
-			"name": "AdGuard DNS filter",
-			"description": "Filter composed of several other filters (AdGuard Base filter, Social Media filter, Tracking Protection filter, Mobile Ads filter, EasyList and EasyPrivacy) and simplified specifically to be better compatible with DNS-level ad blocking.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 3,
-			"groupId": 6,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/15.txt",
-			"version": "2.0.59.1",
-			"timeUpdated": "2023-12-20T12:09:14+0000",
-			"languages": []
-		},
-		{
-			"filterId": 16,
-			"name": "AdGuard French filter",
-			"description": "Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/16.txt",
-			"version": "2.0.42.44",
-			"timeUpdated": "2023-12-15T22:34:27+0000",
-			"languages": [
-				"fr"
-			]
-		},
-		{
-			"filterId": 17,
-			"name": "AdGuard URL Tracking filter",
-			"description": "Filter that enhances privacy by removing tracking parameters from URLs.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 2,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/17.txt",
-			"platformsExcluded": [
-				"ios",
-				"ext_safari",
-				"ext_android_cb"
-			],
-			"version": "2.0.7.58",
-			"timeUpdated": "2023-12-19T14:34:38+0000",
-			"languages": []
-		},
-		{
-			"filterId": 18,
-			"name": "AdGuard Cookie Notices filter",
-			"description": "Blocks cookie notices on web pages.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 2,
-			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.29.45",
-			"timeUpdated": "2023-12-20T12:38:23+0000",
-			"languages": []
-		},
-		{
-			"filterId": 19,
-			"name": "AdGuard Popups filter",
-			"description": "Blocks all kinds of pop-ups that are not necessary for websites' operation.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 2,
-			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.28.17",
-			"timeUpdated": "2023-12-20T11:34:28+0000",
-			"languages": []
-		},
-		{
-			"filterId": 1,
-			"name": "AdGuard Russian filter",
-			"description": "Filter that enables ad blocking on websites in Russian language.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.0.87.11",
-			"timeUpdated": "2023-12-20T13:34:30+0000",
-			"languages": [
-				"ru"
-			]
-		},
-		{
-			"filterId": 20,
-			"name": "AdGuard Mobile App Banners filter",
-			"description": "Blocks irritating banners that promote mobile apps of websites.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 2,
-			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
-			"version": "2.0.11.28",
-			"timeUpdated": "2023-12-19T08:35:16+0000",
-			"languages": []
-		},
-		{
-			"filterId": 21,
-			"name": "AdGuard Other Annoyances filter",
-			"description": "Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 2,
-			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.17.82",
-			"timeUpdated": "2023-12-19T16:08:36+0000",
-			"languages": []
-		},
-		{
-			"filterId": 224,
-			"name": "AdGuard Chinese filter",
-			"description": "EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.5.37",
-			"timeUpdated": "2023-12-20T13:34:33+0000",
-			"languages": [
-				"zh"
-			]
-		},
-		{
-			"filterId": 22,
-			"name": "AdGuard Widgets filter",
-			"description": "Blocks annoying third-party widgets: online assistants, live support chats, etc.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 2,
-			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/22.txt",
-			"version": "2.0.6.85",
-			"timeUpdated": "2023-12-20T13:34:33+0000",
-			"languages": []
-		},
-		{
-			"filterId": 23,
-			"name": "AdGuard Ukrainian filter",
-			"description": "Filter that enables ad blocking on websites in Ukrainian language.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/23.txt",
-			"version": "2.0.3.47",
-			"timeUpdated": "2023-12-19T12:42:15+0000",
-			"languages": [
-				"uk"
-			]
-		},
-		{
-			"filterId": 2,
-			"name": "AdGuard Base filter",
-			"description": "EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 1,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.13.27",
-			"timeUpdated": "2023-12-20T13:34:42+0000",
-			"languages": []
-		},
-		{
-			"filterId": 3,
-			"name": "AdGuard Tracking Protection filter",
-			"description": "The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 2,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.64.45",
-			"timeUpdated": "2023-12-20T13:34:45+0000",
-			"languages": []
-		},
-		{
-			"filterId": 4,
-			"name": "AdGuard Social Media filter",
-			"description": "Filter for social media widgets such as 'Like' and 'Share' buttons and more.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 3,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.0.94.88",
-			"timeUpdated": "2023-12-20T11:34:48+0000",
-			"languages": []
-		},
-		{
-			"filterId": 5,
-			"name": "AdGuard Experimental filter",
-			"description": "Filter designed to test certain hazardous filtering rules before they are added to the basic filters.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 4,
-			"groupId": 6,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/5.txt",
-			"version": "2.0.1.24",
-			"timeUpdated": "2023-10-25T15:31:55+0000",
-			"languages": []
-		},
-		{
-			"filterId": 6,
-			"name": "AdGuard German filter",
-			"description": "EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.39.31",
-			"timeUpdated": "2023-12-20T07:35:30+0000",
-			"languages": [
-				"de"
-			]
-		},
-		{
-			"filterId": 7,
-			"name": "AdGuard Japanese filter",
-			"description": "Filter that enables ad blocking on websites in Japanese language.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.46.68",
-			"timeUpdated": "2023-12-20T13:34:52+0000",
-			"languages": [
-				"ja"
-			]
-		},
-		{
-			"filterId": 8,
-			"name": "AdGuard Dutch filter",
-			"description": "EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/8.txt",
-			"version": "2.0.6.29",
-			"timeUpdated": "2023-12-12T12:36:40+0000",
-			"languages": [
-				"nl"
-			]
-		},
-		{
-			"filterId": 9,
-			"name": "AdGuard Spanish/Portuguese filter",
-			"description": "Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 345600,
-			"displayNumber": 1,
-			"groupId": 7,
-			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/9.txt",
-			"version": "2.0.22.51",
-			"timeUpdated": "2023-12-18T12:11:10+0000",
-			"languages": [
-				"es",
-				"pt"
 			]
 		}
 	]
