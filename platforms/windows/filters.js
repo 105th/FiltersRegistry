@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.13.48",
-			"timeUpdated": "2023-12-26T22:32:37+0000",
+			"version": "2.3.13.49",
+			"timeUpdated": "2023-12-27T00:21:47+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -607,8 +607,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/15.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.10",
-			"timeUpdated": "2023-12-26T18:32:14+0000",
+			"version": "2.0.59.11",
+			"timeUpdated": "2023-12-27T00:21:26+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -806,8 +806,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylist.txt",
 			"trustLevel": "low",
-			"version": "2.1.17.30",
-			"timeUpdated": "2023-12-26T20:06:08+0000",
+			"version": "2.1.17.31",
+			"timeUpdated": "2023-12-27T00:20:17+0000",
 			"languages": [],
 			"tags": [
 				1
@@ -824,8 +824,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/ABPindo/indonesianadblockrules/master/subscriptions/abpindo.txt",
 			"trustLevel": "high",
-			"version": "2.0.6.41",
-			"timeUpdated": "2023-12-25T14:48:42+0000",
+			"version": "2.0.6.42",
+			"timeUpdated": "2023-12-27T00:20:18+0000",
 			"languages": [],
 			"tags": [
 				1,
@@ -867,8 +867,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt",
 			"trustLevel": "high",
-			"version": "2.1.32.46",
-			"timeUpdated": "2023-12-26T16:06:29+0000",
+			"version": "2.1.32.47",
+			"timeUpdated": "2023-12-27T00:20:20+0000",
 			"languages": [],
 			"tags": [
 				1,
@@ -912,8 +912,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistdutch.txt",
 			"trustLevel": "low",
-			"version": "2.1.40.27",
-			"timeUpdated": "2023-12-26T20:06:12+0000",
+			"version": "2.1.40.28",
+			"timeUpdated": "2023-12-27T00:20:22+0000",
 			"languages": [],
 			"tags": [
 				1,
@@ -952,8 +952,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist/EasyListHebrew/master/EasyListHebrew.txt",
 			"trustLevel": "high",
-			"version": "2.0.4.51",
-			"timeUpdated": "2023-12-19T04:07:42+0000",
+			"version": "2.0.4.52",
+			"timeUpdated": "2023-12-27T00:20:23+0000",
 			"languages": [
 				"he"
 			],
@@ -975,8 +975,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.40.29",
-			"timeUpdated": "2023-12-26T20:06:14+0000",
+			"version": "2.1.40.30",
+			"timeUpdated": "2023-12-27T00:20:25+0000",
 			"languages": [
 				"it"
 			],
@@ -1044,8 +1044,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.40.28",
-			"timeUpdated": "2023-12-26T20:06:14+0000",
+			"version": "2.1.40.29",
+			"timeUpdated": "2023-12-27T00:20:26+0000",
 			"languages": [
 				"ar"
 			],
@@ -1067,8 +1067,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/liste_fr.txt",
 			"trustLevel": "low",
-			"version": "2.1.40.27",
-			"timeUpdated": "2023-12-26T20:06:15+0000",
+			"version": "2.1.40.28",
+			"timeUpdated": "2023-12-27T00:20:30+0000",
 			"languages": [],
 			"tags": [
 				1,
@@ -1107,8 +1107,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://easylist.to/easylist/easyprivacy.txt",
 			"trustLevel": "low",
-			"version": "2.1.18.76",
-			"timeUpdated": "2023-12-26T20:06:18+0000",
+			"version": "2.1.18.77",
+			"timeUpdated": "2023-12-27T00:20:32+0000",
 			"languages": [],
 			"tags": [
 				2
@@ -1145,8 +1145,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.18.7",
-			"timeUpdated": "2023-12-25T14:48:55+0000",
+			"version": "2.0.18.8",
+			"timeUpdated": "2023-12-27T00:20:33+0000",
 			"languages": [
 				"id"
 			],
@@ -1187,8 +1187,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://secure.fanboy.co.nz/fanboy-annoyance_ubo.txt",
 			"trustLevel": "low",
-			"version": "2.1.17.56",
-			"timeUpdated": "2023-12-26T20:06:24+0000",
+			"version": "2.1.17.57",
+			"timeUpdated": "2023-12-27T00:20:38+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -1206,8 +1206,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/fanboy-social.txt",
 			"trustLevel": "low",
-			"version": "2.1.16.8",
-			"timeUpdated": "2023-12-26T20:06:25+0000",
+			"version": "2.1.16.9",
+			"timeUpdated": "2023-12-27T00:20:38+0000",
 			"languages": [],
 			"tags": [
 				3,
@@ -1225,8 +1225,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistportuguese.txt",
 			"trustLevel": "low",
-			"version": "2.0.12.2",
-			"timeUpdated": "2023-12-26T20:06:25+0000",
+			"version": "2.0.12.3",
+			"timeUpdated": "2023-12-27T00:20:39+0000",
 			"languages": [],
 			"tags": [
 				1,
@@ -1346,8 +1346,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt",
 			"trustLevel": "low",
-			"version": "2.1.40.28",
-			"timeUpdated": "2023-12-26T20:06:30+0000",
+			"version": "2.1.40.29",
+			"timeUpdated": "2023-12-27T00:20:45+0000",
 			"languages": [],
 			"tags": [
 				50
@@ -1364,8 +1364,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.0.93.58",
-			"timeUpdated": "2023-12-26T00:20:45+0000",
+			"version": "2.0.93.59",
+			"timeUpdated": "2023-12-27T00:20:45+0000",
 			"languages": [],
 			"tags": [
 				4
@@ -1382,8 +1382,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/cntblock.txt",
 			"trustLevel": "low",
-			"version": "2.1.39.53",
-			"timeUpdated": "2023-12-26T20:06:32+0000",
+			"version": "2.1.39.54",
+			"timeUpdated": "2023-12-27T00:20:47+0000",
 			"languages": [],
 			"tags": [
 				2,
@@ -1542,8 +1542,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.5.54",
-			"timeUpdated": "2023-12-26T23:32:46+0000",
+			"version": "2.1.5.55",
+			"timeUpdated": "2023-12-27T00:21:38+0000",
 			"languages": [
 				"zh"
 			],
@@ -1565,8 +1565,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://www.fanboy.co.nz/fanboy-antifacebook.txt",
 			"trustLevel": "low",
-			"version": "2.0.5.53",
-			"timeUpdated": "2023-12-26T20:06:39+0000",
+			"version": "2.0.5.54",
+			"timeUpdated": "2023-12-27T00:20:52+0000",
 			"languages": [],
 			"tags": [
 				2,
@@ -1644,8 +1644,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistspanish.txt",
 			"trustLevel": "low",
-			"version": "2.1.40.29",
-			"timeUpdated": "2023-12-26T20:06:43+0000",
+			"version": "2.1.40.30",
+			"timeUpdated": "2023-12-27T00:20:58+0000",
 			"languages": [],
 			"tags": [
 				1,
@@ -1664,8 +1664,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/FiltersHeroes/KAD/master/KAD.txt",
 			"trustLevel": "low",
-			"version": "2.0.50.32",
-			"timeUpdated": "2023-12-26T20:06:46+0000",
+			"version": "2.0.50.33",
+			"timeUpdated": "2023-12-27T00:21:00+0000",
 			"languages": [],
 			"tags": [
 				4,
@@ -1812,8 +1812,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://fanboy.co.nz/fanboy-antifonts.txt",
 			"trustLevel": "low",
-			"version": "2.0.4.98",
-			"timeUpdated": "2023-12-26T20:06:51+0000",
+			"version": "2.0.4.99",
+			"timeUpdated": "2023-12-27T00:21:04+0000",
 			"languages": [],
 			"tags": [
 				2,
@@ -1831,8 +1831,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://www.fanboy.co.nz/fanboy-cookiemonster.txt",
 			"trustLevel": "high",
-			"version": "2.1.25.60",
-			"timeUpdated": "2023-12-26T20:06:55+0000",
+			"version": "2.1.25.61",
+			"timeUpdated": "2023-12-27T00:21:06+0000",
 			"languages": [],
 			"tags": [
 				6
@@ -1911,8 +1911,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistpolish.txt",
 			"trustLevel": "low",
-			"version": "2.1.36.35",
-			"timeUpdated": "2023-12-26T20:06:57+0000",
+			"version": "2.1.36.36",
+			"timeUpdated": "2023-12-27T00:21:09+0000",
 			"languages": [],
 			"tags": [
 				1,
@@ -1980,8 +1980,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/AnnoyancesList",
 			"trustLevel": "high",
-			"version": "2.0.12.70",
-			"timeUpdated": "2023-12-26T08:08:06+0000",
+			"version": "2.0.12.71",
+			"timeUpdated": "2023-12-27T00:21:14+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -2004,8 +2004,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "low",
-			"version": "2.0.7.12",
-			"timeUpdated": "2023-12-26T04:07:36+0000",
+			"version": "2.0.7.13",
+			"timeUpdated": "2023-12-27T00:21:15+0000",
 			"languages": [],
 			"tags": [
 				2
@@ -2042,8 +2042,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.33.60",
-			"timeUpdated": "2023-12-26T20:07:05+0000",
+			"version": "2.0.33.61",
+			"timeUpdated": "2023-12-27T00:21:17+0000",
 			"languages": [
 				"hi"
 			],
