@@ -1,10 +1,10 @@
-! Checksum: dAvg69dxBJEI2dNkk7pSxQ
-! Diff-Path: ../patches/250/250-473284-4.patch
+! Checksum: Kj3ZD0DaTp4+eepHTxYPpg
+! Diff-Path: ../patches/250/250-473288-4.patch
 ![Adblock Plus 2.0]
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.12.73
-! TimeUpdated: 2023-12-29T04:07:40+00:00
+! Version: 2.0.12.74
+! TimeUpdated: 2023-12-29T08:07:30+00:00
 ! Expires: 4 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -482,7 +482,7 @@ quora.com##.modal_bg
 linkedin.com#$?#html { overflow: auto !important; }
 linkedin.com#$?#body { overflow: auto !important; }
 ! Title: 💊 Dandelion Sprout's Anti-Malware List
-! OriginalVersion: 25December2023v1
+! OriginalVersion: 29December2023v2
 ! Expires: 2 days
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks heavily abused top-level domains (and even search engine results for them), blocks domains used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
@@ -904,10 +904,27 @@ play.google.com#?#div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*
 play.google.com#?#div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=adsblock])
 play.google.com#?#div[class$=" "] > div[class*=" "][jscontroller] > *:has([href$=".adblock"])
 ||apps.apple.com/*/app/*/id1564900435^$document
-! ——— Wrong TLDs of legitimate sites ———
-||ubuntu.org^$document
+! ——— Typo squatting, misspellings, and honest TLD address bar mistakes ———
+||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
 ||103.224.212.249^$document
-||speedtest.com^$document
+||speedtest.com^$document,domain=~you-were-likely-looking-for-speedtest.net
+||snapchat.cm^$document,domain=~malware-typo-squatter-of-snapchat.com
+||facebook.cm^$document,domain=~malware-typo-squatter-of-facebook.com
+||wix.cm^$document,domain=~malware-typo-squatter-of-wix.com
+||199.59.243.222^$document
+|http://ww01.$document,domain=~very-very-extremely-frequently-used-in-malware-redirections.*
+! https://github.com/DevSpen/links/blob/master/src/links.txt
+||steamcommin*$document,domain=~likely-a-fake-malware-version-of-steamcommunity.com
+||steamconnu*$document,domain=~likely-a-fake-malware-version-of-steamcommunity.com
+||steancomm*$document,domain=~likely-a-fake-malware-version-of-steamcommunity.com
+||githubus.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
+||githubu.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
+||githu.com^$document,domain=~you-were-likely-looking-for-github.com
+||wgithub.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
+||githubuser.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
+||rgithub.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
+||githubt.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
+! https://scammer.info/t/discord-nitro-scam-25/87887
 ! ——— Frequently used to infiltrate and maliciously redirect sites, e.g. ToonBarn ———
 ||amanda.*.net^$document
 ||sarah.*.net^$document
@@ -918,7 +935,7 @@ play.google.com#?#div[class$=" "] > div[class*=" "][jscontroller] > *:has([href$
 ||54.174.156.141^$document
 ||lordagty.com^$document
 ||madagty.com^$document
-||zeroredirect5.com^$document
+||zeroredirect5.com^$document,domain=~malware-redirection-trains.*
 ||54.209.22.226^$document
 ||54.91.125.197^$document
 ||52.202.53.245^$document
@@ -948,16 +965,15 @@ zombooru.com##a[href="http://www.boorufurry.com/"]
 zombooru.com##a[href="http://www.analbooru.com/"]
 zombooru.com##a[href="http://www.hard55.com"]
 ! https://github.com/DandelionSprout/adfilt/pull/167
-! Other
 ! https://github.com/AdguardTeam/AdguardFilters/issues/124611
 ! (https://github.com/DandelionSprout/adfilt/issues/632)
 ! ——— Found in witness reports online ———
 ! Adblock Plus list maintainer weekly reports
 ||pinoy-offers.com^
 ||googleboost.xyz^$document
-||bemobtracks.com^$document,popup
-||bemobtrk.com^$document,popup
-||bemobpath.com^$document,popup
+||bemobtracks.com^$document,popup,domain=~malware-redirection-trains.*
+||bemobtrk.com^$document,popup,domain=~malware-redirection-trains.*
+||bemobpath.com^$document,popup,domain=~malware-redirection-trains.*
 ||couponbybox.com^$document
 ||newpage.in^$document
 /mcaf04/*=$document
@@ -1019,8 +1035,8 @@ zombooru.com##a[href="http://www.hard55.com"]
 ||safe-offers.net^$document
 /bitcoinrevolution/lp.php^$document
 ! https://github.com/DandelionSprout/adfilt/issues/188
-||best-prizes-202*.com^$document
-||all-best-prize-202*.com^$document
+||best-prizes-202*.com^$document,domain=~malware-site.*
+||all-best-prize-202*.com^$document,domain=~malware-site.*
 ||5.8.34.26^$document
 ||5.8.47.3^$document
 ||103.224.182.251^$document
@@ -1075,7 +1091,7 @@ zombooru.com##a[href="http://www.hard55.com"]
 ||beastbuying.com^$document
 ||pesoaniz.com^$document
 ||doneonline.xyz^$document
-||trc.*.co^$document
+||trc.*.co^$document,domain=~malware-redirection-trains.*
 ||artofads.co^$document
 ||beta-news.org^$document
 ! https://github.com/DandelionSprout/adfilt/pull/266
@@ -1148,9 +1164,9 @@ zombooru.com##a[href="http://www.hard55.com"]
 ||btpnative.com^$document
 ||data-px.services^$document
 ||newsvot.com^$document
-||trkk4.com^$document
+||trkk4.com^$document,domain=~malware-redirection-trains.*
 ||secure-access-*.gate23.xyz^$document
-||hosting-redirect.com^$document
+||hosting-redirect.com^$document,domain=~malware-redirection-trains.*
 ||microsoftedge.microsoft.com/addons/detail/browse-safe/halaijeoccdjjoknnkcejljcimnfbmkf^$document
 ! https://github.com/DandelionSprout/adfilt/pull/289
 ||flexroll.online^$document
@@ -1221,10 +1237,6 @@ zombooru.com##a[href="http://www.hard55.com"]
 ||trumops.com^$document
 ! https://www.virustotal.com/gui/url/af8f443208f4e86d469549b219fccbeb43b7cae40be5f1b4c4e5083e27fc8111
 ! https://scammer.info/t/mcafee-phish/83725
-! https://github.com/DevSpen/links/blob/master/src/links.txt
-||steamcommin*$document
-||steamconnu*$document
-||steancomm*$document
 ! https://www.virustotal.com/gui/file/4293c1d8574dc87c58360d6bac3daa182f64f7785c9d41da5e0741d2b1817fc7/community
 ! https://github.com/iam-py-test/investigations/blob/main/2021/11/21/1.md
 ||safelink.kadal.club^$document
@@ -1311,7 +1323,6 @@ zombooru.com##a[href="http://www.hard55.com"]
 ||new-meet-dating.life^$document
 ||wellhello.com^$document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/103475
-! https://scammer.info/t/discord-nitro-scam-25/87887
 ! https://github.com/AdguardTeam/AdguardFilters/issues/108571
 ! fake human verification scam
 ! start form - reported for abuse
@@ -1326,7 +1337,7 @@ zombooru.com##a[href="http://www.hard55.com"]
 ||myget.org/feed/discord-nitro-hack/package/nuget/Free-discord-nitro-codes-2021^$document
 ! https://twitter.com/iam_py_test/status/1496259425493225472
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111970
-/(^|\.|://)[a-z0-9-]{2,}trk\.xyz(/|$)/$document,popup
+/(^|\.|://)[a-z0-9-]{2,}trk\.xyz(/|$)/$document,popup,domain=~malware-redirection-trains.*
 ! https://bazaar.abuse.ch/sample/d7308dab0110ae3bc79fd15024f5ccfcbd6e676b7c42b27a0112506e8357a6dc/ → https://app.any.run/tasks/bc53e7a9-5fd7-4682-894d-11e48e9ea89a#
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-1074966240
 ||melding.link^$document
@@ -1341,16 +1352,16 @@ zombooru.com##a[href="http://www.hard55.com"]
 ||195.201.253.130^$document
 ||195.201.253.131^$document
 ! The bottom download button on https://www.sushichop.com/
-/trk2/*?lddomain=$document
-||cpmrevdirect.com^$document
-||rtbverdirect.com^$document
+/trk2/*?lddomain=$document,domain=~very-likely-a-malware-redirection.*
+||cpmrevdirect.com^$document,domain=~malware-redirection-trains.*
+||rtbverdirect.com^$document,domain=~malware-redirection-trains.*
 ||fsalfrwdr.com^$document
-||cpmvrdirect.com^$document
-||fadverdirect.com^$document
-||cpmrvdirect.com^$document
-||rtbrevdirect.com^$document
-||rtbvrdirect.com^$document
-||cpmverdirect.com^$document
+||cpmvrdirect.com^$document,domain=~malware-redirection-trains.*
+||fadverdirect.com^$document,domain=~malware-redirection-trains.*
+||cpmrvdirect.com^$document,domain=~malware-redirection-trains.*
+||rtbrevdirect.com^$document,domain=~malware-redirection-trains.*
+||rtbvrdirect.com^$document,domain=~malware-redirection-trains.*
+||cpmverdirect.com^$document,domain=~malware-redirection-trains.*
 ||15.197.244.48^$document
 ||96.47.230.67^$document
 ||96.47.230.68^$document
@@ -1364,7 +1375,7 @@ zombooru.com##a[href="http://www.hard55.com"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122757
 ://adbrbk.$document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123544
-/mcafee-safe-browsing/?*=*&*=*&*=*&*=*&*=*&*=$document,popup
+/mcafee-safe-browsing/?*=*&*=*&*=*&*=*&*=*&*=$document,popup,domain=~fake-site-with-malware.*
 ! https://twitter.com/iam_py_test/status/1545164642346930176
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123968
 ! https://github.com/AdguardTeam/AdguardFilters/issues/124620
@@ -1413,7 +1424,7 @@ zombooru.com##a[href="http://www.hard55.com"]
 ||146.19.169.98^$document
 ||146.19.169.99^$document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/132079
-/pushredirect/?$document
+/pushredirect/?$document,domain=~malware-redirection-trains.*
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134355
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134903
 ! Random Discord servers
@@ -1479,13 +1490,13 @@ zombooru.com##a[href="http://www.hard55.com"]
 !+ NOT_OPTIMIZED
 ://landings.*_slots/?partner=$document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/145513
-||redirect.newprogrammatic.click^$document
+||redirect.newprogrammatic.click^$document,domain=~likely-a-malware-redirection.*
 /zcvisitor/*?campaignid$document
 ! https://github.com/DandelionSprout/adfilt/issues/808
 ! https://www.mandiant.com/resources/blog/tracking-evolution-gootloader-operations (26/01/2023)
 ||i-likefood.co^$document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148560
-/land/*&afftrack=$document
+/land/*&afftrack=$document,domain=~likely-a-malware-redirection.*
 ! Comments on Slack
 ! https://www.adressa.no/nyheter/trondheim/i/Moq2wR/svindlere-kaarer-vinnere-i-konkurranser-gir-en-daarlig-foelelse-aa-forklare-at-dette-bare-er-tull
 ||sitey.me^$document
@@ -1501,10 +1512,10 @@ zombooru.com##a[href="http://www.hard55.com"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156487
 ! https://new.reddit.com/r/engrish/comments/15080hg/a_message_i_just_got_from_a_scammer/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156573
-||go.redirected*/click?^$document,popup
+||go.redirected*/click?^$document,popup,domain=~malware-redirection-trains.*
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157308
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158316
-://trk.*.run/$document
+://trk.*.run/$document,domain=~very-likely-a-malware-redirection-train.*
 ! https://github.com/AdguardTeam/AdguardFilters/issues/159157
 ||livejasmin.com/*&origin=$document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161364
@@ -1569,7 +1580,7 @@ toorgle.net##.join
 ! rule34hentai.net when uBlock Filters and AdGuard Base are turned off
 ! Googling Aksel Hennie (Results for prior week) in late July 2021
 ! Other
-||redirectme.net^$document
+||redirectme.net^$document,domain=~malware-redirection-trains.*
 ||anthargo.com^$document
 ! Domains on IPs known to host Discord Nitro spambots
 ! https://github.com/AdguardTeam/AdguardFilters/issues/120349
@@ -1661,8 +1672,8 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ! https://github.com/RPiList/specials/issues/948#issuecomment-1458739160
 ! Commonly set as a proxy on hacked devices (https://www.virustotal.com/gui/url/e610e7d09c614529cb8c64185717769946f5c86044ac5c31c6608e604995f577/detection)
 ! Various domains on https://securitytrails.com/list/ip/72.14.178.174
-|http://www6.$document
-|http://www1.*&kw$document
+|http://www6.$document,domain=~often-used-in-malware-redirections.*
+|http://www1.*&kw$document,domain=~often-used-in-malware-redirections.*
 ||45.33.2.79^$document
 ||45.33.18.44^$document
 ||45.33.20.235^$document
@@ -1701,27 +1712,19 @@ tumblr.com#?#div[tabindex][style]:has(a[href*="tinyurl."]:has-text(_1+8_))
 ||[2606:4700:3030::6815:5284]^$document,popup
 ||[2606:4700:3037::ac43:9e39]^$document,popup
 ! Google results for «SodaStream site:no cranberry»
-/^https?://[a-z0-9.-]{1,}\.([a-z]{3,}|[a-z][a-tv-z]|[a-qs-z][a-z])/.*(go\.php|redirect|url=|\?re=).*\.(xn--p1ai|рф|%D1%80%D1%84)$/$document
-||adservice.google.*/ddm/clk/$document
-/ad_click/q?&url=$document
+/^https?://[a-z0-9.-]{1,}\.([a-z]{3,}|[a-z][a-tv-z]|[a-qs-z][a-z])/.*(go\.php|redirect|url=|\?re=).*\.(xn--p1ai|рф|%D1%80%D1%84)$/$document,domain=~malware-redirection-results.*
+||adservice.google.*/ddm/clk/$document,domain=~malware-redirection-results.*
+/ad_click/q?&url=$document,domain=~malware-redirection-results.*
 ! Laughably blatant fraud site
 ! ——— Horrendously bad copypasted Android rooting "guides" (often with fake titles) that bricked two of my phones ———
 ! Most of the guides haven't even accounted for how modern phones have replaced the recovery environment with an extra boot environment, leading to very critical Fastboot commands not working and/or bricking the phone.
-||unofficialtwrp.com^$document
-||androidweblog.com^$document
-||androidgreek.com^$document
-||ytechb.com^$document
-||gadgetstwist.com^$document
-||gadgetsfarms.com^$document
-||techorfy.com^$document
-! ——— Since I very, very often have to go from "raw.githubusercontent.com" to "github.com" by means of manual address bar highlighting, I feel I could need some kind of protection insurance in case I highlight 2mm off-course one day. ———
-||githubus.com^
-||githubu.com^
-||githu.com^
-||wgithub.com^
-||githubuser.com^
-||rgithub.com^
-||githubt.com^
+||unofficialtwrp.com^$document,domain=~had-not-updated-their-root-guides-to-reflect-a-b-partition-phones-as-of-2021.*
+||androidweblog.com^$document,domain=~had-not-updated-their-root-guides-to-reflect-a-b-partition-phones-as-of-2021.*
+||androidgreek.com^$document,domain=~had-not-updated-their-root-guides-to-reflect-a-b-partition-phones-as-of-2021.*
+||ytechb.com^$document,domain=~had-not-updated-their-root-guides-to-reflect-a-b-partition-phones-as-of-2021.*
+||gadgetstwist.com^$document,domain=~had-not-updated-their-root-guides-to-reflect-a-b-partition-phones-as-of-2021.*
+||gadgetsfarms.com^$document,domain=~had-not-updated-their-root-guides-to-reflect-a-b-partition-phones-as-of-2021.*
+||techorfy.com^$document,domain=~had-not-updated-their-root-guides-to-reflect-a-b-partition-phones-as-of-2021.*
 ! ——— Usually used by various groups who buy old domains and display illicit ads on them ———
 ://ww4.$document,domain=~ww4.ikea.com
 ://ww5.$document,domain=~ww5.ikea.com|~ww5.msu.ac.zw
@@ -1729,47 +1732,47 @@ tumblr.com#?#div[tabindex][style]:has(a[href*="tinyurl."]:has-text(_1+8_))
 ://ww7.$document,domain=~ww7.be|~ww7.readsnk.com
 ://ww8.$document,domain=~ww8.co|~ww8.ikea.com|~ww8.tiki.ne.jp|~ww8.erovoice.us|~ww8.anyanime.com|~ww8.bakushpal.az|~ww8.tokyoghoulre.com|~ww8.readonepiece.com
 ://ww9.$document,domain=~ww9.ikea.com|~ww9.tiki.ne.jp|~ww9.sakura.ne.jp|~ww9.generali.pt|~ww9.itau.com.br
-://ww10.$document
-://ww11.$document
-://ww12.$document
-://ww13.$document
-://ww14.$document
-://ww15.$document,domain=~ww15.nl
-://ww16.$document
-://ww17.$document
-://ww18.$document
-://ww19.$document
-://ww20.$document
-://ww21.$document
-://ww22.$document
-://ww23.$document
-://ww24.$document
-://ww25.$document
-://ww26.$document
-://ww27.$document
-://ww28.$document
-://ww29.$document
-://ww30.$document
-://ww31.$document
-://ww32.$document
-://ww33.$document
-://ww34.$document
-://ww35.$document
-://ww36.$document
-://ww37.$document
-://ww38.$document
-://ww39.$document
-://ww40.$document
-://ww41.$document
-://ww42.$document
-://ww43.$document
-://ww44.$document
-://ww45.$document
-://ww46.$document
-://ww47.$document
-://ww48.$document
-://ww49.$document
-://ww50.$document
+://ww10.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww11.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww12.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww13.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww14.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww15.$document,domain=~ww15.nl|~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww16.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww17.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww18.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww19.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww20.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww21.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww22.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww23.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww24.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww25.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww26.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww27.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww28.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww29.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww30.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww31.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww32.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww33.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww34.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww35.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww36.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww37.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww38.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww39.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww40.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww41.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww42.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww43.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww44.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww45.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww46.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww47.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww48.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww49.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
+://ww50.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
 ! ——— Temp hotfix for https://github.com/AdguardTeam/AdGuardHome/issues/1835 ———
 !!!/\\/$doc
 !!!@@/_udp\.(.*)?\\/
@@ -1792,12 +1795,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 get.adobe.com###offersInformationPane
 ! Gigabyte APP Center (which use sneaky tricks to install a Norton 360 trial period; May require «AdGuard for Windows»)
 ||mb.download.gigabyte.com/FileList/Swhttp/DriverUpd/ANTIVIRUS^
-! ——— Potential typo-squats and directly related stuff ———
-||snapchat.cm^$document
-||facebook.cm^$document
-||wix.cm^$document
-||199.59.243.222^$document
-|http://ww01.$document
 ! ——— Carried over from "Anti-'Asset Flip Shovelware' List" in response to Microsoft Store's non-existent quality control ———
 www.microsoft.com##a[data-pfns][href*=imposter]
 www.microsoft.com##a[data-pfns][href*=impostor]
@@ -3447,7 +3444,7 @@ vimeo.com##+js(set-constant, vimeo.clip_page_config.continuous_play_enabled, fal
 ted.com##+js(no-setInterval-if, d.period, 1000)
 ted.com##.css-1dg07lz:has-text(Up next)
 ! Title: 🎫 Ad Removal List for Unusual Ads
-! OriginalVersion: 12🏝️2023v1-Alpha
+! OriginalVersion: 29December2023v1-Alpha
 ! Expires: 4 days
 ! Description: This is a list to remove the kinds of ads that very few well-established international adblocker lists would want to remove, due to many of them not meeting those lists' strict criteria of what an ad actually is. So that's where this list comes into play.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -3466,10 +3463,10 @@ tradera.com#?#.traderase-voucher:has-text(Visa rabatten)
 varejakten.no#?#.no-gutters.row:has-text(Vis tilbud)
 vg.no#?#.offer-details:has-text(Vis tilbud)
 ! Blatantly bot-generated fraudsters
-||e-rabattkode.no^$document
-||hotdeals.com^$document
-||coupert.com^$document
-||rabattkodendin.com^$document
+||e-rabattkode.no^$document,domain=~falsk-kupongside-som-ikke-har-kuponger.*
+||hotdeals.com^$document,domain=~fake-coupon-site-that-has-no-coupons.*
+||coupert.com^$document,domain=~fake-coupon-site-that-has-no-coupons.*
+||rabattkodendin.com^$document,domain=~falsk-kupongside-som-ikke-har-kuponger.*
 ! ——— Unnecessarily obtrusive premium service banners ———
 ! If a banner is in this category, it means that those who still do want to buy into their Premium services, can do so through the user settings without having to see the obtrusive banners.
 pixiv.net##._premium-lead-popular-d-body
@@ -3815,7 +3812,7 @@ dailymotion.com##div[class*=_adCell_]
 ! Removes the "Browse more videos" feed below the video player"
 dailymotion.com#?#div[class^=DiscoveryQueueDisplay__sectionContainer_]:has-text(Browse more )
 ! Title: 🎓 Wikia: Pure Browsing Experience
-! OriginalVersion: 17October2023v2-Beta
+! OriginalVersion: 29December2023v1-Beta
 ! Expires: 5 days
 ! Description: Do you like to browse casually through different Wikia wikis, but are tired of FANDOM promotions, and promotions for movies that you don't care about? Then this list will save your day.
 ! Note: To make Wikia pages wider, check out https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion%20Sprout's%20Website%20Stretcher.txt. The Wikia rules that were previously in this list, were removed by request and for being arguably superfluous.
@@ -3846,14 +3843,14 @@ fandom.com,wikia.org#?#.banner-notifications-placeholder:has-text(The video)
 ###WikiaTopAds
 ##.wikia-ad:not(html, body)
 ! Extraordinarily bad or fraudulent Wikias that you don't want to use (May include fanon Wikias in rare cases if they show up high in Google searches)
-||lostmediaarchive.fandom.com^$document
-||theyayapocalypse.fandom.com^$document
-||the-secret-world-of-the-animated-characters.fandom.com^$document
-||mumblehappyfeet.fandom.com^$document
-||nvsc.fandom.com^$document
-||sean-maynard.fandom.com^$document
-||disneyfanon.fandom.com^$document
-||fandubdb.fandom.com^$document
+||lostmediaarchive.fandom.com^$document,domain=~inferior-ripoff-of-lostmediawiki.com
+||theyayapocalypse.fandom.com^$document,domain=~completely-false-information.*
+||the-secret-world-of-the-animated-characters.fandom.com^$document,domain=~completely-false-information-and-also-thinks-almost-every-character-ever-created-are-christian.*
+||mumblehappyfeet.fandom.com^$document,domain=~completely-false-information.*
+||nvsc.fandom.com^$document,domain=~completely-false-information.*
+||sean-maynard.fandom.com^$document,domain=~completely-false-information.*
+||disneyfanon.fandom.com^$document,domain=~completely-false-information.*
+||fandubdb.fandom.com^$document,domain=~completely-false-information.*
 ! Removes the fandom.wikia.com link from the logos
 wikia.org,fandom.com#$?##wds-company-logo-fandom-white { pointer-events: none !important; cursor: default !important; }
 wikia.org,fandom.com#$?#.wds-global-navigation__logo { pointer-events: none !important; cursor: default !important }
@@ -4403,7 +4400,7 @@ nettavisen.no###topover
 !!! !#include Android%20Scum%20Class%20%E2%80%94%20Fake%20notification%20counters.txt
 !+ NOT_OPTIMIZED
 ! Title: 🕳 Empty Padding Remover
-! OriginalVersion: 09November2023v1-Alpha
+! OriginalVersion: 29December2023v1-Alpha
 ! Expires: 4 days
 ! Description: Are you tired of having to scroll so much on websites, or you want to keep your eyes on more text and content at once? If so, this list will help you a little extra bit with that.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -4448,6 +4445,8 @@ nettavisen.no###topover
 ~schengenvisainfo.com##.vc_empty_space:not(html, body)
 ! https://byggebolig.no/luft-luft-varmepumpe/erfaringer-med-mitsubishi-kirigamine-6-6/msg445542 (12/11/2020)
 ##.body-spacer:not(html, body)
+! https://academickids.com/encyclopedia/index.php/Cream_the_Rabbit (Though the source page is unsalvageable, the general spirit of the entry remains applicable.)
+##.spacer150px:not(html,body)
 ! ——— Site-specific ———
 indiegogo.com#?#h3:has-text(/^\xA0$/):not(:has-text(/\S/))
 indiegogo.com#?#h2:has-text(/^\xA0$/):not(:has-text(/\S/))
