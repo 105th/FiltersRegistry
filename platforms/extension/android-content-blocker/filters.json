@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.87.20",
-			"timeUpdated": "2023-12-28T17:32:27+0000",
+			"version": "2.0.87.21",
+			"timeUpdated": "2023-12-29T15:32:33+0000",
 			"languages": [
 				"ru"
 			],
@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.13.88",
-			"timeUpdated": "2023-12-29T14:32:39+0000",
+			"version": "2.3.13.89",
+			"timeUpdated": "2023-12-29T15:32:47+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -378,8 +378,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.63",
-			"timeUpdated": "2023-12-29T14:32:41+0000",
+			"version": "2.0.64.64",
+			"timeUpdated": "2023-12-29T15:32:50+0000",
 			"languages": [],
 			"tags": [
 				2,
@@ -397,8 +397,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.0.95.10",
-			"timeUpdated": "2023-12-29T14:32:43+0000",
+			"version": "2.0.95.11",
+			"timeUpdated": "2023-12-29T15:32:52+0000",
 			"languages": [],
 			"tags": [
 				3,
@@ -543,8 +543,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.55",
-			"timeUpdated": "2023-12-29T12:37:59+0000",
+			"version": "2.0.47.56",
+			"timeUpdated": "2023-12-29T15:32:17+0000",
 			"languages": [],
 			"tags": [
 				1,
@@ -636,8 +636,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.42.48",
-			"timeUpdated": "2023-12-28T12:39:26+0000",
+			"version": "2.0.42.49",
+			"timeUpdated": "2023-12-29T15:32:28+0000",
 			"languages": [
 				"fr"
 			],
