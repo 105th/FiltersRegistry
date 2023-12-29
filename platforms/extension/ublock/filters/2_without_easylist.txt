@@ -1,10 +1,10 @@
-! Checksum: GkW7XkfJ6wFhbcBKgWdi5w
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28396775-60.patch
+! Checksum: iATu3FxoJtR/QztXtOWPjg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28397196-60.patch
 ![Adblock Plus 2.0]
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.13.81
-! TimeUpdated: 2023-12-28T23:33:01+00:00
+! Version: 2.3.13.82
+! TimeUpdated: 2023-12-29T06:33:52+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7154,7 +7154,7 @@ freetvsports.xyz,poscishd.online##+js(no-fetch-if, pagead2.googlesyndication.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169101
 xszav1.com##+js(remove-node-text, script, ad blocker)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169386
-elektrotanya.com##+js(remove-node-text, script, canRunAds)
+elektrotanya.com##+js(set-constant, canRunAds, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169282
 chickenkarts.io##+js(set-constant, blockedAds, false)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169297
@@ -32463,6 +32463,8 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+elektrotanya.com##.rside_ad
+elektrotanya.com##div[id^="ad"]
 jdpower.com##.jdpAd-placeholder
 easyupload.io##.mb-0.pb-0
 easyupload.io##div[class^="reklam"]
@@ -49156,8 +49158,8 @@ outlook.live.com#?#.customScrollBar[data-is-scrollable] > div[class] > div[class
 !
 ! check-host.net
 check-host.net##.mt-3\.5 > div > div[id*="t"][id*="a"][class] img.gofull
-check-host.net#?#a[href]:contains(/[pP]rotection|[сcЗ]айт|[𝅺]/)
-check-host.net#?#div + *[class*=" "]:last-child:contains(/^.*[x×✕✖X☓χx⨯✗\+\＋\﹢хХΧẊẋ].*$/):upward(1)
+check-host.net#?#a[href]:contains(/[pP]rote|[сcЗ]айт|[𝅺]/)
+check-host.net#?#div + *[class*="_"]:last-child:contains(/^.*[x×✕✖X☓χx⨯✗\+\＋\﹢хХΧẊẋ].*$/):upward(1)
 !
 ! quora.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/149846
