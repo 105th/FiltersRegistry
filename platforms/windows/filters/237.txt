@@ -1,9 +1,9 @@
-! Checksum: SZxGqv4JhW9/cosb/lmB5Q
-! Diff-Path: ../patches/237/237-473224-4.patch
+! Checksum: vIAQGw5i3Fp1XiK1FGVM1A
+! Diff-Path: ../patches/237/237-473280-4.patch
 ! Title: Polish Annoyances Filters
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.30.31
-! TimeUpdated: 2023-12-26T16:07:13+00:00
+! Version: 1.0.30.32
+! TimeUpdated: 2023-12-29T00:18:13+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: 🇵🇱 Polskie Filtry Elementów Irytujących
@@ -12,8 +12,8 @@
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego działania wymagana jest lista lub rozszerzenie I don't care about cookies!
 ! Expires: 2 days
-! Last modified: Tue, 26 Dec 2023, 13:31 UTC+01:00
-! OriginalVersion: 2023.12.26.0
+! Last modified: Fri, 29 Dec 2023, 00:21 UTC+01:00
+! OriginalVersion: 2023.12.29.3
 ! Najnowsza wersja zawsze na: https://github.com/FiltersHeroes/PolishAnnoyanceFilters
 ! Zgłoszenia:
 !   Formularz (nie wymaga rejestracji) => https://polishannoyancefilters.netlify.app/issues
@@ -22,7 +22,7 @@
 ! Homepage: https://polishannoyancefilters.netlify.app
 ! Creator: blocker999
 ! Maintainer: Filters Heroes
-! Aktualizacja: wto, 26 gru 2023, 13:31 UTC+01:00
+! Aktualizacja: pią, 29 gru 2023, 00:21 UTC+01:00
 !
 !
 ! Newslettery (nie popupy)
@@ -499,7 +499,8 @@ dressler.com.pl###features > div > div:first-of-type
 drewno.pl###nl_sticky
 drmaxdrogeria.pl##.subscription-wrapper
 drogeriausa.pl###newsletter_el
-drogerienatura.pl##.items-center.xl\:px-0.px-4.flex-col.flex.z-10.relative.xl\:max-w-full.max-w-\[580px\].mx-auto
+drogerienatura.pl##img[src*="/subscribe/bg.jpg"]
+drogerienatura.pl,zakamarki.pl###newsletter-validate-detail
 drogeriepolskie.pl##.footer-newsletter-area
 drogerium.pl##.newsletterek
 drogowskazykariery.pl##.module_column_5-11-3.module_column_3.tb_5_column.module_column.last.col4-1.tb-column
@@ -1141,7 +1142,6 @@ niebezpiecznik.pl###text-3 > .widgettitle
 niebezpiecznik.pl,telewizja-cyfrowa.com##.textwidget > form
 niebieski.net##.top-newsletter
 niebonatalerzu.pl##.footer div.col-md-1:nth-of-type(3)
-niedzwiedz.lento.pl##tbody > .notify-save
 niemczyk.pl###newsleter
 nieznanyswiat.pl###Mod169
 nivea.pl##.nx-newsletter
@@ -1872,7 +1872,6 @@ zadowolenie.pl###NewsletterLP
 zadowolenie.pl##.b-adZone_wide:nth-of-type(7)
 zadowolenie.pl##.image_widget.widget > .js-imageWidget
 zaffiro.shop###newsletterWidget
-zakamarki.pl###newsletter-validate-detail
 zakoplan.pl##.footer-row > div.columns:nth-of-type(4)
 zakupy.auchan.pl#?#div[class][content="[object Object]"][add-background="true"] section:-abp-has(> h3:-abp-contains(Zamów nasz newsletter) ~ form)
 zakupydladziecka.pl##.modNewsltter
@@ -11580,6 +11579,7 @@ lancerto.com##.modals-wrapper:has(.popup-newsletter)
 leftlane.pl###timed-pup:has(.zeen-widget)
 leftlane.pl###tipi-overlay
 leftlane.pl#$#.modal-active { overflow: auto !important }
+lento.pl#%#//scriptlet('ubo-set-cookie.js', 'notifybox', '1')
 lewmik.pl#$#.modal-open[class] { padding-right: 0 !important; margin-right: 0 !important }
 limango.pl##.js_welcome_background.background_overlay, .modal, .modal-backdrop
 logitechg.com##.email-subscription-modal
@@ -11663,6 +11663,9 @@ panel.kei.pl##.popup-modal:has(a[href*="/polls/ankieta"])
 panwybierak.pl#$#.iziModal-isOverflow { position: static !important; overflow: auto !important }
 panwybierak.pl##.modal--remind.iziModal, .iziModal-overlay
 panwybierak.pl##.modal-unload, .modal-backdrop
+panwybierak.pl,readspeaker.com,sfd.pl#$#html.show--consent[class], html.show--consent[class] body { overflow-y: auto !important }
+panwybierak.pl,readspeaker.com,sfd.pl#@$#html.show--consent[class], html.show--consent[class] body { overflow: auto !important }
+panwybierak.pl,readspeaker.com,sfd.pl#@$#html.show--consent[class], html.show--consent[class] body { overflow: visible !important }
 pasmanteria.eu##.swal2-modal, .swal2-container
 payukraine.com#$#.gl-blur { filter: none !important }
 payukraine.com##.pc_withoutCommissionBanner
@@ -11882,37 +11885,37 @@ sportowefakty.wp.pl#%#//scriptlet('ubo-ra.js', 'id', '.exitpopup')
 zoo.bydgoszcz.com###NewsShow, .modal-backdrop
 !@ <<<<<<<< popupy_bez_html + https://raw.githubusercontent.com/FiltersHeroes/PolishSocialCookiesFiltersDev/master/sections/adblock_social_list/uBO_AG/popupy_bez_html.txt
 !@ >>>>>>>> popupy_AG + https://raw.githubusercontent.com/FiltersHeroes/PolishSocialCookiesFiltersDev/master/sections/adblock_social_list/uBO_AG/popupy_AG.txt
-!ekliniki.pl$$#popup-message
+!ekliniki.pl$$[id="popup-message"]
 4kdownload.com##.remodal-overlay
 4kdownload.com##.remodal-wrapper:has(> .thanks-modal)
 4kdownload.com#$#body[style] { padding-right: 0 !important }
 4kdownload.com#$#html.remodal-is-locked { overflow: auto !important }
-4kdownload.com$$.thanks-modal
-alemeksyk.eu$$.pwebbox-plugin-facebook_page_plugin
-apynews.pl$$#fb-modal
-arms.com.pl,chrisbenzshop.pl,e-forma.pl,homeoapteka.pl,meblezagrosze.pl,oponyalbert.pl,zegarkiabc.pl$$#newsletter_colorbox
+4kdownload.com$$[class="thanks-modal"]
+alemeksyk.eu$$[class="pwebbox-plugin-facebook_page_plugin"]
+apynews.pl$$[id="fb-modal"]
+arms.com.pl,chrisbenzshop.pl,e-forma.pl,homeoapteka.pl,meblezagrosze.pl,oponyalbert.pl,zegarkiabc.pl$$[id="newsletter_colorbox"]
 bartek.com.pl##.journal-popup, .mfp-bg, .mfp-ready
 bartek.com.pl#$#html { overflow: auto !important; margin-right: 0 !important; }
 bartek.com.pl$$script[tag-content="popupNewsletter"]
 biznes-host.pl###myModalPromo, .modal-backdrop
 biznes-host.pl#$#.modal-open { overflow: auto !important; }
-biznes-host.pl$$#myModalPromo
+biznes-host.pl$$[id="myModalPromo"]
 biznesinfo.pl,domekiogrodek.pl,goniec.pl,pacjenci.pl,rolnikinfo.pl,swiatgwiazd.pl,swiatsportu.pl,swiatzwierzat.pl,techgame.pl,turysci.pl,wawainfo.pl,wtv.pl,zdrogi.pl#%#//scriptlet('set-local-storage-item', '__iberion__publisherPromptSeen', '3')
-comperia.pl$$#modal_woman
-cyberfolks.pl$$#myModalDomenowy
-diamante-wear.com$$.newsletter__popup
-drzwi-cal.pl$$.pum-theme-promocja-urodzinowa.popmake-overlay
-e-spar.com.pl$$#modal-welcome
-homebook.pl$$script[id^="tpl-newsletter-popup"]
+comperia.pl$$[id="modal_woman"]
+cyberfolks.pl$$[id="myModalDomenowy"]
+diamante-wear.com$$[class="newsletter__popup"]
+drzwi-cal.pl$$[class="pum-theme-promocja-urodzinowa"][class="popmake-overlay"]
+e-spar.com.pl$$[id="modal-welcome"]
+homebook.pl$$script[id="tpl-newsletter-popup"]
 intermarche.pl$$div[style="display:none"][tag-content="wplightbox"]
 it.tarnow.pl$$script[tag-content="livingModal"]
 lento.pl$$script[tag-content="showNotify()"]
-lookcam.com$$#lookcam-fb-modal
-makarun.pl$$.makarun-modal
-mediasam.pl$$#myWorning
-mprofi.pl$$.tve-leads-lightbox
-muscat.pl$$#discountPopup
-ogrodosfera.pl$$#NewsletterExit
+lookcam.com$$[id="lookcam-fb-modal"]
+makarun.pl$$[class="makarun-modal"]
+mediasam.pl$$[id="myWorning"]
+mprofi.pl$$[class="tve-leads-lightbox"]
+muscat.pl$$[id="discountPopup"]
+ogrodosfera.pl$$[id="NewsletterExit"]
 sferis.pl#$#html.fancybox-lock > body { overflow: auto !important; }
 sferis.pl#$#html.fancybox-lock { overflow: auto !important; margin-right: 0 !important; }
 sferis.pl#?#.fancybox-overlay:has(#newsletter-popup)
@@ -11920,8 +11923,8 @@ shoplet.pl#$#html.fancybox-lock > body { overflow: auto !important }
 shoplet.pl#$#html.fancybox-lock { overflow: auto !important }
 shoplet.pl#$#html.fancybox-margin { margin-right: 0 !important }
 shoplet.pl#?#.fancybox-overlay:has(#x13callback)
-sportowefakty.wp.pl$$#exitpopup
-zoo.bydgoszcz.com$$#NewsShow
+sportowefakty.wp.pl$$[id="exitpopup"]
+zoo.bydgoszcz.com$$[id="NewsShow"]
 !@ <<<<<<<< popupy_AG + https://raw.githubusercontent.com/FiltersHeroes/PolishSocialCookiesFiltersDev/master/sections/adblock_social_list/uBO_AG/popupy_AG.txt
 !
 !
@@ -12244,7 +12247,7 @@ youtube.com#$#html[dark] #guide-inner-content::-webkit-scrollbar-thumb { backgro
 #@#div[style]:not([id], [class]):has(> h2 ~ span[title*="-extension://"][title*="/web_accessible_resources/epicker-ui.html"])
 #@?#div[style]:not([id], [class]):has(> h2 ~ span[title*="-extension://"][title*="/web_accessible_resources/epicker-ui.html"])
 karachan.org$$script[wildcard="style*xD"][min-length="100"]
-komputerswiat.pl$$#ks_breaking_news
+komputerswiat.pl$$[id="ks_breaking_news"]
 wbgroup.pl#@$#:matches-media((max-width: 999px)) header > .Header-content { display: flex !important }
 www.youtube.com#@$?##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) > #contents:first-child { max-width: unset !important; }
 www.youtube.com#@$?##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) ytd-rich-grid-media { max-width: unset !important; }
