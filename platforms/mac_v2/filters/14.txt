@@ -1,9 +1,9 @@
-! Checksum: 8rjBsbh8NgVElbHTFzNo/w
-! Diff-Path: ../patches/14/14-m-28397615-60.patch
+! Checksum: JqldFaU7NNiGBgWmNAGpWw
+! Diff-Path: ../patches/14/14-m-28397675-60.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.82.0
-! TimeUpdated: 2023-12-29T13:32:20+00:00
+! Version: 2.1.82.1
+! TimeUpdated: 2023-12-29T14:32:19+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2335,6 +2335,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+pccomponentes.com#%#//scriptlet('set-cookie', 'accept_cookie', '1')
 stpetecatalyst.com#%#//scriptlet('trusted-set-cookie', 'newsletter_popup_dismissed', '1')
 ||saldaodainformatica.com.br/modules/cookiesplus/
 sg.theasianparent.com##.cookie-acceptance-popup
@@ -28317,6 +28318,10 @@ com-magazin.de##w-div[role$="dialog"]
 ||sud.ua/js/jquery.arcticmodal*.min.js
 /jquery.magnific-popup.min.js$domain=ufatime.ru|koreanworld.ru
 !
+! TODO: replace when the 'abort-on-localStorage-read' scriptlet will be added to AdGuards
+! https://github.com/AdguardTeam/Scriptlets/issues/383
+wtsp.com#%#!function(){const e={apply:(e,o,t)=>{if(t[0]&&t[0].includes("_tegna_exitInterstitial_cooldown"))throw new Error;return Reflect.apply(e,o,t)}};window.localStorage.setItem=new Proxy(window.localStorage.setItem,e)}();
+!
 ! manatoki*.net - frequently changed domains
 ##body[class^="responsive is-"] > div#hd_pop
 !
@@ -29916,7 +29921,7 @@ square-enix-games.com##div[class^="notificationsBannerPadding_Layout"]
 square-enix-games.com##div[class^="container_NotificationsBanner"]
 thebell.io##.banner-bottom-subscribe
 woman.rambler.ru##.popup.j-mail-alert
-wfaa.com,13newsnow.com,wusa9.com,kgw.com,king5.com,wcnc.com,kens5.com,khou.com,wkyc.com,ksdk.com##.page__notifications
+wtsp.com,wfaa.com,13newsnow.com,wusa9.com,kgw.com,king5.com,wcnc.com,kens5.com,khou.com,wkyc.com,ksdk.com##.page__notifications
 fox17online.com###desktop-notifications
 ||s.aimg.sk/zive_symfony/build/push-notification.*.js
 ||rankomat.pl/kalkulator/client_app/assets/push-notifications/push-notifications.script.js
@@ -44600,6 +44605,8 @@ theguardian.com##.contributions__adblock
 !
 ! SECTION: Self-promo - Regular rules
 !
+chugaku-juken.com###satori__creative_container
+chugaku-juken.com##.entry-content > a[href="https://chugaku-juken.com/post_lp/mailmagazine/"]
 blog.skillfactory.ru##.banner__middle
 blog.skillfactory.ru##.wp-block-vadim-banner-strip
 blog.skillfactory.ru##.wp-block-vadim-banner-center
