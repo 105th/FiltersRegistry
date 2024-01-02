@@ -1,9 +1,9 @@
-! Checksum: wK02zzJGw/hZX659GvgupA
-! Diff-Path: ../patches/14/14-m-28403495-60.patch
+! Checksum: 1tyieyPdhNTBFv6PIUqppw
+! Diff-Path: ../patches/14/14-473392-4.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.82.19
-! TimeUpdated: 2024-01-02T15:32:31+00:00
+! Version: 2.1.82.20
+! TimeUpdated: 2024-01-02T16:07:40+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2335,6 +2335,8 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+riga.lv#$#body { overflow: auto !important; }
+riga.lv#$#body #cookieConsent { display: none !important; }
 manninc.co.uk##body.bodyLock::before
 ||stores.enzuzo.com/apps/enzuzo/static/js/__enzuzo-cookiebar.js$domain=manninc.co.uk
 tuasaude.com##.consent-bar-wrapper
@@ -14878,6 +14880,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/169734
+riga.lv#@##cookieConsent
+riga.lv#@#.cookie-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169393
 @@||app.usercentrics.eu/browser-ui/$domain=wohnglueck.de
 @@||api.usercentrics.eu/settings/$domain=wohnglueck.de
@@ -22387,6 +22392,8 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+programmercollege.jp###goSessionPopup
+programmercollege.jp##.singlewrapper__side
 games.dmm.co.jp#?#section[data-gtm-rotating-banner] ~ div:not([class],[id]):has(> div[class]:only-child > div[style]:only-child > div[class]:only-child > button[aria-label="close"])
 games.dmm.co.jp#?#section[data-gtm-rotating-banner] ~ aside:has(> div[class] > div[class] > div[class] > button[aria-label="close"])
 games.dmm.co.jp#?#main > div[class] > aside[class]:has(> div[class] > a[href^="https://rcv.ixd.dmm.com/api/surl?"])
@@ -30304,6 +30311,7 @@ newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,theloca
 !
 ! SECTION: Subscriptions - Regular rules
 !
+revolution-energetique.com#?#section:has(> form.NLInfeed)
 ||automobile-propre.com/app/themes/automobile-propre/assets/custom/js/ap.popup-nl.js
 codereliant.io##.gh-portal-triggerbtn-iframe
 theasianparent.com##.newsletter-subscribe-card-warp
@@ -34247,7 +34255,7 @@ insiderintelligence.com##.lazyload-wrapper > div.subToDaily
 insiderintelligence.com#?#.container > div.hidden:has(> div.flex > div > form[id^="ArticleNewsletterBottom"])
 elpais.com##a[href^="https://usuarios.elpais.com/newsletters/"]
 elpais.com##a[href^="https://plus.elpais.com/newsletters/"]
-latest-ufo-sightings.net,silesion.pl,thetruedefender.com,sociology.utoronto.ca###text-3
+revolution-energetique.com,latest-ufo-sightings.net,silesion.pl,thetruedefender.com,sociology.utoronto.ca###text-3
 topdocumentaryfilms.com#?#aside > div.module:has(> form[action^="https://app.bigmailer.io"])
 ebookee.com##form[action="//www.feedburner.com/fb/a/emailverify"]
 ebookee.com#?##secondNav > ul:has(> li > a[href="//feeds.feedburner.com/ebookee"])
@@ -42552,7 +42560,7 @@ eurosport.co.uk#$#div[data-testid^="player-pip"] { position: static !important; 
 eurosport.co.uk#$##navigation-wrapper { position: static !important; }
 dr-farfar.com##.widget_boombox_social
 xatakamovil.com##.menu-follow
-bugun.uz##.tg_link
+trashexpert.ru,bugun.uz##.tg_link
 kommersant.uk##.content-default__sidebar > aside > div.advertising
 mcafee.com##.stay-updated
 mcafee.com##.sidebar-socialicons
