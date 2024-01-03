@@ -543,8 +543,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/11_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.66",
-			"timeUpdated": "2024-01-03T13:32:32+0000",
+			"version": "2.0.47.67",
+			"timeUpdated": "2024-01-03T18:32:46+0000",
 			"languages": [],
 			"tags": [
 				1,
@@ -607,8 +607,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/15_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.42",
-			"timeUpdated": "2024-01-03T17:32:38+0000",
+			"version": "2.0.59.43",
+			"timeUpdated": "2024-01-03T18:32:52+0000",
 			"languages": [],
 			"tags": [
 				45,
