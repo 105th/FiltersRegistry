@@ -1,10 +1,10 @@
-! Checksum: 2mwIJNOTVKzLxv6f17zIUg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28404636-60.patch
+! Checksum: hm+dYFWVBwBrr6u9/INsqg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28404695-60.patch
 ![Adblock Plus 2.0]
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.14.47
-! TimeUpdated: 2024-01-03T10:33:58+00:00
+! Version: 2.3.14.48
+! TimeUpdated: 2024-01-03T11:33:02+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19881,6 +19881,8 @@ movie76.com##img[alt="ads"]
 !---------------------------------------------------------------------
 ! NOTE: Italian
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/169541
+||libero.it/public/*/js/adv.min.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169452
 alvolante.it##div[id^="dfp-alv-slot-"]
 alvolante.it##div[id^="adv-"]
@@ -32552,6 +32554,7 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+||combo.staticflickr.com/*/combo?ap:build/hermes-*/hermes-template-photo-ad-page/hermes-template-photo-ad-page-min.js$domain=flickr.com
 finbold.com##div[id^="finbold.com_"]
 lipstickalley.com##.block-body > .block:not([data-widget-id])
 wpde.com##[class^="NewAd-"]
@@ -49258,7 +49261,6 @@ google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/84827
 ||outlook.live.com/ows/*/OutlookOptions/AdsAggregate
-outlook.live.com##.customScrollBar > div[class] > div[class]:empty
 /owa.MailBoot~MessageAdList.json$domain=outlook.live.com
 outlook.live.com##div[role="region"][data-max-height] > div.threeColItemViewSenderImageOn + div div:empty
 outlook.live.com#?##app > .ms-Fabric > div[class] > div[class] > div[class]:has(> div > div > div[id^="owaadbar"])
@@ -49268,6 +49270,9 @@ outlook.live.com#?##app > div[class] > div[class] > div[class] > div[class]:not(
 outlook.live.com#?##app > div[class] > div[class] > div[class] > div[class]:not(.ms-FocusZone):not([class^="screenReaderText"]) div[data-max-width] + div[class]:has(> div[class] > div > div[id^="owaadbar"])
 ! outlook.live.com - left-over when density set to Cozy/Compact
 outlook.live.com#?#.customScrollBar[data-is-scrollable] > div[class] > div[class]:not([data-convid]):has(> div:not([id]):not([class]) > div[class] > div[class] > div[class] > div[class] > div[class] > .fbAdLink)
+! breaks page layout
+! https://github.com/AdguardTeam/AdguardFilters/issues/169476
+! outlook.live.com##.customScrollBar > div[class] > div[class]:empty
 !
 ! check-host.net
 check-host.net##.mt-3\.5 > div > div[id*="t"][id*="a"][class] img.gofull
