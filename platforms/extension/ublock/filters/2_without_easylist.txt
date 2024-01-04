@@ -1,10 +1,10 @@
-! Checksum: nBHwFfatSE6E5tHTEbxl8g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28406015-60.patch
+! Checksum: 8SifC9jDQYIx1UlARRt0BQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28406076-60.patch
 ![Adblock Plus 2.0]
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.14.64
-! TimeUpdated: 2024-01-04T09:32:47+00:00
+! Version: 2.3.14.65
+! TimeUpdated: 2024-01-04T10:34:26+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7183,8 +7183,9 @@ mhn.quest##+js(no-setTimeout-if, .adblock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169610
 hardreset.info###ez-content-blocker-container
 hardreset.info##+js(set-constant, ezDetectAardvark, noopFunc)
+! https://github.com/AdguardTeam/AdguardFilters/issues/169878
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169492
-loot-links.com##+js(no-fetch-if, pagead2.googlesyndication.com)
+lootlinks.co,loot-links.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169660
 flixscans.org##+js(no-fetch-if, pagead2.googlesyndication.com)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=googlesyndication.com/adsbygoogle.js,domain=flixscans.org
@@ -7714,9 +7715,11 @@ unitystr.com,azrotv.com,uptoplay.net,reviewtech.me##+js(no-fetch-if, /histats\.c
 matrixserver.in#@#.banner_728x90
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161558
 ||cdn.almaftuchin.com/js/no-adblock.js
-! Used only as a bait
+! Used only as a bait - Admiral
+! Exceptions are also required because these requests can be blocked by other rules
+||succeedscene.com^$badfilter
 @@||succeedscene.com/*/ads.load.js
-@@||succeedscene.com/ads/js/min.js
+@@||succeedscene.com/ads/*/*.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161405
 ! Metroland Media Group
 thestar.com,thespec.com,therecord.com,thepeterboroughexaminer.com,stcatharinesstandard.ca,niagarafallsreview.ca,wellandtribune.ca,bramptonguardian.com,caledonenterprise.com,cambridgetimes.ca,durhamregion.com,flamboroughreview.com,guelphmercury.com,hamiltonnews.com,insidehalton.com,insideottawavalley.com,mississauga.com,muskokaregion.com,mykawartha.com,newhamburgindependent.ca,niagarathisweek.com,northbaynipissing.com,northumberlandnews.com,orangeville.com,ourwindsor.ca,parrysound.com,sachem.ca,simcoe.com,theifp.ca,toronto.com,waterloochronicle.ca,yorkregion.com,legacy.com,edition.pagesuite-professional.co.uk,hub.metroland.com#@#.pub_300x250
@@ -27403,8 +27406,9 @@ vidsvidsvids.com##+js(set-cookie, pu_count, 1)
 hanime.tv##+js(set-cookie, in_d0, 1)
 hanime.tv##+js(set-cookie, in_d4, 1)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169606
+! https://github.com/AdguardTeam/AdguardFilters/issues/169878
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169492
-loot-links.com##+js(window.open-defuser, , 5)
+lootlinks.co,loot-links.com##+js(window.open-defuser, , 5)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169200
 player.euroxxx.net##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169304
@@ -33058,7 +33062,6 @@ camwhoresbay.*##a[href^="https://t.affenhance.com/"]
 crx4chrome.com#?##sidebar > div.sidebar-widget:has(> div[style*="min-height:250px;"])
 crx4chrome.com##div[style*="min-height:280px;"]
 2ip.*#?#.ipblockgradient > div.ip + div[class]:contains(IP)
-loadout.tf#?#.loadout-application-top > div[style]:has(> div[style] > div[data-i18n="#advertisement"])
 7mm001.com,7mmtv.sx##div[id][style^="position: absolute;  z-index: 12345;width: 100%; height: 100%; left: 0;  top: 0;background: gold;"]
 7mm001.com,7mmtv.sx##body .set_height_250
 aeternum-map.gg#?#div:has(> div#player)
@@ -47849,6 +47852,7 @@ escapegames24.com#?#.widget-content > div[align="center"]:has(> font > b:contain
 taxi-point.co.uk#?#div[id^="comp-"] > a[data-testid="linkElement"] > wix-image[data-src$="~mv2.gif"]:upward(2)
 comidoc.net#?#.MuiBox-root > .MuiCard-root > .adsbygoogle:upward(1)
 gamedev.net#?#.justify-content-start.align-items-center.mb-3 > div[id^="div-gpt-ad"]:upward(1)
+loadout.tf#$?#.loadout-application-top > div[style]:has(> div[style] > div[data-i18n="#advertisement"]) { position: absolute !important; left: -3000px !important; }
 loadout.tf#$?#.flex-panel[style^="display: flex; flex-direction: column; order:"] > .loadout-application-advertisement-header:upward(1) { position: absolute!important; left: -3000px!important; }
 dlsharefile.com#?#.mt-5 > div[class="border bg-secondary"]:has(a[href^="https://www.amazon.com/"])
 shotwars.io#?#.menuCard[style] > div[id^="shotwars-io_"]:upward(1)
@@ -55854,6 +55858,7 @@ implbits.com#@#.banner_container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165930
 ! https://github.com/AdguardTeam/CoreLibs/issues/1825
 ! TODO: remove when issue in CoreLibs is fixed
+! https://github.com/AdguardTeam/AdguardFilters/issues/169878
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169492
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168442
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165623
