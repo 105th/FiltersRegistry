@@ -1,10 +1,10 @@
-! Checksum: TrsGD9IEquCPuD3KIDT8Ag
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28405836-60.patch
+! Checksum: vG4GxRDYHi+uCA7tkqP/iQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28405895-60.patch
 ![Adblock Plus 2.0]
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.14.61
-! TimeUpdated: 2024-01-04T06:34:13+00:00
+! Version: 2.3.14.62
+! TimeUpdated: 2024-01-04T07:32:49+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7456,8 +7456,6 @@ btvsports.click#@##ad_left_top
 btvsports.click#@##googlead2
 btvsports.click#@##omnibar_ad
 btvsports.click#@##GoogleAd2
-! https://github.com/AdguardTeam/AdguardFilters/issues/153330
-privatemoviez.pics#@#[id^="google_ads_iframe"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153103
 @@||c.adsco.re^$domain=shorterall.com
 @@||adsco.re/p$domain=shorterall.com
@@ -9079,9 +9077,6 @@ hentai.guru,hentaihaven.vip##+js(no-fetch-if, ads-twitter.com)
 paraphraser.io#$#body #detect[class] { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133102
 rephrase.info#$#body #detect[class] { display: block !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/132995
-privatemoviez.buzz#@#.adbanner
-privatemoviez.buzz##+js(no-setTimeout-if, siteAccessPopup())
 ! https://github.com/AdguardTeam/AdguardFilters/issues/132820
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=fastssh.com
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=googlesyndication.com/adsbygoogle.js,domain=fastssh.com,important
@@ -9301,9 +9296,11 @@ vijaysolution.com##+js(no-setTimeout-if, siteAccessPopup())
 dubznetwork.com#@#.adsbyvli
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129165
 ||shortx.net/js/block00.js
+! https://github.com/AdguardTeam/AdguardFilters/issues/169882
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129170
-privatemoviez.fun#@#.adbanner
-privatemoviez.fun##+js(no-setTimeout-if, siteAccessPopup())
+privatemoviez.*#@#.adbanner
+privatemoviez.*#@#[id^="google_ads_iframe"]
+privatemoviez.*##+js(no-setTimeout-if, /placebo\.height|siteAccess/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128862
 ||csspoint101.com/wp-content/uploads/klydig.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129118
@@ -23888,6 +23885,9 @@ kinoseans.pl##+js(set-constant, count, 0)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34228
 ! wp.pl ads - iOS
 ! TODO: remove when this issue will be fixed - https://github.com/AdguardTeam/AdguardForiOS/issues/1897
+! https://github.com/AdguardTeam/AdguardFilters/issues/169879
+deliciousmagazine.pl#?#style + div[class] > img[src^="https://v.wpimg.pl/"]:only-child:upward(1)
+deliciousmagazine.pl#?#style + div[class] > img[src^="https://v.wpimg.pl/"]:first-child + div:last-child:upward(1)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/150824
 domodi.pl##.product-list__ad
 domodi.pl#?#article div[data-t][class]:has(> div[data-model*="wpId"])

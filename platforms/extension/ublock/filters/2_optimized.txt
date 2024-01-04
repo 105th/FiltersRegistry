@@ -1,10 +1,10 @@
-! Checksum: /4GXOGOMPvAU37HlxDxZzg
-! Diff-Path: ../patches/2_optimized/2_optimized-m-28405836-60.patch
+! Checksum: 1kIMLKdSCKJDt8HHVhCuuw
+! Diff-Path: ../patches/2_optimized/2_optimized-m-28405895-60.patch
 ![Adblock Plus 2.0]
 ! Title: AdGuard Base filter + EasyList (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.14.61
-! TimeUpdated: 2024-01-04T06:34:13+00:00
+! Version: 2.3.14.62
+! TimeUpdated: 2024-01-04T07:32:49+00:00
 ! Expires: 4 days (update frequency)
 ||dotercouther.uno^
 ||overlapparians.com^
@@ -1266,7 +1266,6 @@ btvsports.click#@##ad_left_top
 btvsports.click#@##googlead2
 btvsports.click#@##omnibar_ad
 btvsports.click#@##GoogleAd2
-privatemoviez.pics#@#[id^="google_ads_iframe"]
 @@||c.adsco.re^$domain=shorterall.com
 @@||adsco.re/p$domain=shorterall.com
 emoji.gg###yousuck
@@ -1970,8 +1969,6 @@ apkhex.com##+js(abort-on-property-read, adsBlocked)
 sbs.com.au##+js(set-constant, adBlockerDetected, false)
 @@||static.ads-twitter.com/uwt.js$domain=hentai.guru|hentaihaven.vip
 hentai.guru,hentaihaven.vip##+js(no-fetch-if, ads-twitter.com)
-privatemoviez.buzz#@#.adbanner
-privatemoviez.buzz##+js(no-setTimeout-if, siteAccessPopup())
 @@||fastssh.com/dfp.min.js
 fastssh.com#@#.ad-box:not(#ad-banner)
 fastssh.com#@#.ad-wrapper
@@ -2044,8 +2041,9 @@ rakuten.tv##+js(no-xhr-if, /springserve\.com|cdn\.spotxcdn\.com\/media\//)
 vijaysolution.com#@#.adbanner
 vijaysolution.com##+js(no-setTimeout-if, siteAccessPopup())
 dubznetwork.com#@#.adsbyvli
-privatemoviez.fun#@#.adbanner
-privatemoviez.fun##+js(no-setTimeout-if, siteAccessPopup())
+privatemoviez.*#@#.adbanner
+privatemoviez.*#@#[id^="google_ads_iframe"]
+privatemoviez.*##+js(no-setTimeout-if, /placebo\.height|siteAccess/)
 9anime.skin#@#.ad-placement
 toolsincloud.com##+js(set-constant, canRunAds, true)
 raider.io##+js(abort-on-property-read, RIO_OnProviderBlocked)
@@ -5989,6 +5987,8 @@ wylecz.to#?#.row div[class][style*="border-bottom"][style*="max-height:"] > div[
 @@||serialosy.pl^$generichide
 vorek.pl##+js(no-setTimeout-if, .offsetHeight)
 kinoseans.pl##+js(set-constant, count, 0)
+deliciousmagazine.pl#?#style + div[class] > img[src^="https://v.wpimg.pl/"]:only-child:upward(1)
+deliciousmagazine.pl#?#style + div[class] > img[src^="https://v.wpimg.pl/"]:first-child + div:last-child:upward(1)
 vibez.pl##div[suppresshydrationwarning]
 dobreprogramy.pl#$#html > body > * { opacity: 1 !important; }
 poczta.wp.pl#@#[class^="css-"]
@@ -29514,6 +29514,7 @@ theepochtimes.com##.eet-ad
 huffingtonpost.co.uk,huffpost.com##.entry__right-rail-width-placeholder
 euronews.com##.enw-MPU
 metric-conversions.org##.exists
+chorus.fm##.f-soc
 tvtropes.org##.fad
 futbin.com##.fb-ad-placement
 whatismyipaddress.com##.fbx-player-wrapper
@@ -30453,6 +30454,7 @@ spanishdict.com###removeAdsSidebar
 ldoceonline.com###rightslot2-container
 tweaktown.com##.adcon
 rawstory.com##.connatix-hodler
+boatsonline.com.au,yachthub.com##.js-sticky
 yandex.com##div[id^="yandex_ad"]
 google.ac,google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,google.be,google.bf,google.bg,google.bi,google.bj,google.bs,google.bt,google.by,google.ca,google.cat,google.cd,google.cf,google.cg,google.ch,google.ci,google.cl,google.cm,google.co.ao,google.co.bw,google.co.ck,google.co.cr,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.kr,google.co.ls,google.co.ma,google.co.mz,google.co.nz,google.co.th,google.co.tz,google.co.ug,google.co.uk,google.co.uz,google.co.ve,google.co.vi,google.co.za,google.co.zm,google.co.zw,google.com,google.com.af,google.com.ag,google.com.ai,google.com.ar,google.com.au,google.com.bd,google.com.bh,google.com.bn,google.com.bo,google.com.br,google.com.by,google.com.bz,google.com.cn,google.com.co,google.com.cu,google.com.cy,google.com.do,google.com.ec,google.com.eg,google.com.et,google.com.fj,google.com.gh,google.com.gi,google.com.gt,google.com.hk,google.com.jm,google.com.jo,google.com.kh,google.com.kw,google.com.lb,google.com.ly,google.com.mm,google.com.mt,google.com.mx,google.com.my,google.com.na,google.com.ng,google.com.ni,google.com.np,google.com.om,google.com.pa,google.com.pe,google.com.pg,google.com.ph,google.com.pk,google.com.pr,google.com.py,google.com.qa,google.com.ru,google.com.sa,google.com.sb,google.com.sg,google.com.sl,google.com.sv,google.com.tj,google.com.tn,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vc,google.com.ve,google.com.vn,google.cv,google.cz,google.de,google.dj,google.dk,google.dm,google.dz,google.ee,google.es,google.fi,google.fm,google.fr,google.ga,google.ge,google.gg,google.gl,google.gm,google.gp,google.gr,google.gy,google.hk,google.hn,google.hr,google.ht,google.hu,google.ie,google.im,google.iq,google.is,google.it,google.it.ao,google.je,google.jo,google.jp,google.kg,google.ki,google.kz,google.la,google.li,google.lk,google.lt,google.lu,google.lv,google.md,google.me,google.mg,google.mk,google.ml,google.mn,google.ms,google.mu,google.mv,google.mw,google.ne,google.ne.jp,google.ng,google.nl,google.no,google.nr,google.nu,google.pl,google.pn,google.ps,google.pt,google.ro,google.rs,google.ru,google.rw,google.sc,google.se,google.sh,google.si,google.sk,google.sm,google.sn,google.so,google.sr,google.st,google.td,google.tg,google.tl,google.tm,google.tn,google.to,google.tt,google.us,google.vg,google.vu,google.ws###tads[aria-label]
 google.ac,google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,google.be,google.bf,google.bg,google.bi,google.bj,google.bs,google.bt,google.by,google.ca,google.cat,google.cd,google.cf,google.cg,google.ch,google.ci,google.cl,google.cm,google.co.ao,google.co.bw,google.co.ck,google.co.cr,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.kr,google.co.ls,google.co.ma,google.co.mz,google.co.nz,google.co.th,google.co.tz,google.co.ug,google.co.uk,google.co.uz,google.co.ve,google.co.vi,google.co.za,google.co.zm,google.co.zw,google.com,google.com.af,google.com.ag,google.com.ai,google.com.ar,google.com.au,google.com.bd,google.com.bh,google.com.bn,google.com.bo,google.com.br,google.com.by,google.com.bz,google.com.cn,google.com.co,google.com.cu,google.com.cy,google.com.do,google.com.ec,google.com.eg,google.com.et,google.com.fj,google.com.gh,google.com.gi,google.com.gt,google.com.hk,google.com.jm,google.com.jo,google.com.kh,google.com.kw,google.com.lb,google.com.ly,google.com.mm,google.com.mt,google.com.mx,google.com.my,google.com.na,google.com.ng,google.com.ni,google.com.np,google.com.om,google.com.pa,google.com.pe,google.com.pg,google.com.ph,google.com.pk,google.com.pr,google.com.py,google.com.qa,google.com.ru,google.com.sa,google.com.sb,google.com.sg,google.com.sl,google.com.sv,google.com.tj,google.com.tn,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vc,google.com.ve,google.com.vn,google.cv,google.cz,google.de,google.dj,google.dk,google.dm,google.dz,google.ee,google.es,google.fi,google.fm,google.fr,google.ga,google.ge,google.gg,google.gl,google.gm,google.gp,google.gr,google.gy,google.hk,google.hn,google.hr,google.ht,google.hu,google.ie,google.im,google.iq,google.is,google.it,google.it.ao,google.je,google.jo,google.jp,google.kg,google.ki,google.kz,google.la,google.li,google.lk,google.lt,google.lu,google.lv,google.md,google.me,google.mg,google.mk,google.ml,google.mn,google.ms,google.mu,google.mv,google.mw,google.ne,google.ne.jp,google.ng,google.nl,google.no,google.nr,google.nu,google.pl,google.pn,google.ps,google.pt,google.ro,google.rs,google.ru,google.rw,google.sc,google.se,google.sh,google.si,google.sk,google.sm,google.sn,google.so,google.sr,google.st,google.td,google.tg,google.tl,google.tm,google.tn,google.to,google.tt,google.us,google.vg,google.vu,google.ws###tadsb[aria-label]
