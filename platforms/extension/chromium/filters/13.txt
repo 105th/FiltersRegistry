@@ -1,9 +1,9 @@
-! Checksum: 3RLiruVWBnk/v8Nq+NpDnQ
-! Diff-Path: ../patches/13/13-m-28404875-60.patch
+! Checksum: vU+qZQW+j0zlukEi1Pqr2w
+! Diff-Path: ../patches/13/13-m-28406015-60.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.48.99
-! TimeUpdated: 2024-01-03T14:32:31+00:00
+! Version: 2.0.49.0
+! TimeUpdated: 2024-01-04T09:32:19+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -86,6 +86,7 @@
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
 !
+||srvd2204.com^
 ||cryptosmoke.care^$third-party
 ||intermediaworks.com^$third-party
 ||rtb.pixad.com.tr^
@@ -2025,6 +2026,9 @@ oyundunyasi.net,bilgenc.com,teknodiot.com,ruyashoujo.com,pchocasi.com.tr,dusunce
 ! Incorrectly blocked domains can be excluded using regex(synchronize this regexp in all filters)
 /^(?!.*(statically.io|sharecast.ws|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|polyfill.io|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yandex.|yastatic.net|ytimg.com|zencdn.net|player|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|imgsmail.ru)).*$/$third-party,script,_____,domain=erotik-film.org|pollos.cyou|dizigom.tv|fullindirsene.net|ehliyetsinavsorulari.org
 !
+! Similar to regexp above, but using the denyallow modifier
+! Be careful, if a site uses third-party resources (players etc.) and the rule applied in AdGuard for Safari/iOS
+$script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast.ws|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|polyfill.io|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io,_____,domain=dizigom1.com
 ! Similar to regexp above, but using the denyallow modifier and for xmlhttprequest
 $xmlhttprequest,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast.ws|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|polyfill.io|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io,_____,domain=ruyamanga.com
 !
@@ -2034,6 +2038,7 @@ $xmlhttprequest,third-party,denyallow=linkvertise.com|fastly.net|statically.io|s
 /service/advertchannels?$xmlhttprequest,redirect=nooptext,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
 !
+dizigom1.com##ins[class][data-key]
 kulaklik.com##.left-right-banner
 mangaoku.info##.c-top-sidebar .separator > a[target="_blank"]
 cheatglobal.com##.notices
@@ -2457,12 +2462,10 @@ itemci.com##.modal-backdrop
 itemci.com##div[class^="bg_rek_"]
 itemci.com##img[src^="https://cdn.itemci.com/storage/images/rek/"]
 yenibiris.com##.rightColumnForLarge > div.well.p0
-||fullhdizle.me/wp-content/uploads/*/melbet.gif
-||fullhdizle.me/wp-content/uploads/*/tophill.jpg
-/wp-content/uploads/*.mp4$domain=fullhdizle.me|dizifilmbox.*|fullhdizle.one
+/wp-content/uploads/*.mp4$domain=fullhdizle.*|dizifilmbox.*
 ||dizifilmbox.*/wp-content/uploads/*/bet*.gif
-fullhdizle.me,dizifilmbox.*##.bireklam
-fullhdfilmizlesenebox.net,fullhdizle.me##.player-ustu-metin
+fullhdizle.*,dizifilmbox.*##.bireklam
+fullhdfilmizlesenebox.net,fullhdizle.*##.player-ustu-metin
 dizifilmbox.*##a[target="_blank"] > img[width="100%"][height="100%"]
 dizifilmbox.*,fullhdizle.*###footer-fixed
 ||hdfilmhit.org/wp-content/uploads/*/videoonu.mp4
