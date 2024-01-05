@@ -1,9 +1,9 @@
-! Checksum: 4O1w6dFe9q7Pi626sM13Nw
-! Diff-Path: ../patches/14/14-m-28407995-60.patch
+! Checksum: zr/IQxQLCe6SzfaZmYdQQg
+! Diff-Path: ../patches/14/14-m-28408055-60.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.82.56
-! TimeUpdated: 2024-01-05T18:32:46+00:00
+! Version: 2.1.82.57
+! TimeUpdated: 2024-01-05T19:32:34+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2345,6 +2345,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+auto1.com#%#//scriptlet('trusted-click-element', 'button[data-testid="cookie-banner-accept-all-cookies-button"]')
 energy.instrat.pl###elementor-popup-modal-5014
 greencaffenero.pl###cookie-consent__dialog
 kfc.by###simple-cookies
@@ -14882,6 +14883,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/169574
+@@||auto1-cookie-gdpr.prod.mp.auto1.cloud/latest/cookieBanner.js$domain=auto1.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169966
 @@||geolocation.onetrust.com/cookieconsentpub/v*/geo/location$domain=soundcloud.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169963
@@ -22439,6 +22442,10 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+ukrainart.com.ua###bg_popup
+hyperhost.ua#$#.pop-ups { display: none !important; }
+hyperhost.ua#$#.pop-ups ~ div.modal-backdrop { display: none !important; }
+hyperhost.ua#$#body { overflow: auto !important; padding-right: 0 !important; }
 bitmovin.com##.nesscity-campaign
 gilt.com#$#.remodal-is-locked body { overflow: auto !important; }
 brilliant.org###loggedout-wiki-footer
@@ -39771,6 +39778,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+trello.com#%#//scriptlet('trusted-set-local-storage-item', 'mobilePromptClosed', '$now$')
 duolingo.com#?#footer[class^="_"] + div[class^="_"]:has(> div[class] > div[class^="_"] > a[href*="adj.st/?"])
 search.yahoo.co.jp#?#div[class^="ContentWrapper_wrapper_"]:has(> article[class^="W2ALink_"])
 search.yahoo.co.jp##article[class^="W2ALink_"]
