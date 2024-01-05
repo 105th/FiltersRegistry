@@ -404,6 +404,7 @@ http://*.ru/leftunit.pl?
 ! Kadam ads
 /kadam.base.min.js?
 !
+.bid/pjs/$script
 &adtype=
 &afftraf=
 &clientype=*&adid=
@@ -1477,6 +1478,7 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||bngtrak.com^$all
 ||fnasmpygwa.com^
 ||o1qry0qq83.com^
 ||fft.delovoemesto.ru^
@@ -7820,6 +7822,8 @@ fishki.net,hronika.info,meta.ua$$script[tag-content="window.AD_DOMAIN_URL_SYS"][
 !------- JS ------------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/169980
+videocelebs.net,xcadr.online#%#//scriptlet('trusted-set-local-storage-item', 'kvsplayer_popunder_open', '2000000000000')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167485
 online-fix.me#%#//scriptlet('trusted-replace-node-text', '#text', 'РЕКЛАМНЫЙ БЛОК:', 'РЕКЛАМНЫЙ БЛОК:', '')
 ! gameguru.ru
@@ -7978,8 +7982,8 @@ sports.ru,ua.tribuna.com,by.tribuna.com#%#//scriptlet('remove-class', 'branding_
 flibusta.appspot.com#%#//scriptlet("set-constant", "String.prototype.charCodeAt", "undefined")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59782
 trashbox.mobi#%#//scriptlet("set-constant", "landing_safe_showed", "1")
-! https://github.com/AdguardTeam/AdguardFilters/issues/59616
-porno-chiks.org#%#//scriptlet("set-constant", "flashvars.adv_pre_src", "undefined")
+! flashvars - clickunder or popunder
+videocelebs.net,xcadr.online,porno-chiks.org#%#//scriptlet('set-constant', 'flashvars.adv_pre_src', 'undefined')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58845
 mag.relax.by#%#//scriptlet('remove-class', 'b-global-branding', 'html')
 ! https://forum.adguard.com/index.php?threads/44134/
@@ -9901,6 +9905,7 @@ bits.media,devyatka.ru,gazeta-n1.ru,gorod48.ru,hi-fi.ru,innov.ru,k1news.ru,ktost
 !
 !
 !
+||bongacams*.com/track?c=$all
 softsalad.ru##.special-block
 trashexpert.ru##div[class*="smi24"]
 trashexpert.ru##.ad-on-desktop
@@ -10018,7 +10023,6 @@ ont.by##.b-renommee__wrap
 kaliningrad.welltex.ru#$?##header-banners-carousel > div.carousel-inner > div.carousel-item:has(> a[href^="/banners/"]) { remove: true; }
 rzd-partner.ru##.banner200
 rzd-partner.ru##.banner240100
-soccer365.com.ua##.adv
 soccer365.com.ua##div[style^="position:"][style*="height:90px"]
 disk.karelia.pro###cl_widget_reklama
 virtmachine.ru###content-holder article[id^="post-"] ~ br
@@ -10135,7 +10139,7 @@ tvmag.ru##a[href*=".tricolor.tv"] > img
 atorus.ru###block-headerads
 korsars.pro##a[href^="https://bit.ly/"] > img
 fontanka.ru##div[style*="--creative-height:"]
-kniga-online.com##.adv
+xcadr.online,soccer365.com.ua,kniga-online.com##.adv
 serialfan.net##.dle_b_help
 notepadonline.ru##.adbox
 cian.ru##div[data-name="AdFoxBannerTracker"]
