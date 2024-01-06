@@ -1,9 +1,9 @@
-! Checksum: 9NxEbBTQKSaF/1s5cXbCBQ
-! Diff-Path: ../patches/16/16-m-28407995-60.patch
+! Checksum: OxY/uR9TWNrEtkp+2/u0sg
+! Diff-Path: ../patches/16/16-m-28409495-60.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.42.62
-! TimeUpdated: 2024-01-05T18:32:50+00:00
+! Version: 2.0.42.63
+! TimeUpdated: 2024-01-06T19:32:33+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -139,6 +139,10 @@ capital.fr#@#.plainAd
 !
 !
 !
+! systemed.fr
+systemed.fr#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=systemed.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169025
 cyclismactu.net#%#//scriptlet('prevent-addEventListener', 'load', 'isAdblock')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168555
@@ -835,6 +839,8 @@ tf1info.fr#%#//scriptlet('set-constant', '__NEXT_DATA__.runtimeConfig.playerTF1.
 !------- CSS fixes --------------------!
 !--------------------------------------!
 !
+! systemed.fr - blank space at the top
+systemed.fr#$#html >body.hasHabillage { padding-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166761
 ooparc.com#$##advert-bg-top { visibility: hidden !important; height: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154929
