@@ -1,9 +1,9 @@
-! Checksum: 42zVkxMaZmNS7oxS/5d8Nw
-! Diff-Path: ../patches/14/14-m-28411963-60.patch
+! Checksum: j+Hg+ubdHoUJgh4khYPKNw
+! Diff-Path: ../patches/14/14-m-28412015-60.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.82.69
-! TimeUpdated: 2024-01-08T12:40:37+00:00
+! Version: 2.1.82.70
+! TimeUpdated: 2024-01-08T13:32:38+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2748,9 +2748,6 @@ redscan.com##.aws-cookie-consent
 pdfforge.org#?##__next > div.GridContainer:has(> div.GridItem > p:contains(Cookie))
 pdfextra.com##.display-cookies
 theloadstar.com###lc-cookie-bar
-nouvelobs.com#$#.gdpr-glm-wall { display: none !important; }
-nouvelobs.com#$#body[class] { overflow: auto !important; }
-nouvelobs.com#$#html[class] { overflow: auto !important; }
 inpa.gov.it##.ngx-lib-privacy-cookie-banner-backdrop
 iscrizioneconcorsi.it##.cookiePol
 bo3.gg##.c-modal-cookie
@@ -11376,7 +11373,6 @@ meduza.global.ssl.fastly.net,meduza.io#?#.GDPRPanel-module-root
 relic.com##.GdprCookieConsent-ConsentContainerOverlay
 forums.techguy.org##.Notice
 userstyles.org##.NotificationLine
-nouvelobs.com##.ObsCnilWarning
 hfboards.mandatory.com##.PanelScrollerOff
 office-hilfe.com,lpsg.com,windows-10-forum.com,windows-info.de,superherohype.com,wunderkessel.de,forums.sherdog.com,gamepro.de,gamestar.de,htforum.com,linksysinfo.org,tonymacx86.com##.Panels > .DismissParent.notice_-1 > .noticeContent
 fashionmodeldirectory.com##.PrivacyNotice
@@ -14187,7 +14183,7 @@ sonyliv.com#%#//scriptlet('set-local-storage-item', 'session_cookies_acceptance'
 sonyliv.com#%#//scriptlet('set-local-storage-item', 'analytics_cookies_acceptance', 'false')
 gettr.com#%#//scriptlet('set-local-storage-item', 'cookieAccepted', '1')
 iriedaily.de#%#//scriptlet('set-cookie', 'actualOptanonConsent', '1')
-nouvelobs.com#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("euconsent-v2")){var a=new MutationObserver(function(){var b=document.querySelector(".gdpr-glm-standard button.gdpr-glm-button--standard");b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});
+nouvelobs.com#%#//scriptlet('trusted-click-element', '.gdpr-glm-wall button.gdpr-glm-button')
 phonenphoto.com#%#//scriptlet('set-cookie', 'cookie_accept', 'true')
 dominospizza.pl#%#//scriptlet('set-cookie', 'dominos_cookies_accepted', '1')
 livecounts.io#%#//scriptlet('set-local-storage-item', 'CONSENT_AGREED', '1')
@@ -29211,6 +29207,7 @@ epaper.thehindu.com,h5.g123.jp,accounts.binance.com,zlavomat.sk,id.rambler.ru,pi
 .name/?pus=$script,third-party
 .site/?pus=$script,third-party
 !
+||pushouse.com^$third-party
 ||dpns-notifications.com^
 ||cdn-server.live^$third-party
 ||potisni.me^$third-party
@@ -47663,6 +47660,9 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/170094
+! Streamplay - speed up loading captcha
+stre4mplay.*,streampiay.*,stemplay.*,steamplay.*,steanplay.*,streamp1ay.*,streanplay.*#%#//scriptlet('adjust-setTimeout', 'letgo', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169542
 bishalghale.com.np#%#//scriptlet('adjust-setInterval', 'timer', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169882

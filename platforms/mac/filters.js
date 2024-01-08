@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.15.15",
-			"timeUpdated": "2024-01-08T12:41:12+0000",
+			"version": "2.3.15.16",
+			"timeUpdated": "2024-01-08T13:32:58+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.0.95.37",
-			"timeUpdated": "2024-01-08T12:41:19+0000",
+			"version": "2.0.95.38",
+			"timeUpdated": "2024-01-08T13:33:02+0000",
 			"languages": []
 		},
 		{
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.47.76",
-			"timeUpdated": "2024-01-08T12:40:27+0000",
+			"version": "2.0.47.77",
+			"timeUpdated": "2024-01-08T13:32:32+0000",
 			"languages": []
 		},
 		{
@@ -213,8 +213,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.49.3",
-			"timeUpdated": "2024-01-05T18:32:42+0000",
+			"version": "2.0.49.4",
+			"timeUpdated": "2024-01-08T13:32:33+0000",
 			"languages": [
 				"tr"
 			]
@@ -228,8 +228,8 @@
 			"displayNumber": 1,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/14.txt",
-			"version": "2.1.82.69",
-			"timeUpdated": "2024-01-08T12:40:37+0000",
+			"version": "2.1.82.70",
+			"timeUpdated": "2024-01-08T13:32:38+0000",
 			"languages": []
 		},
 		{
@@ -287,8 +287,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.30.15",
-			"timeUpdated": "2024-01-08T12:40:45+0000",
+			"version": "2.0.30.16",
+			"timeUpdated": "2024-01-08T13:32:41+0000",
 			"languages": []
 		},
 		{
@@ -300,8 +300,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.28.88",
-			"timeUpdated": "2024-01-08T11:32:40+0000",
+			"version": "2.0.28.89",
+			"timeUpdated": "2024-01-08T13:32:42+0000",
 			"languages": []
 		},
 		{
@@ -326,8 +326,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.18.14",
-			"timeUpdated": "2024-01-08T07:32:39+0000",
+			"version": "2.0.18.15",
+			"timeUpdated": "2024-01-08T13:32:46+0000",
 			"languages": []
 		},
 		{
