@@ -1,10 +1,10 @@
-! Checksum: l5C0qPlbqQeQR28gNGJTUA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28413335-60.patch
+! Checksum: k1uQhROs7fkBJU2gB0Hi9g
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28413403-60.patch
 ![Adblock Plus 2.0]
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.15.28
-! TimeUpdated: 2024-01-09T11:32:59+00:00
+! Version: 2.3.15.29
+! TimeUpdated: 2024-01-09T12:41:12+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1425,6 +1425,8 @@
 !+ NOT_OPTIMIZED
 ||amazon-adsystem.com^
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/170063
+! spam ads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/155298
 ! Frequently changed domains with the same IPs
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152407
@@ -7189,6 +7191,8 @@ pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\
 @@||static.adsafeprotected.com/skeleton.gif?*adunitid=
 @@||static.adsafeprotected.com/skeleton.gif?*bannnerid=
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/170049
+nishankhatri.xyz##.adblock-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170240
 billingsmix.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169834
@@ -7631,7 +7635,9 @@ thesimsresource.com##+js(no-xhr-if, /googletagmanager\.com|googleoptimize\.com|e
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164039
 ||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$script,redirect=google-ima.js,domain=mtv.com
 ! UKRadioLive
-irishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com##+js(set-constant, AddAdsV2I.addBlock, false)
+wirishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com##+js(set-constant, AddAdsV2I.hasAdblock, falseFunc)
+wirishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com##+js(set-constant, AddAdsV2I.checkAddBlock, noopFunc)
+wirishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com##+js(set-constant, AddAdsV2I.setAddBlockMsg, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164006
 musicforchoir.com##+js(abort-current-script, eval, split)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163780
@@ -27431,6 +27437,8 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! kotaku.com - removing href attr for ad link which is also used as text in sentence
+clickhole.com,lifehacker.com,splinternews.com,avclub.com,deadspin.com,gizmodo.com,jalopnik.com,jezebel.com,kotaku.com,qz.com,theinventory.com,theonion.com,theroot.com,thetakeout.com##+js(remove-attr, href|data-ga|data-vtas-click|target, .js_post-content a[rel*="sponsored"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170170
 swatchseries.mx##+js(set-cookie, __pf, 1)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169887
@@ -27459,8 +27467,6 @@ mdhstream.cc##+js(addEventListener-defuser, load, puURLstrpcht)
 hentaipaw.com##+js(noeval-if, _0x)
 ! popup
 player.bestrapeporn.com##+js(window.open-defuser)
-! fixed scrolling
-chan.sankakucomplex.com#$#body.no-scroll { overflow: auto !important; position: static !important; width: unset !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168499
 eporner.com##+js(set-cookie, ADBp, yes)
 eporner.com##+js(abort-on-property-write, initEPNB)
@@ -27471,9 +27477,6 @@ ninja.io##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168149
 tapeantiads.com##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45044 - on 4th video click redirect to random website
-! pervertgirlsvideos.com ad leftover
-pervertgirlsvideos.com#$#.pum-overlay[data-popmake*="ads-pop"] { display: none !important; }
-pervertgirlsvideos.com#$#html.pum-open-overlay { overflow: auto !important; }
 ! camgirls.casa - popups
 camgirls.casa##+js(abort-on-property-write, p$00a)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168256
@@ -30610,6 +30613,12 @@ spectrum.ieee.org##+js(set-constant, splashpage, undefined)
 !-------CSS---------
 !-------------------
 !
+! UKRadioLive
+! fixed scrolling
+chan.sankakucomplex.com#$#body.no-scroll { overflow: auto !important; position: static !important; width: unset !important; }
+! pervertgirlsvideos.com ad leftover
+pervertgirlsvideos.com#$#.pum-overlay[data-popmake*="ads-pop"] { display: none !important; }
+pervertgirlsvideos.com#$#html.pum-open-overlay { overflow: auto !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169360
 fapello.com#$#.wbar { display: none !important; }
 fapello.com#$##wrapper { margin-top: 0 !important; }
@@ -32559,6 +32568,11 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+wjla.com,wpde.com###js-SocialWidget-Container
+clickhole.com,lifehacker.com,splinternews.com,avclub.com,deadspin.com,gizmodo.com,jalopnik.com,jezebel.com,kotaku.com,qz.com,theinventory.com,theonion.com,theroot.com,thetakeout.com##.js_post-content > div[class] > p:has(> strong + em + span > a[rel*="sponsored"])
+filmibeat.com##div[id^="are-slot-"]
+blockchair.com#?##page-right-block > .fd-col.jc-start:has(a[href="/advertise"])
+chalkbeat.org##.b-ads-block
 banflix.com##a[target="_blank"] > img
 crazygames.com##div[style="width:100%;display:block"]
 crazygames.com##div[style="width: 100%; display: block;"]
@@ -32594,7 +32608,7 @@ fifplay.com##.adspotBanner
 ||combo.staticflickr.com/*/combo?ap:build/hermes-*/hermes-template-photo-ad-page/hermes-template-photo-ad-page-min.js$domain=flickr.com
 finbold.com##div[id^="finbold.com_"]
 lipstickalley.com##.block-body > .block:not([data-widget-id])
-wpde.com##[class^="NewAd-"]
+wjla.com,wpde.com##[class^="NewAd-"]
 bishalghale.com.np###custom-popup
 gaytxxx.com##.index-page > div.wrapper > div.row + div[class]
 gaytxxx.com##.undp
@@ -37178,8 +37192,8 @@ dkoding.in##.sidebar_inner > #custom_html-14
 dkoding.in##.wpb_widgetised_column #custom_html-5
 ibomma.*###content > #abEnabled + div[style^="text-align:center;margin:"]
 ||bitball.b-cdn.net/video/*.mp4$media,redirect=noop-0.1s.mp3,domain=111.90.159.132
-wpde.com##div[class^="index-module_taboola_"]
-wpde.com##div[class^="index-module_adBeforeContent_"]
+wjla.com,wpde.com##div[class^="index-module_taboola_"]
+wjla.com,wpde.com##div[class^="index-module_adBeforeContent_"]
 animenewsnetwork.com##.herald-boxes > div[class="box"]:first-child
 porndoe.com##.below-video
 porndoe.com##.vpb-holder
@@ -54817,6 +54831,7 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/170260
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169182 [Stealth Mode - Referrer]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170239 [Stealth Mode - Referrer]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169557
