@@ -1,10 +1,10 @@
-! Checksum: UYaEjT+4VkhvBS2Z9pvceQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28413459-60.patch
+! Checksum: KoTs4wlYc2t+H6Y2nlRRtg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28413516-60.patch
 ![Adblock Plus 2.0]
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.15.30
-! TimeUpdated: 2024-01-09T13:37:10+00:00
+! Version: 2.3.15.31
+! TimeUpdated: 2024-01-09T14:33:52+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7175,10 +7175,6 @@ pornhub.com,pornhub.org,pornhub.net##+js(set-constant, page_params.holiday_promo
 pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\x63\x6b\x20\x66\x6f\x72\x20\x70\x6f\x72\x6e\x68\x75\x62)
 ! END: Ads replacement
 !
-!
-! NOTE: Regular rules
-!
-!
 ! Prevent Admiral detection
 #@#.stickyads
 #@#.ads_banner
@@ -7191,6 +7187,10 @@ pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\
 @@||static.adsafeprotected.com/skeleton.gif?*adunitid=
 @@||static.adsafeprotected.com/skeleton.gif?*bannnerid=
 !
+! NOTE: Regular rules
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/170269
+pomofocus.io##+js(no-xhr-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170049
 nishankhatri.xyz##.adblock-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170240
@@ -24097,7 +24097,7 @@ www.dobreprogramy.pl,gadzetomania.pl,komorkomania.pl,pudelek.pl,vpolshchi.pl,par
 vpolshchi.pl,parenting.pl,autokult.pl,abczdrowie.pl,magazyn.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,tech.wp.pl,opinie.wp.pl,teleshow.wp.pl,gwiazdy.wp.pl,film.wp.pl,wiadomosci.wp.pl,finanse.wp.pl##+js(set-constant, Object.prototype.iABD, [])
 pysznosci.pl,domodi.pl,wideo.wp.pl,benchmark.pl,vpolshchi.pl,kafeteria.pl,dobreprogramy.pl,open.fm,abczdrowie.pl,www.o2.pl,parenting.pl,fotoblogia.pl,gadzetomania.pl,komorkomania.pl,autocentrum.pl,autokult.pl,pudelek.pl,dom.wp.pl,tv.wp.pl,magazyn.wp.pl,facet.wp.pl,turystyka.wp.pl,gwiazdy.wp.pl,teleshow.wp.pl,gry.wp.pl,kuchnia.wp.pl,ksiazki.wp.pl,wiadomosci.wp.pl,moto.wp.pl,pogoda.wp.pl,fitness.wp.pl,turystyka.wp.pl,wroclaw.wp.pl,wawalove.wp.pl,opinie.wp.pl,tech.wp.pl,sportowefakty.wp.pl,kobieta.wp.pl,finanse.wp.pl##+js(abort-on-property-write, Object.prototype.callBids)
 pysznosci.pl,domodi.pl,wideo.wp.pl,poczta.wp.pl,autokult.pl,benchmark.pl,vpolshchi.pl,dobreprogramy.pl,poczta.o2.pl,www.wp.pl,parenting.pl,kafeteria.pl,magazyn.wp.pl,facet.wp.pl,turystyka.wp.pl,teleshow.wp.pl,gry.wp.pl,kuchnia.wp.pl,ksiazki.wp.pl,sportowefakty.wp.pl,film.wp.pl,wiadomosci.wp.pl,kobieta.wp.pl,moto.wp.pl,horoskop.wp.pl,twojeip.wp.pl,money.pl,polygamia.pl,vibez.pl,abczdrowie.pl,pudelek.pl##+js(abort-on-property-write, Object.prototype.directOnly)
-film.wp.pl##+js(abort-on-property-write, Object.prototype.reloadedSlots)
+polygamia.pl,film.wp.pl##+js(abort-on-property-write, Object.prototype.reloadedSlots)
 poczta.o2.pl,poczta.wp.pl,www.wp.pl,money.pl##+js(set-constant, rekid, undefined)
 poczta.o2.pl,poczta.wp.pl,www.wp.pl,money.pl##+js(abort-on-property-write, Object.prototype.gafDirect)
 fitness.wp.pl,vibez.pl##+js(abort-on-property-read, Object.prototype.bodyCode)
@@ -29198,7 +29198,7 @@ xhamster11.com##+js(abort-on-property-write, wio-vpopunder)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/76298
 imgair.net,imgko.xyz##+js(abort-on-property-read, doOpen)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/76074
-clk.ink##+js(window.open-defuser)
+clk.wiki,clk.ink##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/76052
 povvldeo.*,pouvideo.*,povwideo.*,powv1deo.*##+js(window.open-defuser)
 ! Countdown in the kt_player with flashvars
@@ -32516,7 +32516,7 @@ gocmod.com,uptoearn.xyz,ibelieve.com,uploadsea.com,bleacherreport.com,thewindows
 ! ##.ads
 quena.id,sexu.*,gameme.eu,pornwatch.ws,mollygram.com,onlinewebfonts.com,androjungle.com,filerice.com,10001.games,hoes.tube,i24news.tv,rpp.pe,4pig.com,love4porn.com,gametop.com,bluedollar.net,outlookindia.com,blabbermouth.net,ghettotube.com,mangoporn.net,javplay.me,jagranjosh.com,4kporn.xxx,bangkokpost.com,up-load.io,liveindex.org,freeshib.biz,apkmb.com,upload.ac,westkentuckystar.com,namekun.com,piliapp.com,photofunny.net,grazia.co.in,flightpedia.org,thelingerieaddict.com,banglanews24.com,swisscows.com,jagran.com,autocarindia.com,userupload.net,javbraze.com,laptrinhx.com,youtube-video.download,pinkvilla.com,youramateurporn.com,dausel.co,yesnetwork.com,indiatoday.in,vidcloud.icu,appvn.com,h2mp3.com,photagram.net,tapas.io,freefrontend.com,ally.sh,myplaycity.com,mercadojobs.com,thepiratebay.org,sgxnifty.org,justmp4.com,cyberscoop.com,filmcomment.com,youngpornvideos.com,eventcinemas.com.au,findyourlucky.com,linuxmint.com,mobafire.com,themepack.me##.ads
 ! ##.banner-inner
-tinys.click,adpayl.ink,baicho.xyz,clk.asia,namaidani.com,short2fly.xyz,bestcash2020.com,du-link.in,shrink.*,4cash.me,shorthero.site,cookdov.com,myshrinker.com,linkjust.com,adcripto.com,adlinkweb.com,vklinks.com,seulink.online,gtlink.co,coinadfly.com,fire-link.net,popimed.com,hoastie.com,forex-trnd.com,earnwithshortlink.com,adfloz.co,tui.click,link.ltc24.com,linkebr.com,pnd.*,clik.pw,cutlink.link,zagl.info,lite-link.xyz,pureshort.link,lite-link.com,techupme.com,fir3.net,softairbay.com,todaynewspk.win,fx4vip.com,tii.ai,srt.leechpremium.link,link1s.*,arabplus2.co,stfly.me,profitlink.info,jwearn.com,shorthitz.com,adsy.pw,intothelink.com,linkviet.xyz,adslinkfly.online,placestourist.com,lkop.me,shlinko.com,oncehelp.com,shorterall.com,s-url.xyz,encurta.eu,stfly.io,shrtfly.net,vivads.net,skiplink.pw,fc.lc,icutlink.com,urlcloud.us,suqdz.com,cutlinks.pro,shortzon.com,bloggingdekh.xyz,kutz.io,geki.tech,earn-url.com,coinb.ink,bit-url.com,tmearn.com,linkkawy.com##.banner-inner
+clk.wiki,tinys.click,adpayl.ink,baicho.xyz,clk.asia,namaidani.com,short2fly.xyz,bestcash2020.com,du-link.in,shrink.*,4cash.me,shorthero.site,cookdov.com,myshrinker.com,linkjust.com,adcripto.com,adlinkweb.com,vklinks.com,seulink.online,gtlink.co,coinadfly.com,fire-link.net,popimed.com,hoastie.com,forex-trnd.com,earnwithshortlink.com,adfloz.co,tui.click,link.ltc24.com,linkebr.com,pnd.*,clik.pw,cutlink.link,zagl.info,lite-link.xyz,pureshort.link,lite-link.com,techupme.com,fir3.net,softairbay.com,todaynewspk.win,fx4vip.com,tii.ai,srt.leechpremium.link,link1s.*,arabplus2.co,stfly.me,profitlink.info,jwearn.com,shorthitz.com,adsy.pw,intothelink.com,linkviet.xyz,adslinkfly.online,placestourist.com,lkop.me,shlinko.com,oncehelp.com,shorterall.com,s-url.xyz,encurta.eu,stfly.io,shrtfly.net,vivads.net,skiplink.pw,fc.lc,icutlink.com,urlcloud.us,suqdz.com,cutlinks.pro,shortzon.com,bloggingdekh.xyz,kutz.io,geki.tech,earn-url.com,coinb.ink,bit-url.com,tmearn.com,linkkawy.com##.banner-inner
 ! ###ad
 weakstreams.online,online-stopwatch.com,formula1streams.club,hockeynews.club,livesportstream.club,footballroma.com,web.yokugames.com,cimavids.live,cimanow.*,2shrt.com,cnvids.com,iogames.army,classic-retro-games.com,ytmp3.cc,fxsolves.com,kodi-addons.club,lastpass.com,jsoneditoronline.org,mgnet.me,animeseed.com,robinwidget.com,ascoltareradio.com,bg-radio.org,ceskaradiaonline.cz,ecouterradioenligne.com,emisora.cl,emisora.org.es,emisoras.com.gt,emisoras.com.mx,emisoras.com.py,nederlandseradio.nl,nettiradiot.org,nettradionorge.com,onlineradio.pl,radio.cd,radio.co.ci,radio.co.cm,radio.co.dk,radio.co.ma,radio.co.si,radio.ht,radio.mg,radio.org.ro,radio.org.se,radio.pp.ru,radio.sn,radioalgerie.eu,radioarg.com,radiohallgatas.hu,radioonline.com.pt,radios.co.at,radios.co.cr,radios.co.ni,radios.co.ve,radios.com.bo,radios.com.co,radios.com.do,radios.com.ec,radios.com.pa,radios.com.pe,radios.com.sv,radios.com.uy,radios.hn,radios.hr,radios.org.il,radiosaovivo.net,radiosdecuba.com,radiosdepuertorico.com,radiosonline.be,radiosonline.ch,radiotunisienne.org,radioua.net,radyodinle.fm,surinaamseradio.com###ad
 ! ##.advert
@@ -32568,6 +32568,7 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+||clk.wiki/ads/*/ad*.php
 icy-veins.com###premium_cta_block
 icy-veins.com###top_leaderboard_container
 icy-veins.com###bottom_leaderboard_container
