@@ -1,9 +1,9 @@
-! Checksum: WafZ9qBX+2thLBXVdVSD0w
-! Diff-Path: ../patches/1/1-m-28413156-60.patch
+! Checksum: GlDaOvzGTs4ZJhGfHEknFA
+! Diff-Path: ../patches/1/1-m-28413215-60.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.87.35
-! TimeUpdated: 2024-01-09T08:33:39+00:00
+! Version: 2.0.87.36
+! TimeUpdated: 2024-01-09T09:32:54+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1478,6 +1478,8 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||cchbdata.net^
+||s.ccsyncuuid.net^
 ||bngtrak.com^$all
 ||fnasmpygwa.com^
 ||o1qry0qq83.com^
@@ -5743,6 +5745,8 @@ http://wq3.ru^$third-party
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
+||exad.smi2.ru^
+||tgb.hsmedia.ru^$third-party
 ||market-backend.api.2gis.ru^
 !
 ! This section contains the list of advertising networks domains, which are hosted on non advertising sites as subdomains.
@@ -7934,6 +7938,8 @@ disk.yandex.*#%#//scriptlet('remove-class', 'has-fullscreen-banner','.public__ro
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/169837
+lostfilm.space#$#.lstfml { background: #00003c !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169241
 yp.ru#$#.main-wrapper { padding-top: 0 !important; }
 yp.ru#$##content { margin-top: 50px !important; }
@@ -9531,6 +9537,8 @@ bits.media,devyatka.ru,gazeta-n1.ru,gorod48.ru,hi-fi.ru,innov.ru,k1news.ru,ktost
 !
 !
 !
+||cdn.hsmedia.ru/scrooge-client/hsm-creative-manager.
+bankiros.ru##.xxx-mb-30
 ||softportal.com/img/tlmn.png
 crackstatus.net##li[id^="slide"]
 ||crackstatus.net/data/advertisement/
@@ -9540,8 +9548,8 @@ trashexpert.ru##div[class*="smi24"]
 trashexpert.ru##.ad-on-desktop
 moiprogrammy.com##div[style*="width:728px;height:90px;"]
 1progs.com##a[href^="https://tlmnt.com/"]
-lostfilm.tv##a[href^="/shmrowse.php"]
-lostfilm.tv##div[style*="width:537px;"][style*="height:302px;"]
+lostfilm.space,lostfilm.tv##a[href^="/shmrowse.php"]
+lostfilm.space,lostfilm.tv##div[style*="width:537px;"][style*="height:302px;"]
 verstka.media##.verstka-telegram-link:has(> thetruestory-widget-top)
 portable-rus.ru##aside[id^="block-"]:has(> div[id^="yandex_rtb"])
 apteka.ru##.EshopShelf
