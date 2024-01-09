@@ -1,10 +1,10 @@
-! Checksum: RiLlXhRfHxWQi76bc/jmZg
-! Diff-Path: ../patches/1/1-m-28413277-60.patch
+! Checksum: TrEcc1/rjjT5aOP/o/e/vQ
+! Diff-Path: ../patches/1/1-m-28413695-60.patch
 ![Adblock Plus 2.0]
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.87.37
-! TimeUpdated: 2024-01-09T10:34:22+00:00
+! Version: 2.0.87.38
+! TimeUpdated: 2024-01-09T17:32:39+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1468,6 +1468,7 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||s.cummerata.link^
 ||cchbdata.net^
 ||s.ccsyncuuid.net^
 ||bngtrak.com^$all
@@ -7772,6 +7773,9 @@ disk.yandex.*##+js(remove-class, has-fullscreen-banner, .public__root)
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/170182
+soccer365.ru#$#body > div[style^="position:"][style*="z-index:"]:has(> a[rel="nofollow"][target="_blank"]) { display: none !important; }
+soccer365.ru#$#.header_top { margin-top: 0 !important;}
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169837
 lostfilm.space#$#.lstfml { background: #00003c !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169241
@@ -9596,7 +9600,7 @@ tvmag.ru##a[href*=".tricolor.tv"] > img
 atorus.ru###block-headerads
 korsars.pro##a[href^="https://bit.ly/"] > img
 fontanka.ru##div[style*="--creative-height:"]
-xcadr.online,soccer365.com.ua,kniga-online.com##.adv
+soccer365.ru,xcadr.online,soccer365.com.ua,kniga-online.com##.adv
 serialfan.net##.dle_b_help
 notepadonline.ru##.adbox
 cian.ru##div[data-name="AdFoxBannerTracker"]
