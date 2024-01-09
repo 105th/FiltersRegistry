@@ -1,9 +1,9 @@
-! Checksum: 2qj4KJfXUfQ6VX9Wa/xmzA
-! Diff-Path: ../patches/14_optimized/14_optimized-m-28413516-60.patch
+! Checksum: rVHcXxNfP26n4cfMSX6HXg
+! Diff-Path: ../patches/14_optimized/14_optimized-m-28413575-60.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.82.81
-! TimeUpdated: 2024-01-09T14:33:17+00:00
+! Version: 2.1.82.82
+! TimeUpdated: 2024-01-09T15:32:35+00:00
 ! Expires: 4 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -2906,7 +2906,8 @@ bmz.de##.m-cookie-banner
 elle.fr###poool-widget-content
 spar.hu,alpenclassics.de#$##cmpwrapper { display: none !important; }
 spar.hu,alpenclassics.de#$#body { overflow: auto !important; }
-readly.com##div[id^="CookieConsentDialog"]
+readly.com#$#div[id^="CookieConsentDialog"] { display: none !important; }
+readly.com#$#body { overflow: auto !important; }
 faustauto.ch,cuxhaven.de###ccm-widget
 igbce.de#$#body.orejimeBody-WithModalOpen { position: static !important; overflow: auto !important; }
 igbce.de#$#.orejime-NoticePortal { display: none !important; }
@@ -4584,7 +4585,6 @@ carnegiehall.org##.js-data-protection-popup
 nrc.nl##.user-confirmation-screen
 transcend-info.com###legal_notice
 evocsports.com##.cookie-permission-overlay
-readly.com#$#html > body.cookie-consent { overflow: visible !important; }
 emsa.com##.cookie_wrapper_tool
 native-instruments.com#$#body { overflow: auto !important; }
 sparkasse.at#$#div[id*="privacy-"] { display: none !important; }
@@ -8930,6 +8930,7 @@ aol.com#@#.adwrap
 !+ NOT_PLATFORM(windows, mac, android)
 @@||pubads.g.doubleclick.net/gampad/adx?*/ad-blk$domain=washingtonpost.com
 !#safari_cb_affinity(general)
+@@||adskeeper.co.uk^$domain=bravedown.com
 @@||s.nitropay.com/ads-*.js$domain=maxroll.gg
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=calcmaps.com
 @@||googlesyndication.com/|$xmlhttprequest,domain=bypass.city

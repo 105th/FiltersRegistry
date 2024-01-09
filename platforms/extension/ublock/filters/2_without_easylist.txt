@@ -1,10 +1,10 @@
-! Checksum: KoTs4wlYc2t+H6Y2nlRRtg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28413516-60.patch
+! Checksum: 4IrzqDeGK7WHYtte6BtITQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28413575-60.patch
 ![Adblock Plus 2.0]
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.15.31
-! TimeUpdated: 2024-01-09T14:33:52+00:00
+! Version: 2.3.15.32
+! TimeUpdated: 2024-01-09T15:32:56+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -77,6 +77,7 @@
 !
 !
 !
+||capletstyldia.com^
 ||dwvbfnqrbif.com^
 ||despectclogwyn.com^
 ||justey.com^
@@ -7189,6 +7190,8 @@ pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/170276
+hiraethtranslation.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170269
 pomofocus.io##+js(no-xhr-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170049
@@ -8507,9 +8510,6 @@ linkebr.com##+js(addEventListener-defuser, , .onerror =)
 linkebr.com###antiAdBlock
 ! https://github.com/AdguardTeam/AdguardFilters/issues/144579
 happy-living.online##+js(no-fetch-if, pagead2.googlesyndication.com)
-! https://github.com/AdguardTeam/AdguardFilters/issues/146901
-bravedown.com##+js(no-setTimeout-if, .offsetHeight)
-bravedown.com#$#div[id*="ScriptRoot"] { min-height: 1px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146796
 streamonsport-ldc.top##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146480
@@ -29837,7 +29837,10 @@ mylink.vc##+js(window.open-defuser)
 vidtome.stream##+js(window.open-defuser)
 ! upvid.host - popups
 upvid.host##+js(abort-on-property-read, MyJsPop)
+! https://github.com/AdguardTeam/AdguardFilters/issues/170266
 ! https://github.com/AdguardTeam/AdguardFilters/issues/54927
+ds2play.com,doods.pro,dooood.com,dood.yt,dood.re,dood.wf,dood.la,dood.pm,dood.so,dood.to,dood.watch,dood.ws##+js(json-prune, *, rot_url)
+ds2play.com,doods.pro,dooood.com,dood.yt,dood.re,dood.wf,dood.la,dood.pm,dood.so,dood.to,dood.watch,dood.ws##+js(json-prune, *, pop_type)
 ds2play.com,doods.pro,dooood.com,dood.yt,dood.re,dood.wf,dood.la,dood.pm,dood.so,dood.to,dood.watch,dood.ws##+js(abort-current-script, globalThis, break;case)
 ds2play.com,doods.pro,dooood.com,dood.yt,dood.re,dood.wf,dood.la,dood.pm,dood.so,dood.to,dood.watch,dood.ws##+js(abort-on-property-read, DoodPop)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/54685
@@ -32568,6 +32571,8 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+||amazonaws.com/*.*.*.*.*.*.*.*/*/index*.html$document
+jezebel.com###secondScroll > div.js_sticky-second-scroll
 ||clk.wiki/ads/*/ad*.php
 icy-veins.com###premium_cta_block
 icy-veins.com###top_leaderboard_container
@@ -33588,7 +33593,7 @@ indy100.com###thirdparty01
 stuff.tv##.c-squirrel-embed
 porntrex.com##iframe.ipp
 thisisanfield.com,divernet.com##div[class^="ai-viewport-"]
-gamertweak.com,mrinformatico.it,pianetacellulare.it,inwepo.co,updoc.site,oliveoiltimes.com,cgmagonline.com,happymag.tv,cpophome.com##.code-block
+kaystls.site,gamertweak.com,mrinformatico.it,pianetacellulare.it,inwepo.co,updoc.site,oliveoiltimes.com,cgmagonline.com,happymag.tv,cpophome.com##.code-block
 cpophome.com##.page_ad_container
 cpophome.com##.photo_right_ad
 cpophome.com##.after_related_photo_album
@@ -34414,6 +34419,7 @@ business-standard.com##.advertisement-bg
 tribuneindia.com##.fixed-ad-bottom
 streamonsport-ldc.top##.mtop > iframe[src="/dns.php"]
 streamonsport-ldc.top##div[style="text-align:center;"] > a[target="_blank"][rel="nofollow"]
+||ondigitalocean.app/*/index.php?cezp=$document
 ||ondigitalocean.app/*^phone=+1-$document
 ||plesk.page/*?phone=$document
 elsubtitle.com##div[class*="-ad-box"]
@@ -39261,7 +39267,7 @@ washingtonpost.com##.paywall > div[style^="width: 100%; margin: 32px auto;"]
 hentaiheroes.com###iframe_wrapper
 tubeoffline.com##div[style^="min-height: 2"][align="center"]
 ||mrdeepfakes.com/static/js/pu.js
-/^(?!.*(doodcdn.com|cloudflare.com|google.com)).*$/$third-party,script,_____,domain=dood.so
+$script,third-party,denyallow=doodcdn.co|fastly.net|statically.io|sharecast.ws|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|polyfill.io|recaptcha.net|twitter.com|ulogin.ru|unpkg.com|userapi.com|ytimg.com|zencdn.net|youtube.com|googleoptimize.com|vuukle.com|chatango.com|twimg.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io,_____,domain=ds2play.com|doods.pro|dooood.com|dood.yt|dood.re|dood.wf|dood.la|dood.pm|dood.so|dood.to|dood.watch|dood.ws
 ||manga18fx.com/bmo/*.php
 manga18fx.com##.kadx
 jjgirls.com##a[href^="https://chaturbate.jjgirls.com/"][target="_blank"]
@@ -49246,6 +49252,11 @@ fijivillage.com#?#.contentleft > p > small:contains(/^ADVERTISEMENT$/)
 biertijd.com,biertijd.xxx#?##wrapper > div#sidebarcontainer > h2:contains(/Advertenties|Sponsors|Aanrader/)
 mumbaimirror.indiatimes.com#?##content > div[class*=" "]:has(> div > div > a[onclick])
 mumbaimirror.indiatimes.com#?#.latestCmmtData > .mrtoday > div[class*=" "]:has(> div > div > a[onclick])
+!
+! 808scoretv
+! *808* - frequently changed domains
+! Maybe could be generic
+score808.tv,808ball.com,score808pro.com##.min-height-fullscreen a.banner
 !
 ! UKRadioLive
 irishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com#$#._bannerTop1 { background-color: transparent !important; }
