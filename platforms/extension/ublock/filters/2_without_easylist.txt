@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: mwT5Ip7lDDTlyhwGW+zx7Q
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28414843-60.patch
+! Checksum: sf/ZiybQZIEYWXOJvpmIHA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28414896-60.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.15.44
-! TimeUpdated: 2024-01-10T12:40:54+00:00
+! Version: 2.3.15.45
+! TimeUpdated: 2024-01-10T13:33:31+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -11628,12 +11628,9 @@ $script,redirect-rule=noop.js,domain=vidmoly.me|vidmoly.net|vidmoly.to
 bestopbook.info##+js(abort-on-property-read, mdp_ngaurcom)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xmlhttprequest,redirect=noop.js,domain=bestopbook.info
 ! https://github.com/AdguardTeam/AdguardFilters/issues/67067
-top.gg##+js(adjust-setTimeout, readyToVote, 12000)
-@@||top.gg/js/*.js
-@@||s.nitropay.com/ads-*.js$xmlhttprequest,domain=top.gg
-top.gg##+js(no-setTimeout-if, .AD_ID)
-top.gg#$#.contentvoting #video-root { display: none !important; }
-top.gg#$#.contentvoting #vote-root { display: block !important; }
+top.gg#$#body { overflow: auto !important; }
+top.gg#$#div[class^="chakra-modal__overlay"][style="opacity: 1;"] { display: none !important; }
+top.gg#$#div[class^="chakra-modal__overlay"][style="opacity: 1;"] ~ div[data-focus-lock-disabled] { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/67023
 k12reader.com#$#.pub300x250.pub300x250m.pub728x90.text-ad { display: block !important; }
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xmlhttprequest,redirect=noop.js,domain=k12reader.com
@@ -26391,7 +26388,7 @@ coinurl.net##.alert-danger
 coinurl.net##div[align="center"]  > a [style]
 ://i.imgur.com/$domain=coinurl.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/75617
-paperzonevn.com##+js(abort-current-script, $, !document.getElementById(btoa)
+paperzonevn.com##+js(addEventListener-defuser, load, XV)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/74402
 phimgi.tv##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/72279
@@ -32593,6 +32590,15 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+typing-speed.net#?#tr > td[style]:has(> div > div[id][class] > div[style^="min-height:"])
+hometheaterreview.com###section-38-64990
+hometheaterreview.com###div_block-337-102770
+hometheaterreview.com###div_block-217-102770
+hometheaterreview.com#?##page-sidebar > div[id^="div_block-"]:has(> div.htr-static-ad-outer-wrapper)
+hometheaterreview.com#?##htrpostcontent > section:has(> div.ct-section-inner-wrap > div.ct-code-block > div[id^="homet-"])
+hometheaterreview.com#?#div[id^="div_block-"]:has(> div[id^="code_block-"]:only-child:empty)
+hometheaterreview.com#?#div[id^="div_block-"]:has(> div[id^="code_block-"] > div.homet-top-header-banner)
+mgviagrtoomuch.com##body > div[style^="width:"][style*="position:"]
 ||amazonaws.com/*.*.*.*.*.*.*.*/*/index*.html$document
 jezebel.com###secondScroll > div.js_sticky-second-scroll
 ||clk.wiki/ads/*/ad*.php
