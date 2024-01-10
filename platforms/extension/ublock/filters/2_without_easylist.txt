@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: i7sH7NkFW1foqqsdy/5iqA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28414956-60.patch
+! Checksum: AmLcnm2jeknRx3ykzB0/6A
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28415017-60.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.15.46
-! TimeUpdated: 2024-01-10T14:33:45+00:00
+! Version: 2.3.15.47
+! TimeUpdated: 2024-01-10T15:35:20+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7202,7 +7202,7 @@ yad.com##+js(no-setTimeout-if, moneyDetect)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170276
 hiraethtranslation.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170269
-pomofocus.io##+js(no-xhr-if, pagead2.googlesyndication.com)
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=googlesyndication.com/adsbygoogle.js,domain=pomofocus.io
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170049
 nishankhatri.xyz##.adblock-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170240
@@ -19920,9 +19920,7 @@ alvolante.it##div[id^="adv-"]
 greenme.it##aside[style^="margin: 8px auto;"]
 ! https://github.com/uBlockOrigin/uAssets/issues/21532
 serially.it##+js(json-prune, ads)
-! BUG: of AGLint https://github.com/AdguardTeam/AGLint/issues/190
-! TODO: remove aglint-disable-next-line directive after fixing a bug
-! aglint-disable-next-line
+serially.it##+js(xml-prune, xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text()\,"/ad/")]]), , .mpd)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168078
 juzaphoto.com#?#body > div[style^="margin-left: auto;"]:has(> a[onclick^="ajax_bannerclicks"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168377
