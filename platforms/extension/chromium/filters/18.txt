@@ -1,9 +1,9 @@
-! Checksum: q9p7xd7ENb8AwH/r17iM4w
-! Diff-Path: ../patches/18/18-m-28414655-60.patch
+! Checksum: yI/MBFfQoeiXXEQ+zQJJoA
+! Diff-Path: ../patches/18/18-473579-4.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.30.24
-! TimeUpdated: 2024-01-10T09:32:56+00:00
+! Version: 2.0.30.25
+! TimeUpdated: 2024-01-10T11:02:41+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -484,10 +484,10 @@
 ###cookie-compliance-bottom
 ###cookie-compliance-bottom-overlay
 ###cookie-compliance-container
-~yellowbrick.nl###cookie-consent
+###cookie-consent
 ###cookie-consent-banner
 ###cookie-consent-bar
-~analog.com###cookie-consent-container
+###cookie-consent-container
 ###cookie-consent-popup
 ###cookie-consent-wrapper
 ###cookie-container
@@ -621,7 +621,7 @@
 ###cookieMessageDisplayDIV
 ###cookieMessageWrapper
 ###cookieMgn
-~excellent-hemd.de,~excellent-hose.de,~engie-energie.nl###cookieModal
+###cookieModal
 ###cookieMon
 ###cookieMonsterWrapper
 ###cookieMsg
@@ -1172,7 +1172,7 @@
 ##.PortletGestionDesCookiesCNIL
 ##.Section-Cookie
 ##._iph_cp_standalone
-~gelia.fi,~gelia.no,~gelia.se,~imvu.com,~ahlsell.dk,~ahlsell.fi,~ahlsell.no,~ahlsell.se,~franziskaner-weissbier.de##.accept-cookies
+##.accept-cookies
 ##.acceptCookies
 ##.acceptCookiesBox
 ##.accept_cookies
@@ -1246,7 +1246,7 @@
 ##.cookie-banner-bottom
 ##.cookie-bar:not(body)
 ##.cookie-block
-~538.nl##.cookie-box:not(body):not(html)
+##.cookie-box:not(body):not(html)
 ##.cookie-check
 ##.cookie-compliance
 ##.cookie-compliance-container
@@ -1298,17 +1298,17 @@
 ##.cookie-policy-message
 ##.cookie-policy-notice
 ##.cookie-policy-statement
-~avanquest.com##.cookie-pop
+##.cookie-pop
 ##.cookie-pop-up-container
 ##.cookie-popup:not(body):not(html)
 ##.cookie-prompt
 ##.cookie-prompter
 ##.cookie-rules-wrapper
 ##.cookie-siteusage-notice
-~blogs.mediapart.fr##.cookie-warn
+##.cookie-warn
 ##.cookie-warn-msg
-~samsung.com##.cookie-warning
-~travelchannel.co.uk##.cookie-wrapper
+##.cookie-warning
+##.cookie-wrapper
 ##.cookieAccept
 ##.cookieAccepterSlider
 ##.cookieAdvice
@@ -1349,7 +1349,7 @@
 ##.cookieNotify
 ##.cookieOptIn
 ##.cookiePanel
-~elavon.pl##.cookiePolicy:not(body):not(html)
+##.cookiePolicy:not(body):not(html)
 ##.cookiePolicy-banner
 ##.cookiePolicyBannerOuter
 ##.cookiePolicyBnr
@@ -1468,8 +1468,8 @@
 ##.cookiespolicy
 ##.cookiestrip
 ##.cookietext
-~intersport.nl,~intersport.hu,~intersport.es,~intersport.at##.cookiewall:not(body):not(html)
-~samsung.com##.cookiewarning:not(body)
+##.cookiewall:not(body):not(html)
+##.cookiewarning:not(body)
 ##.cookiewrapper
 ##.cookskom
 ##.cp-cookie-banner
@@ -1657,9 +1657,9 @@
 !+ NOT_OPTIMIZED
 ##.cookie-overlay:not(html):not(body)
 !+ NOT_OPTIMIZED
-~calvinklein.be##.cookie-notice:not(body):not(html)
+##.cookie-notice:not(body):not(html)
 !+ NOT_OPTIMIZED
-~intersport.de##.cookie-banner:not(body):not(html)
+##.cookie-banner:not(body):not(html)
 !+ NOT_OPTIMIZED
 ###cookie-law-info-bar
 ! NOTE: General element hiding end ⬆️
@@ -2347,6 +2347,11 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+swedbank.se#$#body { overflow: auto !important; }
+swedbank.se#$#.cookie-banner { display: none !important; }
+krungsricard.com#$##cookieModal { display: none !important; }
+krungsricard.com#$#body { overflow: auto !important; padding-right: 0 !important; }
+krungsricard.com#$#.modal-backdrop { display: none !important; }
 taishinbank.com.tw###cookie-accept-block
 viagogo.*#%#//scriptlet('trusted-set-local-storage-item', 'cookie_preferences', '{"hasSelectedPreferences":true,"preferences":{"advertising":false,"analytics":false,"preferences":false}}')
 viagogo.*#?##app > div[class*=" "] > div[class*=" "] > div[class*=" "]:has(> span a[href="/help/cookies"])
@@ -14866,6 +14871,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/170067
+krungsricard.com#@##cookieModal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170310
 @@||gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js$domain=chromeenterprise.google
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169574

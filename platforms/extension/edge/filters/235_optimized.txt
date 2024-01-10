@@ -1,9 +1,9 @@
-! Checksum: UFlWJWf4/Qa/3cRz7sG91Q
-! Diff-Path: ../patches/235_optimized/235_optimized-473404-4.patch
+! Checksum: G1OgWcYEY5P5v2RVKejcCQ
+! Diff-Path: ../patches/235_optimized/235_optimized-473579-4.patch
 ! Title: Persian Blocker (Optimized)
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.3.98
-! TimeUpdated: 2024-01-03T04:07:12+00:00
+! Version: 2.0.3.99
+! TimeUpdated: 2024-01-10T11:02:03+00:00
 ! Expires: 4 days (update frequency)
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.site/"]
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.co/"]
@@ -904,14 +904,14 @@ farnet.io#%#//scriptlet('ubo-acis.js', 'eif')
 farnet.io##.eif:not(:has(a[href*="farnet.io"]))
 farnet.io##.content-column:not(> .archive-title:has-text(رپرتاژ تبلیغاتی)) .item-inner:has(a[href*="/pr/"])
 farnet.io###site-footer .col-sm-4:has(a[rel="noopener"][target="_blank"])
-farsroid.com#%#//scriptlet('ubo-aopr.js', 'faPa')
-||farsroid.com/js/?url=$script
-farsroid.com##.swiper-wrapper > .swiper-slide:not(:has(a[href*="farsroid.com/"]))
-farsroid.com##.site-middle-banners
-farsroid.com##.gtm-farsroid-ads
-farsroid.com##.download-link-ads-below
-farsroid.com##.cas-pubg.cas
-farsroid.com##.ads-dashed-banner
+farsroid.com#%#//scriptlet('ubo-rmnt.js', 'script', 'ads_app_downloads')
+||farsroid.com/js/?url=$script,~third-party
+farsroid.com##header.site-header > div.container > nav.site-top-nav > ul.grid-row > li:has(> a[href][rel="dofollow"][target="_blank"]:is([href^="https://1000gem.org/"],[href^="https://kifpool.me/"], [href^="https://dicardo.com/"]))
+farsroid.com##div.site-middle-banners:has(> div.banner > a.farsroid-ads)
+farsroid.com##div.single-text-ads
+farsroid.com##article.post-single-box > div.post-content > p:has(> a[href="https://www.farsroid.com/download-imo-android/"][target="_blank"][rel="noopener"])
+farsroid.com##div.download-link-ads-below
+farsroid.com##div.cas
 farsroid.com#@#.place-ads
 ||analysis.faradars.org
 ||media.farsnews.ir/Uploaded/Files/Documents/*.gif^$image,~third-party
@@ -1249,6 +1249,7 @@ lenzak.com###text-35
 lastsecond.ir##.ads-widget
 lahzeakhar.com#%#//scriptlet('ubo-set.js', 'customnotify', 'noopFunc')
 ||lahzeakhar.com/ShowAds
+magiran.com##div.blur-text
 mohandescenter.ir##div.col-12 div#ctl00_topModule1_pnlTop:has(> div.divleftmod > div.py-2 > strong:has-text(جت سئو))
 mediat.ir##div.widget-ad-image
 mediat.ir##div.ad-wrap
@@ -1995,12 +1996,11 @@ tiwall.com##.slider-banners.partial
 tiwall.com##.sponsor-link
 tinn.ir##[href^="/advertisements/"]
 tinn.ir##.type-resource-image
-||tgju.org/cdn-cgi/apps/head^$script,~third-party
-||api.tgju.org/v1/advertisement^$xmlhttprequest,~third-party
-tgju.org#%#//scriptlet('ubo-acis.js', 'document.getElementById', 'ad')
-tgju.org##.advertise
-tgju.org##.bottom-left-ad
-tgju.org##.bottom-right-ad
+tgju.org#%#//scriptlet('ubo-rmnt.js', 'script', 'ad.setAttribute')
+||static.tgju.org/advertisement^$image,~third-party
+tgju.org##ul.advertise
+tgju.org##div.bottom-left-ad
+tgju.org##div.bottom-right-ad
 tejaratnews.com##.tj-ad-box
 tejaratnews.com##.home-web-surfing
 tejaratnews.com##.full-width-tabligh

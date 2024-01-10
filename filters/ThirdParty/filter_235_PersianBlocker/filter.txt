@@ -1188,15 +1188,18 @@ farnet.io##.eif:not(:has(a[href*="farnet.io"]))
 farnet.io##.content-column:not(> .archive-title:has-text(رپرتاژ تبلیغاتی)) .item-inner:has(a[href*="/pr/"])
 farnet.io###site-footer .col-sm-4:has(a[rel="noopener"][target="_blank"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42827
-farsroid.com#%#//scriptlet('ubo-aopr.js', 'faPa')
-||farsroid.com/js/?url=$script
-! ||farsroid.com/api/os-info$xhr
-farsroid.com##.swiper-wrapper > .swiper-slide:not(:has(a[href*="farsroid.com/"]))
-farsroid.com##.site-middle-banners
-farsroid.com##.gtm-farsroid-ads
-farsroid.com##.download-link-ads-below
-farsroid.com##.cas-pubg.cas
-farsroid.com##.ads-dashed-banner
+!#if cap_html_filtering
+farsroid.com$$script[tag-content="ads_app_downloads"][max-length="262144"]
+!#else
+farsroid.com#%#//scriptlet('ubo-rmnt.js', 'script', 'ads_app_downloads')
+!#endif
+||farsroid.com/js/?url=$script,~third-party
+farsroid.com##header.site-header > div.container > nav.site-top-nav > ul.grid-row > li:has(> a[href][rel="dofollow"][target="_blank"]:is([href^="https://1000gem.org/"],[href^="https://kifpool.me/"], [href^="https://dicardo.com/"]))
+farsroid.com##div.site-middle-banners:has(> div.banner > a.farsroid-ads)
+farsroid.com##div.single-text-ads
+farsroid.com##article.post-single-box > div.post-content > p:has(> a[href="https://www.farsroid.com/download-imo-android/"][target="_blank"][rel="noopener"])
+farsroid.com##div.download-link-ads-below
+farsroid.com##div.cas
 farsroid.com#@#.place-ads
 ||analysis.faradars.org
 ! https://github.com/MasterKia/PersianBlocker/pull/39
@@ -1628,6 +1631,7 @@ lahzeakhar.com#%#//scriptlet('ubo-set.js', 'customnotify', 'noopFunc')
 ||lahzeakhar.com/ShowAds
 ! ||lahzeakhar.com/sw.js
 ! >> M <<
+magiran.com##div.blur-text
 mohandescenter.ir##div.col-12 div#ctl00_topModule1_pnlTop:has(> div.divleftmod > div.py-2 > strong:has-text(جت سئو))
 ! https://github.com/MasterKia/PersianBlocker/issues/211
 mediat.ir##div.widget-ad-image
@@ -2560,15 +2564,15 @@ tiwall.com##.sponsor-link
 tinn.ir##[href^="/advertisements/"]
 tinn.ir##.type-resource-image
 ! https://github.com/AdguardTeam/AdguardFilters/issues/96925
-||tgju.org/cdn-cgi/apps/head^$script,~third-party
-||api.tgju.org/v1/advertisement^$xmlhttprequest,~third-party
+!#if cap_html_filtering
 tgju.org$$script[tag-content="ad.setAttribute"][max-length="262144"]
-!#if !cap_html_filtering
-tgju.org#%#//scriptlet('ubo-acis.js', 'document.getElementById', 'ad')
+!#else
+tgju.org#%#//scriptlet('ubo-rmnt.js', 'script', 'ad.setAttribute')
 !#endif
-tgju.org##.advertise
-tgju.org##.bottom-left-ad
-tgju.org##.bottom-right-ad
+||static.tgju.org/advertisement^$image,~third-party
+tgju.org##ul.advertise
+tgju.org##div.bottom-left-ad
+tgju.org##div.bottom-right-ad
 tejaratnews.com##.tj-ad-box
 tejaratnews.com##.home-web-surfing
 tejaratnews.com##.full-width-tabligh

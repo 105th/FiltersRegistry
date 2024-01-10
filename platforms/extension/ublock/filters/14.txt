@@ -1,10 +1,10 @@
-! Checksum: NbItZnqQFINIt2WQZzE/FA
-! Diff-Path: ../patches/14/14-m-28414655-60.patch
 ![Adblock Plus 2.0]
+! Checksum: UjWLOtlF2bm9HkZGNcmy5A
+! Diff-Path: ../patches/14/14-473579-4.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.82.89
-! TimeUpdated: 2024-01-10T09:32:49+00:00
+! Version: 2.1.82.90
+! TimeUpdated: 2024-01-10T11:02:36+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -474,10 +474,10 @@
 ###cookie-compliance-bottom
 ###cookie-compliance-bottom-overlay
 ###cookie-compliance-container
-~yellowbrick.nl###cookie-consent
+###cookie-consent
 ###cookie-consent-banner
 ###cookie-consent-bar
-~analog.com###cookie-consent-container
+###cookie-consent-container
 ###cookie-consent-popup
 ###cookie-consent-wrapper
 ###cookie-container
@@ -611,7 +611,7 @@
 ###cookieMessageDisplayDIV
 ###cookieMessageWrapper
 ###cookieMgn
-~excellent-hemd.de,~excellent-hose.de,~engie-energie.nl###cookieModal
+###cookieModal
 ###cookieMon
 ###cookieMonsterWrapper
 ###cookieMsg
@@ -1162,7 +1162,7 @@
 ##.PortletGestionDesCookiesCNIL
 ##.Section-Cookie
 ##._iph_cp_standalone
-~gelia.fi,~gelia.no,~gelia.se,~imvu.com,~ahlsell.dk,~ahlsell.fi,~ahlsell.no,~ahlsell.se,~franziskaner-weissbier.de##.accept-cookies
+##.accept-cookies
 ##.acceptCookies
 ##.acceptCookiesBox
 ##.accept_cookies
@@ -1236,7 +1236,7 @@
 ##.cookie-banner-bottom
 ##.cookie-bar:not(body)
 ##.cookie-block
-~538.nl##.cookie-box:not(body):not(html)
+##.cookie-box:not(body):not(html)
 ##.cookie-check
 ##.cookie-compliance
 ##.cookie-compliance-container
@@ -1288,17 +1288,17 @@
 ##.cookie-policy-message
 ##.cookie-policy-notice
 ##.cookie-policy-statement
-~avanquest.com##.cookie-pop
+##.cookie-pop
 ##.cookie-pop-up-container
 ##.cookie-popup:not(body):not(html)
 ##.cookie-prompt
 ##.cookie-prompter
 ##.cookie-rules-wrapper
 ##.cookie-siteusage-notice
-~blogs.mediapart.fr##.cookie-warn
+##.cookie-warn
 ##.cookie-warn-msg
-~samsung.com##.cookie-warning
-~travelchannel.co.uk##.cookie-wrapper
+##.cookie-warning
+##.cookie-wrapper
 ##.cookieAccept
 ##.cookieAccepterSlider
 ##.cookieAdvice
@@ -1339,7 +1339,7 @@
 ##.cookieNotify
 ##.cookieOptIn
 ##.cookiePanel
-~elavon.pl##.cookiePolicy:not(body):not(html)
+##.cookiePolicy:not(body):not(html)
 ##.cookiePolicy-banner
 ##.cookiePolicyBannerOuter
 ##.cookiePolicyBnr
@@ -1458,8 +1458,8 @@
 ##.cookiespolicy
 ##.cookiestrip
 ##.cookietext
-~intersport.nl,~intersport.hu,~intersport.es,~intersport.at##.cookiewall:not(body):not(html)
-~samsung.com##.cookiewarning:not(body)
+##.cookiewall:not(body):not(html)
+##.cookiewarning:not(body)
 ##.cookiewrapper
 ##.cookskom
 ##.cp-cookie-banner
@@ -1647,9 +1647,9 @@
 !+ NOT_OPTIMIZED
 ##.cookie-overlay:not(html):not(body)
 !+ NOT_OPTIMIZED
-~calvinklein.be##.cookie-notice:not(body):not(html)
+##.cookie-notice:not(body):not(html)
 !+ NOT_OPTIMIZED
-~intersport.de##.cookie-banner:not(body):not(html)
+##.cookie-banner:not(body):not(html)
 !+ NOT_OPTIMIZED
 ###cookie-law-info-bar
 ! NOTE: General element hiding end ⬆️
@@ -2318,6 +2318,11 @@ moto.it#$#html { overflow: auto !important; }
 !
 ! NOTE: Regular rules
 !
+swedbank.se#$#body { overflow: auto !important; }
+swedbank.se#$#.cookie-banner { display: none !important; }
+krungsricard.com#$##cookieModal { display: none !important; }
+krungsricard.com#$#body { overflow: auto !important; padding-right: 0 !important; }
+krungsricard.com#$#.modal-backdrop { display: none !important; }
 taishinbank.com.tw###cookie-accept-block
 viagogo.*#?##app > div[class*=" "] > div[class*=" "] > div[class*=" "]:has(> span a[href="/help/cookies"])
 player.amperwave.net##.v7-us-privacy-explicit-notice
@@ -14036,6 +14041,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/170067
+krungsricard.com#@##cookieModal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170310
 @@||gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js$domain=chromeenterprise.google
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169574
@@ -29404,6 +29411,7 @@ newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,theloca
 !
 ! SECTION: Subscriptions - Regular rules
 !
+atelevisao.com#?#.s-ct + .single-sidebar:has(#mailpoet_form-2)
 beverfood.com##.box-iscrizione
 daytoday.ua##.newicons
 daytoday.ua##.wp-block-coblocks-alert > p.wp-block-coblocks-alert__text

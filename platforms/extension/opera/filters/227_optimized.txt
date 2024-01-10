@@ -1,9 +1,9 @@
-! Checksum: efhUnY8Nms1hwJ3NgDnevA
-! Diff-Path: ../patches/227_optimized/227_optimized-473392-4.patch
+! Checksum: E6K8Mj7p+m/iA8sRo7Noiw
+! Diff-Path: ../patches/227_optimized/227_optimized-473579-4.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.17.8
-! TimeUpdated: 2024-01-02T16:07:11+00:00
+! Version: 2.0.17.9
+! TimeUpdated: 2024-01-10T11:01:49+00:00
 ! Expires: 4 days (update frequency)
 ||ad1.missyusa.com^
 ||ads.motorgraph.com^
@@ -36,7 +36,6 @@
 ||iadsdk.apple.com^
 ||skt-asum.com^
 ||iad-*.braze.com^
-||adplatform-cdn.baemin.com^
 ||external-ad.bunjang.co.kr^
 ||epnt.ebay.com^
 ||img.side.mythiell.com^
@@ -1221,6 +1220,7 @@
 ||loader2.fmkorea.com/_myphp/adpost/content_new.php
 ||loader.fmkorea.com/_loader/
 ||ssl.pstatic.net/tveta/libs/
+||moeni.net/img/sp/
 ||cdnbuzz.buzz//banner/
 /^https:\/\/avjoa[0-9]+\.com\/wp-content\/uploads\/[0-9]+\/[0-9]+\/.+\.gif$/
 /^https:\/\/www\.ttking[0-9]+\.me\/ad\//
@@ -1263,7 +1263,7 @@
 /^https:\/\/www\.torrentreel[0-9]+\.site\/ad\//
 /^https:\/\/tvchak[0-9]+\.com\/img\/bbnn/
 /^https:\/\/agit[0-9]+\.com\/upload\/[0-9]+\/[0-9]+\/[0-9]+\./
-||hoohootv.*/static/bnner/$domain=hoohootv.*
+||hoohootv*.*/static/bnner/$domain=hoohootv27.*|hoohootv28.*|hoohootv29.*|hoohootv30.*|hoohootv31.*|hoohootv32.*|hoohootv33.*|hoohootv34.*|hoohootv35.*|hoohootv36.*|hoohootv37.*|hoohootv38.*|hoohootv39.*|hoohootv40.*
 /^https:\/\/cdn\.kktv[0-9]+\.com\/data\/editor\//$domain=kktv365.com|kktv366.com|kktv367.com|kktv368.com|kktv369.com|kktv370.com|kktv371.com|kktv372.com|kktv373.com|kktv374.com|kktv375.com|kktv376.com
 ||cdn.ksportscdn.com/data/editor/$domain=kktv365.com|kktv366.com|kktv367.com|kktv368.com|kktv369.com|kktv370.com|kktv371.com|kktv372.com|kktv373.com|kktv374.com|kktv375.com|kktv376.com
 /^https:\/\/tv[0-9]+\.avsee\.[a-z]+\/imgs\//$domain=avsee.*
@@ -1419,6 +1419,9 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+m-i.kr###user-wrap.mobile ~ div[style^="height:"]
+search.11st.co.kr###section_plusPrd
+search.11st.co.kr##section[class*="-ad-"]
 zdnet.co.kr##div[id^="A1_"][style*="height:"]
 zdnet.co.kr##div[id$="AdCon"][style]
 ggoorr.net##div[data-docsrl] ~ div[style^="height:"][style*="text-align:"]
@@ -1635,7 +1638,6 @@ search.zum.com##.naver_power_shopping
 search.zum.com##[class*="sponsor"]
 bloter.net##.respons-edit > div[style^="width:"].float-right
 newspim.com###news-contents div[style*="margin:"]
-search.11st.co.kr##._SearchTitlePrdHListAd
 search.11st.co.kr##._searchHotProduct
 www.11st.co.kr###rcmdPrd.rcmd_prd
 search.11st.co.kr##.search_content > section[data-log-actionid-area="recommend"]
@@ -1753,7 +1755,7 @@ search.wemakeprice.com##.search_box_listdeal > .aiplus
 tistory.com,oracionspace.com,poketory.com##.revenue_unit_wrap
 topstarnews.net##div[class^="Ad"]
 news.mt.co.kr##.aside_bundle > div[style*="height:"]
-m.munhwa.com##section[class$="_ad"]
+search.11st.co.kr,m.munhwa.com##section[class$="_ad"]
 topstarnews.net##header .dis-table > div[style^="padding-top:"].dis-table-cell
 thebook.io##section[id$="_banner"]
 modoocode.com##div[class*="adsense-"]
@@ -1969,7 +1971,7 @@ digitalasset.works,khgames.co.kr,digitaltoday.co.kr,ilemonde.com,mjmedi.com,erou
 hogaeng.co.kr##div[id^="container_"] .slide_box
 zdnet.co.kr##div[class*="_bn_"][style]
 dprime.kr.dvdprime.com##div[style~="height:"][style~="border-top:"].relative
-comic.naver.com,health.chosun.com,dprime.kr##[class*="_ad_"]
+m.ppomppu.co.kr,comic.naver.com,health.chosun.com,dprime.kr##[class*="_ad_"]
 ypbooks.co.kr##td[id^="divBn_"]
 m.mimint.co.kr,m.dailian.co.kr,uwayapply.com,ypbooks.co.kr##div[id$="Banner"]
 ypbooks.co.kr##div[style]#cenArea > .today
@@ -2203,7 +2205,7 @@ happymoney.co.kr###content  > .mainBanner
 cultureland.co.kr##.slider > div[id$="_popup"]
 cultureland.co.kr##.main-evn > .main-visual
 tcafe2a.com##.side-event-img
-goodgag.net,m.inven.co.kr,nownews.seoul.co.kr,ksg.co.kr,paxnet.co.kr,chosun.com##div[class$="Ad"]
+m-i.kr,goodgag.net,m.inven.co.kr,nownews.seoul.co.kr,ksg.co.kr,paxnet.co.kr,chosun.com##div[class$="Ad"]
 game.dcinside.com,gall.dcinside.com##.con_banner
 game.naver.com##div[class^="styles_Banner"]
 coinpan.com##img[class^="banner_"]
@@ -2432,6 +2434,7 @@ dcinside.com##ul.cmt_list > li[id^="comment_li_"].ub-content.dory
 orbi.kr##div.panel.class-event-wrap
 orbi.kr##a[href^="https://ads.orbi.kr/"]
 osen.mt.co.kr##div#close_mask
+moeni.net##img[src^="/img/sp/"]
 av19.org,av20.org,av21.org,av22.org,av23.org,av24.org,av25.org,av26.org,av27.org,av28.org,av29.org,av30.org,av31.org,av32.org,av33.org,av34.org,av35.org,av36.org,av37.org###page ~ div[style^="min-height:"]#content.row
 avjoa54.com,avjoa55.com,avjoa56.com,avjoa57.com,avjoa58.com,avjoa59.com,avjoa60.com,avjoa61.com,avjoa62.com,avjoa63.com,avjoa64.com,avjoa65.com,avjoa66.com,avjoa67.com,avjoa68.com,avjoa69.com,avjoa70.com,avjoa71.com,avjoa72.com##div[id^="imgDiv"]
 nolgoga25.com,nolgoga26.com,nolgoga27.com,nolgoga28.com,nolgoga29.com,nolgoga30.com,nolgoga31.com,nolgoga32.com,nolgoga33.com,nolgoga34.com,nolgoga35.com###hd_pop
@@ -3010,6 +3013,7 @@ m.humoruniv.com#%#//scriptlet('set-constant', 'list_end_run', 'noopFunc')
 m.humoruniv.com#%#//scriptlet('abort-on-stack-trace', '$.prototype.html', '_boom')
 m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html', '/\/images\/[A-z0-9-_]+\.?(jpg|gif)/')
 m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c', '/fmkorea.com.[A-z]{8,}.js/')
+search.11st.co.kr#%#//scriptlet('json-prune', 'powerLink', 'powerLink.ads')
 ssodam.com#%#//scriptlet('set-cookie', 'adv', '1')
 www.cultureland.co.kr#%#//scriptlet('abort-on-stack-trace', 'String.prototype.substring', '/checkCookie.+main\.do/')
 m.shop.interpark.com#%#//scriptlet('set-constant', 'FastClick.attach', 'noopFunc')
@@ -3039,10 +3043,6 @@ fun-iyagi.co.kr,timecoffee.co.kr,333aaa.site#%#//scriptlet('set-constant', 'pum_
 inven.co.kr#%#//scriptlet('remove-attr', 'placeholder', '#webzineHeadmenuF1 input[placeholder][autocomplete="off"]')
 comic.naver.com#%#//scriptlet('json-prune', 'adBannerList')
 hashnews.cafe24.com#%#//scriptlet('abort-on-property-read', 'pum_popups')
-search.11st.co.kr#%#//scriptlet('set-constant', 'searchDataFactory.rcmdPrdList', 'emptyObj')
-search.11st.co.kr#%#//scriptlet('set-constant', 'searchDataFactory.focusPrdList', 'emptyObj')
-search.11st.co.kr#%#//scriptlet('set-constant', 'searchDataFactory.powerPrdList', 'emptyObj')
-search.11st.co.kr#%#//scriptlet('set-constant', 'searchDataFactory.plusPrdList', 'emptyObj')
 enuri.com#%#//scriptlet('json-prune', 'data.supertopADNos')
 sbs.co.kr#%#//scriptlet('set-constant', 'player.renderAdSequence', 'undefined')
 domin.co.kr#%#//scriptlet('set-constant', 'bannerpop.popup', 'noopFunc')
@@ -3113,7 +3113,7 @@ aagag.com#@#ins.adsbygoogle
 aagag.com#$#.la { height: 75px !important; width: 75px !important; visibility: hidden !important; }
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=aagag.com,xmlhttprequest
 sbs.co.kr#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
-3dpchip.com#%#//scriptlet('abort-current-inline-script', 'chp_ads_blocker_detector')
+deokhu.com,3dpchip.com#%#//scriptlet('abort-current-inline-script', 'chp_ads_blocker_detector')
 3dpchip.com#%#//scriptlet('abort-on-property-write', 'HTMLAnchorElement.prototype.onclick')
 sysnet.pe.kr#%#//scriptlet('prevent-setTimeout', 'banner_book')
 !#safari_cb_affinity(privacy)

@@ -1,9 +1,9 @@
-! Checksum: vfjMtxQwiLQPNlWdA/OnfQ
-! Diff-Path: ../patches/251_optimized/251_optimized-473432-4.patch
+! Checksum: djWbnV2ddVAzU4HpHA8n6A
+! Diff-Path: ../patches/251_optimized/251_optimized-473579-4.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links.
-! Version: 2.0.7.17
-! TimeUpdated: 2024-01-04T08:08:00+00:00
+! Version: 2.0.7.18
+! TimeUpdated: 2024-01-10T11:02:20+00:00
 ! Expires: 4 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -28,7 +28,7 @@ $removeparam=ysclid
 /?r=dir&zoneid=$removeparam
 /?rb=*&zoneid=$removeparam
 /?uclick=*;uclickhash=$removeparam
-$removeparam=/^utm_/i,domain=~tradedoubler.com|~sendgb.com|~allegro.pl|~tix.axs.com|~transfernow.*|~carrefourpl.snrpage.com|~justdial.com|~pepper.pl
+$removeparam=/^\??utm_/i,domain=~tradedoubler.com|~sendgb.com|~allegro.pl|~tix.axs.com|~transfernow.*|~carrefourpl.snrpage.com|~justdial.com|~pepper.pl
 $document,removeparam=/^itm_/,domain=~redir.tradedoubler.com
 $document,removeparam=/^stm_/,domain=~redir.tradedoubler.com
 $removeparam=logTag,document
@@ -111,7 +111,7 @@ $removeparam=rlz
 $removeparam=pcampaignid
 $removeparam=igshid
 $removeparam=snr,domain=steampowered.com|steamcommunity.com|steamgames.com
-$document,removeparam=referrer,domain=~bolt.com|~f4map.com|~deviantart.com|~github.com|~discover.*|~vimeo.*|~123-reg.co.uk
+$document,removeparam=referrer,domain=~bolt.com|~f4map.com|~deviantart.com|~github.com|~discover.*|~vimeo.*|~123-reg.co.uk|~cravesandflames.com
 $removeparam=ext_source
 $removeparam=iradid
 $removeparam=irpid
@@ -2373,7 +2373,6 @@ $removeparam=repost,domain=nbcnews.com|sacurrent.com
 $removeparam=adt_ei
 $document,removeparam=af,domain=pnas.org|science.org|scitation.org|wiley.com|worldscientific.com
 ^ref=workingsoftware.dev^$document,removeparam=ref
-$removeparam=rdt,document,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||easyfundraising.org.uk^$document,removeparam=efr_source
 ||easyfundraising.org.uk^$document,removeparam=efr_medium
 ||easyfundraising.org.uk^$document,removeparam=efr_campaign
@@ -2518,6 +2517,10 @@ $document,removeparam=sal,domain=indeed.com
 $document,removeparam=vjk,domain=indeed.com
 $document,removeparam=fvj,domain=indeed.com
 ||bp.blogspot.com^$removeparam=/^r[hn].*$/
+$document,removeparam=sms_click
+$document,removeparam=sms_source
+$document,removeparam=sms_uph
+$document,removeparam=ttclid
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
