@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.15.63",
-			"timeUpdated": "2024-01-11T14:33:29+0000",
+			"version": "2.3.15.64",
+			"timeUpdated": "2024-01-11T15:33:24+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -479,8 +479,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/8_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.6.36",
-			"timeUpdated": "2024-01-10T07:33:28+0000",
+			"version": "2.0.6.37",
+			"timeUpdated": "2024-01-11T15:33:42+0000",
 			"languages": [
 				"nl"
 			],
@@ -503,8 +503,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/9_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.22.75",
-			"timeUpdated": "2024-01-11T07:34:24+0000",
+			"version": "2.0.22.76",
+			"timeUpdated": "2024-01-11T15:33:44+0000",
 			"languages": [
 				"es",
 				"pt"
@@ -588,8 +588,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/14_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.83.10",
-			"timeUpdated": "2024-01-11T14:33:07+0000",
+			"version": "2.1.83.11",
+			"timeUpdated": "2024-01-11T15:32:54+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -607,8 +607,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/15_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.75",
-			"timeUpdated": "2024-01-11T12:09:47+0000",
+			"version": "2.0.59.76",
+			"timeUpdated": "2024-01-11T15:32:55+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -660,8 +660,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.30.38",
-			"timeUpdated": "2024-01-11T14:33:10+0000",
+			"version": "2.0.30.39",
+			"timeUpdated": "2024-01-11T15:32:59+0000",
 			"languages": [],
 			"tags": [
 				5,
