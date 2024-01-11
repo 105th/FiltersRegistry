@@ -1,9 +1,9 @@
-! Checksum: SlKIV40+02k304DJHElmgg
-! Diff-Path: ../patches/14/14-m-28416096-60.patch
+! Checksum: 9WoTpY9c6RXtBwXfXmjQhQ
+! Diff-Path: ../patches/14/14-m-28416157-60.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.83.4
-! TimeUpdated: 2024-01-11T09:32:43+00:00
+! Version: 2.1.83.5
+! TimeUpdated: 2024-01-11T10:34:13+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7328,9 +7328,8 @@ studierenplus.de##.chimpify-popup
 merxu.com##.mxu-cookie-consent
 cm.com##.s-cookie-popup
 tierarzt-onlineverzeichnis.de,vergleichen-und-sparen.de###vs-cookiehinweis
-sex.com#$#.modal-backdrop { display: none!important; }
-sex.com#$#.modal-container > div.modal-content > div.modal-card > div.modal-body > div.sx-consent-to-cookies:upward(4)  { display: none!important; }
-sex.com#$#body.overflow-hidden { overflow: auto!important; }
+sex.com#$#body { overflow: auto !important; }
+sex.com#$#body > .bg-overlay:has(> #cookie-modal) { display: none !important; }
 mizuhatuden.com##main[data-testid="static-page-main"] + div[class^="_"]:last-child
 flazio.com##.flazio-cookie
 hij.airport.jp,cede.de,minimed.at,justiz.nrw###cookieAgree
@@ -14919,6 +14918,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/170395
+sex.com#@##cookie-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170065
 @@||geolocation.onetrust.com/cookieconsentpub/$domain=hollywoodreporter.com
 hollywoodreporter.com#@##onetrust-consent-sdk
@@ -22472,6 +22473,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+hoyolab.com#%#//scriptlet('trusted-set-local-storage-item', 'loginPop', '{"timestamp":1704967028294,"value":1704967028294}')
 drishtiias.com##body > div#formcontainer
 lingq.com#%#//scriptlet('set-cookie', 'DictPopShownToday', 'true')
 ||astatic.ccmbg.com/ccmcms_journaldunet/dist/app/*/registrationWall.
@@ -30413,6 +30415,7 @@ newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,theloca
 !
 ! SECTION: Subscriptions - Regular rules
 !
+maxroll.gg##aside > div[class^="bg-dark"]:has(> form[action="/api/newsletter/subscribe"])
 drishtiias.com##.section-newsletter-alerts
 m-timesofindia-com.cdn.ampproject.org##.gnews_top
 materializedview.io#%#//scriptlet('trusted-set-local-storage-item', 'pub-2070040-subscribe-prompt-next-shown-at', '99999999999999')
@@ -36872,6 +36875,8 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161301
 temu.com#?#div[role="main"] div[style] > div[style]:has(> div[style] div[js-selector="mobile-download-ui"])
 !
+fortnitetracker.com##.trn-site-appbar__apps
+invenglobal.com###floating-banner-ow
 teamblind.com##.openapp_full
 m-timesofindia-com.cdn.ampproject.org##.float_cta_view_ga
 viagogo.*#?#main div[class$=" "] ~ section:has(a[href*="//play.google.com/store/apps/details?id="])
@@ -44791,6 +44796,7 @@ theguardian.com##.contributions__adblock
 !
 ! SECTION: Self-promo - Regular rules
 !
+thunderstore.io###get-app-alert
 maxroll.gg#?#aside > div[class^="border-"]:has(> h2 > span:contains(Ad-Free))
 lingq.com##.lingq-banner
 taobao.com#?#div[class^="Content--contentInner"] > div:has(> a[class^="Card--doubleCardWrapper"] div[class^="SalesPoint--subIconWrapper"] > img[class^="SalesPoint--iconPic"][style])
