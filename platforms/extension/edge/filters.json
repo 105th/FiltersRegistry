@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.15.66",
-			"timeUpdated": "2024-01-11T16:35:57+0000",
+			"version": "2.3.15.67",
+			"timeUpdated": "2024-01-11T17:33:10+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -378,8 +378,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.65.11",
-			"timeUpdated": "2024-01-11T13:33:05+0000",
+			"version": "2.0.65.12",
+			"timeUpdated": "2024-01-11T17:33:13+0000",
 			"languages": [],
 			"tags": [
 				2,
@@ -588,8 +588,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/14.txt",
 			"trustLevel": "full",
-			"version": "2.1.83.12",
-			"timeUpdated": "2024-01-11T16:08:03+0000",
+			"version": "2.1.83.13",
+			"timeUpdated": "2024-01-11T17:32:46+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -683,8 +683,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.30.40",
-			"timeUpdated": "2024-01-11T16:08:08+0000",
+			"version": "2.0.30.41",
+			"timeUpdated": "2024-01-11T17:32:51+0000",
 			"languages": [],
 			"tags": [
 				5,
