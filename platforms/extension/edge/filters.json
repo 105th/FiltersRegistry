@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.15.87",
-			"timeUpdated": "2024-01-12T15:33:18+0000",
+			"version": "2.3.15.88",
+			"timeUpdated": "2024-01-12T17:33:10+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -378,8 +378,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.65.13",
-			"timeUpdated": "2024-01-12T10:34:51+0000",
+			"version": "2.0.65.14",
+			"timeUpdated": "2024-01-12T17:33:14+0000",
 			"languages": [],
 			"tags": [
 				2,
@@ -588,8 +588,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/14.txt",
 			"trustLevel": "full",
-			"version": "2.1.83.25",
-			"timeUpdated": "2024-01-12T16:35:26+0000",
+			"version": "2.1.83.26",
+			"timeUpdated": "2024-01-12T17:32:42+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -665,8 +665,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.7.75",
-			"timeUpdated": "2024-01-11T14:33:10+0000",
+			"version": "2.0.7.76",
+			"timeUpdated": "2024-01-12T17:32:48+0000",
 			"languages": [],
 			"tags": [
 				2
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.18.35",
-			"timeUpdated": "2024-01-12T16:35:36+0000",
+			"version": "2.0.18.36",
+			"timeUpdated": "2024-01-12T17:32:55+0000",
 			"languages": [],
 			"tags": [
 				5,
