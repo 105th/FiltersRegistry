@@ -636,8 +636,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.42.68",
-			"timeUpdated": "2024-01-12T01:48:27+0000",
+			"version": "2.0.42.69",
+			"timeUpdated": "2024-01-12T02:37:45+0000",
 			"languages": [
 				"fr"
 			],
