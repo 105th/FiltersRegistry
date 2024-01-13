@@ -457,8 +457,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.24",
-			"timeUpdated": "2024-01-12T10:34:59+0000",
+			"version": "2.0.47.25",
+			"timeUpdated": "2024-01-13T15:33:39+0000",
 			"languages": [
 				"ja"
 			],
