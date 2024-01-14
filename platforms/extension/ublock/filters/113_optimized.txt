@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: i4KgfD0dr7t3kw/xNS/Rbw
-! Diff-Path: ../patches/113_optimized/113_optimized-473664-4.patch
+! Checksum: IReFLftmvTI24DnZSGGkwQ
+! Diff-Path: ../patches/113_optimized/113_optimized-473668-4.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.41.5
-! TimeUpdated: 2024-01-14T00:24:18+00:00
+! Version: 2.1.41.6
+! TimeUpdated: 2024-01-14T04:06:56+00:00
 ! Expires: 4 days (update frequency)
 &ad_count=
 &ad_target_
@@ -60,6 +60,7 @@
 -ad-bar/
 -ad-cloud.
 -ad-content-
+-ad-management.
 -ad-mobile.
 -ad-script-
 -ad-test-cdn.
@@ -219,6 +220,7 @@
 /468p60_
 /468x60banner.
 /468x60x1.
+/468x60x2.
 /600x60_
 /720x90.
 /728-ad-
@@ -327,11 +329,9 @@
 /ads-3-
 /ads-ad-
 /ads-banner
-/ads-by.
 /ads-ext.
 /ads-iframe-
 /ads-img/*
-/ads-priv.
 /ads-service/*
 /ads.*/banner/*
 /ads.*/banners/*
@@ -385,6 +385,7 @@
 /ads?req_
 /ads?spot_
 /ads?sz=
+/ads_120_
 /ads_250_
 /ads_banner/*
 /ads_block
@@ -560,7 +561,6 @@
 /bnr/468/*
 /bnr/720/*
 /bnr/ad/*
-/bnrs/yn_bnr.
 /brand-ads-
 /brinpopup.
 /bsa-pro-scripteo/*
@@ -687,6 +687,7 @@
 /js/marketing/marketing.js
 /js/pub.js
 /js/sda-
+/js/tc_loader.js
 /js/tc_pu.js
 /jsk?zoneid=
 /lgads.
@@ -711,7 +712,6 @@
 /mobile-ad/*
 /mobilead.
 /modules.pub.js
-/mpop.js
 /mpopunder.
 /myadvertisements.
 /native-ad/*
@@ -724,6 +724,7 @@
 /no-banner-$image
 /noaabd/*&promo=
 /nordvpn-affiliate-
+/novaonads.
 /npawAdAdapter.
 /npop.js|
 /ntfc.php?p=
@@ -764,10 +765,12 @@
 /promo-banner.$third-party
 /promo.*/banner/*
 /promo/*/display.
+/promo/script_
 /promoredirect?key=
 /pu-placer.js
 /pu/*?psid=
 /pu_ad.js
+/pub-300x250.
 /pub-bandeau-
 /pub-internet-300x150.
 /pub-laterale-
@@ -795,6 +798,7 @@
 /pub728x90.
 /pub_250_
 /pub_300.
+/pub_728_
 /pub_affiche.
 /pub_col.
 /pub_header.
@@ -812,7 +816,6 @@
 /publicite/*
 /publicite2.
 /publicite_
-/publiciter.
 /publicites/*
 /publicity.
 /pubs/*-300x250.
@@ -1342,7 +1345,6 @@ _lx.ads/$popup
 ||adxxx.com^$third-party
 ||affiliatable.io^$third-party
 ||affiliatehub.co.in^$third-party
-||affility.com^$third-party
 ||afilio.com.br^$third-party
 ||appintop.com^$third-party
 ||apps2you.org^$third-party
@@ -1386,7 +1388,7 @@ _lx.ads/$popup
 ||comandclick.com^$third-party
 ||como.com^$third-party
 ||conduit.com^$third-party
-||cougar-rencontre.net^$third-party
+||cougarmessenger.com^$third-party
 ||cpa-content.com^$third-party
 ||cpabuild.com^$third-party
 ||cpaofferstat.com^$third-party
@@ -1547,7 +1549,6 @@ _lx.ads/$popup
 ||shareaholic.com^$third-party
 ||sharemyads.com^$third-party
 ||smartclip.net^$~object,third-party
-||smartmovies.net^$third-party
 ||smartstream.tv^$third-party
 ||spacepush.ru^$third-party
 ||starti.pl^$third-party
@@ -2032,7 +2033,6 @@ _lx.ads/$popup
 ||doathair.com^
 ||dockdigestion.com^
 ||docksalmon.com^
-||dogilar.com^
 ||dogsshoes.com^
 ||dolldetail.com^
 ||domainxnewma.com^
@@ -2312,7 +2312,6 @@ _lx.ads/$popup
 ||nannieslamaic.com^
 ||nathetsof.com^
 ||native.com^
-||nauchegy.link^
 ||ndyzz.com^
 ||nedassiumw.xyz^
 ||nerdolac.com^
@@ -2349,7 +2348,6 @@ _lx.ads/$popup
 ||pafutos.com^
 ||pampopholf.com^
 ||papoto.com^
-||pegasidjeez.com^
 ||pertholin.com^
 ||pesteroverwork.com^
 ||pheedroh.net^
@@ -2499,7 +2497,6 @@ _lx.ads/$popup
 ||undom.net^
 ||undyoban.com^
 ||universalsrc.com^
-||unnumelom.com^
 ||unwodgtll.com^
 ||updatemobilee.com^
 ||usa.cc^
@@ -2560,6 +2557,7 @@ _lx.ads/$popup
 ||cookiescript.info^$third-party
 ||crypto-loot.com^$third-party
 ||duckdns.org^$third-party,websocket
+||easyhash.de^$third-party
 ||ethereum-pocket.com^$third-party
 ||ethers.io^$third-party
 ||evilsbedont.de^
@@ -2580,7 +2578,6 @@ _lx.ads/$popup
 ||nimiq.com^$third-party
 ||pampopholf.com^
 ||statdynamic.com^$third-party
-||supportxmr.com^$third-party
 ||trezor.io^$third-party
 ||trustaproiam.de^$third-party
 ||trusteverything.de^$third-party
@@ -2641,6 +2638,7 @@ _lx.ads/$popup
 ||libertystmedia.com^$popup,third-party
 ||livepartners.com^$popup,third-party
 ||max-adserv.com^$popup,third-party
+||mobswift.com^$popup,third-party
 ||modato.ru^$popup,third-party
 ||monetizze.com.br^$popup,third-party
 ||multiupload.com^$popup,third-party
@@ -2729,7 +2727,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||cdn.citytourgirls.com/static/bn/
 ||cdn.escortdude.com/static/bn/
 ||cdn.ev.mu/js/optim/gg_cc/ev/boot.js$domain=~easyviaggio.com|~easyviajar.com|~easyvols.fr|~easyvoyage.co.uk|~easyvoyage.com|~easyvoyage.de
-||cdn.hqwa.xyz^
 ||cdn.playwire.com^$domain=filehippo.com
 ||cdn.x1cdn.com^*/banner/
 ||cdnpark.com/registrar/*/loader.js
@@ -2818,7 +2815,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||multisurf.fr/upload/bannieres/
 ||my.aliexpress.$third-party
 ||mynewblog.com/tracker.php?
-||mynonpublic.com^*/_sponsoren/
+||mynudez.com^$media,script
 ||neko-hentai.com/banieres/
 ||netu.tv/js/restore_googl.js
 ||newsharecounts.s3-us-west-2.amazonaws.com/nsc.js
@@ -2835,7 +2832,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||pixel-secure.solvemedia.com^
 ||placelibertine.com^$image,third-party
 ||pm.gamedistribution.com^
-||prettybigescorts.com/images/$third-party
 ||probux.com/images/banner*.gif
 ||produits-asiatiques.com/ascreen.jpg
 ||promo.japanhdv.com^
@@ -2924,7 +2920,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||adyou.me^$script,third-party
 ||bitly.com^$script,third-party
 ||cpmlink.net^$script,third-party
-||cut-urls.com^$script,third-party
 ||getsurl.com^$script,third-party
 ||link.tl^$script,third-party
 ||safelinku.com^$script,third-party
@@ -3042,6 +3037,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||livejasmin.com^*&utm_$popup
 ||multinews.me/produit/$popup
 ||pornhub.com^*?utm_$popup
+||promo.streaming-illimite.ma^$popup
 ||redtube.com^*?utm_source=paid$popup
 ||scubastore.com^$popup,domain=sous-la-mer.com
 ||trustzonevpn.info/r.php?$popup
@@ -3111,6 +3107,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||djelfa.info/logo/
 ||doc.btc.com/*/poster/production/main-space.json
 ||dsih.fr/pub/
+||e-sushi.fr/imagearticle/$script
 ||echangedeclics.com/files/ban
 ||edcom.fr/img/popins/
 ||edcom.fr/img/skins/
@@ -3170,6 +3167,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||jasonsavard.com/js/jasonsavard.js
 ||jeu-tarot-en-ligne.com/pubs/
 ||judgehype.com/pub2/bg.php?
+||juristatic.com/public/js/lib/*_popup.js?
 ||lacanausurfinfo.com/admin/images/pubs/
 ||lacasadeel.net/banners/
 ||lafranceapoil.com^*.php$script
@@ -3236,7 +3234,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||produits-asiatiques.com/img/asie-shopping
 ||produits-asiatiques.com/img/massage-chinois
 ||pronosoft.com/*/bookmakers/unibet/
-||ps3-infos.fr/p/
 ||pub.le360.ma^
 ||pub.macommune.info^
 ||qariya.info/adv/
@@ -3275,6 +3272,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||tlemcen-electronic.com/forum/vf.gif
 ||trovit.*/index.php/cod.get_premium/$xmlhttprequest
 ||trovitargentina.*/index.php/cod.get_premium/
+||trucsweb.com^*/ban-$image
+||trucsweb.com^*/ban_$image
 ||tukif.com/webcams/
 ||turbo.fr/themes/turbo/img/333x50-
 ||turfomania.fr/*-publicitaire/
@@ -3321,7 +3320,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###RecipeInnerBottomAd
 ###RightAdDiv
 ###RightAds
-###abd-ad-div
 ###ad-300_atf-label
 ###ad-banner_atf
 ###ad-box300x250
@@ -3374,7 +3372,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###ads_1
 ###ads_2
 ###ads_300x250_wap
-###ads_ban
 ###adsence
 ###adsense3
 ###adsforsearchGrid
@@ -3406,6 +3403,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###block-gc-ad-bloc-droite-1
 ###block-gc-ad-dhtml
 ###block-gc-ad-megaban-haut
+###bottom-adv
 ###bsa-block-1920--1200
 ###bsa-block-300--250
 ###bsa-block-300--600
@@ -3479,6 +3477,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###pub-header
 ###pub-right
 ###pub-top
+###pub01
 ###pub160
 ###pub300
 ###pub300x250
@@ -3910,6 +3909,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.standard_adv_link
 ##.sticky-ad-holder
 ##.structure_wrapper-ad
+##.tableAds
 ##.tag-adverline
 ##.tag-sponsored-content
 ##.top-banner-pub
@@ -4176,6 +4176,7 @@ bdgest.com,bedetheque.com###hab_click
 bdgest.com,bedetheque.com###hab_click_side
 autojdid.com###header72890
 mega-p2p.net###imCell_259
+mega-p2p.net###imStickyBar_imObjectButton_03
 ladepeche.fr,midilibre.fr###immobilier
 flaticon.com###layer_coupon
 zdnet.fr###leaderBottom
@@ -4205,6 +4206,7 @@ journaldemontreal.com###promo-pkp
 01streaming.net,4kstreamz.pw,aliasdmc.fr,allocine.fr,annuaire-streaming.com,blablastream.com,blablastream.rip,centerblog.net,cocostream.rip,cpasfini.me,cpasmal.vin,cpasmieux.buzz,dadyflix.co,disneyplus.vin,divxstreaming.pw,elbilad.net,film01stream.ws,filmgratuit.net,filmotv.uno,filmstreaming.la,filmstub.life,filmzenstream.rip,francoischarron.vin,hd-stream.life,hdss.plus,hdss.work,iphonesoft.fr,jeu.info,jeux-2-filles.com,lesseriestreaming.vin,mac2sell.net,megastream.buzz,monstream.win,novaflix.io,novaflix.me,novaflix.one,nrj.be,nrj.fr,nuked-klan.org,olivierdauvers.fr,orange.fr,papystreaming.win,planet-casio.com,planet-streaming.ws,redirection-web.net,sakstream.win,science-et-vie.com,senscritique.uno,series-streamings.vin,service-public.fr,sortir47.fr,streaming-films.life,streamnews.vin,streampourvous.lol,terre.tv,tirexo.fun,topsitestreaming.top,toutpratique.com,turf-fr.com,val-de-marne.gouv.fr,vfserie.win,virtuoflash.com,vofilms.vin,voirfilms.al,voirfilms.bz,voirfilms.live,voirfilms.win,voirseries.co,voirseries.rip,wareziens.net,wawacity.vin,weserie.info,wifilix.club###pub
 ledemondujeu.com,minuteur-en-ligne.fr,musculaction.com,planeterenault.com,quiveutdufromage.com###pub2
 musculaction.com###pub3
+info-clipper.com###pubBando
 betaseries.com,soundlightup.com###pubSidebar1
 remede.org###pubSky
 remede.org###pubSky2
