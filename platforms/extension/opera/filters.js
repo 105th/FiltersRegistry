@@ -1542,8 +1542,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.7.14",
-			"timeUpdated": "2024-01-14T00:25:47+0000",
+			"version": "2.1.7.15",
+			"timeUpdated": "2024-01-14T01:51:35+0000",
 			"languages": [
 				"zh"
 			],
