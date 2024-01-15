@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kTO4O9nDTDkaqJenFD20kA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28421495-60.patch
+! Checksum: MJq8FDyYoDekSBcwVTZwbA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-m-28421735-60.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.16.7
-! TimeUpdated: 2024-01-15T03:33:04+00:00
+! Version: 2.3.16.8
+! TimeUpdated: 2024-01-15T07:33:14+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7266,7 +7266,7 @@ hardreset.info###ez-content-blocker-container
 hardreset.info##+js(set-constant, ezDetectAardvark, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169878
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169492
-lootlinks.co,loot-links.com##+js(no-fetch-if, pagead2.googlesyndication.com)
+loot-link.com,lootlinks.co,loot-links.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169660
 flixscans.org##+js(no-fetch-if, pagead2.googlesyndication.com)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=googlesyndication.com/adsbygoogle.js,domain=flixscans.org
@@ -24384,6 +24384,11 @@ kreskowkazone.pl#@#.myTestAd
 ||i.iplsc.com/twoje-zdrowie-banner^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23702
 dziennik.pl##.widget-list-ul > .infeed1
+! https://github.com/AdguardTeam/AdguardFilters/issues/170628
+wykop.pl#?#aside.tag-top > .hits-slider:matches-css(before, content: /^reklama$/)
+||r.wykop.pl/widget-api/*/widget$xmlhttprequest
+! Rule below fixes issue with loading content on - https://wykop.pl/tag/reklama
+@@||wykop.pl/api/v3/tags/reklama/$xmlhttprequest,~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/140299
 ||wykop.pl/api/v*/ads
 wykop.pl##body .pub-slot-wrapper
@@ -27512,9 +27517,10 @@ vidsvidsvids.com##+js(set-cookie, pu_count, 1)
 hanime.tv##+js(set-cookie, in_d0, 1)
 hanime.tv##+js(set-cookie, in_d4, 1)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169606
+! https://github.com/AdguardTeam/AdguardFilters/issues/170688
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169878
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169492
-lootlinks.co,loot-links.com##+js(window.open-defuser, , 5)
+loot-link.com,lootlinks.co,loot-links.com##+js(window.open-defuser, , 5)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169200
 player.euroxxx.net##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169304
@@ -56047,8 +56053,6 @@ implbits.com#@#.banner_container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165930
 ! https://github.com/AdguardTeam/CoreLibs/issues/1825
 ! TODO: remove when issue in CoreLibs is fixed
-! https://github.com/AdguardTeam/AdguardFilters/issues/169878
-! https://github.com/AdguardTeam/AdguardFilters/issues/169492
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168442
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165623
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160305
