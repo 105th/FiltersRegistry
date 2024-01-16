@@ -1,9 +1,9 @@
-! Checksum: OL+5vC7fdjVzAWjRVrPD4A
-! Diff-Path: ../patches/14/14-s-1705419317-3600.patch
+! Checksum: wBY/5IuRo2eSeD3i3hGXqQ
+! Diff-Path: ../patches/14/14-s-1705423080-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.83.51
-! TimeUpdated: 2024-01-16T15:32:34+00:00
+! Version: 2.1.83.52
+! TimeUpdated: 2024-01-16T16:35:45+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2349,6 +2349,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+novaramedia.com###obligation-bar
 supabase.com#%#//scriptlet('set-local-storage-item', 'supabase-consent', 'false')
 educamaisbrasil.com.br##.aviso-cookie
 leismunicipais.com.br##.cb-container
@@ -13670,9 +13671,9 @@ digi24.ro#%#//scriptlet('set-cookie-reload', 'cmp_level', '5')
 kreiszeitung.de#%#(function(){var noopFunc=function(){};var tcData={eventStatus:"tcloaded",gdprApplies:!1,listenerId:noopFunc,vendor:{consents:{967:true}},purpose:{consents:[]}};window.__tcfapi=function(command,version,callback){"function"==typeof callback&&"removeEventListener"!==command&&callback(tcData,!0)}})();
 allgemeine-zeitung.de,buerstaedter-zeitung.de,lampertheimer-zeitung.de,echo-online.de,main-spitze.de,wiesbadener-kurier.de,wormser-zeitung.de,mittelhessen.de#%#//scriptlet('trusted-click-element', '#cmpbox .purWrapper__button[onclick]')
 mydealz.de#%#//scriptlet('trusted-click-element', 'button[data-t="acceptAllBtn"]')
-ruhrnachrichten.de#%#AG_onLoad(function(){var g=new MutationObserver(function(){var b=document.querySelector('#cmpbntnotxt');b&&(g.disconnect(),b.click())});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)});
-elevensports.pl#%#AG_onLoad(function() {var b=new MutationObserver(function() {var c=document.querySelector('.rodo-button > button.btn--primary'); c&&(b.disconnect(),c.click()) });b.observe(document, {childList: !0,subtree: !0});setTimeout(function() {b.disconnect()}, 1E4)});
-check24.de#%#AG_onLoad(function(){var el = document.querySelector("body.c24-cc-visible"); if(el){var g=new MutationObserver(function(){var b=document.querySelector('a.c24-cookie-consent-button-secondary');setTimeout(function() {var c = document.querySelector(".c24-cookie-consent-buttonlink"); if(c){c.click(); }; }, 300); b&&(g.disconnect(),b.click())});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});
+ruhrnachrichten.de#%#//scriptlet('trusted-click-element', '#cmpbntnotxt')
+elevensports.pl#%#//scriptlet('trusted-click-element', '.rodo-button > button.btn--primary')
+check24.de#%#//scriptlet('trusted-click-element', 'a.c24-cookie-consent-button-secondary')
 bnnvara.nl#%#AG_onLoad(function(){var b=new MutationObserver(function(){var a=document.querySelector('.ccm_btn--accept-all');a&&a.click()});b.observe(document,{childList:!0,subtree:!0});setTimeout(function(){b.disconnect()},1E4)});
 hintertuxergletscher.at#%#AG_onLoad(function(){if(window.location.href.includes("hintertuxergletscher.at")){var g=new MutationObserver(function(){var b=document.querySelector('div.bh-cookies-popup-accept-all');b&&b.click();});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});
 forcetools-kepmar.eu#%#AG_onLoad(function(){if(!document.cookie.includes("epCookieConsent")){var g=new MutationObserver(function(){var b=document.querySelector('.cookie-consent-button-decline');b&&(g.disconnect(),b.click())});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});
@@ -14921,7 +14922,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166753
-@@||delivery.consentmanager.net^$domain=buerstaedter-zeitung.de|allgemeine-zeitung.de|lampertheimer-zeitung.de|echo-online.de|main-spitze.de|wiesbadener-kurier.de|wormser-zeitung.de|mittelhessen.de
+@@||delivery.consentmanager.net^$domain=buerstaedter-zeitung.de|allgemeine-zeitung.de|lampertheimer-zeitung.de|echo-online.de|main-spitze.de|wiesbadener-kurier.de|wormser-zeitung.de|mittelhessen.de|ruhrnachrichten.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166753
 @@||delivery.consentmanager.net^$domain=kinoheld.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170817
@@ -30836,7 +30837,6 @@ metro.co.uk#$#.metro-newsletter-overlay { display: none !important; }
 medianews4u.com##.theiaStickySidebar > #text-2
 medianews4u.com#?#.theiaStickySidebar > .jeg_wrapper > .wpb_text_column:has(> .wpb_wrapper > .mc4wp-form)
 consumerreports.org##.cda-gnav > div[class^="pre-prime-day-deals"]
-newsnow.co.uk##.email-signup
 noicompriamoauto.it##.signup-wrapper
 astv.ru###fullscreenmf
 diariodocomercio.com.br##.container-whats
@@ -36286,7 +36286,7 @@ atlasobscura.com##.email-ask-full-width
 newrepublic.com##.email-container
 ubr.ua##.email-form
 thoughtbot.com,komando.com##.email-sign-up
-joesnewbalanceoutlet.com,urbanmilwaukee.com,offspring.co.uk,beautifulhomes.com,trueachievements.com##.email-signup
+novaramedia.com,newsnow.co.uk,joesnewbalanceoutlet.com,urbanmilwaukee.com,offspring.co.uk,beautifulhomes.com,trueachievements.com##.email-signup
 thenation.com##.email-signup-module
 freedomoutpost.com##.email-signup.widget
 newyorklife.com,prosleduet.media,mirfactov.com,howtogeek.com##.email-subscribe
@@ -51764,6 +51764,8 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !
 !   NOTE: Donation widgets (which are really annoying only)
 !
+novaramedia.com##.background-support-texture
+novaramedia.com##.support-section
 miraheze.org###siteNotice
 winstall.app##div[class^="donateCard_container__"]
 openstreetmap.org###banner
