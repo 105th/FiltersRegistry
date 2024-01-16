@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: /lfRj9BCJHuIQM5OejWmDA
-! Diff-Path: ../patches/16/16-m-28417175-60.patch
+! Checksum: tLP/fGFgGeXa3dqzPrSd5g
+! Diff-Path: ../patches/16/16-s-1705430128-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.42.70
-! TimeUpdated: 2024-01-12T03:32:47+00:00
+! Version: 2.0.42.71
+! TimeUpdated: 2024-01-16T18:33:12+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -642,6 +642,9 @@ tf1.fr,tf1info.fr##+js(no-fetch-if, /^https:\/\/ads\.stickyadstv\.com\/$/ method
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/170646
+jeune-gay.fr##+js(no-setTimeout-if, randno, 25)
+jeune-gay.fr##+js(set-cookie, p_view, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164927
 occasions.decathlon.fr##+js(set-constant, FastClick, noopFunc)
 occasions.decathlon.fr##+js(set-constant, FastClick.attach, noopFunc)
@@ -838,6 +841,10 @@ $script,third-party,denyallow=fastly.net|statically.io|sharecast.ws|bunnycdn.ru|
 !
 !
 !
+jeune-gay.fr##.happy-sidebar
+jeune-gay.fr##.under-video-block > div:has( > div[class] > a[href][target="_blank"])
+jeune-gay.fr##.yellow
+jeune-gay.fr##.happy-mob
 commentcamarche.net##.sticky-zone
 commentcamarche.com,commentcamarche.net,journaldunet.com##div[id^="ctn_"]
 jeux-gratuits.com##div[class^="placeholder_"]
