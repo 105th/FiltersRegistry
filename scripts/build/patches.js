@@ -62,9 +62,25 @@ const moveCreatedPatch = async (oldPatchesDir) => {
 
     const files = await fs.promises.readdir(oldPatchesDir);
 
+    const patchesWithMTimeMs = await Promise.all(files
+        .filter((f) => f.endsWith(PATCH_EXTENSION))
+        .map(async (f) => {
+            const p = path.join(oldPatchesDir, f);
+            const { mtimeMs } = await fs.promises.stat(p);
+
+            return [p, mtimeMs];
+        }));
+
+    const patchesTimes = new Map(patchesWithMTimeMs);
+
     const patches = files
         .filter((f) => f.endsWith(PATCH_EXTENSION))
-        .sort((a, b) => b.localeCompare(a));
+        .sort((a, b) => {
+            const aMtimeMs = patchesTimes.get(path.join(oldPatchesDir, a));
+            const bMtimeMs = patchesTimes.get(path.join(oldPatchesDir, b));
+
+            return bMtimeMs - aMtimeMs;
+        });
 
     if (patches.length === 0) {
         throw new Error(`Not found patches in folder: "${oldPatchesDir}".`);
@@ -135,7 +151,7 @@ const main = async () => {
             name,
             time,
             resolution,
-            verbose: false,
+            verbose: true,
         });
 
         // Patch to old filter recorded to temp/platforms folder, because old
