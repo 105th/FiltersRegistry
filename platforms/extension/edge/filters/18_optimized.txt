@@ -1,9 +1,9 @@
-! Checksum: i6zIN8DBcwZFxmXs1etwyw
-! Diff-Path: ../patches/18_optimized/18_optimized-s-1705408907-3600.patch
+! Checksum: svduZTsOgiVoHwMmC/lh/g
+! Diff-Path: ../patches/18_optimized/18_optimized-s-1705415715-3600.patch
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.30.66
-! TimeUpdated: 2024-01-16T12:39:23+00:00
+! Version: 2.0.30.67
+! TimeUpdated: 2024-01-16T14:32:54+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -19,6 +19,7 @@
 !#######################################################
 !######### General element hiding rules ################
 !#######################################################
+###consent-banner-overlay
 ##div[data-hook="ccsu-banner-wrapper"]
 ##.popup-choose-cookies
 ##.MuiSnackbar-anchorOriginBottomCenter
@@ -6338,7 +6339,7 @@ cdn.privacy-mgmt.com#%#//scriptlet('trusted-click-element', '.message-container 
 bayernportal.de,freistaat.bayern#%#//scriptlet('set-cookie-reload', 'cookieConsent', 'true')
 ifrs.org#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'cookieDetailsList')
 lequipe.fr#%#//scriptlet('trusted-click-element', '.Cmp__action--yes')
-fix-price.by#%#AG_onLoad(function(){if(-1==document.cookie.indexOf('cookieConfig')){var g=new MutationObserver(function(){var b=document.querySelector('.cookies > .controls > button:last-child');b&&b.click();});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});
+fix-price.by#%#//scriptlet('trusted-click-element', '.cookies > .controls > button:last-child')
 esimplus.me#%#//scriptlet("set-cookie", "CookieConsent", "1")
 elektroland24.de#%#//scriptlet('trusted-click-element', '#cookie_Packstation\ \/\ Postfiliale, button[title="Speichern"]')
 tickets.vws-siegen.de#%#//scriptlet('trusted-click-element', '.MuiButton-textPrimary')
@@ -6348,9 +6349,9 @@ fusionbrain.ai#%#//scriptlet('set-local-storage-item', 'fb-cookies-accept', '1')
 movistar.es#%#//scriptlet('trusted-click-element', 'button[aria-label="Configurar/rechazar cookies"]')
 hollywoodreporter.com,bonava.lv,eu.patagonia.com,metro.tv,discoverychannel.pl,tlcpolska.pl,tvnstyle.pl,tvn7.pl,tvnturbo.pl,tvnfabula.pl,hgtv.pl,foodnetwork.pl,travelchanneltv.pl,ttv.pl,kanald.ro,timeextension.com,purexbox.com,pushsquare.com,mytim.tim.it,everyeye.it,realsimple.com,eatingwell.com,motor1.com,larousse.fr,giantbomb.com,mtvuutiset.fi,tvnturbo.pl,elle.com,a1.ro,authentication.nutmeg.com#%#//scriptlet('trusted-click-element', '#onetrust-accept-btn-handler')
 turk.net#%#document.cookie = "cookie-consent=dismissed; path=/";
-dieharke.de#%#AG_onLoad(function(){if(window.location.href.includes("consentUUID")){var g=new MutationObserver(function(){var b=document.querySelector('button[aria-label="Alle akzeptieren"]');b&&b.click();});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});
+dieharke.de#%#//scriptlet('trusted-click-element', 'button[title="Einwilligen und weiter"]')
 jow.fr#%#document.cookie = "jow_cookie_consent=all; path=/";
-cmpsp.eurogamer.de,privacy.lecker.de,privacy.caravaning.de#%#AG_onLoad(function(){if(window.location.href.includes("consentUUID")){var g=new MutationObserver(function(){var b=document.querySelector('button[aria-label="Akzeptieren und weiter"]');b&&b.click();});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});
+cmpsp.eurogamer.de,privacy.lecker.de,privacy.caravaning.de#%#//scriptlet('trusted-click-element', 'button[aria-label="Akzeptieren und weiter"]')
 tver.jp#%#//scriptlet('trusted-click-element', '.ReactModal__Overlay button[class*="terms-modal_done__"]')
 digi24.ro#%#//scriptlet('set-cookie-reload', 'cmp_level', '5')
 parfuemerie-platen.de#%#AG_onLoad(function(){if(!document.cookie.includes("fb-enable") == true){var g=new MutationObserver(function(){var el = document.querySelector("#cookie-button-text"); el&&el.click();});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});
