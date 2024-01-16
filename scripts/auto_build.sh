@@ -47,7 +47,7 @@ elif [[ "$MODE" == "adguard" ]]; then
     # Build specific AdGuard filters based on the filter IDs
     yarn build --include=$ADGUARD_FILTERS
     # Set the time live of patches to '60 minutes' in seconds
-    yarn build --include=$ADGUARD_FILTERS
+    yarn build:patches --time=3600 --resolution=s --include=$ADGUARD_FILTERS
 fi
 
 # Validate platforms and locales
