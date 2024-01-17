@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.16.48",
-			"timeUpdated": "2024-01-17T17:33:06+0000",
+			"version": "2.3.16.49",
+			"timeUpdated": "2024-01-17T18:33:47+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -378,8 +378,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.65.33",
-			"timeUpdated": "2024-01-17T17:33:10+0000",
+			"version": "2.0.65.34",
+			"timeUpdated": "2024-01-17T18:33:50+0000",
 			"languages": [],
 			"tags": [
 				2,
@@ -416,8 +416,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/5.txt",
 			"trustLevel": "full",
-			"version": "2.0.1.28",
-			"timeUpdated": "2024-01-10T18:33:53+0000",
+			"version": "2.0.1.29",
+			"timeUpdated": "2024-01-17T18:33:54+0000",
 			"languages": [],
 			"tags": [
 				45
@@ -543,8 +543,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.5",
-			"timeUpdated": "2024-01-17T16:35:18+0000",
+			"version": "2.0.48.6",
+			"timeUpdated": "2024-01-17T18:33:19+0000",
 			"languages": [],
 			"tags": [
 				1,
@@ -565,8 +565,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.24",
-			"timeUpdated": "2024-01-17T09:32:24+0000",
+			"version": "2.0.49.25",
+			"timeUpdated": "2024-01-17T18:33:21+0000",
 			"languages": [
 				"tr"
 			],
@@ -607,8 +607,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/15.txt",
 			"trustLevel": "full",
-			"version": "2.0.60.1",
-			"timeUpdated": "2024-01-17T12:40:38+0000",
+			"version": "2.0.60.2",
+			"timeUpdated": "2024-01-17T18:33:26+0000",
 			"languages": [],
 			"tags": [
 				45,
