@@ -1,7 +1,7 @@
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2024.0117.1
+! OriginalVersion: 2024.0117.4
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -531,6 +531,7 @@ funbe276.com,funbe277.com,funbe278.com,funbe279.com,funbe280.com,funbe281.com,fu
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
 !
+/^https:\/\/nng-phinf\.pstatic\.net\/.+\/.+_naverads\./$domain=game.naver.com
 ||file.kinolights.com/*/banner/
 ||businesspost.co.kr/images/banner/
 ||whosaeng.com/data/whosaeng_com/*banner/
@@ -547,7 +548,6 @@ funbe276.com,funbe277.com,funbe278.com,funbe279.com,funbe280.com,funbe281.com,fu
 /^https:\/\/api-gw\.sports\.naver\.com\/cms\/contents\/adContents\/(?!(GENERAL|BRAND_STORY))/$domain=m.sports.naver.com
 ||da.namu.la^$domain=arca.live
 ||arca.live/api/*pagead?$xmlhttprequest
-/^https:\/\/nng-phinf\.pstatic\.net\/[A-z0-9]+\/[A-z0-9-.]+\.[A-Z]+\/naver_[A-z_]+_[0-9]+x[0-9]+_naverads\./$match-case,domain=naver.com
 /^https:\/\/sports-phinf\.pstatic\.net\/[0-9]+_[0-9]+\/[A-z0-9]+_[A-Z]+\/(%[A-Z0-9]+)+_(%[A-Z0-9]+)+_/$image,match-case,domain=m.sports.naver.com
 ||nosearch.com/api/naver*Ad?channel=
 ||prod.danawa.com/info/ajax/getPlanBPlusProductList.ajax.php
@@ -1276,6 +1276,7 @@ funbe276.com,funbe277.com,funbe278.com,funbe279.com,funbe280.com,funbe281.com,fu
 !
 ! DOMAIN-REFRESHER: START
 !
+/^https:\/\/linkssakda\.com\/upload\/images\/[0-9]+\./$domain=linkssakda.com
 ||i.imgur.com^$domain=avguri.com
 ||moeni.net/img/sp/
 ||cdnbuzz.buzz//banner/
@@ -1508,6 +1509,8 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 !
+game.naver.com##img[src^="https://nng-phinf.pstatic.net/"][src*="_naverads."]
+chimhaha.net###adsense
 hani.co.kr###content div[class^="ArticleDetail_section_"] > div[class^="MainNativeLab_wrap"]
 humorpick.com##.list-body > .list-item-ad
 betanews.net##iframe[src*="/banner.html"]
@@ -2712,9 +2715,6 @@ auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 ! TODO: remove the following filter if https://github.com/AdguardTeam/CoreLibs/issues/1831 is resolved.
 !#if (adguard_app_android || adguard_app_mac || adguard_app_windows)
 /^https:\/\/m[0-9]+\.kotbc\.com\/img\/[a-z0-9_/]+\.gif$/
-!#endif
-!#if adguard_app_ios
-/^https:\/\/nng-phinf\.pstatic\.net\/[A-z0-9]+\/[A-z0-9-.]+\.[A-Z]+\/naver_[A-z_]+_[0-9]+x[0-9]+_naverads\./$domain=naver.com
 !#endif
 !#if (adguard_app_ios || adguard_ext_safari)
 ||api-gw.sports.naver.com/cms/contents/adContents/$domain=m.sports.naver.com
