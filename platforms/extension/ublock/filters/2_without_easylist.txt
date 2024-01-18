@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: cYLaUsVeJ92AM/V+/Nm0jQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1705570502-3600.patch
+! Checksum: zhTlkgD6OttdruBKl9lrEg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1705574230-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.16.60
-! TimeUpdated: 2024-01-18T09:33:02+00:00
+! Version: 2.3.16.61
+! TimeUpdated: 2024-01-18T10:35:15+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32683,12 +32683,15 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+esports.op.gg##.content  > .flex.items-center:has(> div[id^="div-gpt-"]:only-child)
+esports.op.gg##.content  > .flex.items-center:has(> div.items-center[class*="bg-gray-"]:only-child > div[id^="div-gpt-"]:only-child)
+esports.op.gg##.flex-row > .hidden > .flex.items-center:has(> div[id^="div-gpt-"]:only-child)
 ||gamemonetize.com^$domain=shortyget.com
 wlos.com##div[class^="NewAd"]
 ||999hentai.net/aaifrm
 999hentai.net##.ads-wraper
 groovypost.com##div[class^="raptive-content"]
-anysex.com###headDA
+anysex.com##.headA
 ||res.cloudinary.com/*/Ads*/preroll_candy$media,redirect=noop-0.1s.mp3
 incestgames.net##body #bitcoin-banner
 e-chords.com##.adsGoogleDef
@@ -50899,6 +50902,10 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/170977
+@@||cdn*.anyclip.com^$domain=content.dictionary.com
+@@||trafficmanager.anyclip.com^$domain=content.dictionary.com
+@@||assets.anyclip.com^$domain=content.dictionary.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170740
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170507
 shareus.io#@#.adunit-container
