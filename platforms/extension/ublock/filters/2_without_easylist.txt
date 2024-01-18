@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wkYKV2DB+d5EN+ouSIO79g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1705584883-3600.patch
+! Checksum: Y4uRVO8+VV7kSTrzBnqKHw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1705588512-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.16.64
-! TimeUpdated: 2024-01-18T13:32:43+00:00
+! Version: 2.3.16.65
+! TimeUpdated: 2024-01-18T14:33:08+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7717,9 +7717,7 @@ thesimsresource.com##+js(no-xhr-if, /googletagmanager\.com|googleoptimize\.com|e
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164039
 ||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$script,redirect=google-ima.js,domain=mtv.com
 ! UKRadioLive
-wirishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com##+js(set-constant, AddAdsV2I.hasAdblock, falseFunc)
-wirishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com##+js(set-constant, AddAdsV2I.checkAddBlock, noopFunc)
-wirishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com##+js(set-constant, AddAdsV2I.setAddBlockMsg, noopFunc)
+irishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com##+js(abort-on-property-write, FbTrack)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164006
 musicforchoir.com##+js(abort-current-script, eval, split)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163780
@@ -11527,9 +11525,10 @@ memoryhackers.org#@#.ads-header
 memoryhackers.org##+js(set-constant, adsbygoogle.length, undefined)
 memoryhackers.org##+js(set-constant, google_jobrunner, {})
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$redirect=googlesyndication.com/adsbygoogle.js,domain=memoryhackers.org,xmlhttprequest,script
+! https://github.com/AdguardTeam/AdguardFilters/issues/170998
 ! https://github.com/AdguardTeam/AdguardFilters/issues/70979
-@@||ctrlv.link/js/seo-ads.js
-||adservice.google.com/adsid/integrator.js$xmlhttprequest,redirect=noop.js,domain=ctrlv.link
+ctrlv.sk,ctrlv.cz,ctrlv.link##body > div[id][style="display: flex;"]
+ctrlv.sk,ctrlv.cz,ctrlv.link##+js(set-constant, adbId, null)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/71190
 iptv22.uk##+js(abort-current-script, document.createElement, adblock)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xmlhttprequest,redirect=noop.js,domain=iptv22.uk
@@ -32685,6 +32684,8 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+obf-io.deobfuscate.io##.self-center.overflow-hidden:has(> img[src="/nexus_banner.webp"]:only-child)
+||obf-io.deobfuscate.io/nexus_banner.webp
 sevenforums.com##li[id^="yui-gen"]
 rexxx.com##.banner_cont
 rexxx.com##.bottom_banners
@@ -49439,7 +49440,7 @@ score808.tv,808ball.com,score808pro.com##.min-height-fullscreen a.banner
 !
 ! UKRadioLive
 irishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com#$#._bannerTop1 { background-color: transparent !important; }
-irishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com##.topHorizontalBanner
+irishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlineradio.nl,myonlineradio.sk,myradioendirect.fr,myradioenvivo.ar,myradioenvivo.mx,myradioonline.cl,myradioonline.es,myradioonline.it,myradioonline.pl,myradioonline.ro,ukradiolive.com#$#.topHorizontalBanner { position: absolute !important; left: -3000px !important; }
 /inside-banner.mini.js$domain=irishradiolive.com|myonlineradio.at|myonlineradio.de|myonlineradio.hu|myonlineradio.nl|myonlineradio.sk|myradioendirect.fr|myradioenvivo.ar|myradioenvivo.mx|myradioonline.cl|myradioonline.es|myradioonline.it|myradioonline.pl|myradioonline.ro|ukradiolive.com
 !
 ! START: google
