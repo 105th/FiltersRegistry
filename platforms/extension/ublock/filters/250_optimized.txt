@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: hWzFRg5Sa3yx5oEHVqS3jg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1705623889-14400.patch
+! Checksum: 1515ow0Ns+x6f50shO6AUg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1705637412-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.12.90
@@ -20,7 +20,6 @@
 ##.open-in-app:not(html, body)
 ##.OpenInAppButton:not(html, body)
 ##.popup-app:not(html, body)
-##amp-app-banner
 ##div[class*=smart-banner i]:not(.smart-banner-visible)
 ##div[class*=smartbanner i]
 ##div[class^=app-download-wrap]
@@ -256,6 +255,7 @@ download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 ||23.111.88.207^$document
 ||trc.*.co^$document,domain=~malware-redirection-trains.*
 ||45.90.58.90^$document
+||agkn.com^$document
 /(^|\.|//)tkqlhce\.com/click-.*([?&][a-tv-z]{1,}(=[a-zA-Z0-9]{1,})?){1,}$/$document
 ||trkk4.com^$document,domain=~malware-redirection-trains.*
 ||hosting-redirect.com^$document,domain=~malware-redirection-trains.*
@@ -560,6 +560,7 @@ www.microsoft.com##a[data-pfns][data-pfns^="9"][data-pfns*="games."]
 ##.shariff-button:not(html, body)
 ##.sharing-btn:not(html, body)
 ##.sharing-item:not(html,body,[class*=body i],[id*=body i])
+##.sharing-links:not(html, body)
 ##.sharing:not(html,body,[class*=body i],[id*=body i])
 ##.shr-opn:not(html, body)
 ##.shr.btn:not(html, body)
@@ -759,6 +760,7 @@ www.microsoft.com##a[data-pfns][data-pfns^="9"][data-pfns*="games."]
 ##.sharethis-inline-share-buttons:not(html, body)
 ##.share-buttons-bottom:not(html, body)
 ##.a2a_kit:not(html, body)
+##div[class^=wp_social_bookmarking]:not([class*=body i],[id*=body i])
 /wp-content/plugins/wp-social-bookmarking
 ##div[class*=social-share]:not([preload],[class*=body i],[id*=body i])
 ##a[class*=social-share]:not([preload],[class*=body i],[id*=body i])
@@ -944,7 +946,6 @@ trade.tmall.com##.show-cross-btn
 universalbeijingresort.com##.download-box
 xinhuanet.com##.s-ewm
 ctrip.com###fl_wrap_default
-smzdm.com##.qr-buy-container
 12306.cn##.fixed-right-menu > li.menu-item:nth-of-type(3)
 58.com##.app.rightbtn
 airchina.com.cn##[href="http://www.airchina.com.cn/cn/client_download.shtml"]
@@ -1370,7 +1371,6 @@ $removeparam=sscid
 $removeparam=rmmds
 $removeparam=act_poa
 $removeparam=msclkid
-$removeparam=litb_from
 $removeparam=ftag
 $document,removeparam=/^__xts__/
 $removeparam=custlixnkid
@@ -1423,6 +1423,8 @@ $removeparam=AFID,domain=~chggtrx.com|~state.gov
 $~stylesheet,~script,removeparam=campaignid
 $removeparam=loc,document,domain=bestbuy.*|shopping.google.com
 $removeparam=acampID
+$removeparam=pj_creativeid
+$removeparam=pj_publisherid
 $removeparam=cmt
 $removeparam=at_gd
 $document,removeparam=/^amp=$/,domain=~eurasiantimes.com|~cybersecuritynews.com
@@ -1626,7 +1628,6 @@ $removeparam=n_cid
 $removeparam=szredirectid
 $removeparam=af_ad
 $removeparam=af_ad_id
-$removeparam=af_ad_type
 $removeparam=af_adset
 $removeparam=af_adset_id
 $removeparam=af_c_id
@@ -1777,12 +1778,10 @@ $removeparam=taboola_hm
 $removeparam=ssp_user_id
 $removeparam=ad-session-id
 $removeparam=ga_cid
-$removeparam=tw_document_href
 $removeparam=hubspotUtk
 $removeparam=messagesUtk
 $removeparam=advUuid
 $document,removeparam=traceId
-$removeparam=p_user_id
 $removeparam=refDomain
 $removeparam=criteoId
 $removeparam=dspCookie
@@ -1796,7 +1795,6 @@ $removeparam=ga_fc
 $removeparam=ga_client_id
 $removeparam=s_id
 $removeparam=b_id
-$removeparam=kltstamp
 $removeparam=tpmn_buid
 $removeparam=_idts
 $removeparam=ta_partner_did
@@ -1844,6 +1842,8 @@ $removeparam=dchild
 ||amazon.$removeparam=sr
 ||amazon.$removeparam=creative
 $removeparam=creativeASIN
+||amazon.$removeparam=/^sc_i/
+$removeparam=trkCampaign
 $removeparam=trk,domain=splashthat.com|aws.amazon.com|aws|xkcd.com|linkedin.com|lnkd.in
 ||amazon.$removeparam=/^__mk_*_/
 ||amazon.$removeparam=ascsubtag
@@ -2263,7 +2263,6 @@ $document,removeparam=channel,domain=1sol.io|amazon.*|bybit.com|coinpanel.com|do
 $removeparam=fr,domain=baidu.com|thegay.com|todayonline.com|hclips.com|search.yahoo.com
 $removeparam=promo,domain=thegay.com|hammacher.com|upornia.com|hclips.com
 $removeparam=sref,domain=bloomberg.com|go.skimresources.com|go.skimlinks.com|go.redirectingat.com
-$removeparam=ctc,domain=avantlink.com
 $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybit.com|dobrytextil.cz|farfetch.com|fifa.com|glami.cz|hepsiburada.com|neeva.com|onelink.me|play.google.com|samsclub.com|shopee.*|th.bing.com|tiktok.com
 $removeparam=subid,domain=admitad.com|mintmobile.com|secretlab.*|webmasterplan.com
 $removeparam=tracking,domain=affiliatefuture.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|gtomega.*|malwarebytes.com|messenger.com
@@ -2433,6 +2432,9 @@ $removeparam=pro,domain=etsy.com
 $removeparam=frs,domain=etsy.com
 $removeparam=click_key,domain=etsy.com
 $removeparam=click_sum,domain=etsy.com
+||community.spiceworks.com^$removeparam=carPos
+||weibo.com/ajax/log$removeparam=uicode
+||weibo.com/ajax/log$removeparam=act_code
 ||despegar.$removeparam=/^clt_/
 ||despegar.$removeparam=mktdata
 ||hao123.com^$removeparam=tn
@@ -2526,7 +2528,6 @@ $document,removeparam=refresh,domain=cnn.com|startribune.com
 ||emag.ro^$removeparam=recid
 ||emag.ro^$removeparam=scenario_ID
 $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
-||blog.getadblock.com^$removeparam=gi
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
 ||espn.com^$removeparam=ex_cid
 ||mercadolibre.com.ar^$removeparam=pdp_filters
@@ -2681,7 +2682,6 @@ $removeparam=caniuse_source,document
 $removeparam=afSmartRedirect
 ||wsj.com^$removeparam=st
 ||linkedin.com/feed/update$removeparam=origin
-$document,removeparam=user_email_address
 $document,removeparam=cn,domain=twitter.com|x.com
 $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||gitlab.$removeparam=ref_type
