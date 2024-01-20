@@ -607,8 +607,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/15.txt",
 			"trustLevel": "full",
-			"version": "2.0.60.13",
-			"timeUpdated": "2024-01-20T12:39:11+0000",
+			"version": "2.0.60.14",
+			"timeUpdated": "2024-01-20T18:32:38+0000",
 			"languages": [],
 			"tags": [
 				45,
