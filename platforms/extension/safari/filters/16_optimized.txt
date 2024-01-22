@@ -1,5 +1,5 @@
-! Checksum: ORdLd3pnqh4NT0E9I4KvAA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1705804917-3600.patch
+! Checksum: n9qEzP5fOOhTMEypxOHkOA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1705891323-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.42.78
@@ -214,7 +214,6 @@ jtrouver.com#%#//scriptlet("set-constant", "google_jobrunner", "noopFunc")
 linternaute.com#%#//scriptlet('json-prune', 'adParams siteParams.aabMessage')
 sante.journaldesfemmes.fr,linternaute.com#$#.AdBox.Ligatus.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: block !important; }
 @@||googletagmanager.com/gtm.js$domain=linternaute.com|sante.journaldesfemmes.fr
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=linternaute.com|p.ccmbg.com
 @@||linternaute.com^$generichide
 @@||dpm.zebestof.com/*/tag.js$domain=linternaute.com
 @@||amazon-adsystem.com/*/apstag.js$domain=linternaute.com
@@ -1099,7 +1098,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 @@||syndication.twitter.com/settings^
 @@||syndication.twitter.com/i/jot/syndication
 &ad_count=
-&ad_target_
 &ad_unit_
 &adInstanceId=
 &ADMode=
@@ -1202,8 +1200,10 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 .adscroller.
 .adtech.
 .adv?id=
+.advertica-
 .adxcore.
 .asp?adv=
+.asp?affid=
 .aspx?adv=
 .be/adv/
 .cc/ad/
@@ -1227,6 +1227,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 .fr/ads-
 .fr/ads/
 .fr/adv/
+.fr/adver/
 .fr/affiliate/
 .gif?partner=
 .html?placement_id=
@@ -1389,7 +1390,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /adimage-
 /adimage3.
 /adinit?
-/adintop.
 /adland.
 /admantium.
 /admarktTopSpot.
@@ -1418,6 +1418,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /ads-ext.
 /ads-iframe-
 /ads-img/*
+/ads-priv.
 /ads-service/*
 /ads.*/banner/*
 /ads.*/banners/*
@@ -1811,7 +1812,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /ntfc.php?p=
 /nugg.add.
 /null/*/Tag.$script,third-party,xmlhttprequest
-/okads_
 /otherads/*
 /p_under_
 /pab-ssl.js
@@ -1819,6 +1819,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /pagead/ads.
 /pagepub.
 /partner-pub-
+/partner.*/click?
 /partner_banners/*
 /partners-ad/*
 /partners-ads/*
@@ -1900,6 +1901,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /publicite/*
 /publicite2.
 /publicite_
+/publicites.
 /publicites/*
 /publicity.
 /pubs/*-300x250.
@@ -1968,7 +1970,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /sw.*.js?promo=
 /sw/pub.js
 /syndication.*&idzone=
-/tc_promo_functions.
 /textlink-ads.
 /thirstyaffiliates/*
 /TiscaliAds.
@@ -2186,7 +2187,6 @@ _mobileAds|
 _personalized_ads
 _popads.
 _popup_pro.
-_pp_dhtml.
 _program_ad.
 _pub.gif
 _publicite.
@@ -2295,6 +2295,7 @@ _werbebanner_
 /delivery/directlink.$popup
 /directclick/?$popup
 /display/clicks/*$popup
+/enter.php?*&id=*cmp=$popup
 /feedclick?$popup
 /fp.*&referrerUrl=$popup
 /gtm.js?*&pid=$popup,third-party
@@ -2311,6 +2312,7 @@ _werbebanner_
 /partners/*=affiliate&$popup
 /pop_redirect.php$popup
 /popads.$popup
+/popOut.*?key=$popup
 /popupclick/*$popup
 /promo.*/?nats=$popup
 /promo.php?compte=*&idealsite=$popup
@@ -2397,7 +2399,6 @@ _lx.ads/$popup
 ||adpaths.com^$third-party
 ||adpick.co.kr^$third-party
 ||adpicker.net^$third-party
-||adplus.io^$third-party
 ||adrequest.net^$third-party
 ||adsb4trk.com^$third-party
 ||adsbtrk.com^$third-party
@@ -2437,6 +2438,7 @@ _lx.ads/$popup
 ||askmecca.com^$third-party
 ||atedra.com^$third-party
 ||autoviewz.com^$third-party
+||avantajadas.com.br^$third-party
 ||awprt.com^$third-party
 ||bazardux.com^$third-party
 ||bcvc.mobi^$third-party
@@ -2461,7 +2463,6 @@ _lx.ads/$popup
 ||cclpub.com^$third-party
 ||cdn3.net^$third-party
 ||cdntraffic.com^$third-party
-||cfgr2.com^$third-party
 ||circulate.com^$third-party
 ||cityads.com^$third-party
 ||clcktrax.com^$third-party
@@ -2506,7 +2507,6 @@ _lx.ads/$popup
 ||esprit-click.com^$third-party
 ||eurolive.com^$~image,third-party
 ||exashare.com^$third-party
-||extensionfactory.com^$third-party
 ||ezstatic.com^$third-party
 ||fancybar.net^$third-party
 ||fgn.me^$third-party
@@ -2594,10 +2594,12 @@ _lx.ads/$popup
 ||ovnet.fr^$third-party
 ||pee-puu-see.com^$third-party
 ||permato.com^$third-party
+||phuc.cc^$third-party
 ||picxxxhub.com^$third-party
 ||piximedia.com^$third-party
 ||play-asia.com^$third-party
 ||plurielmediacenter.com^$third-party
+||popadon.com^$third-party
 ||poparb.com^$third-party
 ||popupmaker.com^$third-party
 ||pornego.com^$third-party
@@ -2671,6 +2673,7 @@ _lx.ads/$popup
 ||unit-sense.net^$third-party
 ||uptopop.com^$third-party
 ||utl-1.com^$third-party
+||utndln.com^$third-party
 ||vador.com^$third-party
 ||vdo.ai^$third-party
 ||viahelium.com^$third-party
@@ -2681,7 +2684,6 @@ _lx.ads/$popup
 ||widespace.com^$third-party
 ||wm.artcomix.com^$third-party
 ||x.porn.fr^$third-party
-||xaddad.com^$third-party
 ||xcamz.xyz^$third-party
 ||xclick24.com^$third-party
 ||xpicw.top^$third-party
@@ -2943,6 +2945,7 @@ _lx.ads/$popup
 ||blanksjabot.com^
 ||blastswaggons.com^
 ||bnlif.com^
+||bnsjb1ab1e.com^
 ||boacheeb.com^
 ||botkano.info^
 ||bottlestonightapp.com^
@@ -3287,6 +3290,7 @@ _lx.ads/$popup
 ||minero.cc^
 ||minero.pw^
 ||minescripts.info^
+||minexmr.com^
 ||mipwm.com^
 ||missena.io^
 ||mityneedn.com^
@@ -3379,7 +3383,6 @@ _lx.ads/$popup
 ||pvrtx.net^
 ||qfihdr.com^
 ||qhip.com^
-||qjudpxkisv.xyz^
 ||questionfly.com^
 ||raggerdough.com^
 ||rambleconcernedscar.com^
@@ -3405,6 +3408,7 @@ _lx.ads/$popup
 ||samiana.com^
 ||sauwoaptain.com^
 ||sckxppzdm.com^
+||scratchy-trick.com^
 ||see-work.info^
 ||serconius.com^
 ||sereendipit.com^
@@ -3610,7 +3614,6 @@ _lx.ads/$popup
 ||clicnscores.ma^$popup,third-party
 ||cloudgallery.net^$popup
 ||cpm.wargaming.net^$popup,third-party
-||dalymix.com^$popup
 ||dalysv.com^$popup
 ||denetsuk.com^$popup
 ||digital2cloud.com^$popup,third-party
@@ -3695,6 +3698,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||akamaihd.net^$domain=dailymotion.com|youtube.com
 ||akamaized.net/images/banner/
 ||alfafile.net/img/buttons/promo/
+||ali.ski^$subdocument,third-party
 ||alicdn.com^*-300x250.$domain=~alibaba.com|~aliexpress.com|~aliexpress.ru
 ||alicdn.com^*_220x220.$domain=~alibaba.com|~aliexpress.com|~aliexpress.ru
 ||allopass.com^*/pub/
@@ -3778,7 +3782,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||i3j3u3u9.ssl.hwcdn.net^
 ||ichwuerde.com/images/b/
 ||idcloudhost.com/wp-content/uploads/$third-party
-||iframe-secured.com^$script
 ||igraal.com/parrainage/
 ||illiweb.com^*/banner/
 ||illiweb.com^*/partenaires/
@@ -3829,6 +3832,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||pixel-secure.solvemedia.com^
 ||placelibertine.com^$image,third-party
 ||pm.gamedistribution.com^
+||prettybigescorts.com/images/$third-party
 ||probux.com/images/banner*.gif
 ||produits-asiatiques.com/ascreen.jpg
 ||promo.japanhdv.com^
@@ -3867,14 +3871,12 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||streaming-hentai.org/images/$third-party
 ||super-plans.com^$script,subdocument,third-party
 ||surf7.net/files/images/banners/
-||tagbox.fr/banner/
 ||teenskitten.com^$media,script
 ||tehitz.com/img/banners/
 ||tools.prnewswire.com^$third-party
 ||tools.sexedenfer.com^
 ||tools.vpscash.nl^
 ||toomai.fr/olp/$subdocument
-||torah-box.com/upl/ban/
 ||tounet.com/button.php
 ||track.bloglog.com^$third-party
 ||track.mdsmatch.com^
@@ -4000,6 +4002,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||d3oep4gb91kpuv.cloudfront.net^
 ||d3owq2fdwtdp2j.cloudfront.net^
 ||d3p2b5qewrnsyv.cloudfront.net^
+||d3rmeear8e0ybo.cloudfront.net^
 ||d3t9nyds4ufoqz.cloudfront.net^
 ||d3u5zn5k9864p0.cloudfront.net^
 ||d6swopgiplmy0.cloudfront.net^
@@ -4125,7 +4128,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||file-upload.net/include/$subdocument
 ||files.macg.co/macgupload/
 ||firebasestorage.googleapis.com^$domain=avito.ma
-||flaticon.com/banner
 ||forexalgerie.com/img/pub/
 ||formation-dz.com/images/banners/
 ||forumconstruire.com/img/letsgo/
@@ -4260,7 +4262,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||tahiti-infos.com/photo/habillage_
 ||techpowerup.com/reviyu
 ||tendancehotellerie.fr/img/jpg/
-||tlemcen-electronic.com/dfox.gif
 ||tlemcen-electronic.com/forum/vf.gif
 ||trovit.*/index.php/cod.get_premium/$xmlhttprequest
 ||trovitargentina.*/index.php/cod.get_premium/
@@ -4435,6 +4436,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###atlads_place_index_main
 ###atlads_place_left
 ###atlads_place_top
+###balloonads
 ###ban728
 ###bandeau_pub
 ###banner-pub
@@ -4540,8 +4542,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###incontent_ad3
 ###innerpub
 ###intextad
+###js-MobileAd-insert
 ###keep-ads
-###large-banner-ad
 ###leaderboard.ads
 ###left_slide_pub
 ###lht-space-ad
@@ -4587,6 +4589,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###pub160x600
 ###pub300
 ###pub300250
+###pub300_adscreen
+###pub300_home
 ###pub300x250
 ###pub468x60_centree
 ###pub468x60_text
@@ -4602,6 +4606,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###pubCarre
 ###pubChronique
 ###pubContainer
+###pubDroite
 ###pubHaut
 ###pubHeader
 ###pubMiddleRight
@@ -4720,6 +4725,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###vertical-ad
 ###vertical-ads
 ###videoadv
+###werbeblock
 ###widget_box_pub
 ###wrapper-pub
 ###wrapper_inread
@@ -4760,7 +4766,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.ad-sponsored
 ##.ad-upgrade
 ##.ad-visible
-##.ad-website
 ##.ad-wrapper-middle
 ##.ad-wrapper-right
 ##.ad.banner
@@ -4863,6 +4868,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.adsense2
 ##.adsense468
 ##.adsense__loading
+##.adsense_blog
 ##.adsensetop
 ##.adsforsearch_roba
 ##.adsholder
@@ -5032,6 +5038,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.mobile_adhesion
 ##.mod-ad-middle
 ##.mod-ad-top
+##.mod-ad-top-2
 ##.mod-advertisement
 ##.modAd
 ##.modalPub
@@ -5156,6 +5163,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.pub_banner_h
 ##.pub_banner_top
 ##.pub_carre
+##.pub_centre
 ##.pub_container
 ##.pub_droite
 ##.pub_head
@@ -5196,7 +5204,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.publicite_horizontale_wrapper
 ##.publicite_mobile
 ##.publicite_mobile_cache
-##.publicite_resp
 ##.publicite_sidebar
 ##.publiciteright
 ##.publicity
@@ -5271,7 +5278,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.tag-sponsored-content
 ##.text_pub
 ##.texte_ads
-##.texte_pub
 ##.toast-ad
 ##.top-banner-pub
 ##.top-publicite
@@ -5613,7 +5619,6 @@ journaldunet.com###ctn_infeed
 papvacances.fr###details-services
 maxifoot.fr###ep300z
 maxifoot.fr###ep728
-loractu.fr###estate-widget
 amateur2sexe.fr###footer-boom
 hardware.fr###footer_img
 centerblog.net###gauche > iframe[width="300"][height="250"]
@@ -5674,7 +5679,6 @@ plancul-gratuit.fr,plancul-gratuit.org###toast-container
 viewsurf.com###top-ban
 matchendirect.fr###tux728x90
 flaticon.com###unicorn
-verif.com###verif_pub_adsense_commander
 sibnet.ru###vjs-overlayclip-container-box
 rtl.be###w-leaderboard
 wix.com###wixFooter
@@ -5813,6 +5817,7 @@ auchan.fr##.merchandising-html__butterfly
 ceesty.com,clkmein.com,cllkme.com,corneey.com,destyy.com,festyy.com,sh.st,shorte.st,skipp.io##.middle-container
 zdnet.fr##.mpu-middle
 allo-streaming.one##.mvic-btn
+tchatche.com##.native-banner
 porndoe.com##.news-ticker-wrap
 nicematin.com##.nm_header_ad
 manjaro.fr##.nuxit
@@ -5854,6 +5859,7 @@ lanutrition.fr##.push--shop
 flvto.biz##.push-offer
 cdiscount.com##.regBloc
 endirect24.com##.rek
+qwant.com##.result--ext
 sante-dz.com##.revenue-wrapper
 darty.com##.rm-format
 darty.com##.rm-product
@@ -5898,7 +5904,6 @@ toutvendre.fr##[href*=".kelkoogroup.net/"]
 filecrypt.cc,filecrypt.co,hdss.work,streaming-films.life##[href^="javascript:"]
 fnac.com##[id$="-sponsored_products-0"]
 blick.ch##[id^="appnexus-placement"]
-comarketing-news.fr##[id^="comar-"]
 3dnatives.com##[id^="dnati-"]
 agate-france.com##[id^="pbad_"]
 jeuxvideomoinschers.fr,tahiti-infos.com##[id^="pub_"]
