@@ -1,9 +1,9 @@
-! Checksum: iM9BXdFJybNGlnsF9ge86Q
-! Diff-Path: ../patches/14/14-s-1706031282-3600.patch
+! Checksum: VgJ5Aegck7eat7mqk/pAKg
+! Diff-Path: ../patches/14/14-s-1706034989-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.84.24
-! TimeUpdated: 2024-01-23T17:32:31+00:00
+! Version: 2.1.84.25
+! TimeUpdated: 2024-01-23T18:33:42+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2358,6 +2358,9 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+aparts.pl#$#body { overflow: auto !important; padding-right: 0 !important; }
+aparts.pl#$#div[data-control-type="CookieInfo"] { display: none !important; }
+aparts.pl#$#div[data-control-type="CookieInfo"] ~ div.modal-backdrop { display: none !important; }
 amanvpn.com##.acc
 bonduelle.ru#$##teleported { display: none !important; }
 bonduelle.ru#$#body { overflow: auto !important; padding-right: 0 !important; }
@@ -30684,6 +30687,8 @@ newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,theloca
 !
 ! SECTION: Subscriptions - Regular rules
 !
+mobills.com.br#?#aside:has(> div.headline > h2:contains(Newsletter))
+mobills.com.br##.bloco-news
 bookvoed.ru###subscribeToPush
 eksmo.ru##.cmenu__block-subscribe-info
 iproxy.online#?#div[outstyle] + div[class^="sc-"]:has(> div[class^="sc-"] > p + div[class^="sc-"] > form[class] > input[placeholder="Email"])
