@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: ewlp4UhX6r6ipcGAlpZa6A
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1705954181-14400.patch
+! Checksum: SXCNVNNfWLcgyMMVfuVa7A
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1705983000-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.12.97
@@ -111,6 +111,7 @@ www.google.*##.g:has(a[href*="/AdRedirector.asp" i])
 www.google.*##.g:has(a[href*=redirect][href*=".%D1%80%D1%84"])
 www.google.*##.g:has(a[href*="/go/"][href*=".%D1%80%D1%84"])
 duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion##[data-nrn="result"]:has(a[href*=".gdn/"]):not([href*="cst.gdn"], [href*="pss.gdn"])
+duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion##[data-nrn="result"]:has(a[href*=".bid/"])
 duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion##[data-nrn="result"]:has(a[href*=".top/"]:not([href*="caitlin.top"], [href*="corriente.top"], [href*="gdtot.top"], [href*="nicenature.top"], [href*="reminder.top"], [href*="magocoro.top"], [href*="castlevania.top"], [href*="suiten.top"], [href*="shucks.top"], [href*="1stream.top"], [href*="ambr.top"], [href*="techblog.top"], [href*="mastodon.top"], [href*="pressplay.top"], [href*="strims.top"], [href*="thedesk.top"]))
 bing.com##.b_algo:has(a[href*=".cf/"]:not([href*="google.cf"], [href*="rths.cf"], [href*="acap.cf"], [href*="shorter.cf"]))
 bing.com##.b_algo:has(a[href*=".top/"]:not([href*="caitlin.top"], [href*="corriente.top"], [href*="gdtot.top"], [href*="nicenature.top"], [href*="reminder.top"], [href*="magocoro.top"], [href*="castlevania.top"], [href*="suiten.top"], [href*="shucks.top"], [href*="1stream.top"], [href*="ambr.top"], [href*="techblog.top"], [href*="mastodon.top"], [href*="pressplay.top"], [href*="strims.top"], [href*="thedesk.top"]))
@@ -122,6 +123,7 @@ bing.com##.b_algo:has(a[href*=".top/"]:not([href*="caitlin.top"], [href*="corrie
 ||ublock.org^$document
 ||138.68.252.54^$document
 ||fileplanet.com^$document,popup
+windowsreport.com##.code-block
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.sidebar_download_inner
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.primary_download
@@ -321,7 +323,6 @@ download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 ||go.redirected*/click?^$document,popup,domain=~malware-redirection-trains.*
 ://trk.*.run/$document,domain=~very-likely-a-malware-redirection-train.*
 /(//|\.|^)github\.[a-z]{2,20}(/|$)/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
-||digiter.no^$document
 ://162.214.80.$document
 ||monetrizer*.$all
 ||38.180.96.244^$all
@@ -775,6 +776,7 @@ kickstarter.com##.bttn-facebook
 kickstarter.com##.fill-facebook-blue
 swissinfo.ch##.si-page__utility-container
 knowyourmeme.com##.cbox-smedia
+vg.no##button[aria-label*=Facebook]
 gamespot.com##.share--column
 forbes.com##.article-sharing
 ||syndication.twitter.com/srv/timeline-profile^$third-party
@@ -860,6 +862,8 @@ instagram.com#?#div[class^=" _"][style^="width: "]:only-of-type:has(a[href^="/ac
 spanishdict.com##.ReactModal__Overlay:has(video[src$="/bloom2.mp4"])
 zeit.de#$?#.paragraph--faded { overflow: visible !important }
 zeit.de#$?##paywall { top: 250px !important }
+||pinterest.*mt=signup$removeparam=d
+||pinterest.*mt=signup$removeparam=mt
 community.spiceworks.com##+js(cookie-remover, visit_count)
 ||glassdoor.com^*/gd-user-hardsell-overlay.
 www.youtube.com##ytd-popup-container > .ytd-popup-container[role=dialog]:has(a[href="https://support.google.com/youtube/?p=sign_in"])
@@ -896,11 +900,12 @@ www.youtube.com##div[class*="-gradient-bottom "]
 www.youtube.com##div[class$=-gradient-bottom]
 ##div[class^=ytp-gradient-]
 twe.no#$#div[style*=overlayFadeTo] { --overlayFadeTo: none !important }
+||cmmnts.i.bt.no^
 ||comment.youmaker.com^$domain=theepochtimes.com
+thejournal.ie,city-countyobserver.com###comments
 indiatimes.com##div[class$="cmtwrapper "]
 ghacks.net###comments
 color-hex.com##.txtgray
-color-hex.com##.well-sm.well.commentcontainer
 color-hex.com##a[href="#comments"]
 rule34.paheal.net###comment-list-recent
 rule34.xxx###comment-list
@@ -952,6 +957,7 @@ tmall.com###mobile
 trade.tmall.com##.show-cross-btn
 universalbeijingresort.com##.download-box
 xinhuanet.com##.s-ewm
+ctrip.com###fl_wrap_default
 12306.cn##.fixed-right-menu > li.menu-item:nth-of-type(3)
 58.com##.app.rightbtn
 amap.com###amap-result-banner
@@ -986,7 +992,6 @@ taobao.com##.tbh-qr-wrapper
 taobao.com###J_Col_Main > div:nth-of-type(6)
 taobao.com###J_SiteFooter
 tmall.com##.sn-mobile
-tmall.com###J_Qrcode
 wq.jd.com###id-pcprompt-mask
 baidu.com##.leadDownloadCard
 baidu.com##.poiLeadDownloadCard
@@ -1236,7 +1241,6 @@ twe.no##div.content-list:has(a[href*=imdb])
 tv.nu#?#a[title] span:has-text(IMDb)
 tv.nu##a[title] span:has(path[d^="M9.465 "])
 binge.com.au##h3 + p + ul > li:has(svg[class$=Imdb])
-cinerama.uz##div[class^=MovieDescription_rating__]:nth-of-type(1)
 ddl-warez.to##td:has(.btn[data-original-title^=IMDb])
 yts.am##div.rating-row:has(a[title="IMDb Rating"])
 primewire.*##div:has(> span:has-text(IMDb))
@@ -1507,7 +1511,6 @@ $removeparam=impradid
 $removeparam=impradname
 $removeparam=cm_type
 $document,removeparam=/^ref=cj$/i
-$document,removeparam=/^source=pepperjam$/
 $removeparam=affil
 $removeparam=cjid
 $removeparam=cl_crtv
@@ -2130,6 +2133,7 @@ $removeparam=aff_click_id
 ||baidu.com^$removeparam=srcp
 ||baidu.com^$removeparam=sfrom
 ||haokan.baidu.com/v?$removeparam=pd
+||baike.baidu.com^$removeparam=fromLemmaModule
 ||baike.baidu.com/tashuo/browse/content?$removeparam=lemmaId
 ||baike.baidu.com/tashuo/browse/content?$removeparam=lemmaTitle
 ||baike.baidu.com^$removeparam=fromModule
@@ -2177,7 +2181,6 @@ wenku.baidu.com##+js(set-constant, history.replaceState, noopFunc)
 ||bilibili.com^$removeparam=spm_id_from
 ||bilibili.com^$removeparam=unique_k
 ||bilibili.com/video/*$removeparam=ts
-||bilibili.com^$removeparam=refer_from
 ||bilibili.com^$removeparam=msource
 ||bilibili.com/bangumi$removeparam=theme
 ^p=1^$removeparam=p,domain=bilibili.com
@@ -2280,6 +2283,8 @@ $removeparam=token,domain=al.to|combat.pl|x-kom.pl
 ||youtube.com^$removeparam=ab_channel
 ||alibaba.com^$removeparam=categoryIds
 $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
+||pinterest.*mt=signup$removeparam=d
+||pinterest.*mt=signup$removeparam=mt
 ||pinterest.*/?mt=login^$removeparam=mt
 ||tcgplayer.com^$removeparam=productLineName
 ||tcgplayer.com^$removeparam=setName
@@ -2882,7 +2887,6 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 ##.adsanity-alignnone:not(html,body,:empty)
 www.youtube.com##.ytd-watch-flexy #dismissible:has(.badge-style-type-simple)
 www.youtube.com##ytd-shelf-renderer[thumbnail-style]
-tv2.no##.banner
 www.finn.no##+js(remove-class, ads__unit--premium, .ads__unit, stay)
 positivr.fr#$#.viously-sticked { position: absolute !important; top: 0 !important; left: 0 !important; bottom: 0 !important; right: 0 !important; width: 100% !important;  height: 100% !important; z-index: 1 !important; display: block !important }
 youtube.com#$?#ytd-miniplayer[has-playlist-data] #movie_player video { remove: true; }
