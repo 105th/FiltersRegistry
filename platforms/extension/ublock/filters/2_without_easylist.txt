@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: mB7/TR4DVWBJX0IWjhvb3g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1705995287-3600.patch
+! Checksum: aD2todp9WzKMHV6SEICvog
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1706006217-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.17.27
-! TimeUpdated: 2024-01-23T07:32:44+00:00
+! Version: 2.3.17.28
+! TimeUpdated: 2024-01-23T10:34:56+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -27535,6 +27535,9 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/171300
+pluto.tv##+js(json-prune, adBreaks.*)
+pluto.tv#@#+js(xml-prune, xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text()\,"_ad")]] | //*[name()="Period"]/@start | //*[name()="Period"]/@duration, , .mpd)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171324
 bestgirlsexy.com##+js(abort-current-script, String.fromCharCode, _0x)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171081
@@ -32687,6 +32690,7 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+palworld.th.gl##.fixed > div.w-full > div[class]:has(> a[href="https://www.th.gl/support-me"])
 scienceabc.com##.desk-header-ad
 scienceabc.com##.incontentad
 backbook.me##br + br ~ *
