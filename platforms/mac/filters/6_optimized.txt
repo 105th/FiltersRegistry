@@ -1,9 +1,9 @@
-! Checksum: FmHe3Y/uAkz8MztwmcV40Q
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1706064022-3600.patch
+! Checksum: fZw/4K6HXd9BBS38Klobnw
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1706100231-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.39.80
-! TimeUpdated: 2024-01-22T12:42:07+00:00
+! Version: 2.0.39.81
+! TimeUpdated: 2024-01-24T12:41:37+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -566,6 +566,7 @@ kicker.de,stern.de,desired.de,pcgames.de,t-online.de,vox.de,spieletipps.de,wette
 plus.rtl.de#%#//scriptlet('trusted-replace-xhr-response', 'true', 'false', 'homadClientConfig-plusrtlde.json')
 brigitte.de#%#//scriptlet('trusted-replace-xhr-response', 'true', 'false', 'global_config.json')
 plus.rtl.de#%#//scriptlet('abort-on-stack-trace', 'Object.prototype.adReinsertion', 'createSdk')
+winfuture.de#%#//scriptlet('trusted-replace-xhr-response', '/"enabled": true,/', '"enabled": false,', '/(homad|svonm).*\.json/')
 restegourmet.de#%#//scriptlet("adjust-setInterval", "invoke", "1000", "0.01")
 jpgames.de#$##takeover { padding-top: unset!important; }
 ddl-warez.cc#%#//scriptlet('prevent-window-open', 'af.php')
@@ -2067,6 +2068,8 @@ config.player.p7s1.io/prosieben-de.js$replace=/"adScheduler":\{"cobra":\{"advert
 ||config.player.p7s1.io/wetter-de.js$replace=/"adScheduler":\{"cobra":\{"advertiser":"[\s\S]*?_[\s\S]*?"/"adScheduler":\{"cobra":\{"advertiser":"x"/,domain=wetter.com
 /\:\/\/config-vvs\.glomex\.com\/[a-z0-9]*\.js/$replace=/"adScheduler":\{"cobra":\{"advertiser":"[\s\S]*?_[\s\S]*?"/"adScheduler":\{"cobra":\{"advertiser":"x"/,domain=7tv.de|kabeleins.de|prosieben.de|prosiebenmaxx.de|ran.de|sat1.de|sixx.de|the-voice-of-germany.de
 /\:\/\/config-vvs\.glomex\.com\/[a-z0-9]*\.js/$replace=/"adScheduler"\:/"adScheduler":\{"cobra":\{\}\}\,"x":/,domain=wetter.com
+||winfuture.de/video/homadConfigWinfuture.json$replace=/"enabled": true\,/"enabled": false\,/i
+||svonm.com/www.winfuture.de/config.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=winfuture.de
 ||ssaimanifest.prod.boltdns.net/playback/once/v*/vmap/hls/$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,domain=blick.ch
 ||zomap.de^$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,xmlhttprequest,domain=joyn.de
 ||amazonaws.com/homad-global-configs-*.schneevonmorgen.com/global_config.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=giga.de,important
