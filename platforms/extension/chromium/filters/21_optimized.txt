@@ -1,9 +1,9 @@
-! Checksum: Wr1Q419xX7Gww+aRvAlYEQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1706088875-3600.patch
+! Checksum: x4c3CirCtQC+fAIEIu131Q
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1706103290-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.18.70
-! TimeUpdated: 2024-01-24T09:32:41+00:00
+! Version: 2.0.18.71
+! TimeUpdated: 2024-01-24T13:32:42+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -20,6 +20,11 @@
 youtube.com#%#AG_onLoad(function() {var a = new MutationObserver(function() {if (document.querySelector('yt-upsell-dialog-renderer')) {var b = document.querySelector('.ytd-popup-container[popup-size="UPSELL_DIALOG_RENDERER_POPUP_SIZE_LARGE"] #dismiss-button:not(.dismissed), .upsell-dialog-lightbox .upsell-dialog-dismiss-button button:not(.dismissed)');setTimeout(function() {b&&b.click()}, 3E2)}});a.observe(document, {childList: !0,subtree: !0});setTimeout(function() {a.disconnect()}, 3E3)});
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
 instagram.com##._aagw:empty
+foxnews.com#%#//scriptlet('set-constant', 'Taplytics', 'emptyObj')
+foxnews.com#%#//scriptlet('set-constant', 'Taplytics.featureFlagEnabled', 'trueFunc')
+foxnews.com#%#//scriptlet('adjust-setTimeout', 'Taplytics', '*', '0.001')
+foxnews.com#%#//scriptlet('remove-class', 'gated-overlay', '.article-gating')
+foxnews.com#%#//scriptlet('remove-class', 'has-gated-overlay|gated-article-body', '.gated-article-body')
 zelvia.co.jp##.p-sticky
 inc.com##.mobile_video_insert
 ||geo.dailymotion.com/player/xdgu3.html$domain=idntimes.com
