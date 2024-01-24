@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: zMNDf+J+ajmpV+qXXvdmaA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1706085392-3600.patch
+! Checksum: AGMk5GpDhyDhn+0x+RFyYQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1706088889-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.17.45
-! TimeUpdated: 2024-01-24T08:34:24+00:00
+! Version: 2.3.17.46
+! TimeUpdated: 2024-01-24T09:32:53+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7232,6 +7232,8 @@ pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\
 mlwbd.to##+js(abort-on-property-write, antiAdBlockerHandler)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171355
 alliptvlinks.com##.rcc-panel.group
+alliptvlinks.com##body > div[id^="you-"][class^="as-"]
+alliptvlinks.com##+js(abort-on-property-read, eazyAdUnBlockerHttp)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171299
 geekermag.com#$#body { overflow: auto !important; }
 geekermag.com#$##detect-modal { display: none !important; }
@@ -32648,6 +32650,7 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+||storage.googleapis.com/*/newsletter/*-banner-ad-
 olivemagazine.com##div[class^="ad-placement"]
 olivemagazine.com##div[id^="index--banner"]
 mydramalist.com##.ad-removal-info
