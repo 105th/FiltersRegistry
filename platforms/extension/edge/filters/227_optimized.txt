@@ -1,9 +1,9 @@
-! Checksum: CtFiHbMkO2GqlusaAV7J/g
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1706026167-14400.patch
+! Checksum: 4I1f1jFJys/ikDEQsoD2lg
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1706098355-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.17.24
-! TimeUpdated: 2024-01-23T16:07:03+00:00
+! Version: 2.0.17.25
+! TimeUpdated: 2024-01-24T12:09:56+00:00
 ! Expires: 4 days (update frequency)
 ||d1cykymlllue3h.cloudfront.net^
 ||ad1.missyusa.com^
@@ -483,6 +483,7 @@
 /media/banner/*
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
+||humorpick.com/data/banner/
 ||sportsw.kr/support/_updata/banner
 ||dpg.danawa.com/news/ad/rest/
 ||dpg.danawa.com/mobile/rest/ad/
@@ -497,7 +498,6 @@
 /^https:\/\/nng-phinf\.pstatic\.net\/[A-z]+\/[A-z0-9._-]+\/Banner_[A-z0-9_-]+\.[A-z]+$/$domain=chzzk.naver.com
 ||tvdaily.co.kr/banner/
 ||tvdaily.co.kr/ad/
-/^https:\/\/humorpick\.com\/data\/editor\/[0-9]{4}\/(?!thumb-)/$domain=humorpick.com
 ||dentalnews.or.kr/data/banner/
 ||m2.nateimg.co.kr/cms/*.gif|$image
 /^https?:\/\/www\.tinnews\.co\.kr\/data\/tinnews_co_kr\/banner\/(?!(favicon\.ico|2020040642392902))/$domain=tinnews.co.kr
@@ -1431,6 +1431,7 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+humorpick.com##.view-mobile > div[class^="margin-"]:has(#main_bn)
 shopping.naver.com##div[class^="shoppingHomeResponsive_inner"] div[class^="shoppingHomeResponsive_module__"]:has(> .trend_pick)
 mksports.co.kr##.read_txt> div[id^="slot"]
 sportsw.kr##div[id^="banner"][class=""][style*="height:"]

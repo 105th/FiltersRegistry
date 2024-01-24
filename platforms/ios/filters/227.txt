@@ -1,14 +1,14 @@
-! Checksum: dJZdWgOW6msNnq0ENOYDeg
-! Diff-Path: ../patches/227/227-s-1706026182-14400.patch
+! Checksum: eU/JUN+rgEJ9p/KSayeO6Q
+! Diff-Path: ../patches/227/227-s-1706098371-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.17.24
-! TimeUpdated: 2024-01-23T16:07:03+00:00
+! Version: 2.0.17.25
+! TimeUpdated: 2024-01-24T12:09:56+00:00
 ! Expires: 4 days (update frequency)
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2024.0123.5
+! OriginalVersion: 2024.0124.0
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -460,7 +460,6 @@
 ##ins.kakao_ad_area
 ##iframe[src*="//www.mediacategory.com/servlet/"]
 ##div[id^="targetpushAd_"]
-humorpick.com##img[src^="https://humorpick.com/data/editor/"]:not([src*="/thumb-"])
 cookmana18.com,cookmana19.com,cookmana20.com,cookmana21.com,cookmana22.com,cookmana23.com,cookmana24.com,cookmana25.com,cookmana26.com,cookmana27.com,cookmana28.com,cookmana29.com##.contents > .gridArea
 ##img[src*="//wwwimageup.angle777899.com/other/atoona/"]
 m.humoruniv.com##div[id^="read_ok_"] ~ li[id][style*="border-top-style:"] > div[class]
@@ -520,6 +519,7 @@ m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
 !
+||humorpick.com/data/banner/
 ||sportsw.kr/support/_updata/banner
 ||dpg.danawa.com/news/ad/rest/
 ||dpg.danawa.com/mobile/rest/ad/
@@ -534,7 +534,6 @@ m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
 /^https:\/\/nng-phinf\.pstatic\.net\/[A-z]+\/[A-z0-9._-]+\/Banner_[A-z0-9_-]+\.[A-z]+$/$domain=chzzk.naver.com
 ||tvdaily.co.kr/banner/
 ||tvdaily.co.kr/ad/
-/^https:\/\/humorpick\.com\/data\/editor\/[0-9]{4}\/(?!thumb-)/$domain=humorpick.com
 ||dentalnews.or.kr/data/banner/
 ||m2.nateimg.co.kr/cms/*.gif|$image
 /^https?:\/\/www\.tinnews\.co\.kr\/data\/tinnews_co_kr\/banner\/(?!(favicon\.ico|2020040642392902))/$domain=tinnews.co.kr
@@ -1503,6 +1502,7 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 !
+humorpick.com##.view-mobile > div[class^="margin-"]:has(#main_bn)
 shopping.naver.com##div[class^="shoppingHomeResponsive_inner"] div[class^="shoppingHomeResponsive_module__"]:has(> .trend_pick)
 mksports.co.kr##.read_txt> div[id^="slot"]
 sportsw.kr##div[id^="banner"][class=""][style*="height:"]
@@ -2700,9 +2700,6 @@ x86.co.kr#@#.download_ad
 auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 @@||ssl.pstatic.net/adimg3.search/adpost/js/adpost_show_ads_v2.min.js$domain=danawa.com
 @@||ssl.pstatic.net/tveta/libs/glad/prod/gfp-core.js$script,domain=m.cafe.naver.com
-||humorpick.com/data/editor/
-@@/^https:\/\/humorpick\.com\/data\/editor\/[0-9]+\/thumb-/$domain=humorpick.com
-/^https:\/\/humorpick\.com\/data\/editor\/[0-9]+\/[a-z0-9]+/$domain=humorpick.com
 ! TODO: remove the following filter if https://github.com/AdguardTeam/CoreLibs/issues/1831 is resolved.
 ||api-gw.sports.naver.com/cms/contents/adContents/$domain=m.sports.naver.com
 @@||api-gw.sports.naver.com/cms/contents/adContents/GENERAL$domain=m.sports.naver.com

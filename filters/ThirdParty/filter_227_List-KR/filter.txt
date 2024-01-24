@@ -1,7 +1,7 @@
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2024.0123.5
+! OriginalVersion: 2024.0124.0
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -455,9 +455,6 @@
 ##iframe[src*="//www.mediacategory.com/servlet/"]
 ##div[id^="targetpushAd_"]
 !#if adguard_app_ios
-humorpick.com##img[src^="https://humorpick.com/data/editor/"]:not([src*="/thumb-"])
-!#endif
-!#if adguard_app_ios
 cookmana18.com,cookmana19.com,cookmana20.com,cookmana21.com,cookmana22.com,cookmana23.com,cookmana24.com,cookmana25.com,cookmana26.com,cookmana27.com,cookmana28.com,cookmana29.com##.contents > .gridArea
 !#endif
 !#if adguard_app_ios
@@ -531,6 +528,7 @@ funbe276.com,funbe277.com,funbe278.com,funbe279.com,funbe280.com,funbe281.com,fu
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
 !
+||humorpick.com/data/banner/
 ||sportsw.kr/support/_updata/banner
 ||dpg.danawa.com/news/ad/rest/
 ||dpg.danawa.com/mobile/rest/ad/
@@ -545,7 +543,6 @@ funbe276.com,funbe277.com,funbe278.com,funbe279.com,funbe280.com,funbe281.com,fu
 /^https:\/\/nng-phinf\.pstatic\.net\/[A-z]+\/[A-z0-9._-]+\/Banner_[A-z0-9_-]+\.[A-z]+$/$domain=chzzk.naver.com
 ||tvdaily.co.kr/banner/
 ||tvdaily.co.kr/ad/
-/^https:\/\/humorpick\.com\/data\/editor\/[0-9]{4}\/(?!thumb-)/$domain=humorpick.com
 ||dentalnews.or.kr/data/banner/
 ||m2.nateimg.co.kr/cms/*.gif|$image
 /^https?:\/\/www\.tinnews\.co\.kr\/data\/tinnews_co_kr\/banner\/(?!(favicon\.ico|2020040642392902))/$domain=tinnews.co.kr
@@ -1516,6 +1513,7 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 !
+humorpick.com##.view-mobile > div[class^="margin-"]:has(#main_bn)
 shopping.naver.com##div[class^="shoppingHomeResponsive_inner"] div[class^="shoppingHomeResponsive_module__"]:has(> .trend_pick)
 mksports.co.kr##.read_txt> div[id^="slot"]
 sportsw.kr##div[id^="banner"][class=""][style*="height:"]
@@ -2730,11 +2728,6 @@ auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 !#endif
 !#if (adguard_ext_chromium || adguard_ext_edge || adguard_ext_firefox || adguard_ext_opera)
 ||shopsquare.naver.com^$badfilter
-!#endif
-!#if adguard_app_ios
-||humorpick.com/data/editor/
-@@/^https:\/\/humorpick\.com\/data\/editor\/[0-9]+\/thumb-/$domain=humorpick.com
-/^https:\/\/humorpick\.com\/data\/editor\/[0-9]+\/[a-z0-9]+/$domain=humorpick.com
 !#endif
 ! TODO: remove the following filter if https://github.com/AdguardTeam/CoreLibs/issues/1831 is resolved.
 !#if (adguard_app_android || adguard_app_mac || adguard_app_windows)
