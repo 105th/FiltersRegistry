@@ -1,9 +1,9 @@
-! Checksum: KlpiAjgKaowESvO0UnwBBA
-! Diff-Path: ../patches/11/11-s-1706171729-3600.patch
+! Checksum: bbkHzP9VtyHC7bLDZ+88Xw
+! Diff-Path: ../patches/11/11-s-1706182475-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.48.34
-! TimeUpdated: 2024-01-25T08:33:27+00:00
+! Version: 2.0.48.35
+! TimeUpdated: 2024-01-25T11:32:21+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -217,6 +217,8 @@
 ||startup.mobile.webvisor.com^
 ||startup-mobile.ap.yandex-net.ru^
 !
+||aan.amazon.*^
+||mads.amazon.com^
 ||p16-ad.byteoversea.com^
 ||mtgglobals.com^
 ||pgdt.gtimg.cn^
@@ -2533,7 +2535,9 @@ chip.de,gamesworld.de,fnn.jp##.Ad
 ! SECTION: Regular rules
 !
 m.winfuture.de##div[id^="taboola-mid-home-thumbnails-mobile"]
-ja.wtmnews.net##.aflLinkFlex
+wtmnews.net##.entry-content > p:has(> a[target="_blank"][rel="nofollow sponsored "] > img)
+wtmnews.net##.aflImage
+wtmnews.net##.aflLinkFlex
 cultofmac.com##.header-ad-region
 sp.nijie.info###inter_background
 sp.nijie.info##.other-dojin
