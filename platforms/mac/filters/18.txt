@@ -1,9 +1,9 @@
-! Checksum: Gjf71BAKapiTltYp/ZWBQg
-! Diff-Path: ../patches/18/18-s-1706150458-3600.patch
+! Checksum: srWa5R+NInCZJ8WhOOd90Q
+! Diff-Path: ../patches/18/18-s-1706168091-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.31.38
-! TimeUpdated: 2024-01-25T02:38:33+00:00
+! Version: 2.0.31.39
+! TimeUpdated: 2024-01-25T07:32:28+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2357,6 +2357,9 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+keb-automation.com#$#body #privacy-consent { display: none !important; }
+keb-automation.com#$##privacy-consent ~ .modal-backdrop { display: none !important; }
+keb-automation.com#$#body.modal-open { overflow: auto !important; padding-right: 0 !important; }
 markformelle.by##.app-cookies__popup
 eurosender.com#?##__next > div[class^="styles_container"]:has(> div[class^="styles_description"] > span > a[href*="cookie"])
 ndl.go.jp##.privacy-confirmation
@@ -14967,6 +14970,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/171458
+keb-automation.com#@##privacy-consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171356
 @@||cookiebot.com^$domain=cinemas.nos.pt
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171099

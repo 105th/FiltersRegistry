@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 5h8w4uJsxOcv6OmkAz2PWA
-! Diff-Path: ../patches/14/14-s-1706164584-3600.patch
+! Checksum: qUgsRgteJOvPFntcCvuncQ
+! Diff-Path: ../patches/14/14-s-1706168085-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.84.44
-! TimeUpdated: 2024-01-25T06:34:16+00:00
+! Version: 2.1.84.45
+! TimeUpdated: 2024-01-25T07:32:24+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2328,6 +2328,9 @@ moto.it#$#html { overflow: auto !important; }
 !
 ! NOTE: Regular rules
 !
+keb-automation.com#$#body #privacy-consent { display: none !important; }
+keb-automation.com#$##privacy-consent ~ .modal-backdrop { display: none !important; }
+keb-automation.com#$#body.modal-open { overflow: auto !important; padding-right: 0 !important; }
 markformelle.by##.app-cookies__popup
 eurosender.com#?##__next > div[class^="styles_container"]:has(> div[class^="styles_description"] > span > a[href*="cookie"])
 ndl.go.jp##.privacy-confirmation
@@ -14102,6 +14105,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/171458
+keb-automation.com#@##privacy-consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171356
 @@||cookiebot.com^$domain=cinemas.nos.pt
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171099
