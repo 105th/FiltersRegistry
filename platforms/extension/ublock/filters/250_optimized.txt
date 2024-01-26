@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: vl+7kbKaIk7EY0HGTU+Ccg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1706228613-14400.patch
+! Checksum: IOaZpH2heWPy/KExOK0WRQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1706242236-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.12.99
@@ -150,7 +150,6 @@ cfoc.org###top_custom_banner
 cfoc.org##a[href="https://cfoc.org/spyhunter-download-and-install-instructions/"]:upward(2)
 cfoc.org##.su-button[href^="https://link.safecart.com/"]:upward(3)
 windowsdispatch.com##strong
-windowsreport.com##.bnr-block
 windowsreport.com##div[class^=restoro-download] + section
 windowsreport.com##div[class^=refmed]
 appuals.com##p + div > div:first-of-type
@@ -325,7 +324,6 @@ download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 ://trk.*.run/$document,domain=~very-likely-a-malware-redirection-train.*
 /(//|\.|^)github\.[a-z]{2,20}(/|$)/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
 ://162.214.80.$document
-||monetrizer*.$all
 ||38.180.96.244^$all
 ||192.243.59.12^$document
 ||192.243.59.13^$document
@@ -417,6 +415,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 *#?#script[src*=disquscdn] + #layout .post-content:has-text(Viagra)
 www.microsoft.com##.card[data-bi-cn^="craft " i]
 www.microsoft.com##a[data-pfns][data-pfns^="2"][data-pfns*="games."]
+www.microsoft.com##a[data-pfns][data-pfns^="3"][data-pfns*="games."]
 www.microsoft.com##a[data-pfns][data-pfns^="9"][data-pfns*="games."]
 ||212.27.60.108^$all
 ||oxtop.ru^
@@ -535,6 +534,7 @@ www.microsoft.com##a[data-pfns][data-pfns^="9"][data-pfns*="games."]
 ##.btn-share:not(html, body)
 ##.button--share:not(html, body)
 ##.et_social_icons_container:not(html, body)
+##.figure-share:not(html, body)
 ##.footerSocial:not(html, body)
 ##.Gallery-Share:not(html, body)
 ##.heateor_sss_sharing_container:not(html, body)
@@ -830,6 +830,7 @@ segmentfault.com##.modal:has-text(你知道吗？)
 segmentfault.com##.modal-backdrop:has(~ .modal:has-text(你知道吗？))
 segmentfault.com#$#.modal-open { overflow: auto !important; padding-right: 0 !important; }
 segmentfault.com#$#.modal-open [style]:is([data-padding-right], [data-margin-right]) { padding-right: 0 !important; margin-right: 0 !important; }
+tumblr.com###glass-container > div[role=dialog]:has(p + p):has(a[href^="/auth/google?"])
 ||assets.tumblr.com/pop/js/modern/async-login-wall$script,domain=www.tumblr.com
 theepochtimes.com##.modal__overlay
 theepochtimes.com#$#body.single-post { overflow: unset !important }
@@ -903,6 +904,7 @@ www.youtube.com##div[class$=-gradient-bottom]
 twe.no#$#div[style*=overlayFadeTo] { --overlayFadeTo: none !important }
 ||cmmnts.i.bt.no^
 ||comment.youmaker.com^$domain=theepochtimes.com
+||facebook.com/plugins/*comments.php?*%26domain%3Dglobalnews.ca%26
 thejournal.ie,city-countyobserver.com###comments
 indiatimes.com##div[class$="cmtwrapper "]
 ghacks.net###comments
@@ -1377,6 +1379,7 @@ $removeparam=sscid
 $removeparam=rmmds
 $removeparam=act_poa
 $removeparam=msclkid
+$removeparam=litb_from
 $removeparam=ftag
 $document,removeparam=/^__xts__/
 $removeparam=custlixnkid
@@ -1448,6 +1451,7 @@ $removeparam=eid,document,denyallow=embed.tapkal.fi|myanimelist.net,domain=~acti
 $removeparam=in_source
 $removeparam=srnd
 =adservice$removeparam=coid,domain=~radioreference.com|~finanzonline.bmf.gv.at
+$removeparam=edsacid
 $removeparam=action_type_map
 $document,removeparam=/^bsft_/
 $document,removeparam=/^dpg_/
@@ -1565,6 +1569,7 @@ $removeparam=actId
 $removeparam=actCampaignType
 $removeparam=actSource
 $removeparam=oly_anon_id
+$removeparam=oly_enc_id,document,domain=~greenbuildingadvisor.com
 $removeparam=rb_clickid,document
 $removeparam=s_cid
 $removeparam=ml_subscriber
@@ -1686,7 +1691,6 @@ $removeparam=s_kwcid
 $removeparam=dm_i
 $removeparam=epik
 $removeparam=/^mtm_/
-$removeparam=/^piwik_/
 $removeparam=pk_campaign
 $removeparam=pk_medium
 $removeparam=pk_source
@@ -2377,6 +2381,7 @@ $removeparam=ref_ctx_id
 ||fiverr.com^$removeparam=context_alg
 ||fiverr.com^$removeparam=context_type
 $removeparam=ssdcat,domain=norton.com|ask.com
+||oikotie.fi^$removeparam=sRef
 ||cdninstagram.com^$removeparam=ccb
 ||cdninstagram.com^$removeparam=efg
 ||tokopedia.com^$removeparam=whid
@@ -2526,7 +2531,6 @@ $removeparam=xcreo
 ||skimresources.com^$removeparam=xed
 $removeparam=rffrid
 $removeparam=ad_name
-$removeparam=rcode,domain=kucoin.com
 ||deezer.com^$removeparam=deferredFl
 $removeparam=pr_prod_strat
 $removeparam=pr_rec_id
