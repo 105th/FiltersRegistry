@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: liYB7SwPsrpnJBISTnHkeg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1706265333-3600.patch
+! Checksum: YAilQIe+Odbpo+aEUEq/fw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1706268891-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.17.74
-! TimeUpdated: 2024-01-26T10:33:34+00:00
+! Version: 2.3.17.75
+! TimeUpdated: 2024-01-26T11:32:41+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23400,7 +23400,11 @@ media.polsatnews.pl#@#[class$="-ads"]
 limanowa.in###topBanner
 limanowa.in##img[src^="/app/default/assets/ads/"]
 ! ppe.pl - ads
-! napiprojekt.pl - "popunder"
+! https://github.com/MajkiIT/polish-ads-filter/issues/17418
+! napiprojekt.pl - redirection to hellozdrowie.pl
+! To reproduce go to https://www.napiprojekt.pl/napisy-szukaj, search something and click on any result,
+! on the first visit it will redirect to hellozdrowie.pl (seems to be server side redirection), to reproduce again it's necessary to change IP address or wait some time
+! The script below creates iframe with one of the page, so redirection occurs in the iframe and it's blocked by request blocking rule, better than direct redirection
 ||hellozdrowie.pl^$domain=napiprojekt.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/144276
 deccoria.pl##body .dc-billboard:not(#style_important)
@@ -26928,6 +26932,10 @@ truyenqqhot.com##div[id^="ads_"]
 !
 !
 !
+!+ NOT_OPTIMIZED
+##.adverts_header_advert
+!+ NOT_OPTIMIZED
+##.adverts_side_advert
 !+ NOT_OPTIMIZED
 ##.bordered-ad
 !+ NOT_OPTIMIZED
@@ -30716,6 +30724,11 @@ spectrum.ieee.org##+js(set-constant, splashpage, undefined)
 !-------CSS---------
 !-------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/171551
+civitai.com#$?#main .mantine-Stack-root:has(> .mantine-Group-root > a[href="/pricing"]) { remove: true; }
+civitai.com#$?#main div[class^="mantine-"]  > div[class^="mantine-"] > div.mantine-Paper-root:has(>  a[href="/pricing"]) { remove: true; }
+civitai.com#$?#div[class^="mantine-"][style^="grid-template-columns:"] > div.mantine-Paper-root:has(> div[class^="mantine-"] > a[href="/pricing"]) { remove: true; }
+civitai.com#$?#.mantine-ContainerGrid-col > div.mantine-Stack-root > div.mantine-Stack-root:has(> div.mantine-Paper-root > a[href="/pricing"]) { remove: true; }
 ! https://github.com/uBlockOrigin/uAssets/issues/22175
 qwant.com#$#.result__ext:has([data-testid="adResult"]) { max-height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171385
@@ -32679,6 +32692,8 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+investing.com###comments_new > .border-t > .items-center:has(> div[data-test="ad-slot-visible"])
+technologynetworks.com#?#.preText:contains(Continue reading below...)
 israel21c.org##.banner-container
 exoticca.com##div[id^="add-banner"]
 cybernews.com##.a-label__wrapper

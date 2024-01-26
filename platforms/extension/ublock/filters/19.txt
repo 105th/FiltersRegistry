@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: woEQZLEdVExV2mlFUHeKJw
-! Diff-Path: ../patches/19/19-s-1706265331-3600.patch
+! Checksum: Ouv8saGyfUTAt7vEoaNJUA
+! Diff-Path: ../patches/19/19-s-1706268890-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation.
-! Version: 2.0.29.91
-! TimeUpdated: 2024-01-26T10:33:18+00:00
+! Version: 2.0.29.92
+! TimeUpdated: 2024-01-26T11:32:26+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1536,7 +1536,8 @@ photopea.com#?#.window:has(> div.body > div > div:contains(ad blocker))
 vrcmods.com###showfreemethod
 tekniknot.com##+js(set-constant, alert, undefined)
 bravedown.com##+js(no-fetch-if, adskeeper)
-/aa_adb_modal$domain=triblive.com
+triblive.com##+js(set-constant, aa_abd_modal_create, noopFunc)
+/pubs/trib/triblive_mnbvcx.js$domain=triblive.com
 radarbox.com###ad-blocking
 radarbox.com##+js(set-constant, ads_enabled, true)
 maxroll.gg##+js(set-constant, nitroAds.loaded, true)
@@ -4100,6 +4101,8 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+restoreprivacy.com#$#.brianhead-campaign { display: none !important; }
+restoreprivacy.com#$#html.om-position-popup body { overflow: auto !important; }
 deviantart.com##header[role="banner"] ~ div[class*=" "]:has(> span.surface > a[href="https://www.deviantart.com/users/login"])
 zeit.de#$?#.tp-modal-open { overflow: auto !important; }
 zeit.de#$?#body.body-fixed { overflow: auto !important; }
