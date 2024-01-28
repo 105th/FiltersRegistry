@@ -1,14 +1,14 @@
-! Checksum: 8DLMqOLoUkfn7qzX1W6BTg
-! Diff-Path: ../patches/227/227-s-1706429403-14400.patch
+! Checksum: Rch6ua3F3JNvFfyiiWEY2Q
+! Diff-Path: ../patches/227/227-s-1706458170-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.17.30
-! TimeUpdated: 2024-01-28T08:07:33+00:00
+! Version: 2.0.17.31
+! TimeUpdated: 2024-01-28T16:06:53+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2024.0128.0
+! OriginalVersion: 2024.0128.4
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -510,6 +510,7 @@
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
 !
+||arca.live/external/callad|
 ||humorpick.com/data/banner/
 ||sportsw.kr/support/_updata/banner
 ||dpg.danawa.com/news/ad/rest/
@@ -1489,6 +1490,12 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 !
+namu.wiki##aside > div[class*=" "][id][style] > div[id][class]
+namu.wiki##article div:not([class*=" "]):has(h1) ~ div div + div[class*=" "]:has(iframe[src*="arca.live/external/callad"])
+namu.wiki##article div:not([class*=" "]):has(h1) ~ div div + div[class*=" "]:has(> div[id][class])
+namu.wiki##article > div[class]:not([class*=" "]) ~ div[class*=" "]:has(iframe[src*="arca.live/external/callad"])
+namu.wiki##aside > div[class*=" "]:has(iframe[src*="arca.live/external/callad"])
+namu.wiki##article div:not([class*=" "]):has(h1) ~ div div + div[class*=" "]:has(iframe[id^="google_ads_"])
 namu.wiki##aside > div[class*=" "]:has(iframe[id^="google_ads_"])
 namu.wiki##article > div[class]:not([class*=" "]) ~ div[class*=" "]:has(iframe[id^="google_ads_"])
 humorpick.com##.view-mobile div[class*="margin-"]:has(#main_bn)
@@ -2878,7 +2885,6 @@ newtoki319.com,newtoki320.com,newtoki321.com,newtoki322.com,newtoki323.com,newto
 zdnet.co.kr#$#body > div[id^="A1_"][style*="height:"] ~ #wrap { margin-top: -1.5em !important; }
 2cpu.co.kr#$#header .row[style] { margin-bottom: 35px !important; }
 sign.dcinside.com#$#.login_inputbox { width: 100% !important; }
-namu.wiki#?#article div[class*=" "]:has(> span + ul > li) ~ div div + div[class*=" "]:has(iframe[id^="google_ads_"])
 news.tvchosun.com#?#.rnb > .rnb_cont:matches-css(height: 0px):matches-css(padding-top: 30px)
 humorpick.com#?#.item-list > .on:has(.ad-wrap-text)
 whosaeng.com#?##aside div[class^="scroll-in"] .bn:has(a[href^="/ad_link.php?"])
