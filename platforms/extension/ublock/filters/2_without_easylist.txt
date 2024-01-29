@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: JxXzVwlwM9zC9fdYqY1kGA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1706513705-3600.patch
+! Checksum: OXxeTZYUJIhBrre/zWUjAg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1706517287-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.18.0
-! TimeUpdated: 2024-01-29T07:33:01+00:00
+! Version: 2.3.18.1
+! TimeUpdated: 2024-01-29T08:32:46+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8290,9 +8290,9 @@ leak.sx,comohoy.com,pornleaks.in##+js(addEventListener-defuser, load, abDetector
 @@||pagead2.googlesyndication.com/pagead/managed/js/adsense/*/show_ads_impl_*.js$domain=zefoy.com
 zefoy.com#$?#ins.adsbygoogle { height: 0 !important; }
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=zefoy.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/171608
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152204
-||cdn.fuseplatform.net/publift/tags/*/fuse.js$script,xmlhttprequest,redirect=noop.js,domain=quackr.io
-@@||cdn.fuseplatform.net/publift/tags/*/fuse.js$domain=quackr.io
+quackr.io##+js(no-fetch-if, cdn.fuseplatform.net, , opaque)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152212
 tempumail.com##+js(no-setTimeout-if, Ad Blocker)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152095
@@ -32693,6 +32693,9 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+quackr.io##messages > div[data-fuse]
+quackr.io##.table > tbody > tr[_ngcontent-serverapp-c10]:has(> td[_ngcontent-serverapp-c10] > div[data-fuse])
+top.gg###parent_nn_player
 opensubtitles.org##iframe[src*="://ads"][src*=".opensubtitles.org/"]
 qwant.com#$#.is-sidebar:has(div[data-testid="advertiserAdsDisplayUrl"]) { position: absolute !important; left: -3000px !important; }
 ||123movies.ba/vpnads$image
