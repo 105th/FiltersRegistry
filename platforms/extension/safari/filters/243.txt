@@ -1,14 +1,14 @@
-! Checksum: DBrWrprYKQVltcwk9ZAy9A
-! Diff-Path: ../patches/243/243-s-1706515806-14400.patch
+! Checksum: RiA9telesK2Bjx1SavVgXA
+! Diff-Path: ../patches/243/243-s-1706544567-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.17.39
-! TimeUpdated: 2024-01-29T08:07:42+00:00
+! Version: 2.0.17.40
+! TimeUpdated: 2024-01-29T16:07:15+00:00
 ! Expires: 4 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2024-01-29 06:23:59 CET
+! Last modified: 2024-01-29 13:20:50 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -1165,9 +1165,10 @@ sweclockers.com###prisjakt-popular, .ad:not(.adPanorama), .adForumSticker, .dark
 sweclockers.com#$#.ad.adPanorama { height:100px!important; position:absolute!important; }
 sweclockers.com##.bbSize:has-text(Sponsormeddelande):upward(.bbRelatedBox)
 swedroid.se#$?#a[target="_blank"]:upward(li.Notice) { remove: true; }
-swedroid.se##div[id$="_ad"], div[id$="_ad_mobile"], .externalTopMobile, a[href^="//www.prisjakt.nu/produkt"], #nativendo-mainfeed + aside > .article, .article-footer > h3, .article-footer > .aeChart, #newExternal
+swedroid.se##div[id$="_ad"], div[id$="_ad_mobile"], .externalTopMobile, #externalTopMobile, a[href^="//www.prisjakt.nu/produkt"], #nativendo-mainfeed + aside > .article, .article-footer > h3, .article-footer > .aeChart, #newExternal
 swedroid.se##span:has-text(/sponsr/i):upward(.article)
 swedroid.se#%#//scriptlet('ubo-set.js', 'checkAdsBlocked', 'noopFunc')
+swedroid.se##.puff:has(script[src*="lwadm.com"])
 swehockey.se##[class*="-reklam"], .sif-sponsorer, .teaserblock, .commonblock a:not([href^="/"], [href*="/swehockey.se"])
 sydasien.se##.thb-cookie-bar
 sydnarkenytt.se##.abann_wrapper, #hspalt_s1, #cookie_consent
@@ -1189,7 +1190,7 @@ tekniksmart.se##center:has-text(/annons/i):upward(1)
 tekniksmart.se##.code-block, main > div:last-child:not(:only-child), #uid_08313ba73, #uid_ab3738b5a, .jeg_header_wrapper .jeg_midbar
 tekniksmart.se##.wpb_row:has(a[href*="casino"])
 teknikveckan.se##.pill:has-text(/spons/i):upward(.grid-item, .pinned, .articleFlow-item)
-teknikveckan.se,di.se,dn.se,skillingaryd.nu,xn--vrnamo-bua.nu,vardfokus.se,kamerabild.se,tripadvisor.se,skaraborgsbygden.se,swedroid.se,bettingstugan.se,expressen.se,dagensopinion.se,driva-eget.se,bioenergitidningen.se,ifokus.se,padelfeber.se,sv.picmix.com,ifragasatt.se,ehandel.se,jaktojagare.se,sportbloggare.com,bovision.se,familjeliv.se,tidningenridsport.se,golflivet.se,vemringde.se,brollopstorget.se,fastighetsvarlden.se##.ad
+teknikveckan.se,di.se,dn.se,skillingaryd.nu,xn--vrnamo-bua.nu,vardfokus.se,kamerabild.se,tripadvisor.se,swedroid.se,bettingstugan.se,expressen.se,dagensopinion.se,driva-eget.se,bioenergitidningen.se,ifokus.se,padelfeber.se,sv.picmix.com,ifragasatt.se,ehandel.se,jaktojagare.se,sportbloggare.com,bovision.se,familjeliv.se,tidningenridsport.se,golflivet.se,vemringde.se,brollopstorget.se,fastighetsvarlden.se##.ad
 temadagar.se#%#//scriptlet('ubo-noeval-if.js', 'targetele')
 temadagar.se##.ez-sidebar-wall
 temperatur.nu##.holidAds:upward(1)
@@ -1228,7 +1229,7 @@ travsport.se,gavletravet.se##.banner-component, .partners, .cookie-meddelande
 trendenser.se##strong:has-text(/reklam/i):upward(.post_feed_post)
 trendenser.se##.featured-post:has(a[href*="/category/reklam"], a[href*="/category/annons"])
 trendenser.se##.post_feed_post:has(.sponsor-info)
-tripadvisor.se##div:has-text(Sponsrat av):upward(div[data-curated-shelf-id])
+tripadvisor.se##a:has-text(Sponsrat av)
 tripadvisor.se##[class$="banner_ad"]
 turismnytt.se##.site-wrap > .row > .col-sm-3
 turistmal.se###col_right
