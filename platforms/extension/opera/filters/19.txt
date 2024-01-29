@@ -1,9 +1,9 @@
-! Checksum: K3/EbFlW0WZgv8T4hQ8UsQ
-! Diff-Path: ../patches/19/19-s-1706524514-3600.patch
+! Checksum: yku+ru2ldcDx3yFjciP9Kw
+! Diff-Path: ../patches/19/19-s-1706528094-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation.
-! Version: 2.0.29.97
-! TimeUpdated: 2024-01-29T10:32:39+00:00
+! Version: 2.0.29.98
+! TimeUpdated: 2024-01-29T11:32:46+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2965,6 +2965,7 @@ creativeuncut.com###g_abox
 ! https://github.com/AdguardTeam/AdguardFilters/issues/74116
 iqiyi.com##iqpdiv[data-cupid=container]
 iqiyi.com##div[adid]
+! https://github.com/AdguardTeam/AdguardFilters/issues/171751
 ! https://github.com/AdguardTeam/AdguardFilters/issues/101151
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79270
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44749
@@ -2977,6 +2978,8 @@ sports.iqiyi.com,m.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.adP
 www.iqiyi.com#%#//scriptlet('set-constant', 'QiyiPlayerProphetData.a.data', 'emptyObj')
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.parseXML", "noopFunc")
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.blackscreenDuration", "1")
+www.iqiyi.com#%#//scriptlet('trusted-replace-node-text', 'script', 'window.QiyiPlayerProphetData', '/(QiyiPlayerProphetData=.*?"a":.*?")data(":{)/', '$1no_ads$2')
+www.iqiyi.com#%#!function(){const e={apply:(e,t,o)=>{const i=o[1];if(!i||"object"!=typeof i.QiyiPlayerProphetData)return Reflect.apply(e,t,o)}};window.Object.defineProperties=new Proxy(window.Object.defineProperties,e)}();
 ||cupid.iqiyi.com/mixer?$domain=iqiyi.com
 ||data.video.iqiyi.com/videos/other/*$xmlhttprequest,~third-party,badfilter
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
@@ -5251,7 +5254,6 @@ t.ly#$#body.modal-open { overflow: auto !important; padding-right: 0 !important;
 porndoe.com##.mobile-links-fixed-bottom
 gazeta.ru###_id_flowup_tongue
 android.com.pl##.simpletoc--floating
-natfrp.com###rtfm
 watoday.com.au##div[data-testid="registration-prompt"]
 o2.pl##div[id^="video-player-"] > div.floating
 mvtk.jp##.modal-cover

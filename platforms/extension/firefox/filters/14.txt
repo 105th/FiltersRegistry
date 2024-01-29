@@ -1,9 +1,9 @@
-! Checksum: BaFGLNxG20Sy5oxtODxu5g
-! Diff-Path: ../patches/14/14-s-1706524508-3600.patch
+! Checksum: uroXKLfLXPqTPKzcHPSApw
+! Diff-Path: ../patches/14/14-s-1706528090-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.84.73
-! TimeUpdated: 2024-01-29T10:32:34+00:00
+! Version: 2.1.84.74
+! TimeUpdated: 2024-01-29T11:32:41+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21331,6 +21331,7 @@ creativeuncut.com###g_abox
 ! https://github.com/AdguardTeam/AdguardFilters/issues/74116
 iqiyi.com##iqpdiv[data-cupid=container]
 iqiyi.com##div[adid]
+! https://github.com/AdguardTeam/AdguardFilters/issues/171751
 ! https://github.com/AdguardTeam/AdguardFilters/issues/101151
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79270
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44749
@@ -21343,6 +21344,8 @@ sports.iqiyi.com,m.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.adP
 www.iqiyi.com#%#//scriptlet('set-constant', 'QiyiPlayerProphetData.a.data', 'emptyObj')
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.parseXML", "noopFunc")
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.blackscreenDuration", "1")
+www.iqiyi.com#%#//scriptlet('trusted-replace-node-text', 'script', 'window.QiyiPlayerProphetData', '/(QiyiPlayerProphetData=.*?"a":.*?")data(":{)/', '$1no_ads$2')
+www.iqiyi.com#%#!function(){const e={apply:(e,t,o)=>{const i=o[1];if(!i||"object"!=typeof i.QiyiPlayerProphetData)return Reflect.apply(e,t,o)}};window.Object.defineProperties=new Proxy(window.Object.defineProperties,e)}();
 ||cupid.iqiyi.com/mixer?$domain=iqiyi.com
 ||iqiyi.com/show2?e=$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important,domain=iqiyi.com
 ||data.video.iqiyi.com/videos/other/*$xmlhttprequest,~third-party,badfilter
@@ -23619,7 +23622,6 @@ t.ly#$#body.modal-open { overflow: auto !important; padding-right: 0 !important;
 porndoe.com##.mobile-links-fixed-bottom
 gazeta.ru###_id_flowup_tongue
 android.com.pl##.simpletoc--floating
-natfrp.com###rtfm
 watoday.com.au##div[data-testid="registration-prompt"]
 o2.pl##div[id^="video-player-"] > div.floating
 mvtk.jp##.modal-cover

@@ -1,9 +1,9 @@
-! Checksum: sl5cc8F9Bat3AsmxYHWXBg
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1706524521-3600.patch
+! Checksum: bEJ1KoE/5/qmo+ICfXJk2Q
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1706528098-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation.
-! Version: 2.0.29.97
-! TimeUpdated: 2024-01-29T10:32:39+00:00
+! Version: 2.0.29.98
+! TimeUpdated: 2024-01-29T11:32:46+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1045,6 +1045,8 @@ sports.iqiyi.com,m.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.adP
 www.iqiyi.com#%#//scriptlet('set-constant', 'QiyiPlayerProphetData.a.data', 'emptyObj')
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.parseXML", "noopFunc")
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.blackscreenDuration", "1")
+www.iqiyi.com#%#//scriptlet('trusted-replace-node-text', 'script', 'window.QiyiPlayerProphetData', '/(QiyiPlayerProphetData=.*?"a":.*?")data(":{)/', '$1no_ads$2')
+www.iqiyi.com#%#!function(){const e={apply:(e,t,o)=>{const i=o[1];if(!i||"object"!=typeof i.QiyiPlayerProphetData)return Reflect.apply(e,t,o)}};window.Object.defineProperties=new Proxy(window.Object.defineProperties,e)}();
 ||cupid.iqiyi.com/mixer?$domain=iqiyi.com
 ||data.video.iqiyi.com/videos/other/*$xmlhttprequest,~third-party,badfilter
 !#safari_cb_affinity(general)
@@ -2561,7 +2563,6 @@ t.ly#$##before-you-go { display: none !important; }
 t.ly#$#.modal-backdrop { display: none !important; }
 t.ly#$#body.modal-open { overflow: auto !important; padding-right: 0 !important; }
 gazeta.ru###_id_flowup_tongue
-natfrp.com###rtfm
 o2.pl##div[id^="video-player-"] > div.floating
 mvtk.jp##.modal-cover
 forvo.com#%#//scriptlet('prevent-setTimeout', 'mfp_login-register')
