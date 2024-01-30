@@ -13,6 +13,10 @@
 ! Good: $removeparam=utm_id
 ! Bad:  $removeparam=utm_id,domain=example.org (for instance, should be in specific.txt)
 !
+! Commission Junction
+! https://developers.cj.com/docs/advertiser-site-tracking/enhanced-tracking-integration
+$removeparam=cjdata
+$removeparam=cjevent
 ! AT Internet
 $removeparam=/^at_custom/
 $removeparam=at_campaign
@@ -330,6 +334,10 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/171822
+||nuuvem.com^$removeparam=ranMID
+||nuuvem.com^$removeparam=ranEAID
+||nuuvem.com^$removeparam=ranSiteID
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171802
 ||gog.com^$removeparam=pp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171289
@@ -1107,8 +1115,6 @@ $removeparam=xptdk,domain=shopee.ph|shopee.co.th
 ||blog.twitch.tv^$removeparam=web_only
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128377
 ||michaelkors.global^$removeparam=ecid
-||michaelkors.global^$removeparam=cjevent
-||michaelkors.global^$removeparam=cjdata
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128548
 ||doctolib.de^$removeparam=utm_website
 ||doctolib.de^$removeparam=utm_page-url

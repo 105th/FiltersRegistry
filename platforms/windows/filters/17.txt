@@ -1,9 +1,9 @@
-! Checksum: c8qGzMBD+T8hKwE35tEO3Q
-! Diff-Path: ../patches/17/17-s-1706603726-3600.patch
+! Checksum: qz4iHf89ZuV9bks0lA6Dsw
+! Diff-Path: ../patches/17/17-s-1706614515-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.7.86
-! TimeUpdated: 2024-01-30T08:32:37+00:00
+! Version: 2.0.7.87
+! TimeUpdated: 2024-01-30T11:32:36+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20,6 +20,10 @@
 ! Good: $removeparam=utm_id
 ! Bad:  $removeparam=utm_id,domain=example.org (for instance, should be in specific.txt)
 !
+! Commission Junction
+! https://developers.cj.com/docs/advertiser-site-tracking/enhanced-tracking-integration
+$removeparam=cjdata
+$removeparam=cjevent
 ! AT Internet
 $removeparam=/^at_custom/
 $removeparam=at_campaign
@@ -336,6 +340,10 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/171822
+||nuuvem.com^$removeparam=ranMID
+||nuuvem.com^$removeparam=ranEAID
+||nuuvem.com^$removeparam=ranSiteID
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171802
 ||gog.com^$removeparam=pp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171289
@@ -1113,8 +1121,6 @@ $removeparam=xptdk,domain=shopee.ph|shopee.co.th
 ||blog.twitch.tv^$removeparam=web_only
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128377
 ||michaelkors.global^$removeparam=ecid
-||michaelkors.global^$removeparam=cjevent
-||michaelkors.global^$removeparam=cjdata
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128548
 ||doctolib.de^$removeparam=utm_website
 ||doctolib.de^$removeparam=utm_page-url
