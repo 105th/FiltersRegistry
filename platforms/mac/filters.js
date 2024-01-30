@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.18.17",
-			"timeUpdated": "2024-01-30T07:32:45+0000",
+			"version": "2.3.18.18",
+			"timeUpdated": "2024-01-30T08:33:04+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.65.70",
-			"timeUpdated": "2024-01-30T07:32:47+0000",
+			"version": "2.0.65.71",
+			"timeUpdated": "2024-01-30T08:33:08+0000",
 			"languages": []
 		},
 		{
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.48.47",
-			"timeUpdated": "2024-01-30T03:32:19+0000",
+			"version": "2.0.48.48",
+			"timeUpdated": "2024-01-30T08:32:20+0000",
 			"languages": []
 		},
 		{
@@ -228,8 +228,8 @@
 			"displayNumber": 1,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/14.txt",
-			"version": "2.1.84.84",
-			"timeUpdated": "2024-01-30T07:32:24+0000",
+			"version": "2.1.84.85",
+			"timeUpdated": "2024-01-30T08:32:31+0000",
 			"languages": []
 		},
 		{
@@ -274,8 +274,8 @@
 				"ext_safari",
 				"ext_android_cb"
 			],
-			"version": "2.0.7.85",
-			"timeUpdated": "2024-01-29T17:32:25+0000",
+			"version": "2.0.7.86",
+			"timeUpdated": "2024-01-30T08:32:37+0000",
 			"languages": []
 		},
 		{
@@ -339,8 +339,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/22.txt",
-			"version": "2.0.7.18",
-			"timeUpdated": "2024-01-29T13:32:45+0000",
+			"version": "2.0.7.19",
+			"timeUpdated": "2024-01-30T08:32:50+0000",
 			"languages": []
 		},
 		{
@@ -1018,8 +1018,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.8.21",
-			"timeUpdated": "2024-01-30T07:32:34+0000",
+			"version": "2.1.8.22",
+			"timeUpdated": "2024-01-30T08:32:50+0000",
 			"languages": [
 				"zh"
 			]
