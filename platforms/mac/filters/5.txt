@@ -1,9 +1,9 @@
-! Checksum: sYDC85FVsFqtmj625qj8LA
-! Diff-Path: ../patches/5/5-s-1706279666-3600.patch
+! Checksum: N3v1uX+3ngwC8OospVgfwA
+! Diff-Path: ../patches/5/5-s-1706636092-3600.patch
 ! Title: AdGuard Experimental filter
 ! Description: Filter designed to test certain hazardous filtering rules before they are added to the basic filters.
-! Version: 2.0.1.31
-! TimeUpdated: 2024-01-26T14:32:29+00:00
+! Version: 2.0.1.32
+! TimeUpdated: 2024-01-30T17:32:52+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -142,8 +142,6 @@
 ! Rules that are restricted to one or more domains.
 ! This section contain any type of rule grouped by domain.
 !
-! vipbox.lc - streaming provider - blocking popunders specific to that page
-/[a-z]{8,}\.(com|info|xyz)/$domain=nolive.me,third-party
 ! main youtube page - changing view for the first row of elements
 www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) > #contents:first-child { max-width: unset !important; }
 www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) ytd-rich-grid-media { max-width: unset !important; }
@@ -249,11 +247,6 @@ mail.yandex.ru#?#.modal:has(> div[data-lego] div[class^="mail-SubscriptionsPopup
 ! This file contains all filters other than English, Social, Spyware and Russian.
 ! Also filters by platforms https://github.com/AdguardTeam/AdguardBrowserExtension/issues/917
 !
-!
-!
-! Filters for adguard without safari
-||chrome.test.filter.com^$third-party
-!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169842
 /videojs8/nuevo.min.js
 /videojs/plugins/vastpro.js
@@ -275,8 +268,6 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_experimental
 ! Mobile advertising networks known rotator domains
 ! Used to show ads in mobile apps and websites
 !
-! https://github.com/AdguardTeam/AdguardFilters/pull/170258
-##.gnt_xmst
 !-------------------------------------------------------------------!
 !---------------------- Dangerous rules ----------------------------!
 !-------------------------------------------------------------------!
