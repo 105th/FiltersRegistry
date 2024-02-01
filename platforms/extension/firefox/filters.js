@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.18.58",
-			"timeUpdated": "2024-02-01T16:33:29+0000",
+			"version": "2.3.18.59",
+			"timeUpdated": "2024-02-01T17:33:13+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -434,8 +434,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.39.99",
-			"timeUpdated": "2024-01-31T20:32:56+0000",
+			"version": "2.0.40.0",
+			"timeUpdated": "2024-02-01T17:33:44+0000",
 			"languages": [
 				"de"
 			],
@@ -588,8 +588,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/14.txt",
 			"trustLevel": "full",
-			"version": "2.1.85.16",
-			"timeUpdated": "2024-02-01T16:33:08+0000",
+			"version": "2.1.85.17",
+			"timeUpdated": "2024-02-01T17:32:26+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -683,8 +683,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.31.85",
-			"timeUpdated": "2024-02-01T13:32:28+0000",
+			"version": "2.0.31.86",
+			"timeUpdated": "2024-02-01T17:32:34+0000",
 			"languages": [],
 			"tags": [
 				5,
