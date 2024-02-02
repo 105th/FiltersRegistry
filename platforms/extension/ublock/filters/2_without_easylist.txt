@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: NDnDFYYE5bun4ET/QXQcOQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1706870132-3600.patch
+! Checksum: Ios5s5tQJHQj9Ibf0E9e8w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1706873725-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.18.70
-! TimeUpdated: 2024-02-02T10:33:10+00:00
+! Version: 2.3.18.71
+! TimeUpdated: 2024-02-02T11:33:09+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25301,6 +25301,11 @@ globalpublishers.co.tz#?#.listing > article:has(> div.item-inner a[href*="-chapr
 !---------------------------------------------------------------------
 ! NOTE: Swedish
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/171982
+! In AdGuard, the rule like below hides every element mentioned in rule - 'div[class=""]', 'a' etc.,
+! but in uBO it hides these elements only if contains 'annons' text, so a different rule is required
+samnytt.se#@#div[class=""], a, .sticky > div[style="display:grid"], .post-content > div.mx-auto:has-text(/annons/i)
+samnytt.se#?#:is(div[class=""], a, .sticky > div[style="display:grid"], .post-content > div.mx-auto):contains(/annons/i)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/155106
 brollopstorget.se##.ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135037
@@ -28623,7 +28628,7 @@ w2g.tv##+js(set-constant, W2gDFP.loadAcceptableAds, noopFunc)
 timesnownews.com##+js(set-constant, player.adm.destroy, noopFunc)
 timesnownews.com##+js(set-constant, SlikePlayer.prototype.playAd, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/114376
-vidplay.*,vidstream.*,fmovies.to,vizcloud.*,mcloud.*,vizcloud2.*,vidstreamz.online##+js(remove-attr, data-ad-img|data-ad-target|data-id|data-p, #player-wrapper)
+vidplay.*,vidstream.*,fmovies.to,vizcloud.*,mcloud.*,vizcloud2.*,vidstreamz.online##+js(remove-attr, data-ad-img|data-ad-target|data-id|data-p|data-cg, #player-wrapper)
 ! popup
 jav.re##+js(abort-on-stack-trace, onload, /app.js)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/113891
@@ -33946,6 +33951,7 @@ yts-official.com###movie-poster a[rel="nofollow sponsored"]
 whats-on-netflix.com##.above-featred
 whats-on-netflix.com##.sidebar-placement-large
 vidplay.*,mcloud.*,vidstream.pro##body > div:not([class], [id]) > div[class][style]:only-child
+vidplay.*,mcloud.*,vidstream.*##body > #player-wrapper > div:not([class], [id]) > div[class][style]:only-child
 mcloud.to,putlockernew.vc,vidstream.pro##.aslot
 mypornvid.fun###a1t
 cfake.com##.slideblock-container
