@@ -1,9 +1,9 @@
-! Checksum: KGMw4al9RJibu/wDpPfNHA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1706841273-3600.patch
+! Checksum: fsn8YRpqFouHXLS4b0AdJg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1706888111-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.43.3
-! TimeUpdated: 2024-01-31T23:32:32+00:00
+! Version: 2.0.43.4
+! TimeUpdated: 2024-02-02T15:32:39+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -224,6 +224,7 @@ tf1.fr,tf1info.fr#%#//scriptlet('prevent-fetch', '/^https:\/\/ads\.stickyadstv\.
 !+ NOT_OPTIMIZED
 @@||ads.stickyadstv.com^|$xmlhttprequest,domain=tf1.fr|tf1info.fr
 !#safari_cb_affinity
+japscan.lol#%#//scriptlet('prevent-window-open')
 jeune-gay.fr#%#//scriptlet('prevent-setTimeout', 'randno', '25')
 jeune-gay.fr#%#//scriptlet('set-cookie', 'p_view', 'true')
 occasions.decathlon.fr#%#//scriptlet('set-constant', 'FastClick', 'noopFunc')
@@ -320,6 +321,12 @@ voirseries.io$$script[src="KGZ1bmN0aW9uKCQsZG9jdW1lbnQp"]
 /propads.$badfilter
 /propads.$domain=~propads.gg
 $script,third-party,denyallow=fastly.net|statically.io|sharecast.ws|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|polyfill.io|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io,_____,domain=extreme-down.moe|dl-protect.link|tirexo.ink
+/japs/*_1200x2000_banner_fr.jpg$domain=japscan.lol
+||japscan.lol/ujs/$script
+japscan.lol###stickyBanner
+japscan.lol##.card.copines
+japscan.lol##a[href^="https://candy.ai/"][target="_blank"]
+japscan.lol##a[href^="https://candy.ai/"][target="_blank"] + p.mainTitle
 femina.fr##.p-aside
 femina.fr##.p-inread
 femina.fr##.p-pave

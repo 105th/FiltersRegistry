@@ -1,9 +1,9 @@
-! Checksum: qzVPzMvqmJJs+kz05LrT2g
-! Diff-Path: ../patches/16/16-s-1706744084-3600.patch
+! Checksum: xqUHNuZzqTXwQ9+FcloFBA
+! Diff-Path: ../patches/16/16-s-1706888140-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.43.3
-! TimeUpdated: 2024-01-31T23:32:32+00:00
+! Version: 2.0.43.4
+! TimeUpdated: 2024-02-02T15:32:39+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -644,6 +644,8 @@ tf1.fr,tf1info.fr#%#//scriptlet('prevent-fetch', '/^https:\/\/ads\.stickyadstv\.
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/uBlockOrigin/uAssets/issues/22307
+japscan.lol#%#//scriptlet('prevent-window-open')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170646
 jeune-gay.fr#%#//scriptlet('prevent-setTimeout', 'randno', '25')
 jeune-gay.fr#%#//scriptlet('set-cookie', 'p_view', 'true')
@@ -859,6 +861,12 @@ $script,third-party,denyallow=fastly.net|statically.io|sharecast.ws|bunnycdn.ru|
 !
 !
 !
+/japs/*_1200x2000_banner_fr.jpg$domain=japscan.lol
+||japscan.lol/ujs/$script
+japscan.lol###stickyBanner
+japscan.lol##.card.copines
+japscan.lol##a[href^="https://candy.ai/"][target="_blank"]
+japscan.lol##a[href^="https://candy.ai/"][target="_blank"] + p.mainTitle
 femina.fr##.p-aside
 femina.fr##.p-inread
 femina.fr##.p-pave
