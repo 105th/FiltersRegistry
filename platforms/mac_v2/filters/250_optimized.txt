@@ -1,5 +1,5 @@
-! Checksum: S+czhFKNlujn1uTGWmrODQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1706847000-14400.patch
+! Checksum: gTJDjEVevo6supodVDUWUw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1706933382-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.13.7
@@ -41,7 +41,6 @@ instagram.com##nav > div > div > section > div:has(div > div > button > div)
 kurashiru.com##.footer-image-wrapper
 m.qyer.com##.side-dock:has(img[alt^="穷游App"])
 m.yelp.*##a[href*="app.adjust.com"]
-mail.yandex.*##.popup-overlay
 metservice.com##.Footer-section--promo
 metservice.com##.HasPromoPadding
 momondo.*#$##mobile-splash-popup { display: none!important }
@@ -262,6 +261,7 @@ download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 ||novemberassimilate.com^$all
 ||propositionpower.com^$all
 ||reluctancefleck.com^$all
+||suppressedbottlesenjoyable.com^$all
 ||trashdisguisedextension.com^$all
 173.233.137.*$network
 173.233.139.*$network
@@ -621,6 +621,7 @@ download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 ||whoursie.com^$all
 139.45.197.*$network
 ||nipechala.com^$all
+||profitableclue.com^$all
 208.88.225.116$network
 208.88.225.117$network
 208.88.225.119$network
@@ -752,11 +753,11 @@ download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 38.180.96.244$network
 ||howtofix.guide^$document
 ||butterflyunkindpractitioner.com^$all
-||cpmnetworkcontent.com^$all
 ||departgross.com^$all
 ||feelsjet.com^$all
 ||files.im^$all
 ||harassinganticipation.com^$all
+||holdingwager.com^$all
 ||hottercensorbeaker.com^$all
 ||illuminatelocks.com^$all
 ||padsims.com^$all
@@ -1363,6 +1364,7 @@ trade.tmall.com##.show-cross-btn
 universalbeijingresort.com##.download-box
 xinhuanet.com##.s-ewm
 ctrip.com###fl_wrap_default
+smzdm.com##.qr-buy-container
 12306.cn##.fixed-right-menu > li.menu-item:nth-of-type(3)
 58.com##.app.rightbtn
 amap.com###amap-result-banner
@@ -1593,14 +1595,12 @@ pixiv.net#?#div[class*=" "]:empty:has(+ aside + aside)
 ~imdb.com##a[href="/top-imdb"]
 ~imdb.com###repimdb
 ~imdb.com##.owl-item .poster > .rating
-~imdb.com##a[href*=".imdb."] > .rating
 ~imdb.com##a[href$="/top-imdb/"]
 ~imdb.com##span[data-automation-id=imdb-rating-badge]
 ~imdb.com##.imdb_r:not(html, body)
 ~imdb.com##.btn-imdb:not(html, body)
 ~imdb.com##.jt-imdb:not(html, body)
 ~imdb.com##.imdb-score:not(html, body)
-~imdb.com##div[data-test-id=decorator__imdb i]
 bing.com#?#.b_algo:has(cite:has-text(imdb.com)) .b_sritem
 newonnetflix.info##p:has(a[target=_imdb])
 rakuten.tv##a[href*=".imdb.com/title/"]
@@ -1928,6 +1928,7 @@ $document,removeparam=/^affSource/i
 $document,removeparam=/^_s=afl_impact$/
 $document,removeparam=/^cid_/
 $removeparam=cjReq
+$removeparam=ir_cid
 $removeparam=p_sid
 $removeparam=depth_1-utm_source
 $removeparam=cmp_id
@@ -1997,6 +1998,8 @@ $removeparam=tid2
 $removeparam=tid3
 $removeparam=tid4
 $removeparam=avad
+$removeparam=ckmc
+$removeparam=ckmsc
 $removeparam=__cn_tracker
 $removeparam=/^sfmc_/
 $removeparam=mktc
@@ -2016,7 +2019,6 @@ $removeparam=adtype
 $removeparam=tmad
 $removeparam=tmcampid
 $removeparam=s_afcid
-$removeparam=n_cid
 $removeparam=szredirectid
 $removeparam=af_ad
 $removeparam=af_ad_id
@@ -2044,6 +2046,7 @@ $removeparam=tg_ref
 $removeparam=dt_dapp
 $removeparam=waad
 $removeparam=_gac
+$removeparam=af_medium
 $removeparam=af_source
 $removeparam=af_campaign
 $removeparam=aftr
@@ -2248,7 +2251,6 @@ $removeparam=geniuslink
 ||amazon.$removeparam=aaxitk
 ||amazon.$removeparam=/^pd_rd_/
 ||amazon.$removeparam=sig
-||amazon.$removeparam=imprToken
 ||amazon.$removeparam=store_ref
 ||amazon.$removeparam=lp_asins
 ||amazon.$removeparam=lp_slot
@@ -2563,11 +2565,15 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 ||baidu.com^$document,removeparam=tpl_from
 ||bilibili.com^$removeparam=/^current/
 ||bilibili.com^$removeparam=/^from/
+||bilibili.com^$removeparam=/^playurl/
 ||bilibili.com^$removeparam=/^share_/
+||bilibili.com^$removeparam=accept_quality
 ||bilibili.com^$removeparam=bbid
 ||bilibili.com^$removeparam=broadcast_type
 ||bilibili.com^$removeparam=bsource
 ||bilibili.com^$removeparam=hotRank
+||bilibili.com^$removeparam=p2p_type
+||bilibili.com^$removeparam=quality_description
 ||bilibili.com^$removeparam=seid
 ||bilibili.com^$removeparam=spm_id_from
 ||bilibili.com^$removeparam=unique_k
@@ -2666,7 +2672,6 @@ $removeparam=u1,domain=linksynergy.com|shop-links.co
 $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
-$removeparam=region,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=sm12
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $removeparam=token,domain=al.to|combat.pl|x-kom.pl
@@ -2849,7 +2854,6 @@ $removeparam=marketing_id
 $removeparam=s,domain=greenhouse.io|mothership.sg|spreadprivacy.com|youku.com|nextdoor.com
 $document,removeparam=t,domain=rakuten.com|steamcdn-a.akamaihd.net|duckduckgo.com|npr.org|elprecio.es|adressa.no|tiktok.com|lookmovie211.xyz
 ||yandex.$removeparam=clid
-$removeparam=cpa-perf
 $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||cc.loginfra.com/cc$removeparam=a
 ||cc.loginfra.com/cc$removeparam=bw
@@ -2919,15 +2923,12 @@ $removeparam=xcreo
 ||skimresources.com^$removeparam=xed
 $removeparam=rffrid
 $removeparam=ad_name
-$removeparam=block,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
-$removeparam=rcode,domain=kucoin.com
 ||deezer.com^$removeparam=deferredFl
 $removeparam=pr_prod_strat
 $removeparam=pr_rec_id
 $removeparam=pr_rec_pid
 $removeparam=pr_ref_pid
 $removeparam=pr_seq
-$document,removeparam=site,domain=affiliate.insider.com|alina.se
 $document,removeparam=refresh,domain=cnn.com|startribune.com
 ||tradingview.com^$removeparam=feature
 ||emag.ro^$removeparam=recid
@@ -2971,11 +2972,6 @@ $removeparam=spr,domain=media-cdn.costco.ca|media-cdn.costco.com
 $removeparam=tc,domain=media-cdn.costco.ca|media-cdn.costco.com
 $removeparam=textadID,domain=media-cdn.costco.ca|media-cdn.costco.com
 $removeparam=affwin
-$removeparam=instance_id,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
-$removeparam=nl,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
-$removeparam=regi_id,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
-$removeparam=segment_id,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
-$removeparam=user_id,document,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 ^fs=e&s=cl$document,removeparam=fs
 ^fs=e&s=cl$document,removeparam=s
 ||redirect.appmetrica.yandex.com^$removeparam=c
@@ -2990,7 +2986,6 @@ $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||target.$removeparam=preselect
 $removeparam=ueid,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
 $removeparam=qo,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com|search.ask.com
-$removeparam=qsrc,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com|search.ask.com
 $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
 $document,removeparam=l,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
 ||baike.com^$removeparam=prd
@@ -3102,6 +3097,7 @@ $document,domain=bilibili.com|querie.me,removeparam=timestamp
 *ref=404media.co*$document,removeparam=/^ref=404media.co$/
 ||media.discordapp.$removeparam=ex
 ||media.discordapp.$removeparam=hm
+$document,removeparam=jp_cmp,domain=chase.com
 ||researchgate.net^$document,removeparam=_tp
 $document,removeparam=share_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||xvideos.$document,removeparam=sxcaf
@@ -3199,7 +3195,6 @@ buffalonews.com#%#//scriptlet('ubo-set.js', 'lee_trkLinkSrc', 'noopFunc')
 @@||youtube.com/videoplayback$removeparam=source
 @@||facebook.com^$removeparam=__s
 @@||bing.*/ws/redirect/$removeparam
-@@/unsub/?$removeparam
 @@||email-link.$removeparam
 @@||urldefense.com^$removeparam
 /images/*/Cursor
