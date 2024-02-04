@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: diBBdXSJl65VxZ7ydYY6DA
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1707060925-3600.patch
+! Checksum: cHjlHmrtTOCusP0zEUs/EQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1707068095-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.47.94
-! TimeUpdated: 2024-02-04T15:33:35+00:00
+! Version: 2.0.47.95
+! TimeUpdated: 2024-02-04T17:33:10+00:00
 ! Expires: 4 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp
 ||af.atsoho.com^$third-party
@@ -386,8 +386,6 @@ jprime.jp#$?#.js-reward-gallery-modal  { remove: true; }
 jprime.jp#$#.image-area { opacity: 1 !important; pointer-events: auto !imortant; filter: none !important; }
 jprime.jp#$#.js-article-wrap .article-body { opacity: 1 !important; pointer-events: auto !imortant; filter: none !important; }
 blog.2nt.com#@#.AdSense
-iwb.jp##+js(no-setTimeout-if, getComputedStyle)
-iwb.jp##+js(no-setInterval-if, getComputedStyle)
 ||nazology.net/*/adb/adb.js
 pvpoke-re.com#@#ins.adsbygoogle
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=googlesyndication.com/adsbygoogle.js,domain=pvpoke-re.com
@@ -416,10 +414,6 @@ egotter.com#$#.adsense-container { height: 1px !important; }
 egotter.com#@#.adsense-container
 egotter.com#@#ins.adsbygoogle
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xmlhttprequest,redirect=googlesyndication.com/adsbygoogle.js,domain=egotter.com
-@@||gamemod.blog.fc2.com^$generichide
-gamemod.blog.fc2.com#@#.AdContainer
-gamemod.blog.fc2.com##ins.adsbygoogle
-gamemod.blog.fc2.com##+js(abort-current-script, setTimeout, AdContainer)
 puzzle-ch.com#@##adframe:not(frameset)
 puzzle-ch.com##+js(no-setTimeout-if, getComputedStyle)
 ||blog.seesaa.jp/visual/*/common/js/footer.js
@@ -494,7 +488,10 @@ blog-and-destroy.com##.affiliate-card
 blog-and-destroy.com##+js(abort-current-script, onload, adsCount)
 !+ PLATFORM(windows, mac, android, ext_chromium, ext_ublock)
 musenboya.com##+js(abort-current-script, navigator.brave)
-helpsupport.blog.fc2.com##+js(no-setTimeout-if, /adsbygoogle|getComputedStyle/)
+||fc2.com/h/e/l/helpsupport/x-$script,domain=helpsupport.blog.fc2.com
+||fc2.com/h/e/l/helpsupport/min-toc.js$script,domain=helpsupport.blog.fc2.com
+||fc2.com/h/e/l/helpsupport/min-twitter.js$script,domain=helpsupport.blog.fc2.com
+helpsupport.blog.fc2.com###load:empty
 helpsupport.blog.fc2.com#@#.AdContainer
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication.com/adsbygoogle.js,domain=helpsupport.blog.fc2.com,important
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=helpsupport.blog.fc2.com
@@ -598,7 +595,6 @@ gigaho.com#$#.entry-content { display: block!important; }
 gigaho.com#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display:block!important; }
 video.tv-tokyo.co.jp#@##adspace
 video.tv-tokyo.co.jp#@#.adspace
-video.tv-tokyo.co.jp#@#.ad-placement
 video.tv-tokyo.co.jp#@#.ad-placeholder
 @@||video.tv-tokyo.co.jp/common/js/pc/ads.js
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=video.tv-tokyo.co.jp
@@ -2329,7 +2325,6 @@ pr-park.com,xn--zcka7aza6gyb9jd.net###notfix > div.widget_custom_html
 twtimez.net##.adWideDown
 twiman.net##div[class*="my-"][class*="px\]"]
 twiman.net##div[style="margin:auto;max-width:1400px;"]
-gamemod.blog.fc2.com##div[id^="sp-area-"]
 ||uub.jp/opm/pnlbanner_
 uub.jp##a[rel="nofollow"] > img[style="width:100%"]
 ||city.hadano.kanagawa.jp/www/banner/images/*.gif

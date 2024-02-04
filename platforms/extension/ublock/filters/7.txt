@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: nAdrQlladW+z+h1TfvKWdg
-! Diff-Path: ../patches/7/7-s-1707060925-3600.patch
+! Checksum: uqLBSpETJmcyD09XZ4vzpg
+! Diff-Path: ../patches/7/7-s-1707068095-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.47.94
-! TimeUpdated: 2024-02-04T15:33:35+00:00
+! Version: 2.0.47.95
+! TimeUpdated: 2024-02-04T17:33:10+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -489,9 +489,6 @@ jprime.jp#$#.image-area { opacity: 1 !important; pointer-events: auto !imortant;
 jprime.jp#$#.js-article-wrap .article-body { opacity: 1 !important; pointer-events: auto !imortant; filter: none !important; }
 ! classic anti-adb on some blog.2nt.com sites
 blog.2nt.com#@#.AdSense
-! https://github.com/AdguardTeam/AdguardFilters/issues/159931
-iwb.jp##+js(no-setTimeout-if, getComputedStyle)
-iwb.jp##+js(no-setInterval-if, getComputedStyle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167887
 ||nazology.net/*/adb/adb.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167723
@@ -533,11 +530,6 @@ egotter.com#$#.adsense-container { height: 1px !important; }
 egotter.com#@#.adsense-container
 egotter.com#@#ins.adsbygoogle
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xmlhttprequest,redirect=googlesyndication.com/adsbygoogle.js,domain=egotter.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/153183
-@@||gamemod.blog.fc2.com^$generichide
-gamemod.blog.fc2.com#@#.AdContainer
-gamemod.blog.fc2.com##ins.adsbygoogle
-gamemod.blog.fc2.com##+js(abort-current-script, setTimeout, AdContainer)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152033
 puzzle-ch.com#@##adframe:not(frameset)
 puzzle-ch.com##+js(no-setTimeout-if, getComputedStyle)
@@ -635,7 +627,10 @@ blog-and-destroy.com##+js(abort-current-script, onload, adsCount)
 !+ PLATFORM(windows, mac, android, ext_chromium, ext_ublock)
 musenboya.com##+js(abort-current-script, navigator.brave)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131648
-helpsupport.blog.fc2.com##+js(no-setTimeout-if, /adsbygoogle|getComputedStyle/)
+||fc2.com/h/e/l/helpsupport/x-$script,domain=helpsupport.blog.fc2.com
+||fc2.com/h/e/l/helpsupport/min-toc.js$script,domain=helpsupport.blog.fc2.com
+||fc2.com/h/e/l/helpsupport/min-twitter.js$script,domain=helpsupport.blog.fc2.com
+helpsupport.blog.fc2.com###load:empty
 helpsupport.blog.fc2.com#@#.AdContainer
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication.com/adsbygoogle.js,domain=helpsupport.blog.fc2.com,important
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=helpsupport.blog.fc2.com
@@ -784,7 +779,6 @@ gigaho.com#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/22654
 video.tv-tokyo.co.jp#@##adspace
 video.tv-tokyo.co.jp#@#.adspace
-video.tv-tokyo.co.jp#@#.ad-placement
 video.tv-tokyo.co.jp#@#.ad-placeholder
 @@||video.tv-tokyo.co.jp/common/js/pc/ads.js
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=video.tv-tokyo.co.jp
@@ -2781,7 +2775,6 @@ pr-park.com,xn--zcka7aza6gyb9jd.net###notfix > div.widget_custom_html
 twtimez.net##.adWideDown
 twiman.net##div[class*="my-"][class*="px\]"]
 twiman.net##div[style="margin:auto;max-width:1400px;"]
-gamemod.blog.fc2.com##div[id^="sp-area-"]
 ||uub.jp/opm/pnlbanner_
 uub.jp##a[rel="nofollow"] > img[style="width:100%"]
 ||city.hadano.kanagawa.jp/www/banner/images/*.gif
