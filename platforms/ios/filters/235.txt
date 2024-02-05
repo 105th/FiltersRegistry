@@ -1,9 +1,9 @@
-! Checksum: 2UXqy3Bt6GkdCT3RKQB07Q
-! Diff-Path: ../patches/235/235-s-1706170222-14400.patch
+! Checksum: wWG1bwwg7fzSt5TPknTrkA
+! Diff-Path: ../patches/235/235-s-1707106207-14400.patch
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.4.4
-! TimeUpdated: 2024-01-25T08:08:01+00:00
+! Version: 2.0.4.5
+! TimeUpdated: 2024-02-05T04:07:33+00:00
 ! Expires: 4 days (update frequency)
 !
 ! Title: PersianBlocker
@@ -30,13 +30,13 @@ artmusics.top,musicpars3.ir,musicguitars.ir,subf2m.ir,zeemusic.ir,najiremix.ir,m
 ! itna.ir, migna.ir
 /images/advertise^$image,~third-party,domain=ir|bazimag.com|jahannews.com
 ! https://publicwww.com/websites/%22var+socketAccess+%3D%22/
-! websocket.eghtesadonline.com, websocket.ilna.ir, websocket.khanefootball.com, websocket.55online.news, websocket.sobhtazeh.news, websocket.varandaz.com
+! websocket.ilna.ir, websocket.khanefootball.com, websocket.55online.news, websocket.sobhtazeh.news, websocket.varandaz.com
 ! applicationha.com, androidgozar.com, downloadkral.com, gold-team.org, iranecar.com, icoff.ee, koolakmag.ir,
 !! mybia4music.com, my-film.pw, pedal.ir, vgdl.ir, sakhamusic.ir, avaz-kurd.ir, songestan1.xyz, deltapayam.com,
 !!! androidparsi.ir
 /wp-admin/admin-ajax.php?postviews_id=$xmlhttprequest,~third-party
 ! afkarnews.com, bartarinha.ir, donya-e-eqtesad.com, etemadonline.com, ecoiran.com, eghtesadnews.com,
-!! eghtesadonline.com, fardanews.com, gostaresh.news, ilna.ir, khabareazad.com, khabarfoori.com, mosalasonline.com,
+!! fardanews.com, gostaresh.news, ilna.ir, khabareazad.com, khabarfoori.com, mosalasonline.com,
 !!! moroornews.com, mojnews.com, rokna.net, sharghdaily.com, shomavaeghtesad.com, shayanews.com, 55online.news,
 !!!! sobhtazeh.news, varandaz.com
 ##.zxc
@@ -983,16 +983,10 @@ eghtesadnews.com##.zxc
 eghtesadnews.com##.advs-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/95321
 ! https://github.com/MasterKia/PersianBlocker/issues/85
-eghtesadonline.com#%#//scriptlet('ubo-aeld.js', 'scroll')
-||eghtesadonline.com/servev2/*.gif
-eghtesadonline.com##[href*="/advertisements/triggered/"]
-eghtesadonline.com##.zxc
-eghtesadonline.com#$?##carousel { remove: true; }
-eghtesadonline.com##.tiny_linky_boxes
-eghtesadonline.com##.talfighat-BS
-eghtesadonline.com##.shopping_list
-eghtesadonline.com##.backlink
-eghtesadonline.com#$#.right-news-wrap { width: 100% !important; }
+! https://github.com/MasterKia/PersianBlocker/issues/223
+||media.eghtesadonline.com/d/*.gif^$image,~third-party
+eghtesadonline.com##section.ads
+eghtesadonline.com##section.box.list:has(> header > h2:has-text(وبگردی))
 elmefarda.com#%#//scriptlet('ubo-aeld.js', 'contextmenu')
 elmefarda.com#$#div#post p { -webkit-touch-callout: default !important; -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important; }
 elmefarda.com##div#sidebar300 > div.mywidget > div.titles:has-text(تبلیغات)
@@ -1369,9 +1363,9 @@ jahannews.com##.hidden-xs.col-sm-4.col-md-4.col-lg-4
 ||ucxfdvhuqwpig.com/vvja.js
 jesarat.com##.widget_custom_html
 jesarat.com##aside:nth-of-type(2)
-jobinja.ir##.c-forceToLogin__overlay
-jobinja.ir##.c-forceToLogin__message.o-box
-jobinja.ir#$#[class*="forceToLogin"] [class*="forceToLogin"] { filter: none !important }
+jobinja.ir##div.c-forceToLogin__message
+jobinja.ir##div.c-forceToLogin__overlay
+jobinja.ir#$#div.c-forceToLogin__content { filter: none !important; opacity: 1 !important; }
 ||javanmobile.com/wp-content/cache/min/*/wp-content/plugins/adrotate
 ! >> K <<
 ||kar-sentry.karnameh.com^$~third-party
