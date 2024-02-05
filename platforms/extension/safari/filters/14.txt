@@ -1,9 +1,9 @@
-! Checksum: mjI/Wu25xdFl3xwls5D3GQ
-! Diff-Path: ../patches/14/14-s-1707147298-3600.patch
+! Checksum: HvU/P8h71sAJVHD+bD7Rsw
+! Diff-Path: ../patches/14/14-s-1707150961-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.85.45
-! TimeUpdated: 2024-02-05T15:32:26+00:00
+! Version: 2.1.85.46
+! TimeUpdated: 2024-02-05T16:33:28+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2360,6 +2360,8 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+delfi.ee#%#//scriptlet('trusted-set-cookie', 'server_consent', '%7B%22functional%22%3A%7B%22consent%22%3Atrue%7D%2C%22analytical%22%3A%7B%22consent%22%3Afalse%7D%2C%22personalization%22%3A%7B%22consent%22%3Afalse%7D%2C%22geolocation%22%3A%7B%22consent%22%3Afalse%7D%2C%22ads%22%3A%7B%22consent%22%3Afalse%7D%7D')
+delfi.ee#%#//scriptlet('trusted-set-cookie', 'consent', '%7B%22functional%22%3A%7B%22consent%22%3Atrue%7D%2C%22analytical%22%3A%7B%22consent%22%3Afalse%7D%2C%22personalization%22%3A%7B%22consent%22%3Afalse%7D%2C%22geolocation%22%3A%7B%22consent%22%3Afalse%7D%2C%22ads%22%3A%7B%22consent%22%3Afalse%7D%7D')
 modpda.com##.message_warn
 bcb.gov.br##bcb-cookies
 litres.ru##div[data-testid="cookieAcceptPopup"]
@@ -6673,7 +6675,6 @@ qmee.com##div[class^="prerender-"] > div[class^="Overlay-root-"].mobile-app-hidd
 onexgroup.pl,aliexpress.ru##[class*="PrivacyPolicyBanner"]
 cian.ru##div[data-name="CookiesNotification"]
 2captcha.com##.app-level-notifications
-delfi.ee##div[class^="C-modal"]
 simpl.rent##header + div[class^="NotificationBox__Wrapper-"]
 hertz.*##div[id^="light-box-"]
 logout.hu###rules_accept
@@ -9032,7 +9033,6 @@ biblioteka.shop##.banner-cookie
 /cmp/alternative/dialog$domain=0calc.com|0rechner.de
 swiatksiazki.pl##.cookies-section
 megogo.ru##div[class*="mobile-megogo-agreement-notify"]
-delfi.ee###cookie_ribbon
 ||theankarapost.com/js/glowCookies.js
 knuddels.de###root div[style^="position: relative; display: flex;"] > div[class^="Column_ColumnFluid__"] > div[class^="Column_ColumnFluid__"] > div[class^="Column_Column__"][style^="background-repeat: no-repeat; opacity:"]
 pollylingu.al###opt-form
@@ -10313,7 +10313,7 @@ bibelwerk.de###bJS_cookienotice
 das-bier.com,bier-spezialitaeten.de###db-cookie-read
 ||btm.bosch.com/rb/cookie/
 bw-online-shop.com##.modal-mask-class
-kt-spb.ru,delfi.ee###cookie_close
+kt-spb.ru###cookie_close
 sma.de###tracker-banner
 shop.koestritzer.de##.fb-cookienote
 make-it-in-germany.com,brauer-bund.de###nagscreen
@@ -10485,7 +10485,7 @@ webbrowsertools.com###euconsent
 fizyka.org##td#k > div.noadk#pp
 systweak.com##.footer-info
 htmlcolorcodes.com###js-alert
-ohtuleht.ee,epl.delfi.ee##.cookies-ribbon
+ohtuleht.ee##.cookies-ribbon
 digitalcitizen.life###block-next-amp-user-notification-eu-cookies-consent
 aiko-bg.com###cookies_footer
 gezinomi.com##.fixedprotectionOfData
@@ -12991,7 +12991,6 @@ hertz.de#?#body > div[id^="light-box-1"]:has(> div.lb-foreground > div > div > d
 asna.ru#?##page > div:not([id]) > div > div:has(> div > a[href="/about/policy/"])
 meta.org#?#div[class^="root__FullHeight-sc"] > div > div[class] > div[class]:not([class*="HomePage"]):has(> p > a[href^="/cookies"])
 jet-tankstellen.de#?#body > .alert:has(> .row > div > a[href^="/service/datenschutz"])
-epl.delfi.ee#$?#.cookies-ribbon { remove: true; }
 xiacom.ru#?#body > div[id^="comp_"]:has(> div.meta-message > div.meta-message__text:contains(cookies))
 fotocommunity.de#?#body > div.alert:has(> p > a:contains(Cookies))
 gymshark.com#?#.site-header > div.message-top-bar:has(> .message-content > a[href="/pages/cookie-policy"])
@@ -20098,6 +20097,7 @@ scitechdaily.com,thewindowsclub.com#@#.ad-space
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+delfi.ee##.ad-block-layer
 sheepit-renderfarm.com##.container[style^="width:728px;height:90px;"]
 civitai.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 civitai.com##div[class^="mantine-"][style="margin: 0px auto;"]:empty
@@ -20547,9 +20547,6 @@ deco-cool.com##.wrapper > div[id][class][style*="z-index: 9999"]
 deco-cool.com##.wrapper > div[id][class][style*="z-index: 9999"] + div[class][style*="z-index: 9999"]
 deepfun.net##div[id^="fwin_banadblock"]
 dejure.org#%#window.ad_allowed = true;
-delfi.ee###ab--notification-ribbon
-delfi.ee#$#.C-ad-block-layer { display: none !important; }
-delfi.ee#$#body { overflow: visible !important; }
 demiart.ru##.sys > div[style]
 denik.cz#$#.ads-box.reklama-box { display: block!important; }
 radsport-news.com,enduro-mtb.com,vampster.com,granfondo-cycling.com,deutschlandistvegan.de,mixed.de,fachwerk.de#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com', 'true')
@@ -21569,7 +21566,6 @@ community-z.com#@#.ad-placements
 crainsdetroit.com#@#.ad
 crainsdetroit.com#@#.ad01
 deine-tierwelt.de#@#.adunit
-delfi.ee#@#.patronad
 devacademy.ru#@##adcontent
 dhd24.com#@#.adunit
 diariodenavarra.es#@##AdBanner
