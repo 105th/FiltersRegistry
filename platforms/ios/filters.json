@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.88.8",
-			"timeUpdated": "2024-02-05T05:32:28+0000",
+			"version": "2.0.88.9",
+			"timeUpdated": "2024-02-05T15:32:35+0000",
 			"languages": [
 				"ru"
 			],
@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.19.11",
-			"timeUpdated": "2024-02-05T14:33:06+0000",
+			"version": "2.3.19.12",
+			"timeUpdated": "2024-02-05T15:32:48+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -565,8 +565,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/13_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.59",
-			"timeUpdated": "2024-02-05T14:32:28+0000",
+			"version": "2.0.49.60",
+			"timeUpdated": "2024-02-05T15:32:21+0000",
 			"languages": [
 				"tr"
 			],
@@ -588,8 +588,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/14_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.85.44",
-			"timeUpdated": "2024-02-05T14:32:35+0000",
+			"version": "2.1.85.45",
+			"timeUpdated": "2024-02-05T15:32:26+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -680,8 +680,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.30.42",
-			"timeUpdated": "2024-02-05T13:32:55+0000",
+			"version": "2.0.30.43",
+			"timeUpdated": "2024-02-05T15:32:31+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -720,8 +720,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/21_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.19.13",
-			"timeUpdated": "2024-02-05T14:32:49+0000",
+			"version": "2.0.19.14",
+			"timeUpdated": "2024-02-05T15:32:36+0000",
 			"languages": [],
 			"tags": [
 				5,
