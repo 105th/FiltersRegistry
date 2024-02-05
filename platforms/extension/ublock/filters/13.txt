@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: iXl6MCNDZ6vcfXNPYSvW3A
-! Diff-Path: ../patches/13/13-s-1707140126-3600.patch
+! Checksum: mfqfRGjcBFTDcaN+IE4i+w
+! Diff-Path: ../patches/13/13-s-1707143717-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.49.58
-! TimeUpdated: 2024-02-05T13:32:40+00:00
+! Version: 2.0.49.59
+! TimeUpdated: 2024-02-05T14:32:28+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1010,7 +1010,9 @@ shirl.club,altporno.xyz,ovpvideo.com##+js(abort-on-property-read, oV1)
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171861
 fullfilmizlesene.net##+js(set-constant, app.ads, {})
+! https://github.com/AdguardTeam/AdguardFilters/issues/172168
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170123
+xyzsprtsfrmr1.site##+js(set-constant, adsConfigs.0.enabled, 0)
 mgviagrtoomuch.com##+js(set-constant, window.config.adv.enabled, 0)
 mgviagrtoomuch.com##+js(set-constant, window.config.match.watermark, '')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170076
@@ -5773,15 +5775,19 @@ isguc.org##td[width="200"] a[target="_blank"] img[width="200"][alt]
 ||bolununsesi.com/ilangorsel/
 !
 ! xyzsports - frequently changed domains
-||xyzsports113.xyz/assets/images/ras/
-||xyzsports113.xyz/assets/images/das/
-||xyzsports113.xyz/assets/images/bcd/
-||xyzsports113.xyz/assets/images/pgskn_hovarda.jpeg
+||xyzsports*.xyz/assets/images/ras/
+||xyzsports*.xyz/assets/images/das/
+||xyzsports*.xyz/assets/images/bcd/
+||xyzsports*.xyz/assets/images/pgskn_hovarda.jpeg
+xyzsports113.xyz,xyzsports114.xyz,xyzsports115.xyz,xyzsports116.xyz,xyzsports117.xyz,xyzsports118.xyz,xyzsports119.xyz,xyzsports120.xyz,xyzsports121.xyz,xyzsports122.xyz###sticky-footer
+xyzsports113.xyz,xyzsports114.xyz,xyzsports115.xyz,xyzsports116.xyz,xyzsports117.xyz,xyzsports118.xyz,xyzsports119.xyz,xyzsports120.xyz,xyzsports121.xyz,xyzsports122.xyz###banners
+xyzsports113.xyz,xyzsports114.xyz,xyzsports115.xyz,xyzsports116.xyz,xyzsports117.xyz,xyzsports118.xyz,xyzsports119.xyz,xyzsports120.xyz,xyzsports121.xyz,xyzsports122.xyz##.headbar
 ||xyzsprtsfrmr1.site/assets/images/das/*.gif
-xyzsports113.xyz###sticky-footer
-xyzsports113.xyz###banners
-xyzsports113.xyz##.headbar
-xyzsprtsfrmr1.site##+js(set-constant, adsConfigs.0.enabled, 0)
+xyzsprtsfrmr1.site##div[data-free-banner]
+! TODO: remove the comments below after the issue is fixed
+! https://github.com/AdguardTeam/AGLint/issues/202
+! aglint-disable-next-line
+/xyzsports\d+\.xyz\/assets\/images\/\w{3}\//$image,domain=/xyzsports\d+\.xyz/
 !
 ! superbetin*.com - frequently changed domains
 ||sport.superbetin*.com/Common/GetSportBanners?deviceType=
