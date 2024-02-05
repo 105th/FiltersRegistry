@@ -1,9 +1,9 @@
-! Checksum: J3mOXVtke9ZDgvxR1UIbrg
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1707034162-14400.patch
+! Checksum: +MIhW2xn7amxhzy4Y+1xkA
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1707135058-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.17.45
-! TimeUpdated: 2024-02-04T08:07:27+00:00
+! Version: 2.0.17.46
+! TimeUpdated: 2024-02-05T12:09:09+00:00
 ! Expires: 4 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -179,7 +179,7 @@ bokmassan.se,svenskamassan.se##.cookie-law
 boktugg.se##[id^="boktu-"]
 boneo.se##.article-top-advt
 booli.se###outer
-borskollen.se##[id^="borskollen_small"], [id^="borskollen_large"], .featured-link, .app-store-box
+borskollen.se##[id^="borskollen_small"], [id^="borskollen_large"], .featured-link, .app-store-box, #borskollen_desktop-side, #borskollen_desktop-panorama, div[id^="borskollen_mobile-detaljsida"]
 borssnack.di.se##.bn_advertisement__panorama, .bn_advertisement__container
 borsvarlden.com##.sponsored-articles-container, .nav-sep-blink, .annons-label, .index-side-banner-wrapper, .index-top-banners-wrapper, .fullwidthbanner-container, .banner-wrapper
 bovision.se##.banner-image
@@ -501,7 +501,7 @@ lantbruksnytt.se###startpage-top-right, .ads_text + a, div[class*="square_rotate
 laromedia.se##img[alt="Annons"] + .img-flipper
 lawline.se##[class^="CookiesModal"]
 lchfarkivet.se###timedModal, .modal-backdrop, div#beskrivning[style="font-size: 10px; text-align: center; color: #8E8C8C; max-width: 700px;"]
-lesscarbs.se##.elementor-image > a:not([href*="https://lesscarbs.se"]), a[href*="/affiliates/"]
+lesscarbs.se##.elementor-image > a:not([href*="https://lesscarbs.se"]), a[href*="/affiliates/"], div[id^="1"][style*="250px"]
 lesscarbs.se#@#.category-annonssamarbete:not(body):not(html)
 letarecept.se###cookie_wrapper
 leta.se###bookingcom-resor-wrapper, #aktuellaerbjudanden, #sky-left-wide, .topNavItem[href*="casino"], .topNavItem[href*="betting"], #mobile-banner-top, #mobile-banner-after-content, #mobile-banner-bottom, #bottom-splinks
@@ -756,7 +756,7 @@ tasteline.com##.popup-overlay
 tasteline.com#$#.popup { overflow: auto !important; }
 techmag.se##.popup-overlay, div[id^="techmag_com"], .contentadx
 tekniksmart.se##.code-block, main > div:last-child:not(:only-child), #uid_08313ba73, #uid_ab3738b5a, .jeg_header_wrapper .jeg_midbar
-teknikveckan.se,di.se,dn.se,skillingaryd.nu,xn--vrnamo-bua.nu,vardfokus.se,kamerabild.se,tripadvisor.se,swedroid.se,bettingstugan.se,expressen.se,dagensopinion.se,driva-eget.se,bioenergitidningen.se,ifokus.se,padelfeber.se,sv.picmix.com,ifragasatt.se,ehandel.se,jaktojagare.se,sportbloggare.com,bovision.se,familjeliv.se,tidningenridsport.se,golflivet.se,vemringde.se,brollopstorget.se,fastighetsvarlden.se##.ad
+teknikveckan.se,di.se,dn.se,skillingaryd.nu,xn--vrnamo-bua.nu,vardfokus.se,kamerabild.se,tripadvisor.se,swedroid.se,bettingstugan.se,expressen.se,dagensopinion.se,driva-eget.se,bioenergitidningen.se,ifokus.se,padelfeber.se,sv.picmix.com,ifragasatt.se,ehandel.se,jaktojagare.se,sportbloggare.com,bovision.se,familjeliv.se,tidningenridsport.se,golflivet.se,vemringde.se,brollopstorget.se,fastighetsvarlden.se,borskollen.se##.ad
 temadagar.se##.ez-sidebar-wall
 testfakta.se##.row-uppdragstest
 thelocal.se##.ad-container-section, .article-sponsored, div[data-hasbanner="yes"]
@@ -792,6 +792,7 @@ tvprogram.se##.backdrop, .fcb
 tv.nu##a[href*="adform.net"], .ad-fullscreenWallpaper__container
 typkanske.se,nyan.ax##.gdpr
 undertian.com###cookieNotification, .gad, div[style^="font-size:11px; margin-left"], div[style^="font-size:11px; margin-left"] + div[style]
+undervarttak.se##.middle-banner
 ungdomsfotboll.se##div[id^="ungdo-"]
 universitetslararen.se##div[id^="unive-"]
 upphandling24.se##.type-partnerartikel
@@ -898,6 +899,7 @@ zeromagazine.nu##div[id^="ads"]
 ##div.adDivLeft
 ##div.adDivRight
 ##div.adLinkInner
+##div.adSidebar
 ##div.ad.container
 ##div.ad.panorama
 ##div.annonsbox
@@ -924,6 +926,7 @@ zeromagazine.nu##div[id^="ads"]
 ##div#rich-media-ads
 ##div#schibsted-data-controller-sticky
 ##div#snow-container[style*="z-index: 999999"]
+##div#topBannerMobile
 ##div#toppannons
 ##div#topreklam
 ##div#zox-lead-bot
