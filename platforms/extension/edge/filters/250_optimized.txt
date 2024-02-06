@@ -1,9 +1,9 @@
-! Checksum: H1vkULYlumI5yKtznFu0DA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1707106192-14400.patch
+! Checksum: F3HMIc5rNNqzrx9A41+sjA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1707192566-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.13.7
-! TimeUpdated: 2024-02-02T04:07:35+00:00
+! Version: 2.0.13.8
+! TimeUpdated: 2024-02-06T04:07:16+00:00
 ! Expires: 4 days (update frequency)
 ###smart-banner
 ###smartbanner
@@ -153,6 +153,8 @@ appuals.com##p + div > div:first-of-type
 wikidll.com,dllfile.net,dll-files.org##.detection-os
 wikidll.com,dllfile.net,fix4dll.com,dll-files.org##.inner > .text
 wikidll.com,dllfile.net,fix4dll.com,dll-files.org##.product > .title-line
+windll.com##.download-block
+windll.com##.dll > p
 fix4dll.com#?#.sidebar__block:has-text(Outbyte)
 softwaretested.com##.st-alternative
 softwaretested.com##.snippet-content
@@ -164,7 +166,6 @@ dll-found.com##p:has(a[href*=tweakbit])
 exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
 exefiles.com##.row:has(a[href*="/recommended/"])
 /^https?:\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?u=[0-9a-z]{7}&o=[0-9a-z]{7}/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
-||freeroms.com^$document
 ||gamesgx.net^$document
 coolrom.com.au,coolrom.com##.download_link
 chrome.google.com#?#.webstore-test-wall-tile:has-text(/best\s?ad\s?block/i)
@@ -290,7 +291,6 @@ download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 ||cdrvrs.com^$all
 ||dopansearor.com^$all
 ||grunoaph.net^$all
-||itponytaa.com^$all
 ||nossairt.net^$all
 ||oalsauwy.net^$all
 ||onclklnd.com^$all
@@ -393,6 +393,7 @@ download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 ||butterflyunkindpractitioner.com^$all
 ||departgross.com^$all
 ||feelsjet.com^$all
+||files.im^$all
 ||harassinganticipation.com^$all
 ||holdingwager.com^$all
 ||hottercensorbeaker.com^$all
@@ -509,6 +510,7 @@ www.microsoft.com##a[data-pfns][data-pfns^="9"][data-pfns*="games."]
 ##.js-share-btn:not(html, body)
 ##.jw-sharing-icon:not(html, body)
 ##.mashsb-box:not(html, body)
+##.news_share:not(html,body,[class*=body i],[id*=body i])
 ##.share-actions:not(html, body)
 ##.share-bar:not(html, body)
 ##.share-bottom:not(html, body)
@@ -866,7 +868,6 @@ www.youtube.com##div[class*="-gradient-bottom "]
 www.youtube.com##div[class$=-gradient-bottom]
 ##div[class^=ytp-gradient-]
 twe.no#$#div[style*=overlayFadeTo] { --overlayFadeTo: none !important }
-||cmmnts.i.bt.no^
 ||comment.youmaker.com^$domain=theepochtimes.com
 ||facebook.com/plugins/*comments.php?*%26domain%3Dglobalnews.ca%26
 thejournal.ie,city-countyobserver.com###comments
@@ -1018,7 +1019,6 @@ fandom.com##nav.is-community-bar-in .mobile-global-navigation__left
 fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
 spleis.no#%#//scriptlet('ubo-set.js', '__INITIAL_STATE__.features.should-show-snow', 'false')
 /particles.min.js^
-/images/event/*_christmas/bg_menu_*.gif^
 /assets/js/snow.js^
 ##canvas[data-testid=SnowfallCanvas i]
 /snowfall.min.js^
@@ -1026,7 +1026,6 @@ spleis.no#%#//scriptlet('ubo-set.js', '__INITIAL_STATE__.features.should-show-sn
 /snowfall.min.jquery.js
 /snowplow$script,domain=casamundo.se|hemnet.se
 /snowplow-tracker$script
-/plugins/christmas-panda^
 alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
 ||cdnjs.cloudflare.com/ajax/libs/Snowstorm/$script,important
 /snow.js|$script
@@ -1321,11 +1320,6 @@ $document,removeparam=/^__xts__/
 $removeparam=custlixnkid
 $removeparam=akmClientCountry
 $removeparam=hss_channel
-$removeparam=ns_mchannel
-$removeparam=ns_source
-$removeparam=ns_campaign
-$removeparam=ns_linkname
-$removeparam=ns_fee
 $removeparam=zanpid
 $removeparam=wgu
 $removeparam=wgexpiry
@@ -1355,7 +1349,7 @@ $removeparam=ad_type
 $removeparam=CAWELAID
 $removeparam=adgroup_id
 $removeparam=rlsatarget
-$removeparam=targetid
+$document,removeparam=targetid,domain=~myanonamouse.net
 $removeparam=elqCampaignId
 $removeparam=adgroupid
 $removeparam=AFFNAME
@@ -1884,7 +1878,7 @@ $removeparam=sk,domain=aliexpress.*|bing.com
 ||bing.$removeparam=CREA
 @@||bing.*/account/action$removeparam=cc
 ||bing.$removeparam=PTAG
-||bing.com/search?$removeparam=gs_lcrp
+/search?$document,removeparam=gs_lcrp,domain=bing.com|google.com
 ||bing.com/search?$removeparam=FPIG
 $removeparam=_trkparms
 $removeparam=_trksid
@@ -2313,7 +2307,6 @@ $removeparam=site_id,domain=taskrabbit.com|kochava.com
 ||kochava.com^$removeparam=device_id
 ||skyscanner.$removeparam=redirectedFrom
 ||skyscanner.$removeparam=previousCultureSource
-||shopbop.com^$removeparam=extid
 ||saksfifthavenue.com^$removeparam=LSoid
 ||saksfifthavenue.com^$removeparam=LSlinkid
 ||saksfifthavenue.com^$removeparam=LScreativeid
@@ -2379,11 +2372,8 @@ $removeparam=lid,domain=baidu.com|clickserve.dartsearch.net|flipkart.com
 ||unieuro.it^$removeparam=dedup
 ||apple.com^$removeparam=mttn3pid
 ||apple.com^$removeparam=mttnagencyid
-||apple.com^$removeparam=mttncc
 ||apple.com^$removeparam=mttnsiteid
 ||apple.com^$removeparam=mttnsubad
-||apple.com^$removeparam=mttnsubkw
-||apple.com^$removeparam=mttnsubplmnt
 $removeparam=wfr,domain=weidian.com|baidu.com
 $removeparam=organic_search_click
 $removeparam=pop,domain=etsy.com
@@ -2524,6 +2514,7 @@ $removeparam=spr,domain=media-cdn.costco.ca|media-cdn.costco.com
 $removeparam=tc,domain=media-cdn.costco.ca|media-cdn.costco.com
 $removeparam=textadID,domain=media-cdn.costco.ca|media-cdn.costco.com
 $removeparam=affwin
+$removeparam=nl,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 ^fs=e&s=cl$document,removeparam=fs
 ^fs=e&s=cl$document,removeparam=s
 ||redirect.appmetrica.yandex.com^$removeparam=c
@@ -2586,8 +2577,6 @@ $removeparam=link_source_user_id,domain=nextdoor.com
 $removeparam=is,domain=nextdoor.com|media.discordapp.*
 $removeparam=mar,domain=nextdoor.com
 ||dzen.ru^$removeparam=yredirect
-||clicklogger.rm.uol.com.br^$removeparam=msr
-||clicklogger.rm.uol.com.br^$removeparam=oper
 ||verizon.com^$removeparam=campaignGroup
 ||verizon.com^$removeparam=campaignName
 ||verizon.com^$removeparam=campaignSource
@@ -2667,6 +2656,8 @@ $removeparam=csrcl2
 $document,removeparam=bpli,domain=blogger.com
 ||tempo.co^$document,removeparam=tracking_page_direct
 ||gitlab.$removeparam=ref_type
+||trendyol.com^$document,removeparam=link_userID
+||trendyol.com^$document,removeparam=link_contentid
 ||cimri.com^$document,removeparam=platformName
 ||cimri.com^$document,removeparam=offerSponsored
 ||cimri.com^$document,removeparam=commentCount
@@ -2730,6 +2721,9 @@ $document,removeparam=af_xp
 $document,removeparam=km_partner
 ||smartrecruiters.com^$document,removeparam=km_matchtype
 $document,removeparam=km_adgroup
+||streamable.com^$document,removeparam=src_internal
+||streamable.com^$document,removeparam=src_player
+||thefocusfuel.com^$removeparam=snowball,document
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
@@ -2765,6 +2759,7 @@ store.playstation.com,1999.co.jp#$#html[lang=ja] span { font-family: "Segoe UI",
 @@||wikia.nocookie.net^*/images/$image,badfilter
 fandom.com,wikia.org#$?#a:link { cursor: pointer !important }
 cursor_hover.$image
+.cur/$image
 ||nocookie.net/*cursor.png^
 tumblr.com#$#.custom-cursor { cursor: unset !important }
 tumblr.com#$#.custom-cursor a { cursor: pointer !important }

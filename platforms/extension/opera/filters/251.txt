@@ -1,13 +1,13 @@
-! Checksum: LycYKzHSOxnf3gCSGuWmjw
-! Diff-Path: ../patches/251/251-s-1706833399-14400.patch
+! Checksum: UdQ9JDmAg840LhCB/1uDdA
+! Diff-Path: ../patches/251/251-s-1707192572-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links.
-! Version: 2.0.7.29
-! TimeUpdated: 2024-02-02T00:21:04+00:00
+! Version: 2.0.7.30
+! TimeUpdated: 2024-02-06T04:07:16+00:00
 ! Expires: 4 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 01February2024v1
+! OriginalVersion: 05February2024v4
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -339,7 +339,7 @@ $removeparam=CAWELAID
 $removeparam=partition_id
 $removeparam=adgroup_id
 $removeparam=rlsatarget
-$removeparam=targetid
+$document,removeparam=targetid,domain=~myanonamouse.net
 $removeparam=elqCampaignId
 $removeparam=dc_campid
 $removeparam=dc_adgroupid
@@ -1627,7 +1627,8 @@ $removeparam=sk,domain=aliexpress.*|bing.com
 ||bing.$removeparam=PTAG
 ! https://cn.bing.com/search?q=%e8%b1%86%e7%93%a3&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgQIARAAMgQIAhAAMgQIAxAAMgQIBBAAMgQIBRAAMgQIBhAAMgQIBxAAMgYICBBFGD3SAQgxMjE3ajBqMagCALACAA&FPIG=FA771155383A494687304784CB8358B9&first=7 (24/10/2023)
 ! https://github.com/DandelionSprout/adfilt/pull/934
-||bing.com/search?$removeparam=gs_lcrp
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-8374154
+/search?$document,removeparam=gs_lcrp,domain=bing.com|google.com
 ||bing.com/search?$removeparam=FPIG
 !!! ——— eBay ———
 ! https://www.ebay.com/itm/Disney-Fairies-Annual-2008/173553616659?_trkparms=aid%3D111001%26algo%3DREC.SEED%26ao%3D1%26asc%3D20160908105057%26meid%3Da7ecc6d2187f43619ceae843d9c7e96e%26pid%3D100675%26rk%3D1%26rkt%3D15%26sd%3D173553616659%26itm%3D173553616659&_trksid=p2481888.c100675.m4236&_trkparms=pageci%3A87956e3f-3968-11e9-ae7f-74dbd1801ed7%7Cparentrq%3A277c9f541690a861b48415dfffeb1383%7Ciid%3A1 (31/10/2020)
@@ -3759,6 +3760,11 @@ $document,removeparam=af_xp
 $document,removeparam=km_partner
 ||smartrecruiters.com^$document,removeparam=km_matchtype
 $document,removeparam=km_adgroup
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-8368863
+||streamable.com^$document,removeparam=src_internal
+||streamable.com^$document,removeparam=src_player
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-8295864
+||thefocusfuel.com^$removeparam=snowball,document
 ! ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ———
 ! https://sproutsluckycorner.files.wordpress.com/2019/12/ring-fit-adventure-smoothies-1.png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au

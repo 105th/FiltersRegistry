@@ -1,9 +1,9 @@
-! Checksum: JzyeJMNmU41CtTJ69RB7RQ
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1706833392-14400.patch
+! Checksum: otQeDME8nuWhlNEg0Or51g
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1707192566-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links.
-! Version: 2.0.7.29
-! TimeUpdated: 2024-02-02T00:21:04+00:00
+! Version: 2.0.7.30
+! TimeUpdated: 2024-02-06T04:07:16+00:00
 ! Expires: 4 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -236,7 +236,7 @@ $removeparam=CAWELAID
 $removeparam=partition_id
 $removeparam=adgroup_id
 $removeparam=rlsatarget
-$removeparam=targetid
+$document,removeparam=targetid,domain=~myanonamouse.net
 $removeparam=elqCampaignId
 $removeparam=dc_campid
 $removeparam=dc_adgroupid
@@ -1126,7 +1126,7 @@ $removeparam=sk,domain=aliexpress.*|bing.com
 ||bing.$removeparam=CREA
 @@||bing.*/account/action$removeparam=cc
 ||bing.$removeparam=PTAG
-||bing.com/search?$removeparam=gs_lcrp
+/search?$document,removeparam=gs_lcrp,domain=bing.com|google.com
 ||bing.com/search?$removeparam=FPIG
 $removeparam=_trkparms
 $removeparam=_trksid
@@ -2529,6 +2529,9 @@ $document,removeparam=af_xp
 $document,removeparam=km_partner
 ||smartrecruiters.com^$document,removeparam=km_matchtype
 $document,removeparam=km_adgroup
+||streamable.com^$document,removeparam=src_internal
+||streamable.com^$document,removeparam=src_player
+||thefocusfuel.com^$removeparam=snowball,document
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
