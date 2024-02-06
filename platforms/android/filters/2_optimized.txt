@@ -1,9 +1,9 @@
-! Checksum: Xq3bgGfKtzXw/4y9Iycubg
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1707230065-3600.patch
+! Checksum: 4g27BAehcGEuMhyigvZTrA
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1707233679-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.19.29
-! TimeUpdated: 2024-02-06T14:32:41+00:00
+! Version: 2.3.19.30
+! TimeUpdated: 2024-02-06T15:32:49+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1140,6 +1140,8 @@ itopmusics.com,teluguflix.biz,novelasligeras.net,4horlover.com#%#//scriptlet('ab
 coastcams.com,teluguflix.lol,financeyogi.net,androidadult.com,audiotools.in,aoutoqw.xyz,bg-gledai.co,itopmusicx.com#%#//scriptlet('abort-on-property-read', 'chp_adblock_browser')
 chpadblock.com#%#//scriptlet('prevent-eval-if', 'chp_adblock')
 starwarsaddicted.it,wuyong.fun,26g.me,myqqjd.com,poapan.xyz,javboys.com,idevicecentral.com,fcportables.com,codehelppro.com#%#//scriptlet('abort-on-property-read', 'reqServers')
+doumura.com##body > .container ~ h4.adblock_title ~ div[class]
+doumura.com##.adblock_title
 matomeiru.com##body > #container > #go-to-top + div[id][class]
 xerifetech.com##body> footer ~ .adblock_subtitle + div[class] + div[class]
 leeapk.com##body > #jeg_off_canvas + div[id][class*=" "]
@@ -2214,11 +2216,12 @@ toolsincloud.com#%#//scriptlet("set-constant", "canRunAds", "true")
 raider.io#%#//scriptlet('abort-on-property-read', 'RIO_OnProviderBlocked')
 ustream.click#%#//scriptlet("set-constant", "moneyAbovePrivacyByvCDN", "true")
 freepremiumcourse.com#%#//scriptlet("abort-current-inline-script", "document.createElement", "adsbygoogle.js")
-||thothd.com^$replace=/(protect_block:[\s\S]*?')[\s\S]*?'/\$1'/,document
-thothd.com#@#.ads-iframe
-thothd.com#$#iframe#ads_iframe[src*="/player_ads.html"] { display: block !important; }
-thothd.com#%#//scriptlet('prevent-element-src-loading', 'img', 'stats.php?event=')
-||thothd.com/player/player_ads.html?advertising_id=$subdocument,redirect=noopframe,domain=thothd.com
+||thothd.*^$replace=/(protect_block:[\s\S]*?')[\s\S]*?'/\$1'/,document
+thothd.com,thothd.to#@#.ads-iframe
+thothd.com,thothd.to#$#iframe#ads_iframe[src*="/player_ads.html"] { display: block !important; }
+thothd.com,thothd.to#%#//scriptlet('prevent-element-src-loading', 'img', 'stats.php?event=')
+||thothd.com/player/stats.php?event=Init$image,redirect=1x1-transparent.gif,domain=thothd.com|thothd.to
+||thothd.com/player/player_ads.html?advertising_id=$subdocument,redirect=noopframe,domain=thothd.com|thothd.to
 viefaucet.com#%#//scriptlet('prevent-element-src-loading', 'script', 'coinzillatag.com')
 @@||crazygames.com/prebid.js$script,~third-party
 ||gstatic.com/firebasejs/9.6.10/firebase-messaging.js$script,redirect=noopjs,domain=smallseotools.com
@@ -4766,7 +4769,6 @@ ggwp.id##a[href^="https://www.threads.net/"]
 nontonanimeid.org##div[class^="adspost"]
 nontonanimeid.org##.banner_player
 nontonanimeid.org##.floating_footer
-kompasiana.com##.banner-top
 lahelu.com##div[class*="Chunk_ad_"]
 roboguru.ruangguru.com##.chakra-container  > div[class^="css-"]:has(> div[class^="css-"] > div[id^="div-gpt-ad-"])
 roboguru.ruangguru.com##.chakra-stack > div[class^="css-"]:has(> div[class^="css-"] > div[id^="div-gpt-ad-"])
@@ -5807,6 +5809,7 @@ tvp.info,tvp.pl#%#//scriptlet("set-constant", "tvPlayer2.AdsPlayer.prototype.set
 pcworld.pl#%#window.uabpdl = window.uabInject = true;
 freedisc.pl#%#window.ads_unblocked = true;
 chamsko.pl##.main-banner
+||wp.pl^$replace=/^\n.*"spin".*"dfpConfig".*"slot".*//,script
 ||wp.pl^$replace=/(^(WP\.[\s\S]*?\.bodies)=WP\.[\s\S]*?\.bodies\|\|\{\};[\s\S]*)//,script
 ||deliciousmagazine.pl^$replace=/(^(WP\.[\s\S]*?\.bodies)=WP\.[\s\S]*?\.bodies\|\|\{\};[\s\S]*)//,script
 ||deliciousmagazine.pl^$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,xmlhttprequest,other,~script
@@ -9185,6 +9188,7 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 ||livehdplay.ru/blast.js
 ||lovesomecommunity.com/blast.js
 ||b4ucast.com/blast.js
+reddxxx.com#?#.mx-auto > div.mb-2:has(> div.flex > div.flex > div > h2:contains(VALENTINES SALE))
 medibang.com#$#.mpcViewerAds { display: none !important; }
 medibang.com#$#body.mpc-modal-open { overflow: auto !important; }
 talk.tv##div[class^="css-"]:has(> p:first-child + .ad-outline:last-child)
@@ -12382,6 +12386,7 @@ clickhole.com,lifehacker.com,splinternews.com,avclub.com,deadspin.com,gizmodo.co
 gizmodo.com.au,kotaku.com.au,lifehacker.com.au,pedestrian.tv##.top-ad-leaderboard
 gizmodo.com.au,kotaku.com.au,lifehacker.com.au,pedestrian.tv##.ad-no-mobile
 gizmodo.com.au,kotaku.com.au,lifehacker.com.au,pedestrian.tv##.wp-block-pedestrian-blocks-ped-outbrain-block
+smallseotools.com##span[data-id$="__sst"]
 smallseotools.com##[class*="carosl"]
 smallseotools.com##.modal-backdrop
 smallseotools.com##body .sticki_ssb
@@ -35251,6 +35256,7 @@ reddxxx.com#?#[role="gridcell"]:-abp-contains(/^AD$/)
 @@||thetvdb.com/banners/$image,domain=tvtime.com
 @@||trustprofile.com/banners/$image
 @@||upload.wikimedia.org/wikipedia/$image,media
+@@||v.fwmrm.net/ad/g/*Nelonen$script
 @@||v.fwmrm.net/ad/p/1?$domain=cc.com|channel5.com|cmt.com|eonline.com|foodnetwork.com|nbcnews.com|ncaa.com|player.theplatform.com|simpsonsworld.com|today.com
 @@||v.fwmrm.net/crossdomain.xml$xmlhttprequest
 @@||web-ads.pulse.weatherbug.net/api/ads/targeting/$domain=weatherbug.com
