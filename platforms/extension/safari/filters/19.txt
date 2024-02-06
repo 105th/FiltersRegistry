@@ -1,9 +1,9 @@
-! Checksum: gv0vBDQ2Q8BKJzoItcuhFA
-! Diff-Path: ../patches/19/19-s-1707204898-3600.patch
+! Checksum: wAcoxF35V8+yL3gQLdZ9yA
+! Diff-Path: ../patches/19/19-s-1707208475-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation.
-! Version: 2.0.30.46
-! TimeUpdated: 2024-02-06T07:32:36+00:00
+! Version: 2.0.30.47
+! TimeUpdated: 2024-02-06T08:32:28+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1646,6 +1646,7 @@ scitechdaily.com,thewindowsclub.com#@#.ad-space
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+nanifile.com#?##oframeplayer > pjsdiv[style]:has(pjsdiv:contains(Ad Block))
 delfi.ee##.ad-block-layer
 sheepit-renderfarm.com##.container[style^="width:728px;height:90px;"]
 civitai.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
@@ -1672,7 +1673,7 @@ newsnow.com##div[class^="page-grid_"]:not([class*="main"]):has(.ad__container)
 newsnow.com,newsnow.co.uk##.ad__container + div
 pks.raenonx.cc##.bg-red-500\/50
 ||chinahandys.net/*/adblock-tracker.js
-||baeldung.com/*/wp-content/themes/baeldung/library/dist/js/ad-recovery.min.js
+||baeldung.com/*/ad-recovery.min.js
 phoneky.com#%#//scriptlet('abort-on-property-read', 'adBlockFunction')
 juzaphoto.com#?#body > div[style^="max-width:"]:has(> div.s_bluebox > a[href="article.php?l=it&article=adblock"])
 rtl.hu##.adblock-confirm
@@ -4190,6 +4191,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Anti-adblock - The rules for content blockers only
 !#safari_cb_affinity(general)
+@@||imasdk.googleapis.com^$xmlhttprequest,domain=nanifile.com
 @@||adskeeper.co.uk^$domain=bravedown.com
 @@||s.nitropay.com/ads-*.js$domain=maxroll.gg
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=calcmaps.com
