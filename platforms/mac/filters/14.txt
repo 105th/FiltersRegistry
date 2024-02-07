@@ -1,9 +1,9 @@
-! Checksum: XR7t3GT7q/6G4hlHVUeHkw
-! Diff-Path: ../patches/14/14-s-1707334482-3600.patch
+! Checksum: aqfQb7C3ahy6/Guxv/NJzw
+! Diff-Path: ../patches/14/14-s-1707338073-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.85.74
-! TimeUpdated: 2024-02-07T19:32:28+00:00
+! Version: 2.1.85.75
+! TimeUpdated: 2024-02-07T20:32:26+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2360,6 +2360,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+hideout.co#%#//scriptlet('trusted-click-element', '#qc-cmp2-container button[mode="primary"]')
 interamt.de#$#.ia-m-modal--cookie { display: none !important; }
 interamt.de#$#.ia-modal-opened { overflow: auto !important; }
 solitaire-home.com#$#.cookielaw-modal-layer { display: none !important; }
@@ -14749,7 +14750,6 @@ sendgb.com#%#document.cookie="sendgb_cookiewarning=1; path=/;";
 gelia.fi,gelia.no,gelia.se#%#//scriptlet('remove-class', 'accept-cookies', 'html')
 gelia.fi,gelia.no,gelia.se#%#//scriptlet('remove-attr', 'style', 'body div.main-menu, a.logotype')
 autokino-duesseldorf.ticket.io#%#//scriptlet('remove-class', 'modal-open', 'body')
-cnews.fr,hideout.co,ladbible.com#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("euconsent")){var a=new MutationObserver(function(){var b=document.querySelector(".qc-cmp-button[onclick]");b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});
 video.tvzap.kataweb.it#%#document.cookie = "kw_3pc_enableds=false; domain=.kataweb.it; path=/;";
 mazda.com.tr#%#//scriptlet('remove-class', 'cookie-panel-enabled', '.cookie-panel-enabled[data-module="header"]')
 freeyou.ag#%#//scriptlet('remove-class', 'fixed-body', 'body,html')
@@ -15023,6 +15023,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/166753
+@@||cdn.onesignal.com/sdks/OneSignalSDK.js$domain=hideout.co
+@@||cmp.quantcast.com^$domain=hideout.co
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172394
 solitaire-home.com#@#.o-cookielaw
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172384
