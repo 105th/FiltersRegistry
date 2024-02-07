@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: KoLIKS+mHp7C4pX71GlRyw
-! Diff-Path: ../patches/6/6-s-1707251694-3600.patch
+! Checksum: xvczLXwCMtXl6KC0rzXS7g
+! Diff-Path: ../patches/6/6-s-1707302113-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.40.3
-! TimeUpdated: 2024-02-06T20:33:03+00:00
+! Version: 2.0.40.4
+! TimeUpdated: 2024-02-07T10:33:15+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -624,9 +624,12 @@ deutschekanale.com,riuria.beauty##+js(no-fetch-if, /doubleclick\.net|imasdk\.goo
 gartenfreunde.de###ez-content-blocker-container
 gartenfreunde.de##+js(set-constant, ezDetectAardvark, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157392
+! TODO: use redirect resource when it will be added - https://github.com/AdguardTeam/Scriptlets/issues/401
 southpark.de##+js(no-fetch-if, imasdk.googleapis.com)
 ||imasdk.googleapis.com/pal/sdkloader/pal.js$script,redirect=noop.js,domain=southpark.de
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=southpark.de
+!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
+@@||mssl.fwmrm.net/libs/adm/*/AdManager.js$domain=southpark.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156446
 @@||imagenetz.de/werbebanner-ad.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154040

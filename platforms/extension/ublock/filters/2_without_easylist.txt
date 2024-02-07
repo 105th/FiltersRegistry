@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: b/nOEe/fma8CqgczqjejjQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1707298503-3600.patch
+! Checksum: WSQUNAkw60mB0cBvO9go9A
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1707302113-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.19.42
-! TimeUpdated: 2024-02-07T09:32:47+00:00
+! Version: 2.3.19.43
+! TimeUpdated: 2024-02-07T10:33:03+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8159,9 +8159,12 @@ emulatorgames.onl##+js(set-constant, aiptag.adplayer, {})
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157372
 rewayatcafe.com###adb
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157392
+! TODO: use redirect resource when it will be added - https://github.com/AdguardTeam/Scriptlets/issues/401
 southparkstudios.com##+js(no-fetch-if, imasdk.googleapis.com)
 ||imasdk.googleapis.com/pal/sdkloader/pal.js$script,redirect=noop.js,domain=southparkstudios.com
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=southparkstudios.com
+!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
+@@||mssl.fwmrm.net/libs/adm/*/AdManager.js$domain=southparkstudios.com
 ! #abDetectorModal
 ftuapps.dev,onehack.us###abDetectorModal
 ftuapps.dev,onehack.us#$#.adsbox.doubleclick.ad-placement { display: block !important; }
