@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Ug+pM0gS8e1+pS++udSJ1w
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1707396044-3600.patch
+! Checksum: g4cOVT3OL88wmH30VlxHsQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1707399299-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.19.59
-! TimeUpdated: 2024-02-08T12:38:38+00:00
+! Version: 2.3.19.60
+! TimeUpdated: 2024-02-08T13:32:55+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19220,6 +19220,11 @@ indiatimes.com##.last8brdiv > div.sponsor_block
 !
 ! NOTE: Indonesian
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/172422
+nontonhentai.top##.kln
+nontonhentai.top##div[id^="teaser"]
+nontonhentai.top###floatcenter
+nontonhentai.top##.extend
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172423
 doujindesu.tv#?#center:has(> a[target="_blank"] > img)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172425
@@ -33206,15 +33211,6 @@ esports.gg##.justify-center > .w-full > .items-center > .text-center[class^="h-\
 esports.gg##.justify-center > .w-full > div[class^="flex justify-around h-\[100px\] xl\:h-\[250px\] mb-3 xl\:max-w-\[970px\]"]:empty
 parametric-architecture.com##a[href^="https://www.corian.uk/"] > img
 ||parametric-architecture.com/wp-content/uploads/2022/12/gif222.gif
-fulltv.tv##.pie:empty
-fulltv.tv##.akj-728-top
-fulltv.tv##.social > div[class^="top"]
-fulltv.tv##div[class^="top"][class$="1"]
-fulltv.tv##div[class^="top"][class$="2"]
-fulltv.tv##div[class^="top"][class$="3"]
-fulltv.tv##div[class^="top"][class$="4"]
-||full.video^$domain=fulltv.tv
-||full.video/b.js
 satdl.com##div[style*="300px"]
 /api/js/jplist.core.min.js$domain=deltabit.co
 pvpoke.com##div[id^="nitro-sidebar-"]
@@ -49623,6 +49619,17 @@ biertijd.com,biertijd.xxx#?##wrapper > div#sidebarcontainer > h2:contains(/Adver
 mumbaimirror.indiatimes.com#?##content > div[class*=" "]:has(> div > div > a[onclick])
 mumbaimirror.indiatimes.com#?#.latestCmmtData > .mrtoday > div[class*=" "]:has(> div > div > a[onclick])
 !
+! fulltv
+||ver.gratis^$~image,domain=fulltv.com.ar|fulltv.tv
+||fulltv.video^$~image,domain=fulltv.com.ar|fulltv.tv
+fulltv.tv###wrap > div[class]:has(> div > iframe[src*="fulltv.video/"])
+fulltv.tv###content > div[class]:has(> iframe[src*="fulltv.video/"])
+fulltv.tv###canales-derecha > div[class]:has(iframe[src*="fulltv.video/"])
+fulltv.com.ar###wrap > div[class]:has(> div > iframe[src*="ver.gratis/"])
+fulltv.com.ar###content > div[class]:has(> iframe[src*="ver.gratis/"])
+fulltv.com.ar###canales-derecha > div[class]:has(iframe[src*="ver.gratis/"])
+fulltv.com.ar##div[class^="tt"]
+!
 ! torrentgalaxy.to - changes ads frequently
 tgx.rs,torrentgalaxy.to##div[style="margin-bottom:10px;"] div > a > div > img
 tgx.rs,torrentgalaxy.to##div[style="margin-top:10px;"] div > a > div > img
@@ -51146,6 +51153,9 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 ! github.io - too wide rule
 @@||github.io^$generichide,badfilter
+! https://github.com/AdguardTeam/AdguardFilters/issues/172454
+telkomsel.com#@##adsContainer
+telkomsel.com#@#.ads-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171550
 sanemoku.com#@#.blogAd
 sanemoku.com#@##horizontal-ad
