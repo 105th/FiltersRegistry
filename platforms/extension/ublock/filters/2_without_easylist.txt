@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: O2YDkbiSCHoQgvD2kDNHNQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1707456908-3600.patch
+! Checksum: ZvB9uFE6F5VcLQU82iCCQA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1707464119-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.19.71
-! TimeUpdated: 2024-02-09T05:32:57+00:00
+! Version: 2.3.19.72
+! TimeUpdated: 2024-02-09T07:33:05+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7384,7 +7384,7 @@ free-mp3-download.net##+js(abort-on-property-write, DetectByGoogleAd)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170946
 ||bbpic.ru/js/plears.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170717
-@@||ytlarge.com/youtube/*/froloa.js
+@@||ytlarge.com/*/froloa.js
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ytlarge.com
 @@||pagead2.googlesyndication.com/pagead/managed/js/adsense/*fy2021.js$domain=ytlarge.com
 @@||googleads.g.doubleclick.net/pagead/html/*/zrt_lookup_fy2021.html$domain=ytlarge.com
@@ -49633,15 +49633,16 @@ mumbaimirror.indiatimes.com#?##content > div[class*=" "]:has(> div > div > a[onc
 mumbaimirror.indiatimes.com#?#.latestCmmtData > .mrtoday > div[class*=" "]:has(> div > div > a[onclick])
 !
 ! fulltv
-||ver.gratis^$~image,domain=fulltv.com.ar|fulltv.tv
-||fulltv.video^$~image,domain=fulltv.com.ar|fulltv.tv
+||ver.gratis^$~image,domain=fulltv.com.ar|fulltv.tv|fulltv.com.mx
+||fulltv.video^$~image,domain=fulltv.com.ar|fulltv.tv|fulltv.com.mx
 fulltv.tv###wrap > div[class]:has(> div > iframe[src*="fulltv.video/"])
 fulltv.tv###content > div[class]:has(> iframe[src*="fulltv.video/"])
 fulltv.tv###canales-derecha > div[class]:has(iframe[src*="fulltv.video/"])
 fulltv.com.ar###wrap > div[class]:has(> div > iframe[src*="ver.gratis/"])
 fulltv.com.ar###content > div[class]:has(> iframe[src*="ver.gratis/"])
 fulltv.com.ar###canales-derecha > div[class]:has(iframe[src*="ver.gratis/"])
-fulltv.com.ar##div[class^="tt"]
+fulltv.com.mx,fulltv.tv##.social > div[class]:has(iframe[src*="fulltv.video/"])
+fulltv.com.mx,fulltv.com.ar##div[class^="tt"]
 !
 ! torrentgalaxy.to - changes ads frequently
 tgx.rs,torrentgalaxy.to##div[style="margin-bottom:10px;"] div > a > div > img
@@ -49988,8 +49989,8 @@ flashscore.*,horseracing24.com,darts24.com,handball24.com,volleyball24.com,motor
 ://aj2*.online^$xmlhttprequest,other
 !
 ! Brightcove SSAI
-||brightcovecdn.com/playback/*/*?ad_config_id=$removeparam=ad_config_id,xmlhttprequest,domain=tvnz.co.nz|roosterteeth.com
-||brightcove.com/playback/*/*?ad_config_id$removeparam=ad_config_id,xmlhttprequest,domain=tvnz.co.nz|roosterteeth.com
+||brightcovecdn.com/playback/*/*?ad_config_id=$removeparam=ad_config_id,xmlhttprequest,domain=tvnz.co.nz|roosterteeth.com|nhl.com
+||brightcove.com/playback/*/*?ad_config_id$removeparam=ad_config_id,xmlhttprequest,domain=tvnz.co.nz|roosterteeth.com|nhl.com
 ! Streamplay
 /..nt.nt\.st.+p.ay\..+/$domain=stemplay.*|steamplay.*|steanplay.*|streamp1ay.*|streanplay.*|streampiay.*|stre4mplay.*
 jquery-1.8.3.min.js$domain=stemplay.*|steamplay.*|steanplay.*|streamp1ay.*|streanplay.*
@@ -56455,6 +56456,7 @@ implbits.com#@#.banner_container
 !
 ! Bad:  ||example.org/video-links (should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/172486
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165930
 ! https://github.com/AdguardTeam/CoreLibs/issues/1825
 ! TODO: remove when issue in CoreLibs is fixed
