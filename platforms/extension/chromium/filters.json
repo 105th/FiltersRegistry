@@ -607,8 +607,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/15.txt",
 			"trustLevel": "full",
-			"version": "2.0.60.99",
-			"timeUpdated": "2024-02-10T00:46:25+0000",
+			"version": "2.0.61.0",
+			"timeUpdated": "2024-02-10T06:32:27+0000",
 			"languages": [],
 			"tags": [
 				45,
