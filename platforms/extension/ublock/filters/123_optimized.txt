@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: y/QwtIEsKV8cnBxihqh3Jg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1707611164-14400.patch
+! Checksum: zTRxRHfMoDT8Z0Mtp9hy9A
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1707624595-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.18.36
-! TimeUpdated: 2024-02-11T00:23:03+00:00
+! Version: 2.1.18.37
+! TimeUpdated: 2024-02-11T04:06:52+00:00
 ! Expires: 4 days (update frequency)
 -buttons-facebook.
 -facebook-share.
@@ -154,6 +154,7 @@
 /social/footerIcons.
 /social/linked-in-
 /social2s.min.js
+/social_apple
 /social_bookmark_icons/*
 /social_bookmarking/*$image
 /social_bookmarks/*
@@ -225,7 +226,6 @@ _social_footer_
 ###action-share
 ###adbl-social-icons
 ###after-share
-###ao-share-wrapper
 ###article-social
 ###article-social-bar
 ###article-social-share
@@ -348,8 +348,6 @@ _social_footer_
 ###followUs
 ###follow_box
 ###follow_buttons
-###follow_facebook
-###follow_twitter
 ###follow_us
 ###followus
 ###foot-social
@@ -382,7 +380,6 @@ _social_footer_
 ###footer_social_instagram
 ###footer_socialmedia
 ###fsb-social-bar
-###getSocial
 ###gkSocial
 ###gkSocialAPI
 ###global-share
@@ -425,7 +422,6 @@ _social_footer_
 ###linkShare
 ###main-social
 ###mainShare
-###menu-footer-social-icons
 ###menu-footer-social-links
 ###menu-footer_social
 ###menu-gridlove-social
@@ -886,6 +882,7 @@ _social_footer_
 ##.Header-social
 ##.Header-socialIcons
 ##.Header__Button--Social
+##.IconSocialMedia
 ##.LikeButton
 ##.LineShareButton
 ##.ListSocial
@@ -916,6 +913,7 @@ _social_footer_
 ##.SiteFooter__follow
 ##.Social-Media
 ##.Social-link
+##.SocialArticleIcons
 ##.SocialBar
 ##.SocialBar__component
 ##.SocialFollow
@@ -1009,6 +1007,7 @@ _social_footer_
 ##.af-social-btns
 ##.af-social-share-v2
 ##.agencies-about-share
+##.aiir-share__list
 ##.amp-facebook
 ##.amp-social-container
 ##.amp-wp-share
@@ -1019,7 +1018,6 @@ _social_footer_
 ##.ampz_facebook
 ##.ampz_twitter
 ##.anv-splash-share
-##.ao-share-wrapper
 ##.app_btn_share
 ##.app_share_mod
 ##.apps-social
@@ -1187,6 +1185,7 @@ _social_footer_
 ##.bloc_float_share
 ##.block-addtoany
 ##.block-facebook
+##.block-facebook-inner
 ##.block-followus
 ##.block-share__item
 ##.block-sharebar
@@ -1348,7 +1347,7 @@ _social_footer_
 ##.comments-and-share
 ##.comments-share
 ##.comments-social
-##.common-social
+##.comments__likes
 ##.common-social-link
 ##.common_share
 ##.community__social-desc
@@ -1361,6 +1360,7 @@ _social_footer_
 ##.connect-with-us
 ##.connect-youtube
 ##.cont_social
+##.contenedor_redes_sociales
 ##.content-footer-social
 ##.content-social-distribution
 ##.content-social-media
@@ -1496,7 +1496,6 @@ _social_footer_
 ##.epcl-share-container
 ##.ess-share-text
 ##.ess-social-sharing
-##.essb-flyin
 ##.essb-mobile-sharepoint
 ##.essb-social-followers-variables
 ##.essb_item
@@ -1569,7 +1568,6 @@ _social_footer_
 ##.facebook2
 ##.facebook28Ico
 ##.facebookFeed
-##.facebookImage
 ##.facebookLike
 ##.facebookLink
 ##.facebookOuter
@@ -1627,7 +1625,6 @@ _social_footer_
 ##.fbShare
 ##.fbShareButton
 ##.fbShareTrigger
-##.fb_bar
 ##.fb_like_and_share
 ##.fb_like_area
 ##.fb_like_box
@@ -1765,7 +1762,6 @@ _social_footer_
 ##.footer-network-social
 ##.footer-pin
 ##.footer-pinterest-icon
-##.footer-secondary-social
 ##.footer-section-social
 ##.footer-section__social-links
 ##.footer-share
@@ -1899,6 +1895,7 @@ _social_footer_
 ##.gig-simpleShareUI
 ##.gigya-share-bar
 ##.gk__share
+##.glide-slide-sharebar
 ##.global-follow_us
 ##.global-footer-social
 ##.global-footer__social
@@ -1989,6 +1986,7 @@ _social_footer_
 ##.header__social-list
 ##.header__social-media
 ##.header__social-nav
+##.header__socialMedia
 ##.header__socials
 ##.header_sns
 ##.header_social
@@ -2126,6 +2124,7 @@ _social_footer_
 ##.icon-soundcloud
 ##.icon-tumblr-square
 ##.icon-tw-footer
+##.icona-social
 ##.icone-social
 ##.iconeFacebook
 ##.iconeTwitter
@@ -2247,7 +2246,6 @@ _social_footer_
 ##.js-sharebuttons
 ##.js-sharecount
 ##.js-social
-##.js-social-bar
 ##.js-social-facebook
 ##.js-social-instagram
 ##.js-social-share
@@ -2383,7 +2381,6 @@ _social_footer_
 ##.m_share
 ##.mail-share
 ##.main-article-share-count
-##.main-article-share-counts
 ##.main-content__share
 ##.main-footer__bottom__social
 ##.main-footer__menu_bottom__social
@@ -2558,9 +2555,7 @@ _social_footer_
 ##.new-post__social
 ##.new-share
 ##.new-social
-##.newSocialButtons
 ##.news-article__share-content
-##.news-body-share
 ##.news-detail-share
 ##.news-header-social
 ##.news-share
@@ -2749,7 +2744,6 @@ _social_footer_
 ##.qa-share-tools
 ##.qlwapp-button
 ##.qode-blog-share
-##.qode-share-title
 ##.qodef-social-share
 ##.qrtui-c-gallery1-slide_tools_share
 ##.qt-sharepage
@@ -2792,7 +2786,6 @@ _social_footer_
 ##.rss-social
 ##.rt-social-buttons
 ##.rui-social
-##.rvt-c-footer-social
 ##.s-content__share
 ##.s-f__social
 ##.s-facebook
@@ -3374,6 +3367,7 @@ _social_footer_
 ##.showShareMore
 ##.shr-bookmarks
 ##.shr-btn
+##.shr-btns
 ##.shr_btn
 ##.si-share
 ##.sib-post-share-buttons
@@ -3439,7 +3433,6 @@ _social_footer_
 ##.site-social-icon
 ##.site-social-menu
 ##.site-social-networks
-##.site_share
 ##.sitewide-social-media
 ##.slide_likebox
 ##.slider-social
@@ -3577,7 +3570,6 @@ _social_footer_
 ##.social-buttons--uk
 ##.social-buttons-compact
 ##.social-buttons-container
-##.social-buttons-footer
 ##.social-buttons-module
 ##.social-buttons-wrapper
 ##.social-buttons__item
@@ -3588,7 +3580,6 @@ _social_footer_
 ##.social-col
 ##.social-color
 ##.social-column
-##.social-columns
 ##.social-container-bottom
 ##.social-conteiner
 ##.social-controls
@@ -3921,6 +3912,7 @@ _social_footer_
 ##.socialLogos
 ##.socialMedia
 ##.socialMedia-linkedin
+##.socialMediaArea
 ##.socialMediaBlock
 ##.socialMediaBox
 ##.socialMediaButtons
@@ -3942,6 +3934,7 @@ _social_footer_
 ##.socialShare
 ##.socialShareBar
 ##.socialShareIcon
+##.socialShareLinks
 ##.socialSharing
 ##.socialSideBar
 ##.socialSquare
@@ -3974,13 +3967,13 @@ _social_footer_
 ##.social_area
 ##.social_b
 ##.social_bar
+##.social_bar_menu
 ##.social_bind
 ##.social_blk
 ##.social_bookmark
 ##.social_bookmarks
 ##.social_bot
 ##.social_bottom
-##.social_but
 ##.social_count
 ##.social_di
 ##.social_div
@@ -4011,6 +4004,7 @@ _social_footer_
 ##.social_media_icon
 ##.social_media_links
 ##.social_media_list
+##.social_media_section
 ##.social_media_share
 ##.social_media_ul_li_a
 ##.social_mob
@@ -4134,6 +4128,7 @@ _social_footer_
 ##.socialwidget
 ##.socialwrap
 ##.sociaux
+##.socicn
 ##.socicon
 ##.socicon-facebook
 ##.socicon-googleplus
@@ -4161,7 +4156,6 @@ _social_footer_
 ##.sprite-product-sharing
 ##.sprite-social
 ##.sprite-social-facebook
-##.sprite-social-instagram
 ##.sprite-social-twitter
 ##.sprite-social-youtube
 ##.sprite-twitter
@@ -4211,7 +4205,6 @@ _social_footer_
 ##.sst-social-share
 ##.ssto-share-buttons
 ##.st-custom-button
-##.st-social-block
 ##.st-social__share
 ##.st_email_custom
 ##.st_facebook_custom
@@ -4399,6 +4392,7 @@ _social_footer_
 ##.twitter-feed-wrapper
 ##.twitter-follow
 ##.twitter-follow-box
+##.twitter-followers
 ##.twitter-footer
 ##.twitter-hashtag
 ##.twitter-hover
@@ -4921,6 +4915,7 @@ spokesman.com##.ba
 dxomark.com##.banner
 beebom.com##.beebom-social-share
 firstpost.com##.bg-mail
+military.com##.block--addtoanyadv
 tastesbetterfromscratch.com##.block-follow-me
 9to5linux.com##.bm-social-top
 breitbart.com##.bnn-social-share
@@ -5306,6 +5301,7 @@ urlaubsguru.de##.smeShare
 formel1.de##.social-buttons_container
 deutsche-wirtschafts-nachrichten.de##.social-line
 golem.de##.social-tools
+sportnews.bz##.socialshare
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
 t3n.de##.tg-social-bottom
@@ -5330,6 +5326,7 @@ allocine.fr##.icon-share
 clubic.com##.list-footer-rs
 lesnumeriques.com##.ln__m-shr
 autoplus.fr##.nl-social
+moneyvox.fr##.reseau-soc-page
 bledina.com##.rs-icon
 la-croix.com##.send-article-icon
 pix-geeks.com##.social_icons
@@ -5493,6 +5490,7 @@ el9nou.cat,lanacion.com.ar,psicologia-online.com,qmusica.tv,revistafamilia.ec##.
 elcolombiano.com##.contenedor-google-noticias
 semana.com##.footer-google-news
 a24.com,perfil.com##.footer-redes
+ara.cat##.footer-rrss
 ecuavisa.com##.google-news
 metroecuador.com.ec##.googlenews-btn
 mdzol.com##.interacciones
