@@ -1,9 +1,9 @@
-! Checksum: eidBvQpWcU4APEZBwdx00A
-! Diff-Path: ../patches/6/6-s-1707665727-3600.patch
+! Checksum: y/rJko5I7S3gyWdZwM+Csw
+! Diff-Path: ../patches/6/6-s-1707759296-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.40.10
-! TimeUpdated: 2024-02-11T15:33:09+00:00
+! Version: 2.0.40.11
+! TimeUpdated: 2024-02-12T17:32:55+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1148,8 +1148,6 @@ bluray-disc.de#%#//scriptlet("abort-current-inline-script", "popunder")
 winfuture.de#%#//scriptlet('trusted-replace-xhr-response', '/"enabled": true,/', '"enabled": false,', '/(homad|svonm).*\.json/')
 ! https://github.com/uBlockOrigin/uAssets/issues/21862#issuecomment-1903805346
 restegourmet.de#%#//scriptlet("adjust-setInterval", "invoke", "1000", "0.01")
-! jpgames.de - left-over at top
-jpgames.de#$##takeover { padding-top: unset!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166369
 ddl-warez.cc#%#//scriptlet('prevent-window-open', 'af.php')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164427
@@ -1304,6 +1302,10 @@ menshealth.de#%#function google_ad_request_done() {};
 !--------------------------------------!
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/172471
+krone.at#$#body .ad-container { display: block !important; }
+! jpgames.de - left-over at top
+jpgames.de#$##takeover { padding-top: unset!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171888
 bluray-disc.de#$#.content-wrapper { padding-top: 0px !important; }
 bluray-disc.de#$#.wallpaper-adv { display: none !important; }
@@ -1621,6 +1623,11 @@ formel1.de,krautundrueben.de,motorsport-total.com,traktorpool.de,fnweb.de,laborj
 !
 !
 !
+datenbanken-verstehen.de##div[class^="ad-block-"]:not(.ad-block-text)
+datenbanken-verstehen.de###ai_widget-46
+datenbanken-verstehen.de###ai_widget-38
+datenbanken-verstehen.de###ai_widget-91
+datenbanken-verstehen.de##.one-half:empty
 nordbayern.de##.row:has(> article:first-child + div:last-child > a:only-child > div:only-child > .modul__teaser__anzeige)
 macwelt.de,pcwelt.de##.jwPlayer--floatingContainer
 auf1.tv##.w-full:has(> div.text-sm:contains(Bezahlte Anzeige))
@@ -8841,6 +8848,7 @@ nydus.org###nybanner
 nydus.org###nydus_org_970x300_billboard_responsive
 autoexperience.de,flugzeugforum.de,gs-forum.eu,uhrforum.de,xbox-passion.de###oc24-div
 elektrikforen.de###oc24_container_top
+pedelecforum.de###oc24-direkt
 dasoertliche.de###oetb_entryAd
 yasni.de###offer
 planetradio.de###omsRectangleChannel
@@ -8875,6 +8883,7 @@ meintomtom.de###portfolio
 wein.plus###premium-partners
 bluray-disc.de###pricechange-box
 golem.de###pricehits
+motorradundreisen.de###print_bannergroup
 adspecials.sevenonemedia.de###promobalken
 fanfiktion.de###qql
 infoheute.de###r89-desktop-billboard-atf-0-wrapper
@@ -9339,7 +9348,7 @@ lokalkompass.de##.bannerslot-centered
 sportal.ch##.bannerspot
 frischauf-gp.de##.bannertop
 1200grad.com##.banneruntermenu
-nnz-online.de##.bannerwrapper
+msh-online.de,nnz-online.de##.bannerwrapper
 stimme.de##.bb-wrap
 laborjournal.de##.bb_top
 bz-berlin.de##.bcode
@@ -9998,6 +10007,7 @@ newzs.de##.shopWidget
 pornoente.tv,pornohirsch.net,pornolisa.com,pornotanja.com##.sice-300x250
 xdate.ch##.side-ads
 german-porno-deutsch.info##.sidebar
+parfumo.de##.sidebar_a
 ploetzblog.de##.sidebar > .imglinks
 rheiderland.de##.sidebar-addbox
 giga.de##.sidebar-btn-affiliate[rel="nofollow noopener sponsored"]
