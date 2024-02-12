@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.20.27",
-			"timeUpdated": "2024-02-12T17:32:47+0000",
+			"version": "2.3.20.28",
+			"timeUpdated": "2024-02-12T18:33:00+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -434,8 +434,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.40.11",
-			"timeUpdated": "2024-02-12T17:32:55+0000",
+			"version": "2.0.40.12",
+			"timeUpdated": "2024-02-12T18:33:09+0000",
 			"languages": [
 				"de"
 			],
@@ -588,8 +588,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/14.txt",
 			"trustLevel": "full",
-			"version": "2.1.86.20",
-			"timeUpdated": "2024-02-12T17:32:29+0000",
+			"version": "2.1.86.21",
+			"timeUpdated": "2024-02-12T18:32:36+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -607,8 +607,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/15.txt",
 			"trustLevel": "full",
-			"version": "2.0.61.9",
-			"timeUpdated": "2024-02-12T12:39:06+0000",
+			"version": "2.0.61.10",
+			"timeUpdated": "2024-02-12T18:32:36+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -660,8 +660,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.32.54",
-			"timeUpdated": "2024-02-12T17:32:32+0000",
+			"version": "2.0.32.55",
+			"timeUpdated": "2024-02-12T18:32:41+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -680,8 +680,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.30.79",
-			"timeUpdated": "2024-02-12T17:32:33+0000",
+			"version": "2.0.30.80",
+			"timeUpdated": "2024-02-12T18:32:41+0000",
 			"languages": [],
 			"tags": [
 				5,
