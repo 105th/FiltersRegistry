@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: yO2EmzxYlLRKc+Sc4ARzQA
-! Diff-Path: ../patches/10/10-s-1706034992-3600.patch
+! Checksum: l7mvvL5CqIpK3t9mYyvFpw
+! Diff-Path: ../patches/10/10-s-1707845686-3600.patch
 ! Title: Filter unblocking search ads and self-promotion
 ! Description: Filter that unblocks search ads in Google, DuckDuckGo, Bing, or Yahoo and self-promotion on websites.
-! Version: 2.0.3.21
-! TimeUpdated: 2024-01-23T18:33:34+00:00
+! Version: 2.0.3.22
+! TimeUpdated: 2024-02-13T17:32:20+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -261,22 +261,8 @@ buscape.com.br#@#div[class^="Hits_SponsoredWrapper__"]
 !
 ! developer.mozilla.org - self-promo in documentation (the rule is from EasyList)
 @@||developer.mozilla.org/pong/
-! Mediafire premium upgrade
-mediafire.com#@##upsellBox
 ! Startpage
 @@||startpage.com/adsense/search/async-ads.js$domain=startpage.com
-! Irr
-irr.ru#@#.ad-link
-@@||an.yandex.ru$domain=irr.ru
-! Nigma.ru
-nigma.ru#@#.ad-link
-@@||an.yandex.ru$domain=nigma.ru
-! Mail.ru
-go.mail.ru#@#.response___wrapper > #js-topBar > div > div[class*="p"][class*="t"] > style + div
-go.mail.ru#@#.response___wrapper > #js-bottomBar > div > div[class*="b"][class*="t"] > style + div
-go.mail.ru#$#.response___wrapper > #js-topBar > div > div[class*="p"][class*="t"] > style + div { position: absolute!important; left: -3000px!important; }
-go.mail.ru#$#.response___wrapper > #js-bottomBar > div > div[class*="b"][class*="t"] > style + div { position: absolute!important; left: -3000px!important; }
-! go.mail.ru - ads in search results
 !
 ! Ebay
 ebay.co.uk,ebay.com,ebay.com.au#@?#.mfe-reco-ct:-abp-has(.mfe-promoted-label)
@@ -299,21 +285,8 @@ yaani.com.tr#@##content > div[advicetype="Shopping"] > .shoppingWidget
 news.fresheye.com#@#.bk2.spsite
 ! Rakuten web search
 websearch.rakuten.co.jp#@##ad-ichiba
-! epochtimes.de
-epochtimes.de#@##spendPopupBG
-epochtimes.de#@##news-content .buchempfehlung ~ p
-epochtimes.de#@##news-content .buchempfehlung
-epochtimes.de#@##news-content .buchempfehlung ~ h3
-epochtimes.de#@##news-content .buchempfehlung ~ p + div[id^="attachment"]
-! n-tv.de -- coupons
-n-tv.de#@#.sparwelt
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43719
 etsy.com#@?#.responsive-listing-grid > li:has( > div > a div > .ad-iindicator)
-! Rambler.ru
-@@||nova.rambler.ru/search$document
-@@||images.rambler.ru/$document
-! org.rambler.ru
-org.rambler.ru#@#.ad-serp-item
 ! DuckDuckGo
 duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion,duckduckgo.com#@#.result--ad > .result__body
 duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion,duckduckgo.com#@#.sponsored
@@ -354,32 +327,15 @@ atresplayer.com#@#.mod_blanco
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1041
 ! Unblock the sliders
 @@||adwolf.ru^$domain=retrofm.ru|radio7.ru|europaplus.ru
-@@||retrofm.ru/template/Retro-2012/js/adwolf.js$domain=retrofm.ru
 ! http://forum.adguard.com/showthread.php?9264
 consultant.ru#@#img[width="468"][height="60"]
 ! alibaba.com - promoted items in search results
 alibaba.com#@?#div[data-content="abox-ProductNormalList"] > div.J-offer-wrapper:has(> div > i.search-ad-icon)
 !-------------------------------------------------------------------------------!
-mercurynews.com#@#div.info-box[id^="ConneXt_Action_Id-"]
-@@||shop.kicker.de^
-! https://github.com/AdguardTeam/AdguardFilters/issues/38865
-etsy.com#@#div[data-behat-search-results-lg] .listing-link.logged:not([data-shop-id])
-!
-! stuttgarter-nachrichten.de - whitelisting Verlagsangebot
-stuttgarter-nachrichten.de#@#.ga_hptta .content > a[data-tags="Verlagsangebot"]
-stuttgarter-nachrichten.de#@?#.ga_hptta > .item:has(> .content > a[data-tags="Verlagsangebot"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138396
 ipv6.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com#@##content_left > div:not([class]) > div[data-placeid]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33697
 baidu.com#@#.bds-list-ads
-! https://github.com/AdguardTeam/AdguardFilters/issues/59466
-adda247.com#@#iframe[name^="google_ads_iframe"]
-adda247.com#@#div[id^="div-gpt-ad"]
-@@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=adda247.com
-@@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=adda247.com
-@@||securepubads.g.doubleclick.net/gampad/ads?gdfp_req=1$domain=adda247.com
-@@||tpc.googlesyndication.com/simgad/$domain=adda247.com,image
-@@||adclick.g.doubleclick.net/pcs/click?xai=$popup
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/100525
 tf1.fr#@#div[aria-describedby^="max-banner-"]
