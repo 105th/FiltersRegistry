@@ -1,9 +1,9 @@
-! Checksum: d4zmsW8grZvlc92fR6birA
-! Diff-Path: ../patches/235/235-s-1707106192-14400.patch
+! Checksum: 3+fjbqlgB5laUM1O2DpxBg
+! Diff-Path: ../patches/235/235-s-1707840598-14400.patch
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.4.5
-! TimeUpdated: 2024-02-05T04:07:33+00:00
+! Version: 2.0.4.6
+! TimeUpdated: 2024-02-13T16:07:43+00:00
 ! Expires: 4 days (update frequency)
 !
 ! Title: PersianBlocker
@@ -1130,15 +1130,14 @@ farnet.io##.eif:not(:has(a[href*="farnet.io"]))
 farnet.io##.content-column:not(> .archive-title:has-text(رپرتاژ تبلیغاتی)) .item-inner:has(a[href*="/pr/"])
 farnet.io###site-footer .col-sm-4:has(a[rel="noopener"][target="_blank"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42827
-farsroid.com#%#//scriptlet('ubo-rmnt.js', 'script', 'ads_app_downloads')
-||farsroid.com/js/?url=$script,~third-party
-farsroid.com##header.site-header > div.container > nav.site-top-nav > ul.grid-row > li:has(> a[href][rel="dofollow"][target="_blank"]:is([href^="https://1000gem.org/"],[href^="https://kifpool.me/"], [href^="https://dicardo.com/"]))
-farsroid.com##div.site-middle-banners:has(> div.banner > a.farsroid-ads)
+farsroid.com#%#//scriptlet('ubo-rmnt.js', 'script', 'ads_app_name')
+farsroid.com#%#//scriptlet('ubo-nowoif.js')
+farsroid.com##div.site-middle-banners
 farsroid.com##div.single-text-ads
-farsroid.com##article.post-single-box > div.post-content > p:has(> a[href="https://www.farsroid.com/download-imo-android/"][target="_blank"][rel="noopener"])
-farsroid.com##div.download-link-ads-below
+farsroid.com##div.labeled-dw-ads
 farsroid.com##div.cas
-farsroid.com#@#.place-ads
+farsroid.com##p:has(> a[href="https://www.farsroid.com/download-imo-android/"] > img)
+farsroid.com##li.ads-download
 ||analysis.faradars.org
 ! https://github.com/MasterKia/PersianBlocker/pull/39
 ||media.farsnews.ir/Uploaded/Files/Documents/*.gif^$image,~third-party
@@ -2130,6 +2129,7 @@ sakhtafzarmag.com##.dinu:upward(.widget)
 seemorgh.com##.bannergroup
 seemorgh.com##.bannergroupsam-full-width
 ||sarzamindownload.com/images/banners^$image,~third-party
+||sarzamindownload.com/ppjs/free/freepop.js^$script,~third-party
 sarzamindownload.com##.OpenTable5
 sarzamindownload.com##.OpenTable > div > center > a[rel="nofollow"] > .img-responsive:upward(.OpenTable)
 sarzamindownload.com##.GSBlock > div > .title > h3:has-text(لینک های ویژه):upward(.GSBlock)
