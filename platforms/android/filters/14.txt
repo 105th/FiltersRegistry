@@ -1,9 +1,9 @@
-! Checksum: wo27d5wjQ0Lfv38SHjdn5Q
-! Diff-Path: ../patches/14/14-s-1707917675-3600.patch
+! Checksum: J/10m2HHhkQcu8BF/nt0kA
+! Diff-Path: ../patches/14/14-s-1707921275-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.86.47
-! TimeUpdated: 2024-02-14T13:32:31+00:00
+! Version: 2.1.86.48
+! TimeUpdated: 2024-02-14T14:32:25+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2360,6 +2360,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+my.remarkable.com#%#//scriptlet('trusted-click-element', 'button[data-cy="cookie-banner-necessary"]')
 kids.lego.com##div[class^="cookie-overlay_"]
 znews.vn##.cookie-consent
 platform.stability.ai###app > .bg-brand-gray-1.fixed.bottom-5.left-5
@@ -13725,6 +13726,7 @@ wackojaco.com,gpblog.com#%#//scriptlet('trusted-click-element', 'button[mode="se
 wackojaco.com,gpblog.com#%#//scriptlet('trusted-click-element', '.qc-cmp2-header-links > button[mode="link"]:first-child')
 wackojaco.com,gpblog.com#%#//scriptlet('trusted-click-element', 'div[class^="qc-cmp2-buttons-"] > button[mode="primary"]')
 !
+ogladajanime.pl#%#//scriptlet('set-cookie-reload', 'accepted', 'true')
 boxy-svg.com#%#//scriptlet('set-local-storage-item', 'bx-portalwebapp:showPrivacyNotification', 'false')
 baseendpoint.geo.de,cmp.heise.de#%#//scriptlet('trusted-click-element', 'button[title*="ustimmen"]')
 mediamarkt.pl#%#//scriptlet('trusted-click-element', '#mms-consent-portal-container button[data-test="pwa-consent-layer-deny-all"]')
@@ -14917,7 +14919,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
-! fix the map
+! https://github.com/uBlockOrigin/uAssets/issues/22471
+my.remarkable.com#@#div[data-cy="cookie-banner"]
+! e-ladestation.aldi-sued.de - fix the map
 e-ladestation.aldi-sued.de#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172516
 camping-bad-griesbach.de#@##redim-cookiehint-modal
@@ -30581,6 +30585,7 @@ newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,theloca
 !
 ! SECTION: Subscriptions - Regular rules
 !
+ilsole24ore.com##.suggbox
 noi.md##.comment-block ~ div.row > div.text-center.p-0
 tsfjazz.com##.home-newsletter-push
 ptsecurity.com##.sidebar-item:has(> form[class] > div.subscribe-form__title)
@@ -50319,6 +50324,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 ! NOTE: Blogroll specific rules
 !
+||ryusoku.com/assets/html/headline.html
 aaieba.livedoor.biz##.left-container
 blog.tinect.jp##p + .g.g-46 > .g-single
 jiwasoku.com###pcpc-rss

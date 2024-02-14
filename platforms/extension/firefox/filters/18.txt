@@ -1,9 +1,9 @@
-! Checksum: lut5c3+2wTKVDbfTqWBMXQ
-! Diff-Path: ../patches/18/18-s-1707917690-3600.patch
+! Checksum: JndbnEVTwt+OSjTYPbY9VA
+! Diff-Path: ../patches/18/18-s-1707921289-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.32.80
-! TimeUpdated: 2024-02-14T13:32:37+00:00
+! Version: 2.0.32.81
+! TimeUpdated: 2024-02-14T14:32:30+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2360,6 +2360,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+my.remarkable.com#%#//scriptlet('trusted-click-element', 'button[data-cy="cookie-banner-necessary"]')
 kids.lego.com##div[class^="cookie-overlay_"]
 znews.vn##.cookie-consent
 platform.stability.ai###app > .bg-brand-gray-1.fixed.bottom-5.left-5
@@ -13704,6 +13705,7 @@ wackojaco.com,gpblog.com#%#//scriptlet('trusted-click-element', 'button[mode="se
 wackojaco.com,gpblog.com#%#//scriptlet('trusted-click-element', '.qc-cmp2-header-links > button[mode="link"]:first-child')
 wackojaco.com,gpblog.com#%#//scriptlet('trusted-click-element', 'div[class^="qc-cmp2-buttons-"] > button[mode="primary"]')
 !
+ogladajanime.pl#%#//scriptlet('set-cookie-reload', 'accepted', 'true')
 boxy-svg.com#%#//scriptlet('set-local-storage-item', 'bx-portalwebapp:showPrivacyNotification', 'false')
 baseendpoint.geo.de,cmp.heise.de#%#//scriptlet('trusted-click-element', 'button[title*="ustimmen"]')
 mediamarkt.pl#%#//scriptlet('trusted-click-element', '#mms-consent-portal-container button[data-test="pwa-consent-layer-deny-all"]')
@@ -14889,7 +14891,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
-! fix the map
+! https://github.com/uBlockOrigin/uAssets/issues/22471
+my.remarkable.com#@#div[data-cy="cookie-banner"]
+! e-ladestation.aldi-sued.de - fix the map
 e-ladestation.aldi-sued.de#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172516
 camping-bad-griesbach.de#@##redim-cookiehint-modal
