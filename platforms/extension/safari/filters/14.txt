@@ -1,9 +1,9 @@
-! Checksum: T7dLkKYjJ9tazuY6HfAjLg
-! Diff-Path: ../patches/14/14-s-1707914472-3600.patch
+! Checksum: BTgiJ4VQ4vltYMbIjQJUCg
+! Diff-Path: ../patches/14/14-s-1707917697-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.86.46
-! TimeUpdated: 2024-02-14T12:38:44+00:00
+! Version: 2.1.86.47
+! TimeUpdated: 2024-02-14T13:32:31+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2324,7 +2324,7 @@ freundin.de,utopia.de,mein-schoener-garten.de,eveningnews24.co.uk,rollingstone.d
 ! START: iubenda CMP
 ! No action required ##
 maxfelicitasvideo.com,vanillaos.org,kisene.com,avpasion.com,aziendabanca.it,marionlatex.com,spectator.co.uk,indabox.it,edizionibd.it,105.net,abwab.eu,danielesubrizi.it,gelocal.it,today.it,radiomontecarlo.net,r101.it,villacavalierisrl.it,villabetaniaroma.it,villamafalda.com,ambulatoriovillachiara.it,ambulatoriovillachiara.it,tvtech.it,crai-supermercati.it,centromedicoarcidiacono.it,usi.it,laboratoriodiegoangeli.it,analisiroma.it,edizioni.multiplayer.it,pianteweb.com,cioccolatonippon.it,hwupgrade.it,iphoneitalia.com,mediaset.it,arduino.cc,virginradio.it##body #iubenda-cs-banner
-||cdn.iubenda.com^$domain=bobsbusiness.co.uk|crazygames.com|caseecase-roma.it|smartworld.it|scuoladelia.it|studenti.it|pierucciagricoltura.it|newatlas.com|quark.com|tuttotech.net|tuttoandroid.net|frame.work|aranzulla.it|sorrisi.com|automateexcel.com|ticketsms.it
+||cdn.iubenda.com^$domain=moveo.telepass.com|bobsbusiness.co.uk|crazygames.com|caseecase-roma.it|smartworld.it|scuoladelia.it|studenti.it|pierucciagricoltura.it|newatlas.com|quark.com|tuttotech.net|tuttoandroid.net|frame.work|aranzulla.it|sorrisi.com|automateexcel.com|ticketsms.it
 ! No action required (scrolling is blocked) #$#
 fabricators.ltd,spaziogames.it,urbanpost.it,synlab.it,dissapore.com,leganerd.com,siracusanews.it,ansa.it,ilmessaggero.it,dilei.it,quifinanza.it,siviaggia.it,buonissimo.it,paginebianche.it,paginegialle.it,pgcasa.it,supereva.it,tuttocitta.it,virgilio.it#$#body #iubenda-cs-banner { display: none !important; }
 fabricators.ltd,spaziogames.it,urbanpost.it,synlab.it,dissapore.com,leganerd.com,siracusanews.it,ansa.it,ilmessaggero.it,dilei.it,quifinanza.it,siviaggia.it,buonissimo.it,paginebianche.it,paginegialle.it,pgcasa.it,supereva.it,tuttocitta.it,virgilio.it#$#html { overflow: auto !important; }
@@ -2361,6 +2361,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+kids.lego.com##div[class^="cookie-overlay_"]
 znews.vn##.cookie-consent
 platform.stability.ai###app > .bg-brand-gray-1.fixed.bottom-5.left-5
 photocity.it###gestionecookie1_pnl_cookie_message_py
@@ -14401,7 +14402,7 @@ nexus.gg#%#(function() { try { if ('undefined' != typeof localStorage) { localSt
 faberkabel.de#%#//scriptlet('trusted-click-element', '#modalCookie .button-red')
 samsonite.at#%#//scriptlet('set-cookie-reload', 'cookiesAccepted', '1')
 aerotelegraph.com#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "#insiderflyin--blur")
-purepeople.com,jeuxvideo.com#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("euconsent-v2")){var a=new MutationObserver(function(){var b=document.querySelector('.didomi-dismiss-button[onclick="Didomi.setUserAgreeToAll();"]');b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});
+jeuxvideo.com,purepeople.com#%#//scriptlet('trusted-click-element', '.didomi-dismiss-button[onclick="Didomi.setUserAgreeToAll();"]')
 kzvb.de#%#//scriptlet('trusted-click-element', '#save-cookies')
 ph-karlsruhe.de#%#//scriptlet('set-cookie', 'phkCookiePolicyState', '0')
 polyas.de#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("POLYAS-essentials", "true"); localStorage.setItem("POLYAS-adscomfort", "null"); localStorage.setItem("POLYAS-statistics", "null");} } catch (ex) {} })();
@@ -14411,16 +14412,12 @@ vorteilshop.com,hagengrote.de#%#//scriptlet('abort-current-inline-script', '$', 
 hildegardis-krankenhaus.de,st-agatha-krankenhaus.de#%#//scriptlet("abort-current-inline-script", "document.createElement", "consent.cookiebot.com")
 swoodoo.com,momondo.*#%#//scriptlet('set-cookie', 'DATA_CONSENT', 'false')
 schuh-okay.de,abc-schuhe.com#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("cookiePreference", "required") } } catch (ex) {} })();
-web.magentatv.de#%#AG_onLoad(function() {var g = new MutationObserver(function() {if (document.querySelector('#OVERLAY-CONFIRM')) { var b = document.querySelector('#OVERLAY-CONFIRM');b&&b.click();}});g.observe(document, {childList: !0,subtree: !0});setTimeout(function() {g.disconnect()}, 1E4)});
 eneba.com#%#(function(){try{"undefined"==typeof localStorage||localStorage.getItem("termsUnderstood")||localStorage.setItem("termsUnderstood",Date.now())}catch(a){}})();
 eneba.com#%#//scriptlet('set-cookie', 'cconsent', '1')
-irs.thsrc.com.tw#%#AG_onLoad(function() {var g = new MutationObserver(function() {if (document.querySelector('#dialogCookieInfo input[id="btn-confirm"]')) { var b = document.querySelector('#dialogCookieInfo input[id="btn-confirm"]');b&&b.click();}});g.observe(document, {childList: !0,subtree: !0});setTimeout(function() {g.disconnect()}, 1E4)});
 digital-fuer-deutschland.de,deutsche-islam-konferenz.de,auslandsschulwesen.de,bamf.de,bvl.bund.de#%#document.cookie="cookiebanner=closed; path=/;";
 onlineshop-baumarkt.de#%#//scriptlet('set-cookie', 'mnd-cookie-accepted-wwwonlineshopbaumarktde1', '1')
-lego.com#%#AG_onLoad(function(){if(!document.cookie.includes("LEGO_COOKIE_SETTINGS")){var g=new MutationObserver(function(){if(document.cookie.includes("AGE_GATE")){setTimeout(function(){var b=document.querySelector('button[data-test="cookie-necessary-button"]');b&&b.click()},200)}});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1e5)}});
 lego.com#%#//scriptlet('set-cookie', 'kids.cookieacceptance', 'true')
-baby-sweets.de#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("bs-cookie-consent-token")){setTimeout(function(){var a=document.querySelector(".cookie-card .base-button");a&&a.click()},1e3)}});
-franceculture.fr#%#AG_onLoad(function(){if(!document.cookie.includes("euconsent-v2")){var a=new MutationObserver(function(){var b=document.querySelector("#didomi-notice-disagree-button");b&&(b.click(),a.disconnect())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},5E3)}});
+baby-sweets.de#%#//scriptlet('trusted-click-element', '.cookie-card .base-button')
 unive.it#%#//scriptlet('set-cookie', 'unive.it', '1')
 vivawest.de#%#//scriptlet('set-cookie', 'cookie_consent', '1')
 swoodoo.com,autohero.com,designmynight.com#%#//scriptlet('set-cookie', 'consent', '0')
@@ -30744,6 +30741,7 @@ newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,theloca
 !
 ! SECTION: Subscriptions - Regular rules
 !
+noi.md##.comment-block ~ div.row > div.text-center.p-0
 tsfjazz.com##.home-newsletter-push
 ptsecurity.com##.sidebar-item:has(> form[class] > div.subscribe-form__title)
 nypost.com##.inline-module--newsletter
@@ -33168,7 +33166,7 @@ sotoguide.ru###button_tg
 trans.info##.newsletter-subscribe-popup
 publico.pt##.outter-box_paywall
 publico.pt##.site-message--subscription-promo.paywall_camp_verao
-newsmaker.md###custom_html-10
+moveo.telepass.com,newsmaker.md###custom_html-10
 politico.eu##.entry__content > div.wp-block-cover
 paperpaper.ru#?#.stk-post > div.stk-grid:has(> div[class] > a:contains(/^подписаться$/))
 eurotopics.net##div[class^="newsletter-banner"]
@@ -49963,6 +49961,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 ! NOTE: Blogroll specific rules
 !
+aaieba.livedoor.biz##.left-container
 blog.tinect.jp##p + .g.g-46 > .g-single
 jiwasoku.com###pcpc-rss
 jiwasoku.com###test-blo
