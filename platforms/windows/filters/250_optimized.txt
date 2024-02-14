@@ -1,9 +1,9 @@
-! Checksum: 4p3kAl2100lW1xMAyjk6bw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1707797391-14400.patch
+! Checksum: LmKvcKAb7lk6K7E+x2vObg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1707883804-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.13.18
-! TimeUpdated: 2024-02-11T12:08:08+00:00
+! Version: 2.0.13.19
+! TimeUpdated: 2024-02-14T04:07:35+00:00
 ! Expires: 12 hours (update frequency)
 ###smart-banner
 ###smartbanner
@@ -751,6 +751,7 @@ download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
 ||iyfbodn.com^$all
 ||iyfodr.com^$all
 ||iyfubh.com^$all
+||searchvity.com^$all
 5.45.123.44$network
 69.16.230.226$network
 208.91.196.46$network
@@ -1092,7 +1093,6 @@ www.microsoft.com##a[data-pfns][data-pfns^="3"][data-pfns*="games."]
 ##a[onclick*="plus.google.com/share?"]
 ##a[onclick^="window.open('http"][onclick*="facebook.com/sharer"]
 ##a[onclick^=ShowShareDialog]
-##a[onmouseover^="return addthis_open"]
 ##a[title="Share on Reddit" i]
 ##a[title="Share on Telegram" i]
 ##a[title="Share on WhatsApp" i]
@@ -1487,6 +1487,7 @@ map.baidu.com##.poi-ads
 map.baidu.com###leadDownloadCard
 mi.com##.item-image.item
 qyer.com##.advertising
+smzdm.com##.download
 smzdm.com##.qrcode
 smzdm.com##.share_app_icon
 smzdm.com###index-elevator > li:nth-of-type(2)
@@ -1567,7 +1568,6 @@ spleis.no#%#//scriptlet('ubo-set.js', '__INITIAL_STATE__.features.should-show-sn
 /snowplow$script,domain=casamundo.se|hemnet.se
 /snowplow-tracker$script
 alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
-||cdnjs.cloudflare.com/ajax/libs/Snowstorm/$script,important
 /snow.js|$script
 /wp-content/plugins/christmasify^
 daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
@@ -1586,10 +1586,8 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 @@||bannedbook.org^
 @@||dongtaiwang.com^
 @@||epochtimes.com^
-@@||falundafa.org^
 @@||ntdtv.com.tw^
 @@||ntdtv.com^
-@@||renminbao.com^
 @@||secretchina.com^
 @@||shenyun.com^
 @@||soundofhope.org^
@@ -1847,10 +1845,6 @@ $removeparam=traffic_id
 $removeparam=dcmp
 $removeparam=clickOrigin
 $removeparam=clickSR
-$removeparam=istCompanyId
-$removeparam=istFeedId
-$removeparam=istItemId
-$removeparam=istBid
 $removeparam=cmpid
 $removeparam=CMP
 $document,removeparam=/^OCID=/i,domain=~youtube.com|~reiseauskunft.bahn.de|~msn.com
@@ -1866,6 +1860,9 @@ $removeparam=wmlspartner
 $removeparam=sscid
 $removeparam=rmmds
 $removeparam=act_poa
+$removeparam=pjxsource
+$removeparam=pjxaffiliate_id
+$removeparam=pjxclick_id
 $removeparam=msclkid
 $removeparam=litb_from
 $document,removeparam=/^adword_/,domain=~justdial.com
@@ -2051,6 +2048,7 @@ $removeparam=actCampaignType
 $removeparam=actSource
 $removeparam=oly_anon_id
 $removeparam=oly_enc_id,document,domain=~greenbuildingadvisor.com
+$document,removeparam=/^wickedsource=/i
 $removeparam=rb_clickid,document
 $removeparam=s_cid
 $removeparam=ml_subscriber
@@ -2262,6 +2260,7 @@ $removeparam=bsw_custom_parameter
 $removeparam=partnerUserId
 $removeparam=taboola_hm
 $removeparam=ssp_user_id
+$removeparam=adroll_fpc
 $removeparam=ad-session-id
 $removeparam=ga_cid
 $removeparam=hubspotUtk
@@ -2524,7 +2523,6 @@ $removeparam=u_code
 $removeparam=is_copy_url
 $removeparam=is_from_webapp
 $removeparam=sender_device
-$removeparam=sender_web_id
 ||tiktok.com^$removeparam=_d
 ||tiktok.com^$removeparam=tt_from
 ||tiktok.com^$removeparam=preview_pb
@@ -3160,7 +3158,6 @@ $removeparam=embeds_referring_euri
 ||sciencedirect.com/*?via%3D$removeparam=/^via%3D/,document
 ||deepl.com^$document,removeparam=cta
 ||kahoot.it^$removeparam=refer_method
-||substack.com^$removeparam=sd,document
 ||open.substack.com^$removeparam=r,document
 ||businessinsider.com^$document,removeparam=r
 ||businessinsider.com^$removeparam=op,document
@@ -3266,6 +3263,7 @@ $removeparam=cgkit_search_word
 ||shop.samsung.com^$document,removeparam=hmz_inf
 ||shop.samsung.com^$document,removeparam=hmz_lid
 *ref=labs.watchtowr.com*$document,removeparam=/^ref=labs.watchtowr.com$/
+*ref=upstract.com*$document,removeparam=/^ref=upstract.com$/
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
