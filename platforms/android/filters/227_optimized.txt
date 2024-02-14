@@ -1,9 +1,9 @@
-! Checksum: qM478x7r08ufIsKsJIUg7A
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1707840588-14400.patch
+! Checksum: rz5Gc/XG7fZcr8DAG60mBw
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1707898207-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.17.44
-! TimeUpdated: 2024-02-13T16:07:35+00:00
+! Version: 2.0.17.45
+! TimeUpdated: 2024-02-14T08:07:54+00:00
 ! Expires: 4 days (update frequency)
 ||d1cykymlllue3h.cloudfront.net^
 ||ad1.missyusa.com^
@@ -1425,6 +1425,10 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+search.naver.com##div[id^="power_link_together_"]
+namu.wiki,~board.namu.wiki##article div:not([class*=" "]) ~ div div + div[class*=" "]:has(iframe[id^="google_ads_"])
+namu.wiki,~board.namu.wiki##article div:not([class*=" "]) ~ div div + div[class*=" "]:has(iframe[src*="arca.live/external/callad"])
+namu.wiki,~board.namu.wiki##article div:not([class*=" "]) ~ div div + div[class*=" "]:has(> div[id][class])
 namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[class*=" "] > *:has(iframe[id^="google_ads_iframe_"])
 namu.wiki,~board.namu.wiki##article > div[class]:not([class*=" "]) ~ *:not([class]) > *[class]:has(iframe[id^="google_ads_iframe_"])
 maple.gg##.container-content div[class*=" "]:has(> div[id^="div-gpt-ad-"]):not(:has(*[class]:not([id])))
