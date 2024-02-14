@@ -1542,8 +1542,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.9.26",
-			"timeUpdated": "2024-02-14T01:46:17+0000",
+			"version": "2.1.9.27",
+			"timeUpdated": "2024-02-14T03:32:42+0000",
 			"languages": [
 				"zh"
 			],
