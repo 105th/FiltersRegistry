@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.20.72",
-			"timeUpdated": "2024-02-15T11:33:04+0000",
+			"version": "2.3.20.73",
+			"timeUpdated": "2024-02-15T12:38:28+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.66.25",
-			"timeUpdated": "2024-02-14T18:33:11+0000",
+			"version": "2.0.66.26",
+			"timeUpdated": "2024-02-15T12:38:31+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.0.97.0",
-			"timeUpdated": "2024-02-15T11:33:09+0000",
+			"version": "2.0.97.1",
+			"timeUpdated": "2024-02-15T12:38:32+0000",
 			"languages": []
 		},
 		{
@@ -158,8 +158,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/9.txt",
-			"version": "2.0.23.26",
-			"timeUpdated": "2024-02-13T14:33:12+0000",
+			"version": "2.0.23.27",
+			"timeUpdated": "2024-02-15T12:38:40+0000",
 			"languages": [
 				"es",
 				"pt"
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.49.6",
-			"timeUpdated": "2024-02-15T08:32:23+0000",
+			"version": "2.0.49.7",
+			"timeUpdated": "2024-02-15T12:38:00+0000",
 			"languages": []
 		},
 		{
@@ -213,8 +213,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.49.72",
-			"timeUpdated": "2024-02-14T20:32:30+0000",
+			"version": "2.0.49.73",
+			"timeUpdated": "2024-02-15T12:38:02+0000",
 			"languages": [
 				"tr"
 			]
@@ -228,8 +228,8 @@
 			"displayNumber": 1,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/14.txt",
-			"version": "2.1.86.61",
-			"timeUpdated": "2024-02-15T11:32:38+0000",
+			"version": "2.1.86.62",
+			"timeUpdated": "2024-02-15T12:38:07+0000",
 			"languages": []
 		},
 		{
@@ -241,8 +241,8 @@
 			"displayNumber": 3,
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/15.txt",
-			"version": "2.0.61.20",
-			"timeUpdated": "2024-02-15T06:32:48+0000",
+			"version": "2.0.61.21",
+			"timeUpdated": "2024-02-15T12:38:08+0000",
 			"languages": []
 		},
 		{
@@ -254,8 +254,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/16.txt",
-			"version": "2.0.43.37",
-			"timeUpdated": "2024-02-14T22:32:28+0000",
+			"version": "2.0.43.38",
+			"timeUpdated": "2024-02-15T12:38:10+0000",
 			"languages": [
 				"fr"
 			]
@@ -287,8 +287,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.32.92",
-			"timeUpdated": "2024-02-15T11:32:44+0000",
+			"version": "2.0.32.93",
+			"timeUpdated": "2024-02-15T12:38:11+0000",
 			"languages": []
 		},
 		{
@@ -300,8 +300,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.30.94",
-			"timeUpdated": "2024-02-15T10:32:54+0000",
+			"version": "2.0.30.95",
+			"timeUpdated": "2024-02-15T12:38:12+0000",
 			"languages": []
 		},
 		{
@@ -313,8 +313,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
-			"version": "2.0.12.30",
-			"timeUpdated": "2024-02-14T09:32:56+0000",
+			"version": "2.0.12.31",
+			"timeUpdated": "2024-02-15T12:38:16+0000",
 			"languages": []
 		},
 		{
@@ -326,8 +326,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.19.49",
-			"timeUpdated": "2024-02-15T11:32:48+0000",
+			"version": "2.0.19.50",
+			"timeUpdated": "2024-02-15T12:38:16+0000",
 			"languages": []
 		},
 		{
