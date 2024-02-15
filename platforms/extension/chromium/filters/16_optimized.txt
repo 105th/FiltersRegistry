@@ -1,5 +1,5 @@
-! Checksum: X80EI4Mwnf3fAnCV6vfLGw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1707950074-3600.patch
+! Checksum: DB8RgwnO/rlfCgXghwkcKA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1707964517-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.43.37
@@ -1048,7 +1048,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 -728_90.
 -730x90.
 -768x90-
--782x90.
 -800x100-
 -900-x-250-
 -900-x-250.
@@ -1082,6 +1081,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 -banner-125x125.
 -banner-300.
 -banner-300x250.
+-banner-300x600px_
 -banner-728.
 -banner-rotation.
 -banner/?*&subAffId=
@@ -1185,6 +1185,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 .xyz/js/ads/
 /.s/src/crit_image.js
 /00300x00250-
+/00728x0090-
 /1000x90_
 /120-x-600-
 /120-x-600.
@@ -1363,7 +1364,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /ads/lz_
 /ads/new/*
 /ads/pages/*
-/ads/popup-
 /ads/slider_
 /ads/sticky_
 /ads/top_
@@ -1517,7 +1517,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /banner?sid=
 /banner_160x60.
 /banner_300x250
-/banner_46860.
 /banner_728x90
 /banner_adv.
 /banner_body.
@@ -1610,6 +1609,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /doubleclick_dmm/*
 /eaCtrl.js
 /eas/ads/*
+/ebayads/*
 /embed/partner/*
 /EpubDelivery/*
 /espace-pub-
@@ -1769,7 +1769,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /pu-placer.js
 /pu/*?psid=
 /pu_ad.js
-/pub-300x250.
 /pub-bandeau-
 /pub-internet-300x150.
 /pub-responsive.
@@ -1996,10 +1995,12 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?aff=*&size=
 ?affiliateCode=
 ?callback=ADS.
+?campid=*&bandeau_id=
 ?clicktag=
 ?Page=*&Width=300&
 ?promo=*&url=
 ?pub_id=
+?r=*&zoneid=
 ?size=728x90|$subdocument
 ?tag_id=*&sw_url=
 ?target=_blank&mouseover=
@@ -2203,7 +2204,6 @@ _werbebanner_
 /landing.*banner$popup
 /landing/*&ad=$popup
 /landing/*&publisher=$popup,third-party
-/look.*/offer?prod=$popup
 /out.php?link=t$popup
 /partners/*=affiliate&$popup
 /pop_redirect.php$popup
@@ -2233,6 +2233,7 @@ _werbebanner_
 ://ad.*?_site=$popup
 ://ads2.$popup
 ://advidi.$popup
+://dtrk.*?aid=$popup
 ://go.*&zoneid=$popup
 ://landing.*/?ats=$popup,third-party
 ://pops.*.$popup
@@ -2264,7 +2265,6 @@ _lx.ads/$popup
 ||online^*?zoneid=$popup
 ||xyz^*&zoneid=$popup
 ||1-1ads.com^$third-party
-||25481.online^$third-party
 ||360tracking.fr^$third-party
 ||3xtraffic.com^$third-party
 ||4ddons.com^$third-party
@@ -2352,7 +2352,6 @@ _lx.ads/$popup
 ||carasexe.name^$third-party
 ||carpediem.fr^$third-party
 ||cashpage.net^$third-party
-||catraff.com^$third-party
 ||cdn3.net^$third-party
 ||cdntraffic.com^$third-party
 ||cfgr2.com^$third-party
@@ -2392,6 +2391,7 @@ _lx.ads/$popup
 ||drim.space^$third-party
 ||e-mailit.com^$third-party
 ||easy-rencontre.com^$third-party
+||easyrencontre.com^$third-party
 ||easysexe.com^$third-party
 ||ebuzzing.fr^$third-party
 ||eclkmpsa.com^$third-party
@@ -2574,7 +2574,6 @@ _lx.ads/$popup
 ||widespace.com^$third-party
 ||wm.artcomix.com^$third-party
 ||xcamz.xyz^$third-party
-||xclick24.com^$third-party
 ||xiepl.com^$third-party
 ||xn--ae-tja.ch^$third-party
 ||xpicw.top^$third-party
@@ -2631,6 +2630,7 @@ _lx.ads/$popup
 ||356f48a5f4.com^
 ||35b889100e.com^
 ||36061d2abc.com^
+||3692022.com^
 ||3b873b3c94.com^
 ||3e8d78fb90.com^
 ||43f138e903.com^
@@ -3768,6 +3768,7 @@ _lx.ads/$popup
 ||turbo-cdn.net^
 ||tureukwore.xyz^
 ||tuyervolvas.guru^
+||tweakostensibleinstaller.com^
 ||twindlephalera.com^
 ||uaadi.com^
 ||ugovddwesgdpd.com^
@@ -4101,7 +4102,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||files.wordpress.com^*/sponsor-
 ||flux.effiliation.com^
 ||forokeys.com/foro/banners/
-||free.fr/images/bannieres/
 ||fuckandcdn.com^*/ads/
 ||g2a.com/r/user-$subdocument,third-party
 ||gamingadult.com^$image,third-party
@@ -4217,7 +4217,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||trc.emv2.com^
 ||tripadvisor.*/partner/$third-party
 ||truesteamachievements.com^$script,subdocument,third-party
-||tudou.com^$subdocument
 ||tuto.com/banner/$third-party
 ||twenga.fr/publisher/$third-party
 ||ucoz.net/cgi/uutils.fcg?
@@ -4352,6 +4351,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||dzs55b7slwyx.cloudfront.net^
 ||1movietv.com/favis/$popup
 ||ad.adriver.ru^$popup
+||ad.apps.fm^$popup
 ||amazon.fr^$popup,domain=fdesouche.com|manga-versus.fr
 ||awin1.com^$popup,domain=configspc.com|manga-versus.fr
 ||baidu.com/link?url=$popup,third-party
@@ -4367,7 +4367,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||livejasmin.com^*&utm_$popup
 ||multinews.me/produit/$popup
 ||pornhub.com^*?utm_$popup
-||promo.streaming-illimite.ma^$popup
 ||promovacances.com/?cid=$popup
 ||redtube.com^*?utm_source=paid$popup
 ||trustzonevpn.info/r.php?$popup
@@ -4451,7 +4450,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||elheddaf.com/data/pub/
 ||emu-france.com/wp-content/themes/emufrance/*casino
 ||enstream.plus/playerhd.php?
-||epinalinfos.fr/wp-content/banners/
 ||esoxiste.com/wp-content/images/*.gif
 ||esoxiste.com/wp-content/images/bandeau-
 ||esoxiste.com/wp-content/images/banni%C3%A8re-
@@ -4541,7 +4539,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||niooz.fr^$subdocument
 ||notube.net/*sw.js
 ||openspa.webhop.info/img/sponsors/
-||openstreetmap.org/assets/banners/
 ||opensubtitles.org^$subdocument,~third-party
 ||opensubtitles.org^*/banners/
 ||otakufr.co/wp-content/uploads/*-300x115-
@@ -4705,6 +4702,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###ad_rect_sub
 ###ad_smartphbig
 ###ad_video
+###adcontainer_1
 ###adcontainer_recherche
 ###addspace
 ###adikteev_placement
@@ -4726,7 +4724,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###adsBox
 ###ads_1
 ###ads_2
-###ads_300x250_wap
 ###ads_ban
 ###ads_search
 ###adsence
@@ -4868,6 +4865,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###head_pub
 ###header-promo
 ###header-pub
+###headerPub
 ###header_pub
 ###headerpub
 ###hideAd
@@ -5009,6 +5007,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###pubfooter-sm
 ###pubfooter-xs
 ###pubgauche
+###pubgoogle
 ###pubhaut
 ###pubheader
 ###publicidade
@@ -5680,7 +5679,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##a[href*=".digital2cloud.com/?"]
 ##a[href*=".djfiln.com/"]
 ##a[href*=".egresspath.com"]
-##a[href*=".free-datings.com/"]
 ##a[href*=".hop.clickbank.net"] > img
 ##a[href*=".hrtye.com/"]
 ##a[href*=".igraal.com/#parrain="] > img
@@ -5713,6 +5711,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##a[href*="/ads/click?"]
 ##a[href*="/ads?key="]
 ##a[href*="/aff_c?offer_id="] > img
+##a[href*="/afiliados.html?id="]
 ##a[href*="/afu.php?"]
 ##a[href*="/go.php?a_aid="]
 ##a[href*="/publieditorial/"]
@@ -5759,7 +5758,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##a[href^="http://ads2.contentabc.com/"]
 ##a[href^="http://adserver.sejt.com/"]
 ##a[href^="http://affiliate.flipkart.com/"]
-##a[href^="http://affiliate.r18.com/"] > img
 ##a[href^="http://ali.pub/"] > img
 ##a[href^="http://ali.ski/"] > img
 ##a[href^="http://clicks.toteme.com/"]
@@ -5993,9 +5991,7 @@ musculaction.com###pub3
 remede.org###pubSky
 remede.org###pubSky2
 maxifoot-live.com###pub_bc
-entrecoquins.com###pub_boutique
 emu-france.com###pub_casino_header
-entrecoquins.com###pub_club
 ouest-france.fr###pub_wallpaper
 sante-dz.com###revenue-wrapper
 lesoir.be###rossel-imu-bottom
@@ -6200,7 +6196,6 @@ test-achats.be##.skin
 infoconcert.com##.slider.container
 boursorama.com##.smart
 tsa-algerie.com##.sponsored-by
-msn.com##.sponsorship
 lesmobiles.com##.stickyBestOffer
 ecranlarge.com##.top-banner
 batiactu.com##.type-NAT_HOME
