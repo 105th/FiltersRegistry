@@ -1,16 +1,16 @@
 ![Adblock Plus 2.0]
-! Checksum: E0h47JVdvKd0Y5VXcMpPvw
-! Diff-Path: ../patches/102/102-s-1707870187-14400.patch
+! Checksum: q99eLdfjRuR2G1ymAfrPqQ
+! Diff-Path: ../patches/102/102-s-1707956604-14400.patch
 ! Title: ABPindo
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.6.54
-! TimeUpdated: 2024-02-14T00:20:07+00:00
+! Version: 2.0.6.55
+! TimeUpdated: 2024-02-15T00:20:16+00:00
 ! Expires: 4 days (update frequency)
 !
-! OriginalVersion: 202402131611
+! OriginalVersion: 202402142157
 ! Title: ABPindo
 ! Description: Filter tambahan untuk EasyList memblokir iklan berbahasa Indonesia dan Malaysia.
-! Last modified: 13 Feb 2024 16:11 UTC
+! Last modified: 14 Feb 2024 21:57 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/ABPindo/indonesianadblockrules/
 ! Licence: https://raw.githubusercontent.com/ABPindo/indonesianadblockrules/master/LICENSE
@@ -19,7 +19,7 @@
 ! GitHub issues: https://github.com/ABPindo/indonesianadblockrules/issues
 ! GitHub pull requests: https://github.com/ABPindo/indonesianadblockrules/pulls
 !
-!---------------------- advert blocking filters ----------------------!
+! ---------------------- advert blocking filters ----------------------!
 ! *** abpindo:src/advert/adservers.txt ***
 ! Confirmed ad servers
 ||188affiliates.com^$third-party
@@ -654,6 +654,9 @@ carisinyal.com##+js(remove-node-text, script, showModal)
 @@||suarankri.me^$generichide
 @@||tokusatsuindo.com^$generichide
 ! ABP-specific allowlist for network filters
+! #if ext_abp
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=193.142.147.230|ainzscans.net|igobokep.cam|siimanga.cyou
+! #endif
 ! Allowlist for element hiding filters
 gurusd.web.id,kurikulum.co.id#@##adsense
 woof.tube#@#.adsbox
@@ -669,7 +672,7 @@ tokosatu.com#@#.popupflyin-clicks-area
 digikala.com,sporcle.com#@#.remodal
 oomph.co.id#@#.shareit
 totolink.id#@#.social-circle
-!----------------------- element hiding rules ------------------------!
+! ----------------------- element hiding rules ------------------------!
 ! *** abpindo:src/advert/general_hide.txt ***
 ###Box-Banner-ads
 ###Iklan-Melayang
@@ -917,6 +920,10 @@ totolink.id#@#.social-circle
 ##img[alt="iklan" i]
 ! *** abpindo:src/advert/specific_hide.txt ***
 ! Entity filters
+anoboy.*###popup_bawah
+anoboy.*###popup_box
+anoboy.*##[href="https://tinyurl.com/anoboyvip"]
+anoboy.*##[href^="https://bit.ly/"]
 bioskopkeren.*###headads
 bioskopkeren.*###ptbanner
 bioskopkeren.*###top-banner
@@ -1125,6 +1132,7 @@ sindonews.com###me-div-gpt-ad-parallax
 dapurpacu.com###mid-banner
 dunia21.cx,ganool.watch,lk21tv.com,movies21.co,terbit21.cafe###middle-banner
 fastdrama.co,hkfree.co###modal
+ketik.co.id###modalPopup
 indotelko.com###more_stories
 fastdrama.co###myModal
 hdtvku.com###mybannerpopup
@@ -1143,8 +1151,6 @@ idxx1.top###player-side-left
 idxx1.top,indoxx1.com###player-side-right
 kuramanime.xyz###playerOverplay
 indoxx1.pw###popup
-anoboy.digital,anoboy.media,anoboy.watch###popup_bawah
-anoboy.digital,anoboy.media,anoboy.watch###popup_box
 cafecinema.cc,dramamu.net,lk21.io###popup_content
 bgibola.com,bgibola.lat###popupklan
 bgibola.com###popupklanfooter
@@ -1442,7 +1448,6 @@ tirto.id##.d-sidebar
 teknologi.inilah.com##.d.wp-120x600
 pricebook.co.id##.description-ads
 okezone.com##.detads
-anoboy.digital##.download
 thejakartapost.com##.expandable-bottom-sticky
 layarkaca21.tv,lk21.tv##.fancybox-skin
 dapurpacu.com##.fixed-ads-atas
@@ -1455,6 +1460,7 @@ bisnis.com,www.tek.id##.flying_carpet_show
 www.tek.id##.flying_carpet_show_fix
 bisnis.com,www.tek.id##.flying_carpet_show_inner
 teknoup.com##.footer_banner
+suarasurabaya.net##.footer_sticky
 manganime.id##.ftadss
 komikcast.net,komikindo.id,komikindo.pro,komikindo.tv##.gambar_pemanis
 viva.co.id##.giant-banner
@@ -1634,10 +1640,6 @@ nontoncinema.org##[href$="/referral/nontoncinema"]
 sukamovie.club##[href$="/sukamovieclub"]
 pakbos21.org##[href="//dumbpop.com/help.xml"]
 idfl.me##[href="http://bit.ly/adsvbola"]
-anoboy.digital,anoboy.media##[href="http://click2go.me/aksesklik4a"]
-anoboy.media##[href="https://144.126.241.203/invite/c6c83up"]
-anoboy.media##[href="https://bit.ly/anoboySG88"]
-anoboy.media##[href="https://kliksaya.info/mcdanoboy"]
 kazefuri.web.id##[href="javascript:showHideGB()"]
 layardrama21.rest##[href^="//avgirls.asia/"]
 nekonime.com##[href^="//wizliebeg.com/"]
@@ -1670,8 +1672,7 @@ kazefuri.web.id##a[href^="http://cocobet."]
 nontoncinema.org##a[href^="http://referral."]
 filmterbaru.id##a[href^="http://www.apktiga.com/p/start-download-reayus.html"]
 hotabis.com##a[href^="http://www.pembesar-vimax-herbal.com/"]
-anoboy.digital##a[href^="https://144.126.241.203/"]
-animebatch.web.id,animeindo.co,animeku.tv,anoboy.digital,anoboy.org,bioskop168.pro,bioskopbos.com,bioskopkeren.fun,cinemaindo.pro,dramaind.com,dunia21.top,eka.web.id,filmbioskop21.com,idxxi.co,indoxxi.top,kazefuri.web.id,layarindo21.pro,lk-21.me,lk21c.fun,lk21indo.co,lk21n.com,lk21xxi.co,mangaku.in,mangashiro.net,neonime.net,nontonbioskop21.org,nontondramas.com,nontongratis88.net,nontonsub.com,ns21.club,otakufile.com,subindo.id##a[href^="https://bit.ly/"]
+animebatch.web.id,animeindo.co,animeku.tv,bioskop168.pro,bioskopbos.com,bioskopkeren.fun,cinemaindo.pro,dramaind.com,dunia21.top,eka.web.id,filmbioskop21.com,idxxi.co,indoxxi.top,kazefuri.web.id,layarindo21.pro,lk-21.me,lk21c.fun,lk21indo.co,lk21n.com,lk21xxi.co,mangaku.in,mangashiro.net,neonime.net,nontonbioskop21.org,nontondramas.com,nontongratis88.net,nontonsub.com,ns21.club,otakufile.com,subindo.id##a[href^="https://bit.ly/"]
 194.163.183.129##a[href^="https://cek.to/"]
 123drakor.com,46.166.167.16,awsubs.id,bioskop45.com,bioskopkeren.club,bioskopkeren.online,bioskopkeren.xyz,bioskopxx1.com,drakorindo.tv,idbioskop.com,indoxxi.top,moviebaru21.com,nonton33.net,ns21.me,ns21.top,serunonton.com##a[href^="https://goo.gl/"]
 lk21c.fun##a[href^="https://rebrand.ly/"]
@@ -1778,7 +1779,9 @@ cloud.majalahhewan.com,info.gambar.pro,info.mapsaddress.com,info.vebma.com#?#p:-
 tokopedia.com#?#section[data-unify="Card"]:-abp-has([href^="https://ta.tokopedia.com"]:first-child)
 cloud.majalahhewan.com,info.vebma.com#?#span:-abp-contains(Advertisement)
 ! Adtival
-!--------------------------- adult ------------------------------!
+! #if ext_ublock
+! #endif
+! --------------------------- adult ------------------------------!
 ! *** abpindo:src/adult/adult_general_block.txt ***
 -abgqq.$image
 -agen-judi-$image
@@ -5194,6 +5197,7 @@ totojitu.gif|$image
 ||zynga365.$image,third-party
 ||zyngaqq.$image,third-party
 ! *** abpindo:src/adult/adult_general_hide.txt ***
+###ad_bawah
 ###adsic364x90-bokep
 ###judi
 ###judi2
@@ -5348,7 +5352,9 @@ leon.bet#@#[href$="/slots"]
 ##[href^="http://www.eraplay88vip.asia/"]
 ##[href^="https://akslot.io/"]
 ##[href^="https://menang123-eksis.com"]
+##[href^="https://playbook-88.site/"]
 ##[href^="https://ramaibola.com/"]
+##[href^="https://slotguru88gandul.com/register"]
 ##[href^="https://vpnnawala.site"]
 ##[href^="https://winslots84.com/"]
 ##[title^=" agen bola terpercaya" i]
@@ -7948,6 +7954,7 @@ leon.bet#@#[href$="/slots"]
 ##img[alt="Royalslot" i]
 ##img[alt="WIN4D" i]
 ##img[alt="isport365" i]
+##img[alt="slotguru" i]
 ##img[alt="winslotsf" i]
 ##img[alt^=" agen bola terpercaya" i]
 ##img[alt^=" judi bola online" i]
@@ -8883,7 +8890,7 @@ bintangmawar.net###bmpop_adpB
 164.68.105.199,bokepid.wiki###fixedban
 unyil.net###float-atas
 sangetods.net###floatads
-149.102.130.200,154.12.229.9,161.97.116.33,173.212.245.75,194.163.158.12,45.67.231.215,75.119.147.12,81.0.220.98,89.117.61.35###floating_banner_top1
+149.102.130.200,154.12.229.9,161.97.116.33,173.212.245.75,185.182.187.38,194.163.158.12,45.67.231.215,75.119.147.12,81.0.220.98,89.117.61.35###floating_banner_top1
 kamarbokep.xyz,kebokepanku.xyz,ruangbokep.bond,ruangbokep.sbs,ruangbokep.top,sibokep.bond,streamingbokeponline.site,streamingbokeponline.top###floating_bot
 157.245.195.114###floating_bot.btm_ban
 sodasusu.com###forum_ads_8
