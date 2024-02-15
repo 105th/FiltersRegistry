@@ -1,9 +1,9 @@
-! Checksum: qLvuuHagndpS9PR+Xn0YkA
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1707956614-14400.patch
+! Checksum: gu3u1oLETMeodmR6EP5yQw
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1707970218-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.42.92
-! TimeUpdated: 2024-02-15T00:20:28+00:00
+! Version: 2.1.42.93
+! TimeUpdated: 2024-02-15T04:07:15+00:00
 ! Expires: 12 hours (update frequency)
 &ad_count=
 &ad_unit_
@@ -45,7 +45,6 @@
 -728_90.
 -730x90.
 -768x90-
--782x90.
 -800x100-
 -900-x-250-
 -900-x-250.
@@ -79,6 +78,7 @@
 -banner-125x125.
 -banner-300.
 -banner-300x250.
+-banner-300x600px_
 -banner-728.
 -banner-rotation.
 -banner/?*&subAffId=
@@ -182,6 +182,7 @@
 .xyz/js/ads/
 /.s/src/crit_image.js
 /00300x00250-
+/00728x0090-
 /1000x90_
 /120-x-600-
 /120-x-600.
@@ -360,7 +361,6 @@
 /ads/lz_
 /ads/new/*
 /ads/pages/*
-/ads/popup-
 /ads/slider_
 /ads/sticky_
 /ads/top_
@@ -514,7 +514,6 @@
 /banner?sid=
 /banner_160x60.
 /banner_300x250
-/banner_46860.
 /banner_728x90
 /banner_adv.
 /banner_body.
@@ -607,6 +606,7 @@
 /doubleclick_dmm/*
 /eaCtrl.js
 /eas/ads/*
+/ebayads/*
 /embed/partner/*
 /EpubDelivery/*
 /espace-pub-
@@ -766,7 +766,6 @@
 /pu-placer.js
 /pu/*?psid=
 /pu_ad.js
-/pub-300x250.
 /pub-bandeau-
 /pub-internet-300x150.
 /pub-responsive.
@@ -993,10 +992,12 @@
 ?aff=*&size=
 ?affiliateCode=
 ?callback=ADS.
+?campid=*&bandeau_id=
 ?clicktag=
 ?Page=*&Width=300&
 ?promo=*&url=
 ?pub_id=
+?r=*&zoneid=
 ?size=728x90|$subdocument
 ?tag_id=*&sw_url=
 ?target=_blank&mouseover=
@@ -1200,7 +1201,6 @@ _werbebanner_
 /landing.*banner$popup
 /landing/*&ad=$popup
 /landing/*&publisher=$popup,third-party
-/look.*/offer?prod=$popup
 /out.php?link=t$popup
 /partners/*=affiliate&$popup
 /pop_redirect.php$popup
@@ -1230,6 +1230,7 @@ _werbebanner_
 ://ad.*?_site=$popup
 ://ads2.$popup
 ://advidi.$popup
+://dtrk.*?aid=$popup
 ://go.*&zoneid=$popup
 ://landing.*/?ats=$popup,third-party
 ://pops.*.$popup
@@ -1261,7 +1262,6 @@ _lx.ads/$popup
 ||online^*?zoneid=$popup
 ||xyz^*&zoneid=$popup
 ||1-1ads.com^$third-party
-||25481.online^$third-party
 ||360tracking.fr^$third-party
 ||3xtraffic.com^$third-party
 ||4ddons.com^$third-party
@@ -1349,7 +1349,6 @@ _lx.ads/$popup
 ||carasexe.name^$third-party
 ||carpediem.fr^$third-party
 ||cashpage.net^$third-party
-||catraff.com^$third-party
 ||cdn3.net^$third-party
 ||cdntraffic.com^$third-party
 ||cfgr2.com^$third-party
@@ -1389,6 +1388,7 @@ _lx.ads/$popup
 ||drim.space^$third-party
 ||e-mailit.com^$third-party
 ||easy-rencontre.com^$third-party
+||easyrencontre.com^$third-party
 ||easysexe.com^$third-party
 ||ebuzzing.fr^$third-party
 ||eclkmpsa.com^$third-party
@@ -1571,7 +1571,6 @@ _lx.ads/$popup
 ||widespace.com^$third-party
 ||wm.artcomix.com^$third-party
 ||xcamz.xyz^$third-party
-||xclick24.com^$third-party
 ||xiepl.com^$third-party
 ||xn--ae-tja.ch^$third-party
 ||xpicw.top^$third-party
@@ -1628,6 +1627,7 @@ _lx.ads/$popup
 ||356f48a5f4.com^
 ||35b889100e.com^
 ||36061d2abc.com^
+||3692022.com^
 ||3b873b3c94.com^
 ||3e8d78fb90.com^
 ||43f138e903.com^
@@ -2765,6 +2765,7 @@ _lx.ads/$popup
 ||turbo-cdn.net^
 ||tureukwore.xyz^
 ||tuyervolvas.guru^
+||tweakostensibleinstaller.com^
 ||twindlephalera.com^
 ||uaadi.com^
 ||ugovddwesgdpd.com^
@@ -3098,7 +3099,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||files.wordpress.com^*/sponsor-
 ||flux.effiliation.com^
 ||forokeys.com/foro/banners/
-||free.fr/images/bannieres/
 ||fuckandcdn.com^*/ads/
 ||g2a.com/r/user-$subdocument,third-party
 ||gamingadult.com^$image,third-party
@@ -3214,7 +3214,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||trc.emv2.com^
 ||tripadvisor.*/partner/$third-party
 ||truesteamachievements.com^$script,subdocument,third-party
-||tudou.com^$subdocument
 ||tuto.com/banner/$third-party
 ||twenga.fr/publisher/$third-party
 ||ucoz.net/cgi/uutils.fcg?
@@ -3349,6 +3348,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||dzs55b7slwyx.cloudfront.net^
 ||1movietv.com/favis/$popup
 ||ad.adriver.ru^$popup
+||ad.apps.fm^$popup
 ||amazon.fr^$popup,domain=fdesouche.com|manga-versus.fr
 ||awin1.com^$popup,domain=configspc.com|manga-versus.fr
 ||baidu.com/link?url=$popup,third-party
@@ -3364,7 +3364,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||livejasmin.com^*&utm_$popup
 ||multinews.me/produit/$popup
 ||pornhub.com^*?utm_$popup
-||promo.streaming-illimite.ma^$popup
 ||promovacances.com/?cid=$popup
 ||redtube.com^*?utm_source=paid$popup
 ||trustzonevpn.info/r.php?$popup
@@ -3448,7 +3447,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||elheddaf.com/data/pub/
 ||emu-france.com/wp-content/themes/emufrance/*casino
 ||enstream.plus/playerhd.php?
-||epinalinfos.fr/wp-content/banners/
 ||esoxiste.com/wp-content/images/*.gif
 ||esoxiste.com/wp-content/images/bandeau-
 ||esoxiste.com/wp-content/images/banni%C3%A8re-
@@ -3538,7 +3536,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||niooz.fr^$subdocument
 ||notube.net/*sw.js
 ||openspa.webhop.info/img/sponsors/
-||openstreetmap.org/assets/banners/
 ||opensubtitles.org^$subdocument,~third-party
 ||opensubtitles.org^*/banners/
 ||otakufr.co/wp-content/uploads/*-300x115-
@@ -3964,7 +3961,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.adsensetop
 ##.adsforsearch_roba
 ##.adsholder
-##.adsquare
 ##.adtxtlegend
 ##.aduh__cntn
 ##.aduh__label
@@ -4111,6 +4107,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.pub-btns
 ##.pub-carre
 ##.pub-container
+##.pub-container-bas
 ##.pub-container-haut
 ##.pub-container-middle
 ##.pub-detail-1
@@ -4418,6 +4415,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##div[id^="adzerk-"]
 ##div[id^="block-views-ads-sidebar-"]
 ##div[id^="crt-"][data-criteo-id]
+##div[id^="div-gpt-promo-"]
 ##div[id^="exoNativeWidget"]
 ##div[id^="gabarit_pub"]
 ##div[id^="gpt-ad-banner"]
@@ -4523,9 +4521,7 @@ musculaction.com###pub3
 remede.org###pubSky
 remede.org###pubSky2
 maxifoot-live.com###pub_bc
-entrecoquins.com###pub_boutique
 emu-france.com###pub_casino_header
-entrecoquins.com###pub_club
 ouest-france.fr###pub_wallpaper
 sante-dz.com###revenue-wrapper
 lesoir.be###rossel-imu-bottom
@@ -4730,7 +4726,6 @@ test-achats.be##.skin
 infoconcert.com##.slider.container
 boursorama.com##.smart
 tsa-algerie.com##.sponsored-by
-msn.com##.sponsorship
 lesmobiles.com##.stickyBestOffer
 ecranlarge.com##.top-banner
 batiactu.com##.type-NAT_HOME
@@ -4895,7 +4890,6 @@ jeuxvideo.com#?#.card:-abp-has(.badge:-abp-contains(Sponsorisé))
 latribune.fr#?#.article-wrapper:-abp-has(.subheading:-abp-contains(Partenaire))
 latribune.fr#?#.homepage-section.supplement-section:-abp-has(span:-abp-contains(Partenaires))
 leboncoin.fr#?#.undefined:-abp-contains(Sponsorisé)
-leboncoin.fr#?#a[data-test-id]:-abp-has([class]:-abp-contains(/À la une|Sponsorisé|Urgent/))
 lemonde.fr#?#.area--ops:-abp-has(p:-abp-contains(Contenus partenaires))
 lessentiel.lu#?#aside:-abp-has(div + span:-abp-contains(Publicité))
 libhunt.com#?#.boxed:-abp-has(.tag:-abp-contains(Sponsored))
