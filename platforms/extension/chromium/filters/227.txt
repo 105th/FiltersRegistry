@@ -1,14 +1,14 @@
-! Checksum: TKv4/P3037AkxtMOwgyKvg
-! Diff-Path: ../patches/227/227-s-1707927014-14400.patch
+! Checksum: 51UIrV/gyN3ZKYeS+G7Lmw
+! Diff-Path: ../patches/227/227-s-1707999070-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.17.47
-! TimeUpdated: 2024-02-14T16:07:31+00:00
+! Version: 2.0.17.48
+! TimeUpdated: 2024-02-15T12:08:44+00:00
 ! Expires: 4 days (update frequency)
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2024.0214.4
+! OriginalVersion: 2024.0215.1
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -1487,6 +1487,8 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 !
+3277532532.reviewtoday.net##*[class*="-coupas-"]
+3277532532.reviewtoday.net##div[class^="Post_post__"] > .text-center:has(ins.adsbygoogle)
 search.naver.com##div[id^="power_link_together_"]
 namu.wiki,~board.namu.wiki##article div:not([class*=" "]) ~ div div + div[class*=" "]:has(iframe[id^="google_ads_"])
 namu.wiki,~board.namu.wiki##article div:not([class*=" "]) ~ div div + div[class*=" "]:has(iframe[src*="arca.live/external/callad"])
@@ -2534,6 +2536,7 @@ osen.mt.co.kr##div#close_mask
 !
 ! DOMAIN-REFRESHER: START
 !
+bbongtv.*##img[src^="/img/"][src*=".gif"]
 ygy48.com,ygy49.com,ygy50.com,ygy51.com,ygy52.com,ygy53.com,ygy54.com,ygy55.com,ygy56.com,ygy57.com,ygy58.com,ygy59.com,ygy60.com,ygy61.com##.popup_wrap
 moeni.net##img[src^="/img/sp/"]
 av19.gg###page ~ div[style^="min-height:"]#content.row
@@ -2682,6 +2685,8 @@ x86.co.kr#@#.download_ad
 auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 ||shopsquare.naver.com^$badfilter
 ! TODO: remove the following filter if https://github.com/AdguardTeam/CoreLibs/issues/1831 is resolved.
+3277532532.reviewtoday.net#$#div[class^="Post_continue_coupang__"] { display: none !important; }
+3277532532.reviewtoday.net#$#.post-contents > div[style] { height: 100% !important; }
 maple.gg#$#.container-content > section[class*=" "] ~ main[class*=" "] { margin-top: 50px !important; }
 courtauctionmap.com#$##map_area { height: 100% !important; }
 coolfun.zal.kr#$#.inner-body.hided .inside-content-background-gradient { display: none !important; }

@@ -1,9 +1,9 @@
-! Checksum: 98Q2xmpt1lagLxgVTuLy5g
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1707927048-14400.patch
+! Checksum: CxVTkJVaGHvyeoIK8V1Vlg
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1707999088-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.17.47
-! TimeUpdated: 2024-02-14T16:07:31+00:00
+! Version: 2.0.17.48
+! TimeUpdated: 2024-02-15T12:08:44+00:00
 ! Expires: 4 days (update frequency)
 ||d1cykymlllue3h.cloudfront.net^
 ||ad1.missyusa.com^
@@ -1444,6 +1444,8 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+3277532532.reviewtoday.net##*[class*="-coupas-"]
+3277532532.reviewtoday.net##div[class^="Post_post__"] > .text-center:has(ins.adsbygoogle)
 search.naver.com##div[id^="power_link_together_"]
 namu.wiki,~board.namu.wiki##article div:not([class*=" "]) ~ div div + div[class*=" "]:has(iframe[id^="google_ads_"])
 namu.wiki,~board.namu.wiki##article div:not([class*=" "]) ~ div div + div[class*=" "]:has(iframe[src*="arca.live/external/callad"])
@@ -2488,6 +2490,7 @@ dcinside.com##ul.cmt_list > li[id^="comment_li_"].ub-content.dory
 orbi.kr##div.panel.class-event-wrap
 orbi.kr##a[href^="https://ads.orbi.kr/"]
 osen.mt.co.kr##div#close_mask
+bbongtv.*##img[src^="/img/"][src*=".gif"]
 ygy48.com,ygy49.com,ygy50.com,ygy51.com,ygy52.com,ygy53.com,ygy54.com,ygy55.com,ygy56.com,ygy57.com,ygy58.com,ygy59.com,ygy60.com,ygy61.com##.popup_wrap
 moeni.net##img[src^="/img/sp/"]
 av19.gg###page ~ div[style^="min-height:"]#content.row
@@ -2645,6 +2648,8 @@ auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 ||news.nate.com/etc/AD
 ||news.nate.com/etc/Ad
 ||news.nate.com/etc/ad
+3277532532.reviewtoday.net#$#div[class^="Post_continue_coupang__"] { display: none !important; }
+3277532532.reviewtoday.net#$#.post-contents > div[style] { height: 100% !important; }
 maple.gg#$#.container-content > section[class*=" "] ~ main[class*=" "] { margin-top: 50px !important; }
 courtauctionmap.com#$##map_area { height: 100% !important; }
 coolfun.zal.kr#$#.inner-body.hided .inside-content-background-gradient { display: none !important; }
