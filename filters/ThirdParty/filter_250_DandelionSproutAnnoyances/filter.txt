@@ -6,7 +6,7 @@
 ! What this broad compilation blocks in AdGuard and uBO (from top to bottom): Mobile app download banners, highly untrustworthy TLDs (and their Google results), domains that major tech groups lost the ownership of, PC "optimiser" sponsorships, malicious or tracker-inserting adblockers, auto-generated Android root "guides" that will brick your phone, "Share page" buttons, "Download [browser/Acrobat]" buttons, unnecessary login prompts, blurring of article previews, fake notification counters, empty padding (esp. on macOS), gradients when moving your mouse on video embeds, extra dumb comment sections, prayer time clocks on newssites, webstore "coupon" aggregator listings that are not coupons, large subscription promo banners, general annoyances on Dailymotion/Wikia, falling snow on pages, URL parameters believed to be unnecessary or trackers, custom embedded cursors, softens and modernises Japanese fonts on Windows, spacewasting pagelist entries, the "Anonymous animal" bubbles on Google Docs, external IMDB rating embeds, opt-out autoplay on video sites
 ! What this broad compilation does not block: Newsletters, cookie banners, social media links to company pages
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
-! OriginalVersion: 09February2024v1
+! OriginalVersion: 15February2024v1
 ! Title: 📱 Staying On The Phone Browser
 ! Expires: 10 days
 ! Description: Created as a proof of concept, and for the benefit of people who really like their phone's web browsers and who are less keen on using various apps.
@@ -57,7 +57,7 @@
 ##.app-cta-strip-banner:not(html,body,:empty)
 ##.app-cta:not(html,body,:empty)
 ##.app-download-wrap:not(html,body,:empty)
-##.app-download:not(html, body, section)
+##.app-download:not(html,body,section,.content)
 ##.app-nag-body:not(html,body,:empty)
 ##.app-nag:not(html,body,:empty)
 ##.app-store-banner:not(html,body,:empty)
@@ -28415,7 +28415,7 @@ watchseries.*##.imdb
 !#if !env_safari
 !#if !adguard_app_ios
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 14February2024v5
+! OriginalVersion: 15February2024v2
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -29808,7 +29808,7 @@ $removeparam=dlsi
 ! 🐹 ——— Specific remove rules 🐹 ——— !
 !! ——— Can never be made generic ———
 ! (e.g. due to sparebank1.no, RARbg.to, Disney+ newsletter unsubscriptions)
-$document,removeparam=cid,domain=8days.sg|abcnews.go.com|adguard.com|adshares.net|ae.com|anntaylor.com|apple.com|bitdefender.*|blair.com|channelnewsasia.com|childrensplace.com|dcard.tw|elmundo.es|emirates.com|factoryoutletstore.com|fifa.com|flipkart.com|gamestop.com|giphy.com|glasses.com|haband.com|intuit.com|jared.com|jcpenney.com|kay.com|kohls.com|lenovo.com|loft.com|marca.com|microsoft.com|nbcnews.com|nike.com|nyandcompany.com|overstock.com|persol.com|proshop.*|radissonhotelsamericas.com|ray-ban.com|rei.com|rightmove.co.uk|samsung.com|stadium.*|staples.com|telenor.no|todayonline.com|tokopedia.com|tommy.com|toms.com|totalbeauty.com|tractorsupply.com|underarmour.com|vineyardvines.com|voxi.co.uk|wine.com|wsj.com|xg4ken.com|zales.com
+$document,removeparam=cid,domain=8days.sg|abcnews.go.com|adguard.com|adshares.net|ae.com|anntaylor.com|apple.com|bitdefender.*|blair.com|channelnewsasia.com|childrensplace.com|controld.com|dcard.tw|elmundo.es|emirates.com|factoryoutletstore.com|fifa.com|flipkart.com|gamestop.com|giphy.com|glasses.com|haband.com|intuit.com|jared.com|jcpenney.com|kay.com|kohls.com|lenovo.com|loft.com|marca.com|microsoft.com|nbcnews.com|nike.com|nyandcompany.com|overstock.com|persol.com|proshop.*|radissonhotelsamericas.com|ray-ban.com|rei.com|rightmove.co.uk|samsung.com|stadium.*|staples.com|telenor.no|todayonline.com|tokopedia.com|tommy.com|toms.com|totalbeauty.com|tractorsupply.com|underarmour.com|vineyardvines.com|voxi.co.uk|wine.com|wsj.com|xg4ken.com|zales.com
 ! https://deal.no/apple-thunderbolt-to-gigabit-ethernet/cat-p/c/p4935744&ref=prisjakt (15/11/2020)
 ! https://www.amazon.com/s?k=disney+fairies&ref=nb_sb_noss_2 (27/11/2020)
 ! (https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-488495)
@@ -32201,6 +32201,8 @@ ref=upstract.com$document,removeparam=/^ref=upstract.com$/
 ! https://www.abcnyheter.no/?nr=1
 !+NOT_OPTIMIZED
 ||abcnyheter.no^$removeparam=nr
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-8480036
+||windscribe.com^$document,removeparam=pcpid
 !#if !env_mobile
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner.files.wordpress.com/2019/12/ring-fit-adventure-smoothies-1.png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
