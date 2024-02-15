@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.20.75",
-			"timeUpdated": "2024-02-15T14:32:44+0000",
+			"version": "2.3.20.76",
+			"timeUpdated": "2024-02-15T15:32:44+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -434,8 +434,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.40.18",
-			"timeUpdated": "2024-02-14T20:33:22+0000",
+			"version": "2.0.40.19",
+			"timeUpdated": "2024-02-15T15:32:51+0000",
 			"languages": [
 				"de"
 			],
@@ -457,8 +457,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.30",
-			"timeUpdated": "2024-02-14T16:34:45+0000",
+			"version": "2.0.48.31",
+			"timeUpdated": "2024-02-15T15:32:53+0000",
 			"languages": [
 				"ja"
 			],
@@ -665,8 +665,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.7.97",
-			"timeUpdated": "2024-02-14T05:32:38+0000",
+			"version": "2.0.7.98",
+			"timeUpdated": "2024-02-15T15:32:29+0000",
 			"languages": [],
 			"tags": [
 				2
