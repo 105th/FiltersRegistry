@@ -1,5 +1,5 @@
-! Checksum: XE9lKzmfk7aw8KyesPHUsA
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1708007684-3600.patch
+! Checksum: mdW4i5yPw8N8f3KHs7G96g
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1708050868-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.7.29
@@ -29,7 +29,6 @@
 .jp/rss.htm$subdocument,~third-party
 .net/rss.htm$subdocument,~third-party
 .com/rss/$subdocument,~third-party
-||rssfetcher.blogsys.jp^
 ||blog.livedoor.jp/plugin/ldblog_rss_plugin.js
 ||tanganrss.com^$third-party
 ||fukugan.com^$third-party
@@ -192,6 +191,8 @@ efire-matome.com###text-13
 efire-matome.com###text-8
 efire-matome.com###text-17
 chomanga.org#?#.widget:has(div[class^="rss-box"])
+genshin-matomech.umadacchi.net###block-8
+genshin-matomech.umadacchi.net##.rss-flex
 geektushin.com##.widget-above-related-entries
 geektushin.com##.widget-below-related-entries
 geektushin.com##.widget_rss
@@ -248,6 +249,7 @@ xn--o9j0bk9l4k169rk1cxv4aci7a739c.com,pioncoo.net###widget-under-sns-buttons
 pioncoo.net##.widget-in-article
 pioncoo.net##.widget-over-article
 pioncoo.net##.widget-over-breadcrumbs
+pioncoo.net##.widget-over-sns-buttons
 pioncoo.net##div[id^="widget-index-"]
 olch.biz##.rssImg
 mudasure.com##.blogroll-top
@@ -288,6 +290,7 @@ doujinerosenka.blog.jp##.main-column-inner > span[style="font-size: 79.75%;"]
 ysokuhou.blog.jp##.name2
 netouyonews.net##div[id^="head_rss"]
 netouyonews.net##div[id^="mid_rss"]
+netouyonews.net##.kijirss
 kandatasokuho.com##div[style*="border:1px solid #000000;white-space:nowrap;text-overflow:ellipsis;background-color:"]
 akb48matomemory.com##.article_body_more div.t_h.t_i[style="box-sizing: border-box; margin: 0px; padding: 0px;"]
 akb48matomemory.com##.article_body_more > span[style^="font-size"]
@@ -501,6 +504,7 @@ crx7601.com###main > div.column-inner > div.column-inner-2 > div[align="center"]
 jumpmatome2ch.biz##div[class^="sprss"]
 jumpmatome2ch.biz#?#.rss-hd:contains(/(?:おすすめ|人気)記事$/)
 pokemonbbs.com###rss_pc
+ikarishintou.com###rss_area
 /js/koteilink*.js$domain=ikarishintou.com|heartlife-matome.com|ikuji-news.com|uwasakijo.net|sutekinakijo.com
 uwakich.com##.links-navy1
 ||kasegeru.blog.jp/iframe_kijisita.html
@@ -728,7 +732,6 @@ beasoku.com##.l-rss-header
 ||easyliao.com^$third-party
 ||embed.doorbell.io^$third-party
 ||api.autopilothq.com^$third-party
-||api.cloudleadia.com^$third-party
 ||api.pozvonim.com^$third-party
 ||api.venyoo.ru^$third-party
 ||api.visitor.chat^$third-party
@@ -813,7 +816,6 @@ doc.ua##.header__call-btn
 ||engage.wixapps.net/chat-widget-server/
 my.rakuten.co.jp###survey-area
 ||questant.jp^$domain=gnavi.co.jp
-r.gnavi.co.jp##.questionnaire-term
 ||cdn.mindbehind.com/sdk/mindbehind-webchat.js
 ||cdn.solvvy.com/deflect/customization^$domain=stridehealth.com
 amazon.*###customer-survey_feature_div
@@ -907,7 +909,6 @@ lmaga.jp##.feed
 crank-in.net#?#.mb-0:has(> div[id^="_popIn_"])
 medical.jiji.com###_popIn_recommend_2
 okwave.jp##._popIn_recommend-wrap
-sitakke.jp##.editor__section
 kahoku.news##div[style="min-height:492px;"]
 news.ntv.co.jp##.recommend-list-wrapper
 ctinews.com#?#.border-b > div#_popIn_recommend:upward(1)
@@ -1097,8 +1098,6 @@ insideclimatenews.org##.icn-donate-block
 insideclimatenews.org##.donate-cta
 agents.media##.single-post__donate-block
 charter97.org###donate-article
-novaramedia.com##.background-support-texture
-novaramedia.com##.support-section
 nonciclopedia.org,miraheze.org###siteNotice
 winstall.app##div[class^="donateCard_container__"]
 openstreetmap.org###banner
