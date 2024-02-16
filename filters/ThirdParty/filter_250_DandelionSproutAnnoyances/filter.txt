@@ -478,7 +478,7 @@ linkedin.com#$?#html { overflow: auto !important; }
 linkedin.com#$?#body { overflow: auto !important; }
 !#if ext_ublock
 ! Title: 💊 Dandelion Sprout's Anti-Malware List
-! OriginalVersion: 11February2024v1
+! OriginalVersion: 15February2024v2
 ! Expires: 2 days
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks heavily abused top-level domains (and even search engine results for them), blocks domains used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
@@ -2167,6 +2167,10 @@ tumblr.com#?#div[tabindex][style]:has(a[href*="://cutt.ly/"])
 ! Fraudulent art thefts for money on Google Image Search, e.g. 'cassandra tangled site:tumblr.com suit'
 .php?iid=*&cid=$document
 .asp?iid=*&cid=$document
+.med.br/?q=artstation-$document
+/artstation-*-[fanart]-$document,domain=~artstation.com
+=artstation-*-[fanart]-$document,domain=~artstation.com
+||yasaracarfenlisesi.com^$all
 ! ——— Horrendously bad copypasted Android rooting "guides" (often with fake titles) that bricked two of my phones ———
 ! Most of the guides haven't even accounted for how modern phones have replaced the recovery environment with an extra boot environment, leading to very critical Fastboot commands not working and/or bricking the phone.
 ||unofficialtwrp.com^$document,domain=~had-not-updated-their-root-guides-to-reflect-a-b-partition-phones-as-of-2021.*
@@ -25941,7 +25945,7 @@ www.microsoft.com##a[data-pfns][href*=pac-men]
 ! Placeholder line for alternate list versions
 !#endif
 ! Title: 🐐 Dandelion Sprout's Lightweight Anti-'Social share' List
-! OriginalVersion: 09February2024v1-Alpha
+! OriginalVersion: 15February2024v1-Alpha
 ! Expires: 3 days
 ! Description: This list aims to achieve pretty broad (if not overly broad) coverage of social sharing buttons, with perhaps 1/50th~1/100th as many entries as what the biggest anti-'social button' lists out there have.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -26213,8 +26217,7 @@ www.microsoft.com##a[data-pfns][href*=pac-men]
 */images/share_icons/
 */images/social-share/
 */share-newsletter/
-/(\.|//)share\.[a-z0-9-]{2,60}\./$image,domain=~discord.com|~reddit.com
-/(\.|//)sharing\.[a-z0-9-]{2,60}\./$image,domain=~discord.com|~reddit.com
+/(\.|//)shar(e|ing)\.[a-z0-9-]{2,60}\./$image,domain=~discord.com|~reddit.com
 /addthis_widget.js^
 /btn_share_fb.
 /btn_share_ln.
@@ -26416,6 +26419,7 @@ condoblues.com###milotree_box_wrap
 ##.js-share-wa:not(html,body,:empty)
 ##.js-share-tw:not(html,body,:empty)
 ##.react-share__ShareButton:not(body,html,:empty)
+##.mh-share-buttons:not(body,html,:empty)
 !!!~mewe.com,~www.nrk.no##[class*=share-button i]:not(body, html) (Can't be generic due to www.nrk.no, mewe.com, stylecaster.com)
 !!!~tidssonen.no,~mmoculture.com##div[class*=share-container] (Entry needs to be rewritten at some point)
 !!!~twitter.com,~feedly.com,~chaturbate.com##.follow (Too many exceptions needed)
@@ -28110,7 +28114,7 @@ todaytime.ir##.navbar-nav [href="/اوقات-شرعی-اذان"]
 ~albayan.ae##.prayertime:not(html, body)
 !#endif
 ! Title: 🧗 Anti-'Functionality removal' List
-! OriginalVersion: 11November2023v1-Beta
+! OriginalVersion: 15February2024v1-Beta
 ! Expires: 9 days
 ! Description: This list aims to combat some sites' attempts to make it impossible to copy text, right-click on pages, open the F12 menu, create fake loading times, or who otherwise obstruct people from features that they should be perfectly in their rights to have access to.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -28118,6 +28122,7 @@ todaytime.ir##.navbar-nav [href="/اوقات-شرعی-اذان"]
 ! Copypaste hijackers 📛
 bloombergquint.com#%#//scriptlet('ubo-acis.js', 'document.oncopy')
 bloombergquint.com#%#//scriptlet('ubo-aopr.js', 'getSelection')
+delfi.lt#%#//scriptlet('ubo-aeld.js', 'copy')
 !!!||deepl.com/js/docTrans-react.chunk. (https://github.com/AdguardTeam/AdguardFilters/issues/119645)
 !#if !adguard
 ||www.15min.lt/naujiena^$csp=script-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
@@ -28131,8 +28136,8 @@ bloombergquint.com#%#//scriptlet('ubo-aopr.js', 'getSelection')
 ! https://www.patheos.com/blogs/godzooks
 /wp-content/plugins/disable-right-click-and-content-copy-protection^
 ! From "Frellwit's Swedish Filter"
-/plugins/wp-content-copy-protection/*
-/plugins/wp-copy-protect-with-color-design/*
+/plugins/wp-content-copy-protection^
+/plugins/wp-copy-protect-with-color-design^
 ! Prevents sites from removing the ability to copy text 📛
 respublika.lt#$?#[class^=com_] { user-select: unset !important; -webkit-user-select: unset !important; -moz-user-select: unset !important }
 hirunews.lk,ada.lk#$?#body { user-select: unset !important; -webkit-user-select: unset !important; -moz-user-select: unset !important }
@@ -28415,7 +28420,7 @@ watchseries.*##.imdb
 !#if !env_safari
 !#if !adguard_app_ios
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 15February2024v2
+! OriginalVersion: 15February2024v3
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -29800,6 +29805,9 @@ $removeparam=__aait
 $removeparam=tgclid
 ! https://open.spotify.com/playlist/34iUh5RAUSkeJtJCvGZrlT?dlsi=ac1f2f8c4b984bd3 (03/12/2023)
 $removeparam=dlsi
+! https://www.stormberg.com/no?tmt_data=4226bb90-876e-4394-a4be-d1a698caa63f&tmt_ufp=8709e6c2e45c009a1fbb6d33299025d43342a35660b92f8ab775803240442d69
+$removeparam=tmt_data
+$removeparam=tmt_ufp
 ! ——— General blocking rules ——— !
 !! Scripts that solely exist to make URLs longer.
 ! https://github.com/DandelionSprout/adfilt/pull/320
