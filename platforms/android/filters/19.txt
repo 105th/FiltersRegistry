@@ -1,9 +1,9 @@
-! Checksum: CW8p/2j0UEMwc8aEnWzkzw
-! Diff-Path: ../patches/19/19-s-1708094083-3600.patch
+! Checksum: v1PQQNHdHh+pdi/Khh6Ciw
+! Diff-Path: ../patches/19/19-s-1708112060-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation.
-! Version: 2.0.31.3
-! TimeUpdated: 2024-02-16T14:32:38+00:00
+! Version: 2.0.31.4
+! TimeUpdated: 2024-02-16T19:32:20+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -418,7 +418,6 @@ reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.Sid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161003#issuecomment-1712255190
 ! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.promotedlink
 !#safari_cb_affinity
-!
 ||jubilantglimmer.com^$third-party
 ||burlywhistle.com^$third-party
 ||resplendentecho.com^$third-party
@@ -514,7 +513,6 @@ reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.Sid
 ||healflowers.com^$third-party
 ||blushingbread.com^$third-party
 ||muteknife.com^$third-party
-!+ NOT_OPTIMIZED
 ||serpentshampoo.com^$third-party
 ||guidecent.com^$third-party
 ||rebelhen.com^$third-party
@@ -1539,6 +1537,14 @@ reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.Sid
 ! NOTE: Admiral end ⬆️
 ! !SECTION: Anti-adblock - Admiral
 !
+! SECTION: Anti-adblock - Freestar Recovered
+hostednovel.com,getemoji.com,concertarchives.org#$#body > div.ad.banner-ad[data-freestar-ad][style] { display: block !important; }
+hostednovel.com,getemoji.com,concertarchives.org#%#//scriptlet('prevent-element-src-loading', 'script', 'a.pub.network')
+! If the script in a separate file
+||getemoji.com/scripts/apester.js
+! NOTE: Freestar Recovered end ⬆️
+! !SECTION: Anti-adblock - Freestar Recovered
+!
 ! SECTION: Anti-adblock - ezAardvark
 ! START: ezAardvark
 scitechdaily.com,thewindowsclub.com#%#//scriptlet("set-constant", "ezAardvarkDetected", "false")
@@ -1611,8 +1617,6 @@ rtl.hu##.adblock-confirm
 everyeye.it#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ||lightmaneye.github.io^$subdocument,domain=everyeye.it
 ||concertarchives.org/assets/freestar-ad-recovery.js
-concertarchives.org#$#body > div.ad.banner-ad[data-freestar-ad][style] { display: block !important; }
-concertarchives.org#%#//scriptlet('prevent-element-src-loading', 'script', 'a.pub.network')
 @@||cheatnetwork.eu/js/adsensegoogle.js
 cheatnetwork.eu#%#//scriptlet('set-constant', 'google_ad_modifications', 'emptyObj')
 bilibili.com##.__adblockhidden
@@ -3803,12 +3807,6 @@ web.de,gmx.net,gmx.at,gmx.ch,gmx.com#$##abd-container { display: block !importan
 ! SECTION: Anti-adblock - Grouped rules for specific sites
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170367
-! https://github.com/AdguardTeam/AdguardFilters/issues/168444
-! https://github.com/AdguardTeam/AdguardFilters/issues/165349
-getemoji.com#$#body [data-freestar-ad] { position: absolute !important; left: -9999px !important; }
-getemoji.com#$#body div.ad.banner-ad { display: block !important; }
-getemoji.com#%#//scriptlet('prevent-element-src-loading', 'script', '/a\.pub\.network|googletagservices\.com\/tag\/js\/gpt\.js/')
-||getemoji.com/scripts/apester.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165133
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165064
 ! in case you get `not secure connection` when opening URL that contains `/aoAdDetect.js`, add a domain to the rule below
