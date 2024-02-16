@@ -1,9 +1,9 @@
-! Checksum: TBo2dR+nUvaPSdeifLt3/g
-! Diff-Path: ../patches/14/14-s-1708090470-3600.patch
+! Checksum: 0cyawjNt2dIJoAjV5C7c5Q
+! Diff-Path: ../patches/14/14-s-1708094098-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.86.75
-! TimeUpdated: 2024-02-16T13:32:25+00:00
+! Version: 2.1.86.76
+! TimeUpdated: 2024-02-16T14:32:32+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2363,6 +2363,8 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+joom.ru##div[class^="disclaimer___"]
+dimensione.com#%#//scriptlet('trusted-click-element', 'button#CybotCookiebotDialogBodyButtonDecline')
 ldz.lv#$#.sliding-popup-bottom { display: none !important; }
 ldz.lv#$#body[style] { overflow: auto !important; }
 makemytrip.com##.cookiesModalOuterWrapper
@@ -3876,7 +3878,7 @@ apoya.canalred.tv#$?#body { overflow: auto !important; }
 apoya.canalred.tv#$#.aviso_cookies { display: none !important; }
 you-porn.com##.euCookieModal
 cloudtips.ru##div[data-storage-item^="t657cookiename_"]
-niigata-kankou.or.jp##.common-gdpr-box
+iyokannet.jp,niigata-kankou.or.jp##.common-gdpr-box
 shopee.com.br###main > div > div[style="z-index: 100000;"]
 lastpass.com###LPST_trustarc
 lajt-online.pl##.CookiesPolicy
@@ -14865,6 +14867,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/172850
+@@||consent.cookiebot.com/uc.js$domain=dimensione.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172887
 ldz.lv#@#.eu-cookie-compliance-banner:not(body):not(html)
 ! https://github.com/uBlockOrigin/uAssets/issues/22471
@@ -23943,7 +23947,7 @@ dfm.ru##._c-l
 techcrunch.com##.rightrail--promo
 ||usmall.ru/_nuxt/773f367.modern.js
 joom.com##div[class^="disclaimer_"][role="region"] + button[class^="root"]
-joom.com#%#AG_onLoad(function(){var g=new MutationObserver(function(){var a=document.querySelector('div[class^="modalOverlay_"] button[class^="close_"]');var b=document.querySelector('div[class^="modalOverlay_"] a[href*="/promotions/"]');if(a&&b){a.click()}});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)});
+joom.ru,joom.com#%#//scriptlet('trusted-click-element', 'div[class^="modalOverlay_"] > div[class^="design_"] button[class^="close_"]')
 perfecthealthclinic.com###sticky_bar
 perfecthealthclinic.com#%#//scriptlet("prevent-setTimeout", "", "15000")
 disntr.com#%#//scriptlet('set-cookie', 'divioverlay240311', 'true')
