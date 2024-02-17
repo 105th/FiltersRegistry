@@ -1,9 +1,9 @@
-! Checksum: R1Y5RqwRNJmvEEEWFVsaIQ
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1708042994-14400.patch
+! Checksum: n7+TvKEOCuWcqqs1lQGtHw
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1708200553-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links.
-! Version: 2.0.7.41
-! TimeUpdated: 2024-02-16T00:21:04+00:00
+! Version: 2.0.7.42
+! TimeUpdated: 2024-02-17T20:07:14+00:00
 ! Expires: 4 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -24,11 +24,11 @@ $removeparam=mindbox-message-key
 $removeparam=nx_source
 $removeparam=oprtrack
 $removeparam=ysclid
-&uclick=*&uclickhash=$removeparam
-/?r=dir&zoneid=$removeparam
-/?rb=*&zoneid=$removeparam
-/?uclick=*;uclickhash=$removeparam
-$removeparam=/^\??utm_/i,domain=~tradedoubler.com|~sendgb.com|~allegro.pl|~tix.axs.com|~transfernow.*|~carrefourpl.snrpage.com|~justdial.com|~pepper.pl
+&uclick=*&uclickhash=$document,removeparam
+/?r=dir&zoneid=$document,removeparam
+/?rb=*&zoneid=$document,removeparam
+/?uclick=*;uclickhash=$document,removeparam
+$document,removeparam=/^\??utm_/i,domain=~tradedoubler.com|~sendgb.com|~allegro.pl|~tix.axs.com|~transfernow.*|~carrefourpl.snrpage.com|~justdial.com|~pepper.pl
 $document,removeparam=/^itm_/,domain=~redir.tradedoubler.com
 $document,removeparam=/^stm_/,domain=~redir.tradedoubler.com
 $removeparam=logTag,document
@@ -251,7 +251,7 @@ $document,removeparam=/^mbsy[=_]/
 $removeparam=mkref
 $removeparam=refer_code
 $removeparam=AFID,domain=~chggtrx.com|~state.gov
-$~stylesheet,~script,removeparam=campaignid
+$document,removeparam=campaignid
 $removeparam=loc,document,domain=bestbuy.*|shopping.google.com
 $removeparam=acampID
 $removeparam=pj_creativeid
@@ -489,14 +489,14 @@ $removeparam=adj_creative
 $removeparam=_vsrefdom
 $removeparam=ceneo_spo
 $document,removeparam=/^from=ceneo$/
-$removeparam=/^ref=ceneo$/
+$document,removeparam=/^ref=ceneo$/
 $removeparam=__s,document
 $removeparam=_kx
-$removeparam=/^affsrc=/i
-$removeparam=/^aff_sub\d?=/
+$document,removeparam=/^affsrc=/i
+$document,removeparam=/^aff_sub\d?=/
 $removeparam=afftrack
 $removeparam=atid
-$removeparam=/^clickref\d?=/
+$document,removeparam=/^clickref\d?=/
 $removeparam=cuid
 $removeparam=data1,domain=~web3.cmvm.pt
 $removeparam=data2
@@ -510,11 +510,11 @@ $removeparam=sub2,domain=~go.dgdp.net
 $removeparam=sub3
 $removeparam=sub4
 $removeparam=sub5
-$removeparam=/^subid1=/i
-$removeparam=/^subid2=/i
-$removeparam=/^subid3=/i
-$removeparam=/^subid4=/i
-$removeparam=/^subid5=/i
+$document,removeparam=/^subid1=/i
+$document,removeparam=/^subid2=/i
+$document,removeparam=/^subid3=/i
+$document,removeparam=/^subid4=/i
+$document,removeparam=/^subid5=/i
 $removeparam=tid1
 $removeparam=tid2
 $removeparam=tid3
@@ -523,7 +523,7 @@ $removeparam=avad
 $removeparam=ckmc
 $removeparam=ckmsc
 $removeparam=__cn_tracker
-$removeparam=/^sfmc_/
+$document,removeparam=/^sfmc_/
 $removeparam=mktc
 $removeparam=cm_ven
 $removeparam=cm_cat
@@ -531,24 +531,24 @@ $removeparam=cm_pla
 $removeparam=cm_ite
 $removeparam=cm_lm
 $removeparam=cm_ainfo
-$removeparam=/^Offers\.com/
+$document,removeparam=/^Offers\.com/
 $removeparam=CSID
 $removeparam=kpartnerid
-$removeparam=/^source=connexity$/
+$document,removeparam=/^source=connexity$/
 $removeparam=cnxclid
-$removeparam=/^refsource=webgains$/
-$removeparam=/^source=webgains$/
-$removeparam=/^source=tradedoubler$/
-$removeparam=/^network=webgains$/i
-$removeparam=/^ref=kelkoo/
-$removeparam=/^kk=\w{6,}-\w{10,}-\w{5,}$/
-$removeparam=/^from=kelkoo/
+$document,removeparam=/^refsource=webgains$/
+$document,removeparam=/^source=webgains$/
+$document,removeparam=/^source=tradedoubler$/
+$document,removeparam=/^network=webgains$/i
+$document,removeparam=/^ref=kelkoo/
+$document,removeparam=/^kk=\w{6,}-\w{10,}-\w{5,}$/
+$document,removeparam=/^from=kelkoo/
 $removeparam=sClickID
-$removeparam=/^source=partnerads$/
+$document,removeparam=/^source=partnerads$/
 $removeparam=paid
 $removeparam=pacid
 $removeparam=pa-partnerid
-||prispresseren.dk^$removeparam=/^amp;/
+||prispresseren.dk^$document,removeparam=/^amp;/
 $removeparam=2p_affiliate_id
 $removeparam=2p_click_token
 $removeparam=mktgcampaignp
@@ -564,7 +564,7 @@ $removeparam=int_cmpid
 $removeparam=awid
 $removeparam=szredirectid
 $removeparam=porc
-$removeparam=/^src=aff$/
+$document,removeparam=/^src=aff$/
 $removeparam=af_ad
 $removeparam=af_ad_id
 $removeparam=af_ad_type
@@ -583,18 +583,18 @@ $removeparam=af_referrer_customer_id
 $removeparam=af_referrer_name
 $removeparam=af_referrer_uid
 $removeparam=af_siteid
-$removeparam=/^af_sub\d=/
+$document,removeparam=/^af_sub\d=/
 $removeparam=af_sub_siteid
 $removeparam=is_retargeting
 $document,removeparam=shortlink
-$removeparam=/^pid=.*_int$/
+$document,removeparam=/^pid=.*_int$/
 $removeparam=deep_link_sub1
 $removeparam=ClickThruEmail
 $removeparam=ClickThruCustomerNumber
 $removeparam=byp455
 $removeparam=detail_from
 $removeparam=sub_aff_id
-$removeparam=/^sub_id\d=/
+$document,removeparam=/^sub_id\d=/
 $removeparam=tg_ref
 $removeparam=dt_dapp
 $removeparam=dt_platform
@@ -640,15 +640,15 @@ $removeparam=ircid
 $removeparam=cf_affiliate_id
 $removeparam=ad_config_id
 $removeparam=dfw_tracker
-$removeparam=/^src=rss$/
-$removeparam=/^otm_/
+$document,removeparam=/^src=rss$/
+$document,removeparam=/^otm_/
 $removeparam=amp_device_id
 $removeparam=awinaffid
 $removeparam=cje
 $removeparam=removedParams
 $removeparam=iclid
 $removeparam=rndad
-$removeparam=/^tracker=affiliatefuture$/i
+$document,removeparam=/^tracker=affiliatefuture$/i
 $removeparam=affc
 $removeparam=a_fid
 $removeparam=afCampaignId
@@ -674,9 +674,9 @@ $removeparam=ef_id
 $removeparam=s_kwcid
 $removeparam=dm_i
 $removeparam=epik
-$removeparam=/^mtm_/
-$removeparam=/^matomo_/
-$removeparam=/^piwik_/
+$document,removeparam=/^mtm_/
+$document,removeparam=/^matomo_/
+$document,removeparam=/^piwik_/
 $removeparam=pk_campaign
 $removeparam=pk_medium
 $removeparam=pk_source
@@ -694,20 +694,20 @@ $removeparam=ads_matchtype
 $removeparam=ads_network
 $removeparam=ads_targetid
 $removeparam=elqTrack
-$removeparam=/^from=rss$/
-$removeparam=/^source=rss$/
-$removeparam=/^ref=rss$/
-$removeparam=/^via=rss$/
+$document,removeparam=/^from=rss$/
+$document,removeparam=/^source=rss$/
+$document,removeparam=/^ref=rss$/
+$document,removeparam=/^via=rss$/
 $removeparam=mindbox-click-id
 $document,removeparam=dtpid
 $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
 $removeparam=affiliateCode
 $removeparam=affcode
-$removeparam=/^ref=admitad$/
-$removeparam=/^source=admitad$/
-$removeparam=/^target=admitad$/
-$removeparam=/^referer=prisjakt/i
+$document,removeparam=/^ref=admitad$/
+$document,removeparam=/^source=admitad$/
+$document,removeparam=/^target=admitad$/
+$document,removeparam=/^referer=prisjakt/i
 $removeparam=ref_lp
 $removeparam=cx_testId
 $removeparam=cx_testVariant
@@ -731,9 +731,9 @@ $removeparam=gaa_sig
 $removeparam=amp_gsa
 $removeparam=vgo_ee
 $removeparam=rpcid
-$removeparam=/^ref=prisjakt/i
-$removeparam=/^ref=pricespy/i
-$removeparam=/^amp;utm_/
+$document,removeparam=/^ref=prisjakt/i
+$document,removeparam=/^ref=pricespy/i
+$document,removeparam=/^amp;utm_/
 $removeparam=sap-outbound-id
 $removeparam=analyticsCorrelationId
 $removeparam=Affiliate_id
@@ -747,7 +747,7 @@ $removeparam=oft_ck
 $removeparam=oft_ids
 $removeparam=oft_sk
 $removeparam=adobe_mc
-$removeparam=/^_sgm_/i
+$document,removeparam=/^_sgm_/i
 $removeparam=omnisendContactID
 $removeparam=affiliate,domain=~justice.gov
 $removeparam=trco_id
@@ -768,18 +768,18 @@ $removeparam=as_campaign
 $removeparam=as_camptype
 $removeparam=as_channel
 $removeparam=as_source
-$removeparam=/^source=igodigital$/
+$document,removeparam=/^source=igodigital$/
 $removeparam=qq-pf-to
 $removeparam=mibextid
 $removeparam=li_source
 $removeparam=li_medium
-$removeparam=/^adpopup=[a-eg-zA-EG-Z0-9]/
-$removeparam=/^adppopup=[a-eg-zA-EG-Z0-9]/
+$document,removeparam=/^adpopup=[a-eg-zA-EG-Z0-9]/
+$document,removeparam=/^adppopup=[a-eg-zA-EG-Z0-9]/
 $removeparam=relatedposts_hit
 $removeparam=relatedposts_origin
 $removeparam=relatedposts_position
-$removeparam=/^ref=itsfoss.com$/
-$removeparam=/^ref=news.itsfoss.com$/
+$document,removeparam=/^ref=itsfoss.com$/
+$document,removeparam=/^ref=news.itsfoss.com$/
 $removeparam=b_source
 $removeparam=b_medium
 $removeparam=b_campaign
@@ -1505,7 +1505,7 @@ $removeparam=report_recomm_player
 ^via=toolbar^$removeparam=via,domain=user.qzone.qq.com
 $removeparam=app,domain=tiktok.com|music.apple.*
 $removeparam=c,document,domain=announcements.bybit.com|appsflyer.com|farfetch.com|glami.cz|hepsiburada.com|norton.com|onelink.me|shopee.*|tiktok.com
-$removeparam=campaign,domain=1sol.io|bdsmx.tube|blue-tomato.com|bybit.com|coinpanel.com|discord.*|docs.google.com|docsend.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|mrgay.tube|outnorth.fi|peterhahn.*|runnode.com|scmp.com|shopee.*|sitepoint.com|sportler.com|t.me|twitter.com|x.com|youtube.com|reddit.app.link
+$document,removeparam=campaign,domain=1sol.io|bdsmx.tube|blue-tomato.com|bybit.com|coinpanel.com|discord.*|docs.google.com|docsend.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|mrgay.tube|outnorth.fi|peterhahn.*|reddit.app.link|runnode.com|scmp.com|shopee.*|sitepoint.com|sportler.com|t.me|twitter.com|ubereats.com|x.com|youtube.com
 $removeparam=/^pf_rd_/,domain=shopbop.com|amazon.*|imdb.com|zappos.com|audible.*|6pm.com
 $removeparam=Source,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com|evga.com
 $removeparam=version,domain=mp.weixin.qq.com|us.norton.com
@@ -1574,7 +1574,7 @@ $removeparam=action,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj
 $removeparam=module,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|scmp.com
 $removeparam=pgtype,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|scmp.com
 $removeparam=section,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|nextdoor.com|store.thesims3.com
-$~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|imdb.com|primevideo.com|shopbop.com
+$document,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|imdb.com|primevideo.com|shopbop.com
 $removeparam=tag,domain=argos.co.uk|habitat.co.uk|tv2.no|support.github.com
 $removeparam=publisher_id,domain=t-mobile.com|udemy.com
 ||udemy.com^$removeparam=website_id
@@ -2541,6 +2541,8 @@ ref=upstract.com$document,removeparam=/^ref=upstract.com$/
 ||koreaherald.com^$document,removeparam=ACE_SEARCH
 ||abcnyheter.no^$removeparam=nr
 ||windscribe.com^$document,removeparam=pcpid
+||ubereats.com^$document,removeparam=marketing-visitor-id
+||ubereats.com^$document,removeparam=sub-campaign
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
