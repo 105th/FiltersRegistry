@@ -1,9 +1,9 @@
-! Checksum: riNeroaepvXPBw0IqpIkWQ
-! Diff-Path: ../patches/17/17-s-1708087269-3600.patch
+! Checksum: IgefYtm7Nn3dLBzizRlIZg
+! Diff-Path: ../patches/17/17-s-1708259981-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.7.99
-! TimeUpdated: 2024-02-16T12:38:38+00:00
+! Version: 2.0.8.0
+! TimeUpdated: 2024-02-18T12:37:29+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20,6 +20,11 @@
 ! Good: $removeparam=utm_id
 ! Bad:  $removeparam=utm_id,domain=example.org (for instance, should be in specific.txt)
 !
+! Visumo
+! https://www.shipsltd.co.jp/g/g316300136/?vsm_type=video&vsm_cid=e5011602-1b1c-44b0-a695-ca27aa94b448&vsm_pid=3163001362299
+$removeparam=vsm_type
+$removeparam=vsm_cid
+$removeparam=vsm_pid
 ! Commission Junction
 ! https://developers.cj.com/docs/advertiser-site-tracking/enhanced-tracking-integration
 $removeparam=cjdata
@@ -340,6 +345,18 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-8505558
+||carousell.*$removeparam=t-id
+||carousell.*$removeparam=t-referrer_browse_type
+||carousell.*$removeparam=t-referrer_category_id
+||carousell.*$removeparam=t-referrer_page_type
+||carousell.*$removeparam=t-referrer_request_id
+||carousell.*$removeparam=t-referrer_search_query
+||carousell.*$removeparam=t-referrer_search_query_source
+||carousell.*$removeparam=t-referrer_sort_by
+||carousell.*$removeparam=t-referrer_source
+||carousell.*$removeparam=t-source
+||carousell.*$removeparam=t-tap_index
 ! Uber
 ||ubereats.com^$removeparam=campaign
 ||ubereats.com^$removeparam=sub-campaign
