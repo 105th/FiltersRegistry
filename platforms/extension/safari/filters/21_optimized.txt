@@ -1,5 +1,5 @@
-! Checksum: v1vgzgBzpU7hb7eo89LRsw
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1708180498-3600.patch
+! Checksum: 3unEXUzpZauGpdZZ9S4OtQ
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1708223714-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.19.59
@@ -36,7 +36,6 @@ foxnews.com#%#//scriptlet('remove-class', 'has-gated-overlay|gated-article-body'
 zelvia.co.jp##.p-sticky
 inc.com##.mobile_video_insert
 ||geo.dailymotion.com/player/xdgu3.html$domain=idntimes.com
-wlos.com###js-SocialWidget-Container
 cumhuriyet.com.tr#?#div[class^="col"] > div.row:has(> div.row > div.dailymotion-player-root)
 cnyes.com#%#//scriptlet('remove-class', 'ppn-overflows', '.ppn-overflows.ppn-floating_enable')
 livejournal.com#$?#div[lj0sale0autoplay0dockable0video0mount] { remove: true; }
@@ -51,7 +50,6 @@ bilibili.com##.pop-live-small-mode
 telegraaf.nl##data-hydrate[data-name="NewsletterForm"]
 bing.com###tob_rail_container
 ||player.anyclip.com^$domain=dictionary.com
-dictionary.com#?#main[class] > div[class] > div[class]:has(> div >  div.ac-widget-placeholder)
 thecity.nyc##.newspack-popup-container
 rzd-partner.ru##img[width="750"][height="100"]
 rzd-partner.ru##img[width="1250"][height="90"]
@@ -633,6 +631,7 @@ facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion#%#!f
 facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion#%#new MutationObserver(function(){document.querySelectorAll('div[role="feed"] > div[data-pagelet^="FeedUnit"] > div[class]:not([style*="height"])').forEach(function(e){"display: none !important;"==e.getAttribute("style")||e.classList.contains("hidden_elem")||e.querySelectorAll("div[aria-posinset] div[style] div[class] > div[class] > div[class] > div[class] > span")[0].innerText.contains("Suggested for you")&&(console.log("--------"),console.log("Annoyances hidden (Suggested for you)"),e.style="display:none!important;")})}).observe(document,{childList:!0,subtree:!0});
 t.facebook.com#%#new MutationObserver(function(){document.querySelectorAll('div[role="feed"] > span').forEach(function(e){"display: none !important;"==e.getAttribute("style")||e.classList.contains("hidden_elem")||e.querySelectorAll("div[aria-posinset] div[style] div[class] > div[class] > div[class] > div[class] > span")[0].innerText.contains("Suggested for you")&&(console.log("--------"),console.log("Annoyances hidden (Suggested for you)"),e.style="display:none!important;")})}).observe(document,{childList:!0,subtree:!0});
 m.facebook.com#$?#div[data-pull-to-refresh-action-id] > div[data-focusable="true"][data-action-id][data-mcomponent="MContainer"]:not([role="button"]):has(> div[data-mcomponent="TextArea"] > div > .native-text) { position: absolute !important; left: -3000px !important; }
+m.facebook.com#$?#div[data-pull-to-refresh-action-id] > div[data-focusable="true"][data-action-id][data-mcomponent="MContainer"]:not([role="button"])[style*="position: absolute !important; left: -3000px !important;"] + div[data-tracking-duration-id]:not([data-actual-height="1"]) { position: absolute !important; left: -3000px !important; }
 facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##div[aria-label="Message from Facebook"]
 facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##div[role="main"] div[data-pagelet="VideoChatHomeUnit"]
 mbasic.facebook.com,m.facebook.com##[data-ft*="quick_promotion_instance_log_data_encoded"]
@@ -721,6 +720,7 @@ newsru.co.il##article > a[href="https://t.me/s/NEWSruIsrael"]
 pepper.ru##div[data-track*="vk_banner"]
 translate.ru###blogRSSRight
 34travel.me##.banner-new
+techmonitor.ai###relatedArticles
 dailymail.co.uk##.article-text > a[href="https://www.facebook.com/DailyMailSport/"]
 moddroid.com##.fixed-icons
 cyclingnews.com###disqus_thread
@@ -989,8 +989,6 @@ cuonet.com##.hidden-sm > [class] + div[style^="width:"][style*="text-align:"]
 ||cuonet.com/data/file/plan/thumb-
 point.rakuten.co.jp,beauty.rakuten.co.jp###mkdiv_banner_pitari
 ||rakuten.co.jp/com/advance/ichiba/rc-gp-sp_banner_scv/sp/condition.js
-kurashinista.jp##.pickup-content-head
-kurashinista.jp##.pickup-content__link
 famitsu.com#?#.search-box--category + div.l-contents-block:has(.ad-native-campaign-leftout)
 watch.impress.co.jp##.amazon-aff
 fmv-mypage.fmworld.net##.home-news-pr-text
@@ -1004,7 +1002,6 @@ roadway.yahoo.co.jp###rc_sns
 contents.fc2.com#?#div[class] > div[class] > a[class^="c-cntCard-110"][class*="_thumb"][href*="/?tag="]:upward(2)
 member.livedoor.com###loginAdwall
 ||mj-king.net/img/BannerAdvertisement/
-andapp.jp##.topJackBanner
 ||gamewith.jp/ad/
 gamewith.jp##.walkthrough-hikari
 lvz.de#$#.tp-modal:has(> div.tp-iframe-wrapper > iframe[src^="https://buy-eu.piano.io/"]) { display: none !important; }
@@ -1047,6 +1044,7 @@ cookien.com#$#hgroup { top: 0 !important; }
 cookien.com#$##masthead { height: 45px !important; }
 oricon.co.jp##.block-banner
 kai-you.net##.l-side-banner_list
+matzoo.pl###login_wrap[style^="display:block;z-index:"][onclick="$('#login_wrap').hide()"]
 ||insurance.rakuten.co.jp/car/img/banner/mno_
 ||lolipop.jp/img/bnr/bnr_lolipop_ad_
 goguynet.jp###async-ad_line2
@@ -1071,7 +1069,6 @@ rebates.jp##a[class^="css-"][href^="https://ac.ebis.ne.jp/"][href*="_mno_"]
 ||takarakuji.rakuten.co.jp/image/banner/other/external/r_mobile_
 ||takarakuji.rakuten.co.jp/pc/champ/loto/img/external/r_mobile_
 jibunbank.co.jp##.c-prDefault-01
-hoken.rakuten.co.jp,rakuten-insurance.co.jp,rakuten-sonpo.co.jp,rakuten-ssi.co.jp##.topBankArea
 kidona.rakuten.co.jp,hoken.rakuten.co.jp,rakuten-insurance.co.jp##.mnoBnrArea
 hoken.rakuten.co.jp###inc-header-inner > div.pcOnly[style="width:100%; background: #ff0088; text-align: center;"]
 rakuten.co.jp###mno-header
@@ -1394,7 +1391,6 @@ bryanadams.com##.promo
 microsoftedge.microsoft.com###banner
 dns-shop.ru##.products-list__banner
 tumblr.com##.HOjIH
-e-chords.com##.v_banner > div[style="text-align:center; margin-top:20px;"]
 deepl.com##div[data-testid="app-ad-callout-callout"]
 trampos.co##.breadwin-box
 dengekionline.com##.gNews_banner
@@ -1880,6 +1876,7 @@ trilltrill.jp##.articleDetail-PVBoostLink_Item
 trilltrill.jp##.articleDetail-PVBoostLink_Header
 spojoba.com###ad_1
 neilpatel.com##.widget-analyzer
+readmanga.live##div[style="width: 800px; height: 600px;"]
 gabastyle.com###rListingBnr
 gabastyle.com##.dfad
 bst.bratsk.ru##.my-sheet-Adv
@@ -1890,6 +1887,7 @@ washingtonpost.com###main-content > div.hide-for-print.mb-lg
 morinaga.co.jp###pc-column-detail-bottom-banner
 enigmasoftware.com###bio_ep
 enigmasoftware.com###bio_ep_bg
+chitubox.com##.top-count-down
 web.quizknock.com###vue-article > a[onclick^="gtag_ad_event"]
 my.rakuten.co.jp###randomAdArea
 bt.com##.experiencefragment
@@ -2006,6 +2004,7 @@ coub.com##.timeline-right-block__login-banner
 bestdroidplayer.com##.ulp-overlay
 bestdroidplayer.com##.ulp-window-container
 docs.cntd.ru#?#.sheet div[class]:has(> div.demo-modal)
+pan.bilnn.com##div[class^="jss"] > a[href="https://feige.bilnn.com/"]
 tripmydream.com##.wind-banner-place
 biz.moneyforward.com###secondary > aside:not(.widget_search):not(.widget_categories)
 map.yahoo.co.jp###yjSub > div.banner
@@ -2199,7 +2198,6 @@ thewalrus.ca###custom_html-46
 thenation.com##.indent.current-issue
 businessinsider.com##.commerce-coupons-module
 neilpatel.com##.cta-consulting
-practo.com##.health-day-banner
 practo.com##.qna-paid-banner
 ||phpnet.us/images/web.png
 talkingpointsmemo.com##.Footer__ModalAds
@@ -2385,8 +2383,6 @@ net.hr#$#.video-js-container.videoContent_player_fixed { position: static !impor
 ||animespirit.tv/templates/animespirit/images/background
 animespirit.tv#$##wrapper { margin-top: 0 !important; }
 crewbase.net,phineypet.com#$?##content > form[id]:has(> center > button) { display: block !important; }
-tasteofhome.com#$#.jw-float-bar { display: none !important; }
-tasteofhome.com#$#.jw-wrapper { transform: unset !important; width: unset !important; max-width: unset !important; bottom: unset !important; }
 meevor.com,cordtpoint.co.in,bantenexis.com#$##wpsafe-generate { display: block !important; }
 meevor.com,cordtpoint.co.in,bantenexis.com#$##wpsafe-link { display: block !important; }
 meevor.com,cordtpoint.co.in,bantenexis.com#$#div[id^="wpsafe-wait"] { display: none !important; }
