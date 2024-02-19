@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: nrjaq66rZU783SuRkrG1XQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1708328094-3600.patch
+! Checksum: h6gdKWF8i4Yt+8y5A54gcQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1708331692-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.21.26
-! TimeUpdated: 2024-02-19T07:32:50+00:00
+! Version: 2.3.21.27
+! TimeUpdated: 2024-02-19T08:32:56+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -27907,9 +27907,10 @@ watchjavonline.com##+js(window.open-defuser)
 serieslatinoamerica.org##+js(abort-current-script, atob, decodeURIComponent)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/132270
 mvidoo.com##+js(abort-on-property-read, popunder)
+! https://github.com/AdguardTeam/AdguardFilters/issues/173054
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167668
 ! Removes ad placeholders in sliders
-msn.com##+js(json-prune, configs.*.properties.slideshowWCSettings.interstitialNativeAds configs.*.properties.fullScreenSlideshowSettings.interstitialNativeAds)
+msn.com##+js(json-prune, configs.*.properties.slideshowWCSettings.interstitialNativeAds configs.*.properties.fullScreenSlideshowSettings.interstitialNativeAds properties.componentConfigs.slideshowConfigs.interstitialNativeAds)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167668
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146823
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136564
@@ -32295,7 +32296,6 @@ opensubtitles.org##iframe[src*="://ads"][src*=".opensubtitles.org/"]
 qwant.com#$#.is-sidebar:has(div[data-testid="advertiserAdsDisplayUrl"]) { position: absolute !important; left: -3000px !important; }
 ||123movies.ba/vpnads$image
 dwell.com#?#figure + div[class]:has(> div[class] > div[id^="div-gpt-ad-"])
-terabox.*##.pause-patch-ad
 investing.com###comments_new > .border-t > .items-center:has(> div[data-test="ad-slot-visible"])
 technologynetworks.com#?#.preText:contains(Continue reading below...)
 israel21c.org##.banner-container
@@ -34325,7 +34325,9 @@ vebma.com###btget center > a
 /pop_8/*$domain=its.sex|jav4tv.com|oksex.tv|sexjav.org|sexjav.tv|xhentai.tv
 windowsnoticias.com###special-sidebar-template
 ||hltv.org/img/newwidgets/ggbet/
-terabox.app,4funbox.com,terabox.com##.patch-ad
+1024tera.com,4funbox.com,terabox.*##.patch-ad
+1024tera.com,4funbox.com,terabox.*##.ad-patch-base
+1024tera.com,4funbox.com,terabox.*##.pause-patch-ad
 soccerstreams2.com##.content-area#primary ~ #right-sidebar
 cryptonews.com.au##.cna-bnr
 soccerstreams2.com,worldsports1.live##a[href^="https://onclickprediction.com/"]
@@ -50076,6 +50078,7 @@ masalaseen.com##a[target="_blank"] > img
 lite.qwant.com#?#.content > article.result:has(> p > span.ad)
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162999
+! https://github.com/AdguardTeam/AdguardFilters/issues/173054
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167668
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160865
 ! Removes ad placeholders on the main page
