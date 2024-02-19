@@ -1,9 +1,9 @@
-! Checksum: qGBpj0mj2jsGYrCFaVDhyw
-! Diff-Path: ../patches/14/14-s-1708360617-3600.patch
+! Checksum: kJTaJ8G2axukgolSkUucBg
+! Diff-Path: ../patches/14/14-s-1708367670-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.6
-! TimeUpdated: 2024-02-19T16:34:39+00:00
+! Version: 2.1.87.7
+! TimeUpdated: 2024-02-19T18:32:19+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17105,7 +17105,8 @@ livescience.com##.ad-unit
 /^https:\/\/[0-9a-z]{7,25}\.com\/v2(?:\/0\/)?(?=[0-9a-z_-]{0,84}[A-Z])(?=[a-zA-Z_-]{0,84}[0-9])[0-9a-zA-Z_-]{54,85}(#\?v=[0-9a-f]{32})?$/$ping,script,xmlhttprequest,third-party,match-case
 ! can be closed
 ! cannot be closed
-! bait
+! bait - Admiral overlay
+##body div.bOvWNQ
 @@||succeedscene.com/*/ads.load.js
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153163
@@ -17118,10 +17119,6 @@ cbssports.com,visualcapitalist.com,news8000.com,kxly.com,thethings.com,gamerant.
 momtastic.com,pwinsider.com,comingsoon.net,hfboards.com,onmsft.com##body > iframe ~ div:not([class]):not([id]) > style + div[class]
 playstationlifestyle.net##body > footer ~ div:not([class]):not([id]):not([style])
 siliconera.com##body > script ~ div:not([class]):not([id]) > style + div[class]
-! For Admiral overlay
-! Usually when the `document.createElement` scriptlet rule does not work
-! https://github.com/AdguardTeam/AdguardFilters/issues/172179
-##body > div > style + div.bOvWNQ
 !
 !#safari_cb_affinity(general)
 digitaltrends.com#@#.pub_300x250
