@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: vFGosoroFrmHz6aiDWNkZQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1708346493-3600.patch
+! Checksum: hPDnToN5bwYQ9VUgU4+P8w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1708349694-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.21.31
-! TimeUpdated: 2024-02-19T12:39:29+00:00
+! Version: 2.3.21.32
+! TimeUpdated: 2024-02-19T13:32:50+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6929,6 +6929,10 @@ pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173052
+uflash.tv##+js(no-fetch-if, /code.js)
+uflash.tv##+js(window.open-defuser, adblock, 1)
+uflash.tv##+js(set-constant, popBlocked, falseFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173118
 aviationsourcenews.com##body div.mfp-wrap
 aviationsourcenews.com##body div.mfp-bg
@@ -27266,6 +27270,8 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173052
+uflash.tv##+js(abort-current-script, String.prototype.concat, sessionStorage)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172857
 moviekhhd.biz##+js(no-setTimeout-if, ads/Ads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172609
@@ -32297,6 +32303,8 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+zkillboard.com##.container > div[style="max-height: 250px; height: 250px;"]
+uflash.tv##div[id^="ad-float-"]
 luxtimes.lu##div[id^="ad_leaderboard"]
 luxtimes.lu##div[id^="ad_rectangle"]
 fappeningbook.com##a[href="https://w1.fappeningbook.com/"]
@@ -54075,7 +54083,7 @@ ecostream.tv#@#.adwrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/2621
 @@||ingdirect.com.au^$document
 ! https://forum.adguard.com/index.php?threads/11960/
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=fox.com.tr
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=nowtv.com.tr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/37431
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41986
 !+ NOT_OPTIMIZED
