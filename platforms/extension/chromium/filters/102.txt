@@ -1,9 +1,9 @@
-! Checksum: zCJ3twDq8iDhUMmVEuHnvw
-! Diff-Path: ../patches/102/102-s-1708129409-14400.patch
+! Checksum: sHBJyDiDRnz4HaXbUunahQ
+! Diff-Path: ../patches/102/102-s-1708330220-14400.patch
 ! Title: ABPindo
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.6.56
-! TimeUpdated: 2024-02-17T00:20:14+00:00
+! Version: 2.0.6.57
+! TimeUpdated: 2024-02-19T08:07:29+00:00
 ! Expires: 4 days (update frequency)
 !
 ! OriginalVersion: 202402162343
@@ -18,7 +18,7 @@
 ! GitHub issues: https://github.com/ABPindo/indonesianadblockrules/issues
 ! GitHub pull requests: https://github.com/ABPindo/indonesianadblockrules/pulls
 !
-! ---------------------- advert blocking filters ----------------------!
+!---------------------- advert blocking filters ----------------------!
 ! *** abpindo:src/advert/adservers.txt ***
 ! Confirmed ad servers
 ||188affiliates.com^$third-party
@@ -586,6 +586,7 @@ doroni.me#%#//scriptlet('ubo-acs.js', 'getComputedStyle', '', 'cpm')
 info.mapsaddress.com,info.vebma.com#%#//scriptlet('ubo-aeld.js', 'click', 'linkOpened')
 juraganfilm.ink#%#//scriptlet('ubo-aopr.js', '$.magnificPopup.open')
 cloud.majalahhewan.com,info.gambar.pro,info.mapsaddress.com,info.vebma.com,jenismac.com#%#//scriptlet('ubo-nano-sib.js')
+mudah.my#%#//scriptlet('ubo-no-fetch-if.js', 'ads.google.com')
 cloud.majalahhewan.com,info.gambar.pro,info.mapsaddress.com,info.vebma.com,thejakartapost.com#%#//scriptlet('ubo-no-fetch-if.js', 'adsbygoogle')
 netq.me#%#//scriptlet('ubo-no-fetch-if.js', 'clarity.ms')
 193.142.147.230,5.253.86.213,ainzscans.net,igobokep.cam,jenismac.com,siimanga.cyou#%#//scriptlet('ubo-noeval-if.js', '/chp_?ad/')
@@ -653,9 +654,6 @@ carisinyal.com#%#//scriptlet('ubo-rmnt.js', 'script', 'showModal')
 @@||suarankri.me^$generichide
 @@||tokusatsuindo.com^$generichide
 ! ABP-specific allowlist for network filters
-! #if ext_abp
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=193.142.147.230|ainzscans.net|igobokep.cam|siimanga.cyou
-! #endif
 ! Allowlist for element hiding filters
 gurusd.web.id,kurikulum.co.id#@##adsense
 woof.tube#@#.adsbox
@@ -671,7 +669,7 @@ tokosatu.com#@#.popupflyin-clicks-area
 digikala.com,sporcle.com#@#.remodal
 oomph.co.id#@#.shareit
 totolink.id#@#.social-circle
-! ----------------------- element hiding rules ------------------------!
+!----------------------- element hiding rules ------------------------!
 ! *** abpindo:src/advert/general_hide.txt ***
 ###Box-Banner-ads
 ###Iklan-Melayang
@@ -1635,6 +1633,7 @@ kurina.vip##[class="sc__wrp"]
 jalantikus.com##[class^="ad-"][class*="-container"]
 kompas.tv##[class^=ads-]
 neonime.net##[data-src^="https://neonime.net/wp-content/"]:xpath(..)
+mudah.my##[data-testid^="featured-ads"]
 nontoncinema.org##[href$="/referral/nontoncinema"]
 sukamovie.club##[href$="/sukamovieclub"]
 pakbos21.org##[href="//dumbpop.com/help.xml"]
@@ -1768,6 +1767,7 @@ briliofood.net#?#.placeholder-container:-abp-has(.ads-container)
 blibli.com#?#.product__card:-abp-has(.product__tag__ads)
 kompas.com#?#div:-abp-has( > #gpt-passback)
 katadata.co.id#?#div:-abp-has( > [id^="div-gpt-ad"][class^="paralax"])
+mudah.my#?#div:-abp-has( > div > .adunitContainer)
 tokopedia.com#?#div[data-testid="CPMWrapper"]:-abp-has(span:-abp-contains(/^Ad$/))
 tokopedia.com#?#div[data-testid="divProduct"]:-abp-has(span[data-testid="icnHomeTopadsRecom"])
 tokopedia.com#?#div[data-testid="divProductWrapper"]:-abp-has(span[data-testid="divSRPTopadsIcon"])
@@ -1778,9 +1778,7 @@ cloud.majalahhewan.com,info.gambar.pro,info.mapsaddress.com,info.vebma.com#?#p:-
 tokopedia.com#?#section[data-unify="Card"]:-abp-has([href^="https://ta.tokopedia.com"]:first-child)
 cloud.majalahhewan.com,info.vebma.com#?#span:-abp-contains(Advertisement)
 ! Adtival
-! #if ext_ublock
-! #endif
-! --------------------------- adult ------------------------------!
+!--------------------------- adult ------------------------------!
 ! *** abpindo:src/adult/adult_general_block.txt ***
 -abgqq.$image
 -agen-judi-$image
