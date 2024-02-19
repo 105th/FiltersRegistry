@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: 0P9rdKmwXYsfdBK5eq+IjA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1708272603-14400.patch
+! Checksum: iCgaSzZCou0QUz/+gA1rHg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1708315808-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.13.27
@@ -262,6 +262,7 @@ chrome.google.com#?#.webstore-test-wall-tile:has-text(/Adblock\sadblock/i)
 chrome.google.com#?#.webstore-test-wall-tile:has-text(/Adblock\sOrigin/i)
 chrome.google.com#?#.webstore-test-wall-tile:has-text(/Adblocker\sfor\sBrowser/i)
 chrome.google.com#?#.webstore-test-wall-tile:has-text(/Total\sAdblock/i)
+softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 download.cnet.com##.c-globalCard:has(a[href*="/Sir-AdGuard/"])
 download.cnet.com##.c-globalCard:has(a[href*="/Ad-Smasher/"])
 download.cnet.com##.c-globalCard:has(a[href*="/AdsCleaner/"])
@@ -1350,6 +1351,7 @@ www.youtube.com##div[class$=-gradient-bottom]
 twe.no#$#div[style*=overlayFadeTo] { --overlayFadeTo: none !important }
 ||comment.youmaker.com^$domain=theepochtimes.com
 ||facebook.com/plugins/*comments.php?*%26domain%3Dglobalnews.ca%26
+||viafoura.co^$domain=nottinghampost.com|liverpoolecho.co.uk
 thejournal.ie,city-countyobserver.com###comments
 indiatimes.com##div[class$="cmtwrapper "]
 ghacks.net###comments
@@ -1521,6 +1523,7 @@ daz3d.ru##+js(set-constant, snow, undefined)
 @@||t.me^
 @@||lemondeinformatique.fr^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
+@@||discord.gift^$popup
 @@||siteadvisor.com^
 @@||securitytrails.com^
 @@||securitytrails.com^$elemhide
@@ -2206,10 +2209,12 @@ $removeparam=ssp_user_id
 $removeparam=adroll_fpc
 $removeparam=ad-session-id
 $removeparam=ga_cid
+$removeparam=tw_document_href
 $removeparam=hubspotUtk
 $removeparam=messagesUtk
 $removeparam=advUuid
 $document,removeparam=traceId
+$removeparam=p_user_id
 $removeparam=criteoId
 $removeparam=dspCookie
 $removeparam=_rand
@@ -2225,7 +2230,6 @@ $removeparam=s_id
 $removeparam=b_id
 $removeparam=tpmn_buid
 $removeparam=_idts
-$removeparam=ta_partner_did
 $removeparam=CookieSyncId
 $removeparam=variationId
 $removeparam=beeswax_id
@@ -2442,6 +2446,7 @@ $removeparam=ogbl
 ||www.google.$removeparam=uact
 ://www.google.*/search^$removeparam=kgs
 ://www.google.*/search^$removeparam=shndl
+://www.google.*/search^$removeparam=entrypoint
 ||google.*/search$removeparam=sqi
 ||google.$removeparam=gs_ssp
 ||google.$removeparam=prds
@@ -2702,7 +2707,6 @@ $removeparam=tracking,domain=affiliatefuture.com|facebook.*|facebookwkhpilnemxj7
 $removeparam=u1,domain=linksynergy.com|shop-links.co
 $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
-$removeparam=epi2,domain=tradedoubler.com
 $removeparam=sm12
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $removeparam=token,domain=al.to|combat.pl|x-kom.pl
@@ -2730,8 +2734,6 @@ $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|disc
 ||bbc.$removeparam=pinned_post_asset_id
 ||bbc.$removeparam=pinned_post_type
 ||apple.com^$removeparam=fnode
-||epidemicsound.com^$removeparam=_us
-||epidemicsound.com^$removeparam=_usx
 ||microsoft.com^$removeparam=destrt
 ||squarespace.com^$removeparam=subchannel
 ||verizon.com^$removeparam=vendorid
@@ -2856,9 +2858,6 @@ $removeparam=frs,domain=etsy.com
 $removeparam=click_key,domain=etsy.com
 $removeparam=click_sum,domain=etsy.com
 ||community.spiceworks.com^$removeparam=carPos
-||weibo.com/ajax/log$removeparam=uicode
-||weibo.com/ajax/log$removeparam=act_code
-||despegar.$removeparam=/^clt_/
 ||hao123.com^$removeparam=tn
 ||lazada.$removeparam=dsource
 ||lazada.$removeparam=laz_share_info
@@ -3056,7 +3055,6 @@ $removeparam=mar,domain=nextdoor.com
 ||youtube.com^$removeparam=embeds_euri
 ||youtube.com^$removeparam=source_ve_path
 ^ref=hackernoon.com^$removeparam=ref
-^ref=futurepedia^$removeparam=ref
 $removeparam=cvid,domain=chinadaily.com.cn|eastday.com|msn.cn|msn.com|tianqi.com|yiyouliao.com
 ||github.com^$removeparam=ref_cta
 ||github.com^$removeparam=ref_loc
@@ -3253,7 +3251,6 @@ store.playstation.com,1999.co.jp#$#html[lang=ja] span { font-family: "Segoe UI",
 fandom.com,wikia.org#$?#a:link { cursor: pointer !important }
 cursor_hover.$image
 .cur/$image
-||nocookie.net/*cursor.png^
 tumblr.com#$#.custom-cursor { cursor: unset !important }
 tumblr.com#$#.custom-cursor a { cursor: pointer !important }
 tumblr.com#$#body { cursor: unset !important }
