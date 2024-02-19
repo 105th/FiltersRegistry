@@ -1,9 +1,9 @@
-! Checksum: HKzjU0Htj534W1jzVDCacw
-! Diff-Path: ../patches/14/14-s-1708342465-3600.patch
+! Checksum: 8CTy+6aPg7H3QNT3prTrMA
+! Diff-Path: ../patches/14/14-s-1708346469-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.1
-! TimeUpdated: 2024-02-19T11:32:26+00:00
+! Version: 2.1.87.2
+! TimeUpdated: 2024-02-19T12:39:09+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7477,8 +7477,8 @@ shein.com##.c-onetrust-backup
 gruene-bundestag.de,mein-apothekenmanager.de###cn-wrapper
 sbk.org#$#body { overflow: visible !important; }
 sbk.org#$#body .cookie-layer.modal.is-open { display: none !important; }
-wifi.at#$##cookiePolicy { display: none !important; }
-wifi.at#$#body.modal-open .page-wrapper > :not(.modal) { opacity: 1 !important; }
+wifi-ooe.at,wifi.at#$##cookiePolicy { display: none !important; }
+wifi-ooe.at,wifi.at#$#body.modal-open .page-wrapper > :not(.modal) { opacity: 1 !important; }
 amd.by,promondo.de#$##modal-cookie { display: none !important; }
 amd.by,promondo.de#$#body { overflow: visible !important; }
 comma-store.de##div[data-cid="DATA_PRIVACY_BAR"]
@@ -15392,7 +15392,8 @@ okazii.ro#@#.cookie-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/85467
 sbk.org#@#.cookie-layer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/85453
-wifi.at#@##cookiePolicy
+! https://github.com/AdguardTeam/AdguardFilters/issues/173119
+wifi-ooe.at,wifi.at#@##cookiePolicy
 ! https://github.com/AdguardTeam/AdguardFilters/issues/85991
 !+ NOT_PLATFORM(ext_ublock)
 toyota.astra.co.id#@##cookieSection
@@ -19346,7 +19347,7 @@ iqiyi.com##div[adid]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38910
 ! https://github.com/AdguardTeam/AdguardFilters/issues/22801
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14731
-||cupid.iqiyi.com/mixer?$domain=iqiyi.com
+||cupid.iqiyi.com/mixer?$domain=www.iqiyi.com
 ||data.video.iqiyi.com/videos/other/*$xmlhttprequest,~third-party,badfilter
 !#safari_cb_affinity(general)
 @@||t7z.cupid.iqiyi.com/show2?e$domain=m.iqiyi.com
@@ -20684,6 +20685,7 @@ sanalkurs.net###toast-container > .toast-error[aria-live="assertive"]
 !
 ! SECTION: Popups - Regular rules
 !
+clubd.co.jp##.footer-fix-banner
 rmj.ru#$##healthcodeLinkingModal { display: none !importnat; }
 rmj.ru#$#body.modal-open { overflow: auto !importnat; }
 lis-skins.ru##.bonus-banner
@@ -33771,6 +33773,10 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 ! TODO: Delete the following rule when https://github.com/AdguardTeam/ExtendedCss/issues/172 is resolved.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161301
 !
+clubd.co.jp##.dc-app-download
+||baycrews.jp/src/feature/seo/*_app/*-app-bana.jpg
+shop.menz-style.com##img[alt="秋冬コーデのコツ"]
+shop.menz-style.com###coupon-container
 delishkitchen.tv##.footer-app-banner-wrap
 luckymodapk.com##.downbox
 peachjohn.co.jp##.block-footer-guide--service a[href="/app"]
@@ -46492,7 +46498,7 @@ semnasem.org##.adcampaign
 semnasem.org##.adcampaign-inject-banner
 semnasem.org##.article__footer-donate-row
 ||torrentinvites.org/64.gif
-klto9.com,klz9.com,baominh.tech##div[id^="kofi-widget"]
+decrypt.day,klto9.com,klz9.com,baominh.tech##div[id^="kofi-widget"]
 apkmody.io###fixed-donate
 ||static.fundraiseup.com$domain=gijn.org
 gijn.org##.donate-btn

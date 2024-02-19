@@ -1,9 +1,9 @@
-! Checksum: uzKZOF+767hKAdWP5FX0OQ
-! Diff-Path: ../patches/14/14-s-1708342486-3600.patch
+! Checksum: AH63NOln/uMfu3HLb9EaBw
+! Diff-Path: ../patches/14/14-s-1708346498-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.1
-! TimeUpdated: 2024-02-19T11:32:26+00:00
+! Version: 2.1.87.2
+! TimeUpdated: 2024-02-19T12:39:09+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2362,6 +2362,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+finuslugi.ru#%#//scriptlet('set-cookie', 'Allow-Cookie', '1')
 ||sync.transcend.io/consent-manager/$domain=anaconda.com
 amlbot.com#%#//scriptlet('trusted-set-cookie', 'localConsent', 'true')
 postemobile.it###pm15_cookie_info
@@ -8000,8 +8001,8 @@ shein.com##.c-onetrust-backup
 gruene-bundestag.de,mein-apothekenmanager.de###cn-wrapper
 sbk.org#$#body { overflow: visible !important; }
 sbk.org#$#body .cookie-layer.modal.is-open { display: none !important; }
-wifi.at#$##cookiePolicy { display: none !important; }
-wifi.at#$#body.modal-open .page-wrapper > :not(.modal) { opacity: 1 !important; }
+wifi-ooe.at,wifi.at#$##cookiePolicy { display: none !important; }
+wifi-ooe.at,wifi.at#$#body.modal-open .page-wrapper > :not(.modal) { opacity: 1 !important; }
 amd.by,promondo.de#$##modal-cookie { display: none !important; }
 amd.by,promondo.de#$#body { overflow: visible !important; }
 comma-store.de##div[data-cid="DATA_PRIVACY_BAR"]
@@ -17082,7 +17083,8 @@ okazii.ro#@#.cookie-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/85467
 sbk.org#@#.cookie-layer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/85453
-wifi.at#@##cookiePolicy
+! https://github.com/AdguardTeam/AdguardFilters/issues/173119
+wifi-ooe.at,wifi.at#@##cookiePolicy
 ! https://github.com/AdguardTeam/AdguardFilters/issues/85991
 !+ NOT_PLATFORM(ext_ublock)
 toyota.astra.co.id#@##cookieSection
@@ -21345,13 +21347,15 @@ iqiyi.com##div[adid]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14731
 ! m.iqiyi.com#%#//scriptlet("set-constant", "QiyiPlayerLoader.Package.ad.adPlayerId", "") - doesn't work probably due to scriptlet bug
 ! m.iqiyi.com#%#AG_defineProperty('QiyiPlayerLoader.Package.ad.adMap', { value: {}, writable: false }); - another working rule, but fixed by a scriptlet
-sports.iqiyi.com,m.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.adPlayerId", "")
+sports.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.adPlayerId", "")
 www.iqiyi.com#%#//scriptlet('set-constant', 'QiyiPlayerProphetData.a.data', 'emptyObj')
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.parseXML", "noopFunc")
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.blackscreenDuration", "1")
 www.iqiyi.com#%#//scriptlet('trusted-replace-node-text', 'script', 'window.QiyiPlayerProphetData', '/(QiyiPlayerProphetData=.*?"a":.*?")data(":{)/', '$1no_ads$2')
 www.iqiyi.com#%#!function(){const e={apply:(e,t,o)=>{const i=o[1];if(!i||"object"!=typeof i.QiyiPlayerProphetData)return Reflect.apply(e,t,o)}};window.Object.defineProperties=new Proxy(window.Object.defineProperties,e)}();
-||cupid.iqiyi.com/mixer?$domain=iqiyi.com
+m.iqiyi.com#%#!function(){const s={apply:(c,e,n)=>(n[0]?.adSlots&&(n[0].adSlots=[]),n[1]?.success&&(n[1].success=new Proxy(n[1].success,s)),Reflect.apply(c,e,n))};window.Object.assign=new Proxy(window.Object.assign,s)}();
+||cupid.iqiyi.com/mixer?$domain=www.iqiyi.com
+||cupid.iqiyi.com/mixer?$replace=/"adSlots"/"no_ads"/
 ||cupid.iqiyi.com/mixer?$jsonprune=\$..[adSlots]
 ||iqiyi.com/show2?e=$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important,domain=iqiyi.com
 ||data.video.iqiyi.com/videos/other/*$xmlhttprequest,~third-party,badfilter
@@ -22562,6 +22566,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+clubd.co.jp##.footer-fix-banner
 rmj.ru#$##healthcodeLinkingModal { display: none !importnat; }
 rmj.ru#$#body.modal-open { overflow: auto !importnat; }
 lis-skins.ru##.bonus-banner
@@ -37118,6 +37123,10 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161301
 temu.com#?#div[role="main"] div[style] > div[style]:has(> div[style] div[js-selector="mobile-download-ui"])
 !
+clubd.co.jp##.dc-app-download
+||baycrews.jp/src/feature/seo/*_app/*-app-bana.jpg
+shop.menz-style.com##img[alt="秋冬コーデのコツ"]
+shop.menz-style.com###coupon-container
 delishkitchen.tv##.footer-app-banner-wrap
 ubereats.com###main-content > div > div:has(> div > a[href^="https://eats.sng.link/"])
 luckymodapk.com##.downbox
@@ -51739,7 +51748,7 @@ semnasem.org##.adcampaign-inject-banner
 semnasem.org##.article__footer-donate-row
 torrentinvites.org#?##sidebar > li:has(> div.block > div.blocksubhead > span.blocktitle:contains(DONATE))
 ||torrentinvites.org/64.gif
-klto9.com,klz9.com,baominh.tech##div[id^="kofi-widget"]
+decrypt.day,klto9.com,klz9.com,baominh.tech##div[id^="kofi-widget"]
 apkmody.io###fixed-donate
 ||static.fundraiseup.com$domain=gijn.org
 gijn.org##.donate-btn
