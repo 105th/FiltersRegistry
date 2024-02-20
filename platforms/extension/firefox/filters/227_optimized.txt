@@ -1,9 +1,9 @@
-! Checksum: KVRtjhfN7Em0UNopzjw5qA
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1708359039-14400.patch
+! Checksum: IvtlbEblYeqzIsT16W/U+A
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1708431066-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.17.53
-! TimeUpdated: 2024-02-19T16:07:57+00:00
+! Version: 2.0.17.54
+! TimeUpdated: 2024-02-20T12:08:37+00:00
 ! Expires: 4 days (update frequency)
 ||d1cykymlllue3h.cloudfront.net^
 ||ad1.missyusa.com^
@@ -1427,6 +1427,12 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+bbs.ruliweb.com###board_top .best_list ~ .border_box
+doctorjob.co.kr##.grand_banner
+doctorjob.co.kr##.grand_banner + .sectionc
+doctorjob.co.kr##.nurse_banner:has(a[href^="/business/recruit_write.php"])
+doctorjob.co.kr##.main_pay + .sectionc:has(a[href^="/business/recruit_write.php"])
+doctorjob.co.kr##.main_pay ~ .sectionc > .nurse_banner ~ *:is(.sectionc, .hire-list)
 m.fishingseasons.co.kr##.contents .table_cls > li
 newsnjoy.or.kr###article-view.mobile .wrapper > .clearfix
 newsnjoy.or.kr###leftFloat
@@ -2584,8 +2590,7 @@ manatoki323.net,manatoki324.net,manatoki325.net,manatoki326.net,manatoki327.net,
 manatoki323.net,manatoki324.net,manatoki325.net,manatoki326.net,manatoki327.net,manatoki328.net,manatoki329.net,manatoki330.net,manatoki331.net,manatoki332.net,manatoki333.net,manatoki334.net,manatoki335.net##.board-tail-banner
 103.204.13.68##.product-banner
 103.204.13.68##div[class^="mobile-m ad720_"]
-@@||aitimes.com/bannerpop/uploads/image/1699431559523961142.png
-aitimes.com#@#img[src^="/bannerpop/"]
+08dragon.com#@#[data-ez-name]
 @@||cdn.kbmaeil.com/bannerpop/uploads/js/976.js
 @@||cdn.kbmaeil.com/bannerpop/uploads/image/16224295341851316158.png
 @@||whosaeng.com/data/whosaeng_com/banner/2024010357483891
@@ -2622,6 +2627,7 @@ x86.co.kr#@#.download_ad
 @@||t1.daumcdn.net/adfit/static/kp.js$domain=pindirectshop.com|dongbanmall.com
 auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 ||shopsquare.naver.com^$badfilter
+bbs.ruliweb.com#$##board_top .best_list { width: 100% !important; }
 3277532532.reviewtoday.net#$#div[class^="Post_continue_coupang__"] { display: none !important; }
 3277532532.reviewtoday.net#$#.post-contents > div[style] { height: 100% !important; }
 maple.gg#$#.container-content > section[class*=" "] ~ main[class*=" "] { margin-top: 50px !important; }
