@@ -1,9 +1,9 @@
-! Checksum: uCjs1UpUJYmik0qI0I/wxg
-! Diff-Path: ../patches/9_optimized/9_optimized-s-1708428915-3600.patch
+! Checksum: tRuKl+RppQfqAZFfOn6j+Q
+! Diff-Path: ../patches/9_optimized/9_optimized-s-1708436108-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.23.34
-! TimeUpdated: 2024-02-20T11:33:01+00:00
+! Version: 2.0.23.35
+! TimeUpdated: 2024-02-20T13:33:05+00:00
 ! Expires: 12 hours (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -862,8 +862,9 @@ pelisflix2.*#%#//scriptlet('set-cookie-reload', 'adtura', '1')
 niusdiario.es#%#//scriptlet('set-constant', 'google.ima.OmidVerificationVendor', 'emptyObj')
 superhq.net#%#//scriptlet('abort-on-property-write', 'exopop')
 hentaikai.com,superhq.net#%#//scriptlet('abort-on-property-write', 'protData')
-cuevana.biz,cuevana.run#%#//scriptlet('prevent-window-open')
-cuevana.biz,cuevana.run#%#//scriptlet('abort-on-property-read', 'cJsEdge')
+cuevana.*#%#//scriptlet('prevent-window-open')
+cuevana.*#%#//scriptlet('abort-on-property-read', 'cJsEdge')
+player.cuevana.*#%#//scriptlet('trusted-replace-node-text', 'script', 'loadRedirect', '/vastPlayer\.runAds\(\);/g', 'vastPlayer.adsCompleted();')
 pobre.wtf#%#//scriptlet('set-constant', 'ads', 'false')
 suaurl.com#%#//scriptlet('set-constant', 'acdl', 'undefined')
 suaurl.com#%#//scriptlet('prevent-setTimeout', 'window.location.href')
@@ -1578,7 +1579,9 @@ gasteizhoy.com##.macrobanblock
 universohq.com##.barAds
 istoe.com.br##div[style^="width: 100%; min-height: 250px;"]
 laopinion.com.co##div[class^="pauta"]
-/edgeSystem*.js$domain=cuevana.biz|cuevana.run
+||player.cuevana.*/assets/vast_*.xml
+cuevana.*##a[rel*="sponsored"] img
+/edgeSystem*.js$domain=cuevana.*
 ffcv.es##.hidden-xs.zn_section
 dw-anime.net###custom_html-60
 autoscout24.es##.hf-top-old

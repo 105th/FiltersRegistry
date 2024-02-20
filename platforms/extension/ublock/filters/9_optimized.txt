@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: g0Fdn/d/pPJY0C+hVntGDQ
-! Diff-Path: ../patches/9_optimized/9_optimized-s-1708428905-3600.patch
+! Checksum: NfX/s1Dlz/+GlMfUPOdG7w
+! Diff-Path: ../patches/9_optimized/9_optimized-s-1708436097-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.23.34
-! TimeUpdated: 2024-02-20T11:33:01+00:00
+! Version: 2.0.23.35
+! TimeUpdated: 2024-02-20T13:33:05+00:00
 ! Expires: 4 days (update frequency)
 ||nobeta.com.br^$third-party
 ||bcgame.top^$popup
@@ -946,8 +946,8 @@ elmundo.es##+js(set-constant, Object.prototype.adSlot, '')
 niusdiario.es##+js(set-constant, google.ima.OmidVerificationVendor, {})
 superhq.net##+js(abort-on-property-write, exopop)
 hentaikai.com,superhq.net##+js(abort-on-property-write, protData)
-cuevana.biz,cuevana.run##+js(window.open-defuser)
-cuevana.biz,cuevana.run##+js(abort-on-property-read, cJsEdge)
+cuevana.*##+js(window.open-defuser)
+cuevana.*##+js(abort-on-property-read, cJsEdge)
 pobre.wtf##+js(set-constant, ads, false)
 suaurl.com##+js(set-constant, acdl, undefined)
 suaurl.com##+js(no-setTimeout-if, window.location.href)
@@ -1622,7 +1622,9 @@ gasteizhoy.com##.macrobanblock
 universohq.com##.barAds
 istoe.com.br##div[style^="width: 100%; min-height: 250px;"]
 laopinion.com.co##div[class^="pauta"]
-/edgeSystem*.js$domain=cuevana.biz|cuevana.run
+||player.cuevana.*/assets/vast_*.xml
+cuevana.*##a[rel*="sponsored"] img
+/edgeSystem*.js$domain=cuevana.*
 ffcv.es##.hidden-xs.zn_section
 dw-anime.net###custom_html-60
 autoscout24.es##.hf-top-old
