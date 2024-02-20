@@ -1,9 +1,9 @@
-! Checksum: yL8VcQzg4kKfsFtJZAYWeA
-! Diff-Path: ../patches/14/14-s-1708439737-3600.patch
+! Checksum: GQHYjf/MvYh59/HJFCA73w
+! Diff-Path: ../patches/14/14-s-1708443312-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.20
-! TimeUpdated: 2024-02-20T14:32:32+00:00
+! Version: 2.1.87.21
+! TimeUpdated: 2024-02-20T15:32:30+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14518,7 +14518,6 @@ emuia1.gugik.gov.pl#%#//scriptlet("set-cookie", "cookieMessageHide", "true")
 gisgminny.pl#%#//scriptlet('set-cookie', 'cookiesDirective', '1')
 atlasbiomed.com,atlas.ru#%#//scriptlet('set-local-storage-item', 'privacyBannerShow', 'false')
 linternaute.com,lachainemeteo.com#%#//scriptlet('trusted-click-element', 'button.button__acceptAll')
-lefigaro.fr#%#AG_onLoad(function(){if("undefined"!=typeof localStorage)try{if(!localStorage.getItem("_pubcid")){var b=new MutationObserver(function(){var a=document.querySelector("#appconsent > iframe");a&&a.contentDocument&&(a=a.contentDocument.querySelector(".button__acceptAll"))&&(b.disconnect(),a.click())});b.observe(document,{childList:!0,subtree:!0,attributes:!0});setTimeout(function(){b.disconnect()},1E4)}}catch(a){}});
 totalcasino.pl#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("gdpr_popup", "true") } } catch (ex) {} })();
 login.e-dowod.gov.pl#%#document.cookie="acceptRodoSie=hide; path=/;";
 patienten.kvno.de#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("cookies-confirmed", "true") } } catch (ex) {} })();
@@ -14806,6 +14805,10 @@ techzine.nl#%#AG_onLoad(function() { if(window.location.href.indexOf("cookiewet"
 thenewdaily.com.au#%#document.cookie = "tnd_subscribe_shown=true";
 trouw.nl#%#AG_onLoad(function() { var check = document.getElementsByClassName('site-tr bg-blur has-shadow')[0]; if (check){document.cookie = "nl_cookiewall_version=1"; location.reload();}; });
 ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = document.getElementsByClassName('cookiewall')[0]; if (check){document.cookie = "acceptcookies=true"; location.reload();}; }, 300); });
+! https://github.com/AdguardTeam/AdguardFilters/issues/173053
+! TODO: remove the hints, JS rule when the issue is fixed - https://github.com/AdguardTeam/Scriptlets/issues/407
+!+ NOT_PLATFORM(windows, mac, android)
+lefigaro.fr#%#//scriptlet('trusted-click-element', 'button.button__acceptAll')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170168
 ! TODO: use trusted-click-element scriptlet when issues below are fixed
 ! Support for clicking in shadow DOM - https://github.com/AdguardTeam/Scriptlets/issues/323
@@ -20232,6 +20235,7 @@ scitechdaily.com,thewindowsclub.com#@#.ad-space
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+||2game.info/ad/failed_ad_view.js
 htmlgames.com##div[data-type='yad']
 leekduck.com##body > div[style*="position: fixed; display: flex; align-items: center;"]
 imagetostl.com##body > div[class="vd xj"]
@@ -40622,6 +40626,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+#%#//scriptlet('trusted-set-local-storage-item', 'halfSheetAppBannerDismissed', '{"halfSheetAppBannerDismissed":{"expiration":2000000000000,"data":true}}')
 rakumachi.jp#$?#.atomicityPromotion { remove: true; }
 rakumachi.jp#%#//scriptlet('remove-class', 'entryDetail__app', 'div')
 rakumachi.jp#$##js-entryDetail__app { height: unset !important; }
