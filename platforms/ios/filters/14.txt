@@ -1,9 +1,9 @@
-! Checksum: CiT8xqyF/nqyzSwoEJGtMg
-! Diff-Path: ../patches/14/14-s-1708508087-3600.patch
+! Checksum: klpC8FyRJr9sCU6W1Y1oog
+! Diff-Path: ../patches/14/14-s-1708511738-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.28
-! TimeUpdated: 2024-02-21T09:32:29+00:00
+! Version: 2.1.87.29
+! TimeUpdated: 2024-02-21T10:32:57+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2371,6 +2371,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+emlak.mitula.com.tr#%#//scriptlet('set-cookie', 'cookieBannerDesktop', 'true')
 androidpolice.com#$#main ~ .adsninja-ad-zone ~ .adsninja-ad-zone ~ div[class][style*="z-index"] { display: none !important; }
 androidpolice.com#$#html { overflow: auto !important; }
 androidpolice.com#$#body { overflow: auto !important; }
@@ -7489,7 +7490,7 @@ lcwaikiki.com##.cookiealert.show
 liveworksheets.com###divcookieconsent
 audioboom.com#$#div[id^="cookie-modal-"] { display: none !important; }
 audioboom.com#$#body { overflow: visible !important; padding-right: 0 !important; }
-venezia.pl,jungfrau.ch##.m-cookie-info
+unisono.eu,venezia.pl,jungfrau.ch##.m-cookie-info
 rheinbahn.de###cookiefrage
 /misc/cookie.js$domain=kurnik.pl|playok.com
 tbd.community###block-tbd-cookie-notice
@@ -13852,6 +13853,7 @@ spoint.spox.com,cmpv2.berliner-zeitung.de#%#//scriptlet('trusted-click-element',
 winfuture.de#%#AG_onLoad(function(){if(!document.cookie.includes("cmpconsent") || !document.cookie.includes("__cmpcccu")){var g=new MutationObserver(function(){var b=document.querySelector("#cmpwrapper")?.shadowRoot?.querySelector("#cmpwelcomebtnyes > a");b&&b.click();});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});
 cmp.computerbild.de,cmp-sp.siegener-zeitung.de,cmp-sp.sportbuzzer.de#%#//scriptlet('trusted-click-element', 'button[title^="Alle akzeptieren"]')
 !
+e-catalog.co.uk#%#//scriptlet('trusted-set-cookie-reload', 'ek_cookie_policy_settings', '%7B%22necessary%22%3A1%2C%22trusted_analytics%22%3A%220%22%2C%22other_analytics%22%3A%220%22%7D')
 dealer.porsche.com#%#//scriptlet('trusted-click-element', '.uc-body-wrapper label#category-checkbox-marketing-label, .uc-footer button#uc-sdk-banner-safe')
 adventisten.de,hopetv.de#%#//scriptlet('trusted-set-local-storage-item', 'CookiesConsent', '{"necessary":true,"functional":true}')
 gibson.com#%#//scriptlet('trusted-click-element', '#cookieModal.show button#essentialCookies')
@@ -31009,6 +31011,8 @@ newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,theloca
 !
 ! SECTION: Subscriptions - Regular rules
 !
+emlak.mitula.com.tr###bannerEmailLeftContainer
+||emlak.mitula.com.tr/jsp/include/banners/bannerEmail
 totaltypescript.com###article-cta
 sonarsource.com###form-blog-newsletter
 venezia.pl##.m-newsletter-panel
@@ -48744,9 +48748,10 @@ player.repelis24.rs#%#//scriptlet('adjust-setInterval', 'count--', '*', '0.02')
 comohoy.com#%#//scriptlet('adjust-setTimeout', 'content', '*', '0.02')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146765
 standard.co.uk#%#//scriptlet('remove-class', 'sticky', '.video-top-container')
+! https://github.com/AdguardTeam/AdguardFilters/issues/173238
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146829
-makimbo.xyz#%#//scriptlet('adjust-setInterval', 'time', '*', '0.02')
-makimbo.xyz#%#//scriptlet('trusted-click-element', '.content > #skip > a[href^="http"]')
+dl.lk21static.xyz,makimbo.xyz#%#//scriptlet('adjust-setInterval', 'time', '*', '0.02')
+dl.lk21static.xyz,makimbo.xyz#%#//scriptlet('trusted-click-element', '.content > #skip > a[href^="http"]')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146777
 dyp.li#%#//scriptlet('adjust-setInterval', 'p--', '', '0.02')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146297
