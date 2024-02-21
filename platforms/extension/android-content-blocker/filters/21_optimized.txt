@@ -1,5 +1,5 @@
-! Checksum: QzEf6WU3yyGRIXnpDhcaaw
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1708421693-3600.patch
+! Checksum: UlXYlN+13XwOxYsiMr57vA
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1708482864-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.19.66
@@ -500,7 +500,6 @@ wikipedia.org##.mw-dismissable-notice
 3dnews.ru###youtube-chunk-wrapper
 overclockers.com###sidebar > div:not(.reference)
 ||mir-avto-moto.ru^$domain=spec-komp.com
-comss.ru##td[style="width:180px"] > div.block
 disqus.com##div[data-role="motd-alert"]
 pastelink.net###display-sidebar
 sourceforge.net###downloading > #mirror
@@ -534,7 +533,6 @@ sportmail.ru##div[id^="notification"]
 ##.hs-sosyal
 ##.sosyal:not(body):not(html)
 ##.td_block_social_counter
-webpromoexperts.net###nethunt-social-buttons
 fitomarket.com.ua###socialLinksMain
 /wp-content/plugins/sociallocker-
 /pandalocker.$script,domain=lanka.ru
@@ -596,7 +594,9 @@ taishu.jp##.youtube-content
 ntv.com.tr##.article-socialFrame-widget
 news.cookpad.com##a[href="https://line.me/R/ti/p/%40oa-cookpadnews"]
 nv.ua##section[data-type="advertising"]
+nashkraj.by##.news_detail_social
 politring.com###body_left > ul.social-links
+freetp.org#$#.pagebg { background: none !important; }
 nationalpost.com,financialpost.com,thegrowthop.com#$#.featured-video--fixed .player-wrapper { position: static !important; }
 mssqltips.com###signup-div
 zap-hosting.com###social-media-button-instance-container
@@ -763,7 +763,6 @@ washingtonpost.com#$#.paywall-overlay { display: none !important; }
 washingtonpost.com#$#div[data-qa="overlay-background"] { display: none !important; }
 ||cdn.tinypass.com/api/tinypass.min.js$domain=digiday.com
 pikabu.ru##.page-story a#specials
-pikabu.ru##.pikman
 ||special.pikabu.ru/*/embed/
 !+ PLATFORM(android, ios, ext_android_cb)
 pikabu.ru##.promo-banner
@@ -858,6 +857,7 @@ rebates.jp##a[class^="css-"][href^="https://ac.ebis.ne.jp/"][href*="_mno_"]
 ||takarakuji.rakuten.co.jp/pc/champ/loto/img/external/r_mobile_
 jibunbank.co.jp##.c-prDefault-01
 kidona.rakuten.co.jp,hoken.rakuten.co.jp,rakuten-insurance.co.jp##.mnoBnrArea
+hoken.rakuten.co.jp###inc-header-inner > div.pcOnly[style="width:100%; background: #ff0088; text-align: center;"]
 rakuten.co.jp###mno-header
 azby.fmworld.net###subContents > div.mrgB10:last-of-type
 cyzo.com##.rmodule > a[href^="https://cyzo.co.jp/publicity/"]
@@ -992,7 +992,6 @@ duckduckgo.com###browser-promo
 duckduckgo.com###browser-promo + div[class]
 duckduckgo.com###popover-browser-promo
 duckduckgo.com###faq
-duckduckgo.com##.atb-button--faq
 duckduckgo.com##.content-info
 duckduckgo.com##.onboarding-ed
 duckduckgo.com#$#.js-header-aside.is-hidden { display: block!important; }
@@ -1182,6 +1181,7 @@ hexlet.io##.sticky-top
 techplay.jp##.prBanner
 dot.asahi.com##.info
 123pan.com##.login-vip-banner
+nifty.com##.newsList > li > a[href^="https://setsuzoku.nifty.com/"]
 jin10.com##.top-poster
 cloud.tencent.com##.cdc-group-qr-card
 flowwow.com##.promo-banner
@@ -1443,6 +1443,7 @@ bellesa.co##a[target="_blank"] > div > video
 androidinsider.ru##.link-alert
 honeypot.io##.container-honeypot > div.honeypot-box-wrapper
 cult.honeypot.io##.honeypot-badge
+cult.honeypot.io##div[class^="article-module--promotion-block"]
 blog.skillfactory.ru##.link-to-course
 blog.skillfactory.ru##div[class^="wp-block-vadim-banner-"]
 g2a.com##.com-container__sidebar
@@ -1602,7 +1603,6 @@ startpage.com##.widget-install-legacy
 otoko-honne.com##.free_linkbox
 yingav.net##.offer_intro
 ficbook.net##.help-box
-newsweek.pl###tpTopBarSticky
 chomikuj.pl##.plugininstaller
 shutterstock.com##div[data-automation="header-banner"]
 deepl.com##aside[aria-labelledby="pro-ad-banner-heading"]
@@ -1740,6 +1740,7 @@ bookwalker.jp##.ad-new-member
 bookwalker.jp##.side-deals
 bookwalker.jp##.o-beginner-banner
 bookwalker.jp##.bnr-list-area
+videolan.org##.sponsors-carousel-wrapper
 smartpress.by##body div.top-box
 koneta.nifty.com##.textwidget > a[href^="https://setsuzoku.nifty.com"] > img
 interviewbit.com##.ribbon-banner
@@ -1751,7 +1752,6 @@ javarchive.com##.box_right_exlogo_banner
 ||brandboardapi.yemek.com/ad/getadbyslug
 yemek.com##.masthead
 search.rakuten.co.jp##div[class="dui-container festival"]
-itabashi-times.com,news.cookpad.com##img[width="300"][height="250"]
 66law.cn##.consult-bottom-fixed
 tokai.hostlove.com###sub
 glasswire.com##.buy-banner
@@ -1798,6 +1798,7 @@ bmc.com##.vce-sticky
 avast.ru##.message-bar
 simplilearn.com##.engagingBanner
 shazam.com##.shz-frame-promotionbanner
+lenstip.com##.shortcode-content > center > table[width="680"][style^="background-color:"]
 blog.csdn.net##.csdn-common-logo-advert
 ccleaner.com##div[data-componentname="article-sharing"] + div[data-componentname="article-cta"]
 litres.ru##.Banners-module__wrapper
@@ -1914,6 +1915,7 @@ thetimes.co.uk###paywall-portal-page-footer
 dontpayfull.com##.sponsored
 it-here.ru##.telegram-banner
 theatlantic.com###nonMeteredNudge
+theatlantic.com##.c-non-metered-nudge
 interfax.ru##.popupNowReading
 lostpix.com##a[href="http://myfresh.tv/radio/BestR.html"]
 ||cmtscience.ru/photos/shares/banners/5eba53abef3e6.gif
@@ -1925,13 +1927,13 @@ eksisozluk.com##aside > iframe[src^="https://eksiseyler.com/sozluk/"]
 phonearena.com##.widgetOffers
 ||image.infoseek.rakuten.co.jp/content/MNO_banner/MNO_PC_300x125_$domain=news.infoseek.co.jp
 ||script.softcube.com^$domain=foxtrot.com.ua
+backup4all.com##.toast-bottom-right
 ||cdn.myanimelist.net/images/event/support_mal/banner-ani-*.gif
 anidl.org##.logo-row > div.stream-item-top-wrapper
 imdb.com##div[class^="pro_title_link"]
 the-village.ru##main[class] a[href="/page/advertisers"]
 topcomputer.ru##.owl-carousel4banner
 topcomputer.ru##.row-no-gutters
-topcomputer.ru##.main-banner-wrapper
 ||usefomo.com^$third-party
 irccloud.com###limits > a
 livelaw.in###news_on_exit
@@ -1953,7 +1955,6 @@ spark.ru##.never_miss_block
 igromania.ru##a[href^="https://ads.adfox.ru/"]
 pcsecrets.ru##.mainbottom > div.yarpp-related ~ div[class][id]
 businessmens.ru##.uac
-sleep-hero.de,honor.ru##.top-banner
 ||pcsecrets.ru/wp-content/uploads/*/word_book*.png
 yahoo.com##div[data-i13n-sec="app-bhpromo"]
 fz139.ttk.ru##.banner_zone
