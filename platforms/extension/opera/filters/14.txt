@@ -1,9 +1,9 @@
-! Checksum: K2ygYWo/5q6ATaBSNGusag
-! Diff-Path: ../patches/14/14-s-1708533391-3600.patch
+! Checksum: J2r5pJsUcCnt97/AnEstOA
+! Diff-Path: ../patches/14/14-s-1708536930-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.35
-! TimeUpdated: 2024-02-21T16:34:01+00:00
+! Version: 2.1.87.36
+! TimeUpdated: 2024-02-21T17:32:57+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2312,7 +2312,7 @@ win-10-forum.de,pedelecforum.de#$#body[style*="overflow: hidden;"] .p-pageWrappe
 ! #%#//scriptlet('prevent-setTimeout', 'f.parentNode.removeChild(f)', '100')
 foromtb.com#%#//scriptlet('prevent-setTimeout', 'f.parentNode.removeChild(f)', '100')
 !
-xranks.com,duplichecker.com,foromtb.com,dekudeals.com,encuentra24.com,krone.at##body div.fc-consent-root
+compsmag.com,xranks.com,duplichecker.com,foromtb.com,dekudeals.com,encuentra24.com,krone.at##body div.fc-consent-root
 ! ###sliding-popup
 veolia.de,iyihisset.com,amerika21.de,museicapitolini.org,developer.nvidia.com,zillya.com,inrim.it,jneurosci.org,medrxiv.org,novartis.com.tr,royal.uk,transcom.com,netcologne.de,belltower.news,bigfm.de,click.ro,demokrata.hu,emma.de,gysev.hu,humanite.fr,ikgastarten.nl,la7.it,london.gov.uk,mavcsoport.hu,mcdonalds.at,mcdonalds.it,mises.org,mnm.hu,musescore.com,nbcsports.com,pnas.org###sliding-popup
 ! ###CookiesPolicy
@@ -14120,7 +14120,7 @@ happydog.de#%#//scriptlet('set-cookie', 'mnd-cookie-accepted-happydogde4', '1')
 anderweltverlag.com,trolley-center.com,rabe-markt.com,holland-shop.com,hanse-soft.de,bamboo-nr-1.de,kvm-ip.de,team-undercover.de,superpreis-moebel.de,kantenschutzprofi.shop,diorama-world.com,colvital.de#%#//scriptlet('set-cookie-reload', 'epCookieConsent', '0')
 lolaliza.com#%#//scriptlet('set-cookie', 'enableTracking', 'false')
 peakd.com#%#//scriptlet('set-cookie', 'COOKIE_CONSENT_ACCEPTED', 'true')
-tweakers.net#%#AG_onLoad(function(){var c=new MutationObserver(function(){var a=document.querySelector("button.ctaButton[data-action=\"acceptAll\"]"),b=document.querySelector("#koekieBar");a&&b&&getComputedStyle(b)&&getComputedStyle(b).display&&"block"===getComputedStyle(b).display&&(c.disconnect(),a.click())});c.observe(document,{childList:!0,subtree:!0}),setTimeout(function(){c.disconnect()},1E4)});
+tweakers.net#%#//scriptlet('trusted-click-element', 'button[data-action="refuseAll"]', '!cookie:SSLB', '800')
 refurbishedstore.de#%#//scriptlet('set-cookie-reload', 'COOKIE_CONSENT', 'true')
 etm.ru#%#//scriptlet('set-local-storage-item', 'cookiesPermission', 'true')
 nestbank.pl#%#//scriptlet('set-local-storage-item', 'cookies_status', '1')
@@ -14892,6 +14892,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! fix cookie popup
+@@||tweakers.net/*/styles/components/cookiebar/cookie_bar.
 ! platform.twitter.com/widgets/tweet_button.html
 test-e-quiz.it#@##cookie-law-info-bar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173006
@@ -25302,7 +25304,7 @@ businesstoday.in,aajtak.in##.rhs-fixwhtsapp
 justdial.com###best_deal_div
 justdial.com##.b-modal.__b-popup1__
 bauking.de##.exit-intent-wrap
-book.dmm.co.jp###react-popup-parts-root
+book.dmm.com,book.dmm.co.jp###react-popup-parts-root
 hollywoodmask.com###newletter-popup
 ewdn.com##div[data-title^="Subscription Form - Popup"]
 indiafreestuff.in##.mypopups-substare
@@ -45153,6 +45155,9 @@ theguardian.com##.contributions__adblock
 !
 ! SECTION: Self-promo - Regular rules
 !
+||p.book.dmm.com/images/banner/banner_coupon_discount_$image
+book.dmm.com##div[class^="css-"] > div[class^="css-"]:has(> div[class^="css-"] > a[class^="css-"] >img[src*="p.book.dmm.com/images/banner/banner_dmm_"])
+book.dmm.com##div > div[class^="css-"]:has(> a[class^="css-"] >img[src*="p.book.dmm.com/images/banner/banner_dmm_"])
 deezer.com###tbcc_offer_btn
 itc.ua##body > div[style="text-align:center;margin-bottom: 0;"]
 astral.sh##main ~ div.container:has(> div > div.relative > div > a[href="https://docs.astral.sh/ruff/"])
