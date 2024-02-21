@@ -1,9 +1,9 @@
-! Checksum: XU/vwoxURGBEULSb7QVVnQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1708504497-3600.patch
+! Checksum: DhzrNzKoIAMQBJD8SWlPBw
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1708508079-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.49.83
-! TimeUpdated: 2024-02-21T08:32:40+00:00
+! Version: 2.0.49.84
+! TimeUpdated: 2024-02-21T09:32:25+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -838,8 +838,6 @@ altyazilifilm.*#%#//scriptlet("prevent-window-open")
 hdizlefilmleri.com#%#//scriptlet("prevent-window-open")
 yabancidizitv.*#%#//scriptlet("prevent-window-open")
 nowtv.com.tr#%#//scriptlet("prevent-setInterval", ".addClass('getir')")
-4kfilmizlesene.xyz#%#//scriptlet("prevent-window-open")
-4kfilmizlesene.xyz#%#//scriptlet('abort-on-property-write', 'adx')
 yukfilmizle.com#%#//scriptlet("set-cookie", "popundr", "1")
 filmmodu9.com,filmmodu10.com,filmmodu11.com,filmmodu12.com,filmmodu13.com,filmmodu14.com,filmmodu15.com,filmmodu16.com,filmmodu17.com,filmmodu18.com,filmmodu19.com,filmmodu20.com#%#//scriptlet("set-constant", "Object.prototype.ads", "noopFunc")
 atv.com.tr#%#//scriptlet("set-constant", "HBiddings.vastUrl", "")
@@ -933,7 +931,6 @@ fullhdfilm.pro#$##wrap { margin-top: 0px !important; }
 degisimmedya.com#$##hnsbox { display: none !important; }
 degisimmedya.com#$#.modal-backdrop { display: none !important; }
 degisimmedya.com#$#body { overflow: auto !important; }
-4kfilmizlesene.xyz#$#.container { margin-top: 0 !important; }
 apara.com.tr#$#.billBoardFrame { position: absolute !important; left: -3000px !important; }
 sehrivangazetesi.com#$?#.swiper-wrapper > div.swiper-slide:has(> img[src*="banner"] + a[href]) { remove: true; }
 webteizle.*#$#body { background-image: none !important; }
@@ -1310,6 +1307,9 @@ $xmlhttprequest,third-party,denyallow=linkvertise.com|fastly.net|statically.io|s
 /service/advertchannels?$domain=kocaelifikir.com|anayurtgazetesi.com|medyaankara.com|ozgunkocaeli.com.tr|urfanatik.com|dirilispostasi.com|turkuazgazetesi.net|yenialanya.com|bugunkocaeli.com.tr|cagdaskocaeli.com.tr|mansetaydin.com|enkocaeli.com|kocaelikoz.com|kocaelibarisgazetesi.com|seskocaeli.com|sigortahaber.com|gaziantepgunes.com
 /service/advertchannels?$xmlhttprequest,redirect=nooptext,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
+4kfilmizlesene.*#%#//scriptlet('prevent-window-open')
+4kfilmizlesene.*#%#//scriptlet('abort-on-property-write', 'adx')
+4kfilmizlesene.*#$#.container { margin-top: 0 !important; }
 cumhuriyet.com.tr##.row[style^="width:100%;"]
 720pizle.ai##.player > div > a[target="_blank"]
 /show-promote.$domain=economynews24.com|seyredeger.com|indirmedenfilmizle.vip|dizilost.com|altyazilifilmizle3.com
@@ -2002,7 +2002,6 @@ sabah.com.tr##div[data-wbzone-loaded="728x90"]
 720pizle.*,diziroll.*,roketdizi.co###footerFixedDivWrapper
 ye-mek.net##.addForMainPage
 donanimhaber.com##.giydirme-container
-4kfilmizlesene.xyz##div[class^="vpre"]
 gartic.io###videoContainer
 netspor1.live,netspor6.live,netspor16.live,netsportv166.com,netsportv158.com##.banner_area
 tarotscans.com##body > div#footer + p[style="text-align: center;"]
@@ -2092,7 +2091,7 @@ paratic.com##.all-page-ad-frame
 yasemin.com##.subdetail-content > div.row > div.sidebar-column > div.sidebar
 turkerotikizle.com,hderotikfilmizle1.com##.happy-sidebar
 coin-turk.com##.clickout-banner-native_table_box
-fullhdfilmizle.vip,4kfilmizlesene.xyz##.fbnx
+fullhdfilmizle.vip##.fbnx
 erotikfilmizle1.com,erotikizle123.com##center > a[href^="https://www.google.com/"]
 ||turkerotikizle.com/wp-content/themes/*/assets/img/banners/
 eniyifilms.com###wptpageskin
