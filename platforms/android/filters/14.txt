@@ -1,9 +1,9 @@
-! Checksum: i3LSQo0MW8qTIQISr1QDHg
-! Diff-Path: ../patches/14/14-s-1708612473-3600.patch
+! Checksum: w2w5ZP5qTIRc/XnFw6q1/Q
+! Diff-Path: ../patches/14/14-s-1708616113-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.51
-! TimeUpdated: 2024-02-22T14:32:30+00:00
+! Version: 2.1.87.52
+! TimeUpdated: 2024-02-22T15:32:41+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2369,6 +2369,8 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+forum.digitalfernsehen.de#%#//scriptlet('trusted-set-cookie', 'xf_notice_dismiss', '1')
+geeksforgeeks.org##.gfg_cookie__container
 afreesms.com#%#//scriptlet('set-cookie', 'cookie', 'accepted')
 argeweb.nl#%#//scriptlet('trusted-set-cookie', 'cc_cookie_accept', 'cc_cookie_accept')
 virustotal.com#%#//scriptlet('set-cookie', 'euConsent', '1')
@@ -22622,7 +22624,8 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
-wzzm13.com#%#//scriptlet('trusted-click-element', 'dialog[data-name="exitInterstitial"] button.grid__modal-close')
+geeksforgeeks.org#%#//scriptlet('trusted-set-local-storage-item', 'problemPageShowOnboardingPopup', 'true')
+wkyc.com,wzzm13.com##dialog[data-name="exitInterstitial"]
 democracynow.org#%#//scriptlet('set-cookie', 'campaign_seen_today', 'true')
 kare11.com,13newsnow.com,12news.com#$?#div[data-module="grid"] > dialog[data-name="exitInterstitial"] { remove: true; }
 authentikcanada.com#%#//scriptlet('set-cookie', 'Klaviyo-Popup', 'true')
@@ -30653,6 +30656,7 @@ newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,theloca
 !
 ! SECTION: Subscriptions - Regular rules
 !
+democracynow.org##.home_daily_digest
 postium.ru##.hype-ad:has(> noindex > a[href="https://t.me/postiumru/"])
 diritto.it##.block-salesmanago-form:has(img[id^="closeBtnNewsletter"])
 emlak.mitula.com.tr###bannerEmailLeftContainer
