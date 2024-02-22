@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: HB+rzgdtkD4ZrCObrxWkuA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1708598087-3600.patch
+! Checksum: vImlCUQ9ngssbbdKzqOnug
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1708601689-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.21.78
-! TimeUpdated: 2024-02-22T10:32:46+00:00
+! Version: 2.3.21.79
+! TimeUpdated: 2024-02-22T11:32:44+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -77,7 +77,6 @@
 !
 !
 !
-||cdn.b2.ai^$third-party
 ||ipurseeh.xyz^
 ||reonews.pl^$third-party
 ||reomanager.pl^$third-party
@@ -16927,6 +16926,10 @@ mob.hr##.side_banner
 !---------------------------------------------------------------------
 ! NOTE: Czech and Slovakian
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173320
+! sssp
+sauto.cz##+js(json-prune, ads, requestId)
+sauto.cz##div[class^="c-ssp-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171914
 extra.cz#@#.ads-desktop
 extra.cz#$#html > body.ads-adform { margin-top: 0 !important; }
@@ -19673,6 +19676,9 @@ mako.co.il##+js(set-constant, isBs, false)
 !---------------------------------------------------------------------
 ! NOTE: Italian
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173302
+fanpage.it##.box-news-banner
+fanpage.it##div[class^="taboola-widget-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173332
 money.it###gmp-insideposttop
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173211
@@ -32326,6 +32332,7 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+||vidhidevip.com/assets/jquery/api100.js
 igg-games.com##.post > a > img
 xozilla.xxx###scrollhere
 terabox.com##.shadow
@@ -36149,7 +36156,6 @@ theverge.com##.ad__athena_internal
 ||gamecopyworld.com/!_$subdocument
 proptiger.com##div[style^="position:relative;"][style*="height:100px;"]
 digitimes.com###bigsquare
-||camstreams.tv/player/html.php?aid=*_html&video_id=*&*&referer
 purecalculators.com##.hero-thing-d
 purecalculators.com##div[id^="thing-pure_"]
 play-games.com##.website-ad-space-area
@@ -49793,6 +49799,8 @@ adultlingeriepics.com,adultlingeriepics.com,adultspankingtgp.com,allfeetporn.com
 !
 !
 !+ NOT_OPTIMIZED
+||camstreams.tv/player/html.php?aid=*_html&video_id=*&*&referer
+!+ NOT_OPTIMIZED
 anonymousemail.me##.center > a[target="_blank"] > img
 !+ NOT_OPTIMIZED
 daijiworld.com##.ipRightAdvt
@@ -50733,6 +50741,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173314
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=metrolagu.cam
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173156
 @@||c.amazon-adsystem.com/aax2/apstag.js$domain=worldsurfleague.com
 @@||securepubads.g.doubleclick.net/pagead/managed/js/gpt/*/pubads_impl.js$domain=worldsurfleague.com
@@ -54433,8 +54443,6 @@ forum.pac-rom.com#@#.banner_ads
 @@||b.scorecardresearch.com/crossdomain.xml$domain=espn.go.com
 ! exclude american express (fix retrieving of pdf billing statements)
 @@||online.americanexpress.com/myca/statementimage/$document
-! Fixed aliexpress.com styles
-@@||style.aliunicorn.com^$domain=alibaba.com|aliexpress.com
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/161
 ! http://forum.adguard.com/showthread.php?4685
 @@||kayako.com/images/home/banner*.jpg
