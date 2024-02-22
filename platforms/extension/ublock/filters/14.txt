@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: mLG0wvE1TNmB+EPCWt60uQ
-! Diff-Path: ../patches/14/14-s-1708608896-3600.patch
+! Checksum: LEi/o59lGuJk8oZvULSqFg
+! Diff-Path: ../patches/14/14-s-1708612492-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.50
-! TimeUpdated: 2024-02-22T13:32:34+00:00
+! Version: 2.1.87.51
+! TimeUpdated: 2024-02-22T14:32:30+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14124,6 +14124,9 @@ gadgethacks.com##+js(set-constant, WHT.ShowConsentForm, trueFunc)
 !
 ! The button to click is in the shadow root.
 ! TODO: Rework when support for clicking inside the shadow root appears.
+!
+! trusted-click-element doesn't work for cookie acceptance here
+! Rework when this issue will be fixed: https://github.com/AdguardTeam/Scriptlets/issues/391
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173053
 ! TODO: remove the hints, JS rule when the issue is fixed - https://github.com/AdguardTeam/Scriptlets/issues/407
 !+ NOT_PLATFORM(windows, mac, android)
@@ -21792,7 +21795,8 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
-12news.com##div[data-module="grid"] > dialog[data-name="exitInterstitial"]
+democracynow.org##+js(set-cookie, campaign_seen_today, true)
+kare11.com,13newsnow.com,12news.com#$?#div[data-module="grid"] > dialog[data-name="exitInterstitial"] { remove: true; }
 authentikcanada.com##+js(set-cookie, Klaviyo-Popup, true)
 zhihu.com##div[style^="transform-origin: center bottom; margin-top:"]
 community.atlassian.com##.login-spotlight
@@ -28973,7 +28977,8 @@ macwelt.de,pcwelt.de##+js(set-constant, firebase.messaging, noopFunc)
 ! SECTION: Push notifications - Regular rules
 !
 ! push
-||12news.com/notifications*.js
+wzzm13.com##.page__notifications
+/notifications*.js$domain=kare11.com|13newsnow.com|12news.com
 nowtv.com.tr##.gospock-webpush-permission-modal-contanier
 ||heraldsun.com/*/messaging/webpush_
 themirror.com##.pwa-modal-prompt
@@ -44747,6 +44752,7 @@ theguardian.com##.contributions__adblock
 !
 ! SECTION: Self-promo - Regular rules
 !
+hepper.com##body div.opportunity-container.active
 book.dmm.com##div[class^="css-"] > div[class^="css-"]:has(> div[class^="css-"] > a[class^="css-"] >img[src*="p.book.dmm.com/images/banner/banner_dmm_"])
 book.dmm.com##div > div[class^="css-"]:has(> a[class^="css-"] >img[src*="p.book.dmm.com/images/banner/banner_dmm_"])
 deezer.com###tbcc_offer_btn
