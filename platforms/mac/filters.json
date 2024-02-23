@@ -1018,8 +1018,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.9.95",
-			"timeUpdated": "2024-02-23T07:32:52+0000",
+			"version": "2.1.9.96",
+			"timeUpdated": "2024-02-23T08:32:47+0000",
 			"languages": [
 				"zh"
 			]
