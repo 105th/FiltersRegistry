@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: +6U0KqSEoIKRFXzxJb76vg
-! Diff-Path: ../patches/14/14-s-1708680885-3600.patch
+! Checksum: WmYZEUtG2VjuieokYlFbaw
+! Diff-Path: ../patches/14/14-s-1708684506-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.58
-! TimeUpdated: 2024-02-23T09:32:28+00:00
+! Version: 2.1.87.59
+! TimeUpdated: 2024-02-23T10:32:49+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2341,6 +2341,8 @@ focus.it##+js(remove-class, cp-banner-visible, body)
 !
 ! NOTE: Regular rules
 !
+ubiklibri.it#$#html { overflow: auto !important; }
+ubiklibri.it#$##cookie-html { display: none !important; }
 obligacjeskarbowe.pl###cookieNotSet
 geeksforgeeks.org##.gfg_cookie__container
 afreesms.com##+js(set-cookie, cookie, accepted)
@@ -14214,6 +14216,11 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173395
+ubiklibri.it#@#.cookie-header
+ubiklibri.it#@#.cookie-container
+ubiklibri.it#@#.cookie-info:not(body):not(html)
+ubiklibri.it#@#.cookie-overlay:not(html):not(body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173332
 @@||cdn-cookieyes.com^$domain=money.it
 money.it#@#.cky-consent-container
@@ -39882,6 +39889,7 @@ instagram.com##._aagw:empty
 !
 ! End: Instagram.com
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173398
 ! https://ga.de/bonn/stadt-bonn/palaestinenser-fordern-absage-von-bonner-veranstaltung_aid-107495383
 ||player.glomex.com^$domain=ga.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172949
