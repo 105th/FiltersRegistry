@@ -1,5 +1,5 @@
-! Checksum: iwMiv89rsrc0bFzj8GPZow
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1708623274-3600.patch
+! Checksum: ELAxWl9xmtdxo4zOelm5Mw
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1708655668-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.7.32
@@ -25,6 +25,7 @@
 ||matomeantena.com/scripts/parts/blog/
 /rss/rss.html$subdocument,~third-party
 .com/rss.htm$subdocument,~third-party
+.com/rss2.htm$subdocument,~third-party
 .jp/rss.htm$subdocument,~third-party
 .net/rss.htm$subdocument,~third-party
 .com/rss/$subdocument,~third-party
@@ -138,7 +139,6 @@ jiwasoku.com###test-blo
 moro-ai.com##.tag-top-loop
 mona-news.com##.article-body-inner > dd:has(a[href^="https://livedoor.blogimg.jp/mona_news/"]) ~ dd
 h-ken.net###footer-rssLinkListHtml
-kijomatomelog.com##div[style="margin:0px;padding:2px;"]
 kijomatomelog.com##span[style="font-weight: bold;"] ~ a[href^="http://matomeantena.com/feed/"] ~ a[href][target="_blank"]
 baiku-sokuho.info##.links2
 ||baiku-sokuho.info/pickup-rss*.html
@@ -238,7 +238,6 @@ kitizawa.com##.article-body-more > div[style="border:1px solid #F90;padding:10px
 ||matomeantena.com^$domain=japohan.net|aaieba.livedoor.biz
 ||nullpoantenna.com^$domain=japohan.net|aaieba.livedoor.biz
 ||vtubernews.jp/*link.js
-hiragana46matome.com,toriizaka46.jp##.sec-rss-article
 pazdra2ch.blog.jp##div[id^="rss-box"]
 pazdra2ch.blog.jp###comment-title
 world-fusigi.net##.ad_btm
@@ -296,7 +295,6 @@ akb48matomemory.com##.ad-article
 alfalfalfa.com##.rss_headline
 pachinkolist.com##div[style^="height:130px;overflow:auto;"]
 digital-thread.com##.article-headline
-sonicch.com##.rss
 ||blog.livedoor.jp/kokopyon1/rss/$subdocument
 f1jouhou2.com##.rankings
 i2chmeijin.com##.Box
@@ -308,7 +306,6 @@ kokopyon.net##.plg_area:last-child
 ||aaieba.livedoor.biz^$subdocument,~third-party
 aaieba.livedoor.biz##.aaieba-b
 kijomatomelog.com##.related-wrapper
-kijomatomelog.com##div[style="margin-bottom:30px;"] > b > span[style="font-size: medium; color: rgb(102, 102, 102);"]
 ||baiku-sokuho.info/top-rss.html
 carp-matome.blog.jp##.bw_outbox
 anihatsu.com##.rss-blogroll-kobetu
@@ -393,7 +390,6 @@ oumaga-times.com##.popular-list-header
 burusoku-vip.com##.headline-body
 burusoku-vip.com##.headline-title
 kijomatomelog.com##div[style^="line-height: 35px; border-top:dotted 1px gray;"]
-kijomatomelog.com##div[style="line-height: 20px"]
 ||waranote.livedoor.biz^$subdocument,~third-party
 waranote.livedoor.biz###container > table
 waranote.livedoor.biz##.article-body > iframe[width="660"][height="780"]
@@ -468,8 +464,6 @@ moeimg.net##.news_footer
 wara2ch.com##iframe[src$="warakan_rsslink.html"]
 ||inutomo11.com/nanj$subdocument
 inutomo11.com##iframe[src^="http://inutomo11.com/nanj"]
-syurabahazard.com###middlerss
-syurabahazard.com##.middlersstitle
 po-kaki-to.com###text-5 div.site-Introduction
 po-kaki-to.com##.top-site-andander
 moeimg.net###page-pickup-link_frame
@@ -545,10 +539,8 @@ anige-sokuhouvip.com##div[id^="top_center"]
 jumpmatome2ch.biz##.d-contents
 matacoco.com,tsurimatome.com,kokopyon.net,girlsvip-matome.com,valorantchannel.net,saikyo-jump.com,absurd.blogo.jp,daretoku-eromanga.info,hattatu-matome.ldblog.jp##div[class^="rss"]
 celery-marine.net,geinoujin-blog.net,otoko-honne.com,ske48matoeme.com,kijolifehack.com##div[id^="rss"]
-kijomatomelog.com#?#.sub_right > .sidewrapper:has(> .sidetitlebody > .sidetitle:contains(人気記事))
 manpukunews.blog.jp##div[align="center"] > table[width="700"]
 manpukunews.blog.jp##table[rules="None"]
-kijomatomelog.com##.rss-single
 kijomatomelog.com##.section-rss1
 ||kurumachannel.com/*-Rss.html
 kurumachannel.com##iframe[src*="-Rss.html"]
@@ -646,7 +638,6 @@ matome-tarou.ldblog.jp###j_rss
 ||elog-ch.com/news/newsbbs/
 ||chaos2ch.com/rss$subdocument
 world-fusigi.net##.sticker
-imas-cg.net##.titleRssBottom
 inazumanews2.com##.rsslinkba
 inazumanews2.com##.rsslinkre
 inazumanews2.com#$##rsshead { display: none!important; }
@@ -827,7 +818,6 @@ f.ua##.callback_buttons
 hdfcbank.com###chatTogglerDiv
 justanswer.com##.th-chat-window
 liquidweb.com##footer + div[class^="FixedButton_"]
-muzofond.fm##.feedback-main-container
 network.mobile.rakuten.co.jp###rexSurveyEmbedded
 networkguru.ru##.tbForm_CallMe
 ozon.ru##div[data-widget="webFeedbackForm"]
@@ -1075,6 +1065,7 @@ codewars.com##.cw-ad
 codewars.com###house-display
 habr.com#?#.tm-sexy-sidebar > section.tm-block_spacing-around:has(> footer > a[href^="https://career.habr.com"])
 rbc.ru##.js-forecast
+philstar.com#?##static_cells > div.recommended_cell:has( > div#forex)
 ufanotes.ru#?#.right > div.rates
 ||widgets.coingecko.com^$third-party
 mediametrics.ru##.currency-moving-block
