@@ -1,9 +1,9 @@
-! Checksum: 6hwZuDZm/95cGC/ZQwPjrg
-! Diff-Path: ../patches/18/18-s-1708698936-3600.patch
+! Checksum: It/uKZcZVV8VbQmE9QDyYQ
+! Diff-Path: ../patches/18/18-s-1708752883-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.33.72
-! TimeUpdated: 2024-02-23T14:32:37+00:00
+! Version: 2.0.33.73
+! TimeUpdated: 2024-02-24T05:32:23+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2370,6 +2370,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+vrtranspoint.fi#%#//scriptlet('trusted-set-cookie', 'cookie_consent', '{%22cookies_statistical%22:false%2C%22cookies_ad%22:true}')
 sumsub.com#%#//scriptlet('set-cookie', 'viewed_cookie_policy', 'yes')
 euronet.pl##.eu-cookies-bar-cookies-bar-wrap
 ubiklibri.it#$#html { overflow: auto !important; }
@@ -14945,6 +14946,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/easylist/easylist/issues/18461#issuecomment-1962094544
+vrtranspoint.fi#@##cookie-banner
+vrtranspoint.fi#@##cookie-popup
+@@||vrtranspoint.fi/static/studio/pub/SYSTEM/v2/branches/master/*/cookie-consent.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173395
 ubiklibri.it#@#.cookie-header
 ubiklibri.it#@#.cookie-container

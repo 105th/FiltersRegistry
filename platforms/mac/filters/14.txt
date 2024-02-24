@@ -1,9 +1,9 @@
-! Checksum: A50COBMCslGlcVfhpxlQfA
-! Diff-Path: ../patches/14/14-s-1708706155-3600.patch
+! Checksum: +RwzarKbwL43SplE/GJTMQ
+! Diff-Path: ../patches/14/14-s-1708752877-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.64
-! TimeUpdated: 2024-02-23T16:33:12+00:00
+! Version: 2.1.87.65
+! TimeUpdated: 2024-02-24T05:32:20+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2370,6 +2370,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+vrtranspoint.fi#%#//scriptlet('trusted-set-cookie', 'cookie_consent', '{%22cookies_statistical%22:false%2C%22cookies_ad%22:true}')
 sumsub.com#%#//scriptlet('set-cookie', 'viewed_cookie_policy', 'yes')
 euronet.pl##.eu-cookies-bar-cookies-bar-wrap
 ubiklibri.it#$#html { overflow: auto !important; }
@@ -14943,6 +14944,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
 !
 !
 !
+! https://github.com/easylist/easylist/issues/18461#issuecomment-1962094544
+vrtranspoint.fi#@##cookie-banner
+vrtranspoint.fi#@##cookie-popup
+@@||vrtranspoint.fi/static/studio/pub/SYSTEM/v2/branches/master/*/cookie-consent.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173395
 ubiklibri.it#@#.cookie-header
 ubiklibri.it#@#.cookie-container
