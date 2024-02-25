@@ -1,14 +1,14 @@
-! Checksum: Ct+jF7dNIqmpGxRsH340vA
-! Diff-Path: ../patches/235/235-s-1708704579-14400.patch
+! Checksum: hcy2EvGMJ9R2nhOQlYoriA
+! Diff-Path: ../patches/235/235-s-1708820739-14400.patch
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.4.7
-! TimeUpdated: 2024-02-23T16:06:53+00:00
+! Version: 2.0.4.8
+! TimeUpdated: 2024-02-25T00:22:55+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: PersianBlocker
 ! Description: سرانجام، یک لیست بهینه و گسترده برای مسدودسازی تبلیغ ها و ردیاب ها در سایت های پارسی زبان!
-! Expires: 12h
+! Expires: 6h
 ! Homepage: https://github.com/MasterKia/PersianBlocker
 ! License: AGPLv3 (https://github.com/MasterKia/PersianBlocker/blob/main/LICENSE)
 ! مشکل/پیشنهاد: https://github.com/MasterKia/PersianBlocker/issues
@@ -70,6 +70,7 @@ artmusics.top,musicpars3.ir,musicguitars.ir,subf2m.ir,zeemusic.ir,najiremix.ir,m
 !-------------------------^ Experimental Generic Filters ^-----------------------!
 !-------------------------v Persian Ads/Trackers/Annoyances Filters v-----------------------!
 ! >> A <<
+||anetwork.ir^
 ||alaqsastorm.com/aqsa/ads.php^$image,third-party
 ||adverge.ir^
 ||adrooz.com^
@@ -1136,10 +1137,10 @@ farnet.io##.content-column:not(> .archive-title:has-text(رپرتاژ تبلیغ
 farnet.io###site-footer .col-sm-4:has(a[rel="noopener"][target="_blank"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42827
 farsroid.com#%#//scriptlet('ubo-rmnt.js', 'script', 'ads_app_name')
-farsroid.com#%#//scriptlet('ubo-aopr.js', 'ma_custom.ads_blocker_detect.init')
 farsroid.com#%#//scriptlet('ubo-nowoif.js')
-farsroid.com##div.site-middle-banners
-farsroid.com##div.single-text-ads
+!farsroid.com##+js(aopr, ma_custom.ads_blocker_detect.init)
+farsroid.com#$#div.site-middle-banners { max-height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
+farsroid.com#$#div.single-text-ads { max-height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
 farsroid.com##div.labeled-dw-ads
 farsroid.com##div.cas
 farsroid.com##p:has(> a[href="https://www.farsroid.com/download-imo-android/"] > img)
@@ -1289,11 +1290,13 @@ imvbox.com##div[class^="cr-banner-"]
 ! ^ Used by bils.ir (ipsite.ir/JSShow/js20212022.js)
 ||analytics.irancell.ir^
 ||apptracking.irancell.ir^
-my.irancell.ir#%#//scriptlet('ubo-json-prune.js', 'allRow1 allRow2 recommendeds award entertainment finance shop travel productivity education download *.link *.image')
-my.irancell.ir##div[data-testid^="filterItem_tab"]
-my.irancell.ir##div[data-testid="more-Button-TestId"]
-my.irancell.ir##div[tabindex]:has(div[data-testid^="specialServices"])
-my.irancell.ir##div[style="display: flex; flex-flow: column nowrap; justify-content: center; align-items: center;"]:has(img[alt="Advertisement"])
+||cdn-ngmy.irancell.ir/assets/images/ads^$image,~third-party,domain=my.irancell.ir
+my.irancell.ir##div[class^="css-"][tabindex="0"][style="transition-duration: 0s;"]:has(> div[class^="css-"] > div[class^="css-"] > div[class^="css-"][style] > div[class^="css-"][dir="auto"][data-testid="yourGoodMood"])
+my.irancell.ir##div[class^="css-"][dir="auto"][data-testid="favoritesSuperAppTitle"]
+my.irancell.ir##div[class^="css-"][dir="auto"][data-testid="favoritesSuperAppTitle"] + div[class^="css-"]:has(> div[class^="css-"] > div[class^="css-"][style] > div[class^="css-"][tabindex="0"][style="transition-duration: 0s;"])
+my.irancell.ir##div[class^="css-"][dir="auto"]:has-text(بازارگاه)
+my.irancell.ir##div[class^="css-"][dir="auto"]:has-text(بازارگاه) + div[class^="css-"]:empty + div[class^="css-"]:has(> div[class^="css-"][style] > div[class^="css-"]:empty + div[class^="css-"][style] > div[style="width: 25%;"] > div[tabindex="0"][style="transition-duration: 0s;"])
+my.irancell.ir##div[style]:has(> div[style] > div[style] > div[tabindex][role="link"] > img[alt="Advertisement"])
 ! https://github.com/MasterKia/PersianBlocker/pull/2
 idehalmag.com##.primary-sidebar-widget:has(a[rel*=sponsored])
 idehaltech.com##.secondary-sidebar-widget:has(a[rel*=sponsored])
@@ -1925,6 +1928,8 @@ forum.p30world.com#@##ad_global_above_footer
 ! >> Q <<
 ||sentry.quera.org^
 ! >> R <<
+! https://github.com/AdguardTeam/AdguardFilters/issues/172968
+real-madrid.ir##div.adv
 ! https://github.com/MasterKia/PersianBlocker/issues/217
 rbiran.ir##main > div.container-fluid.my-3:has(> div.row.mb-2 > div.col-lg-4 > a[target="_blank"] > img.w-100[style="border-radius: 10px;"])
 ||raavito.com/ws/usage/submit^$xmlhttprequest,~third-party,method=post
