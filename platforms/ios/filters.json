@@ -503,8 +503,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/9_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.23.41",
-			"timeUpdated": "2024-02-23T11:33:01+0000",
+			"version": "2.0.23.42",
+			"timeUpdated": "2024-02-25T11:33:01+0000",
 			"languages": [
 				"es",
 				"pt"
