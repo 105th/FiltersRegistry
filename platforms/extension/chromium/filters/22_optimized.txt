@@ -1,5 +1,5 @@
-! Checksum: Z5wUxYsV9z0lf8OetVwcCw
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1708828516-3600.patch
+! Checksum: d2D3bZeGKN1X5eGzA6TFiw
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1708914978-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.7.33
@@ -25,6 +25,7 @@
 ||matomeantena.com/scripts/parts/blog/
 /rss/rss.html$subdocument,~third-party
 .com/rss.htm$subdocument,~third-party
+.com/rss2.htm$subdocument,~third-party
 .jp/rss.htm$subdocument,~third-party
 .net/rss.htm$subdocument,~third-party
 .com/rss/$subdocument,~third-party
@@ -196,7 +197,6 @@ negisoku.com##.article-body-more > p[style="color:gray;text-align:right;"]
 sexytvcap.com###bottomrss
 erogazopple.com##.rss1.widget_text
 cavolump.com##div[class^="pickup"]
-parlourfullslotl.com##.RSSBlogroll
 nofootynolife.net##.blogroll_content1
 nofootynolife.net##.entry_body > div[style$="#AAA;width: 400px;"]
 urapic.com###main-box > h3.midashi
@@ -244,7 +244,6 @@ pioncoo.net##.widget-over-article
 pioncoo.net##.widget-over-breadcrumbs
 pioncoo.net##.widget-over-sns-buttons
 pioncoo.net##div[id^="widget-index-"]
-olch.biz##.rssImg
 mudasure.com##.blogroll-top
 holosoku.com###custom_html-22
 warotanien.net##div[class^="header_hedline"]
@@ -257,6 +256,9 @@ kininaru-geinou-m.blog.jp##.rss-blogroll + div.sub-title-box
 kininaru-geinou-m.blog.jp##.rss-blogroll1box
 kininaru-geinou-m.blog.jp##.sub-title-box:first-child
 pokemon-goh.doorblog.jp##.article-body-inner > div.t_b + div[style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;"]
+re-file.com#?#.frame:has(> script[src$="/blogroll.js"]) + br
+re-file.com#?#.frame > script[src$="/blogroll.js"]:upward(1)
+re-file.com#?#.page-title:contains(/話題の|ピックアップ/)
 you1news.com##div[class^="article-bottom-rss"]
 ||matomeantena.com/scripts/parts/category/vip.js
 inutomo11.com##.main-column-inner > br
@@ -471,8 +473,6 @@ nanj-world.blog.jp#?#body > #second-header:has(> #header_rss_c)
 densetsunokijo.net,kichimama.net,romeodensetsu.com,shuraba-dendo.com,sukashuraba.net,labradorsokuho.net###rss2
 gundam-futab.info##.rss_label
 sexytvcap.com,pokebrary.blog.jp,gundam-futab.info##.blogroll-channel
-ganmodoki.net###livedoor_sbox_kiji
-ganmodoki.net###mobile-livedoor-kiji
 ||warotanikki.com/wp-content/headline.html
 warotanikki.com##.mainwidget
 warotanikki.com##div.img-grid
@@ -632,6 +632,7 @@ matome-tarou.ldblog.jp###j_rss
 ||elog-ch.com/news/newsbbs/
 ||chaos2ch.com/rss$subdocument
 world-fusigi.net##.sticker
+imas-cg.net##.titleRssBottom
 inazumanews2.com##.rsslinkba
 inazumanews2.com##.rsslinkre
 inazumanews2.com#$##rsshead { display: none!important; }
@@ -880,6 +881,7 @@ live.kufu.co.jp###similar_articles
 newsee-media.com,saitama-np.co.jp,htb.co.jp,oricon.co.jp,maidonanews.jp##.uz-ny
 ||gacraft.jp^$third-party
 projectdesign.jp###mainCont > aside.c-box-link:has(> div#_popIn_recommend)
+ryukyushimpo.jp#?#article ~ .flex-col:has(.items-center > #_popIn_recommend)
 mbs.jp##.common-wrap--recommend
 getnews.jp,front-row.jp##._popIn_recommend
 lmaga.jp##.feed
@@ -1078,6 +1080,7 @@ winstall.app##div[class^="donateCard_container__"]
 openstreetmap.org###banner
 ||wisepops.net/loader.js$domain=civileats.com
 ||news.google.com/swg/js/v1/swg-basic.js$domain=wololo.net|tgrthaber.com.tr
+kids-in-mind.com###main-content > .page > .entry-content > .et-l--post > .et_builder_inner_content > .et_pb_section > .et_pb_row_fullwidth.et_clickable
 cavalierdaily.com#$#.modal-backdrop { display: none !important; }
 cavalierdaily.com#$##cav-generic-modal { display: none !important; }
 cavalierdaily.com#$#body { overflow-y: auto !important; padding-right: 0 !important; }
