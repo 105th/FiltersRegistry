@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ceK4IAgQoGsUpClkIU/yEQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1708951248-3600.patch
+! Checksum: p6UOwlxhD4i6dMeHJYEeoA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1708954503-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.22.35
-! TimeUpdated: 2024-02-26T12:38:47+00:00
+! Version: 2.3.22.36
+! TimeUpdated: 2024-02-26T13:32:47+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6956,6 +6956,8 @@ pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173608
+msfsaddon.com##+js(no-fetch-if, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173567
 gifok.com##.popSc
 gifok.com##+js(abort-on-property-write, checkAdsStatus)
@@ -31739,6 +31741,8 @@ gazettetimes.com,missoulian.com,kenoshanews.com,cumberlink.com,trib.com,dailypro
 ! START: Youtube whitescreen fix
 !
 ! This one might be needed when the page is loaded for the first time
+youtubekids.com,youtube-nocookie.com,youtube.com##+js(set-constant, ytInitialPlayerResponse.playerConfig.ssapConfig, undefined)
+youtubekids.com,youtube-nocookie.com,youtube.com##+js(set-constant, ytInitialPlayerResponse.streamingData.serverAbrStreamingUrl, undefined)
 youtubekids.com,youtube-nocookie.com,youtube.com##+js(set-constant, ytInitialPlayerResponse.adPlacements, undefined)
 youtubekids.com,youtube-nocookie.com,youtube.com##+js(set-constant, ytInitialPlayerResponse.adSlots, undefined)
 youtubekids.com,youtube-nocookie.com,youtube.com##+js(set-constant, ytInitialPlayerResponse.playerAds, undefined)
@@ -31754,6 +31758,8 @@ youtubekids.com,youtube-nocookie.com,youtube.com##+js(set-constant, playerRespon
 ! so requests from tv.youtube.com are excluded from this rule (the url part - '^(?!.*(\/\/tv\.youtube\.com)).*(player\?key=|watch\?v=)') and instead simple workaround is used
 !
 ! Multiple trusted-replace-xhr-response causes breakage on music.youtube.com when logged in
+youtube.com##+js(json-prune, playerConfig.ssapConfig)
+youtube.com##+js(json-prune, streamingData.serverAbrStreamingUrl)
 m.youtube.com,music.youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172033#issuecomment-1925290685
 ||googlevideo.com/initplayback?source=youtube&*&c=TVHTML5&oad=$xmlhttprequest,domain=youtube.com
@@ -31851,6 +31857,7 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+thingiverse.com##div[class^="ItemCardGrid__"] > div[class^="ItemCardContainer__"]:has(> div[class*=" AdCard__"])
 abtc.ng#?#p:has(> span[style] > span:contains(Advertisement))
 abtc.ng##p:has(> ins.adsbygoogle)
 ||twstalker.com/popunderufasssssk9.js

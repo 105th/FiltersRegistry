@@ -452,6 +452,7 @@ delicious-audio.com#%#//scriptlet('set-constant', 'adBlockerState', 'undefined')
 adelaidepawnbroker.com,bztube.com,hotovs.com,insuredhome.org,nudegista.com,pornluck.com,vidd.se,redtube.*,youpornru.com,tube8.com,tube8.es,tube8.fr,tube8.net#%#//scriptlet('set-constant', 'page_params.holiday_promo', 'true')
 pornhub.com,pornhub.org,pornhub.net#%#//scriptlet('set-constant', 'page_params.holiday_promo_prem', 'true')
 pornhub.com,pornhub.org,pornhub.net#%#//scriptlet('prevent-setTimeout', '\x41\x64\x62\x6c\x6f\x63\x6b\x20\x66\x6f\x72\x20\x70\x6f\x72\x6e\x68\x75\x62')
+msfsaddon.com#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 gifok.com#%#//scriptlet('abort-on-property-write', 'checkAdsStatus')
 tipranks.com#%#//scriptlet('prevent-setTimeout', 'ad_blocker')
 tipranks.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
@@ -4316,6 +4317,8 @@ imagebam.com#%#window.open = function() {};
 calameo.com#%#AG_onLoad(function() { document.getElementsByTagName('body')[0].className = ''; });
 zippymoviez.com#%#window.open = function() {};
 mobilapk.com#%#AG_onLoad(function() { setTimeout(function() {document.getElementsByClassName('post-inner')[0].innerHTML = document.getElementsByClassName('post-inner')[0].innerHTML.replace('Sponsored Ads',''); document.getElementsByClassName('post-inner')[0].innerHTML = document.getElementsByClassName('post-inner')[0].innerHTML.replace('Sponsored Ads',''); }, 300); });
+youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.playerConfig.ssapConfig', 'undefined')
+youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.streamingData.serverAbrStreamingUrl', 'undefined')
 youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.adPlacements', 'undefined')
 youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.adSlots', 'undefined')
 youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.playerAds', 'undefined')
@@ -4326,6 +4329,8 @@ www.youtube.com#%#//scriptlet('trusted-replace-xhr-response', '/"auxiliaryUi":\{
 www.youtube.com#%#//scriptlet('trusted-replace-xhr-response', '/("trackingParam":"kx_fmPxhoPZR)[-_0-9A-Za-z]{150}[-_0-9A-Za-z]+?([-_0-9A-Za-z]{43}BwOcCE59TDtslLKPQ-SS"\})/', '$1$2', '/playlist\?list=|player\?|watch\?v=/')
 youtube.com#%#//scriptlet('trusted-replace-xhr-response', '/\"adPlacements.*?([A-Z]"\}|"\}{2})\}\]\,/', '', '/^(?!.*(\/\/tv\.youtube\.com)).*(playlist\?list=|player\?|watch\?v=)/')
 tv.youtube.com#%#//scriptlet('trusted-replace-xhr-response', '"adPlacements"', '"no_ads"', '/playlist\?list=|player\?|watch\?v=/')
+youtube.com#%#//scriptlet('json-prune', 'playerConfig.ssapConfig')
+youtube.com#%#//scriptlet('json-prune', 'streamingData.serverAbrStreamingUrl')
 youtube.com#%#//scriptlet('trusted-replace-fetch-response', '/"adPlacements.*?([A-Z]"\}|"\}{2})\}\]\,/', '', 'player?')
 m.youtube.com,music.youtube.com,youtubekids.com,youtube-nocookie.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots')
 [$path=/tv]youtube.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/https:\/\/www\.youtube\.com\/s\/player\/.*\/tv-player-ias\.vflset\/tv-player-ias\.js:/')
