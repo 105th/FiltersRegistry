@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: bmHgQ5IVIo/GKUlYCl5/Gw
-! Diff-Path: ../patches/14/14-s-1708936564-3600.patch
+! Checksum: 0Rf38h1N1/7v6B5ZS3obnQ
+! Diff-Path: ../patches/14/14-s-1708940091-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.74
-! TimeUpdated: 2024-02-26T08:33:27+00:00
+! Version: 2.1.87.75
+! TimeUpdated: 2024-02-26T09:32:34+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2341,6 +2341,8 @@ focus.it##+js(remove-class, cp-banner-visible, body)
 !
 ! NOTE: Regular rules
 !
+gate.shop#$?##snippet--cookies { remove: true; }
+jatu.eu###prestapros-cookie-law-container
 dea.digar.ee###deacookienotificationbarcontainer
 iamgujarat.com,eisamay.com,samayam.com,vijaykarnataka.com,indiatimes.com##.top-header-gdpr
 sumsub.com##+js(set-cookie, viewed_cookie_policy, yes)
@@ -21812,6 +21814,7 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+hokiesports.com###polite-pop-up
 fox4kc.com##+js(addEventListener-defuser, DOMContentLoaded, firstLoad)
 wkyc.com,wzzm13.com##dialog[data-name="exitInterstitial"]
 democracynow.org##+js(set-cookie, campaign_seen_today, true)
@@ -28996,6 +28999,7 @@ macwelt.de,pcwelt.de##+js(set-constant, firebase.messaging, noopFunc)
 ! SECTION: Push notifications - Regular rules
 !
 ! push
+hokiesports.com##div[class$="container"]:has(button[type="button"] + div[class] div.tip-contents)
 wzzm13.com##.page__notifications
 /notifications*.js$domain=kare11.com|13newsnow.com|12news.com
 nowtv.com.tr##.gospock-webpush-permission-modal-contanier
@@ -29792,6 +29796,7 @@ newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,theloca
 !
 ! SECTION: Subscriptions - Regular rules
 !
+reform.by##.wpremark:has(> div.wpremark-body > div.wpremark-content > p > a[href="https://t.me/cult_front"])
 otodom.pl##.sidebar #custom_html-2
 iamgujarat.com,eisamay.com,samayam.com,vijaykarnataka.com,indiatimes.com##.source_sharing > div[class="only-web"]
 theportugalnews.com##footer > section.d-print-none.bg-primary
@@ -44437,10 +44442,12 @@ radiotunes.com##.content-box > p > a[href^="/premium"]
 ! https://forum.adguard.com/index.php?threads/pop-up-continuously-appearing.31460
 theaustralian.com.au#$#div[id^="lightcase-"] { display:none!important; }
 theaustralian.com.au#$#body { overflow:visible!important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/173451
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172324
 ! https://github.com/AdguardTeam/AdguardFilters/issues/100544
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41736
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29908#issuecomment-466136893
+allegro.pl##div[data-box-name="premium.with.dfp.bottom"]
 allegro.pl##div[data-box-name="allegro.advertising.adspremium"]
 allegro.pl##div[data-box-name="AdsPremium"]
 allegro.pl##div[data-box-name="leftpanel_ads"]

@@ -1,9 +1,9 @@
-! Checksum: +6wQStDk/P3toUQAYpAd2Q
-! Diff-Path: ../patches/14/14-s-1708936556-3600.patch
+! Checksum: WXqNcVhbCGBvrQltiPdLyg
+! Diff-Path: ../patches/14/14-s-1708940082-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.74
-! TimeUpdated: 2024-02-26T08:33:27+00:00
+! Version: 2.1.87.75
+! TimeUpdated: 2024-02-26T09:32:34+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2370,6 +2370,8 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+gate.shop#$?##snippet--cookies { remove: true; }
+jatu.eu###prestapros-cookie-law-container
 dea.digar.ee###deacookienotificationbarcontainer
 iamgujarat.com,eisamay.com,samayam.com,vijaykarnataka.com,indiatimes.com##.top-header-gdpr
 vrtranspoint.fi#%#//scriptlet('trusted-set-cookie', 'cookie_consent', '{%22cookies_statistical%22:false%2C%22cookies_ad%22:true}')
@@ -13826,7 +13828,7 @@ tickets.vws-siegen.de#%#//scriptlet('trusted-click-element', '.MuiButton-textPri
 apply.lufthansagroup.careers#%#//scriptlet("set-cookie", "cookieCenterConsent", "true")
 fusionbrain.ai#%#//scriptlet('set-local-storage-item', 'fb-cookies-accept', '1')
 movistar.es#%#//scriptlet('trusted-click-element', 'button[aria-label="Configurar/rechazar cookies"]')
-otodom.pl,blaklader.*,nintendolife.com,toteraz.pl,heute.at,glamour.de,bergfreunde.de,1001games.com,tvguide.com,e-ladestation.aldi-sued.de,gmx.com,plus.mail.com,hollywoodreporter.com,bonava.lv,eu.patagonia.com,metro.tv,discoverychannel.pl,tlcpolska.pl,tvnstyle.pl,tvn7.pl,tvnturbo.pl,tvnfabula.pl,hgtv.pl,foodnetwork.pl,travelchanneltv.pl,ttv.pl,kanald.ro,timeextension.com,purexbox.com,pushsquare.com,mytim.tim.it,everyeye.it,realsimple.com,eatingwell.com,motor1.com,larousse.fr,giantbomb.com,mtvuutiset.fi,tvnturbo.pl,elle.com,a1.ro,authentication.nutmeg.com#%#//scriptlet('trusted-click-element', '#onetrust-accept-btn-handler')
+lubimyczytac.pl,otodom.pl,blaklader.*,nintendolife.com,toteraz.pl,heute.at,glamour.de,bergfreunde.de,1001games.com,tvguide.com,e-ladestation.aldi-sued.de,gmx.com,plus.mail.com,hollywoodreporter.com,bonava.lv,eu.patagonia.com,metro.tv,discoverychannel.pl,tlcpolska.pl,tvnstyle.pl,tvn7.pl,tvnturbo.pl,tvnfabula.pl,hgtv.pl,foodnetwork.pl,travelchanneltv.pl,ttv.pl,kanald.ro,timeextension.com,purexbox.com,pushsquare.com,mytim.tim.it,everyeye.it,realsimple.com,eatingwell.com,motor1.com,larousse.fr,giantbomb.com,mtvuutiset.fi,tvnturbo.pl,elle.com,a1.ro,authentication.nutmeg.com#%#//scriptlet('trusted-click-element', '#onetrust-accept-btn-handler')
 turk.net#%#document.cookie = "cookie-consent=dismissed; path=/";
 privacy.wunderweib.de,dieharke.de#%#//scriptlet('trusted-click-element', 'button[title="Einwilligen und weiter"]')
 jow.fr#%#document.cookie = "jow_cookie_consent=all; path=/";
@@ -22628,6 +22630,7 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+hokiesports.com###polite-pop-up
 fox4kc.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'firstLoad')
 geeksforgeeks.org#%#//scriptlet('trusted-set-local-storage-item', 'problemPageShowOnboardingPopup', 'true')
 wkyc.com,wzzm13.com##dialog[data-name="exitInterstitial"]
@@ -29812,6 +29815,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 ! SECTION: Push notifications - Regular rules
 !
 ! push
+hokiesports.com##div[class$="container"]:has(button[type="button"] + div[class] div.tip-contents)
 wzzm13.com##.page__notifications
 /notifications*.js$domain=kare11.com|13newsnow.com|12news.com
 nowtv.com.tr##.gospock-webpush-permission-modal-contanier
@@ -30608,6 +30612,7 @@ newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,theloca
 !
 ! SECTION: Subscriptions - Regular rules
 !
+reform.by##.wpremark:has(> div.wpremark-body > div.wpremark-content > p > a[href="https://t.me/cult_front"])
 otodom.pl##.sidebar #custom_html-2
 iamgujarat.com,eisamay.com,samayam.com,vijaykarnataka.com,indiatimes.com##.source_sharing > div[class="only-web"]
 theportugalnews.com##footer > section.d-print-none.bg-primary
@@ -45347,10 +45352,12 @@ radiotunes.com##.content-box > p > a[href^="/premium"]
 ! https://forum.adguard.com/index.php?threads/pop-up-continuously-appearing.31460
 theaustralian.com.au#$#div[id^="lightcase-"] { display:none!important; }
 theaustralian.com.au#$#body { overflow:visible!important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/173451
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172324
 ! https://github.com/AdguardTeam/AdguardFilters/issues/100544
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41736
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29908#issuecomment-466136893
+allegro.pl##div[data-box-name="premium.with.dfp.bottom"]
 allegro.pl##div[data-box-name="allegro.advertising.adspremium"]
 allegro.pl##div[data-box-name="AdsPremium"]
 allegro.pl##div[data-box-name="leftpanel_ads"]
