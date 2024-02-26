@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: D3TzH1E/GZxo2xFfPmacow
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1708954503-3600.patch
+! Checksum: 04kXdCw9FcKN7Jm1O3uoog
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1708958115-3600.patch
 ! Title: AdGuard Base filter + EasyList (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.22.36
-! TimeUpdated: 2024-02-26T13:32:47+00:00
+! Version: 2.3.22.37
+! TimeUpdated: 2024-02-26T14:33:10+00:00
 ! Expires: 4 days (update frequency)
 ||rwwmbymwbzbea.top^
 ||adnext.pl^$third-party
@@ -1213,6 +1213,7 @@ pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\
 @@||static.adsafeprotected.com/skeleton.gif?*adslot=
 @@||static.adsafeprotected.com/skeleton.gif?*adunitid=
 @@||static.adsafeprotected.com/skeleton.gif?*bannnerid=
+mathdf.com##+js(set-constant, adBlockEnabled, false)
 msfsaddon.com##+js(no-fetch-if, adsbygoogle)
 gifok.com##.popSc
 gifok.com##+js(abort-on-property-write, checkAdsStatus)
@@ -2237,6 +2238,7 @@ getintoway.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 nullforums.net##+js(no-setTimeout-if, show, 0*1000)
 mohammedkhc.com#@#ins.adsbygoogle
 mohammedkhc.com##+js(set-constant, detectAdblock, {})
+mailgen.biz##+js(no-setTimeout-if, enable_ad_block_detector)
 cardscanner.co##+js(no-setTimeout-if, ('body').css('overflow')
 satoshitap.com##+js(abort-current-script, document.getElementById, ads_)
 pastesearch.xyz##+js(set-constant, isAdBlockActive, false)
@@ -5528,6 +5530,8 @@ gostynska.pl,ddbelchatow.pl,jarocinska.pl,klodzko24.eu,nowaruda24.pl,portalplock
 glospowiatusredzkiego.pl,wgospodarce.pl,gostynska.pl,ddbelchatow.pl,jarocinska.pl,klodzko24.eu,nowaruda24.pl,portalplock.pl,korsosanockie.pl,korsokolbuszowskie.pl,korso.pl,korso24.pl,forsal.pl,zwielkopolski24.pl,se.pl,dziennik.pl,rawicz24.pl,tko.pl,tvn.pl,roweroweporady.pl,tulodz.pl,weszlo.com##+js(set-constant, questpassGuard, noopFunc)
 roweroweporady.pl#@#.ad_container
 ||cdn.questvert.pl/publishers/*/qpscript.js
+traktorpool.pl#?#main div[class]:has(> div[id^="div-gpt-ad"])
+drewno.pl#?##centerr .nm_box_out > .nm_box > .nm_section:contains(/^REKLAMA$/)
 analizy.pl##.vdaText
 analizy.pl##.postAdd
 analizy.pl##.promotionAd
@@ -8904,8 +8908,8 @@ youtubekids.com,youtube-nocookie.com,youtube.com##+js(set-constant, ytInitialPla
 youtubekids.com,youtube-nocookie.com,youtube.com##+js(set-constant, ytInitialPlayerResponse.adSlots, undefined)
 youtubekids.com,youtube-nocookie.com,youtube.com##+js(set-constant, ytInitialPlayerResponse.playerAds, undefined)
 youtubekids.com,youtube-nocookie.com,youtube.com##+js(set-constant, playerResponse.adPlacements, undefined)
-youtube.com##+js(json-prune, playerConfig.ssapConfig)
-youtube.com##+js(json-prune, streamingData.serverAbrStreamingUrl)
+youtube.com##+js(json-prune, playerResponse.playerConfig.ssapConfig playerConfig.ssapConfig)
+youtube.com##+js(json-prune, playerResponse.streamingData.serverAbrStreamingUrl streamingData.serverAbrStreamingUrl)
 m.youtube.com,music.youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots)
 ||googlevideo.com/initplayback?source=youtube&*&c=TVHTML5&oad=$xmlhttprequest,domain=youtube.com
 !+ NOT_OPTIMIZED

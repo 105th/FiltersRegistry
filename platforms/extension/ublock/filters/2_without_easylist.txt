@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: p6UOwlxhD4i6dMeHJYEeoA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1708954503-3600.patch
+! Checksum: 9lJK3CqQwnHwvyoFbvA8TQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1708958116-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.22.36
-! TimeUpdated: 2024-02-26T13:32:47+00:00
+! Version: 2.3.22.37
+! TimeUpdated: 2024-02-26T14:33:10+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6956,6 +6956,8 @@ pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173562
+mathdf.com##+js(set-constant, adBlockEnabled, false)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173608
 msfsaddon.com##+js(no-fetch-if, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173567
@@ -9339,8 +9341,7 @@ mohammedkhc.com#@#ins.adsbygoogle
 mohammedkhc.com##+js(set-constant, detectAdblock, {})
 ! https://github.com/AdguardTeam/AdguardFilters/issues/124348#issuecomment-1185811321
 ||static.surfe.pro/js/net.js$script,xmlhttprequest,redirect=noop.txt,domain=claim.fun
-! https://github.com/AdguardTeam/AdguardFilters/issues/124712
-@@||mailgen.biz/js/sailthru.js$domain=mailgen.biz
+mailgen.biz##+js(no-setTimeout-if, enable_ad_block_detector)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/124326
 cardscanner.co##+js(no-setTimeout-if, ('body').css('overflow')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/124278
@@ -20808,6 +20809,10 @@ roweroweporady.pl#@#.ad_container
 ||lib.wtg-ads.com/prebid/prebid_*.js$xmlhttprequest,redirect=noop.txt
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173549
+traktorpool.pl#?#main div[class]:has(> div[id^="div-gpt-ad"])
+! https://github.com/AdguardTeam/AdguardFilters/issues/173553
+drewno.pl#?##centerr .nm_box_out > .nm_box > .nm_section:contains(/^REKLAMA$/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173390
 analizy.pl##.vdaText
 analizy.pl##.postAdd
@@ -31758,8 +31763,8 @@ youtubekids.com,youtube-nocookie.com,youtube.com##+js(set-constant, playerRespon
 ! so requests from tv.youtube.com are excluded from this rule (the url part - '^(?!.*(\/\/tv\.youtube\.com)).*(player\?key=|watch\?v=)') and instead simple workaround is used
 !
 ! Multiple trusted-replace-xhr-response causes breakage on music.youtube.com when logged in
-youtube.com##+js(json-prune, playerConfig.ssapConfig)
-youtube.com##+js(json-prune, streamingData.serverAbrStreamingUrl)
+youtube.com##+js(json-prune, playerResponse.playerConfig.ssapConfig playerConfig.ssapConfig)
+youtube.com##+js(json-prune, playerResponse.streamingData.serverAbrStreamingUrl streamingData.serverAbrStreamingUrl)
 m.youtube.com,music.youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172033#issuecomment-1925290685
 ||googlevideo.com/initplayback?source=youtube&*&c=TVHTML5&oad=$xmlhttprequest,domain=youtube.com
