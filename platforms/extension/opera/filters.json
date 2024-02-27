@@ -434,8 +434,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.40.42",
-			"timeUpdated": "2024-02-27T19:33:06+0000",
+			"version": "2.0.40.43",
+			"timeUpdated": "2024-02-27T20:33:09+0000",
 			"languages": [
 				"de"
 			],
