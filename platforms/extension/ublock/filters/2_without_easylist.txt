@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1A94f37Ri3BahjwQrxe9bQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1709033690-3600.patch
+! Checksum: gib6GtSqAMfxDibf+8q+hg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1709037647-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.22.52
-! TimeUpdated: 2024-02-27T11:32:41+00:00
+! Version: 2.3.22.53
+! TimeUpdated: 2024-02-27T12:38:43+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6959,6 +6959,8 @@ pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173424
+soninow.com##+js(no-setInterval-if, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173666
 xxlmag.com##+js(no-fetch-if, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173562
@@ -20813,6 +20815,14 @@ roweroweporady.pl#@#.ad_container
 ||lib.wtg-ads.com/prebid/prebid_*.js$xmlhttprequest,redirect=noop.txt
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173535
+4funkids.pl##.addsContainerLabel
+4funkids.pl###ad-view-gora_srodek
+4funkids.pl#?#.fixedVideoBox__label:contains(/^REKLAMA$/)
+! https://github.com/AdguardTeam/AdguardFilters/issues/173534
+4fun.tv##.slot-center
+4fun.tv##.slot-middle
+4fun.tv##.screening-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173630
 fxmag.pl##text[class^="Ad_"]
 fxmag.pl##div[class^="Ad_bottom_"]
@@ -20833,8 +20843,6 @@ analizy.pl##.randomBilboardAd
 analizy.pl##.articleStandardSidebarLongAd
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171503
 nauka.rocks###sticky-anchor
-! https://github.com/AdguardTeam/AdguardFilters/issues/171504
-lowicz24.eu,skarzyski.eu,zambrow.org##.sticky_anchor
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171353
 rp.pl##.headerTopBarAdvert
 rp.pl##+js(remove-class, -top-bar-advert|-top-bar-advert-mobile|-top-bar-advert-desktop)
@@ -21022,13 +21030,17 @@ wiadomoscihandlowe.pl,wiadomoscikosmetyczne.pl,halowies.pl,tygodnik-rolniczy.pl#
 androidowy.pl#$#body { overflow: auto !important; }
 androidowy.pl#$##detect-modal { display: none !important; }
 androidowy.pl##+js(abort-on-stack-trace, document.createElement, doTest)
+! https://github.com/AdguardTeam/AdguardFilters/issues/173530
+! https://github.com/AdguardTeam/AdguardFilters/issues/171504
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171860
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164486
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156438
-24jgora.pl,karkonoszego.pl,24wroclaw.pl,zyciekalisza.pl,nswiecie.pl,debica24.eu##.sticky_anchor
-24jgora.pl,karkonoszego.pl,24wroclaw.pl,zyciekalisza.pl,nswiecie.pl,debica24.eu##.grid__ad
-24jgora.pl,karkonoszego.pl,24wroclaw.pl,zyciekalisza.pl,nswiecie.pl,debica24.eu##.adv
-24jgora.pl,karkonoszego.pl,24wroclaw.pl,zyciekalisza.pl,nswiecie.pl,debica24.eu##div[style="min-height: 362px;"]
+zambrow.org##div[id^="bills_in_rotation_"] > a > img
+zambrow.org##.custom-html-box center > a[target="_blank"] > img
+tygodnikregionalna.pl,regionalna24.pl,lowicz24.eu,skarzyski.eu,zambrow.org,24jgora.pl,karkonoszego.pl,24wroclaw.pl,zyciekalisza.pl,nswiecie.pl,debica24.eu##.sticky_anchor
+tygodnikregionalna.pl,regionalna24.pl,lowicz24.eu,skarzyski.eu,zambrow.org,24jgora.pl,karkonoszego.pl,24wroclaw.pl,zyciekalisza.pl,nswiecie.pl,debica24.eu##.grid__ad
+tygodnikregionalna.pl,regionalna24.pl,lowicz24.eu,skarzyski.eu,zambrow.org,24jgora.pl,karkonoszego.pl,24wroclaw.pl,zyciekalisza.pl,nswiecie.pl,debica24.eu##.adv
+tygodnikregionalna.pl,regionalna24.pl,lowicz24.eu,skarzyski.eu,zambrow.org,24jgora.pl,karkonoszego.pl,24wroclaw.pl,zyciekalisza.pl,nswiecie.pl,debica24.eu##div[style="min-height: 362px;"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/155184
 silesia24.pl##.vertical__ad
 silesia24.pl##.horizontal__ad
@@ -31870,6 +31882,8 @@ $script,third-party,denyallow=linkvertise.com|fastly.net|statically.io|sharecast
 !
 ! NOTE: Specific rules
 !
+gpblog.com##section[class^="NewsList"] > ul > li[class^="NewsList_injection"]:has(> aside.ad):not(:has(> div[class^="HeadlinesDossier_"]))
+gpblog.com##section[class^="NewsList"] > ul > li[class^="NewsList_injection"]:has(> div[data-tracker-name="bettingPage"])
 miui.rahim-soft.com##a[href^="https://canoestallowrootsabre.com/"]
 embtaku.pro##iframe[style*="0px"]
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=theguardian.com
@@ -31988,7 +32002,6 @@ websleuths.com##a[data-dnasolvesslug]
 websleuths.com##.block-body > div[style*="text-align: center; padding: 10px;"]:has(> a[data-dnasolvesslug])
 websleuths.com##.p-body-sidebar > .block:not([data-widget-id]):has(> .block-container > .block-body > a[data-dnasolvesslug])
 ||dnasolves.com/static/js/embed.js$domain=websleuths.com
-pokebattler.com##.row > div.col-xs-12:has(> div.curse-ad)
 khaleejtimes.com##body .ad-unit
 khaleejtimes.com##body .fix-mpu-nf
 khaleejtimes.com##body .fix-billboard-nf
@@ -32300,9 +32313,7 @@ investsocial.com###classic_style_link > #quotes-inf
 nutraceuticalsworld.com###mainContentBodyDiv > hr.mag-border
 nutraceuticalsworld.com##div[id^="main-content-ad-"] + hr
 nutraceuticalsworld.com#?#.box-wrapper > .pull-right > .well:has(> .panel > .media-list div[id^="related-content-box-"] > [id^="google_ads_iframe"])
-pokebattler.com##.curse-ad + div[style^="font-weight: 700;"]
 subtitlecat.com##div.header-top
-pokebattler.com#?#.row > div.col-xs-12:has(> div.curse-ad)
 imginn.com##.block-h12
 imginn.com##.block-sulvo
 chubbyporn.com##.twocolumns > .aside
@@ -45972,7 +45983,7 @@ festyy.com##.a-el
 aarp.org##.aarpe-ad
 imdb.com##.ab_zergnet
 torrentking.eu##.acon5
-bbcgoodfood.com,pokebattler.com,gardenersworld.com,historyextra.com,ndtv.com##.ad-banner
+bbcgoodfood.com,gardenersworld.com,historyextra.com,ndtv.com##.ad-banner
 theatlantic.com##.ad-boxinjector-wrapper
 theatlantic.com##.ad-boxright-wrapper
 tampermonkey.net##.ad-changelog-block
