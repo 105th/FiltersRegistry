@@ -1,9 +1,9 @@
-! Checksum: yEuEmuUQWXhjyvZ94rSjiw
-! Diff-Path: ../patches/14/14-s-1709037624-3600.patch
+! Checksum: ITfH4VBuKAivFCPM8lTB2Q
+! Diff-Path: ../patches/14/14-s-1709040896-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.87.91
-! TimeUpdated: 2024-02-27T12:38:19+00:00
+! Version: 2.1.87.92
+! TimeUpdated: 2024-02-27T13:32:29+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -79,6 +79,7 @@
 !#######################################################
 ! SECTION: Cookies - General element hiding
 !
+##.cc-floating
 ###cerez-politikasi
 ##.orejime-Notice
 ##div[data-cy="cookie-banner"]
@@ -1077,6 +1078,7 @@
 ###scnb-cookie-bar
 ###sdbCookieLegalContainer
 ###semocookie-handler
+###shopify-pc__banner
 ###shop-cookie
 ###site-cookie-policy
 ###site-we-use-cookies
@@ -1666,6 +1668,8 @@
 !
 ! SECTION: Cookies - General URL
 !
+||cdn.shopify.com/extensions/*/assets/consentmo_cookie_consent.js
+||cloudfront.net/js/gdpr_cookie_consent.min.js
 ||cdn.transcend.io/cm/*/airgap.js
 ||cm.nxtm.pl^$third-party
 ||ccdn.mobildev.in^
@@ -2334,6 +2338,8 @@ multiplayer.it,tomshw.it,moto.it#$#html { overflow: auto !important; }
 !
 ! NOTE: Regular rules
 !
+||cdn.shopify.com/shopifycloud/privacy-banner/storefront-banner.js
+r.pl##.r-consent-bottom-notif__modal
 ||pcw-api.softgarden.de/consent/
 ||telematics.naviexpert.pl/*/cookiesconsent.min.js
 zaiks.org.pl###pageCookieConsent
@@ -2713,7 +2719,6 @@ konkurent.ua##.popupCookie
 zurich.co.uk###static-cookie-policy-message
 jornalopcao.com.br##.template-part-component-termos
 news.pts.org.tw##.cookie-flex
-hazbinhotel.com,solokeys.com,shop.camping.info,reinland-seifen.de###shopify-pc__banner
 sargs.lv###manage-cookies
 ||ammannit.com/cookie/
 hh.ru##div[data-qa="cookies-policy-informer"]
@@ -3272,7 +3277,6 @@ witway.be,witway.nl#$#.js-cookie-popup { display: none !important; }
 witway.be,witway.nl#$#body.locked { position: static !important; }
 ||materiel-velo.com/module/kixsimpletrack/cookie
 reolink.com##div[class^="_gdpr-cookie-popup_"]
-freddy.com##.amgdprcookie-bar-template
 chrono24.co.uk,chrono24.pl,chrono24.com.ru,chrono24.ch#$#html:not(#style_important) { overflow: auto !important; }
 chrono24.co.uk,chrono24.pl,chrono24.com.ru,chrono24.ch#$#html > body { overflow: auto !important; padding-right: 0 !important; }
 son-video.com##div[data-context="cookies-banner"]
@@ -3397,7 +3401,6 @@ moneyfarm.com##.gNzipu
 oz.by###c-dialog
 aluguefoco.com.br###warning
 advesphoto.hu###marketingConsent
-h3z.jp,xn--7gqs08ef7b.jp##.notice-banner[aria-describedby="cookieconsent:desc"]
 ||bankinform.ru/js/widgets/CookieAgreementWidget.js
 stm.com.tr##.cookie_modal
 gim-international.com,mein-zaunshop.de,gartengeraete-onlineshop.de##div[x-data*="cookieConsent"]
@@ -3495,7 +3498,7 @@ opensource.fb.com##div[class^="cookieBannerContainer_"]
 /cookie-consent-$domain=adventist.org
 drogerienatura.pl##[x-data^="{...new Amasty.Cookie."]
 parking.mos.ru###cookies-usage
-loveholidays.ie,holiday.holidaypirates.com##.c-o--
+loveholidays.com,loveholidays.ie,holiday.holidaypirates.com##.c-o--
 mpa-pro.fr###rgpd-consent
 mycinema.pro##footer > div > div
 kanaries.net##div[aria-label="cookie consent"]
@@ -7051,7 +7054,7 @@ onleihe.de##.reveal-overlay
 extract.pics##footer + div.fixed.items-center
 beinsports.com.tr##div[class*="cookie_cookie__"]
 blisshq.com###cookie-opt-out
-duda-cars.pl,pancernik.eu,profitechnik.pl,prorowery.pl,sklepkawa.pl,bakeshop.pl,fly-desk.com,trigar.pl,niewiem.pl,wkdzik.pl,estetic-dent-sklep.pl,modnakiecka.pl,skarbyroztocza.com,miodykrupiec.pl,planszostrefa.pl,questsport.shop##.consents
+fitness-home.pl,audiotop.pl,czerwonatwierdza.pl,duda-cars.pl,pancernik.eu,profitechnik.pl,prorowery.pl,sklepkawa.pl,bakeshop.pl,fly-desk.com,trigar.pl,niewiem.pl,wkdzik.pl,estetic-dent-sklep.pl,modnakiecka.pl,skarbyroztocza.com,miodykrupiec.pl,planszostrefa.pl,questsport.shop##.consents
 kremer-pigmente.com###cclayer
 wuerzburg.de###klaro > div.klaro > div.cookie-notice
 rauch.cc##div[class*="js-cookie-note"]
@@ -8738,7 +8741,7 @@ poison-bikes.de,concept-computer.de,hygiene-onlineshop.de##div[id^="ecomas-scch-
 concursosnobrasil.com,fabianomidi.com,pciconcursos.com.br,shopxp.com.br,concursosnobrasil.com.br,gkinfostore.com.br###lgpd
 gov.br###lgpd-cookie-banner-janela
 picfont.com###content_cookie_1
-12gobiking.nl,meingartenshop.de,avaya-voip.de,lieblingsstueck.com,source-werbeartikel.com,cherry.de##.amgdprcookie-bar-template
+kazar.com,freddy.com,12gobiking.nl,meingartenshop.de,avaya-voip.de,lieblingsstueck.com,source-werbeartikel.com,cherry.de##.amgdprcookie-bar-template
 nicephotos.com.br##.div-lgpd-cookie
 mercedes-benz.com.br##.privacy-msg
 mitsubishimotors.com.br##.cookies-header
@@ -12119,7 +12122,6 @@ hotshops.pl,aldoshoes.com##.c-cookie-notice
 telegraf.com.ua,expo2020dubai.com,zoll-karriere.de,airbus.com,ncoi.nl,richardmille.com,scheidegger.nl##.c-cookies
 armyrecognition.com##.cadre_alert_cookies
 elcorreo.com,revespcardiol.org##.capa-cookies
-souschef.co.uk,usharbors.com,domain-status.com,netdoktor.de,toolslib.net##.cc-floating
 argusmonitor.com,audeze.com,hedd.audio,spigen.com,jasminwagner.de,aqua-fun.com,dji.com,ockles.com,mkvtoolnix.download,mlbstream.me##.cc-window
 freebitco.in,sozialversicherung-kompetent.de,mobile-tracker-free.com,store.bistudio.com,hifi-forum.de,m.apotheken-umschau.de,futhead.com,gofobo.com,mobiflip.de,news.de##.cc_banner-wrapper
 infranken.de##.cc_banner-wrapper_FB
@@ -20642,6 +20644,7 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+bnext.com.tw###aaabar
 hokiesports.com###polite-pop-up
 zhihu.com##div[style^="transform-origin: center bottom; margin-top:"]
 community.atlassian.com##.login-spotlight
