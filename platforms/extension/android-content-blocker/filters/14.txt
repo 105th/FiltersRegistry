@@ -1,9 +1,9 @@
-! Checksum: ltYngDNhoGvT+dldgEkUog
-! Diff-Path: ../patches/14/14-s-1709130901-3600.patch
+! Checksum: 2zRzxVcDPOZ8ctbw/vLY6g
+! Diff-Path: ../patches/14/14-s-1709134485-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.88.4
-! TimeUpdated: 2024-02-28T14:32:26+00:00
+! Version: 2.1.88.5
+! TimeUpdated: 2024-02-28T15:32:23+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2338,6 +2338,7 @@ multiplayer.it,tomshw.it,moto.it#$#html { overflow: auto !important; }
 !
 ! NOTE: Regular rules
 !
+/stereotypedsugar\.com\/[a-z]?\/[a-z0-9]+\/[a-z]{4}[a-z0-9]{15,25}\.index\.js$/$script,match-case,domain=agweek.com
 bullionvault.com##.navigation__cookies
 edu.eset.com##doc-layout-cookie-policy-banner
 ||cdn.shopify.com/shopifycloud/privacy-banner/storefront-banner.js
@@ -13065,6 +13066,8 @@ online.swedbank.se##fdp-widget-cookie-consent
 ! The button to click is in the shadow root.
 ! TODO: Rework when support for clicking inside the shadow root appears.
 !
+! TODO: Rework when support for clicking on an element containing a given text appears: https://github.com/AdguardTeam/Scriptlets/issues/409
+!
 ! trusted-click-element doesn't work for cookie acceptance here
 ! Rework when this issue will be fixed: https://github.com/AdguardTeam/Scriptlets/issues/391
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173053
@@ -20141,7 +20144,10 @@ web.de,gmx.net,gmx.at,gmx.ch,gmx.com#$##abd-container { display: block !importan
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173729
 agweek.com#$#.adsbox.adBanner.ad-zone.ad-space.ad-unit.textads.banner-ads.banner_ads { display: block !important; }
-!#safari_cb_affinity(general)
+!+ NOT_PLATFORM(windows, mac, android)
+@@||pranmcpkx.com/index.js$domain=agweek.com
+!#safari_cb_affinity(general,privacy)
+@@||pranmcpkx.com/index.js$domain=agweek.com
 agweek.com#@#.adsbox
 agweek.com#@#.adBanner
 agweek.com#@#.ad-zone

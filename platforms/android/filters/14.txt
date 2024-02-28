@@ -1,9 +1,9 @@
-! Checksum: J0PqnYUQCo1+cdwwM4QIfw
-! Diff-Path: ../patches/14/14-s-1709130898-3600.patch
+! Checksum: 9c1rcy/PEGjoJ6Nqm15SHA
+! Diff-Path: ../patches/14/14-s-1709134482-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.88.4
-! TimeUpdated: 2024-02-28T14:32:26+00:00
+! Version: 2.1.88.5
+! TimeUpdated: 2024-02-28T15:32:23+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2376,6 +2376,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+/stereotypedsugar\.com\/[a-z]?\/[a-z0-9]+\/[a-z]{4}[a-z0-9]{15,25}\.index\.js$/$script,match-case,domain=agweek.com
 primevideo.com##.DVWebNode-conditional-site-wide-wrapper > .fbl-banner:has(form[action*="/privacyprefs/sp/consent/"])
 bullionvault.com##.navigation__cookies
 edu.eset.com##doc-layout-cookie-policy-banner
@@ -14796,6 +14797,8 @@ joyn.de#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("userConsentCommun
 totaaltv.nl,dpgmedia.nl,dpgmediagroup.com,dpgmediagroup.net#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector("#pg-shadow-host").shadowRoot.querySelector("#pg-accept-btn"); if(el) { el.click(); } }, 1000); });
 rsi.ch,villeroy-boch.fr,gematik.de,aldi.nl,aldi.pt,aldi.lu,aldi-nord.de,aldi.dk,aldi.be,aldi.fr,handwerk-magazin.de,hornbach.de#%#!function(){const t=setInterval((function(){var e=document.getElementById("usercentrics-root");if(e&&e.shadowRoot){var o=e.shadowRoot.querySelector('button[data-testid="uc-accept-all-button"]');if(!o)return;clearInterval(t),o.click()}}),100);setTimeout((function(){clearInterval(t)}),1e4)}();
 !
+! TODO: Rework when support for clicking on an element containing a given text appears: https://github.com/AdguardTeam/Scriptlets/issues/409
+!
 ! trusted-click-element doesn't work for cookie acceptance here
 ! Rework when this issue will be fixed: https://github.com/AdguardTeam/Scriptlets/issues/391
 virginaustralia.com#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("virginCookiesAccepted")){var a=new MutationObserver(function(){var b=document.querySelector('#cookieAcceptanceBtn');b&&b.click()});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});
@@ -22146,6 +22149,7 @@ web.de,gmx.net,gmx.at,gmx.ch,gmx.com#$##abd-container { display: block !importan
 ! SECTION: Anti-adblock - Grouped rules for specific sites
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173729
+||cdn.enterombacerick.com/prod/forum/*.min.js$replace=/[a-z]\.prototype\.detectAdBlock=function\([a-z]?\)\{if\(this\.useStoredValue\)return this\.storedValue;.*detected:.*this\.storedValue=[a-z]?\}//,domain=agweek.com
 agweek.com#$#.adsbox.adBanner.ad-zone.ad-space.ad-unit.textads.banner-ads.banner_ads { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170367
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165133
@@ -30440,6 +30444,7 @@ newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,theloca
 !
 ! SECTION: Subscriptions - Regular rules
 !
+qz.com#%#//scriptlet('trusted-set-cookie', 'entryPopupSeen', 'true')
 vulcanpost.com##.elementor-container > .elementor-column:has(form[name^="Newsletter"])
 montanafreepress.org##.newspack-popup-container:not(:has(a[href^="https://montanafreepress.org/donate?"]))
 vsquare.org##.content > div.module-item:has(> form[data-name="Vsquare Newsletter"])

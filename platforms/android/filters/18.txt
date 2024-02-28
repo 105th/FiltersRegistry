@@ -1,9 +1,9 @@
-! Checksum: mt3nHzCc/88OYcU7mVwfEw
-! Diff-Path: ../patches/18/18-s-1709130898-3600.patch
+! Checksum: sZ0KHuPGOJD1enQeebKGsg
+! Diff-Path: ../patches/18/18-s-1709134483-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.34.4
-! TimeUpdated: 2024-02-28T14:32:31+00:00
+! Version: 2.0.34.5
+! TimeUpdated: 2024-02-28T15:32:28+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2376,6 +2376,7 @@ cmp.chip.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9:not(.last-
 !
 ! NOTE: Regular rules
 !
+/stereotypedsugar\.com\/[a-z]?\/[a-z0-9]+\/[a-z]{4}[a-z0-9]{15,25}\.index\.js$/$script,match-case,domain=agweek.com
 primevideo.com##.DVWebNode-conditional-site-wide-wrapper > .fbl-banner:has(form[action*="/privacyprefs/sp/consent/"])
 bullionvault.com##.navigation__cookies
 edu.eset.com##doc-layout-cookie-policy-banner
@@ -14795,6 +14796,8 @@ sat1.at,kabeleinsdoku.at,ran.de,kabeleinsdoku.de,prosiebenmaxx.de,sixx.de,kabele
 joyn.de#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("userConsentCommunity")){var f=setInterval(function(){var b=document.querySelectorAll("cmp-banner");b.length&&b.forEach(function(a){var c,d,e;if(a=null==(c=a.shadowRoot)?void 0:null==(d=c.querySelector("cmp-dialog"))?void 0:null==(e=d.shadowRoot)?void 0:e.querySelector("cmp-button"))clearInterval(f),a.click()})},500);setTimeout(function(){clearInterval(f)},2E4)}});
 totaaltv.nl,dpgmedia.nl,dpgmediagroup.com,dpgmediagroup.net#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector("#pg-shadow-host").shadowRoot.querySelector("#pg-accept-btn"); if(el) { el.click(); } }, 1000); });
 rsi.ch,villeroy-boch.fr,gematik.de,aldi.nl,aldi.pt,aldi.lu,aldi-nord.de,aldi.dk,aldi.be,aldi.fr,handwerk-magazin.de,hornbach.de#%#!function(){const t=setInterval((function(){var e=document.getElementById("usercentrics-root");if(e&&e.shadowRoot){var o=e.shadowRoot.querySelector('button[data-testid="uc-accept-all-button"]');if(!o)return;clearInterval(t),o.click()}}),100);setTimeout((function(){clearInterval(t)}),1e4)}();
+!
+! TODO: Rework when support for clicking on an element containing a given text appears: https://github.com/AdguardTeam/Scriptlets/issues/409
 !
 ! trusted-click-element doesn't work for cookie acceptance here
 ! Rework when this issue will be fixed: https://github.com/AdguardTeam/Scriptlets/issues/391
