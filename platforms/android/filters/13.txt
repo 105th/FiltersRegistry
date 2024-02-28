@@ -1,9 +1,9 @@
-! Checksum: j/HbwJYEm5vGAzA1jzjCXw
-! Diff-Path: ../patches/13/13-s-1709055255-3600.patch
+! Checksum: pQxsfgfqwsRKMqDmK2OBeA
+! Diff-Path: ../patches/13/13-s-1709116519-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.49.95
-! TimeUpdated: 2024-02-27T17:32:13+00:00
+! Version: 2.0.49.96
+! TimeUpdated: 2024-02-28T10:33:12+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1009,6 +1009,10 @@ technopat.net#%#(function() { var w_open = window.open, regex = /goo.gl/; window
 ! END: Clickunders
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173741
+hdfilmizlesene.org#%#//scriptlet('set-constant', 'reklamsayisi', '1')
+hdfilmizlesene.org#%#//scriptlet('adjust-setInterval', 'sec--', '*', '0.001')
+hdfilmizlesene.org#%#//scriptlet('trusted-replace-node-text', 'script', 'var checkReady', 'var checkReady', 'try{window.parent.ilk_part_getir();}catch(ex){};var checkReady')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171861
 fullfilmizlesene.net#%#//scriptlet('set-constant', 'app.ads', 'emptyObj')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172168
@@ -1321,6 +1325,8 @@ r10.net#%#document.cookie = 'r10LeftHide=1';
 !------- CSS fixes --------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173741
+hdfilmizlesene.org#$#.pageskin .rectangle { margin-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172343
 webtekno.com#$##wt-masthead { height: 0px !important; min-height: 0px !important;}
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171861
@@ -1730,6 +1736,7 @@ dizipal1.cloud,dizipal2.cloud,dizipal4.cloud,dizipal5.cloud,dizipal9.cloud,dizip
 ! Removing branded background
 !
 filmmodu9.com,filmmodu10.com,filmmodu11.com,filmmodu12.com,filmmodu13.com,filmmodu14.com,filmmodu15.com,filmmodu16.com,filmmodu17.com,filmmodu18.com,filmmodu19.com,filmmodu20.com#$#body { background-image: none !important; }
+hdfilmizlesene.org#$#body { background-image: none !important; }
 contentx.me#$#html > body { background-image: none !important; }
 siyahfilmizle.pro#$#body { background-image: none !important; }
 izlehdfilm.net#$#body { background-image: none !important; background-color: #171717 !important; }
@@ -1915,6 +1922,8 @@ $xmlhttprequest,third-party,denyallow=linkvertise.com|fastly.net|statically.io|s
 /service/advertchannels?$xmlhttprequest,redirect=nooptext,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
 !
+||filmbari.com/casmas.webp
+||filmbari.com/rokufoot.webp
 akakce.com###billboard_wrapper
 ||hdfilmizle7.com/show-promote.min.js
 ||worldofturkiye.com/wp-content/uploads/*/sagkule.
@@ -2560,7 +2569,7 @@ ensonhaber.com##.esx-home-mansetalt
 ||dizilost.com/popunderxx.js
 turkiyegazetesi.com.tr###random-ads
 sinema.cc,fullhdfilmizle.*##div[class^="r_header_"]
-fullhdfilm.pro,fullhdfilmizle.*###footer_fad
+hdfilmizlesene.org,fullhdfilm.pro,fullhdfilmizle.*###footer_fad
 n11.com##.header-banner-cover
 search.donanimhaber.com###searchForm > .bottomcontainer > #products
 trdoktor.com##a[href^="core.php?ajax=reklam_say"]
