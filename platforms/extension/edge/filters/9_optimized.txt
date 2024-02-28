@@ -1,9 +1,9 @@
-! Checksum: e6b5ZcFYhLZ9gaytMhkW5A
-! Diff-Path: ../patches/9_optimized/9_optimized-s-1708994898-3600.patch
+! Checksum: RyY1gLJCmuBEPCwNOOr80A
+! Diff-Path: ../patches/9_optimized/9_optimized-s-1709120113-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.23.45
-! TimeUpdated: 2024-02-27T00:46:40+00:00
+! Version: 2.0.23.46
+! TimeUpdated: 2024-02-28T11:33:35+00:00
 ! Expires: 4 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -861,9 +861,10 @@ pelisflix2.*#%#//scriptlet('set-cookie-reload', 'adtura', '1')
 niusdiario.es#%#//scriptlet('set-constant', 'google.ima.OmidVerificationVendor', 'emptyObj')
 superhq.net#%#//scriptlet('abort-on-property-write', 'exopop')
 hentaikai.com,superhq.net#%#//scriptlet('abort-on-property-write', 'protData')
-cuevana2espanol.*,cuevana.*#%#//scriptlet('prevent-window-open')
-cuevana2espanol.*,cuevana.*#%#//scriptlet('abort-on-property-read', 'cJsEdge')
-player.cuevana2espanol.*,player.cuevana.*#%#//scriptlet('trusted-replace-node-text', 'script', 'loadRedirect', '/vastPlayer\.runAds\(\);/g', 'vastPlayer.adsCompleted();')
+poseidonhd2.co,cuevana2espanol.*,cuevana.*#%#//scriptlet('prevent-window-open')
+poseidonhd2.co,cuevana2espanol.*,cuevana.*#%#//scriptlet('abort-on-property-read', 'cJsEdge')
+player.poseidonhd2.co,player.cuevana2espanol.*,player.cuevana.*#%#//scriptlet('trusted-replace-node-text', 'script', 'loadRedirect', '/vastPlayer\.runAds\(\);/g', 'vastPlayer.adsCompleted();')
+player.poseidonhd2.co,player.cuevana2espanol.*,player.cuevana.*#%#//scriptlet('trusted-replace-node-text', 'script', 'loadRedirect', 'vastPlayer.onCompletedCallback', 'try{loadRedirect()}catch(ex){};vastPlayer.onCompletedCallback')
 pobre.wtf#%#//scriptlet('set-constant', 'ads', 'false')
 suaurl.com#%#//scriptlet('set-constant', 'acdl', 'undefined')
 suaurl.com#%#//scriptlet('prevent-setTimeout', 'window.location.href')
@@ -1574,10 +1575,9 @@ gasteizhoy.com##.macrobanblock
 universohq.com##.barAds
 istoe.com.br##div[style^="width: 100%; min-height: 250px;"]
 laopinion.com.co##div[class^="pauta"]
-||player.*/assets/vast_*.xml$domain=cuevana.*|cuevana2espanol.*
-||player.cuevana*/assets/vast_*.xml
-cuevana2espanol.*,cuevana.*##a[rel*="sponsored"] img
-/edgeSystem*.js$domain=cuevana.*|cuevana2espanol.*
+||player.*/assets/vast_*.xml
+poseidonhd2.co,cuevana2espanol.*,cuevana.*##a[rel*="sponsored"] img
+/edgeSystem*.js$domain=cuevana.*|cuevana2espanol.*|poseidonhd2.co
 ffcv.es##.hidden-xs.zn_section
 dw-anime.net###custom_html-60
 autoscout24.es##.hf-top-old
