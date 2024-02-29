@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PxkNr6NlOnd7/3np0PKxAA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1709206652-3600.patch
+! Checksum: o1R3iBwvamuTyPzARm5BzA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1709210468-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.22.87
-! TimeUpdated: 2024-02-29T11:35:29+00:00
+! Version: 2.3.22.88
+! TimeUpdated: 2024-02-29T12:39:02+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -27691,7 +27691,9 @@ mvidoo.com##+js(abort-on-property-read, popunder)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173054
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167668
 ! Removes ad placeholders in sliders
-msn.com##+js(json-prune, configs.*.properties.slideshowWCSettings.interstitialNativeAds configs.*.properties.fullScreenSlideshowSettings.interstitialNativeAds properties.componentConfigs.slideshowConfigs.interstitialNativeAds)
+! Current path is "properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds"
+! Other paths probably can be removed, but keep them just in case for some time
+msn.com##+js(json-prune, configs.*.properties.slideshowWCSettings.interstitialNativeAds configs.*.properties.fullScreenSlideshowSettings.interstitialNativeAds properties.componentConfigs.slideshowConfigs.interstitialNativeAds properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167668
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146823
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136564
@@ -49594,6 +49596,8 @@ lite.qwant.com#?#.content > article.result:has(> p > span.ad)
 ! Removes ad placeholders on the main page
 ! Removes ad placeholders in articles in "More for You" section
 ! Removes ad placeholders in sliders
+! Current path is "properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds"
+! Other rules probably can be removed, but keep them just in case for some time
 ! https://github.com/AdguardTeam/AdguardFilters/issues/142849
 ! https://github.com/AdguardTeam/AdguardFilters/issues/145066
 ! https://github.com/AdguardTeam/AdguardFilters/issues/141047
