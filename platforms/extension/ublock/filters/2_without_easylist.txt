@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: LJsFfPhqY45rOCHqLT7TDw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1709274882-3600.patch
+! Checksum: BvRC8RKm3mfTx8NEy/hyGw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1709278516-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.23.1
-! TimeUpdated: 2024-03-01T06:32:49+00:00
+! Version: 2.3.23.2
+! TimeUpdated: 2024-03-01T07:33:04+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6977,6 +6977,9 @@ pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/173839
+apkmoddone.com###adBlock
+apkmoddone.com##+js(set-attr, .adsbygoogle, data-ad-status, 0)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173804
 investguiding-com.custommapposter.com##+js(set-constant, Object.prototype.detect, noopFunc)
 investguiding-com.custommapposter.com##+js(no-fetch-if, adsbygoogle)
@@ -9875,8 +9878,10 @@ pherotruth.com##+js(abort-current-script, Array.prototype.shift, void 0===)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/110083
 skypng.com##+js(set-constant, canRunAds, true)
 @@||skypng.com/public/js/prebid-ads.js
+! https://github.com/AdguardTeam/AdguardFilters/issues/173837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/110085
-xtremestream.co#$#.ad { height: 20px !important; }
+xtremestream.co#$#.ad { height: 100px !important; }
+xtremestream.co##+js(abort-current-script, $, .height())
 ! https://github.com/AdguardTeam/AdguardFilters/issues/105851
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=wink.ru
 ! Common anti-adblock rules for:
