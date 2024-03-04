@@ -844,8 +844,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt",
 			"trustLevel": "high",
-			"version": "2.1.35.36",
-			"timeUpdated": "2024-03-04T00:21:03+0000",
+			"version": "2.1.35.37",
+			"timeUpdated": "2024-03-04T04:21:35+0000",
 			"languages": [],
 			"tags": [
 				1,
@@ -1084,8 +1084,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://easylist.to/easylist/easyprivacy.txt",
 			"trustLevel": "low",
-			"version": "2.1.22.24",
-			"timeUpdated": "2024-03-04T00:21:10+0000",
+			"version": "2.1.22.25",
+			"timeUpdated": "2024-03-04T04:21:42+0000",
 			"languages": [],
 			"tags": [
 				2
@@ -1122,8 +1122,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.19.32",
-			"timeUpdated": "2024-03-03T16:06:26+0000",
+			"version": "2.0.19.33",
+			"timeUpdated": "2024-03-04T04:21:43+0000",
 			"languages": [
 				"id"
 			],
@@ -1164,8 +1164,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://secure.fanboy.co.nz/fanboy-annoyance_ubo.txt",
 			"trustLevel": "low",
-			"version": "2.1.21.27",
-			"timeUpdated": "2024-03-04T00:21:17+0000",
+			"version": "2.1.21.28",
+			"timeUpdated": "2024-03-04T04:21:49+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -1183,8 +1183,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/fanboy-social.txt",
 			"trustLevel": "low",
-			"version": "2.1.19.54",
-			"timeUpdated": "2024-03-04T00:21:18+0000",
+			"version": "2.1.19.55",
+			"timeUpdated": "2024-03-04T04:21:49+0000",
 			"languages": [],
 			"tags": [
 				3,
@@ -1378,8 +1378,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.27.27",
-			"timeUpdated": "2024-03-03T16:06:39+0000",
+			"version": "2.0.27.28",
+			"timeUpdated": "2024-03-04T04:21:56+0000",
 			"languages": [
 				"vi"
 			],
@@ -1542,8 +1542,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://www.fanboy.co.nz/fanboy-antifacebook.txt",
 			"trustLevel": "low",
-			"version": "2.0.7.44",
-			"timeUpdated": "2024-03-04T00:21:31+0000",
+			"version": "2.0.7.45",
+			"timeUpdated": "2024-03-04T04:22:03+0000",
 			"languages": [],
 			"tags": [
 				2,
@@ -1808,8 +1808,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://www.fanboy.co.nz/fanboy-cookiemonster.txt",
 			"trustLevel": "high",
-			"version": "2.1.28.78",
-			"timeUpdated": "2024-03-04T00:21:46+0000",
+			"version": "2.1.28.79",
+			"timeUpdated": "2024-03-04T04:22:17+0000",
 			"languages": [],
 			"tags": [
 				6
