@@ -1,7 +1,7 @@
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2024.0304.2
+! OriginalVersion: 2024.0304.3
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://community.list-kr.com/docs/
@@ -1521,6 +1521,7 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 !
+zum.com##div[class$="-banners"]
 search.daum.net##body.nate .screen_out ~ div[disp-attr]:has(> #bizDirtColl)
 search.daum.net##body.nate .screen_out ~ div[disp-attr]:has(> div[style*="height:"])
 search.daum.net##body.nate aside#mAside > div[disp-attr]:has(> .wing_nate)
@@ -2740,6 +2741,11 @@ x86.co.kr#@#.download_ad
 @@||ssl.pstatic.net/adimg*.search/adpost/js/ad.js$domain=naver.com
 @@/^https:\/\/www\.ehanex\.com\/images\/main\/[a-z]{2}_ad\.gif$/
 @@||t1.daumcdn.net/adfit/static/kp.js$domain=pindirectshop.com|dongbanmall.com
+! Check after 2024 April 1st.
+!#if (adguard_app_ios || adguard_ext_android_cb || adguard_ext_safari)
+@@||adxv.zum.com/view/targets?slots=$domain=zum.com
+!#endif
+!
 !#if (adguard_app_ios)
 @@||tinnews.co.kr/data/tinnews_co_kr/banner/2020040642392902
 @@||tinnews.co.kr/data/tinnews_co_kr/banner/favicon.ico
@@ -3243,6 +3249,8 @@ blacktoon276.com,blacktoon277.com,blacktoon278.com,blacktoon279.com,blacktoon280
 m.fmkorea.com#$?#body[class^="mac_os"] > div[id^="bd_"].bd:not([style]):has(> p > a[href]:matches-property(listeners.click) ~ a[href]:matches-property(listeners.click):contians(/^http/)) { remove: true; }
 m.fmkorea.com#$?#body[class="mac_os"] > .bd > div[style]:has(> .bd_mobile > p > a[href]:matches-property(listeners.click) ~ a[href]:matches-property(listeners.click):contians(/^http/)) { remove: true; }
 !#endif
+! Check after 2024 April 1st.
+zum.com#%#//scriptlet('set-constant', '_ads_zum_main_initbanner_750_zum_main_br_widget_336', 'true')
 ! PopMagic
 watchfreejavonline.co#%#//scriptlet('abort-current-inline-script', 'popMagic.init')
 ! m.humoruniv.com
@@ -3582,6 +3590,7 @@ te31.com#@#.textAd
 te31.com#@#.text_ad
 te31.com#@#.text_ads
 !
+@@||adxv.zum.com/view/targets?slots=$domain=zum.com
 svrforum.com##body > div[class][style*="box-shadow:"]
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=t.hi098123.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,domain=luckyquiz3.blogspot.com

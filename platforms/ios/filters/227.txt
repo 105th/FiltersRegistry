@@ -1,14 +1,14 @@
-! Checksum: vsDD7LXFLxJ3zNC2h8EvOA
-! Diff-Path: ../patches/227/227-s-1709554523-14400.patch
+! Checksum: sJcLKis1xLQ/PTHu61gucA
+! Diff-Path: ../patches/227/227-s-1709568639-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.17.66
-! TimeUpdated: 2024-03-04T12:12:53+00:00
+! Version: 2.0.17.67
+! TimeUpdated: 2024-03-04T16:07:38+00:00
 ! Expires: 4 days (update frequency)
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2024.0304.2
+! OriginalVersion: 2024.0304.3
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://community.list-kr.com/docs/
@@ -1508,6 +1508,7 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 !
+zum.com##div[class$="-banners"]
 search.daum.net##body.nate .screen_out ~ div[disp-attr]:has(> #bizDirtColl)
 search.daum.net##body.nate .screen_out ~ div[disp-attr]:has(> div[style*="height:"])
 search.daum.net##body.nate aside#mAside > div[disp-attr]:has(> .wing_nate)
@@ -2723,6 +2724,9 @@ x86.co.kr#@#.download_ad
 @@||ssl.pstatic.net/adimg*.search/adpost/js/ad.js$domain=naver.com
 @@/^https:\/\/www\.ehanex\.com\/images\/main\/[a-z]{2}_ad\.gif$/
 @@||t1.daumcdn.net/adfit/static/kp.js$domain=pindirectshop.com|dongbanmall.com
+! Check after 2024 April 1st.
+@@||adxv.zum.com/view/targets?slots=$domain=zum.com
+!
 @@||tinnews.co.kr/data/tinnews_co_kr/banner/2020040642392902
 @@||tinnews.co.kr/data/tinnews_co_kr/banner/favicon.ico
 @@||m.shop.interpark.com/_static/js/plugin/fastclick.min.js
@@ -3187,6 +3191,8 @@ blacktoon276.com,blacktoon277.com,blacktoon278.com,blacktoon279.com,blacktoon280
 ! DOMAIN-REFRESHER: END
 m.fmkorea.com#$?#body[class^="mac_os"] > div[id^="bd_"].bd:not([style]):has(> p > a[href]:matches-property(listeners.click) ~ a[href]:matches-property(listeners.click):contians(/^http/)) { remove: true; }
 m.fmkorea.com#$?#body[class="mac_os"] > .bd > div[style]:has(> .bd_mobile > p > a[href]:matches-property(listeners.click) ~ a[href]:matches-property(listeners.click):contians(/^http/)) { remove: true; }
+! Check after 2024 April 1st.
+zum.com#%#//scriptlet('set-constant', '_ads_zum_main_initbanner_750_zum_main_br_widget_336', 'true')
 ! PopMagic
 watchfreejavonline.co#%#//scriptlet('abort-current-inline-script', 'popMagic.init')
 ! m.humoruniv.com
