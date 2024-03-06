@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: aNnjfQqu4GPdJNrbqxPgNQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1709717675-3600.patch
+! Checksum: Fx0n3HX31ExORcDRIAgpKg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1709721330-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.23.71
-! TimeUpdated: 2024-03-06T09:32:40+00:00
+! Version: 2.3.23.72
+! TimeUpdated: 2024-03-06T10:33:33+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7000,9 +7000,9 @@ camsrip.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174006
 @@||static.doubleclick.net/instream/ad_status.js$domain=mhdtvmax.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173698
+tiktokcounter.net##+js(set-constant, isAdClickDone, true)
 tiktokcounter.net##+js(remove-class, is-hidden, #checkclick)
-@@||profitsfly.com/*/btcmatias.js$domain=tiktokcounter.net
-@@||profitsfly.com/*/ad*.js$domain=tiktokcounter.net
+@@||profitsfly.com/antonimos/ctandrei1.js$domain=tiktokcounter.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173846
 dash.hyzen-cloud.com##+js(abort-on-property-write, adScript)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173839
@@ -7579,6 +7579,8 @@ uptoearn.xyz##+js(no-fetch-if, pagead2.googlesyndication.com)
 @@||decrypt.day^$generichide
 decrypt.day##+js(set-constant, adsbygoogle, {})
 decrypt.day##+js(set-constant, adsbygoogle.loaded, true)
+decrypt.day##+js(no-fetch-if, pagead2.googlesyndication.com)
+! Hiding this element causes detection, but it's fixed by the $replace rule
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165068
 @@||static.doubleclick.net/instream/ad_status.js$domain=bloggingsathi.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=bloggingsathi.com
@@ -54162,6 +54164,7 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/174176
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174074
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173995
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173999
