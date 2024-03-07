@@ -1,9 +1,9 @@
-! Checksum: j55HV8jCCffYraVUyZfqHg
-! Diff-Path: ../patches/235/235-s-1709698178-14400.patch
+! Checksum: BLGV0dk9x8JBxq9lM5rFAQ
+! Diff-Path: ../patches/235/235-s-1709784633-14400.patch
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.4.10
-! TimeUpdated: 2024-03-06T04:07:06+00:00
+! Version: 2.0.4.11
+! TimeUpdated: 2024-03-07T04:08:15+00:00
 ! Expires: 4 days (update frequency)
 !
 ! Title: PersianBlocker
@@ -1113,12 +1113,13 @@ farnet.io###site-footer .col-sm-4:has(a[rel="noopener"][target="_blank"])
 farsroid.com#%#//scriptlet('ubo-rmnt.js', 'script', 'ads_app_name')
 farsroid.com#%#//scriptlet('ubo-nowoif.js')
 !farsroid.com##+js(aopr, ma_custom.ads_blocker_detect.init)
-farsroid.com#$#div.site-middle-banners { max-height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
-farsroid.com#$#div.single-text-ads { max-height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
-farsroid.com#$#div.labeled-dw-ads { max-height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
-farsroid.com#$#div.cas { max-height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
-farsroid.com#$?#p:has(> a[href="https://www.farsroid.com/download-imo-android/"] > img) { max-height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
-farsroid.com#$#li.ads-download { max-height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/173927
+farsroid.com#$#div.labeled-dw-ads { position: absolute !important; top: -10000px !important; }
+farsroid.com#$#div.site-middle-banners { position: absolute !important; top: -10000px !important; }
+farsroid.com#$#div.single-text-ads { position: absolute !important; top: -10000px !important; }
+farsroid.com#$#div.cas { position: absolute !important; top: -10000px !important; }
+farsroid.com#$?#p:has(> a[href="https://www.farsroid.com/download-imo-android/"] > img) { position: absolute !important; top: -10000px !important; }
+farsroid.com#$#li.ads-download { position: absolute !important; top: -10000px !important; }
 ||analysis.faradars.org
 ! https://github.com/MasterKia/PersianBlocker/pull/39
 ||media.farsnews.ir/Uploaded/Files/Documents/*.gif^$image,~third-party
@@ -1508,6 +1509,8 @@ lahzeakhar.com#%#//scriptlet('ubo-set.js', 'customnotify', 'noopFunc')
 ||lahzeakhar.com/ShowAds
 ! ||lahzeakhar.com/sw.js
 ! >> M <<
+musiceman.net#%#//scriptlet('ubo-rmnt.js', 'script', '/popTimes_|document\.onkeydown|"contextmenu"/')
+musiceman.net#%#//scriptlet('ubo-remove-attr.js', 'onmousedown|onselectstart', 'body')
 magiran.com##div.blur-text
 mohandescenter.ir##div.col-12 div#ctl00_topModule1_pnlTop:has(> div.divleftmod > div.py-2 > strong:has-text(جت سئو))
 ! https://github.com/MasterKia/PersianBlocker/issues/211
