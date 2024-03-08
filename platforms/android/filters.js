@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.24.1",
-			"timeUpdated": "2024-03-08T07:32:39+0000",
+			"version": "2.3.24.2",
+			"timeUpdated": "2024-03-08T08:34:38+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -378,8 +378,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.2",
-			"timeUpdated": "2024-03-07T14:32:40+0000",
+			"version": "2.0.67.3",
+			"timeUpdated": "2024-03-08T08:34:44+0000",
 			"languages": [],
 			"tags": [
 				2,
@@ -565,8 +565,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/13_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.10",
-			"timeUpdated": "2024-03-08T02:32:45+0000",
+			"version": "2.0.50.11",
+			"timeUpdated": "2024-03-08T08:33:53+0000",
 			"languages": [
 				"tr"
 			],
@@ -588,8 +588,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/14_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.88.89",
-			"timeUpdated": "2024-03-08T07:32:20+0000",
+			"version": "2.1.88.90",
+			"timeUpdated": "2024-03-08T08:34:03+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -683,8 +683,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.34.66",
-			"timeUpdated": "2024-03-08T07:32:24+0000",
+			"version": "2.0.34.67",
+			"timeUpdated": "2024-03-08T08:34:08+0000",
 			"languages": [],
 			"tags": [
 				5,
