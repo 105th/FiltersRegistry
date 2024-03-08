@@ -1,9 +1,9 @@
-! Checksum: qZKkOw0Ap1G1RFQgwIMX4w
-! Diff-Path: ../patches/14/14-s-1709887002-3600.patch
+! Checksum: NYFSdmxvssshV0+zfTI8Ug
+! Diff-Path: ../patches/14/14-s-1709890572-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.88.90
-! TimeUpdated: 2024-03-08T08:34:03+00:00
+! Version: 2.1.88.91
+! TimeUpdated: 2024-03-08T09:33:39+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2598,6 +2598,7 @@ motor.es#%#//scriptlet('trusted-click-element', '[id="purposesNavLegInt"]')
 houstonchronicle.com#%#//scriptlet('trusted-click-element', '#modals button + button.bg-primaryAccessible')
 doppelmayr.com###dop-cookiebanner-overlay
 doppelmayr.com###dop-cookiebanner
+sfchronicle.com#%#//scriptlet('trusted-set-cookie', '_consent_cookie', '{"services":["jwp","twitter","facebook"]}')
 mysanantonio.com,expressnews.com,sfgate.com#%#//scriptlet('trusted-set-cookie', '_consent_cookie', '{"services":[]}')
 auf1.tv#%#//scriptlet('trusted-set-local-storage-item', 'consent', '{"analytics":false,"location":false,"video":false}')
 rutube.ru##noindex.eu-cookie-popup-module__eu_cookie_popup
@@ -20037,6 +20038,9 @@ scitechdaily.com,thewindowsclub.com#@#.ad-space
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+@@||sfchronicle.com/sites/jquery.adx.js
+sfchronicle.com#%#//scriptlet('set-constant', 'HDN.dataLayer.ads.adBlockerDetected', 'false')
+sfchronicle.com#%#//scriptlet('prevent-element-src-loading', 'script', 'sfchronicle.com/script.js')
 realmz.io###realmz-io_728x90
 /assets/adblock_$domain=mageclash.io|monstermaster.io|grix.io
 starblast.io#%#//scriptlet('prevent-element-src-loading', 'script', 'pafvertizing.crazygames.com')
