@@ -1,9 +1,9 @@
-! Checksum: LwQ+uT+FX7y05JPvwKvI8A
-! Diff-Path: ../patches/19/19-s-1709894205-3600.patch
+! Checksum: u9oBB1ygLsheJomjp95GEw
+! Diff-Path: ../patches/19/19-s-1709897713-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation.
-! Version: 2.0.32.23
-! TimeUpdated: 2024-03-08T10:34:14+00:00
+! Version: 2.0.32.24
+! TimeUpdated: 2024-03-08T11:32:29+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1568,9 +1568,8 @@ scitechdaily.com,thewindowsclub.com#@#.ad-space
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
-@@||sfchronicle.com/sites/jquery.adx.js
-sfchronicle.com#%#//scriptlet('set-constant', 'HDN.dataLayer.ads.adBlockerDetected', 'false')
-sfchronicle.com#%#//scriptlet('prevent-element-src-loading', 'script', 'sfchronicle.com/script.js')
+expressnews.com,sfchronicle.com#%#//scriptlet('set-constant', 'HDN.dataLayer.ads.adBlockerDetected', 'false')
+expressnews.com,sfchronicle.com#%#//scriptlet('prevent-element-src-loading', 'script', '/script.js')
 realmz.io###realmz-io_728x90
 /assets/adblock_$domain=mageclash.io|monstermaster.io|grix.io
 starblast.io#%#//scriptlet('prevent-element-src-loading', 'script', 'pafvertizing.crazygames.com')
@@ -1751,7 +1750,6 @@ dubznetwork.com#$?##vidorev_post_extensions-2 > .widget-item-wrap:has(> div > p:
 jojoy.io###ad_block_reminder_dialog
 @@||ads.twitcasting.tv/js/env_test/ads.js
 timeanddate.com#%#//scriptlet('prevent-addEventListener', 'load', 'Dislike intrusive ads')
-dizipal1000.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 fosslinux.com#%#//scriptlet('set-constant', 'penci_adlbock', 'undefined')
 grabify.link###ab
 thegay.com,thegay.tube###ablock-notify
@@ -3006,7 +3004,7 @@ uwaterloo.ca##div[aria-label="Ad Blocker Detected"]
 ! SECTION[id=general]: Anti-adblock - Common '!#safari_cb_affinity(general)' directive
 !#safari_cb_affinity(general)
 !
-@@||expressnews.com/sites/jquery.adx.js
+@@/sites/jquery.adx.js$domain=expressnews.com|sfchronicle.com
 @@||pafvertizing.crazygames.com/rafvertizing-v7.js$domain=starblast.io
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js|$domain=textstudio.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=phoneky.com
@@ -12015,6 +12013,7 @@ newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,theloca
 !
 ! SECTION: Subscriptions - Regular rules
 !
+the-express.com##div[style].subtext-wrapper:has(> .subtext-iframe)
 retail.ru##.articles-mailing
 retail.ru#$##popup-subscribe-modal { display: none !important; }
 retail.ru#$#.modal-backdrop { display: none !important; }
