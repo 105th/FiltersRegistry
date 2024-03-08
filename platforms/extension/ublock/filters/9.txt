@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 66pfIhtT5aNGF0LpdG0ChQ
-! Diff-Path: ../patches/9/9-s-1709825689-3600.patch
+! Checksum: jtRrw37FKstK0BIG2Ai/cg
+! Diff-Path: ../patches/9/9-s-1709883275-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.23.65
-! TimeUpdated: 2024-03-07T15:32:46+00:00
+! Version: 2.0.23.66
+! TimeUpdated: 2024-03-08T07:32:51+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -259,6 +259,9 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/174379
+tudonoticiasbr.com###cleitao
+tudonoticiasbr.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! canal12.com.sv
 canal12.com.sv##+js(addEventListener-defuser, adBlockerOn)
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=canal12.com.sv
@@ -1427,6 +1430,8 @@ peru21.pe#@#.adstop
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/174378
+pobreflix.vc##+js(remove-attr, href, a[href]#clickfakeplayer)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/159573
 uol.com.br##+js(set-constant, __configuredDFPTags, {})
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171264
@@ -1444,14 +1449,17 @@ movidy.lat##+js(window.open-defuser)
 guiasaude.info##+js(set-cookie, Ads, 2)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165934
 warezstream.net##+js(window.open-defuser)
+! https://github.com/AdguardTeam/AdguardFilters/issues/174381
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165638
+embedder.net##+js(window.open-defuser)
+embedder.net##+js(abort-current-script, EventTarget.prototype.addEventListener, window.open)
 embedder.net##+js(abort-on-property-read, initPu)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164868
 forodecostarica.com##+js(no-setTimeout-if, adJsView)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162520
 beautyskincarebrasil.com##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161356
-receitasdafazenda.com##+js(set-local-storage-item, last_ads, yes)
+gastroponto.com,nossoprato.online,receitasdafazenda.com##+js(set-local-storage-item, last_ads, yes)
 modsimuladores.com,assistirfilmesdaluna.com,vejaideias.com.br,jogoscompleto.xyz##+js(adjust-setTimeout, atualizar, *, 0.02)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161249
 fazercurriculo.online,usandoapp.com##+js(adjust-setTimeout, .delay, *, 0.001)
@@ -1716,6 +1724,9 @@ tuhentaionline.com##+js(abort-on-property-read, Pub2)
 !------- CSS fixes --------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/174379
+tudonoticiasbr.com#$##neoni_mutiny { display: block !important; }
+tudonoticiasbr.com#$#.tres_mosqueteiros { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171311
 donghuas.top#$#body > #content { padding-bottom: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166777
@@ -1727,7 +1738,7 @@ guiasaude.info#$##colunas { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165640
 receitasdodia.fun#$#.hided { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165264
-receitasdochico.life,dicasdefinancas.net,dicasfinanceirasbr.com,dicasdevalor.net#$##player { display: block !important; }
+gastroponto.com,nossoprato.online,receitasdochico.life,dicasdefinancas.net,dicasfinanceirasbr.com,dicasdevalor.net#$##player { display: block !important; }
 dicasvalores.com#$#.content-box { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165265
 ldicas.com.br#$##colunas { display: block !important; }

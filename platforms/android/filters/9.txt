@@ -1,9 +1,9 @@
-! Checksum: oFzgZZ8cPCCudAdE6Q9n5Q
-! Diff-Path: ../patches/9/9-s-1709825668-3600.patch
+! Checksum: V2RvDfhSWLYDauIu8jZm0Q
+! Diff-Path: ../patches/9/9-s-1709883258-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.23.65
-! TimeUpdated: 2024-03-07T15:32:46+00:00
+! Version: 2.0.23.66
+! TimeUpdated: 2024-03-08T07:32:51+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -269,6 +269,9 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/174379
+tudonoticiasbr.com###cleitao
+tudonoticiasbr.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! canal12.com.sv
 canal12.com.sv#%#//scriptlet('prevent-addEventListener', 'adBlockerOn')
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=canal12.com.sv
@@ -1341,6 +1344,9 @@ peru21.pe#@#.adstop
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/174378
+pobreflix.vc#%#//scriptlet('remove-attr', 'href', 'a[href]#clickfakeplayer')
+pobreflix.vc#%#//scriptlet('trusted-set-constant', 'dtGonza.playeradstime', '"-1"')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/159573
 uol.com.br#%#//scriptlet('set-constant', '__configuredDFPTags', 'emptyObj')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171264
@@ -1359,14 +1365,17 @@ movidy.lat#%#//scriptlet('prevent-window-open')
 guiasaude.info#%#//scriptlet('set-cookie', 'Ads', '2')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165934
 warezstream.net#%#//scriptlet("prevent-window-open")
+! https://github.com/AdguardTeam/AdguardFilters/issues/174381
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165638
+embedder.net#%#//scriptlet('prevent-window-open')
+embedder.net#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'window.open')
 embedder.net#%#//scriptlet('abort-on-property-read', 'initPu')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164868
 forodecostarica.com#%#//scriptlet('prevent-setTimeout', 'adJsView')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162520
 beautyskincarebrasil.com#%#//scriptlet('prevent-window-open')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161356
-receitasdafazenda.com#%#//scriptlet('set-local-storage-item', 'last_ads', 'yes')
+gastroponto.com,nossoprato.online,receitasdafazenda.com#%#//scriptlet('set-local-storage-item', 'last_ads', 'yes')
 modsimuladores.com,assistirfilmesdaluna.com,vejaideias.com.br,jogoscompleto.xyz#%#//scriptlet('adjust-setTimeout', 'atualizar', '*', '0.02')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161249
 fazercurriculo.online,usandoapp.com#%#//scriptlet('adjust-setTimeout', '.delay', '*', '0.001')
@@ -1667,6 +1676,9 @@ newpct1.com#%#window.atob = function() { };
 !------- CSS fixes --------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/174379
+tudonoticiasbr.com#$##neoni_mutiny { display: block !important; }
+tudonoticiasbr.com#$#.tres_mosqueteiros { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171311
 donghuas.top#$#body > #content { padding-bottom: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166777
@@ -1678,7 +1690,7 @@ guiasaude.info#$##colunas { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165640
 receitasdodia.fun#$#.hided { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165264
-receitasdochico.life,dicasdefinancas.net,dicasfinanceirasbr.com,dicasdevalor.net#$##player { display: block !important; }
+gastroponto.com,nossoprato.online,receitasdochico.life,dicasdefinancas.net,dicasfinanceirasbr.com,dicasdevalor.net#$##player { display: block !important; }
 dicasvalores.com#$#.content-box { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165265
 ldicas.com.br#$##colunas { display: block !important; }
