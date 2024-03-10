@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.24.33",
-			"timeUpdated": "2024-03-10T10:32:36+0000",
+			"version": "2.3.24.34",
+			"timeUpdated": "2024-03-10T11:33:16+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -457,8 +457,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.97",
-			"timeUpdated": "2024-03-10T09:33:28+0000",
+			"version": "2.0.48.98",
+			"timeUpdated": "2024-03-10T11:33:33+0000",
 			"languages": [
 				"ja"
 			],
