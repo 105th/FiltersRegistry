@@ -158,8 +158,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/9.txt",
-			"version": "2.0.23.73",
-			"timeUpdated": "2024-03-12T16:34:52+0000",
+			"version": "2.0.23.74",
+			"timeUpdated": "2024-03-13T18:32:59+0000",
 			"languages": [
 				"es",
 				"pt"
@@ -241,8 +241,8 @@
 			"displayNumber": 3,
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/15.txt",
-			"version": "2.0.62.29",
-			"timeUpdated": "2024-03-13T12:38:39+0000",
+			"version": "2.0.62.30",
+			"timeUpdated": "2024-03-13T18:32:27+0000",
 			"languages": []
 		},
 		{
