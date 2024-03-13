@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.24.81",
-			"timeUpdated": "2024-03-13T12:38:59+0000",
+			"version": "2.3.24.82",
+			"timeUpdated": "2024-03-13T13:32:44+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -378,8 +378,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.23",
-			"timeUpdated": "2024-03-13T11:32:54+0000",
+			"version": "2.0.67.24",
+			"timeUpdated": "2024-03-13T13:32:46+0000",
 			"languages": [],
 			"tags": [
 				2,
@@ -434,8 +434,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.40.62",
-			"timeUpdated": "2024-03-13T11:33:00+0000",
+			"version": "2.0.40.63",
+			"timeUpdated": "2024-03-13T13:32:52+0000",
 			"languages": [
 				"de"
 			],
@@ -457,8 +457,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.8",
-			"timeUpdated": "2024-03-13T12:39:08+0000",
+			"version": "2.0.49.9",
+			"timeUpdated": "2024-03-13T13:32:53+0000",
 			"languages": [
 				"ja"
 			],
@@ -588,8 +588,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/14.txt",
 			"trustLevel": "full",
-			"version": "2.1.89.33",
-			"timeUpdated": "2024-03-13T12:38:39+0000",
+			"version": "2.1.89.34",
+			"timeUpdated": "2024-03-13T13:32:24+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -665,8 +665,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.8.12",
-			"timeUpdated": "2024-03-11T15:32:36+0000",
+			"version": "2.0.8.13",
+			"timeUpdated": "2024-03-13T13:32:27+0000",
 			"languages": [],
 			"tags": [
 				2
@@ -683,8 +683,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.35.0",
-			"timeUpdated": "2024-03-13T12:38:43+0000",
+			"version": "2.0.35.1",
+			"timeUpdated": "2024-03-13T13:32:27+0000",
 			"languages": [],
 			"tags": [
 				5,
