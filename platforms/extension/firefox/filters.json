@@ -1542,8 +1542,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.11.15",
-			"timeUpdated": "2024-03-13T02:33:24+0000",
+			"version": "2.1.11.16",
+			"timeUpdated": "2024-03-13T03:32:31+0000",
 			"languages": [
 				"zh"
 			],
