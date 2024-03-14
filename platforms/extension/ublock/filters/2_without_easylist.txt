@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PIYPszmHebILo2TYmBfvPg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1710434155-3600.patch
+! Checksum: R8bVaxMqQ9gLiz0zqGV6Nw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1710437684-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.25.1
-! TimeUpdated: 2024-03-14T16:33:57+00:00
+! Version: 2.3.25.2
+! TimeUpdated: 2024-03-14T17:32:40+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7024,6 +7024,8 @@ pornhub.com,pornhub.org,pornhub.net##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/174905
+qload.info##.adb
 ! https://github.com/AdguardTeam/AdguardFilters/issues/113000
 poplinks.sbs,shorttrick.in##.popSc
 poplinks.sbs,shorttrick.in##+js(abort-on-property-write, checkAdsStatus)
@@ -11026,7 +11028,7 @@ megaup.net#$#div[style="display: inline-block"] a[target="_blank"] > img { posit
 megaup.net##+js(abort-current-script, I833)
 megaup.net##+js(set-constant, zJSYdQ , true)
 megaup.net##+js(set-constant, ASksiwk, true)
-||download.megaup.net/images/adds/
+||download.megaup.net/*ad*.png
 ||download.megaup.net/images/*.gif
 ||megaup.net/images/ads/$important
 ||megaup.net/imageads/$important
@@ -31988,6 +31990,9 @@ $xmlhttprequest,third-party,denyallow=linkvertise.com|fastly.net|statically.io|s
 !
 ! NOTE: Specific rules
 !
+twibbonize.com##.anchor-ads-bottom
+twibbonize.com##.top-ads--open
+twibbonize.com###modals-container:has(div.modal-promotion-any)
 hollywoodreporter.com##.get-the-magazine
 jcinfo.net###content aside:has(.adsbygoogle)
 playmods.net##.recommend-container
@@ -50095,6 +50100,9 @@ partner.ads.js$domain=d3ward.github.io
 ! ATTENTION: The rules in this section must be accompanied by a link of an issue, where the problem will be fixed
 ! or with clear description what to do next
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/174891
+! TODO: remove after fixing https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2690 in the extensions and apps
+@@||facebook.com^$generichide,badfilter
 ! https://github.com/AdguardTeam/AdGuardForSafari/issues/947
 ! Fixes performance issue in Safari
 ! https://github.com/AdguardTeam/CoreLibs/issues/1855
