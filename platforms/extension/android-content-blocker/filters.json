@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.88.95",
-			"timeUpdated": "2024-03-13T15:54:55+0000",
+			"version": "2.0.88.96",
+			"timeUpdated": "2024-03-14T10:32:50+0000",
 			"languages": [
 				"ru"
 			],
@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.24.95",
-			"timeUpdated": "2024-03-14T09:32:54+0000",
+			"version": "2.3.24.96",
+			"timeUpdated": "2024-03-14T10:33:03+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -543,8 +543,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.74",
-			"timeUpdated": "2024-03-14T09:32:27+0000",
+			"version": "2.0.49.75",
+			"timeUpdated": "2024-03-14T10:32:34+0000",
 			"languages": [],
 			"tags": [
 				1,
@@ -588,8 +588,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/14.txt",
 			"trustLevel": "full",
-			"version": "2.1.89.40",
-			"timeUpdated": "2024-03-14T09:32:33+0000",
+			"version": "2.1.89.41",
+			"timeUpdated": "2024-03-14T10:32:42+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -700,8 +700,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.12.79",
-			"timeUpdated": "2024-03-14T07:32:49+0000",
+			"version": "2.0.12.80",
+			"timeUpdated": "2024-03-14T10:32:51+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -720,8 +720,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.20.39",
-			"timeUpdated": "2024-03-14T07:32:50+0000",
+			"version": "2.0.20.40",
+			"timeUpdated": "2024-03-14T10:32:51+0000",
 			"languages": [],
 			"tags": [
 				5,
