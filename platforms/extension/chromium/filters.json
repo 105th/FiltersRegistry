@@ -543,8 +543,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.80",
-			"timeUpdated": "2024-03-14T19:32:26+0000",
+			"version": "2.0.49.81",
+			"timeUpdated": "2024-03-15T08:32:46+0000",
 			"languages": [],
 			"tags": [
 				1,
