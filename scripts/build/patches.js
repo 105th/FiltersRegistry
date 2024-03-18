@@ -101,6 +101,7 @@ const main = async () => {
             name,
             time,
             resolution,
+            checksum: true,
             verbose: true,
         });
     }
