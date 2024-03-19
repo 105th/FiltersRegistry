@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.25.67",
-			"timeUpdated": "2024-03-19T12:39:08+0000",
+			"version": "2.3.25.68",
+			"timeUpdated": "2024-03-19T13:33:58+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.0.98.37",
-			"timeUpdated": "2024-03-19T11:32:49+0000",
+			"version": "2.0.98.38",
+			"timeUpdated": "2024-03-19T13:34:06+0000",
 			"languages": []
 		},
 		{
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.49.94",
-			"timeUpdated": "2024-03-19T12:38:35+0000",
+			"version": "2.0.49.95",
+			"timeUpdated": "2024-03-19T13:33:19+0000",
 			"languages": []
 		},
 		{
@@ -228,8 +228,8 @@
 			"displayNumber": 1,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/14.txt",
-			"version": "2.1.89.86",
-			"timeUpdated": "2024-03-19T12:38:42+0000",
+			"version": "2.1.89.87",
+			"timeUpdated": "2024-03-19T13:33:29+0000",
 			"languages": []
 		},
 		{
@@ -287,8 +287,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.35.32",
-			"timeUpdated": "2024-03-19T12:38:47+0000",
+			"version": "2.0.35.33",
+			"timeUpdated": "2024-03-19T13:33:34+0000",
 			"languages": []
 		},
 		{
@@ -300,8 +300,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.32.88",
-			"timeUpdated": "2024-03-19T12:38:48+0000",
+			"version": "2.0.32.89",
+			"timeUpdated": "2024-03-19T13:33:35+0000",
 			"languages": []
 		},
 		{
@@ -326,8 +326,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.20.62",
-			"timeUpdated": "2024-03-19T12:38:52+0000",
+			"version": "2.0.20.63",
+			"timeUpdated": "2024-03-19T13:33:41+0000",
 			"languages": []
 		},
 		{
