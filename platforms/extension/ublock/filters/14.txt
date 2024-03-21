@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: FfONQ/iHAqByOBMDMnicxw
-! Diff-Path: ../patches/14/14-s-1711028110-3600.patch
+! Checksum: 9NAN+8LIaKXFJ9au3yDNSw
+! Diff-Path: ../patches/14/14-s-1711031698-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.1.90.10
-! TimeUpdated: 2024-03-21T13:32:31+00:00
+! Version: 2.1.90.11
+! TimeUpdated: 2024-03-21T14:32:26+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2362,6 +2362,9 @@ damota.me,pracazarohom.*,seduo.*##+js(remove-class, force--consent|show--consent
 !
 ! NOTE: Regular rules
 !
+app.spendee.com##+js(set-cookie, cbpolicy, true)
+schroeder-bauzentrum.de#$##usercentrics-root { display: none !important; }
+schroeder-bauzentrum.de##+js(remove-class, overflowHidden, body)
 mvideo.ru#$#mvid-global-container > mvid-modals-container:has(mvid-modal div.modal-layout span.mobile-notification__text-cookie) { display: none !important; }
 mvideo.ru#$#body.disable-body-scrolling { position: static !important; overflow: auto !important; }
 pekao.com.pl###cookies-popup-container
@@ -43055,8 +43058,12 @@ ya.ru##.market-feed
 ya.ru##.message-promo
 ya.ru##.search3__inner > div.link-bro
 ! Yandex Browser promo
+! "a"
 ya.ru,yandex.*##.simple-popup_direction_center:has(> div > div > div.dist-overlay__description)
 ya.ru,yandex.*##.simple-popup__overlay_shown_true
+! "b" https://github.com/AdguardTeam/AdguardFilters/issues/175068#issuecomment-2009355449
+ya.ru,yandex.*#$#.DistributionSplashScreenModal[outercrosstitle="Нет, спасибо"] { display: none !important; }
+ya.ru,yandex.*#$#body { overflow: auto !important; }
 !
 ! Yandex.Search
 ya.ru,yandex.*##:matches-path(/search).AdvOffers
@@ -44841,6 +44848,9 @@ theguardian.com##.contributions__adblock
 !
 ! SECTION: Self-promo - Regular rules
 !
+islamicfinder.org###main-column > div[class]:has(> div.rbanner > div.rbox)
+islamicfinder.org###sidebar div[class]:has(> div.row > div.banner-box)
+islamicfinder.org##.banner
 sofmap.com###remote_cs
 sofmap.com##.side_bnr
 swisscows.com##.bnnr-widget
