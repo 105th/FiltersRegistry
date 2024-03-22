@@ -1,9 +1,9 @@
-! Checksum: qHJepYpdUkaan8R5xdVFNw
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1710807798-14400.patch
+! Checksum: hzHwG7/y6hnogL918eupsg
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1711109510-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links.
-! Version: 2.0.7.55
-! TimeUpdated: 2024-03-19T00:21:28+00:00
+! Version: 2.0.7.56
+! TimeUpdated: 2024-03-22T12:09:52+00:00
 ! Expires: 4 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -1012,7 +1012,7 @@ $removeparam=from,document,domain=apkpure.com|bandcamp.com|browserling.com|ettod
 $removeparam=keyword,domain=bindright.com|lendgo.com
 $removeparam=id,domain=go.redirectingat.com|go.skimlinks.com|go.skimresources.com|karkkainen.com
 $removeparam=offer_id,domain=catch.com.au|surfshark.com
-$removeparam=adid,domain=nikkei.co.jp|mcafee.com|indeed.com
+$document,removeparam=adid,domain=indeed.com|mcafee.com|nikkei.co.jp|tmz.com
 ||amazon.$removeparam=th
 ||amazon.$removeparam=linkCode
 $removeparam=refRID
@@ -1095,6 +1095,9 @@ $removeparam=returnFromLogin,domain=amazon.*
 $removeparam=/^asc_/,document,domain=amazon.*|aboutamazon.com|amzn.to
 ||amazon.*/primeday/$removeparam=tag
 ||amazon.*/primeday/$removeparam=mfadid
+||www.amazon.$removeparam=/^[a-z_]{1,20}=[a-zA-Z0-9._-]{80,}$/
+||www.amazon.$removeparam=sp_csd
+||www.amazon.$removeparam=dib_tag
 ||bing.com/?$removeparam=/^form=/i
 ||bing.$removeparam=sp
 $removeparam=sc,document,domain=bing.com|qvc.com|startpage.com
@@ -1239,6 +1242,7 @@ $removeparam=_x_tr_pto
 ||www.google.*/search$removeparam=oq,document
 ||google.$document,removeparam=sca_esv
 ||www.google.$removeparam=/^udm=$/
+||translate.goog^$removeparam=_x_tr_pto
 ||tiktok.com^$removeparam=_r
 $removeparam=share_ab_group
 $removeparam=u_code
@@ -1268,6 +1272,7 @@ $removeparam=si,document,domain=open.spotify.com|soundcloud.com|zappos.com
 $removeparam=gtm
 $removeparam=referral,domain=tv2.no|spotify.com|yubo.live
 ||spotify.com^$removeparam=nd
+||open.spotify.com^$removeparam=uid
 ||aliexpress.*/item/$removeparam=pvid
 ||aliexpress.$removeparam=_t
 ||aliexpress.$removeparam=gps-id

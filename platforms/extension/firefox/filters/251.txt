@@ -1,13 +1,13 @@
-! Checksum: lJ0WLsQYCx6DKaqQ99dIeQ
-! Diff-Path: ../patches/251/251-s-1710807817-14400.patch
+! Checksum: uGBSoWV679ftGYUI9WBCSw
+! Diff-Path: ../patches/251/251-s-1711109537-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links.
-! Version: 2.0.7.55
-! TimeUpdated: 2024-03-19T00:21:28+00:00
+! Version: 2.0.7.56
+! TimeUpdated: 2024-03-22T12:09:52+00:00
 ! Expires: 4 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 18March2024v1
+! OriginalVersion: 21March2024v3
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1433,7 +1433,7 @@ $removeparam=id,domain=go.redirectingat.com|go.skimlinks.com|go.skimresources.co
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1726383
 $removeparam=offer_id,domain=catch.com.au|surfshark.com
 ! https://tenshoku.nikkei.co.jp/lp/15002/?n_cid=TPRN0002&waad=Ujim9yQ8&adid=NK_L2_T_shortlink_Sun_diagnosis&utm_source=NKdenshiban&utm_medium=content-text&utm_content=text&utm_campaign=shortlink_Sun_diagnosis (Can't be made generic due to: finn.no, willhaben.at, kijiji.ca, https://github.com/DandelionSprout/adfilt/issues/601)
-$removeparam=adid,domain=nikkei.co.jp|mcafee.com|indeed.com
+$document,removeparam=adid,domain=indeed.com|mcafee.com|nikkei.co.jp|tmz.com
 !! ——— Rules for heavily covered sites ———
 !!! ——— Amazon ———
 ! filters known to be problematic
@@ -1569,6 +1569,10 @@ $removeparam=/^asc_/,document,domain=amazon.*|aboutamazon.com|amzn.to
 ! (from Firefox new tab ad) https://www.amazon.com/primeday/?tag=admarketus-20&ref=pd_sl_74dc22234008947b70137123d65e594c06220c7b2b8126f0c62e16c3&mfadid=adm
 ||amazon.*/primeday/$removeparam=tag
 ||amazon.*/primeday/$removeparam=mfadid
+! https://www.amazon.com/60-Large-Eye-Sharp-Needles/dp/B0CMHZT968?dib=eyJ2IjoiMSJ9.XCuQOwI2pP0h3gyIwYtHbu6XoKvFdVSHdG-a_sSIzqdfrDrBiM7WLXkgbvQDRkna865o8-YQPgV3tTQuOeYVEwL_iq6HG9JXe3lJA-BNjQEZSPKaQLEvy-ruDP6f5Lna8ZFUMjoilPEyUgN2lzEhQ4a79HhUat1X898e423PbPKF7srfYl_-x62LDWvAZJoSsbXKNxjjp8aGhxguKUwu4-NkC_evPnvLu0hItMP_Qbr_MhDAxg8Cwth6tMyamxzNIMQG9j7rcY1HTgGudHH1HEP9-R6_IJ8lWApc0CKTPqw.gwh-OxTtsi2sQjaKpj_pZs7BtiXp7rBzKtURGJvstVI&dib_tag=se&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY - https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-8860491
+||www.amazon.$removeparam=/^[a-z_]{1,20}=[a-zA-Z0-9._-]{80,}$/
+||www.amazon.$removeparam=sp_csd
+||www.amazon.$removeparam=dib_tag
 !!! ——— Bing ———
 ! https://www.bing.com/search?q=hello&form=QBLH&sp=-1&pq=hello&sc=8-5&qs=n&sk=&cvid=49B83A335B1C4884B71B2FAD4A8027A9 (02/03/2021)
 ! https://cn.bing.com/?FORM=Z9FD1 (16/11/2023)
@@ -1809,6 +1813,8 @@ $removeparam=_x_tr_pto
 ||google.$document,removeparam=sca_esv
 ! https://www.google.com/search?q=winget+vsdc&newwindow=1&udm= (15/03/2024)
 ||www.google.$removeparam=/^udm=$/
+! https://www-nrk-no.translate.goog/norge/regjeringen-vil-endre-russetiden-_-her-er-planen-1.16812907?_x_tr_sl=no&_x_tr_tl=en&_x_tr_hl=no&_x_tr_pto=wapp (20/03/2024)
+||translate.goog^$removeparam=_x_tr_pto
 !!! ———TikTok———
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-632259
 ||tiktok.com^$removeparam=_r
@@ -1853,6 +1859,9 @@ $removeparam=gtm
 $removeparam=referral,domain=tv2.no|spotify.com|yubo.live
 ! https://open.spotify.com/album/7D2NdGvBHIavgLhmcwhluK?nd=1
 ||spotify.com^$removeparam=nd
+! https://open.spotify.com/album/6Mf15O3wMv52ySP3aSTre1?uid=1dadcf09fbbee47a&uri=spotify%3Atrack%3A3HoSi38l1e6E1K1lHWUCeV — https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-8867924
+||open.spotify.com^$removeparam=uid
+!!! Don't remove "uri", as it seems to involve source songs to some extent.
 !! ——— Rules for heavily covered international sites ———
 !!! ——— PR-China ———
 !!! Special thanks to https://github.com/DeepChirp for helping with this section.
