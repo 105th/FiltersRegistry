@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.26.39",
-			"timeUpdated": "2024-03-24T14:32:46+0000",
+			"version": "2.3.26.40",
+			"timeUpdated": "2024-03-24T15:33:05+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -457,8 +457,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.50",
-			"timeUpdated": "2024-03-24T14:33:01+0000",
+			"version": "2.0.49.51",
+			"timeUpdated": "2024-03-24T15:33:22+0000",
 			"languages": [
 				"ja"
 			],
@@ -588,8 +588,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/14.txt",
 			"trustLevel": "full",
-			"version": "2.1.90.34",
-			"timeUpdated": "2024-03-24T14:32:17+0000",
+			"version": "2.1.90.35",
+			"timeUpdated": "2024-03-24T15:32:32+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -636,8 +636,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.44.7",
-			"timeUpdated": "2024-03-23T04:32:26+0000",
+			"version": "2.0.44.8",
+			"timeUpdated": "2024-03-24T15:32:38+0000",
 			"languages": [
 				"fr"
 			],
@@ -660,8 +660,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.35.61",
-			"timeUpdated": "2024-03-22T14:32:18+0000",
+			"version": "2.0.35.62",
+			"timeUpdated": "2024-03-24T15:32:39+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -1519,8 +1519,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.11.70",
-			"timeUpdated": "2024-03-24T12:39:16+0000",
+			"version": "2.1.11.71",
+			"timeUpdated": "2024-03-24T15:32:51+0000",
 			"languages": [
 				"zh"
 			],
