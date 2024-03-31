@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.27.37",
-			"timeUpdated": "2024-03-31T04:33:24+0000",
+			"version": "2.3.27.38",
+			"timeUpdated": "2024-03-31T05:32:38+0000",
 			"languages": [],
 			"tags": [
 				10,
