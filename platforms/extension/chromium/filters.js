@@ -357,8 +357,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.27.82",
-			"timeUpdated": "2024-04-03T17:32:46+0000",
+			"version": "2.3.27.83",
+			"timeUpdated": "2024-04-03T18:33:05+0000",
 			"languages": [],
 			"tags": [
 				10,
@@ -607,8 +607,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/15.txt",
 			"trustLevel": "full",
-			"version": "2.0.63.17",
-			"timeUpdated": "2024-04-03T17:32:25+0000",
+			"version": "2.0.63.18",
+			"timeUpdated": "2024-04-03T18:32:45+0000",
 			"languages": [],
 			"tags": [
 				45,
