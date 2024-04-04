@@ -1,9 +1,9 @@
-! Checksum: qTsYh+SfulpHxzUKcNBYmA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1712160609-14400.patch
+! Checksum: VgHHGapy10yLrjKdFfIGYg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1712264447-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.13.67
-! TimeUpdated: 2024-04-03T16:07:21+00:00
+! Version: 2.0.13.68
+! TimeUpdated: 2024-04-04T20:07:04+00:00
 ! Expires: 4 days (update frequency)
 ###app-modal
 ###smart-banner
@@ -523,6 +523,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 146.19.169.99$network
 ||zonaws.com^$all
 69.162.80.56$network
+||smartlink.name^$all
 162.241.124.200$network
 157.90.71.190$network
 ||ausoafab.net^$all
@@ -628,6 +629,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 /&[a-z]{1,2}=[a-zA-Z0-9]{0,}%[a-zA-Z0-9%]{1000,}\$/$document
 103.224.182.*$network
 ||llekonyib.site^$all
+||707.su^$all
 ||deephicy.net^$all
 ||gloacmug.net^$all
 ||keewoach.net^$all
@@ -1399,12 +1401,14 @@ www.microsoft.com##a[data-pfns][data-pfns^="2"][data-pfns*="game."]
 ##[class*=share-toolbar]:not(html,body,[class*=body i],[id*=body i])
 ##[class*=social_share]:not(article,html,body,[class*=body i],[id*=body i])
 ##[data-flip-widget=shareflip]:not(html,body,:empty)
+##[socialshare]:not(html,body,:empty)
 ##a[class$=-sharing-button__link]
 ##a[class$=sharebtn]
 ##a[class*=-socials__item]
 ##a[class*=addthis_button]
 ##a[class*=share__button]:not([class*=body i],[id*=body i])
 ##a[class^=share_btn]:not([class*=body i],[id*=body i])
+##a[class^=socialbutton i][onclick*="window.open"]
 ##a[data-ss-ss-type]
 ##a[href*=".cmd=addShare"]
 ##a[href*="/social_plugins/share"]
@@ -1487,6 +1491,7 @@ www.microsoft.com##a[data-pfns][data-pfns^="2"][data-pfns*="game."]
 ~baidu.com##.share-list:not(html,body,[class*=body i],[id*=body i])
 ~digg.com##a[href*="://digg.com/submit?url="]
 ~ef.com##.social-btns:not(html,body,[class*=body i],[id*=body i])
+~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###fb-share
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###fb_share
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###share-facebook
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.btn[href*="facebook.com/sharer/"]
@@ -2606,6 +2611,7 @@ $removeparam=p_user_id
 $removeparam=criteoId
 $removeparam=dspCookie
 $removeparam=_rand
+$removeparam=ttd_id
 $removeparam=dsp_uid
 $removeparam=cs_xi
 $removeparam=pn_id
@@ -3003,12 +3009,17 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 ||baidu.com^$document,removeparam=miniId
 ||baidu.com^$document,removeparam=/^from/
 ||baidu.com^$document,removeparam=tpl_from
+||bilibili.com^$removeparam=/^current/
 ||bilibili.com^$removeparam=/^from/
+||bilibili.com^$removeparam=/^playurl/
 ||bilibili.com^$removeparam=/^share_/
+||bilibili.com^$removeparam=accept_quality
 ||bilibili.com^$removeparam=bbid
 ||bilibili.com^$removeparam=broadcast_type
 ||bilibili.com^$removeparam=bsource
 ||bilibili.com^$removeparam=hotRank
+||bilibili.com^$removeparam=p2p_type
+||bilibili.com^$removeparam=quality_description
 ||bilibili.com^$removeparam=seid
 ||bilibili.com^$removeparam=spm_id_from
 ||bilibili.com^$removeparam=unique_k
@@ -3291,6 +3302,7 @@ $removeparam=share_time,domain=etsy.com
 $removeparam=iid,domain=cnn.com
 $removeparam=d_id,domain=buzzfeed.com|buzzfeednews.com
 ||onbuy.com^$removeparam=stat
+||despegar.$removeparam=/^clt_/
 ||hao123.com^$removeparam=tn
 ||lazada.$removeparam=dsource
 ||lazada.$removeparam=laz_share_info
@@ -3683,6 +3695,7 @@ ref=blog.isosceles.com$document,removeparam=ref
 $document,removeparam=jmtyClId
 ||asos.com^$removeparam=ctaref
 ||intersport.$removeparam=cgid
+||gumroad.com^$removeparam=recommended_by
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
