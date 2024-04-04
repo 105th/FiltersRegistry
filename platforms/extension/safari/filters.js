@@ -378,8 +378,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.96",
-			"timeUpdated": "2024-04-04T09:32:59+0000",
+			"version": "2.0.67.97",
+			"timeUpdated": "2024-04-04T10:33:26+0000",
 			"languages": [],
 			"tags": [
 				2,
@@ -397,8 +397,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.98.98",
-			"timeUpdated": "2024-04-04T09:33:01+0000",
+			"version": "2.0.98.99",
+			"timeUpdated": "2024-04-04T10:33:29+0000",
 			"languages": [],
 			"tags": [
 				3,
@@ -565,8 +565,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/13_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.70",
-			"timeUpdated": "2024-04-03T23:32:18+0000",
+			"version": "2.0.50.71",
+			"timeUpdated": "2024-04-04T10:32:43+0000",
 			"languages": [
 				"tr"
 			],
@@ -588,8 +588,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/14_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.91.29",
-			"timeUpdated": "2024-04-04T09:32:36+0000",
+			"version": "2.1.91.30",
+			"timeUpdated": "2024-04-04T10:32:51+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -660,8 +660,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.36.30",
-			"timeUpdated": "2024-04-04T09:32:39+0000",
+			"version": "2.0.36.31",
+			"timeUpdated": "2024-04-04T10:32:57+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -720,8 +720,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/21_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.21.16",
-			"timeUpdated": "2024-04-04T09:32:44+0000",
+			"version": "2.0.21.17",
+			"timeUpdated": "2024-04-04T10:33:05+0000",
 			"languages": [],
 			"tags": [
 				5,
